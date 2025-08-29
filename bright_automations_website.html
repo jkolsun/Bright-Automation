@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Automations - AI-Powered Web Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced text rendering and modern effects */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.8), rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
+            z-index: 1;
+        }
+        
+        /* Animated Tech Background */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        /* Floating geometric shapes */
+        .geometric-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            animation: float-shapes 15s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 10%;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 15%;
+            transform: rotate(45deg);
+            animation-delay: 5s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            border-radius: 20px;
+            animation-delay: 10s;
+        }
+        
+        @keyframes float-shapes {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            33% { transform: translateY(-30px) rotate(120deg); opacity: 0.7; }
+            66% { transform: translateY(-60px) rotate(240deg); opacity: 0.5; }
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: pulse-logo 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .logo-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 14.5px;
+            letter-spacing: -0.01em;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+            z-index: 10;
+        }
+        
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+        }
+        
+        .hero-logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: pulse-logo 2s ease-in-out infinite;
+        }
+        
+        .hero-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Floating Particles */
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            animation: float-particles 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+        
+        .particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 8s; }
+        .particle:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; animation-duration: 10s; }
+        .particle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; animation-duration: 12s; }
+        .particle:nth-child(4) { top: 60%; right: 25%; animation-delay: 1s; animation-duration: 9s; }
+        .particle:nth-child(5) { bottom: 20%; right: 10%; animation-delay: 3s; animation-duration: 11s; }
+        .particle:nth-child(6) { top: 40%; left: 15%; animation-delay: 5s; animation-duration: 7s; }
+        .particle:nth-child(7) { bottom: 50%; left: 30%; animation-delay: 6s; animation-duration: 13s; }
+        .particle:nth-child(8) { top: 30%; right: 35%; animation-delay: 7s; animation-duration: 8s; }
+        
+        @keyframes float-particles {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+            25% { transform: translateY(-30px) translateX(10px); opacity: 0.8; }
+            50% { transform: translateY(-60px) translateX(-10px); opacity: 1; }
+            75% { transform: translateY(-30px) translateX(15px); opacity: 0.8; }
+        }
+        
+        /* Connecting Lines */
+        .particle-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .connecting-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+            animation: line-flow 6s ease-in-out infinite;
+        }
+        
+        .connecting-line:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 150px;
+            transform: rotate(25deg);
+            animation-delay: 0s;
+        }
+        
+        .connecting-line:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 120px;
+            transform: rotate(-35deg);
+            animation-delay: 2s;
+        }
+        
+        .connecting-line:nth-child(3) {
+            bottom: 30%;
+            left: 25%;
+            width: 180px;
+            transform: rotate(15deg);
+            animation-delay: 4s;
+        }
+        
+        @keyframes line-flow {
+            0%, 100% { opacity: 0; transform: scaleX(0); }
+            50% { opacity: 1; transform: scaleX(1); }
+        }
+        
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.8rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #ffffff 0%, #667eea 50%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 48px;
+            opacity: 0.92;
+            line-height: 1.75;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: -0.01em;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 15.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.01em;
+            text-transform: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: -0.01em;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            group: hover;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 32px 64px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+        
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        .service-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+        
+        .service-card p {
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.75;
+            font-size: 15.5px;
+            font-weight: 400;
+            letter-spacing: -0.005em;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 120px 5%;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.15);
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-number.special {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 3px;
+        }
+        
+        .stat-number .slash {
+            font-size: 3rem;
+            opacity: 1;
+            color: #667eea;
+            font-weight: 600;
+            margin: 0 2px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 64px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            margin-top: 48px;
+        }
+        
+        .form-group {
+            margin-bottom: 32px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            color: white;
+            font-size: 15.5px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 400;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 80px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+                letter-spacing: -0.03em;
+                line-height: 1.1;
+            }
+            
+            .hero p {
+                font-size: 1.15rem;
+                line-height: 1.7;
+                padding: 0 10px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+                letter-spacing: -0.025em;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-form {
+                padding: 40px 28px;
+            }
+            
+            .service-card {
+                padding: 32px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.45rem;
+            }
+            
+            .service-card p {
+                font-size: 15px;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger animations */
+        .service-card {
+            animation-delay: var(--delay, 0s);
+        }
+        
+        .service-card:nth-child(1) { --delay: 0.1s; }
+        .service-card:nth-child(2) { --delay: 0.2s; }
+        .service-card:nth-child(3) { --delay: 0.3s; }
+        .service-card:nth-child(4) { --delay: 0.4s; }
+        .service-card:nth-child(5) { --delay: 0.5s; }
+        .service-card:nth-child(6) { --delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <div class="tech-grid"></div>
+        <div class="geometric-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Bright Automations</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="particle-lines">
+            <div class="connecting-line"></div>
+            <div class="connecting-line"></div>
+            <div class="connecting-line"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div class="hero-logo-icon"></div>
+                <span class="hero-logo-text">Bright Automations</span>
+            </div>
+            <h1>AI-Powered Web Development</h1>
+            <p>We design and develop modern, high-performing websites tailored to retail, contracting, and professional businesses. Our focus goes beyond sleek design — we integrate intelligent AI features that help companies work smarter and unlock new growth opportunities.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
+                    </svg>
+                    Start Your Project
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L2 12H5V20H19V12H22L12 3M12 8.5L17 13.5V18H15V14H9V18H7V13.5L12 8.5Z"/>
+                    </svg>
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services fade-in" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Cutting-edge solutions designed to transform your digital presence and accelerate business growth through intelligent automation.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 2C2.89 2 2 2.89 2 4V16C2 17.11 2.89 18 4 18H8V20H6V22H18V20H16V18H20C21.11 18 22 17.11 22 16V4C22 2.89 21.11 2 20 2H4M4 4H20V16H4V4M6 6V14H18V6H6M8 8H16V12H8V8Z"/>
+                    </svg>
+                </div>
+                <h3>Modern Web Design</h3>
+                <p>Cutting-edge, responsive websites that captivate your audience and drive conversions with stunning visual appeal and seamless user experience across all devices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
+                    </svg>
+                </div>
+                <h3>AI Integration</h3>
+                <p>Intelligent chatbots, automated workflows, personalized user experiences, and smart analytics that help your business operate more efficiently and serve customers better.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 2.05V5.08C16.39 5.57 19 8.47 19 12C19 12.9 18.82 13.75 18.5 14.54L21.12 16.07C21.68 14.83 22 13.45 22 12C22 6.82 18.05 2.55 13 2.05M12 19C8.47 19 5.57 16.39 5.08 13H2.05C2.55 18.05 6.82 22 12 22C13.45 22 14.83 21.68 16.07 21.12L14.54 18.5C13.75 18.82 12.9 19 12 19M2.05 11H5.08C5.57 7.61 8.47 5 12 5C12.9 5 13.75 5.18 14.54 5.5L16.07 2.88C14.83 2.32 13.45 2 12 2C6.82 2 2.55 6.18 2.05 11M15 12C15 10.34 13.66 9 12 9V15C13.66 15 15 13.66 15 12Z"/>
+                    </svg>
+                </div>
+                <h3>Performance Optimization</h3>
+                <p>Lightning-fast loading speeds, SEO optimization, and technical excellence that keeps you ahead of the competition with superior user experience and search rankings.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                    </svg>
+                </div>
+                <h3>Secure & Scalable</h3>
+                <p>Enterprise-grade security, cloud hosting, and scalable architecture built to grow with your business needs while maintaining optimal performance and protection.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
+                    </svg>
+                </div>
+                <h3>Analytics & Insights</h3>
+                <p>Advanced tracking, conversion optimization, and data-driven insights to maximize your digital ROI with comprehensive reporting and actionable recommendations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                    </svg>
+                </div>
+                <h3>Custom Solutions</h3>
+                <p>Tailored features for retail, contracting, and professional services that address your unique business challenges with innovative, industry-specific functionality.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats fade-in">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" data-target="150">0</span>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="98">0</span>
+                <div class="stat-label">% Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="50">0</span>
+                <div class="stat-label">AI Features Deployed</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number special">
+                    <span data-target="24">0</span>
+                    <span class="slash">/</span>
+                    <span>7</span>
+                </span>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <h2 class="section-title">Ready to Transform Your Business?</h2>
+        <p class="section-subtitle">Let's discuss how AI-powered web development can take your business to the next level with intelligent automation and cutting-edge design.</p>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" name="message" placeholder="Tell us about your project goals and requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Bright Automations. Building the future, one intelligent website at a time.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.8)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Enhanced fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Stagger service cards animation
+                    if (entry.target.classList.contains('services')) {
+                        const cards = entry.target.querySelectorAll('.service-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Initialize service cards as hidden for stagger effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+        });
+        
+        // Animated counters with easing
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                // Handle special 24/7 counter
+                if (counter.classList.contains('special')) {
+                    const target = 24;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const numberElement = counter.querySelector('[data-target]');
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            numberElement.textContent = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            numberElement.textContent = target;
+                        }
+                    };
+                    updateCounter();
+                } else {
+                    // Handle normal counters
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    if (target) {
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        updateCounter();
+                    }
+                }
+            });
+        }
+        
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats');
+        let statsAnimated = false;
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    animateCounters();
+                    statsAnimated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statsObserver.observe(statsSection);
+        
+        // Initialize EmailJS (you'll need to add your own keys)
+        // emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        
+        // Enhanced form submission with EmailJS and mailto fallback
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const button = this.querySelector('.btn-primary');
+            const originalHTML = button.innerHTML;
+            const form = this;
+            
+            // Get form data
+            const name = form.querySelector('input[name="name"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const company = form.querySelector('input[name="company"]').value;
+            const message = form.querySelector('textarea[name="message"]').value;
+            
+            // Disable button and show loading state
+            button.disabled = true;
+            button.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="animation: spin 1s linear infinite;">
+                    <path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z"/>
+                </svg>
+                Sending...
+            `;
+            
+            // Check if EmailJS is configured
+            if (typeof emailjs !== 'undefined' && window.emailjsConfigured) {
+                // EmailJS sending code (when configured)
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    company: company,
+                    message: message,
+                    to_email: 'andrew@brightautomations.net'
+                };
+                
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function(response) {
+                        // Success state
+                        button.innerHTML = `
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                            </svg>
+                            Message Sent!
+                        `;
+                        button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                        
+                        setTimeout(() => {
+                            button.disabled = false;
+                            button.innerHTML = originalHTML;
+                            button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                            form.reset();
+                        }, 3000);
+                        
+                    }, function(error) {
+                        // Fallback to mailto
+                        openMailto();
+                    });
+            } else {
+                // Fallback to mailto
+                setTimeout(openMailto, 1500);
+            }
+            
+            function openMailto() {
+                // Create mailto link with form data
+                const subject = encodeURIComponent(`New Project Inquiry from ${name}`);
+                const body = encodeURIComponent(
+                    `Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Company: ${company}\n\n` +
+                    `Message:\n${message}\n\n` +
+                    `---\nSent from Bright Automations website`
+                );
+                
+                const mailtoLink = `mailto:andrew@brightautomations.net?subject=${subject}&body=${body}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Update button
+                button.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.11,4 20,4Z"/>
+                    </svg>
+                    Email Opened
+                `;
+                button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = originalHTML;
+                    button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                }, 3000);
+            }
+        });
+        
+        // Parallax effect for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            document.querySelector('.tech-grid').style.transform = `translateY(${rate}px)`;
+            
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                const shapeRate = scrolled * (0.3 + index * 0.1);
+                shape.style.transform = `translateY(${shapeRate}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+        
+        // Add enhanced particle effects and interactions
+        let mouseTrail = [];
+        let particleCount = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
+            
+            // Limit trail length
+            if (mouseTrail.length > 15) {
+                mouseTrail.shift();
+            }
+            
+            // Create particles more frequently with variation
+            if (Math.random() < 0.15) {
+                const particle = document.createElement('div');
+                const size = Math.random() * 4 + 2;
+                const duration = Math.random() * 2 + 1.5;
+                
+                particle.style.cssText = `
+                    position: fixed;
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    left: ${e.clientX - size/2}px;
+                    top: ${e.clientY - size/2}px;
+                    animation: particle-fade-enhanced ${duration}s ease-out forwards;
+                    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+                `;
+                
+                document.body.appendChild(particle);
+                particleCount++;
+                
+                setTimeout(() => {
+                    particle.remove();
+                    particleCount--;
+                }, duration * 1000);
+                
+                // Limit total particles for performance
+                if (particleCount > 50) {
+                    const oldParticles = document.querySelectorAll('[style*="particle-fade-enhanced"]');
+                    if (oldParticles.length > 0) {
+                        oldParticles[0].remove();
+                        particleCount--;
+                    }
+                }
+            }
+        });
+        
+        // Enhanced particle click effects
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    const angle = (i / 8) * Math.PI * 2;
+                    const distance = Math.random() * 50 + 30;
+                    const size = Math.random() * 6 + 3;
+                    
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: ${size}px;
+                        height: ${size}px;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        left: ${e.clientX - size/2}px;
+                        top: ${e.clientY - size/2}px;
+                        animation: particle-burst 1s ease-out forwards;
+                        transform: translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px);
+                        box-shadow: 0 0 15px rgba(102, 126, 234, 0.7);
+                    `;
+                    
+                    document.body.appendChild(particle);
+                    setTimeout(() => particle.remove(), 1000);
+                }, i * 50);
+            }
+        });
+        
+        // CSS for enhanced particle animations
+        const particleStyle = document.createElement('style');
+        particleStyle.textContent = `
+            @keyframes particle-fade-enhanced {
+                0% { 
+                    opacity: 0.9; 
+                    transform: scale(1) translateY(0px); 
+                    filter: blur(0px);
+                }
+                50% { 
+                    opacity: 0.7; 
+                    transform: scale(1.2) translateY(-15px); 
+                    filter: blur(0.5px);
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: scale(0.3) translateY(-40px); 
+                    filter: blur(1px);
+                }
+            }
+            
+            @keyframes particle-burst {
+                0% { 
+                    opacity: 1; 
+                    transform: scale(1); 
+                    filter: blur(0px);
+                }
+                50% { 
+                    opacity: 0.8; 
+                    transform: scale(1.5); 
+                    filter: blur(0px);
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: scale(0.2); 
+                    filter: blur(2px);
+                }
+            }
+            
+            @keyframes particle-fade {
+                0% { opacity: 0.8; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0.2) translateY(-20px); }
+            }
+            
+            /* Add glow effect on hover for interactive elements */
+            .btn:hover, .service-card:hover, .stat-item:hover {
+                filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+            }
+            
+            /* Enhanced logo pulse */
+            @keyframes pulse-logo {
+                0%, 100% { 
+                    transform: scale(1); 
+                    opacity: 1; 
+                    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+                }
+                50% { 
+                    transform: scale(1.1); 
+                    opacity: 0.8; 
+                    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+                }
+            }
+            
+            /* Modern text glow effects */
+            .hero h1:hover {
+                text-shadow: 0 0 30px rgba(102, 126, 234, 0.4);
+                transition: text-shadow 0.3s ease;
+            }
+            
+            .section-title:hover {
+                text-shadow: 0 0 25px rgba(102, 126, 234, 0.3);
+                transition: text-shadow 0.3s ease;
+            }
+            
+            .service-card:hover h3 {
+                color: rgba(255, 255, 255, 1);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            /* Improved text selection */
+            ::selection {
+                background: rgba(102, 126, 234, 0.3);
+                color: white;
+            }
+            
+            ::-moz-selection {
+                background: rgba(102, 126, 234, 0.3);
+                color: white;
+            }
+        `;
+        document.head.appendChild(particleStyle);
+    </script>
+</body>
+</html>
