@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bright Automations - AI-Powered Web Development</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Enhanced text rendering and modern effects */
         * {
@@ -18,12 +18,13 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            color: #1a202c;
             overflow-x: hidden;
             line-height: 1.7;
             font-weight: 400;
             letter-spacing: -0.01em;
+            min-height: 100vh;
         }
         
         /* Video Background */
@@ -43,7 +44,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(10, 10, 10, 0.8), rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
+            background: linear-gradient(45deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.9), rgba(203, 213, 225, 0.85));
             z-index: 1;
         }
         
@@ -119,9 +120,9 @@
             top: 0;
             width: 100%;
             padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -141,7 +142,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             font-weight: 600;
-            color: #ffffff;
+            color: #1a202c;
         }
         
         .logo-icon {
@@ -167,8 +168,16 @@
         }
         
         @keyframes pulse-logo {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 1; 
+                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+            }
+            50% { 
+                transform: scale(1.1); 
+                opacity: 0.8; 
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+            }
         }
         
         .logo-text {
@@ -185,7 +194,7 @@
         }
         
         .nav-links a {
-            color: #ffffff;
+            color: #1a202c;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -355,7 +364,7 @@
             font-size: 4.8rem;
             font-weight: 800;
             margin-bottom: 32px;
-            background: linear-gradient(135deg, #ffffff 0%, #667eea 50%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a202c 0%, #667eea 50%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -367,10 +376,10 @@
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 48px;
-            opacity: 0.92;
+            opacity: 0.8;
             line-height: 1.75;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
+            color: #4a5568;
             letter-spacing: -0.01em;
             max-width: 850px;
             margin-left: auto;
@@ -413,16 +422,17 @@
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border: 2px solid rgba(102, 126, 234, 0.3);
             backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(102, 126, 234, 0.2);
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+            color: #667eea;
         }
         
         @keyframes fadeInUp {
@@ -462,7 +472,7 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.75);
+            color: #64748b;
             margin-bottom: 80px;
             max-width: 700px;
             margin-left: auto;
@@ -479,21 +489,22 @@
         }
         
         .service-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 24px;
             padding: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(102, 126, 234, 0.15);
             backdrop-filter: blur(20px);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             group: hover;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
         }
         
         .service-card:hover {
             transform: translateY(-12px);
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 32px 64px rgba(102, 126, 234, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 32px 64px rgba(102, 126, 234, 0.25);
             border-color: rgba(102, 126, 234, 0.3);
         }
         
@@ -541,25 +552,249 @@
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #1a202c;
             letter-spacing: -0.02em;
             line-height: 1.3;
         }
         
         .service-card p {
-            color: rgba(255, 255, 255, 0.82);
+            color: #4a5568;
             line-height: 1.75;
             font-size: 15.5px;
             font-weight: 400;
             letter-spacing: -0.005em;
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(102, 126, 234, 0.15);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.25);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            color: rgba(102, 126, 234, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 120px 5%;
+            background: rgba(102, 126, 234, 0.03);
+            border-top: 1px solid rgba(102, 126, 234, 0.1);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+        }
+        
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        
+        .step-description {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 120px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            margin-top: 60px;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.05);
+        }
+        
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(102, 126, 234, 0.25);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
+        }
+        
+        .faq-question {
+            padding: 24px 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a202c;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: #667eea;
+        }
+        
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 28px 24px;
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 15px;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         /* Stats Section */
         .stats {
             padding: 120px 5%;
-            background: rgba(255, 255, 255, 0.02);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(102, 126, 234, 0.03);
+            border-top: 1px solid rgba(102, 126, 234, 0.1);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
             position: relative;
         }
         
@@ -570,7 +805,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
         
@@ -585,17 +820,18 @@
         
         .stat-item {
             padding: 32px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(102, 126, 234, 0.15);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
         }
         
         .stat-item:hover {
             transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.2);
         }
         
         .stat-number {
@@ -628,7 +864,7 @@
         
         .stat-label {
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.82);
+            color: #4a5568;
             font-weight: 500;
             letter-spacing: -0.01em;
         }
@@ -642,12 +878,13 @@
         }
         
         .contact-form {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.8);
             padding: 64px;
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(102, 126, 234, 0.15);
             backdrop-filter: blur(20px);
             margin-top: 48px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
         }
         
         .form-group {
@@ -658,10 +895,10 @@
         .form-group textarea {
             width: 100%;
             padding: 20px 24px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(102, 126, 234, 0.1);
             border-radius: 14px;
-            color: white;
+            color: #1a202c;
             font-size: 15.5px;
             font-family: inherit;
             transition: all 0.3s ease;
@@ -673,13 +910,13 @@
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 1);
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
         }
         
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.65);
+            color: #64748b;
             font-weight: 400;
         }
         
@@ -687,8 +924,8 @@
         .footer {
             text-align: center;
             padding: 80px 5%;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.75);
+            border-top: 1px solid rgba(102, 126, 234, 0.15);
+            color: #64748b;
             font-weight: 400;
             font-size: 15px;
             letter-spacing: -0.01em;
@@ -750,6 +987,34 @@
             .service-card p {
                 font-size: 15px;
             }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .testimonial-card {
+                padding: 32px 24px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .process-step {
+                padding: 0 10px;
+            }
+            
+            .faq-question {
+                padding: 20px 24px;
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 24px 20px;
+                font-size: 14px;
+            }
         }
         
         /* Scroll animations */
@@ -799,7 +1064,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -908,6 +1174,141 @@
         </div>
     </section>
     
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in" id="testimonials">
+        <h2 class="section-title">Client Success Stories</h2>
+        <p class="section-subtitle">See how we've helped businesses transform their digital presence and accelerate growth through intelligent automation.</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Our customers love the chatbot! It actually answers their questions properly instead of giving generic responses. The website seems to know what each person wants to see. It's pretty amazing how smart it is."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <h4>Sarah Chen</h4>
+                        <p>CEO, RetailPlus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The contact forms are so much smarter now. They ask better questions and help us figure out which leads are worth our time. The website basically does the first sales conversation for us."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Mike Rodriguez</h4>
+                        <p>Owner, BuildPro Construction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I can finally see what our visitors actually want! The dashboard shows me which pages work and which don't. The website keeps getting better at showing people the right content."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EJ</div>
+                    <div class="author-info">
+                        <h4>Emily Johnson</h4>
+                        <p>Managing Partner, LegalEdge</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process fade-in" id="process">
+        <div class="process-container">
+            <h2 class="section-title">Our Proven Process</h2>
+            <p class="section-subtitle">From concept to launch, we follow a systematic approach that ensures your project succeeds every step of the way.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Discovery & Strategy</h3>
+                    <p class="step-description">We analyze your business goals, target audience, and competitive landscape to create a comprehensive strategy that drives results.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Custom Design & Development</h3>
+                    <p class="step-description">Our team creates stunning, responsive designs tailored to your industry and user needs. We can integrate intelligent AI features or focus on traditional functionality - whatever best serves your goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Development & Testing</h3>
+                    <p class="step-description">We build your website using cutting-edge technology, implementing your chosen features (AI-powered or traditional), rigorously test all functionality, and ensure optimal performance across devices.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Launch & Optimization</h3>
+                    <p class="step-description">After a successful launch, we monitor performance, gather data, and continuously optimize to maximize your ROI.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Ongoing Support</h3>
+                    <p class="step-description">Our 24/7 support team ensures your website stays secure, updated, and performing at its best as your business grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq fade-in" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Get answers to common questions about our AI-powered web development services and process.</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does a typical project take?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    Project timelines depend on the specific features and systems you want integrated into your website. Most projects average 3-4 days from start to finish, though complex AI integrations or custom functionality may take slightly longer. We provide detailed timelines during the discovery phase and keep you updated throughout the process.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What AI features do you specialize in?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    We specialize in chatbots, personalized content recommendations, automated lead qualification, smart analytics, conversion optimization, and custom AI integrations tailored to your industry needs.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide ongoing maintenance and support?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer comprehensive 24/7 support packages including security updates, performance monitoring, feature enhancements, and technical assistance to ensure your website stays cutting-edge.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can you work with existing websites or only new builds?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    We work with both! Whether you need a complete website redesign or want to add AI features to your existing site, we can seamlessly integrate modern functionality while preserving what's working well.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What industries do you work with?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    We specialize in retail, contracting, and professional services, but our AI solutions adapt to any industry. We've successfully worked with e-commerce, healthcare, legal, real estate, and manufacturing businesses.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much does a project typically cost?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    Project costs vary based on scope, features, complexity, and quality requirements. Our team will come up with a personalized quote tailored to your specific needs, whether you need basic functionality or advanced AI integrations. We provide detailed, transparent quotes during our initial consultation with no hidden fees.
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Stats Section -->
     <section class="stats fade-in">
         <div class="stats-container">
@@ -916,7 +1317,7 @@
                 <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="98">0</span>
+                <span class="stat-number" data-target="100">0</span>
                 <div class="stat-label">% Client Satisfaction</div>
             </div>
             <div class="stat-item">
@@ -973,23 +1374,26 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.25)';
             } else {
-                navbar.style.background = 'rgba(10, 10, 10, 0.8)';
-                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
             }
         });
         
-        // Smooth scrolling
+        // Enhanced smooth scrolling with offset for navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offset = 100; // Account for fixed navbar
+                    const targetPosition = target.offsetTop - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1091,6 +1495,24 @@
         }, { threshold: 0.5 });
         
         statsObserver.observe(statsSection);
+        
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
         
         // Initialize EmailJS (you'll need to add your own keys)
         // emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
@@ -1359,21 +1781,23 @@
             }
             
             .service-card:hover h3 {
-                color: rgba(255, 255, 255, 1);
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                color: #667eea;
+                text-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
                 transition: all 0.3s ease;
             }
             
             /* Improved text selection */
             ::selection {
-                background: rgba(102, 126, 234, 0.3);
-                color: white;
+                background: rgba(102, 126, 234, 0.2);
+                color: #1a202c;
             }
             
             ::-moz-selection {
-                background: rgba(102, 126, 234, 0.3);
-                color: white;
+                background: rgba(102, 126, 234, 0.2);
+                color: #1a202c;
             }
+            
+            @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         `;
         document.head.appendChild(particleStyle);
     </script>
