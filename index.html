@@ -26,7 +26,15 @@
             letter-spacing: -0.01em;
             min-height: 100vh;
         }
-        
+        <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
+	});
+</script>
+
         /* Video Background */
         .video-background {
             position: fixed;
