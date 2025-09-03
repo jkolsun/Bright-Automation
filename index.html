@@ -18,15 +18,14 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-            color: #1a202c;
+            background: #0a0a0a;
+            color: #ffffff;
             overflow-x: hidden;
             line-height: 1.7;
             font-weight: 400;
             letter-spacing: -0.01em;
-            min-height: 100vh;
         }
-
+        
         /* Video Background */
         .video-background {
             position: fixed;
@@ -44,7 +43,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.9), rgba(203, 213, 225, 0.85));
+            background: linear-gradient(45deg, rgba(10, 10, 10, 0.8), rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
             z-index: 1;
         }
         
@@ -120,9 +119,9 @@
             top: 0;
             width: 100%;
             padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -142,7 +141,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             font-weight: 600;
-            color: #1a202c;
+            color: #ffffff;
         }
         
         .logo-icon {
@@ -194,7 +193,7 @@
         }
         
         .nav-links a {
-            color: #1a202c;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -364,7 +363,7 @@
             font-size: 4.8rem;
             font-weight: 800;
             margin-bottom: 32px;
-            background: linear-gradient(135deg, #1a202c 0%, #667eea 50%, #764ba2 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #667eea 50%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -376,10 +375,10 @@
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 48px;
-            opacity: 0.8;
+            opacity: 0.92;
             line-height: 1.75;
             font-weight: 400;
-            color: #4a5568;
+            color: rgba(255, 255, 255, 0.9);
             letter-spacing: -0.01em;
             max-width: 850px;
             margin-left: auto;
@@ -422,17 +421,16 @@
         }
         
         .btn-secondary {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
-            background: rgba(102, 126, 234, 0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            border-color: rgba(102, 126, 234, 0.5);
-            color: #667eea;
+            border-color: rgba(255, 255, 255, 0.3);
         }
         
         @keyframes fadeInUp {
@@ -472,7 +470,7 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.25rem;
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.75);
             margin-bottom: 80px;
             max-width: 700px;
             margin-left: auto;
@@ -484,27 +482,26 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
         }
         
         .service-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            padding: 32px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             group: hover;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 32px 64px rgba(102, 126, 234, 0.2);
             border-color: rgba(102, 126, 234, 0.3);
         }
         
@@ -525,11 +522,11 @@
         }
         
         .service-icon {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 20px;
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 14px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -537,30 +534,30 @@
         }
         
         .service-card:hover .service-icon {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
         }
         
         .service-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             fill: white;
         }
         
         .service-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 16px;
-            color: #1a202c;
+            margin-bottom: 20px;
+            color: #ffffff;
             letter-spacing: -0.02em;
             line-height: 1.3;
         }
         
         .service-card p {
-            color: #4a5568;
-            line-height: 1.6;
-            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.75;
+            font-size: 15.5px;
             font-weight: 400;
             letter-spacing: -0.005em;
         }
@@ -574,29 +571,28 @@
         }
         
         .testimonials-grid {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
         
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 24px;
             padding: 40px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
         }
         
         .testimonial-card:hover {
             transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-            border-color: rgba(102, 126, 234, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.2);
         }
         
         .testimonial-card::before {
@@ -614,7 +610,7 @@
         .testimonial-text {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: #4a5568;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 30px;
             font-style: italic;
             position: relative;
@@ -644,21 +640,21 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
             font-size: 1rem;
-            color: #1a202c;
+            color: white;
             margin-bottom: 4px;
         }
         
         .author-info p {
             font-size: 0.9rem;
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.7);
         }
         
         /* Process Section */
         .process {
             padding: 120px 5%;
-            background: rgba(102, 126, 234, 0.03);
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .process-container {
@@ -699,13 +695,13 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
-            color: #1a202c;
+            color: white;
             margin-bottom: 16px;
             letter-spacing: -0.01em;
         }
         
         .step-description {
-            color: #4a5568;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.7;
             font-size: 15px;
         }
@@ -722,19 +718,17 @@
         }
         
         .faq-item {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
             margin-bottom: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.05);
         }
         
         .faq-item:hover {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(102, 126, 234, 0.25);
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(102, 126, 234, 0.2);
         }
         
         .faq-question {
@@ -746,7 +740,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
             font-size: 1.1rem;
-            color: #1a202c;
+            color: white;
             transition: all 0.3s ease;
         }
         
@@ -769,7 +763,7 @@
         
         .faq-answer {
             padding: 0 28px 24px;
-            color: #4a5568;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.7;
             font-size: 15px;
             display: none;
@@ -792,9 +786,9 @@
         /* Stats Section */
         .stats {
             padding: 120px 5%;
-            background: rgba(102, 126, 234, 0.03);
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
         }
         
@@ -805,7 +799,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
         
@@ -820,18 +814,17 @@
         
         .stat-item {
             padding: 32px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
         }
         
         .stat-item:hover {
             transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.2);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.15);
         }
         
         .stat-number {
@@ -864,7 +857,7 @@
         
         .stat-label {
             font-size: 1.1rem;
-            color: #4a5568;
+            color: rgba(255, 255, 255, 0.82);
             font-weight: 500;
             letter-spacing: -0.01em;
         }
@@ -878,13 +871,12 @@
         }
         
         .contact-form {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.03);
             padding: 64px;
             border-radius: 24px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             margin-top: 48px;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
         }
         
         .form-group {
@@ -895,10 +887,10 @@
         .form-group textarea {
             width: 100%;
             padding: 20px 24px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 14px;
-            color: #1a202c;
+            color: white;
             font-size: 15.5px;
             font-family: inherit;
             transition: all 0.3s ease;
@@ -910,13 +902,13 @@
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-            background: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
         }
         
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.65);
             font-weight: 400;
         }
         
@@ -924,8 +916,8 @@
         .footer {
             text-align: center;
             padding: 80px 5%;
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
-            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.75);
             font-weight: 400;
             font-size: 15px;
             letter-spacing: -0.01em;
@@ -1180,12 +1172,32 @@
         <p class="section-subtitle">See how we've helped businesses transform their digital presence and accelerate growth through intelligent automation.</p>
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <p class="testimonial-text">"The website they built for us is incredible! The chatbot helps customers get quotes instantly, and the smart forms figure out exactly what kind of landscaping project they want. It's like having our best salesperson working 24/7."</p>
+                <p class="testimonial-text">"Our customers love the chatbot! It actually answers their questions properly instead of giving generic responses. The website seems to know what each person wants to see. It's pretty amazing how smart it is."</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">AO</div>
+                    <div class="author-avatar">SC</div>
                     <div class="author-info">
-                        <h4>Aiden O'Brien</h4>
-                        <p>Owner, Brighton Road Landscaping</p>
+                        <h4>Sarah Chen</h4>
+                        <p>CEO, RetailPlus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The contact forms are so much smarter now. They ask better questions and help us figure out which leads are worth our time. The website basically does the first sales conversation for us."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Mike Rodriguez</h4>
+                        <p>Owner, BuildPro Construction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I can finally see what our visitors actually want! The dashboard shows me which pages work and which don't. The website keeps getting better at showing people the right content."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EJ</div>
+                    <div class="author-info">
+                        <h4>Emily Johnson</h4>
+                        <p>Managing Partner, LegalEdge</p>
                     </div>
                 </div>
             </div>
@@ -1205,8 +1217,8 @@
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Custom Design & Development</h3>
-                    <p class="step-description">Our team creates stunning, responsive designs tailored to your industry and user needs. We can integrate intelligent AI features or focus on traditional functionality - whatever best serves your goals.</p>
+                    <h3 class="step-title">AI-Powered Design</h3>
+                    <p class="step-description">Our team creates stunning, responsive designs integrated with intelligent features tailored to your industry and user needs.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
@@ -1283,7 +1295,7 @@
                     <div class="faq-icon">+</div>
                 </div>
                 <div class="faq-answer">
-                    Project costs vary based on scope, features, complexity, and quality requirements. Our team will come up with a personalized quote tailored to your specific needs, whether you need basic functionality or advanced AI integrations. We provide detailed, transparent quotes during our initial consultation with no hidden fees.
+                    Project costs vary based on scope, AI features, and complexity. Most projects range from $5,000 to $50,000. We provide detailed, transparent quotes during our initial consultation with no hidden fees.
                 </div>
             </div>
         </div>
@@ -1293,7 +1305,7 @@
     <section class="stats fade-in">
         <div class="stats-container">
             <div class="stat-item">
-                <span class="stat-number" data-target="99">0</span>
+                <span class="stat-number" data-target="150">0</span>
                 <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-item">
@@ -1301,7 +1313,7 @@
                 <div class="stat-label">% Client Satisfaction</div>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="52">0</span>
+                <span class="stat-number" data-target="50">0</span>
                 <div class="stat-label">AI Features Deployed</div>
             </div>
             <div class="stat-item">
@@ -1347,15 +1359,16 @@
     <footer class="footer">
         <p>&copy; 2025 Bright Automations. Building the future, one intelligent website at a time.</p>
     </footer>
-
-	<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/65afb57e-1c89-44a3-b9bb-84013a4511d7/chat'
-	});
-</script>
+    
+    
+    <!-- n8n Chatbot -->
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        
+        createChat({
+            webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/65afb57e-1c89-44a3-b9bb-84013a4511d7/chat'
+        });
+    </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
     <script>
@@ -1363,11 +1376,11 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.25)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
                 navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.8)';
+                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
             }
         });
         
@@ -1787,6 +1800,22 @@
             }
             
             @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Simple n8n Chatbot Floating - Let n8n handle its own styling */
+        [data-chat-widget],
+        .n8n-chat,
+        .n8n-chat-container {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Add subtle separator line in chat */
+        [data-chat-widget] .chat-messages {
+            border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
         `;
         document.head.appendChild(particleStyle);
     </script>
