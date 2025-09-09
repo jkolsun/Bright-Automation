@@ -409,6 +409,8 @@
             font-family: 'Inter', sans-serif;
             letter-spacing: -0.01em;
             text-transform: none;
+            cursor: pointer;
+            border: none;
         }
         
         .btn-primary {
@@ -445,6 +447,187 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .modal-content {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+            border-radius: 24px;
+            max-width: 1100px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 48px;
+            box-shadow: 0 25px 100px rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            animation: modalSlideIn 0.4s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { 
+                transform: translateY(40px) scale(0.95);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background: rgba(102, 126, 234, 0.1);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+        
+        .modal-close:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: rotate(90deg);
+            color: #667eea;
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .modal-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .modal-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        
+        .modal-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .agent-item {
+            background: rgba(102, 126, 234, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .agent-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        }
+        
+        .agent-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+        
+        .agent-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        
+        .agent-item p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .modal-footer {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .modal-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
         
         /* Services Section */
@@ -1016,6 +1199,26 @@
                 padding: 0 24px 20px;
                 font-size: 14px;
             }
+            
+            .modal-content {
+                width: 95%;
+                padding: 32px 24px;
+                max-height: 90vh;
+            }
+            
+            .modal-header h2 {
+                font-size: 2rem;
+            }
+            
+            .agents-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .modal-close {
+                top: 16px;
+                right: 16px;
+            }
         }
         
         /* Scroll animations */
@@ -1062,6 +1265,8 @@
             max-width: 350px !important;
             max-height: 500px !important;
         }
+        
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -1130,6 +1335,12 @@
                     </svg>
                     Explore Services
                 </a>
+                <button class="btn btn-secondary" id="viewAgentsBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
+                    </svg>
+                    View Our Agents
+                </button>
             </div>
         </div>
     </section>
@@ -1365,6 +1576,83 @@
         </div>
     </section>
     
+    <!-- Agents Modal -->
+    <div id="agentsModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
+                    </svg>
+                </div>
+                <h2>Our AI Automation Agents</h2>
+                <p class="modal-subtitle">Transform your business with intelligent automation solutions</p>
+            </div>
+            <div class="agents-grid">
+                <div class="agent-item">
+                    <div class="agent-icon">📧</div>
+                    <h3>Mass Email Marketing</h3>
+                    <p>Personalized campaigns that send automatically to your customer list</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">📬</div>
+                    <h3>Gmail Organizer</h3>
+                    <p>Filters, tags, and AI-sorted inbox so you never miss a lead</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">💬</div>
+                    <h3>Website Chatbot</h3>
+                    <p>24/7 assistant that answers FAQs, books jobs, and captures leads directly from your site</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">🎯</div>
+                    <h3>Smart Lead Follow-Up</h3>
+                    <p>Every new lead receives instant reply, is logged into your CRM, and sent to your phone or email</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">⭐</div>
+                    <h3>Customer Review Collector</h3>
+                    <p>Requests reviews from satisfied customers while flagging negative feedback internally</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">💳</div>
+                    <h3>Quote → Invoice → Payment Flow</h3>
+                    <p>Generate proposals, send e-sign contracts, and collect payments automatically</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">📅</div>
+                    <h3>Appointment & Job Scheduling</h3>
+                    <p>Bookings sync directly with your calendar and send reminders to reduce no-shows</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">📊</div>
+                    <h3>Daily Performance Briefing</h3>
+                    <p>Morning summary with leads, sales, website performance, and open tasks</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">📱</div>
+                    <h3>Social Media Repurposer</h3>
+                    <p>Turn one piece of content into ready-to-post updates for Instagram, Facebook, and LinkedIn</p>
+                </div>
+                <div class="agent-item">
+                    <div class="agent-icon">🛒</div>
+                    <h3>Abandoned Cart Saver</h3>
+                    <p>Detects incomplete checkouts and sends tailored reminders to bring customers back</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary modal-cta">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
+                    </svg>
+                    Get Started with AI Automation
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Bright Automations. Building the future, one intelligent website at a time.</p>
@@ -1381,6 +1669,41 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
     <script>
+        // Modal functionality
+        const modal = document.getElementById('agentsModal');
+        const viewAgentsBtn = document.getElementById('viewAgentsBtn');
+        const modalClose = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalCTA = document.querySelector('.modal-cta');
+        
+        // Open modal
+        viewAgentsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close modal functions
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+        
+        // Close modal when clicking CTA button
+        modalCTA.addEventListener('click', () => {
+            closeModal();
+        });
+        
+        // Close modal with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -1618,9 +1941,5 @@
             });
         });
     </script>
-    
-    <style>
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
 </body>
 </html>
