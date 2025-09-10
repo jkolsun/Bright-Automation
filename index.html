@@ -1675,24 +1675,369 @@
         const modalClose = document.querySelector('.modal-close');
         const modalOverlay = document.querySelector('.modal-overlay');
         const modalCTA = document.querySelector('.modal-cta');
+        const agentsGridView = document.getElementById('agentsGridView');
+        const agentDetailView = document.getElementById('agentDetailView');
+        
+        // Agent details data
+        const agentDetails = {
+            'email-marketing': {
+                icon: '📧',
+                title: 'Mass Email Marketing',
+                subtitle: 'Automated, personalized email campaigns at scale',
+                overview: 'Transform your email marketing with intelligent automation that personalizes every message, segments your audience automatically, and sends campaigns at the perfect moment for maximum engagement.',
+                howItWorks: [
+                    'Connect your email platform (Gmail, Outlook, MailChimp, etc.)',
+                    'Import your customer database or sync with your CRM',
+                    'AI analyzes customer behavior and preferences',
+                    'Create dynamic email templates with personalization tokens',
+                    'Set triggers based on customer actions or schedule campaigns',
+                    'Track opens, clicks, and conversions in real-time'
+                ],
+                benefits: [
+                    'Save 10+ hours per week on email marketing',
+                    'Increase open rates by 35% with AI-optimized subject lines',
+                    'Boost conversion rates with behavior-based segmentation',
+                    'Never miss a follow-up with automated sequences',
+                    'Scale personalization to thousands of contacts effortlessly',
+                    'Get detailed analytics to optimize future campaigns'
+                ],
+                idealFor: 'E-commerce stores, service businesses, B2B companies, real estate agents, consultants, and any business with a customer email list.'
+            },
+            'gmail-organizer': {
+                icon: '📬',
+                title: 'Gmail Organizer',
+                subtitle: 'AI-powered inbox management that never misses a lead',
+                overview: 'Stop drowning in emails. Our Gmail Organizer uses AI to automatically sort, tag, and prioritize your messages, ensuring important leads and customer inquiries always get immediate attention.',
+                howItWorks: [
+                    'Connect to your Gmail or Google Workspace account',
+                    'AI learns your email patterns and business priorities',
+                    'Automatically creates smart labels and filters',
+                    'Prioritizes leads, customer inquiries, and urgent matters',
+                    'Archives or sorts low-priority emails automatically',
+                    'Sends notifications for VIP contacts and hot leads'
+                ],
+                benefits: [
+                    'Reduce email processing time by 70%',
+                    'Never miss an important lead or customer email',
+                    'Automatic categorization of invoices, receipts, and documents',
+                    'Smart replies drafted for common inquiries',
+                    'Clean inbox with zero manual sorting required',
+                    'Integration with your CRM for lead tracking'
+                ],
+                idealFor: 'Sales teams, customer service departments, freelancers, consultants, busy executives, and anyone managing high email volumes.'
+            },
+            'chatbot': {
+                icon: '💬',
+                title: 'Website Chatbot',
+                subtitle: '24/7 intelligent customer service and lead capture',
+                overview: 'Deploy an AI chatbot that acts like your best employee - answering questions instantly, booking appointments, capturing leads, and providing support around the clock, even while you sleep.',
+                howItWorks: [
+                    'Easy installation on any website platform',
+                    'Train the bot on your FAQs, services, and pricing',
+                    'Customize responses to match your brand voice',
+                    'Set up appointment booking and lead capture forms',
+                    'Route complex queries to human agents when needed',
+                    'Analyze conversations to improve responses continuously'
+                ],
+                benefits: [
+                    'Respond to customers instantly 24/7/365',
+                    'Capture 3x more leads with always-on engagement',
+                    'Reduce support tickets by 60% with instant answers',
+                    'Book appointments directly into your calendar',
+                    'Qualify leads automatically before they reach sales',
+                    'Support multiple languages for global reach'
+                ],
+                idealFor: 'Service businesses, online stores, healthcare practices, real estate agencies, law firms, and any business wanting 24/7 customer engagement.'
+            },
+            'lead-followup': {
+                icon: '🎯',
+                title: 'Smart Lead Follow-Up',
+                subtitle: 'Never let another lead slip through the cracks',
+                overview: 'Automatically respond to every new lead within minutes, log them in your CRM, assign them to the right team member, and ensure consistent follow-up until they convert or opt out.',
+                howItWorks: [
+                    'Connects to your website forms, email, and phone system',
+                    'Instantly acknowledges every new lead inquiry',
+                    'Sends personalized follow-up based on lead source',
+                    'Logs all leads in your CRM with full context',
+                    'Assigns leads to sales reps based on rules',
+                    'Schedules automated follow-up sequences'
+                ],
+                benefits: [
+                    'Respond to leads 10x faster than competitors',
+                    'Increase conversion rates by 40% with instant follow-up',
+                    'Never lose track of a potential customer',
+                    'Standardize your lead handling process',
+                    'Get alerts for hot leads requiring immediate attention',
+                    'Track lead source ROI automatically'
+                ],
+                idealFor: 'Sales teams, real estate agents, insurance brokers, home service contractors, B2B companies, and any business generating online leads.'
+            },
+            'review-collector': {
+                icon: '⭐',
+                title: 'Customer Review Collector',
+                subtitle: 'Build your reputation with automated review management',
+                overview: 'Systematically collect positive reviews on Google, Yelp, and other platforms while privately capturing negative feedback for internal resolution before it damages your online reputation.',
+                howItWorks: [
+                    'Automatically emails customers after service completion',
+                    'Uses smart sentiment analysis to gauge satisfaction',
+                    'Routes happy customers to public review platforms',
+                    'Captures unhappy feedback privately for resolution',
+                    'Sends gentle reminders to increase response rates',
+                    'Monitors and alerts you to new reviews across platforms'
+                ],
+                benefits: [
+                    'Increase 5-star reviews by 200% on average',
+                    'Prevent negative reviews with private feedback capture',
+                    'Boost local SEO with consistent Google reviews',
+                    'Build trust with authentic customer testimonials',
+                    'Get instant alerts for reputation management',
+                    'Generate review widgets for your website'
+                ],
+                idealFor: 'Local businesses, restaurants, contractors, healthcare providers, hotels, professional services, and any business relying on online reputation.'
+            },
+            'payment-flow': {
+                icon: '💳',
+                title: 'Quote → Invoice → Payment Flow',
+                subtitle: 'End-to-end automation from estimate to payment',
+                overview: 'Streamline your entire billing process - generate professional quotes instantly, convert them to invoices with one click, send contracts for e-signature, and collect payments automatically.',
+                howItWorks: [
+                    'Create branded quote templates with your pricing',
+                    'Generate quotes instantly from forms or requests',
+                    'Send quotes with e-signature capability',
+                    'Auto-convert approved quotes to invoices',
+                    'Process payments via credit card, ACH, or payment plans',
+                    'Send automatic payment reminders and receipts'
+                ],
+                benefits: [
+                    'Get paid 50% faster with automated invoicing',
+                    'Reduce quote-to-cash time by 70%',
+                    'Eliminate manual data entry and errors',
+                    'Professional documents that build trust',
+                    'Automatic late payment reminders',
+                    'Real-time visibility into cash flow'
+                ],
+                idealFor: 'Contractors, freelancers, consultants, service providers, creative agencies, trades businesses, and any company with custom pricing.'
+            },
+            'scheduling': {
+                icon: '📅',
+                title: 'Appointment & Job Scheduling',
+                subtitle: 'Smart calendar management that eliminates double-booking',
+                overview: 'Let customers book appointments directly from your website, automatically sync with your calendar, send confirmations and reminders, and reduce no-shows by up to 80%.',
+                howItWorks: [
+                    'Embed booking widget on your website',
+                    'Sync with Google Calendar, Outlook, or other calendars',
+                    'Set availability rules and buffer times',
+                    'Customers select services and preferred times',
+                    'Automatic confirmations and reminder sequences',
+                    'Rescheduling and cancellation handling'
+                ],
+                benefits: [
+                    'Eliminate back-and-forth scheduling emails',
+                    'Reduce no-shows by 80% with smart reminders',
+                    'Accept bookings 24/7 from any device',
+                    'Prevent double-booking with real-time sync',
+                    'Collect deposits or payments at booking',
+                    'Send pre-appointment forms and instructions'
+                ],
+                idealFor: 'Healthcare providers, salons, consultants, tutors, repair services, fitness trainers, photographers, and any appointment-based business.'
+            },
+            'performance-briefing': {
+                icon: '📊',
+                title: 'Daily Performance Briefing',
+                subtitle: 'Start each day with complete business intelligence',
+                overview: 'Receive a comprehensive morning briefing with all your key metrics, new leads, sales performance, website analytics, pending tasks, and opportunities - delivered to your inbox before you start work.',
+                howItWorks: [
+                    'Connects to all your business tools and platforms',
+                    'Aggregates data from sales, marketing, and operations',
+                    'AI analyzes trends and identifies anomalies',
+                    'Generates personalized daily briefing report',
+                    'Delivers via email, Slack, or SMS each morning',
+                    'Includes actionable insights and priorities'
+                ],
+                benefits: [
+                    'Save 30 minutes daily on report checking',
+                    'Never miss important business changes',
+                    'Spot problems before they become critical',
+                    'Make data-driven decisions faster',
+                    'Keep entire team aligned on priorities',
+                    'Track goal progress automatically'
+                ],
+                idealFor: 'Business owners, executives, sales managers, marketing teams, operations managers, and anyone needing daily business intelligence.'
+            },
+            'social-repurposer': {
+                icon: '📱',
+                title: 'Social Media Repurposer',
+                subtitle: 'One piece of content, infinite social possibilities',
+                overview: 'Transform a single piece of content into optimized posts for every social platform - complete with platform-specific formatting, hashtags, and posting schedules for maximum reach.',
+                howItWorks: [
+                    'Upload your original content (blog, video, or post)',
+                    'AI analyzes and extracts key messages',
+                    'Generates platform-specific variations',
+                    'Optimizes format, length, and hashtags for each platform',
+                    'Creates visual assets and video clips as needed',
+                    'Schedules posts for optimal engagement times'
+                ],
+                benefits: [
+                    'Create 10x more content with the same effort',
+                    'Maintain consistent presence across all platforms',
+                    'Increase engagement with platform optimization',
+                    'Save 15+ hours per week on content creation',
+                    'Never run out of social media content',
+                    'Track performance across all platforms'
+                ],
+                idealFor: 'Content creators, marketing agencies, influencers, small businesses, coaches, authors, and anyone managing multiple social accounts.'
+            },
+            'cart-saver': {
+                icon: '🛒',
+                title: 'Abandoned Cart Saver',
+                subtitle: 'Recover lost sales with intelligent cart recovery',
+                overview: 'Automatically detect when customers abandon their shopping carts and send perfectly-timed, personalized recovery emails that bring them back to complete their purchase.',
+                howItWorks: [
+                    'Tracks customer shopping behavior in real-time',
+                    'Detects cart abandonment instantly',
+                    'Waits for optimal recovery window (1-24 hours)',
+                    'Sends personalized recovery email sequence',
+                    'Includes product images and special offers',
+                    'A/B tests subject lines and content for best results'
+                ],
+                benefits: [
+                    'Recover up to 30% of abandoned carts',
+                    'Increase revenue by 10-15% on average',
+                    'Understand why customers abandon carts',
+                    'Offer targeted incentives to close sales',
+                    'Build customer relationships with helpful reminders',
+                    'Track recovery rates and optimize campaigns'
+                ],
+                idealFor: 'E-commerce stores, online retailers, subscription services, digital product sellers, B2B suppliers, and any business with online checkout.'
+            }
+        };
         
         // Open modal
         viewAgentsBtn.addEventListener('click', (e) => {
             e.preventDefault();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            showGridView();
+        });
+        
+        // Show grid view
+        function showGridView() {
+            agentsGridView.style.display = 'block';
+            agentDetailView.style.display = 'none';
+            agentDetailView.classList.remove('active');
+        }
+        
+        // Show detail view
+        function showDetailView(agentId) {
+            const agent = agentDetails[agentId];
+            if (!agent) return;
+            
+            agentDetailView.innerHTML = `
+                <div class="detail-header">
+                    <button class="back-button">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+                        </svg>
+                        Back to All Agents
+                    </button>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px;">
+                    <div class="detail-icon">${agent.icon}</div>
+                    <div class="detail-title">
+                        <h3>${agent.title}</h3>
+                        <p class="detail-subtitle">${agent.subtitle}</p>
+                    </div>
+                </div>
+                <div class="detail-content">
+                    <div class="detail-section">
+                        <h4>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
+                            </svg>
+                            Overview
+                        </h4>
+                        <p>${agent.overview}</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"/>
+                            </svg>
+                            How It Works
+                        </h4>
+                        <ul>
+                            ${agent.howItWorks.map(step => `<li>${step}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M16.53,11.06L15.47,10L10.59,14.88L8.47,12.76L7.41,13.82L10.59,17L16.53,11.06Z"/>
+                            </svg>
+                            Key Benefits
+                        </h4>
+                        <ul>
+                            ${agent.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                            </svg>
+                            Ideal For
+                        </h4>
+                        <p>${agent.idealFor}</p>
+                    </div>
+                </div>
+                <div class="detail-cta">
+                    <a href="#contact" class="btn btn-primary modal-cta">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
+                        </svg>
+                        Get Started with ${agent.title}
+                    </a>
+                </div>
+            `;
+            
+            agentsGridView.style.display = 'none';
+            agentDetailView.style.display = 'block';
+            setTimeout(() => {
+                agentDetailView.classList.add('active');
+            }, 10);
+            
+            // Add back button listener
+            const backButton = agentDetailView.querySelector('.back-button');
+            backButton.addEventListener('click', showGridView);
+            
+            // Add CTA listener
+            const detailCTA = agentDetailView.querySelector('.modal-cta');
+            detailCTA.addEventListener('click', () => {
+                closeModal();
+            });
+        }
+        
+        // Add click listeners to agent items
+        document.querySelectorAll('.agent-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const agentId = item.getAttribute('data-agent');
+                showDetailView(agentId);
+            });
         });
         
         // Close modal functions
         function closeModal() {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                showGridView();
+            }, 300);
         }
         
         modalClose.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', closeModal);
         
-        // Close modal when clicking CTA button
+        // Close modal when clicking main CTA button
         modalCTA.addEventListener('click', () => {
             closeModal();
         });
