@@ -5,114 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bright Automations - AI-Powered Web Development</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <style>
-        /* Enhanced text rendering and modern effects */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
             color: #1a202c;
-            overflow-x: hidden;
             line-height: 1.7;
-            font-weight: 400;
-            letter-spacing: -0.01em;
             min-height: 100vh;
-        }
-        
-        /* Video Background */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-        }
-        
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.9), rgba(203, 213, 225, 0.85));
-            z-index: 1;
-        }
-        
-        /* Animated Tech Background */
-        .tech-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(102, 126, 234, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-move 20s linear infinite;
-        }
-        
-        @keyframes grid-move {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-        
-        /* Floating geometric shapes */
-        .geometric-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        .shape {
-            position: absolute;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            animation: float-shapes 15s ease-in-out infinite;
-        }
-        
-        .shape:nth-child(1) {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            left: 10%;
-            border-radius: 50%;
-            animation-delay: 0s;
-        }
-        
-        .shape:nth-child(2) {
-            width: 40px;
-            height: 40px;
-            top: 60%;
-            right: 15%;
-            transform: rotate(45deg);
-            animation-delay: 5s;
-        }
-        
-        .shape:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 20%;
-            border-radius: 20px;
-            animation-delay: 10s;
-        }
-        
-        @keyframes float-shapes {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            33% { transform: translateY(-30px) rotate(120deg); opacity: 0.7; }
-            66% { transform: translateY(-60px) rotate(240deg); opacity: 0.5; }
         }
         
         /* Navigation */
@@ -125,7 +30,6 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(102, 126, 234, 0.2);
             z-index: 1000;
-            transition: all 0.3s ease;
         }
         
         .nav-container {
@@ -143,55 +47,13 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             font-weight: 600;
-            color: #1a202c;
-        }
-        
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: white;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            animation: pulse-logo 2s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-logo {
-            0%, 100% { 
-                transform: scale(1); 
-                opacity: 1; 
-                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
-            }
-            50% { 
-                transform: scale(1.1); 
-                opacity: 0.8; 
-                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
-            }
-        }
-        
-        .logo-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
             gap: 40px;
+            align-items: center;
         }
         
         .nav-links a {
@@ -199,28 +61,25 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            position: relative;
-            font-size: 14.5px;
-            letter-spacing: -0.01em;
         }
         
         .nav-links a:hover {
             color: #667eea;
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2px;
+        .client-login-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s ease;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
-        .nav-links a:hover::after {
-            width: 100%;
+        .client-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
         
         /* Hero Section */
@@ -230,223 +89,66 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
+            padding: 0 20px;
         }
         
         .hero-content {
             max-width: 900px;
-            animation: fadeInUp 1s ease-out;
-            z-index: 10;
-        }
-        
-        .hero-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .hero-logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
-        }
-        
-        .hero-logo-icon::before {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            background: white;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            animation: pulse-logo 2s ease-in-out infinite;
-        }
-        
-        .hero-logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Floating Particles */
-        .floating-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            animation: float-particles 8s ease-in-out infinite;
-            opacity: 0.6;
-        }
-        
-        .particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 8s; }
-        .particle:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; animation-duration: 10s; }
-        .particle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; animation-duration: 12s; }
-        .particle:nth-child(4) { top: 60%; right: 25%; animation-delay: 1s; animation-duration: 9s; }
-        .particle:nth-child(5) { bottom: 20%; right: 10%; animation-delay: 3s; animation-duration: 11s; }
-        .particle:nth-child(6) { top: 40%; left: 15%; animation-delay: 5s; animation-duration: 7s; }
-        .particle:nth-child(7) { bottom: 50%; left: 30%; animation-delay: 6s; animation-duration: 13s; }
-        .particle:nth-child(8) { top: 30%; right: 35%; animation-delay: 7s; animation-duration: 8s; }
-        
-        @keyframes float-particles {
-            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
-            25% { transform: translateY(-30px) translateX(10px); opacity: 0.8; }
-            50% { transform: translateY(-60px) translateX(-10px); opacity: 1; }
-            75% { transform: translateY(-30px) translateX(15px); opacity: 0.8; }
-        }
-        
-        /* Connecting Lines */
-        .particle-lines {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        
-        .connecting-line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
-            animation: line-flow 6s ease-in-out infinite;
-        }
-        
-        .connecting-line:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            width: 150px;
-            transform: rotate(25deg);
-            animation-delay: 0s;
-        }
-        
-        .connecting-line:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            width: 120px;
-            transform: rotate(-35deg);
-            animation-delay: 2s;
-        }
-        
-        .connecting-line:nth-child(3) {
-            bottom: 30%;
-            left: 25%;
-            width: 180px;
-            transform: rotate(15deg);
-            animation-delay: 4s;
-        }
-        
-        @keyframes line-flow {
-            0%, 100% { opacity: 0; transform: scaleX(0); }
-            50% { opacity: 1; transform: scaleX(1); }
         }
         
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4.8rem;
+            font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             background: linear-gradient(135deg, #1a202c 0%, #667eea 50%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.05;
-            letter-spacing: -0.04em;
-            text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
         }
         
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 48px;
-            opacity: 0.8;
-            line-height: 1.75;
-            font-weight: 400;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
             color: #4a5568;
-            letter-spacing: -0.01em;
-            max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .cta-buttons {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 18px 36px;
-            text-decoration: none;
-            border-radius: 14px;
+            padding: 16px 32px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 15.5px;
+            text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.01em;
-            text-transform: none;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
         
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
         }
         
         .btn-secondary {
             background: rgba(102, 126, 234, 0.1);
             color: #667eea;
             border: 2px solid rgba(102, 126, 234, 0.3);
-            backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
             background: rgba(102, 126, 234, 0.2);
-            transform: translateY(-2px);
-            border-color: rgba(102, 126, 234, 0.5);
-            color: #667eea;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         /* Modal Styles */
@@ -458,18 +160,12 @@
             width: 100%;
             height: 100%;
             z-index: 10000;
+            align-items: center;
+            justify-content: center;
         }
         
         .modal.active {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: modalFadeIn 0.3s ease;
-        }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         
         .modal-overlay {
@@ -480,12 +176,11 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
         
         .modal-content {
             position: relative;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+            background: white;
             border-radius: 24px;
             max-width: 1100px;
             width: 90%;
@@ -493,19 +188,6 @@
             overflow-y: auto;
             padding: 48px;
             box-shadow: 0 25px 100px rgba(102, 126, 234, 0.3);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            animation: modalSlideIn 0.4s ease;
-        }
-        
-        @keyframes modalSlideIn {
-            from { 
-                transform: translateY(40px) scale(0.95);
-                opacity: 0;
-            }
-            to { 
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
         }
         
         .modal-close {
@@ -520,16 +202,11 @@
             font-size: 24px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
         }
         
         .modal-close:hover {
             background: rgba(102, 126, 234, 0.2);
             transform: rotate(90deg);
-            color: #667eea;
         }
         
         .modal-header {
@@ -537,34 +214,15 @@
             margin-bottom: 48px;
         }
         
-        .modal-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
-        }
-        
         .modal-header h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-        
-        .modal-subtitle {
-            font-size: 1.1rem;
-            color: #64748b;
-            font-weight: 400;
         }
         
         .agents-grid {
@@ -580,1711 +238,621 @@
             border-radius: 16px;
             padding: 24px;
             transition: all 0.3s ease;
-            cursor: default;
         }
         
         .agent-item:hover {
-            background: rgba(102, 126, 234, 0.1);
-            border-color: rgba(102, 126, 234, 0.3);
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
         }
         
         .agent-icon {
-            font-size: 32px;
+            font-size: 40px;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
         }
         
         .agent-item h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.2rem;
             font-weight: 700;
-            color: #1a202c;
             margin-bottom: 12px;
-            letter-spacing: -0.01em;
         }
         
         .agent-item p {
             color: #4a5568;
             font-size: 14px;
             line-height: 1.6;
-        }
-        
-        .modal-footer {
-            text-align: center;
-            padding-top: 24px;
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-        }
-        
-        .modal-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 120px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.8rem;
-            font-weight: 800;
-            margin-bottom: 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            color: #64748b;
-            margin-bottom: 80px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            line-height: 1.7;
-            letter-spacing: -0.01em;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-        
-        .service-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            padding: 32px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            backdrop-filter: blur(20px);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            group: hover;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
-            border-color: rgba(102, 126, 234, 0.3);
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .service-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-        }
-        
-        .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
             margin-bottom: 16px;
-            color: #1a202c;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
         }
         
-        .service-card p {
-            color: #4a5568;
-            line-height: 1.6;
-            font-size: 14.5px;
-            font-weight: 400;
-            letter-spacing: -0.005em;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 120px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonials-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            backdrop-filter: blur(20px);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-            border-color: rgba(102, 126, 234, 0.25);
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            font-size: 4rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 800;
-            color: rgba(102, 126, 234, 0.2);
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            line-height: 1;
-        }
-        
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #4a5568;
-            margin-bottom: 30px;
-            font-style: italic;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .learn-more-btn {
+            width: 100%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .author-info h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #1a202c;
-            margin-bottom: 4px;
-        }
-        
-        .author-info p {
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-        
-        /* Process Section */
-        .process {
-            padding: 120px 5%;
-            background: rgba(102, 126, 234, 0.03);
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
-        }
-        
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-        }
-        
-        .process-step {
-            text-align: center;
-            position: relative;
-            padding: 0 20px;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
-        }
-        
-        .step-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
-        }
-        
-        .step-description {
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        
-        /* FAQ Section */
-        .faq {
-            padding: 120px 5%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .faq-container {
-            margin-top: 60px;
-        }
-        
-        .faq-item {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 16px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.05);
-        }
-        
-        .faq-item:hover {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(102, 126, 234, 0.25);
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
-        }
-        
-        .faq-question {
-            padding: 24px 28px;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #1a202c;
             transition: all 0.3s ease;
         }
         
-        .faq-question:hover {
-            color: #667eea;
+        .learn-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
         }
         
-        .faq-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-answer {
-            padding: 0 28px 24px;
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 15px;
+        /* Agent Detail View */
+        .agent-detail-view {
             display: none;
         }
         
-        .faq-item.active .faq-answer {
+        .agent-detail-view.active {
             display: block;
-            animation: fadeIn 0.3s ease;
         }
         
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
+        .back-button {
+            background: rgba(102, 126, 234, 0.1);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 32px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .detail-content {
+            margin-top: 32px;
         }
         
-        /* Stats Section */
-        .stats {
-            padding: 120px 5%;
+        .detail-section {
             background: rgba(102, 126, 234, 0.03);
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
-            position: relative;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
         }
         
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 48px;
-            text-align: center;
-        }
-        
-        .stat-item {
-            padding: 32px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 16px 32px rgba(102, 126, 234, 0.2);
-        }
-        
-        .stat-number {
+        .detail-section h4 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.8rem;
-            font-weight: 800;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .detail-section li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 12px;
+            color: #4a5568;
+        }
+        
+        .detail-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        /* Client Portal Login */
+        .client-portal {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 25px 100px rgba(102, 126, 234, 0.2);
+        }
+        
+        .client-portal h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            display: block;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-        
-        .stat-number.special {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 3px;
-        }
-        
-        .stat-number .slash {
-            font-size: 3rem;
-            opacity: 1;
-            color: #667eea;
-            font-weight: 600;
-            margin: 0 2px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            color: #4a5568;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 120px 5%;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 64px;
-            border-radius: 24px;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            backdrop-filter: blur(20px);
-            margin-top: 48px;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
         }
         
         .form-group {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a202c;
         }
         
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 20px 24px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(102, 126, 234, 0.1);
-            border-radius: 14px;
-            color: #1a202c;
-            font-size: 15.5px;
-            font-family: inherit;
+            padding: 12px 16px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 8px;
+            font-size: 16px;
             transition: all 0.3s ease;
-            font-weight: 400;
-            letter-spacing: -0.01em;
         }
         
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
         
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #64748b;
-            font-weight: 400;
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        /* Footer */
-        .footer {
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
             text-align: center;
-            padding: 80px 5%;
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
-            color: #64748b;
-            font-weight: 400;
-            font-size: 15px;
-            letter-spacing: -0.01em;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
             
             .hero h1 {
-                font-size: 3.2rem;
-                letter-spacing: -0.03em;
-                line-height: 1.1;
-            }
-            
-            .hero p {
-                font-size: 1.15rem;
-                line-height: 1.7;
-                padding: 0 10px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title {
-                font-size: 2.8rem;
-                letter-spacing: -0.025em;
-            }
-            
-            .section-subtitle {
-                font-size: 1.1rem;
-                padding: 0 15px;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-form {
-                padding: 40px 28px;
-            }
-            
-            .service-card {
-                padding: 28px;
-            }
-            
-            .service-card h3 {
-                font-size: 1.3rem;
-            }
-            
-            .service-card p {
-                font-size: 14px;
-            }
-            
-            .testimonials-grid {
-                justify-content: center;
-            }
-            
-            .testimonial-card {
-                padding: 32px 24px;
-                max-width: 500px;
-            }
-            
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            
-            .process-step {
-                padding: 0 10px;
-            }
-            
-            .faq-question {
-                padding: 20px 24px;
-                font-size: 1rem;
-            }
-            
-            .faq-answer {
-                padding: 0 24px 20px;
-                font-size: 14px;
-            }
-            
-            .modal-content {
-                width: 95%;
-                padding: 32px 24px;
-                max-height: 90vh;
-            }
-            
-            .modal-header h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .agents-grid {
                 grid-template-columns: 1fr;
-                gap: 16px;
             }
             
-            .modal-close {
-                top: 16px;
-                right: 16px;
+            .modal-content {
+                padding: 32px 20px;
             }
         }
-        
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Stagger animations */
-        .service-card {
-            animation-delay: var(--delay, 0s);
-        }
-        
-        .service-card:nth-child(1) { --delay: 0.1s; }
-        .service-card:nth-child(2) { --delay: 0.2s; }
-        .service-card:nth-child(3) { --delay: 0.3s; }
-        .service-card:nth-child(4) { --delay: 0.4s; }
-        .service-card:nth-child(5) { --delay: 0.5s; }
-        .service-card:nth-child(6) { --delay: 0.6s; }
-        
-        /* Simple n8n Chatbot Floating - Let n8n handle its own styling */
-        [data-chat-widget],
-        .n8n-chat,
-        .n8n-chat-container {
-            position: fixed !important;
-            bottom: 20px !important;
-            right: 20px !important;
-            z-index: 9999 !important;
-        }
-        
-        /* Simple box styling - just like BotPenguin example */
-        [data-chat-widget] {
-            border: 1px solid #ddd !important;
-            border-radius: 8px !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-            background: white !important;
-            overflow: hidden !important;
-            max-width: 350px !important;
-            max-height: 500px !important;
-        }
-        
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <div class="video-background">
-        <div class="tech-grid"></div>
-        <div class="geometric-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-        <div class="video-overlay"></div>
-    </div>
-    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon"></div>
-                <span class="logo-text">Bright Automations</span>
+                <span>Bright Automations</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#client-portal" class="client-login-btn">Client Portal</a></li>
             </ul>
         </div>
     </nav>
     
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="floating-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        <div class="particle-lines">
-            <div class="connecting-line"></div>
-            <div class="connecting-line"></div>
-            <div class="connecting-line"></div>
-        </div>
         <div class="hero-content">
-            <div class="hero-logo">
-                <div class="hero-logo-icon"></div>
-                <span class="hero-logo-text">Bright Automations</span>
-            </div>
             <h1>AI-Powered Web Development</h1>
-            <p>We design and develop modern, high-performing websites tailored to retail, contracting, and professional businesses. Our focus goes beyond sleek design — we integrate intelligent AI features that help companies work smarter and unlock new growth opportunities.</p>
+            <p>We design and develop modern, high-performing websites tailored to retail, contracting, and professional businesses.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
-                    </svg>
-                    Start Your Project
-                </a>
-                <a href="#services" class="btn btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3L2 12H5V20H19V12H22L12 3M12 8.5L17 13.5V18H15V14H9V18H7V13.5L12 8.5Z"/>
-                    </svg>
-                    Explore Services
-                </a>
-                <button class="btn btn-secondary" id="viewAgentsBtn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
-                    </svg>
-                    View Our Agents
-                </button>
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                <button class="btn btn-secondary" onclick="openAgentsModal()">View Our AI Agents</button>
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section class="services fade-in" id="services">
+    <section class="section" id="services">
         <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Cutting-edge solutions designed to transform your digital presence and accelerate business growth through intelligent automation.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 2C2.89 2 2 2.89 2 4V16C2 17.11 2.89 18 4 18H8V20H6V22H18V20H16V18H20C21.11 18 22 17.11 22 16V4C22 2.89 21.11 2 20 2H4M4 4H20V16H4V4M6 6V14H18V6H6M8 8H16V12H8V8Z"/>
-                    </svg>
-                </div>
-                <h3>Modern Web Design</h3>
-                <p>Cutting-edge, responsive websites that captivate your audience and drive conversions with stunning visual appeal and seamless user experience across all devices.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom: 16px;">Modern Web Design</h3>
+                <p style="color: #4a5568;">Cutting-edge, responsive websites that captivate your audience.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
-                    </svg>
-                </div>
-                <h3>AI Integration</h3>
-                <p>Intelligent chatbots, automated workflows, personalized user experiences, and smart analytics that help your business operate more efficiently and serve customers better.</p>
+            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom: 16px;">AI Integration</h3>
+                <p style="color: #4a5568;">Intelligent chatbots and automated workflows for efficiency.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 2.05V5.08C16.39 5.57 19 8.47 19 12C19 12.9 18.82 13.75 18.5 14.54L21.12 16.07C21.68 14.83 22 13.45 22 12C22 6.82 18.05 2.55 13 2.05M12 19C8.47 19 5.57 16.39 5.08 13H2.05C2.55 18.05 6.82 22 12 22C13.45 22 14.83 21.68 16.07 21.12L14.54 18.5C13.75 18.82 12.9 19 12 19M2.05 11H5.08C5.57 7.61 8.47 5 12 5C12.9 5 13.75 5.18 14.54 5.5L16.07 2.88C14.83 2.32 13.45 2 12 2C6.82 2 2.55 6.18 2.05 11M15 12C15 10.34 13.66 9 12 9V15C13.66 15 15 13.66 15 12Z"/>
-                    </svg>
-                </div>
-                <h3>Performance Optimization</h3>
-                <p>Lightning-fast loading speeds, SEO optimization, and technical excellence that keeps you ahead of the competition with superior user experience and search rankings.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
-                    </svg>
-                </div>
-                <h3>Secure & Scalable</h3>
-                <p>Enterprise-grade security, cloud hosting, and scalable architecture built to grow with your business needs while maintaining optimal performance and protection.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z"/>
-                    </svg>
-                </div>
-                <h3>Analytics & Insights</h3>
-                <p>Advanced tracking, conversion optimization, and data-driven insights to maximize your digital ROI with comprehensive reporting and actionable recommendations.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-                    </svg>
-                </div>
-                <h3>Custom Solutions</h3>
-                <p>Tailored features for retail, contracting, and professional services that address your unique business challenges with innovative, industry-specific functionality.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section class="testimonials fade-in" id="testimonials">
-        <h2 class="section-title">Client Success Stories</h2>
-        <p class="section-subtitle">See how we've helped businesses transform their digital presence and accelerate growth through intelligent automation.</p>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The website they built for us is incredible! The chatbot helps customers get quotes instantly, and the smart forms figure out exactly what kind of landscaping project they want. It's like having our best salesperson working 24/7."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AO</div>
-                    <div class="author-info">
-                        <h4>Aiden O'Brien</h4>
-                        <p>Owner, Brighton Road Landscaping</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Process Section -->
-    <section class="process fade-in" id="process">
-        <div class="process-container">
-            <h2 class="section-title">Our Proven Process</h2>
-            <p class="section-subtitle">From concept to launch, we follow a systematic approach that ensures your project succeeds every step of the way.</p>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Discovery & Strategy</h3>
-                    <p class="step-description">We analyze your business goals, target audience, and competitive landscape to create a comprehensive strategy that drives results.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Custom Design & Development</h3>
-                    <p class="step-description">Our team creates stunning, responsive designs tailored to your industry and user needs. We can integrate intelligent AI features or focus on traditional functionality - whatever best serves your goals.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Development & Testing</h3>
-                    <p class="step-description">We build your website using cutting-edge technology, implementing your chosen features (AI-powered or traditional), rigorously test all functionality, and ensure optimal performance across devices.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Launch & Optimization</h3>
-                    <p class="step-description">After a successful launch, we monitor performance, gather data, and continuously optimize to maximize your ROI.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3 class="step-title">Ongoing Support</h3>
-                    <p class="step-description">Our 24/7 support team ensures your website stays secure, updated, and performing at its best as your business grows.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ Section -->
-    <section class="faq fade-in" id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Get answers to common questions about our AI-powered web development services and process.</p>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How long does a typical project take?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    Project timelines depend on the specific features and systems you want integrated into your website. Most projects average 3-4 days from start to finish, though complex AI integrations or custom functionality may take slightly longer. We provide detailed timelines during the discovery phase and keep you updated throughout the process.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What AI features do you specialize in?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    We specialize in chatbots, personalized content recommendations, automated lead qualification, smart analytics, conversion optimization, and custom AI integrations tailored to your industry needs.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you provide ongoing maintenance and support?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    Yes! We offer comprehensive 24/7 support packages including security updates, performance monitoring, feature enhancements, and technical assistance to ensure your website stays cutting-edge.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can you work with existing websites or only new builds?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    We work with both! Whether you need a complete website redesign or want to add AI features to your existing site, we can seamlessly integrate modern functionality while preserving what's working well.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What industries do you work with?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    We specialize in retail, contracting, and professional services, but our AI solutions adapt to any industry. We've successfully worked with e-commerce, healthcare, legal, real estate, and manufacturing businesses.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How much does a project typically cost?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    Project costs vary based on scope, features, complexity, and quality requirements. Our team will come up with a personalized quote tailored to your specific needs, whether you need basic functionality or advanced AI integrations. We provide detailed, transparent quotes during our initial consultation with no hidden fees.
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Stats Section -->
-    <section class="stats fade-in">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number" data-target="99">0</span>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="100">0</span>
-                <div class="stat-label">% Client Satisfaction</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="52">0</span>
-                <div class="stat-label">AI Features Deployed</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number special">
-                    <span data-target="24">0</span>
-                    <span class="slash">/</span>
-                    <span>7</span>
-                </span>
-                <div class="stat-label">Support</div>
+            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom: 16px;">Performance Optimization</h3>
+                <p style="color: #4a5568;">Lightning-fast loading speeds and SEO optimization.</p>
             </div>
         </div>
     </section>
     
     <!-- Contact Section -->
-    <section class="contact fade-in" id="contact">
-        <h2 class="section-title">Ready to Transform Your Business?</h2>
-        <p class="section-subtitle">Let's discuss how AI-powered web development can take your business to the next level with intelligent automation and cutting-edge design.</p>
-        <div class="contact-form">
-            <form>
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="company" placeholder="Company Name">
+                    <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Client Portal Section -->
+    <section class="section" id="client-portal">
+        <div class="client-portal">
+            <h2>Client Portal Login</h2>
+            <form id="clientLoginForm" onsubmit="handleClientLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="clientEmail" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" name="message" placeholder="Tell us about your project goals and requirements..." required></textarea>
+                    <label>Password</label>
+                    <input type="password" id="clientPassword" required>
                 </div>
-                <button type="submit" class="btn btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-                    </svg>
-                    Send Message
-                </button>
+                <button type="submit" class="submit-btn">Login to Portal</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Client Edit Request Form (Initially Hidden) -->
+    <section class="section" id="client-edit-form" style="display: none;">
+        <div class="client-portal">
+            <h2>Website Edit Request</h2>
+            <form id="editRequestForm" onsubmit="handleEditRequest(event)">
+                <div class="form-group">
+                    <label>What page needs editing?</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Describe the changes needed</label>
+                    <textarea rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Priority Level</label>
+                    <select style="width: 100%; padding: 12px; border: 2px solid rgba(102, 126, 234, 0.2); border-radius: 8px;">
+                        <option>Low - Within a week</option>
+                        <option>Medium - Within 3 days</option>
+                        <option>High - Within 24 hours</option>
+                        <option>Urgent - ASAP</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Edit Request</button>
+                <button type="button" onclick="logout()" style="margin-top: 16px; width: 100%; padding: 14px; background: #e53e3e; color: white; border: none; border-radius: 8px; cursor: pointer;">Logout</button>
             </form>
         </div>
     </section>
     
     <!-- Agents Modal -->
     <div id="agentsModal" class="modal">
-        <div class="modal-overlay"></div>
+        <div class="modal-overlay" onclick="closeAgentsModal()"></div>
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-header">
-                <div class="modal-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5S19.43 19 17.5 19 14 17.43 14 15.5 15.57 12 17.5 12M6.5 12C8.43 12 10 13.57 10 15.5S8.43 19 6.5 19 3 17.43 3 15.5 4.57 12 6.5 12M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L9 9H3C2.45 9 2 9.45 2 10S2.45 11 3 11H21C21.55 11 22 10.55 22 10S21.55 9 21 9Z"/>
-                    </svg>
+            <button class="modal-close" onclick="closeAgentsModal()">&times;</button>
+            
+            <!-- Grid View -->
+            <div id="agentsGridView">
+                <div class="modal-header">
+                    <h2>Our AI Automation Agents</h2>
+                    <p style="color: #4a5568;">Click "Learn More" to see details about each automation</p>
                 </div>
-                <h2>Our AI Automation Agents</h2>
-                <p class="modal-subtitle">Transform your business with intelligent automation solutions</p>
+                <div class="agents-grid">
+                    <!-- Email Marketing -->
+                    <div class="agent-item">
+                        <div class="agent-icon">📧</div>
+                        <h3>Mass Email Marketing</h3>
+                        <p>Personalized campaigns that send automatically to your customer list</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('email-marketing')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Gmail Organizer -->
+                    <div class="agent-item">
+                        <div class="agent-icon">📬</div>
+                        <h3>Gmail Organizer</h3>
+                        <p>Filters, tags, and AI-sorted inbox so you never miss a lead</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('gmail-organizer')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Website Chatbot -->
+                    <div class="agent-item">
+                        <div class="agent-icon">💬</div>
+                        <h3>Website Chatbot</h3>
+                        <p>24/7 assistant that answers FAQs and captures leads</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('chatbot')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Smart Lead Follow-Up -->
+                    <div class="agent-item">
+                        <div class="agent-icon">🎯</div>
+                        <h3>Smart Lead Follow-Up</h3>
+                        <p>Every new lead receives instant reply and CRM logging</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('lead-followup')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Review Collector -->
+                    <div class="agent-item">
+                        <div class="agent-icon">⭐</div>
+                        <h3>Customer Review Collector</h3>
+                        <p>Automated review requests with smart sentiment routing</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('review-collector')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Payment Flow -->
+                    <div class="agent-item">
+                        <div class="agent-icon">💳</div>
+                        <h3>Quote → Invoice → Payment</h3>
+                        <p>End-to-end billing automation from quote to payment</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('payment-flow')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Scheduling -->
+                    <div class="agent-item">
+                        <div class="agent-icon">📅</div>
+                        <h3>Appointment Scheduling</h3>
+                        <p>Smart calendar management with automated reminders</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('scheduling')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Performance Briefing -->
+                    <div class="agent-item">
+                        <div class="agent-icon">📊</div>
+                        <h3>Daily Performance Briefing</h3>
+                        <p>Morning summary of all your business metrics</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('performance')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Social Repurposer -->
+                    <div class="agent-item">
+                        <div class="agent-icon">📱</div>
+                        <h3>Social Media Repurposer</h3>
+                        <p>Turn one piece of content into posts for all platforms</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('social')">Learn More →</button>
+                    </div>
+                    
+                    <!-- Cart Saver -->
+                    <div class="agent-item">
+                        <div class="agent-icon">🛒</div>
+                        <h3>Abandoned Cart Saver</h3>
+                        <p>Recover lost sales with intelligent cart recovery</p>
+                        <button class="learn-more-btn" onclick="showAgentDetail('cart-saver')">Learn More →</button>
+                    </div>
+                </div>
             </div>
-            <div class="agents-grid">
-                <div class="agent-item">
-                    <div class="agent-icon">📧</div>
-                    <h3>Mass Email Marketing</h3>
-                    <p>Personalized campaigns that send automatically to your customer list</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">📬</div>
-                    <h3>Gmail Organizer</h3>
-                    <p>Filters, tags, and AI-sorted inbox so you never miss a lead</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">💬</div>
-                    <h3>Website Chatbot</h3>
-                    <p>24/7 assistant that answers FAQs, books jobs, and captures leads directly from your site</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">🎯</div>
-                    <h3>Smart Lead Follow-Up</h3>
-                    <p>Every new lead receives instant reply, is logged into your CRM, and sent to your phone or email</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">⭐</div>
-                    <h3>Customer Review Collector</h3>
-                    <p>Requests reviews from satisfied customers while flagging negative feedback internally</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">💳</div>
-                    <h3>Quote → Invoice → Payment Flow</h3>
-                    <p>Generate proposals, send e-sign contracts, and collect payments automatically</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">📅</div>
-                    <h3>Appointment & Job Scheduling</h3>
-                    <p>Bookings sync directly with your calendar and send reminders to reduce no-shows</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">📊</div>
-                    <h3>Daily Performance Briefing</h3>
-                    <p>Morning summary with leads, sales, website performance, and open tasks</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">📱</div>
-                    <h3>Social Media Repurposer</h3>
-                    <p>Turn one piece of content into ready-to-post updates for Instagram, Facebook, and LinkedIn</p>
-                </div>
-                <div class="agent-item">
-                    <div class="agent-icon">🛒</div>
-                    <h3>Abandoned Cart Saver</h3>
-                    <p>Detects incomplete checkouts and sends tailored reminders to bring customers back</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#contact" class="btn btn-primary modal-cta">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
-                    </svg>
-                    Get Started with AI Automation
-                </a>
+            
+            <!-- Detail View -->
+            <div id="agentDetailView" class="agent-detail-view">
+                <!-- Content will be dynamically inserted here -->
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Bright Automations. Building the future, one intelligent website at a time.</p>
-    </footer>
     
-    <!-- n8n Chatbot -->
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        
-        createChat({
-            webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/65afb57e-1c89-44a3-b9bb-84013a4511d7/chat'
-        });
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
     <script>
-        // Modal functionality
-        const modal = document.getElementById('agentsModal');
-        const viewAgentsBtn = document.getElementById('viewAgentsBtn');
-        const modalClose = document.querySelector('.modal-close');
-        const modalOverlay = document.querySelector('.modal-overlay');
-        const modalCTA = document.querySelector('.modal-cta');
-        const agentsGridView = document.getElementById('agentsGridView');
-        const agentDetailView = document.getElementById('agentDetailView');
-        
         // Agent details data
         const agentDetails = {
             'email-marketing': {
-                icon: '📧',
                 title: 'Mass Email Marketing',
-                subtitle: 'Automated, personalized email campaigns at scale',
-                overview: 'Transform your email marketing with intelligent automation that personalizes every message, segments your audience automatically, and sends campaigns at the perfect moment for maximum engagement.',
-                howItWorks: [
-                    'Connect your email platform (Gmail, Outlook, MailChimp, etc.)',
-                    'Import your customer database or sync with your CRM',
-                    'AI analyzes customer behavior and preferences',
-                    'Create dynamic email templates with personalization tokens',
-                    'Set triggers based on customer actions or schedule campaigns',
-                    'Track opens, clicks, and conversions in real-time'
-                ],
-                benefits: [
-                    'Save 10+ hours per week on email marketing',
-                    'Increase open rates by 35% with AI-optimized subject lines',
-                    'Boost conversion rates with behavior-based segmentation',
-                    'Never miss a follow-up with automated sequences',
-                    'Scale personalization to thousands of contacts effortlessly',
-                    'Get detailed analytics to optimize future campaigns'
-                ],
-                idealFor: 'E-commerce stores, service businesses, B2B companies, real estate agents, consultants, and any business with a customer email list.'
+                icon: '📧',
+                overview: 'Transform your email marketing with intelligent automation that personalizes every message.',
+                features: [
+                    'AI-powered subject line optimization',
+                    'Automatic audience segmentation',
+                    'Behavior-triggered campaigns',
+                    'Real-time analytics dashboard',
+                    'A/B testing automation'
+                ]
             },
             'gmail-organizer': {
-                icon: '📬',
                 title: 'Gmail Organizer',
-                subtitle: 'AI-powered inbox management that never misses a lead',
-                overview: 'Stop drowning in emails. Our Gmail Organizer uses AI to automatically sort, tag, and prioritize your messages, ensuring important leads and customer inquiries always get immediate attention.',
-                howItWorks: [
-                    'Connect to your Gmail or Google Workspace account',
-                    'AI learns your email patterns and business priorities',
-                    'Automatically creates smart labels and filters',
-                    'Prioritizes leads, customer inquiries, and urgent matters',
-                    'Archives or sorts low-priority emails automatically',
-                    'Sends notifications for VIP contacts and hot leads'
-                ],
-                benefits: [
-                    'Reduce email processing time by 70%',
-                    'Never miss an important lead or customer email',
-                    'Automatic categorization of invoices, receipts, and documents',
-                    'Smart replies drafted for common inquiries',
-                    'Clean inbox with zero manual sorting required',
-                    'Integration with your CRM for lead tracking'
-                ],
-                idealFor: 'Sales teams, customer service departments, freelancers, consultants, busy executives, and anyone managing high email volumes.'
+                icon: '📬',
+                overview: 'Never miss an important email again with AI-powered inbox management.',
+                features: [
+                    'Smart email categorization',
+                    'Priority inbox for leads',
+                    'Automatic follow-up reminders',
+                    'CRM integration',
+                    'VIP contact alerts'
+                ]
             },
             'chatbot': {
-                icon: '💬',
                 title: 'Website Chatbot',
-                subtitle: '24/7 intelligent customer service and lead capture',
-                overview: 'Deploy an AI chatbot that acts like your best employee - answering questions instantly, booking appointments, capturing leads, and providing support around the clock, even while you sleep.',
-                howItWorks: [
-                    'Easy installation on any website platform',
-                    'Train the bot on your FAQs, services, and pricing',
-                    'Customize responses to match your brand voice',
-                    'Set up appointment booking and lead capture forms',
-                    'Route complex queries to human agents when needed',
-                    'Analyze conversations to improve responses continuously'
-                ],
-                benefits: [
-                    'Respond to customers instantly 24/7/365',
-                    'Capture 3x more leads with always-on engagement',
-                    'Reduce support tickets by 60% with instant answers',
-                    'Book appointments directly into your calendar',
-                    'Qualify leads automatically before they reach sales',
-                    'Support multiple languages for global reach'
-                ],
-                idealFor: 'Service businesses, online stores, healthcare practices, real estate agencies, law firms, and any business wanting 24/7 customer engagement.'
+                icon: '💬',
+                overview: '24/7 intelligent customer service that never sleeps.',
+                features: [
+                    'Instant customer responses',
+                    'Lead qualification',
+                    'Appointment booking',
+                    'FAQ automation',
+                    'Multi-language support'
+                ]
             },
             'lead-followup': {
-                icon: '🎯',
                 title: 'Smart Lead Follow-Up',
-                subtitle: 'Never let another lead slip through the cracks',
-                overview: 'Automatically respond to every new lead within minutes, log them in your CRM, assign them to the right team member, and ensure consistent follow-up until they convert or opt out.',
-                howItWorks: [
-                    'Connects to your website forms, email, and phone system',
-                    'Instantly acknowledges every new lead inquiry',
-                    'Sends personalized follow-up based on lead source',
-                    'Logs all leads in your CRM with full context',
-                    'Assigns leads to sales reps based on rules',
-                    'Schedules automated follow-up sequences'
-                ],
-                benefits: [
-                    'Respond to leads 10x faster than competitors',
-                    'Increase conversion rates by 40% with instant follow-up',
-                    'Never lose track of a potential customer',
-                    'Standardize your lead handling process',
-                    'Get alerts for hot leads requiring immediate attention',
-                    'Track lead source ROI automatically'
-                ],
-                idealFor: 'Sales teams, real estate agents, insurance brokers, home service contractors, B2B companies, and any business generating online leads.'
+                icon: '🎯',
+                overview: 'Convert more leads with instant, personalized follow-up.',
+                features: [
+                    'Instant lead acknowledgment',
+                    'CRM auto-logging',
+                    'Lead scoring',
+                    'Automated nurture sequences',
+                    'Hot lead alerts'
+                ]
             },
             'review-collector': {
-                icon: '⭐',
                 title: 'Customer Review Collector',
-                subtitle: 'Build your reputation with automated review management',
-                overview: 'Systematically collect positive reviews on Google, Yelp, and other platforms while privately capturing negative feedback for internal resolution before it damages your online reputation.',
-                howItWorks: [
-                    'Automatically emails customers after service completion',
-                    'Uses smart sentiment analysis to gauge satisfaction',
-                    'Routes happy customers to public review platforms',
-                    'Captures unhappy feedback privately for resolution',
-                    'Sends gentle reminders to increase response rates',
-                    'Monitors and alerts you to new reviews across platforms'
-                ],
-                benefits: [
-                    'Increase 5-star reviews by 200% on average',
-                    'Prevent negative reviews with private feedback capture',
-                    'Boost local SEO with consistent Google reviews',
-                    'Build trust with authentic customer testimonials',
-                    'Get instant alerts for reputation management',
-                    'Generate review widgets for your website'
-                ],
-                idealFor: 'Local businesses, restaurants, contractors, healthcare providers, hotels, professional services, and any business relying on online reputation.'
+                icon: '⭐',
+                overview: 'Build your reputation with systematic review collection.',
+                features: [
+                    'Automated review requests',
+                    'Sentiment analysis',
+                    'Private feedback capture',
+                    'Multi-platform posting',
+                    'Review monitoring alerts'
+                ]
             },
             'payment-flow': {
-                icon: '💳',
                 title: 'Quote → Invoice → Payment Flow',
-                subtitle: 'End-to-end automation from estimate to payment',
-                overview: 'Streamline your entire billing process - generate professional quotes instantly, convert them to invoices with one click, send contracts for e-signature, and collect payments automatically.',
-                howItWorks: [
-                    'Create branded quote templates with your pricing',
-                    'Generate quotes instantly from forms or requests',
-                    'Send quotes with e-signature capability',
-                    'Auto-convert approved quotes to invoices',
-                    'Process payments via credit card, ACH, or payment plans',
-                    'Send automatic payment reminders and receipts'
-                ],
-                benefits: [
-                    'Get paid 50% faster with automated invoicing',
-                    'Reduce quote-to-cash time by 70%',
-                    'Eliminate manual data entry and errors',
-                    'Professional documents that build trust',
-                    'Automatic late payment reminders',
-                    'Real-time visibility into cash flow'
-                ],
-                idealFor: 'Contractors, freelancers, consultants, service providers, creative agencies, trades businesses, and any company with custom pricing.'
+                icon: '💳',
+                overview: 'Streamline your entire billing process from start to finish.',
+                features: [
+                    'Instant quote generation',
+                    'E-signature contracts',
+                    'Automated invoicing',
+                    'Payment reminders',
+                    'Real-time cash flow tracking'
+                ]
             },
             'scheduling': {
-                icon: '📅',
                 title: 'Appointment & Job Scheduling',
-                subtitle: 'Smart calendar management that eliminates double-booking',
-                overview: 'Let customers book appointments directly from your website, automatically sync with your calendar, send confirmations and reminders, and reduce no-shows by up to 80%.',
-                howItWorks: [
-                    'Embed booking widget on your website',
-                    'Sync with Google Calendar, Outlook, or other calendars',
-                    'Set availability rules and buffer times',
-                    'Customers select services and preferred times',
-                    'Automatic confirmations and reminder sequences',
-                    'Rescheduling and cancellation handling'
-                ],
-                benefits: [
-                    'Eliminate back-and-forth scheduling emails',
-                    'Reduce no-shows by 80% with smart reminders',
-                    'Accept bookings 24/7 from any device',
-                    'Prevent double-booking with real-time sync',
-                    'Collect deposits or payments at booking',
-                    'Send pre-appointment forms and instructions'
-                ],
-                idealFor: 'Healthcare providers, salons, consultants, tutors, repair services, fitness trainers, photographers, and any appointment-based business.'
+                icon: '📅',
+                overview: 'Eliminate double-booking and reduce no-shows by 80%.',
+                features: [
+                    'Online booking widget',
+                    'Calendar sync',
+                    'Automated reminders',
+                    'Buffer time management',
+                    'Rescheduling handling'
+                ]
             },
-            'performance-briefing': {
-                icon: '📊',
+            'performance': {
                 title: 'Daily Performance Briefing',
-                subtitle: 'Start each day with complete business intelligence',
-                overview: 'Receive a comprehensive morning briefing with all your key metrics, new leads, sales performance, website analytics, pending tasks, and opportunities - delivered to your inbox before you start work.',
-                howItWorks: [
-                    'Connects to all your business tools and platforms',
-                    'Aggregates data from sales, marketing, and operations',
-                    'AI analyzes trends and identifies anomalies',
-                    'Generates personalized daily briefing report',
-                    'Delivers via email, Slack, or SMS each morning',
-                    'Includes actionable insights and priorities'
-                ],
-                benefits: [
-                    'Save 30 minutes daily on report checking',
-                    'Never miss important business changes',
-                    'Spot problems before they become critical',
-                    'Make data-driven decisions faster',
-                    'Keep entire team aligned on priorities',
-                    'Track goal progress automatically'
-                ],
-                idealFor: 'Business owners, executives, sales managers, marketing teams, operations managers, and anyone needing daily business intelligence.'
+                icon: '📊',
+                overview: 'Start each day with complete business intelligence.',
+                features: [
+                    'Automated KPI tracking',
+                    'Sales performance metrics',
+                    'Lead pipeline status',
+                    'Task priorities',
+                    'Anomaly detection'
+                ]
             },
-            'social-repurposer': {
-                icon: '📱',
+            'social': {
                 title: 'Social Media Repurposer',
-                subtitle: 'One piece of content, infinite social possibilities',
-                overview: 'Transform a single piece of content into optimized posts for every social platform - complete with platform-specific formatting, hashtags, and posting schedules for maximum reach.',
-                howItWorks: [
-                    'Upload your original content (blog, video, or post)',
-                    'AI analyzes and extracts key messages',
-                    'Generates platform-specific variations',
-                    'Optimizes format, length, and hashtags for each platform',
-                    'Creates visual assets and video clips as needed',
-                    'Schedules posts for optimal engagement times'
-                ],
-                benefits: [
-                    'Create 10x more content with the same effort',
-                    'Maintain consistent presence across all platforms',
-                    'Increase engagement with platform optimization',
-                    'Save 15+ hours per week on content creation',
-                    'Never run out of social media content',
-                    'Track performance across all platforms'
-                ],
-                idealFor: 'Content creators, marketing agencies, influencers, small businesses, coaches, authors, and anyone managing multiple social accounts.'
+                icon: '📱',
+                overview: 'Create 10x more content with the same effort.',
+                features: [
+                    'Multi-platform optimization',
+                    'Hashtag generation',
+                    'Visual asset creation',
+                    'Scheduling automation',
+                    'Performance tracking'
+                ]
             },
             'cart-saver': {
-                icon: '🛒',
                 title: 'Abandoned Cart Saver',
-                subtitle: 'Recover lost sales with intelligent cart recovery',
-                overview: 'Automatically detect when customers abandon their shopping carts and send perfectly-timed, personalized recovery emails that bring them back to complete their purchase.',
-                howItWorks: [
-                    'Tracks customer shopping behavior in real-time',
-                    'Detects cart abandonment instantly',
-                    'Waits for optimal recovery window (1-24 hours)',
-                    'Sends personalized recovery email sequence',
-                    'Includes product images and special offers',
-                    'A/B tests subject lines and content for best results'
-                ],
-                benefits: [
-                    'Recover up to 30% of abandoned carts',
-                    'Increase revenue by 10-15% on average',
-                    'Understand why customers abandon carts',
-                    'Offer targeted incentives to close sales',
-                    'Build customer relationships with helpful reminders',
-                    'Track recovery rates and optimize campaigns'
-                ],
-                idealFor: 'E-commerce stores, online retailers, subscription services, digital product sellers, B2B suppliers, and any business with online checkout.'
+                icon: '🛒',
+                overview: 'Recover up to 30% of abandoned carts automatically.',
+                features: [
+                    'Real-time abandonment detection',
+                    'Personalized recovery emails',
+                    'Strategic timing optimization',
+                    'Special offer integration',
+                    'Recovery rate analytics'
+                ]
             }
         };
         
-        // Open modal
-        viewAgentsBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.classList.add('active');
+        function openAgentsModal() {
+            document.getElementById('agentsModal').classList.add('active');
             document.body.style.overflow = 'hidden';
-            showGridView();
-        });
-        
-        // Show grid view
-        function showGridView() {
-            agentsGridView.style.display = 'block';
-            agentDetailView.style.display = 'none';
-            agentDetailView.classList.remove('active');
         }
         
-        // Show detail view
-        function showDetailView(agentId) {
+        function closeAgentsModal() {
+            document.getElementById('agentsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            showGridView();
+        }
+        
+        function showAgentDetail(agentId) {
             const agent = agentDetails[agentId];
             if (!agent) return;
             
-            agentDetailView.innerHTML = `
-                <div class="detail-header">
-                    <button class="back-button">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
-                        </svg>
-                        Back to All Agents
-                    </button>
+            const detailView = document.getElementById('agentDetailView');
+            detailView.innerHTML = `
+                <button class="back-button" onclick="showGridView()">← Back to All Agents</button>
+                <div style="text-align: center; margin-bottom: 32px;">
+                    <div style="font-size: 60px; margin-bottom: 16px;">${agent.icon}</div>
+                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 16px;">${agent.title}</h2>
+                    <p style="color: #4a5568; font-size: 1.1rem;">${agent.overview}</p>
                 </div>
-                <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px;">
-                    <div class="detail-icon">${agent.icon}</div>
-                    <div class="detail-title">
-                        <h3>${agent.title}</h3>
-                        <p class="detail-subtitle">${agent.subtitle}</p>
-                    </div>
+                <div class="detail-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        ${agent.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
                 </div>
-                <div class="detail-content">
-                    <div class="detail-section">
-                        <h4>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"/>
-                            </svg>
-                            Overview
-                        </h4>
-                        <p>${agent.overview}</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"/>
-                            </svg>
-                            How It Works
-                        </h4>
-                        <ul>
-                            ${agent.howItWorks.map(step => `<li>${step}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M16.53,11.06L15.47,10L10.59,14.88L8.47,12.76L7.41,13.82L10.59,17L16.53,11.06Z"/>
-                            </svg>
-                            Key Benefits
-                        </h4>
-                        <ul>
-                            ${agent.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
-                            </svg>
-                            Ideal For
-                        </h4>
-                        <p>${agent.idealFor}</p>
-                    </div>
-                </div>
-                <div class="detail-cta">
-                    <a href="#contact" class="btn btn-primary modal-cta">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M13 7L11 7L11 11L7 11L7 13L11 13L11 17L13 17L13 13L17 13L17 11L13 11L13 7Z"/>
-                        </svg>
-                        Get Started with ${agent.title}
-                    </a>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#contact" class="btn btn-primary" onclick="closeAgentsModal()">Get Started with ${agent.title}</a>
                 </div>
             `;
             
-            agentsGridView.style.display = 'none';
-            agentDetailView.style.display = 'block';
-            setTimeout(() => {
-                agentDetailView.classList.add('active');
-            }, 10);
-            
-            // Add back button listener
-            const backButton = agentDetailView.querySelector('.back-button');
-            backButton.addEventListener('click', showGridView);
-            
-            // Add CTA listener
-            const detailCTA = agentDetailView.querySelector('.modal-cta');
-            detailCTA.addEventListener('click', () => {
-                closeModal();
-            });
+            document.getElementById('agentsGridView').style.display = 'none';
+            detailView.classList.add('active');
         }
         
-        // Add click listeners to agent items
-        document.querySelectorAll('.agent-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const agentId = item.getAttribute('data-agent');
-                showDetailView(agentId);
-            });
-        });
-        
-        // Close modal functions
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            setTimeout(() => {
-                showGridView();
-            }, 300);
+        function showGridView() {
+            document.getElementById('agentsGridView').style.display = 'block';
+            document.getElementById('agentDetailView').classList.remove('active');
         }
         
-        modalClose.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', closeModal);
-        
-        // Close modal when clicking main CTA button
-        modalCTA.addEventListener('click', () => {
-            closeModal();
-        });
-        
-        // Close modal with escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.25)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-                navbar.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
-            }
-        });
-        
-        // Enhanced smooth scrolling with offset for navbar
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 100;
-                    const targetPosition = target.offsetTop - offset;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Enhanced fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    
-                    if (entry.target.classList.contains('services')) {
-                        const cards = entry.target.querySelectorAll('.service-card');
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, index * 100);
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Initialize service cards as hidden for stagger effect
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-        });
-        
-        // Animated counters with easing
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
+        // Client Portal Functions
+        function handleClientLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('clientEmail').value;
+            const password = document.getElementById('clientPassword').value;
             
-            counters.forEach(counter => {
-                if (counter.classList.contains('special')) {
-                    const target = 24;
-                    const duration = 2000;
-                    const step = target / (duration / 16);
-                    let current = 0;
-                    
-                    const numberElement = counter.querySelector('[data-target]');
-                    const updateCounter = () => {
-                        current += step;
-                        if (current < target) {
-                            numberElement.textContent = Math.ceil(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            numberElement.textContent = target;
-                        }
-                    };
-                    updateCounter();
-                } else {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    if (target) {
-                        const duration = 2000;
-                        const step = target / (duration / 16);
-                        let current = 0;
-                        
-                        const updateCounter = () => {
-                            current += step;
-                            if (current < target) {
-                                counter.textContent = Math.ceil(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.textContent = target;
-                            }
-                        };
-                        updateCounter();
-                    }
-                }
-            });
+            // Simple validation (in production, this would verify against a database)
+            if (email && password) {
+                document.getElementById('client-portal').style.display = 'none';
+                document.getElementById('client-edit-form').style.display = 'block';
+                alert('Welcome to your client portal!');
+            }
         }
         
-        // Trigger counter animation when stats section is visible
-        const statsSection = document.querySelector('.stats');
-        let statsAnimated = false;
+        function handleEditRequest(event) {
+            event.preventDefault();
+            alert('Your edit request has been submitted! Our team will review it within 24 hours.');
+            event.target.reset();
+        }
         
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    animateCounters();
-                    statsAnimated = true;
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        statsObserver.observe(statsSection);
-        
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-        
-        // Enhanced form submission with EmailJS and mailto fallback
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const button = this.querySelector('.btn-primary');
-            const originalHTML = button.innerHTML;
-            const form = this;
-            
-            const name = form.querySelector('input[name="name"]').value;
-            const email = form.querySelector('input[name="email"]').value;
-            const company = form.querySelector('input[name="company"]').value;
-            const message = form.querySelector('textarea[name="message"]').value;
-            
-            button.disabled = true;
-            button.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="animation: spin 1s linear infinite;">
-                    <path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z"/>
-                </svg>
-                Sending...
-            `;
-            
-            if (typeof emailjs !== 'undefined' && window.emailjsConfigured) {
-                const templateParams = {
-                    from_name: name,
-                    from_email: email,
-                    company: company,
-                    message: message,
-                    to_email: 'andrew@brightautomations.net'
-                };
-                
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                    .then(function(response) {
-                        button.innerHTML = `
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                            </svg>
-                            Message Sent!
-                        `;
-                        button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
-                        
-                        setTimeout(() => {
-                            button.disabled = false;
-                            button.innerHTML = originalHTML;
-                            button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                            form.reset();
-                        }, 3000);
-                        
-                    }, function(error) {
-                        openMailto();
-                    });
-            } else {
-                setTimeout(openMailto, 1500);
-            }
-            
-            function openMailto() {
-                const subject = encodeURIComponent(`New Project Inquiry from ${name}`);
-                const body = encodeURIComponent(
-                    `Name: ${name}\n` +
-                    `Email: ${email}\n` +
-                    `Company: ${company}\n\n` +
-                    `Message:\n${message}\n\n` +
-                    `---\nSent from Bright Automations website`
-                );
-                
-                const mailtoLink = `mailto:andrew@brightautomations.net?subject=${subject}&body=${body}`;
-                
-                window.location.href = mailtoLink;
-                
-                button.innerHTML = `
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.11,4 20,4Z"/>
-                    </svg>
-                    Email Opened
-                `;
-                button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
-                
-                setTimeout(() => {
-                    button.disabled = false;
-                    button.innerHTML = originalHTML;
-                    button.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                }, 3000);
-            }
-        });
-        
-        // Parallax effect for background elements
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            
-            document.querySelector('.tech-grid').style.transform = `translateY(${rate}px)`;
-            
-            const shapes = document.querySelectorAll('.shape');
-            shapes.forEach((shape, index) => {
-                const shapeRate = scrolled * (0.3 + index * 0.1);
-                shape.style.transform = `translateY(${shapeRate}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
+        function logout() {
+            document.getElementById('client-edit-form').style.display = 'none';
+            document.getElementById('client-portal').style.display = 'block';
+            document.getElementById('clientLoginForm').reset();
+        }
     </script>
 </body>
 </html>
