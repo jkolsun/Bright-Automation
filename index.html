@@ -3,856 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Automations - AI-Powered Web Development</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-            color: #1a202c;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: #1a202c;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #667eea;
-        }
-        
-        .client-login-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .client-login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-        }
-        
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #1a202c 0%, #667eea 50%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            color: #4a5568;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(102, 126, 234, 0.2);
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal.active {
-            display: flex;
-        }
-        
-        .modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-        }
-        
-        .modal-content {
-            position: relative;
-            background: white;
-            border-radius: 24px;
-            max-width: 1100px;
-            width: 90%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 48px;
-            box-shadow: 0 25px 100px rgba(102, 126, 234, 0.3);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            width: 40px;
-            height: 40px;
-            background: rgba(102, 126, 234, 0.1);
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-close:hover {
-            background: rgba(102, 126, 234, 0.2);
-            transform: rotate(90deg);
-        }
-        
-        .modal-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        
-        .modal-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-        }
-        
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-        
-        .agent-item {
-            background: rgba(102, 126, 234, 0.05);
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-        
-        .agent-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
-        }
-        
-        .agent-icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        
-        .agent-item h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .agent-item p {
-            color: #4a5568;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        
-        .learn-more-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .learn-more-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        /* Agent Detail View */
-        .agent-detail-view {
-            display: none;
-        }
-        
-        .agent-detail-view.active {
-            display: block;
-        }
-        
-        .back-button {
-            background: rgba(102, 126, 234, 0.1);
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            color: #667eea;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 32px;
-        }
-        
-        .detail-content {
-            margin-top: 32px;
-        }
-        
-        .detail-section {
-            background: rgba(102, 126, 234, 0.03);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 24px;
-        }
-        
-        .detail-section h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 16px;
-        }
-        
-        .detail-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .detail-section li {
-            padding-left: 28px;
-            position: relative;
-            margin-bottom: 12px;
-            color: #4a5568;
-        }
-        
-        .detail-section li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: 700;
-        }
-        
-        /* Client Portal Login */
-        .client-portal {
-            background: white;
-            border-radius: 24px;
-            padding: 48px;
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 25px 100px rgba(102, 126, 234, 0.2);
-        }
-        
-        .client-portal h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 32px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #1a202c;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        /* Sections */
-        .section {
-            padding: 100px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .agents-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                padding: 32px 20px;
-            }
-        }
-    </style>
+    <meta name="description" content="Bright Automations - AI-Powered Web Development and Business Automation Solutions for Modern Businesses">
+    <meta name="keywords" content="web development, AI automation, business automation, website design, chatbots">
+    <title>Bright Automations - AI-Powered Web Development & Automation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">B</div>
                 <span>Bright Automations</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#client-portal" class="client-login-btn">Client Portal</a></li>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
             </ul>
+
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>AI-Powered Web Development</h1>
-            <p>We design and develop modern, high-performing websites tailored to retail, contracting, and professional businesses.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Start Your Project</a>
-                <button class="btn btn-secondary" onclick="openAgentsModal()">View Our AI Agents</button>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Transform Your Business with AI-Powered Automation</h1>
+                <p>We design modern, high-performing websites and intelligent automation solutions that help retail, contracting, and professional businesses thrive in the digital age.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                    <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                </div>
+
+                <div class="feature-cards">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized for speed and performance</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI-Powered</h3>
+                        <p>Intelligent automation that works 24/7</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-mobile-screen"></i></div>
+                        <h3>Fully Responsive</h3>
+                        <p>Perfect on every device</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div style="background: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 300px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="margin-bottom: 16px;">Modern Web Design</h3>
-                <p style="color: #4a5568;">Cutting-edge, responsive websites that captivate your audience.</p>
-            </div>
-            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="margin-bottom: 16px;">AI Integration</h3>
-                <p style="color: #4a5568;">Intelligent chatbots and automated workflows for efficiency.</p>
-            </div>
-            <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="margin-bottom: 16px;">Performance Optimization</h3>
-                <p style="color: #4a5568;">Lightning-fast loading speeds and SEO optimization.</p>
+
+    <!-- Stats Section -->
+    <section class="section" style="background: white;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div class="grid grid-4">
+                <div style="text-align: center;" class="animate-on-scroll">
+                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="50">0</div>
+                    <div style="color: var(--gray-600); font-weight: 600;">Projects Completed</div>
+                </div>
+                <div style="text-align: center;" class="animate-on-scroll">
+                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="100">0</div>
+                    <div style="color: var(--gray-600); font-weight: 600;">Happy Clients</div>
+                </div>
+                <div style="text-align: center;" class="animate-on-scroll">
+                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="99">0</div>
+                    <div style="color: var(--gray-600); font-weight: 600;">Satisfaction Rate</div>
+                </div>
+                <div style="text-align: center;" class="animate-on-scroll">
+                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="24">0</div>
+                    <div style="color: var(--gray-600); font-weight: 600;">Support Hours</div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2 class="section-title">Contact Us</h2>
-        <div style="max-width: 600px; margin: 0 auto;">
-            <form style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+
+    <!-- Services Preview -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">Comprehensive solutions to elevate your business to the next level</p>
         </div>
-    </section>
-    
-    <!-- Client Portal Section -->
-    <section class="section" id="client-portal">
-        <div class="client-portal">
-            <h2>Client Portal Login</h2>
-            <form id="clientLoginForm" onsubmit="handleClientLogin(event)">
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="clientEmail" required>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="clientPassword" required>
-                </div>
-                <button type="submit" class="submit-btn">Login to Portal</button>
-            </form>
-        </div>
-    </section>
-    
-    <!-- Client Edit Request Form (Initially Hidden) -->
-    <section class="section" id="client-edit-form" style="display: none;">
-        <div class="client-portal">
-            <h2>Website Edit Request</h2>
-            <form id="editRequestForm" onsubmit="handleEditRequest(event)">
-                <div class="form-group">
-                    <label>What page needs editing?</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>Describe the changes needed</label>
-                    <textarea rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Priority Level</label>
-                    <select style="width: 100%; padding: 12px; border: 2px solid rgba(102, 126, 234, 0.2); border-radius: 8px;">
-                        <option>Low - Within a week</option>
-                        <option>Medium - Within 3 days</option>
-                        <option>High - Within 24 hours</option>
-                        <option>Urgent - ASAP</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">Submit Edit Request</button>
-                <button type="button" onclick="logout()" style="margin-top: 16px; width: 100%; padding: 14px; background: #e53e3e; color: white; border: none; border-radius: 8px; cursor: pointer;">Logout</button>
-            </form>
-        </div>
-    </section>
-    
-    <!-- Agents Modal -->
-    <div id="agentsModal" class="modal">
-        <div class="modal-overlay" onclick="closeAgentsModal()"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeAgentsModal()">&times;</button>
-            
-            <!-- Grid View -->
-            <div id="agentsGridView">
-                <div class="modal-header">
-                    <h2>Our AI Automation Agents</h2>
-                    <p style="color: #4a5568;">Click "Learn More" to see details about each automation</p>
-                </div>
-                <div class="agents-grid">
-                    <!-- Email Marketing -->
-                    <div class="agent-item">
-                        <div class="agent-icon">📧</div>
-                        <h3>Mass Email Marketing</h3>
-                        <p>Personalized campaigns that send automatically to your customer list</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('email-marketing')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Gmail Organizer -->
-                    <div class="agent-item">
-                        <div class="agent-icon">📬</div>
-                        <h3>Gmail Organizer</h3>
-                        <p>Filters, tags, and AI-sorted inbox so you never miss a lead</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('gmail-organizer')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Website Chatbot -->
-                    <div class="agent-item">
-                        <div class="agent-icon">💬</div>
-                        <h3>Website Chatbot</h3>
-                        <p>24/7 assistant that answers FAQs and captures leads</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('chatbot')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Smart Lead Follow-Up -->
-                    <div class="agent-item">
-                        <div class="agent-icon">🎯</div>
-                        <h3>Smart Lead Follow-Up</h3>
-                        <p>Every new lead receives instant reply and CRM logging</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('lead-followup')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Review Collector -->
-                    <div class="agent-item">
-                        <div class="agent-icon">⭐</div>
-                        <h3>Customer Review Collector</h3>
-                        <p>Automated review requests with smart sentiment routing</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('review-collector')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Payment Flow -->
-                    <div class="agent-item">
-                        <div class="agent-icon">💳</div>
-                        <h3>Quote → Invoice → Payment</h3>
-                        <p>End-to-end billing automation from quote to payment</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('payment-flow')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Scheduling -->
-                    <div class="agent-item">
-                        <div class="agent-icon">📅</div>
-                        <h3>Appointment Scheduling</h3>
-                        <p>Smart calendar management with automated reminders</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('scheduling')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Performance Briefing -->
-                    <div class="agent-item">
-                        <div class="agent-icon">📊</div>
-                        <h3>Daily Performance Briefing</h3>
-                        <p>Morning summary of all your business metrics</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('performance')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Social Repurposer -->
-                    <div class="agent-item">
-                        <div class="agent-icon">📱</div>
-                        <h3>Social Media Repurposer</h3>
-                        <p>Turn one piece of content into posts for all platforms</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('social')">Learn More →</button>
-                    </div>
-                    
-                    <!-- Cart Saver -->
-                    <div class="agent-item">
-                        <div class="agent-icon">🛒</div>
-                        <h3>Abandoned Cart Saver</h3>
-                        <p>Recover lost sales with intelligent cart recovery</p>
-                        <button class="learn-more-btn" onclick="showAgentDetail('cart-saver')">Learn More →</button>
-                    </div>
-                </div>
+
+        <div class="grid grid-3">
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-palette"></i></div>
+                <h3>Modern Web Design</h3>
+                <p>Cutting-edge, responsive websites that captivate your audience and drive conversions. Every design is crafted with your brand identity and business goals in mind.</p>
+                <a href="services.html#web-design" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
             </div>
-            
-            <!-- Detail View -->
-            <div id="agentDetailView" class="agent-detail-view">
-                <!-- Content will be dynamically inserted here -->
+
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI Automation</h3>
+                <p>Intelligent chatbots, automated workflows, and smart systems that work 24/7 to boost efficiency and improve customer experience.</p>
+                <a href="services.html#ai-automation" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-gauge-high"></i></div>
+                <h3>Performance Optimization</h3>
+                <p>Lightning-fast loading speeds, SEO optimization, and technical excellence that puts you ahead of the competition.</p>
+                <a href="services.html#optimization" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Email Marketing</h3>
+                <p>Automated email campaigns with AI-powered personalization that nurture leads and drive repeat business.</p>
+                <a href="services.html#email-marketing" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <h3>Live Chat Support</h3>
+                <p>24/7 AI-powered chatbots that answer questions, qualify leads, and book appointments while you sleep.</p>
+                <a href="services.html#chatbot" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
+            </div>
+
+            <div class="card animate-on-scroll">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Analytics & Insights</h3>
+                <p>Comprehensive tracking and reporting to understand your customers and make data-driven decisions.</p>
+                <a href="services.html#analytics" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
             </div>
         </div>
-    </div>
-    
-    <script>
-        // Agent details data
-        const agentDetails = {
-            'email-marketing': {
-                title: 'Mass Email Marketing',
-                icon: '📧',
-                overview: 'Transform your email marketing with intelligent automation that personalizes every message.',
-                features: [
-                    'AI-powered subject line optimization',
-                    'Automatic audience segmentation',
-                    'Behavior-triggered campaigns',
-                    'Real-time analytics dashboard',
-                    'A/B testing automation'
-                ]
-            },
-            'gmail-organizer': {
-                title: 'Gmail Organizer',
-                icon: '📬',
-                overview: 'Never miss an important email again with AI-powered inbox management.',
-                features: [
-                    'Smart email categorization',
-                    'Priority inbox for leads',
-                    'Automatic follow-up reminders',
-                    'CRM integration',
-                    'VIP contact alerts'
-                ]
-            },
-            'chatbot': {
-                title: 'Website Chatbot',
-                icon: '💬',
-                overview: '24/7 intelligent customer service that never sleeps.',
-                features: [
-                    'Instant customer responses',
-                    'Lead qualification',
-                    'Appointment booking',
-                    'FAQ automation',
-                    'Multi-language support'
-                ]
-            },
-            'lead-followup': {
-                title: 'Smart Lead Follow-Up',
-                icon: '🎯',
-                overview: 'Convert more leads with instant, personalized follow-up.',
-                features: [
-                    'Instant lead acknowledgment',
-                    'CRM auto-logging',
-                    'Lead scoring',
-                    'Automated nurture sequences',
-                    'Hot lead alerts'
-                ]
-            },
-            'review-collector': {
-                title: 'Customer Review Collector',
-                icon: '⭐',
-                overview: 'Build your reputation with systematic review collection.',
-                features: [
-                    'Automated review requests',
-                    'Sentiment analysis',
-                    'Private feedback capture',
-                    'Multi-platform posting',
-                    'Review monitoring alerts'
-                ]
-            },
-            'payment-flow': {
-                title: 'Quote → Invoice → Payment Flow',
-                icon: '💳',
-                overview: 'Streamline your entire billing process from start to finish.',
-                features: [
-                    'Instant quote generation',
-                    'E-signature contracts',
-                    'Automated invoicing',
-                    'Payment reminders',
-                    'Real-time cash flow tracking'
-                ]
-            },
-            'scheduling': {
-                title: 'Appointment & Job Scheduling',
-                icon: '📅',
-                overview: 'Eliminate double-booking and reduce no-shows by 80%.',
-                features: [
-                    'Online booking widget',
-                    'Calendar sync',
-                    'Automated reminders',
-                    'Buffer time management',
-                    'Rescheduling handling'
-                ]
-            },
-            'performance': {
-                title: 'Daily Performance Briefing',
-                icon: '📊',
-                overview: 'Start each day with complete business intelligence.',
-                features: [
-                    'Automated KPI tracking',
-                    'Sales performance metrics',
-                    'Lead pipeline status',
-                    'Task priorities',
-                    'Anomaly detection'
-                ]
-            },
-            'social': {
-                title: 'Social Media Repurposer',
-                icon: '📱',
-                overview: 'Create 10x more content with the same effort.',
-                features: [
-                    'Multi-platform optimization',
-                    'Hashtag generation',
-                    'Visual asset creation',
-                    'Scheduling automation',
-                    'Performance tracking'
-                ]
-            },
-            'cart-saver': {
-                title: 'Abandoned Cart Saver',
-                icon: '🛒',
-                overview: 'Recover up to 30% of abandoned carts automatically.',
-                features: [
-                    'Real-time abandonment detection',
-                    'Personalized recovery emails',
-                    'Strategic timing optimization',
-                    'Special offer integration',
-                    'Recovery rate analytics'
-                ]
-            }
-        };
-        
-        function openAgentsModal() {
-            document.getElementById('agentsModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeAgentsModal() {
-            document.getElementById('agentsModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-            showGridView();
-        }
-        
-        function showAgentDetail(agentId) {
-            const agent = agentDetails[agentId];
-            if (!agent) return;
-            
-            const detailView = document.getElementById('agentDetailView');
-            detailView.innerHTML = `
-                <button class="back-button" onclick="showGridView()">← Back to All Agents</button>
-                <div style="text-align: center; margin-bottom: 32px;">
-                    <div style="font-size: 60px; margin-bottom: 16px;">${agent.icon}</div>
-                    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 16px;">${agent.title}</h2>
-                    <p style="color: #4a5568; font-size: 1.1rem;">${agent.overview}</p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="btn btn-primary">View All Services</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">A proven process that delivers exceptional results</p>
+        </div>
+
+        <div class="grid grid-4">
+            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">1</div>
+                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Discover</h3>
+                <p style="color: var(--gray-600);">We learn about your business, goals, and target audience</p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">2</div>
+                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Design</h3>
+                <p style="color: var(--gray-600);">Create stunning designs tailored to your brand</p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">3</div>
+                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Develop</h3>
+                <p style="color: var(--gray-600);">Build with cutting-edge technology and best practices</p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
+                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">4</div>
+                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Deploy</h3>
+                <p style="color: var(--gray-600);">Launch and provide ongoing support and optimization</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem;">Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Let's create something amazing together. Get a free consultation and discover how we can help you grow.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn" style="background: white; color: var(--primary);">Get Started Today</a>
+                <a href="portfolio.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bright Automations</h3>
+                    <p>Empowering businesses with modern web solutions and intelligent automation.</p>
                 </div>
-                <div class="detail-section">
-                    <h4>Key Features</h4>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
                     <ul>
-                        ${agent.features.map(feature => `<li>${feature}</li>`).join('')}
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="#contact" class="btn btn-primary" onclick="closeAgentsModal()">Get Started with ${agent.title}</a>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#web-design">Web Design</a></li>
+                        <li><a href="services.html#ai-automation">AI Automation</a></li>
+                        <li><a href="services.html#email-marketing">Email Marketing</a></li>
+                        <li><a href="services.html#chatbot">Chatbots</a></li>
+                    </ul>
                 </div>
-            `;
-            
-            document.getElementById('agentsGridView').style.display = 'none';
-            detailView.classList.add('active');
-        }
-        
-        function showGridView() {
-            document.getElementById('agentsGridView').style.display = 'block';
-            document.getElementById('agentDetailView').classList.remove('active');
-        }
-        
-        // Client Portal Functions
-        function handleClientLogin(event) {
-            event.preventDefault();
-            const email = document.getElementById('clientEmail').value;
-            const password = document.getElementById('clientPassword').value;
-            
-            // Simple validation (in production, this would verify against a database)
-            if (email && password) {
-                document.getElementById('client-portal').style.display = 'none';
-                document.getElementById('client-edit-form').style.display = 'block';
-                alert('Welcome to your client portal!');
-            }
-        }
-        
-        function handleEditRequest(event) {
-            event.preventDefault();
-            alert('Your edit request has been submitted! Our team will review it within 24 hours.');
-            event.target.reset();
-        }
-        
-        function logout() {
-            document.getElementById('client-edit-form').style.display = 'none';
-            document.getElementById('client-portal').style.display = 'block';
-            document.getElementById('clientLoginForm').reset();
-        }
-    </script>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@brightautomations.com">info@brightautomations.com</a></li>
+                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
+                        <li><a href="client-portal.html">Client Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
