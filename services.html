@@ -16,26 +16,121 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Mobile Overrides -->
+    <style>
+        /* Nav social icons */
+        .nav-social {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .nav-social a {
+            color: var(--gray-400);
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-social a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Center pricing categories */
+        .pricing-category {
+            margin-bottom: 3rem;
+        }
+        .pricing-category .scroll-container {
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            /* Stack image-text sections on mobile */
+            .image-text-section {
+                grid-template-columns: 1fr !important;
+            }
+            .image-text-section.reverse {
+                grid-template-columns: 1fr !important;
+            }
+            .image-text-section .section-image {
+                order: 2;
+            }
+
+            /* Pricing cards - horizontal scroll on mobile */
+            .pricing-category .scroll-container {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 1rem;
+                gap: 1rem;
+                justify-content: flex-start;
+            }
+            .pricing-category .scroll-container .card {
+                flex: 0 0 85vw;
+                max-width: 320px;
+                min-width: 280px;
+                scroll-snap-align: center;
+            }
+
+            /* Show scroll hints on mobile for pricing */
+            .pricing-category .scroll-hint {
+                display: flex;
+            }
+
+            /* AI Agents scroll container - keep horizontal scroll */
+            section:not(.section-full) > .scroll-container {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            section:not(.section-full) > .scroll-container .card {
+                flex: 0 0 85vw;
+                max-width: 320px;
+                min-width: 280px;
+                scroll-snap-align: center;
+            }
+
+            /* Mini features grid */
+            .mini-features {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">B</div>
-                <span>Bright Automations</span>
+                <img src="images/logo.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback" style="display: none;">
+                    <div class="logo-icon">B</div>
+                    <span>Bright Automations</span>
+                </div>
             </a>
 
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
             </ul>
 
-            <button class="mobile-menu-toggle">
+            <div class="nav-social">
+                <a href="YOUR_FACEBOOK_URL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="YOUR_TWITTER_URL" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="YOUR_INSTAGRAM_URL" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,98 +139,82 @@
     </nav>
 
     <!-- Page Header -->
-    <section style="padding: 8rem 2rem 4rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1.5rem;">Our Services</h1>
-            <p style="font-size: 1.25rem; opacity: 0.95;">Comprehensive solutions to transform your business with modern technology</p>
-        </div>
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive solutions to transform your business with modern technology</p>
     </section>
 
     <!-- Web Design Service -->
     <section class="section" id="web-design">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
-            <div class="animate-on-scroll">
-                <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">Web Design</div>
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Modern, Responsive Website Design</h2>
-                <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">Create a stunning online presence that captivates your audience and drives results. Our custom-designed websites are built with your brand identity and business goals at the forefront.</p>
+        <div class="image-text-section">
+            <div class="service-content animate-on-scroll">
+                <span class="service-badge"><i class="fas fa-palette"></i> Web Design</span>
+                <h2>Modern, Responsive Website Design</h2>
+                <p>Create a stunning online presence that captivates your audience and drives results. Our custom-designed websites are built with your brand identity and business goals at the forefront.</p>
 
-                <div style="background: var(--gray-50); padding: 2rem; border-radius: 1rem; margin-bottom: 2rem;">
-                    <h3 style="font-weight: 700; margin-bottom: 1rem;">What's Included:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem;">
-                            <span style="color: var(--primary); font-weight: 700;">✓</span>
-                            <span>Custom design tailored to your brand</span>
-                        </li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem;">
-                            <span style="color: var(--primary); font-weight: 700;">✓</span>
-                            <span>Mobile-first responsive layouts</span>
-                        </li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem;">
-                            <span style="color: var(--primary); font-weight: 700;">✓</span>
-                            <span>SEO-optimized structure</span>
-                        </li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem;">
-                            <span style="color: var(--primary); font-weight: 700;">✓</span>
-                            <span>Fast loading speeds</span>
-                        </li>
-                        <li style="padding: 0.75rem 0; display: flex; align-items: center; gap: 0.75rem;">
-                            <span style="color: var(--primary); font-weight: 700;">✓</span>
-                            <span>Content management system</span>
-                        </li>
+                <div class="service-features">
+                    <h3>What's Included:</h3>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Custom design tailored to your brand</li>
+                        <li><i class="fas fa-check"></i> Mobile-first responsive layouts</li>
+                        <li><i class="fas fa-check"></i> SEO-optimized structure</li>
+                        <li><i class="fas fa-check"></i> Fast loading speeds</li>
+                        <li><i class="fas fa-check"></i> Content management system</li>
                     </ul>
                 </div>
 
                 <a href="contact.html" class="btn btn-primary">Get Started</a>
             </div>
-            <div class="animate-on-scroll">
-                <div style="background: white; padding: 2rem; border-radius: 2rem; box-shadow: 0 25px 50px rgba(0,0,0,0.1);">
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); height: 400px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: #667eea;">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                </div>
+            <div class="section-image animate-on-scroll">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 1rem;">
+                    <source src="videos/webdesign.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
 
     <!-- AI Automation Service -->
-    <section class="section" id="ai-automation" style="background: white;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
-            <div class="animate-on-scroll">
-                <div style="background: white; padding: 2rem; border-radius: 2rem; box-shadow: 0 25px 50px rgba(0,0,0,0.1);">
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: white;">
+    <section class="section-full bg-light" id="ai-automation">
+        <div class="container">
+            <div class="image-text-section reverse">
+                <div class="service-content animate-on-scroll">
+                    <span class="service-badge"><i class="fas fa-robot"></i> AI Automation</span>
+                    <h2>Intelligent Business Automation</h2>
+                    <p>Streamline your operations with cutting-edge AI technology that works 24/7. From chatbots to workflow automation, we help you work smarter, not harder.</p>
+
+                    <div class="mini-features" style="margin-bottom: 2rem;">
+                        <div class="mini-feature">
+                            <i class="fas fa-comments"></i>
+                            <h4>AI Chatbots</h4>
+                            <p>24/7 customer support, lead qualification, and appointment booking</p>
+                        </div>
+                        <div class="mini-feature">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Automation</h4>
+                            <p>Smart email campaigns with personalization and auto-responses</p>
+                        </div>
+                        <div class="mini-feature">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Lead Follow-up</h4>
+                            <p>Instant responses and CRM integration for every lead</p>
+                        </div>
+                        <div class="mini-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Analytics</h4>
+                            <p>Daily performance briefings and business insights</p>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Explore Automation</a>
+                </div>
+                <div class="section-image animate-on-scroll">
+                    <img src="images/aiagent.jpg" alt="AI Automation Service" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none;">
                         <i class="fas fa-robot"></i>
+                        <span>AI Automation</span>
                     </div>
                 </div>
-            </div>
-            <div class="animate-on-scroll">
-                <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">AI Automation</div>
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Intelligent Business Automation</h2>
-                <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">Streamline your operations with cutting-edge AI technology that works 24/7. From chatbots to workflow automation, we help you work smarter, not harder.</p>
-
-                <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 2rem;">
-                    <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 1rem;">
-                        <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #667eea;"><i class="fas fa-comments"></i></div>
-                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">AI Chatbots</h4>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">24/7 customer support, lead qualification, and appointment booking</p>
-                    </div>
-                    <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 1rem;">
-                        <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #667eea;"><i class="fas fa-envelope"></i></div>
-                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Email Automation</h4>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Smart email campaigns with personalization and auto-responses</p>
-                    </div>
-                    <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 1rem;">
-                        <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #667eea;"><i class="fas fa-bullseye"></i></div>
-                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Lead Follow-up</h4>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Instant responses and CRM integration for every lead</p>
-                    </div>
-                    <div style="background: var(--gray-50); padding: 1.5rem; border-radius: 1rem;">
-                        <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #667eea;"><i class="fas fa-chart-line"></i></div>
-                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Analytics</h4>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Daily performance briefings and business insights</p>
-                    </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-primary">Explore Automation</a>
             </div>
         </div>
     </section>
@@ -143,6 +222,7 @@
     <!-- All Automation Agents -->
     <section class="section">
         <div class="section-header">
+            <span class="section-label"><i class="fas fa-microchip"></i> AI Agents</span>
             <h2 class="section-title">Our Automation Agents</h2>
             <p class="section-subtitle">Powerful AI tools that work for your business around the clock</p>
         </div>
@@ -150,493 +230,479 @@
         <div class="scroll-container">
             <!-- Most Popular Agents First -->
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-comments"></i></div>
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
                 <h3>Website Chatbot</h3>
                 <p>24/7 assistant that answers FAQs, qualifies leads, and captures contact information while you focus on your business.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Instant customer responses</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Appointment booking</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Multi-language support</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Instant customer responses</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Appointment booking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Multi-language support</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-bullseye"></i></div>
+                <div class="card-icon"><i class="fas fa-bullseye"></i></div>
                 <h3>Smart Lead Follow-Up</h3>
                 <p>Every new lead receives instant reply and CRM logging. Never let a hot lead go cold with automated nurture sequences.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Instant acknowledgment</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Lead scoring</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Hot lead alerts</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Instant acknowledgment</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Lead scoring</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Hot lead alerts</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-envelope-open-text"></i></div>
+                <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
                 <h3>Mass Email Marketing</h3>
-                <p>Personalized campaigns that send automatically to your customer list with AI-powered subject line optimization and audience segmentation.</p>
+                <p>Personalized campaigns that send automatically to your customer list with AI-powered subject line optimization.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Behavior-triggered campaigns</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• A/B testing automation</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Real-time analytics</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Behavior-triggered campaigns</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> A/B testing automation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Real-time analytics</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-calendar-check"></i></div>
+                <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
                 <h3>Appointment Scheduling</h3>
                 <p>Smart calendar management with automated reminders. Reduce no-shows by 80% with intelligent scheduling.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Online booking widget</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Calendar sync</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Automated reminders</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Online booking widget</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Calendar sync</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Automated reminders</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-star"></i></div>
+                <div class="card-icon"><i class="fas fa-star"></i></div>
                 <h3>Customer Review Collector</h3>
                 <p>Automated review requests with smart sentiment routing. Turn satisfied customers into 5-star reviews automatically.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Sentiment analysis</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Private feedback capture</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Multi-platform posting</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Sentiment analysis</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Private feedback capture</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Multi-platform posting</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-file-invoice-dollar"></i></div>
-                <h3>Quote → Invoice → Payment</h3>
+                <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Quote to Invoice to Payment</h3>
                 <p>End-to-end billing automation from quote to payment. Streamline your entire financial workflow.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Instant quote generation</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• E-signature contracts</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Payment reminders</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Instant quote generation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> E-signature contracts</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Payment reminders</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-calendar-check"></i></div>
-                <h3>Appointment Scheduling</h3>
-                <p>Smart calendar management with automated reminders. Reduce no-shows by 80% with intelligent scheduling.</p>
-                <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Online booking widget</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Calendar sync</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Automated reminders</li>
-                </ul>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-chart-pie"></i></div>
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
                 <h3>Daily Performance Briefing</h3>
                 <p>Morning summary of all your business metrics. Start each day with complete business intelligence.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Automated KPI tracking</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Sales metrics</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Anomaly detection</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Automated KPI tracking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Sales metrics</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Anomaly detection</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-share-nodes"></i></div>
+                <div class="card-icon"><i class="fas fa-share-nodes"></i></div>
                 <h3>Social Media Repurposer</h3>
                 <p>Turn one piece of content into posts for all platforms. Create 10x more content with the same effort.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Multi-platform optimization</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Hashtag generation</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Performance tracking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Multi-platform optimization</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Hashtag generation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Performance tracking</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-shopping-cart"></i></div>
+                <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
                 <h3>Abandoned Cart Saver</h3>
                 <p>Recover lost sales with intelligent cart recovery. Recover up to 30% of abandoned carts automatically.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Real-time detection</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Personalized recovery emails</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Special offer integration</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Real-time detection</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Personalized recovery emails</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Special offer integration</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-users"></i></div>
+                <div class="card-icon"><i class="fas fa-users"></i></div>
                 <h3>Customer Segmentation Agent</h3>
-                <p>AI-powered customer grouping based on behavior, demographics, and purchase history for targeted marketing campaigns.</p>
+                <p>AI-powered customer grouping based on behavior, demographics, and purchase history for targeted marketing.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Behavioral analysis</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Purchase pattern recognition</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Personalized campaigns</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Behavioral analysis</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Purchase pattern recognition</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Personalized campaigns</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-database"></i></div>
+                <div class="card-icon"><i class="fas fa-database"></i></div>
                 <h3>Data Enrichment Agent</h3>
-                <p>Automatically enhance contact records with social profiles, company info, and verified contact details from multiple sources.</p>
+                <p>Automatically enhance contact records with social profiles, company info, and verified contact details.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• LinkedIn profile matching</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Company data enrichment</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Contact verification</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> LinkedIn profile matching</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Company data enrichment</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Contact verification</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-brain"></i></div>
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
                 <h3>Smart FAQ Generator</h3>
-                <p>Analyzes customer support tickets and conversations to automatically create and update FAQ content for your website.</p>
+                <p>Analyzes customer support tickets and conversations to automatically create and update FAQ content.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Conversation analysis</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Auto-generated answers</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Knowledge base updates</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Conversation analysis</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Auto-generated answers</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Knowledge base updates</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-bell"></i></div>
+                <div class="card-icon"><i class="fas fa-bell"></i></div>
                 <h3>Customer Reactivation Agent</h3>
                 <p>Identifies dormant customers and automatically sends personalized win-back campaigns with special incentives.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Churn prediction</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Personalized offers</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Re-engagement tracking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Churn prediction</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Personalized offers</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Re-engagement tracking</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-file-alt"></i></div>
+                <div class="card-icon"><i class="fas fa-file-alt"></i></div>
                 <h3>Content Summarizer</h3>
                 <p>Converts long-form content into bite-sized summaries, social posts, and email newsletters automatically.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• AI-powered summarization</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Multi-format output</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• SEO optimization</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> AI-powered summarization</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Multi-format output</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> SEO optimization</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-phone-volume"></i></div>
+                <div class="card-icon"><i class="fas fa-phone-volume"></i></div>
                 <h3>Voicemail Transcription</h3>
-                <p>Automatically transcribe voicemails to text and send them via email or SMS with priority tagging for urgent messages.</p>
+                <p>Automatically transcribe voicemails to text and send them via email or SMS with priority tagging.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Real-time transcription</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Sentiment detection</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Automatic categorization</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Real-time transcription</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Sentiment detection</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Automatic categorization</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-exchange-alt"></i></div>
+                <div class="card-icon"><i class="fas fa-arrows-rotate"></i></div>
                 <h3>Competitor Price Monitor</h3>
-                <p>Track competitor pricing across the web and get instant alerts when prices change, with automated pricing recommendations.</p>
+                <p>Track competitor pricing across the web and get instant alerts when prices change.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Real-time price tracking</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Alert notifications</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Pricing strategy insights</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Real-time price tracking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Alert notifications</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Pricing strategy insights</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-clipboard-check"></i></div>
+                <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
                 <h3>Project Status Reporter</h3>
-                <p>Automatically compile project updates from multiple tools and send formatted status reports to stakeholders on schedule.</p>
+                <p>Automatically compile project updates from multiple tools and send formatted status reports.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Multi-tool integration</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Custom report templates</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Scheduled delivery</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Multi-tool integration</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Custom report templates</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Scheduled delivery</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-shield-alt"></i></div>
+                <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
                 <h3>Compliance Checker</h3>
-                <p>Monitor communications and documents for compliance with GDPR, CCPA, and industry regulations with automatic flagging.</p>
+                <p>Monitor communications and documents for compliance with GDPR, CCPA, and industry regulations.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Regulatory scanning</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Risk assessment</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Audit trail logging</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Regulatory scanning</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Risk assessment</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Audit trail logging</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-search-dollar"></i></div>
+                <div class="card-icon"><i class="fas fa-receipt"></i></div>
                 <h3>Invoice & Receipt Parser</h3>
-                <p>Extract data from invoices, receipts, and financial documents automatically and sync with your accounting software.</p>
+                <p>Extract data from invoices, receipts, and financial documents automatically and sync with accounting.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• OCR data extraction</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Accounting integration</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Expense categorization</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> OCR data extraction</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Accounting integration</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Expense categorization</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-user-plus"></i></div>
+                <div class="card-icon"><i class="fas fa-user-plus"></i></div>
                 <h3>Employee Onboarding Assistant</h3>
-                <p>Automate new hire paperwork, training schedules, and system access provisioning with personalized welcome sequences.</p>
+                <p>Automate new hire paperwork, training schedules, and system access provisioning.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Document automation</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Training coordination</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Access provisioning</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Document automation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Training coordination</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Access provisioning</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-language"></i></div>
+                <div class="card-icon"><i class="fas fa-language"></i></div>
                 <h3>Multi-Language Translator</h3>
                 <p>Real-time translation of customer communications, documents, and website content across 50+ languages.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• 50+ language support</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Context-aware translation</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Brand voice preservation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> 50+ language support</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Context-aware translation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Brand voice preservation</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-handshake"></i></div>
+                <div class="card-icon"><i class="fas fa-handshake"></i></div>
                 <h3>Meeting Scheduler & Coordinator</h3>
-                <p>Find optimal meeting times across time zones, send invites, handle reschedules, and create meeting agendas automatically.</p>
+                <p>Find optimal meeting times across time zones, send invites, handle reschedules, and create agendas.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Smart time zone handling</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Conflict resolution</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Agenda generation</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Smart time zone handling</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Conflict resolution</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Agenda generation</li>
                 </ul>
             </div>
 
             <div class="card animate-on-scroll">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"><i class="fas fa-thumbs-up"></i></div>
+                <div class="card-icon"><i class="fas fa-thumbs-up"></i></div>
                 <h3>Social Listening Agent</h3>
-                <p>Monitor social media mentions, reviews, and brand sentiment across platforms with real-time alerts and response suggestions.</p>
+                <p>Monitor social media mentions, reviews, and brand sentiment across platforms with real-time alerts.</p>
                 <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Brand mention tracking</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Sentiment analysis</li>
-                    <li style="padding: 0.5rem 0; color: var(--gray-600); font-size: 0.9375rem;">• Response recommendations</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Brand mention tracking</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Sentiment analysis</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray-500); font-size: 0.9375rem;"><i class="fas fa-circle" style="font-size: 0.375rem; vertical-align: middle; margin-right: 0.5rem; color: var(--primary);"></i> Response recommendations</li>
                 </ul>
             </div>
         </div>
         <div class="scroll-hint">
             <i class="fas fa-arrow-left"></i>
-            Scroll to see all 25 automation agents
+            Scroll to see all 24 automation agents
             <i class="fas fa-arrow-right"></i>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="section" style="background: white;">
-        <div class="section-header">
-            <h2 class="section-title">Transparent Pricing</h2>
-            <p class="section-subtitle">Professional solutions tailored to your business needs</p>
-        </div>
-
-        <!-- Website Build Pricing -->
-        <div style="margin-bottom: 5rem;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 2rem; border-radius: 2rem; font-weight: 700; font-size: 1.125rem; margin-bottom: 1rem;">
-                    <i class="fas fa-code" style="margin-right: 0.5rem;"></i> Website Build Packages
-                </div>
-                <p style="color: var(--gray-600); font-size: 1.125rem; max-width: 700px; margin: 1rem auto 0;">Launch your business online with a custom-built website designed for success</p>
+    <section class="section-full bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-tag"></i> Pricing</span>
+                <h2 class="section-title">Transparent Pricing</h2>
+                <p class="section-subtitle">Professional solutions tailored to your business needs</p>
             </div>
 
-            <div class="scroll-container">
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-seedling"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Starter</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$2,500</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Perfect for small businesses & startups</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Up to 5 custom pages</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Mobile-responsive design</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Basic SEO optimization</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Contact form integration</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Social media links</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3 months support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+            <!-- Website Build Pricing -->
+            <div class="pricing-category">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="pricing-label"><i class="fas fa-code"></i> Website Build Packages</span>
+                    <p style="color: var(--gray-500); margin-top: 1rem;">Launch your business online with a custom-built website designed for success</p>
                 </div>
 
-                <div class="card" style="text-align: center; border: 3px solid var(--primary); position: relative;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: 700; font-size: 0.875rem;">MOST POPULAR</div>
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-rocket"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Professional</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$5,500</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Ideal for growing businesses</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Up to 10 custom pages</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Advanced animations & interactions</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Premium SEO setup</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Blog/News section</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Google Analytics integration</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 6 months priority support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
-                </div>
+                <div class="scroll-container">
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Starter</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Perfect for small businesses & startups</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Up to 5 custom pages</li>
+                            <li><i class="fas fa-check"></i> Mobile-responsive design</li>
+                            <li><i class="fas fa-check"></i> Basic SEO optimization</li>
+                            <li><i class="fas fa-check"></i> Contact form integration</li>
+                            <li><i class="fas fa-check"></i> Social media links</li>
+                            <li><i class="fas fa-check"></i> 3 months support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                    </div>
 
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-crown"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Enterprise</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$10,000+</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Large-scale custom solutions</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Unlimited pages</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Custom features & functionality</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> E-commerce capabilities</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> API & third-party integrations</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Dedicated project manager</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 12 months premium support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
-                </div>
-            </div>
-            <div class="scroll-hint">
-                <i class="fas fa-arrow-left"></i>
-                Scroll to view all website build packages
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </div>
+                    <div class="card pricing-card featured" style="text-align: center;">
+                        <div class="pricing-badge">MOST POPULAR</div>
+                        <div class="pricing-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Professional</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Ideal for growing businesses</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Up to 10 custom pages</li>
+                            <li><i class="fas fa-check"></i> Advanced animations & interactions</li>
+                            <li><i class="fas fa-check"></i> Premium SEO setup</li>
+                            <li><i class="fas fa-check"></i> Blog/News section</li>
+                            <li><i class="fas fa-check"></i> Google Analytics integration</li>
+                            <li><i class="fas fa-check"></i> 6 months priority support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                    </div>
 
-        <!-- Website Remodeling Pricing -->
-        <div style="margin-bottom: 5rem;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 2rem; border-radius: 2rem; font-weight: 700; font-size: 1.125rem; margin-bottom: 1rem;">
-                    <i class="fas fa-wrench" style="margin-right: 0.5rem;"></i> Website Remodeling Packages
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-crown"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Enterprise</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Large-scale custom solutions</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Unlimited pages</li>
+                            <li><i class="fas fa-check"></i> Custom features & functionality</li>
+                            <li><i class="fas fa-check"></i> E-commerce capabilities</li>
+                            <li><i class="fas fa-check"></i> API & third-party integrations</li>
+                            <li><i class="fas fa-check"></i> Dedicated project manager</li>
+                            <li><i class="fas fa-check"></i> 12 months premium support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                    </div>
                 </div>
-                <p style="color: var(--gray-600); font-size: 1.125rem; max-width: 700px; margin: 1rem auto 0;">Modernize your existing website with fresh design and improved functionality</p>
-            </div>
-
-            <div class="scroll-container">
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-paint-brush"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Refresh</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$1,500</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Quick visual & content updates</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Design refresh (colors, fonts, layout)</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Content updates (text & images)</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Mobile optimization</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Speed optimization</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 2 months support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
-                </div>
-
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-magic"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Redesign</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$3,500</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Complete visual overhaul</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Complete design overhaul</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> New page layouts & structure</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> UX/UI improvements</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> SEO enhancement</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Performance optimization</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 4 months support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
-                </div>
-
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-code-branch"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Rebuild</h3>
-                    <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">$6,000+</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Full reconstruction from ground up</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Complete rebuild on modern stack</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> New features & functionality</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Database migration</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Advanced integrations</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Security enhancements</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 6 months priority support</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                <div class="scroll-hint">
+                    <i class="fas fa-arrow-left"></i>
+                    Scroll to view all packages
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <i class="fas fa-arrow-left"></i>
-                Scroll to view all remodeling packages
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </div>
 
-        <!-- AI Agent Pricing -->
-        <div>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 2rem; border-radius: 2rem; font-weight: 700; font-size: 1.125rem; margin-bottom: 1rem;">
-                    <i class="fas fa-robot" style="margin-right: 0.5rem;"></i> AI Automation Agents
-                </div>
-                <p style="color: var(--gray-600); font-size: 1.125rem; max-width: 700px; margin: 1rem auto 0;">Custom AI agents built with n8n and Claude to automate your business processes</p>
-            </div>
-
-            <div class="scroll-container">
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-cog"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Single Agent</h3>
-                    <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">Starting at $800</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">One custom automation solution</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 1 AI agent from our catalog</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> n8n workflow setup</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Claude AI integration</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Testing & deployment</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Basic documentation</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 1 month support & training</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Request Quote</a>
+            <!-- Website Remodeling Pricing -->
+            <div class="pricing-category">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="pricing-label"><i class="fas fa-wrench"></i> Website Remodeling Packages</span>
+                    <p style="color: var(--gray-500); margin-top: 1rem;">Modernize your existing website with fresh design and improved functionality</p>
                 </div>
 
-                <div class="card" style="text-align: center; border: 3px solid var(--primary); position: relative;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: 700; font-size: 0.875rem;">BEST VALUE</div>
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-layer-group"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Agent Bundle</h3>
-                    <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">Starting at $2,500</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">3-5 integrated automation agents</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3-5 AI agents working together</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Integrated workflows</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> CRM integration</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Priority setup & testing</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Comprehensive documentation</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3 months support & training</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Request Quote</a>
-                </div>
+                <div class="scroll-container">
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Refresh</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Quick visual & content updates</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Design refresh (colors, fonts, layout)</li>
+                            <li><i class="fas fa-check"></i> Content updates (text & images)</li>
+                            <li><i class="fas fa-check"></i> Mobile optimization</li>
+                            <li><i class="fas fa-check"></i> Speed optimization</li>
+                            <li><i class="fas fa-check"></i> 2 months support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                    </div>
 
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #667eea;"><i class="fas fa-network-wired"></i></div>
-                    <h3 style="margin-bottom: 0.5rem;">Custom Solution</h3>
-                    <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">Custom Quote</div>
-                    <p style="color: var(--gray-600); margin-bottom: 2rem; font-size: 0.9375rem;">Enterprise automation ecosystem</p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Unlimited custom AI agents</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Complex workflow orchestration</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Enterprise system integrations</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Dedicated automation architect</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> White-glove implementation</li>
-                        <li style="padding: 0.75rem 0; font-size: 0.9375rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Ongoing support & optimization</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Redesign</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Complete visual overhaul</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Complete design overhaul</li>
+                            <li><i class="fas fa-check"></i> New page layouts & structure</li>
+                            <li><i class="fas fa-check"></i> UX/UI improvements</li>
+                            <li><i class="fas fa-check"></i> SEO enhancement</li>
+                            <li><i class="fas fa-check"></i> Performance optimization</li>
+                            <li><i class="fas fa-check"></i> 4 months support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-code-branch"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Rebuild</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Full reconstruction from ground up</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Complete rebuild on modern stack</li>
+                            <li><i class="fas fa-check"></i> New features & functionality</li>
+                            <li><i class="fas fa-check"></i> Database migration</li>
+                            <li><i class="fas fa-check"></i> Advanced integrations</li>
+                            <li><i class="fas fa-check"></i> Security enhancements</li>
+                            <li><i class="fas fa-check"></i> 6 months priority support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                    </div>
+                </div>
+                <div class="scroll-hint">
+                    <i class="fas fa-arrow-left"></i>
+                    Scroll to view all packages
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <i class="fas fa-arrow-left"></i>
-                Scroll to view all AI agent packages
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </div>
 
-        <!-- Add-on Services Note -->
-        <div style="background: var(--gray-50); padding: 2.5rem; border-radius: 1.5rem; margin-top: 4rem; text-align: center;">
-            <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-800);">Need Something Specific?</h3>
-            <p style="color: var(--gray-600); font-size: 1.125rem; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">All packages can be customized to fit your unique requirements. We also offer monthly maintenance plans, hosting services, and ongoing AI agent management.</p>
-            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            <!-- AI Agent Pricing -->
+            <div class="pricing-category">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="pricing-label"><i class="fas fa-robot"></i> AI Automation Agents</span>
+                    <p style="color: var(--gray-500); margin-top: 1rem;">Custom AI agents built with n8n and Claude to automate your business processes</p>
+                </div>
+
+                <div class="scroll-container">
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-cog"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Single Agent</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">One custom automation solution</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 1 AI agent from our catalog</li>
+                            <li><i class="fas fa-check"></i> n8n workflow setup</li>
+                            <li><i class="fas fa-check"></i> Claude AI integration</li>
+                            <li><i class="fas fa-check"></i> Testing & deployment</li>
+                            <li><i class="fas fa-check"></i> Basic documentation</li>
+                            <li><i class="fas fa-check"></i> 1 month support & training</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Request Quote</a>
+                    </div>
+
+                    <div class="card pricing-card featured" style="text-align: center;">
+                        <div class="pricing-badge">BEST VALUE</div>
+                        <div class="pricing-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Agent Bundle</h3>
+                        <div class="pricing-price">Contact Us</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">3-5 integrated automation agents</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 3-5 AI agents working together</li>
+                            <li><i class="fas fa-check"></i> Integrated workflows</li>
+                            <li><i class="fas fa-check"></i> CRM integration</li>
+                            <li><i class="fas fa-check"></i> Priority setup & testing</li>
+                            <li><i class="fas fa-check"></i> Comprehensive documentation</li>
+                            <li><i class="fas fa-check"></i> 3 months support & training</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Request Quote</a>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div class="pricing-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 style="margin-bottom: 0.5rem;">Custom Solution</h3>
+                        <div class="pricing-price">Custom Quote</div>
+                        <p style="color: var(--gray-500); margin-bottom: 2rem;">Enterprise automation ecosystem</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Unlimited custom AI agents</li>
+                            <li><i class="fas fa-check"></i> Complex workflow orchestration</li>
+                            <li><i class="fas fa-check"></i> Enterprise system integrations</li>
+                            <li><i class="fas fa-check"></i> Dedicated automation architect</li>
+                            <li><i class="fas fa-check"></i> White-glove implementation</li>
+                            <li><i class="fas fa-check"></i> Ongoing support & optimization</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                    </div>
+                </div>
+                <div class="scroll-hint">
+                    <i class="fas fa-arrow-left"></i>
+                    Scroll to view all packages
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- Add-on Services Note -->
+            <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); text-align: center; border: 1px solid var(--gray-200);">
+                <h3 style="margin-bottom: 1rem; color: var(--gray-900);">Need Something Specific?</h3>
+                <p style="color: var(--gray-500); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">All packages can be customized to fit your unique requirements. We also offer monthly maintenance plans, hosting services, and ongoing AI agent management.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem;">Ready to Get Started?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Let's discuss your project and find the perfect solution for your business.</p>
-            <a href="contact.html" class="btn" style="background: white; color: var(--primary);">Schedule a Free Consultation</a>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss your project and find the perfect solution for your business.</p>
+            <a href="contact.html" class="btn btn-white">Schedule a Free Consultation</a>
         </div>
     </section>
 
@@ -644,9 +710,21 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Bright Automations</h3>
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo-light.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback" style="display: none;">
+                            <div class="logo-icon" style="background: var(--primary);">B</div>
+                            <span style="color: var(--white);">Bright Automations</span>
+                        </div>
+                    </a>
                     <p>Empowering businesses with modern web solutions and intelligent automation.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -673,15 +751,18 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:info@brightautomations.com">info@brightautomations.com</a></li>
-                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
-                        <li><a href="client-portal.html">Client Portal</a></li>
+                        <li><a href="mailto:info@brightautomations.com"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>info@brightautomations.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(123) 456-7890</a></li>
+                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

@@ -17,18 +17,76 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Mobile Overrides -->
+    <style>
+        /* Nav social icons */
+        .nav-social {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .nav-social a {
+            color: var(--gray-400);
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-social a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile: Hide video, show text only */
+        @media (max-width: 768px) {
+            .hero-visual {
+                display: none !important;
+            }
+            .hero-content {
+                grid-template-columns: 1fr !important;
+            }
+            .hero-text {
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            /* Services grid: 2 columns on mobile */
+            .services-compact-grid-wrapper {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+
+            /* Hide nav social on mobile */
+            .nav-social {
+                display: none;
+            }
+        }
+
+        /* Tablet: 3 columns for services */
+        @media (max-width: 992px) and (min-width: 769px) {
+            .services-compact-grid-wrapper {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">B</div>
-                <span>Bright Automations</span>
+                <img src="images/logo.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback" style="display: none;">
+                    <div class="logo-icon">B</div>
+                    <span>Bright Automations</span>
+                </div>
             </a>
 
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
@@ -36,7 +94,14 @@
                 <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
             </ul>
 
-            <button class="mobile-menu-toggle">
+            <div class="nav-social">
+                <a href="YOUR_FACEBOOK_URL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="YOUR_TWITTER_URL" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -46,166 +111,216 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Transform Your Business with AI-Powered Automation</h1>
-                <p>We design modern, high-performing websites and intelligent automation solutions that help retail, contracting, and professional businesses thrive in the digital age.</p>
+        <div class="hero-content">
+            <div class="hero-text animate-on-scroll">
+                <span class="hero-label"><i class="fas fa-sparkles"></i> AI-Powered Solutions</span>
+                <h1>Transform Your Business with <span class="text-highlight">Intelligent Automation</span></h1>
+                <p>Modern websites and AI-powered solutions for retail, contracting, and professional businesses. We help you save time, increase efficiency, and grow your business.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-                    <a href="services.html" class="btn btn-secondary">Explore Services</a>
-                </div>
-
-                <div class="feature-cards">
-                    <div class="feature-card animate-on-scroll">
-                        <div class="icon"><i class="fas fa-bolt"></i></div>
-                        <h3>Lightning Fast</h3>
-                        <p>Optimized for speed and performance</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="icon"><i class="fas fa-robot"></i></div>
-                        <h3>AI-Powered</h3>
-                        <p>Intelligent automation that works 24/7</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="icon"><i class="fas fa-mobile-screen"></i></div>
-                        <h3>Fully Responsive</h3>
-                        <p>Perfect on every device</p>
-                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Start Your Project
+                    </a>
+                    <a href="services.html" class="btn btn-secondary">
+                        Explore Services
+                    </a>
                 </div>
             </div>
-
-            <div class="hero-visual">
-                <div style="background: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 300px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                        <i class="fas fa-rocket"></i>
-                    </div>
+            <div class="hero-visual animate-on-scroll">
+                <div class="hero-video-container">
+                    <video class="hero-video" autoplay muted loop playsinline>
+                        <source src="videos/brightautohome.mp4" type="video/mp4">
+                        <!-- Fallback image if video doesn't load -->
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Stats Section -->
-    <section class="section" style="background: white;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <div class="grid grid-4">
-                <div style="text-align: center;" class="animate-on-scroll">
-                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="50">0</div>
-                    <div style="color: var(--gray-600); font-weight: 600;">Projects Completed</div>
-                </div>
-                <div style="text-align: center;" class="animate-on-scroll">
-                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="100">0</div>
-                    <div style="color: var(--gray-600); font-weight: 600;">Happy Clients</div>
-                </div>
-                <div style="text-align: center;" class="animate-on-scroll">
-                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="99">0</div>
-                    <div style="color: var(--gray-600); font-weight: 600;">Satisfaction Rate</div>
-                </div>
-                <div style="text-align: center;" class="animate-on-scroll">
-                    <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;" data-target="24">0</div>
-                    <div style="color: var(--gray-600); font-weight: 600;">Support Hours</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Preview -->
-    <section class="section">
-        <div class="section-header">
-            <h2 class="section-title">Our Core Services</h2>
-            <p class="section-subtitle">Comprehensive solutions to elevate your business to the next level</p>
+    <section class="section bg-light" style="padding: 3rem 0;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <span class="section-label"><i class="fas fa-cube"></i> Our Services</span>
+            <h2 class="section-title">Solutions That Drive Results</h2>
         </div>
 
-        <div class="grid grid-3">
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-palette"></i></div>
-                <h3>Modern Web Design</h3>
-                <p>Cutting-edge, responsive websites that captivate your audience and drive conversions. Every design is crafted with your brand identity and business goals in mind.</p>
-                <a href="services.html#web-design" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Automation</h3>
-                <p>Intelligent chatbots, automated workflows, and smart systems that work 24/7 to boost efficiency and improve customer experience.</p>
-                <a href="services.html#ai-automation" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-gauge-high"></i></div>
-                <h3>Performance Optimization</h3>
-                <p>Lightning-fast loading speeds, SEO optimization, and technical excellence that puts you ahead of the competition.</p>
-                <a href="services.html#optimization" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-envelope"></i></div>
-                <h3>Email Marketing</h3>
-                <p>Automated email campaigns with AI-powered personalization that nurture leads and drive repeat business.</p>
-                <a href="services.html#email-marketing" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-comments"></i></div>
-                <h3>Live Chat Support</h3>
-                <p>24/7 AI-powered chatbots that answer questions, qualify leads, and book appointments while you sleep.</p>
-                <a href="services.html#chatbot" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
-
-            <div class="card animate-on-scroll">
-                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Analytics & Insights</h3>
-                <p>Comprehensive tracking and reporting to understand your customers and make data-driven decisions.</p>
-                <a href="services.html#analytics" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Learn More</a>
-            </div>
+        <div class="services-compact-grid-wrapper" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            <a href="services.html#web-design" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-palette"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Web Design</span>
+            </a>
+            <a href="services.html#ai-automation" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-robot"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">AI Automation</span>
+            </a>
+            <a href="services.html#optimization" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-gauge-high"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Optimization</span>
+            </a>
+            <a href="services.html#email-marketing" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-envelope"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Email Marketing</span>
+            </a>
+            <a href="services.html#chatbot" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-comments"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Live Chat</span>
+            </a>
+            <a href="services.html#analytics" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
+                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-chart-line"></i></div>
+                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Analytics</span>
+            </a>
         </div>
 
-        <div style="text-align: center; margin-top: 3rem;">
+        <div style="text-align: center; margin-top: 2rem;">
             <a href="services.html" class="btn btn-primary">View All Services</a>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section" style="background: white;">
-        <div class="section-header">
-            <h2 class="section-title">How We Work</h2>
-            <p class="section-subtitle">A proven process that delivers exceptional results</p>
-        </div>
-
-        <div class="grid grid-4">
-            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
-                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">1</div>
-                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Discover</h3>
-                <p style="color: var(--gray-600);">We learn about your business, goals, and target audience</p>
+    <!-- About Preview with Image -->
+    <section class="section">
+        <div class="image-text-section">
+            <div class="section-image animate-on-scroll">
+                <img src="images/about-preview.jpg" alt="Our team at work" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="image-placeholder" style="display: none;">
+                    <i class="fas fa-users"></i>
+                    <span>Team Image</span>
+                </div>
             </div>
+            <div class="animate-on-scroll">
+                <span class="section-label"><i class="fas fa-info-circle"></i> About Us</span>
+                <h2 class="section-title">Why Choose Bright Automations?</h2>
+                <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">We combine cutting-edge technology with personalized service to deliver exceptional results for your business.</p>
 
-            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
-                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">2</div>
-                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Design</h3>
-                <p style="color: var(--gray-600);">Create stunning designs tailored to your brand</p>
-            </div>
+                <div class="mini-features">
+                    <div class="mini-feature">
+                        <i class="fas fa-award"></i>
+                        <h4>Expert Team</h4>
+                        <p>Years of experience in web development and AI automation</p>
+                    </div>
+                    <div class="mini-feature">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Dedicated Support</h4>
+                        <p>Personal attention and ongoing assistance for your success</p>
+                    </div>
+                    <div class="mini-feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Custom Solutions</h4>
+                        <p>Tailored strategies that fit your unique business needs</p>
+                    </div>
+                    <div class="mini-feature">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Results Focused</h4>
+                        <p>Measurable outcomes that drive your business forward</p>
+                    </div>
+                </div>
 
-            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
-                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">3</div>
-                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Develop</h3>
-                <p style="color: var(--gray-600);">Build with cutting-edge technology and best practices</p>
-            </div>
-
-            <div style="text-align: center; padding: 2rem;" class="animate-on-scroll">
-                <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800;">4</div>
-                <h3 style="font-family: var(--font-display); font-weight: 700; margin-bottom: 0.75rem;">Deploy</h3>
-                <p style="color: var(--gray-600);">Launch and provide ongoing support and optimization</p>
+                <a href="about.html" class="btn btn-primary" style="margin-top: 2rem;">Learn More About Us</a>
             </div>
         </div>
     </section>
 
+    <!-- How It Works -->
+    <section class="section-full bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-route"></i> Our Process</span>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">A proven process that delivers exceptional results every time</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-item animate-on-scroll">
+                    <div class="process-number">1</div>
+                    <h3>Discover</h3>
+                    <p>We learn about your business, goals, and target audience</p>
+                </div>
+
+                <div class="process-item animate-on-scroll">
+                    <div class="process-number">2</div>
+                    <h3>Design</h3>
+                    <p>Create stunning designs tailored to your brand</p>
+                </div>
+
+                <div class="process-item animate-on-scroll">
+                    <div class="process-number">3</div>
+                    <h3>Develop</h3>
+                    <p>Build with cutting-edge technology and best practices</p>
+                </div>
+
+                <div class="process-item animate-on-scroll">
+                    <div class="process-number">4</div>
+                    <h3>Deploy</h3>
+                    <p>Launch and provide ongoing support and optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label"><i class="fas fa-briefcase"></i> Our Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">See how we've helped businesses like yours succeed with our solutions</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
+                <div class="section-image" style="border-radius: 0;">
+                    <img src="images/portfolio-1.jpg" alt="Project 1" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
+                        <i class="fas fa-image"></i>
+                        <span>Project Image</span>
+                    </div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem;">E-Commerce Platform</h3>
+                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Full website redesign with AI chatbot integration</p>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
+                <div class="section-image" style="border-radius: 0;">
+                    <img src="images/portfolio-2.jpg" alt="Project 2" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
+                        <i class="fas fa-image"></i>
+                        <span>Project Image</span>
+                    </div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem;">Service Business</h3>
+                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Automated booking and lead management system</p>
+                </div>
+            </div>
+
+            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
+                <div class="section-image" style="border-radius: 0;">
+                    <img src="images/professionalservices.PNG" alt="Project 3" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
+                        <i class="fas fa-image"></i>
+                        <span>Project Image</span>
+                    </div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem;">Professional Services</h3>
+                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Custom CRM and email automation workflow</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem;">Ready to Transform Your Business?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Let's create something amazing together. Get a free consultation and discover how we can help you grow.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn" style="background: white; color: var(--primary);">Get Started Today</a>
-                <a href="portfolio.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">View Our Work</a>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's create something amazing together. Get a free consultation and discover how we can help you grow.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Get Started Today</a>
+                <a href="portfolio.html" class="btn btn-ghost">View Our Work</a>
             </div>
         </div>
     </section>
@@ -214,9 +329,21 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Bright Automations</h3>
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo-light.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback" style="display: none;">
+                            <div class="logo-icon" style="background: var(--primary);">B</div>
+                            <span style="color: var(--white);">Bright Automations</span>
+                        </div>
+                    </a>
                     <p>Empowering businesses with modern web solutions and intelligent automation.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -243,15 +370,18 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:info@brightautomations.com">info@brightautomations.com</a></li>
-                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
-                        <li><a href="client-portal.html">Client Portal</a></li>
+                        <li><a href="mailto:info@brightautomations.com"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>info@brightautomations.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(123) 456-7890</a></li>
+                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

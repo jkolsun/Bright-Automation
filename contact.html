@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,8 +22,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">B</div>
-                <span>Bright Automations</span>
+                <img src="images/logo.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback" style="display: none;">
+                    <div class="logo-icon">B</div>
+                    <span>Bright Automations</span>
+                </div>
             </a>
 
             <ul class="nav-menu">
@@ -28,11 +34,18 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
             </ul>
 
-            <button class="mobile-menu-toggle">
+            <div class="nav-social">
+                <a href="YOUR_FACEBOOK_URL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="YOUR_TWITTER_URL" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="YOUR_INSTAGRAM_URL" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -41,20 +54,18 @@
     </nav>
 
     <!-- Page Header -->
-    <section style="padding: 8rem 2rem 4rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1.5rem;">Let's Talk</h1>
-            <p style="font-size: 1.25rem; opacity: 0.95;">Ready to transform your business? Get in touch and let's create something amazing together.</p>
-        </div>
+    <section class="page-header">
+        <h1>Let's Talk</h1>
+        <p>Ready to transform your business? Get in touch and let's create something amazing together.</p>
     </section>
 
     <!-- Contact Section -->
     <section class="section">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto;">
+        <div class="contact-grid">
             <!-- Contact Form -->
             <div class="animate-on-scroll">
-                <div style="background: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                    <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem;">Send Us a Message</h2>
+                <div class="contact-form-wrapper">
+                    <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Send Us a Message</h2>
 
                     <form data-form-type="contact">
                         <div class="form-group">
@@ -115,49 +126,49 @@
             <!-- Contact Info -->
             <div class="animate-on-scroll">
                 <div style="position: sticky; top: 100px;">
-                    <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 2rem;">Get in Touch</h2>
+                    <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">Get in Touch</h2>
 
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <div style="display: flex; align-items: start; gap: 1.5rem;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📧</div>
-                            <div>
-                                <h3 style="margin-bottom: 0.5rem;">Email Us</h3>
-                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">For general inquiries</p>
-                                <a href="mailto:info@brightautomations.com" style="color: var(--primary); font-weight: 600; text-decoration: none;">info@brightautomations.com</a>
-                            </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Email Us</h4>
+                            <p>For general inquiries</p>
+                            <a href="mailto:info@brightautomations.com">info@brightautomations.com</a>
                         </div>
                     </div>
 
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <div style="display: flex; align-items: start; gap: 1.5rem;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📞</div>
-                            <div>
-                                <h3 style="margin-bottom: 0.5rem;">Call Us</h3>
-                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Mon-Fri 9am-6pm EST</p>
-                                <a href="tel:+1234567890" style="color: var(--primary); font-weight: 600; text-decoration: none;">(123) 456-7890</a>
-                            </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Call Us</h4>
+                            <p>Mon-Fri 9am-6pm EST</p>
+                            <a href="tel:+1234567890">(123) 456-7890</a>
                         </div>
                     </div>
 
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <div style="display: flex; align-items: start; gap: 1.5rem;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💼</div>
-                            <div>
-                                <h3 style="margin-bottom: 0.5rem;">Client Portal</h3>
-                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Existing clients login</p>
-                                <a href="client-portal.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Access Portal →</a>
-                            </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Client Portal</h4>
+                            <p>Existing clients login</p>
+                            <a href="client-portal.html">Access Portal</a>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 1.5rem; color: white;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Response Time</h3>
-                        <p style="opacity: 0.95; margin-bottom: 1.5rem;">We typically respond to all inquiries within 24 hours during business days.</p>
-                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 1rem;">
-                            <div style="font-size: 2rem;">⚡</div>
-                            <div>
-                                <div style="font-weight: 700; font-size: 1.125rem;">Fast Response</div>
-                                <div style="opacity: 0.9; font-size: 0.875rem;">Usually within 4 hours</div>
+                    <div class="response-card">
+                        <h4>Response Time</h4>
+                        <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                        <div class="response-highlight">
+                            <i class="fas fa-bolt"></i>
+                            <div class="response-highlight-text">
+                                <strong>Fast Response</strong>
+                                <span>Usually within 4 hours</span>
                             </div>
                         </div>
                     </div>
@@ -167,48 +178,49 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section" style="background: white;">
+    <section class="section bg-light">
         <div class="section-header">
+            <span class="section-label"><i class="fas fa-circle-question"></i> FAQ</span>
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Quick answers to common questions</p>
         </div>
 
         <div style="max-width: 900px; margin: 0 auto;">
-            <div class="card animate-on-scroll" style="margin-bottom: 1.5rem;">
-                <h3 style="margin-bottom: 1rem;">How long does a typical project take?</h3>
-                <p style="color: var(--gray-600);">Project timelines vary based on scope and complexity. A standard website typically takes 2-4 weeks, while comprehensive automation projects may take 4-8 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+            <div class="faq-item animate-on-scroll">
+                <h4>How long does a typical project take?</h4>
+                <p>Project timelines vary based on scope and complexity. A standard website typically takes 2-4 weeks, while comprehensive automation projects may take 4-8 weeks. We'll provide a detailed timeline during our initial consultation.</p>
             </div>
 
-            <div class="card animate-on-scroll" style="margin-bottom: 1.5rem;">
-                <h3 style="margin-bottom: 1rem;">What's included in your pricing?</h3>
-                <p style="color: var(--gray-600);">Our packages include design, development, testing, deployment, and initial support. We provide transparent pricing with no hidden fees. Ongoing maintenance and support plans are available separately.</p>
+            <div class="faq-item animate-on-scroll">
+                <h4>What's included in your pricing?</h4>
+                <p>Our packages include design, development, testing, deployment, and initial support. We provide transparent pricing with no hidden fees. Ongoing maintenance and support plans are available separately.</p>
             </div>
 
-            <div class="card animate-on-scroll" style="margin-bottom: 1.5rem;">
-                <h3 style="margin-bottom: 1rem;">Do you offer ongoing support?</h3>
-                <p style="color: var(--gray-600);">Yes! We offer various support and maintenance plans to keep your website and automations running smoothly. This includes updates, security patches, content updates, and technical support.</p>
+            <div class="faq-item animate-on-scroll">
+                <h4>Do you offer ongoing support?</h4>
+                <p>Yes! We offer various support and maintenance plans to keep your website and automations running smoothly. This includes updates, security patches, content updates, and technical support.</p>
             </div>
 
-            <div class="card animate-on-scroll" style="margin-bottom: 1.5rem;">
-                <h3 style="margin-bottom: 1rem;">Can you integrate with my existing systems?</h3>
-                <p style="color: var(--gray-600);">Absolutely! We specialize in integrations with popular platforms like CRMs, email marketing tools, payment processors, and more. We'll work with your existing tech stack to create seamless workflows.</p>
+            <div class="faq-item animate-on-scroll">
+                <h4>Can you integrate with my existing systems?</h4>
+                <p>Absolutely! We specialize in integrations with popular platforms like CRMs, email marketing tools, payment processors, and more. We'll work with your existing tech stack to create seamless workflows.</p>
             </div>
 
-            <div class="card animate-on-scroll">
-                <h3 style="margin-bottom: 1rem;">What if I need changes after launch?</h3>
-                <p style="color: var(--gray-600);">Changes are easy! Existing clients can use our Client Portal to submit change requests. We prioritize client requests and typically implement minor changes within 24-48 hours.</p>
+            <div class="faq-item animate-on-scroll">
+                <h4>What if I need changes after launch?</h4>
+                <p>Changes are easy! Existing clients can use our Client Portal to submit change requests. We prioritize client requests and typically implement minor changes within 24-48 hours.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem;">Still Have Questions?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">We're here to help! Reach out and we'll get back to you as soon as possible.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:+1234567890" class="btn" style="background: white; color: var(--primary);">Call Us Now</a>
-                <a href="mailto:info@brightautomations.com" class="btn" style="background: transparent; color: white; border: 2px solid white;">Send Email</a>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Still Have Questions?</h2>
+            <p>We're here to help! Reach out and we'll get back to you as soon as possible.</p>
+            <div class="cta-buttons">
+                <a href="tel:+1234567890" class="btn btn-white">Call Us Now</a>
+                <a href="mailto:info@brightautomations.com" class="btn btn-ghost">Send Email</a>
             </div>
         </div>
     </section>
@@ -217,9 +229,21 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Bright Automations</h3>
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo-light.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback" style="display: none;">
+                            <div class="logo-icon" style="background: var(--primary);">B</div>
+                            <span style="color: var(--white);">Bright Automations</span>
+                        </div>
+                    </a>
                     <p>Empowering businesses with modern web solutions and intelligent automation.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -246,15 +270,18 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:info@brightautomations.com">info@brightautomations.com</a></li>
-                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
-                        <li><a href="client-portal.html">Client Portal</a></li>
+                        <li><a href="mailto:info@brightautomations.com"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>info@brightautomations.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(123) 456-7890</a></li>
+                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
