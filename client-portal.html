@@ -14,6 +14,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         :root {
             --primary: #0e1e32;
@@ -38,18 +41,107 @@
             min-height: 100vh;
         }
 
+        /* Loading State */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-screen .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         .portal-container {
             min-height: 100vh;
             padding: 2rem 1rem;
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
+        .portal-container.loaded {
+            display: flex;
+        }
+
         .portal-content {
             width: 100%;
             max-width: 500px;
+        }
+
+        /* User Header */
+        .user-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .user-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9375rem;
+        }
+
+        .user-email {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8125rem;
+        }
+
+        .logout-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.15);
+            color: white;
         }
 
         /* Header */
@@ -113,7 +205,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            cursor: default;
+            cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border: none;
             text-align: left;
@@ -145,6 +237,76 @@
         .action-icon.website { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .action-icon.agent { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
         .action-icon.support { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .action-icon.blog { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .action-icon.social { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); }
+        .action-icon.content { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .action-icon.seo { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); }
+
+        /* More Options Section */
+        .more-options-section {
+            margin-top: 1.5rem;
+        }
+
+        .more-options-toggle {
+            width: 100%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .more-options-toggle:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        .more-options-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .more-options-toggle.open i {
+            transform: rotate(180deg);
+        }
+
+        .more-options-list {
+            display: none;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .more-options-list.open {
+            display: flex;
+        }
+
+        .more-options-list .action-card {
+            padding: 1rem;
+        }
+
+        .more-options-list .action-icon {
+            width: 44px;
+            height: 44px;
+            font-size: 1.1rem;
+        }
+
+        .more-options-list .action-text h3 {
+            font-size: 1rem;
+        }
+
+        .more-options-list .action-text p {
+            font-size: 0.8125rem;
+        }
 
         .action-text h3 {
             font-family: 'Space Grotesk', sans-serif;
@@ -217,7 +379,7 @@
             border: none;
             color: var(--gray-400);
             font-size: 1.25rem;
-            cursor: default;
+            cursor: pointer;
             padding: 0.5rem;
             border-radius: 8px;
             transition: all 0.2s ease;
@@ -259,6 +421,11 @@
             border-color: var(--accent);
         }
 
+        .form-input:read-only {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
         .form-textarea {
             resize: vertical;
             min-height: 120px;
@@ -274,7 +441,7 @@
             font-size: 1rem;
             font-weight: 700;
             font-family: inherit;
-            cursor: default;
+            cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -355,8 +522,27 @@
     </style>
 </head>
 <body>
-    <div class="portal-container">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="portalContainer" class="portal-container">
         <div class="portal-content">
+            <!-- User Header with Logout -->
+            <div class="user-header">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div>
+                        <div class="user-name" id="userName">Loading...</div>
+                        <div class="user-email" id="userEmail"></div>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
             <!-- Header -->
             <div class="portal-header">
                 <div class="portal-logo">
@@ -403,6 +589,59 @@
                     </div>
                     <i class="fas fa-chevron-right action-arrow"></i>
                 </button>
+
+                <!-- More Options Section -->
+                <div class="more-options-section">
+                    <button class="more-options-toggle" onclick="toggleMoreOptions()">
+                        <span>More Options</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="more-options-list" id="moreOptionsList">
+                        <button class="action-card" onclick="showForm('blog')">
+                            <div class="action-icon blog">
+                                <i class="fas fa-blog"></i>
+                            </div>
+                            <div class="action-text">
+                                <h3>Blog Edits</h3>
+                                <p>Update your blog content</p>
+                            </div>
+                            <i class="fas fa-chevron-right action-arrow"></i>
+                        </button>
+
+                        <button class="action-card" onclick="showForm('social')">
+                            <div class="action-icon social">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="action-text">
+                                <h3>Social Media</h3>
+                                <p>Update social media content</p>
+                            </div>
+                            <i class="fas fa-chevron-right action-arrow"></i>
+                        </button>
+
+                        <button class="action-card" onclick="showForm('content')">
+                            <div class="action-icon content">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="action-text">
+                                <h3>Content Updates</h3>
+                                <p>Text, images, or media changes</p>
+                            </div>
+                            <i class="fas fa-chevron-right action-arrow"></i>
+                        </button>
+
+                        <button class="action-card" onclick="showForm('seo')">
+                            <div class="action-icon seo">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="action-text">
+                                <h3>SEO Updates</h3>
+                                <p>Search optimization changes</p>
+                            </div>
+                            <i class="fas fa-chevron-right action-arrow"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Website Edit Form -->
@@ -417,20 +656,20 @@
                 <form action="https://formspree.io/f/mnneglkj" method="POST">
                     <input type="hidden" name="request_type" value="Website Edit">
                     <div class="form-group">
-                        <label class="form-label">Your Name *</label>
-                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Company Name *</label>
-                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone</label>
-                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                        <input type="tel" name="phone" class="form-input user-phone-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Which page needs editing? *</label>
@@ -464,20 +703,20 @@
                 <form action="https://formspree.io/f/mnneglkj" method="POST">
                     <input type="hidden" name="request_type" value="Agent Edit">
                     <div class="form-group">
-                        <label class="form-label">Your Name *</label>
-                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Company Name *</label>
-                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone</label>
-                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                        <input type="tel" name="phone" class="form-input user-phone-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Which agent or automation? *</label>
@@ -511,20 +750,20 @@
                 <form action="https://formspree.io/f/mnneglkj" method="POST">
                     <input type="hidden" name="request_type" value="Support Request">
                     <div class="form-group">
-                        <label class="form-label">Your Name *</label>
-                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Company Name *</label>
-                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone</label>
-                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                        <input type="tel" name="phone" class="form-input user-phone-field" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Priority</label>
@@ -539,6 +778,209 @@
                         <textarea name="message" class="form-textarea" placeholder="Describe your issue or question..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn support-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Blog Edit Form (feature-based) -->
+            <div id="blogForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <h2>Blog Edit Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Blog Edit">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Blog Post Title *</label>
+                        <input type="text" name="blog_title" class="form-input" placeholder="Title of the blog post" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Is this a new post or editing existing? *</label>
+                        <select name="blog_type" class="form-input" required>
+                            <option value="">Select one...</option>
+                            <option value="new">New Blog Post</option>
+                            <option value="edit">Edit Existing Post</option>
+                            <option value="delete">Delete Post</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Blog Content / Changes *</label>
+                        <textarea name="message" class="form-textarea" placeholder="Paste your blog content here, or describe the changes you'd like made..." required style="min-height: 200px;"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">Submit Blog Request</button>
+                </form>
+            </div>
+
+            <!-- Social Media Form -->
+            <div id="socialForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h2>Social Media Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Social Media">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which platform(s)? *</label>
+                        <input type="text" name="platform" class="form-input" placeholder="e.g., Instagram, Facebook, LinkedIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Describe your request *</label>
+                        <textarea name="message" class="form-textarea" placeholder="What would you like posted or changed?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Content Updates Form -->
+            <div id="contentForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2>Content Update Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Content Update">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What type of content? *</label>
+                        <select name="content_type" class="form-input" required>
+                            <option value="">Select one...</option>
+                            <option value="text">Text / Copy</option>
+                            <option value="images">Images / Photos</option>
+                            <option value="video">Video</option>
+                            <option value="documents">Documents / PDFs</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Where does this go? *</label>
+                        <input type="text" name="location" class="form-input" placeholder="e.g., Homepage hero, About page, Footer" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Describe the changes *</label>
+                        <textarea name="message" class="form-textarea" placeholder="Paste new content or describe what needs to be updated..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- SEO Updates Form -->
+            <div id="seoForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2>SEO Update Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="SEO Update">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input user-name-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-input user-company-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input user-email-field" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which page(s)? *</label>
+                        <input type="text" name="pages" class="form-input" placeholder="e.g., Homepage, All pages, Blog posts" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What SEO changes? *</label>
+                        <select name="seo_type" class="form-input" required>
+                            <option value="">Select one...</option>
+                            <option value="meta">Meta titles & descriptions</option>
+                            <option value="keywords">Keywords / Content</option>
+                            <option value="speed">Page speed optimization</option>
+                            <option value="schema">Schema / Structured data</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Describe your request *</label>
+                        <textarea name="message" class="form-textarea" placeholder="What SEO changes do you need? Include any target keywords..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">Submit Request</button>
                 </form>
             </div>
 
@@ -559,6 +1001,64 @@
     </div>
 
     <script>
+        // ============================================
+        // SUPABASE CONFIGURATION
+        // Replace these with your actual Supabase credentials
+        // ============================================
+        const SUPABASE_URL = 'https://urskikmqhgnvsqrcetsg.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVyc2tpa21xaGdudnNxcmNldHNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0Nzk0NjEsImV4cCI6MjA4MTA1NTQ2MX0.0P40qD-Q3Gvu3kRXGC7de30NYJ8oAVJhLi5cOmkH6OA';
+
+        // Initialize Supabase client
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Global user data
+        let currentUser = null;
+
+        // Check authentication on page load
+        async function checkAuth() {
+            const { data: { session } } = await supabase.auth.getSession();
+
+            if (!session) {
+                // Not logged in, redirect to login
+                window.location.href = '/client-login.html';
+                return;
+            }
+
+            currentUser = session.user;
+
+            // Get user profile from user_metadata or profiles table
+            const userMeta = currentUser.user_metadata || {};
+
+            // Update UI with user info
+            const displayName = userMeta.full_name || userMeta.name || currentUser.email.split('@')[0];
+            const company = userMeta.company || '';
+            const phone = userMeta.phone || '';
+
+            document.getElementById('userName').textContent = displayName;
+            document.getElementById('userEmail').textContent = currentUser.email;
+            document.getElementById('userAvatar').textContent = displayName.charAt(0).toUpperCase();
+
+            // Pre-fill all form fields
+            document.querySelectorAll('.user-name-field').forEach(el => el.value = displayName);
+            document.querySelectorAll('.user-email-field').forEach(el => el.value = currentUser.email);
+            document.querySelectorAll('.user-company-field').forEach(el => el.value = company);
+            document.querySelectorAll('.user-phone-field').forEach(el => el.value = phone);
+
+            // Hide loading, show portal
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.getElementById('portalContainer').classList.add('loaded');
+        }
+
+        // Run auth check
+        checkAuth();
+
+        // Logout function
+        async function logout() {
+            await supabase.auth.signOut();
+            window.location.href = '/client-login.html';
+        }
+
+        // Form functions
         function showForm(type) {
             document.getElementById('quickActions').style.display = 'none';
             document.getElementById(type + 'Form').classList.add('active');
@@ -569,6 +1069,14 @@
                 form.classList.remove('active');
             });
             document.getElementById('quickActions').style.display = 'flex';
+        }
+
+        // Toggle More Options
+        function toggleMoreOptions() {
+            const toggle = document.querySelector('.more-options-toggle');
+            const list = document.getElementById('moreOptionsList');
+            toggle.classList.toggle('open');
+            list.classList.toggle('open');
         }
     </script>
 </body>

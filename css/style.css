@@ -98,58 +98,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Only hide default cursor when custom cursor is active */
-body.custom-cursor-active {
-    cursor: none;
-}
-
-body.custom-cursor-active a,
-body.custom-cursor-active button,
-body.custom-cursor-active input,
-body.custom-cursor-active textarea,
-body.custom-cursor-active select,
-body.custom-cursor-active .btn {
-    cursor: none;
-}
-
-/* Custom Cursor */
-.cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--accent);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 10000;
-    transition: transform 0.1s ease, background 0.2s ease;
-    transform: translate(-50%, -50%);
-}
-
-.cursor-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 10001;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px var(--accent);
-}
-
-.cursor.hover {
-    transform: translate(-50%, -50%) scale(1.5);
-    background: rgba(0, 229, 255, 0.2);
-}
-
-/* Hide custom cursor on mobile */
-@media (max-width: 768px) {
-    .cursor, .cursor-dot {
-        display: none;
-    }
-    body {
-        cursor: auto;
-    }
+/* Custom cursor disabled */
+.cursor, .cursor-dot {
+    display: none !important;
 }
 
 /* Animated Background Particles */
