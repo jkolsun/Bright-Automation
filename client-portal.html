@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Secure client portal for Bright Automations clients">
+    <meta name="description" content="Client portal for Bright Automations - Submit requests and get support">
     <title>Client Portal - Bright Automations</title>
 
     <!-- Fonts -->
@@ -11,471 +11,564 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        :root {
+            --primary: #0e1e32;
+            --accent: #00e5ff;
+            --white: #ffffff;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --dark: #0e1e32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%);
+            min-height: 100vh;
+        }
+
         .portal-container {
             min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portal-content {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Header */
+        .portal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .portal-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .portal-logo a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            gap: 0.75rem;
         }
 
-        .dashboard {
-            display: none;
-            animation: fadeIn 0.5s ease;
+        .portal-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--dark);
         }
 
-        .dashboard.active {
-            display: block;
+        .portal-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
         }
 
-        .dashboard-header {
+        .portal-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-card {
             background: white;
-            padding: 2rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .quick-action-btn {
+            border-radius: 16px;
+            padding: 1.25rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            width: 100%;
-            padding: 1.5rem;
-            background: white;
-            border: 2px solid var(--gray-200);
-            border-radius: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            cursor: default;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
             text-align: left;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-800);
+            width: 100%;
+            font-family: inherit;
         }
 
-        .quick-action-btn:hover {
-            border-color: var(--primary);
-            background: var(--gray-50);
-            transform: translateX(4px);
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
-        .quick-action-btn .icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 0.75rem;
+        .action-card:active {
+            transform: scale(0.98);
+        }
+
+        .action-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            color: white;
             flex-shrink: 0;
+        }
+
+        .action-icon.website { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .action-icon.agent { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .action-icon.support { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+        .action-text h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            color: var(--dark);
+            margin-bottom: 0.125rem;
+        }
+
+        .action-text p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .action-arrow {
+            margin-left: auto;
+            color: var(--gray-400);
+            font-size: 1rem;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .form-header-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            color: white;
+        }
+
+        .form-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--dark);
+            flex: 1;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            cursor: default;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--gray-200);
+            color: var(--dark);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: default;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .submit-btn.agent-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .submit-btn.support-btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        /* Quick Contact */
+        .quick-contact {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quick-contact p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+        /* Back to site link */
+        .back-to-site {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .back-to-site a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-to-site a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">B</div>
-                <span>Bright Automations</span>
-            </a>
-
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
-            </ul>
-
-            <button class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Login Form -->
-    <div id="loginContainer" class="portal-container">
-        <div style="max-width: 500px; width: 100%;">
-            <div style="background: white; padding: 3rem; border-radius: 2rem; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">🔐</div>
-                    <h1 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Client Portal</h1>
-                    <p style="color: var(--gray-600);">Sign in to access your dashboard</p>
+    <div class="portal-container">
+        <div class="portal-content">
+            <!-- Header -->
+            <div class="portal-header">
+                <div class="portal-logo">
+                    <a href="/">
+                        <div class="logo-icon">B</div>
+                        <span>Bright Automations</span>
+                    </a>
                 </div>
-
-                <form id="loginForm" onsubmit="handleLogin(event)">
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" id="loginEmail" class="form-input" placeholder="your@email.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                            <input type="checkbox" style="cursor: pointer;">
-                            <span style="color: var(--gray-600); font-size: 0.9375rem;">Remember me</span>
-                        </label>
-                        <a href="#" style="color: var(--primary); font-size: 0.9375rem; text-decoration: none; font-weight: 600;">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
-
-                    <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Not a client yet? <a href="contact.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Get Started →</a></p>
-                    </div>
-                </form>
-
-                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--gray-50); border-radius: 1rem;">
-                    <p style="font-size: 0.875rem; color: var(--gray-600); text-align: center; margin-bottom: 1rem;"><strong>Demo Access:</strong> For testing purposes</p>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-700);">
-                        <div>Email: <code style="background: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem;">demo@client.com</code></div>
-                        <div>Password: <code style="background: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem;">password123</code></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dashboard (Hidden by default) -->
-    <div id="dashboardContainer" class="dashboard">
-        <div style="padding: 8rem 2rem 4rem; max-width: 1400px; margin: 0 auto;">
-            <!-- Dashboard Header -->
-            <div class="dashboard-header">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div>
-                        <h1 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Welcome back, <span id="clientName">Client</span>!</h1>
-                        <p style="color: var(--gray-600);">Here's what's happening with your projects</p>
-                    </div>
-                    <button onclick="handleLogout()" class="btn btn-outline">Logout</button>
-                </div>
-            </div>
-
-            <!-- Stats Grid -->
-            <div class="dashboard-grid">
-                <div class="stat-card">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <div>
-                            <p style="color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 0.5rem;">Active Projects</p>
-                            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary);">3</div>
-                        </div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">📊</div>
-                    </div>
-                    <div style="color: var(--success); font-size: 0.875rem; font-weight: 600;">↗ All on track</div>
-                </div>
-
-                <div class="stat-card">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <div>
-                            <p style="color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 0.5rem;">Open Requests</p>
-                            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary);">2</div>
-                        </div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">📝</div>
-                    </div>
-                    <div style="color: var(--gray-600); font-size: 0.875rem;">1 in progress</div>
-                </div>
-
-                <div class="stat-card">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <div>
-                            <p style="color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 0.5rem;">Support Hours</p>
-                            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--primary);">24/7</div>
-                        </div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">💬</div>
-                    </div>
-                    <div style="color: var(--gray-600); font-size: 0.875rem;">Avg response: 4 hours</div>
-                </div>
+                <h1>Client Portal</h1>
+                <p>How can we help you today?</p>
             </div>
 
             <!-- Quick Actions -->
-            <div style="background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-                <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Quick Actions</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-                    <button class="quick-action-btn" onclick="showEditRequestModal()">
-                        <div class="icon">✏️</div>
-                        <div>
-                            <div>Request Website Edit</div>
-                            <div style="font-size: 0.875rem; color: var(--gray-600); font-weight: 400;">Submit changes or updates</div>
-                        </div>
-                    </button>
+            <div id="quickActions" class="quick-actions">
+                <button class="action-card" onclick="showForm('website')">
+                    <div class="action-icon website">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="action-text">
+                        <h3>Website Edits</h3>
+                        <p>Request changes to your website</p>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </button>
 
-                    <button class="quick-action-btn" onclick="window.location.href='contact.html'">
-                        <div class="icon">💬</div>
-                        <div>
-                            <div>Contact Support</div>
-                            <div style="font-size: 0.875rem; color: var(--gray-600); font-weight: 400;">Get help from our team</div>
-                        </div>
-                    </button>
+                <button class="action-card" onclick="showForm('agent')">
+                    <div class="action-icon agent">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="action-text">
+                        <h3>Agent Edits</h3>
+                        <p>Update your AI automations</p>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </button>
 
-                    <button class="quick-action-btn" onclick="alert('Invoice download feature coming soon!')">
-                        <div class="icon">📄</div>
-                        <div>
-                            <div>View Invoices</div>
-                            <div style="font-size: 0.875rem; color: var(--gray-600); font-weight: 400;">Download past invoices</div>
-                        </div>
-                    </button>
+                <button class="action-card" onclick="showForm('support')">
+                    <div class="action-icon support">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="action-text">
+                        <h3>Contact Support</h3>
+                        <p>Get help from our team</p>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </button>
+            </div>
+
+            <!-- Website Edit Form -->
+            <div id="websiteForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2>Website Edit Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Website Edit">
+                    <div class="form-group">
+                        <label class="form-label">Your Name *</label>
+                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name *</label>
+                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which page needs editing? *</label>
+                        <input type="text" name="page" class="form-input" placeholder="e.g., Homepage, About, Contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Describe the changes *</label>
+                        <textarea name="message" class="form-textarea" placeholder="What would you like changed or updated?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Agent Edit Form -->
+            <div id="agentForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>Agent Edit Request</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Agent Edit">
+                    <div class="form-group">
+                        <label class="form-label">Your Name *</label>
+                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name *</label>
+                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Which agent or automation? *</label>
+                        <input type="text" name="agent" class="form-input" placeholder="e.g., Email Bot, Chatbot, Lead Agent" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Describe the changes *</label>
+                        <textarea name="message" class="form-textarea" placeholder="What would you like changed or updated?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn agent-btn">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Support Form -->
+            <div id="supportForm" class="form-container">
+                <div class="form-header">
+                    <div class="form-header-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h2>Contact Support</h2>
+                    <button class="back-btn" onclick="hideForm()"><i class="fas fa-times"></i></button>
+                </div>
+                <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="request_type" value="Support Request">
+                    <div class="form-group">
+                        <label class="form-label">Your Name *</label>
+                        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Name *</label>
+                        <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select name="priority" class="form-input">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Need it soon</option>
+                            <option value="urgent">Urgent - ASAP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How can we help? *</label>
+                        <textarea name="message" class="form-textarea" placeholder="Describe your issue or question..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn support-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Quick Contact -->
+            <div class="quick-contact">
+                <p>Need immediate assistance?</p>
+                <div class="contact-links">
+                    <a href="tel:+6102569844"><i class="fas fa-phone"></i> (610) 256-9844</a>
+                    <a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope"></i> Email Us</a>
                 </div>
             </div>
 
-            <!-- Recent Activity -->
-            <div class="grid grid-2">
-                <div style="background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Active Projects</h2>
-
-                    <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 1rem; margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                            <div>
-                                <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Website Redesign</h3>
-                                <p style="color: var(--gray-600); font-size: 0.9375rem;">Homepage and landing pages</p>
-                            </div>
-                            <span style="background: var(--success); color: white; padding: 0.25rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">In Progress</span>
-                        </div>
-                        <div style="background: var(--gray-200); height: 8px; border-radius: 1rem; overflow: hidden;">
-                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; width: 75%; border-radius: 1rem;"></div>
-                        </div>
-                        <p style="text-align: right; margin-top: 0.5rem; color: var(--gray-600); font-size: 0.875rem;">75% Complete</p>
-                    </div>
-
-                    <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 1rem; margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                            <div>
-                                <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Chatbot Integration</h3>
-                                <p style="color: var(--gray-600); font-size: 0.9375rem;">AI customer support</p>
-                            </div>
-                            <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">Planning</span>
-                        </div>
-                        <div style="background: var(--gray-200); height: 8px; border-radius: 1rem; overflow: hidden;">
-                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; width: 25%; border-radius: 1rem;"></div>
-                        </div>
-                        <p style="text-align: right; margin-top: 0.5rem; color: var(--gray-600); font-size: 0.875rem;">25% Complete</p>
-                    </div>
-
-                    <div style="padding: 1.5rem; background: var(--gray-50); border-radius: 1rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                            <div>
-                                <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Email Automation</h3>
-                                <p style="color: var(--gray-600); font-size: 0.9375rem;">Marketing campaigns</p>
-                            </div>
-                            <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">Active</span>
-                        </div>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Running smoothly - 500+ emails sent this month</p>
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Recent Updates</h2>
-
-                    <div style="border-left: 3px solid var(--primary); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
-                        <div style="position: absolute; left: -7px; top: 0; width: 11px; height: 11px; background: var(--primary); border-radius: 50%;"></div>
-                        <p style="color: var(--gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">2 hours ago</p>
-                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Homepage Design Approved</h3>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Your feedback has been implemented and we're moving to development.</p>
-                    </div>
-
-                    <div style="border-left: 3px solid var(--gray-300); padding-left: 1.5rem; margin-bottom: 2rem; position: relative;">
-                        <div style="position: absolute; left: -7px; top: 0; width: 11px; height: 11px; background: var(--gray-300); border-radius: 50%;"></div>
-                        <p style="color: var(--gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">Yesterday</p>
-                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">New Invoice Available</h3>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Invoice #1234 for $2,500 is ready for review.</p>
-                    </div>
-
-                    <div style="border-left: 3px solid var(--gray-300); padding-left: 1.5rem; position: relative;">
-                        <div style="position: absolute; left: -7px; top: 0; width: 11px; height: 11px; background: var(--gray-300); border-radius: 50%;"></div>
-                        <p style="color: var(--gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">3 days ago</p>
-                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Support Request Resolved</h3>
-                        <p style="color: var(--gray-600); font-size: 0.9375rem;">Your request about the contact form has been completed.</p>
-                    </div>
-                </div>
+            <!-- Back to site -->
+            <div class="back-to-site">
+                <a href="/"><i class="fas fa-arrow-left"></i> Back to main site</a>
             </div>
         </div>
     </div>
 
-    <!-- Edit Request Modal -->
-    <div id="editRequestModal" class="modal">
-        <div class="modal-overlay" onclick="closeEditRequestModal()"></div>
-        <div class="modal-content" style="max-width: 700px;">
-            <button class="modal-close" onclick="closeEditRequestModal()">&times;</button>
-
-            <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem;">Request Website Edit</h2>
-
-            <form data-form-type="edit-request" onsubmit="handleEditRequest(event)">
-                <div class="form-group">
-                    <label class="form-label">What page needs editing?</label>
-                    <input type="text" name="page" class="form-input" placeholder="e.g., Homepage, About Page, Contact Form" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Describe the changes needed</label>
-                    <textarea name="description" class="form-textarea" rows="5" placeholder="Please be as specific as possible about what you'd like changed..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Priority Level</label>
-                    <select name="priority" class="form-select" required>
-                        <option value="">Select priority...</option>
-                        <option value="low">Low - Within a week</option>
-                        <option value="medium">Medium - Within 3 days</option>
-                        <option value="high">High - Within 24 hours</option>
-                        <option value="urgent">Urgent - ASAP</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Bright Automations</h3>
-                    <p>Empowering businesses with modern web solutions and intelligent automation.</p>
-                </div>
-
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Design</a></li>
-                        <li><a href="services.html#ai-automation">AI Automation</a></li>
-                        <li><a href="services.html#email-marketing">Email Marketing</a></li>
-                        <li><a href="services.html#chatbot">Chatbots</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="mailto:info@brightautomations.com">info@brightautomations.com</a></li>
-                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
-                        <li><a href="client-portal.html">Client Portal</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
     <script>
-        // Login Handler
-        function handleLogin(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            // Simple demo authentication
-            if ((email === 'demo@client.com' && password === 'password123') ||
-                (email && password.length >= 6)) {
-                // Hide login, show dashboard
-                document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('dashboardContainer').classList.add('active');
-
-                // Extract name from email
-                const name = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
-                document.getElementById('clientName').textContent = name;
-
-                // Show success notification
-                if (window.BrightAutomations) {
-                    window.BrightAutomations.showNotification('Welcome back! Login successful.', 'success');
-                }
-            } else {
-                if (window.BrightAutomations) {
-                    window.BrightAutomations.showNotification('Invalid credentials. Please try again.', 'error');
-                } else {
-                    alert('Invalid credentials. Please try again.');
-                }
-            }
+        function showForm(type) {
+            document.getElementById('quickActions').style.display = 'none';
+            document.getElementById(type + 'Form').classList.add('active');
         }
 
-        // Logout Handler
-        function handleLogout() {
-            document.getElementById('dashboardContainer').classList.remove('active');
-            document.getElementById('loginContainer').style.display = 'flex';
-            document.getElementById('loginForm').reset();
-
-            if (window.BrightAutomations) {
-                window.BrightAutomations.showNotification('You have been logged out successfully.', 'info');
-            }
-        }
-
-        // Edit Request Modal
-        function showEditRequestModal() {
-            document.getElementById('editRequestModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeEditRequestModal() {
-            document.getElementById('editRequestModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Edit Request Form Handler
-        function handleEditRequest(event) {
-            event.preventDefault();
-
-            closeEditRequestModal();
-
-            if (window.BrightAutomations) {
-                window.BrightAutomations.showNotification('Edit request submitted successfully! We\'ll get back to you within 24 hours.', 'success');
-            } else {
-                alert('Edit request submitted successfully!');
-            }
-
-            event.target.reset();
-        }
-
-        // Initialize Modal System
-        if (window.BrightAutomations && window.BrightAutomations.Modal) {
-            new window.BrightAutomations.Modal('editRequestModal');
+        function hideForm() {
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.remove('active');
+            });
+            document.getElementById('quickActions').style.display = 'flex';
         }
     </script>
 </body>
