@@ -287,6 +287,91 @@
 
     <!-- n8n Chatbot -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+        /* Chatbot Toggle Button */
+        .n8n-chat .chat-toggle {
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
+            border: 2px solid #00e5ff !important;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3) !important;
+        }
+        .n8n-chat .chat-toggle:hover {
+            transform: scale(1.1) !important;
+        }
+        .n8n-chat .chat-toggle svg {
+            fill: #00e5ff !important;
+        }
+
+        /* Chat Window */
+        .n8n-chat .chat-window {
+            border-radius: 16px !important;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4) !important;
+            border: 1px solid rgba(0, 229, 255, 0.2) !important;
+        }
+
+        /* Chat Header */
+        .n8n-chat .chat-header {
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
+        }
+        .n8n-chat .chat-header-title {
+            color: #ffffff !important;
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+        .n8n-chat .chat-header-subtitle {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        .n8n-chat .chat-header button svg {
+            fill: #00e5ff !important;
+        }
+
+        /* Messages */
+        .n8n-chat .chat-message-bot {
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(0, 229, 255, 0.2) !important;
+        }
+        .n8n-chat .chat-message-user {
+            background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%) !important;
+            color: #0e1e32 !important;
+        }
+
+        /* Input Area */
+        .n8n-chat .chat-input {
+            border: 2px solid rgba(0, 229, 255, 0.3) !important;
+            background: #ffffff !important;
+        }
+        .n8n-chat .chat-input:focus-within {
+            border-color: #00e5ff !important;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2) !important;
+        }
+        .n8n-chat .chat-input button {
+            background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%) !important;
+        }
+        .n8n-chat .chat-input button svg {
+            fill: #0e1e32 !important;
+        }
+
+        /* Welcome Screen */
+        .n8n-chat .chat-welcome-screen {
+            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
+        }
+        .n8n-chat .chat-welcome-screen h1,
+        .n8n-chat .chat-welcome-screen h2 {
+            color: #ffffff !important;
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+        .n8n-chat .chat-welcome-screen p {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        .n8n-chat .chat-welcome-screen button {
+            background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%) !important;
+            color: #0e1e32 !important;
+            font-weight: 600 !important;
+        }
+        .n8n-chat .chat-welcome-screen button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4) !important;
+        }
+    </style>
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
         createChat({
@@ -294,7 +379,7 @@
             mode: 'window',
             showWelcomeScreen: true,
             initialMessages: [
-                'Hi there! 👋',
+                'Hi there!',
                 'I\'m the Bright Automations assistant. How can I help you today?'
             ],
             i18n: {
@@ -304,10 +389,6 @@
                     getStarted: 'Start Chat',
                     inputPlaceholder: 'Type your message...',
                 }
-            },
-            theme: {
-                primaryColor: '#00e5ff',
-                secondaryColor: '#0e1e32'
             }
         });
     </script>
