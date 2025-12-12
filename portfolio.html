@@ -305,5 +305,32 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- n8n Chatbot -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/bright-auto-lead-chatbot/chat',
+            mode: 'window',
+            showWelcomeScreen: true,
+            initialMessages: [
+                'Hi there! 👋',
+                'I\'m the Bright Automations assistant. How can I help you today?'
+            ],
+            i18n: {
+                en: {
+                    title: 'Bright Automations',
+                    subtitle: 'Chat with us anytime',
+                    getStarted: 'Start Chat',
+                    inputPlaceholder: 'Type your message...',
+                }
+            },
+            theme: {
+                primaryColor: '#00e5ff',
+                secondaryColor: '#0e1e32'
+            }
+        });
+    </script>
 </body>
 </html>
