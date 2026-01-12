@@ -74,9 +74,288 @@
                 grid-template-columns: repeat(3, 1fr) !important;
             }
         }
+
+        /* Lead Modal Styles */
+        .lead-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .lead-modal.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .lead-modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            max-width: 480px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .lead-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            color: #9CA3AF;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .lead-modal-close:hover {
+            color: #374151;
+        }
+        .lead-modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .lead-modal-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+        }
+        .lead-modal-header p {
+            color: #6B7280;
+            font-size: 0.95rem;
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        .form-question {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+        .form-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-option {
+            cursor: pointer;
+        }
+        .form-option input {
+            display: none;
+        }
+        .form-option span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .form-option span i {
+            color: #2E7D8A;
+        }
+        .form-option input:checked + span {
+            border-color: #2E7D8A;
+            background: rgba(46, 125, 138, 0.1);
+            color: #2E7D8A;
+        }
+        .form-option:hover span {
+            border-color: #2E7D8A;
+        }
+        .form-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .lead-form .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .lead-form .form-input:focus {
+            outline: none;
+            border-color: #2E7D8A;
+        }
+        .form-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .form-nav .btn {
+            flex: 1;
+            max-width: 160px;
+        }
+        .lead-form .btn-primary {
+            width: 100%;
+        }
+        .form-success {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .success-icon {
+            font-size: 4rem;
+            color: #10B981;
+            margin-bottom: 1rem;
+        }
+        .form-success h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+        }
+        .form-success p {
+            color: #6B7280;
+            margin-bottom: 1.5rem;
+        }
+        .lead-modal-progress {
+            margin-top: 2rem;
+            height: 4px;
+            background: #E5E7EB;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2E7D8A, #4AABB8);
+            width: 33%;
+            transition: width 0.3s ease;
+        }
+        @media (max-width: 480px) {
+            .lead-modal-content {
+                padding: 1.75rem;
+            }
+            .form-options {
+                grid-template-columns: 1fr;
+            }
+            .lead-modal-header h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Quick Lead Questionnaire Modal -->
+    <div id="leadModal" class="lead-modal">
+        <div class="lead-modal-content">
+            <button class="lead-modal-close" onclick="closeLeadModal()">&times;</button>
+            <div class="lead-modal-header">
+                <h2>Let's Get Started!</h2>
+                <p>Answer 3 quick questions so we can help you better</p>
+            </div>
+            <form id="leadForm" class="lead-form">
+                <!-- Step 1 -->
+                <div class="form-step active" data-step="1">
+                    <label class="form-question">What service are you interested in?</label>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="service" value="Website Design" required>
+                            <span><i class="fas fa-palette"></i> Website Design</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="service" value="AI Automation">
+                            <span><i class="fas fa-robot"></i> AI Automation</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="service" value="Email Marketing">
+                            <span><i class="fas fa-envelope"></i> Email Marketing</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="service" value="Not Sure">
+                            <span><i class="fas fa-question"></i> Not Sure Yet</span>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary form-next" onclick="nextStep(1)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-step" data-step="2">
+                    <label class="form-question">What's your timeline?</label>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="timeline" value="ASAP" required>
+                            <span><i class="fas fa-bolt"></i> ASAP</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="timeline" value="1-2 Weeks">
+                            <span><i class="fas fa-calendar-week"></i> 1-2 Weeks</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="timeline" value="1 Month+">
+                            <span><i class="fas fa-calendar"></i> 1 Month+</span>
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="timeline" value="Just Browsing">
+                            <span><i class="fas fa-eye"></i> Just Browsing</span>
+                        </label>
+                    </div>
+                    <div class="form-nav">
+                        <button type="button" class="btn btn-secondary form-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-primary form-next" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="form-step" data-step="3">
+                    <label class="form-question">How can we reach you?</label>
+                    <div class="form-inputs">
+                        <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+                        <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+                        <input type="tel" name="phone" placeholder="Phone (optional)" class="form-input">
+                    </div>
+                    <div class="form-nav">
+                        <button type="button" class="btn btn-secondary form-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn btn-primary">Get My Free Quote <i class="fas fa-check"></i></button>
+                    </div>
+                </div>
+
+                <!-- Success -->
+                <div class="form-step form-success" data-step="4">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Thank You!</h3>
+                    <p>We'll be in touch within 24 hours.</p>
+                    <button type="button" class="btn btn-primary" onclick="closeLeadModal()">Explore Our Site</button>
+                </div>
+            </form>
+            <div class="lead-modal-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -386,6 +665,100 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- Lead Modal Script -->
+    <script>
+        // Show modal after short delay (only if not seen before in this session)
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!sessionStorage.getItem('leadModalShown')) {
+                setTimeout(function() {
+                    document.getElementById('leadModal').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 2000); // 2 second delay
+            }
+        });
+
+        function closeLeadModal() {
+            document.getElementById('leadModal').classList.remove('active');
+            document.body.style.overflow = '';
+            sessionStorage.setItem('leadModalShown', 'true');
+        }
+
+        function nextStep(current) {
+            const currentStep = document.querySelector(`.form-step[data-step="${current}"]`);
+            const nextStepEl = document.querySelector(`.form-step[data-step="${current + 1}"]`);
+
+            // Validate current step
+            const radioGroup = currentStep.querySelector('input[type="radio"]');
+            if (radioGroup) {
+                const name = radioGroup.getAttribute('name');
+                const checked = currentStep.querySelector(`input[name="${name}"]:checked`);
+                if (!checked) {
+                    alert('Please select an option');
+                    return;
+                }
+            }
+
+            currentStep.classList.remove('active');
+            nextStepEl.classList.add('active');
+            updateProgress(current + 1);
+        }
+
+        function prevStep(current) {
+            const currentStep = document.querySelector(`.form-step[data-step="${current}"]`);
+            const prevStepEl = document.querySelector(`.form-step[data-step="${current - 1}"]`);
+            currentStep.classList.remove('active');
+            prevStepEl.classList.add('active');
+            updateProgress(current - 1);
+        }
+
+        function updateProgress(step) {
+            const progressBar = document.getElementById('progressBar');
+            const percent = (step / 3) * 100;
+            progressBar.style.width = percent + '%';
+        }
+
+        // Form submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+                service: formData.get('service'),
+                timeline: formData.get('timeline'),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || 'Not provided'
+            };
+
+            // Send to your backend/webhook (you can customize this URL)
+            fetch('https://jkolsun.app.n8n.cloud/webhook/bright-auto-lead-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(err => console.log('Form submitted'));
+
+            // Show success
+            document.querySelector('.form-step[data-step="3"]').classList.remove('active');
+            document.querySelector('.form-step[data-step="4"]').classList.add('active');
+            document.getElementById('progressBar').style.width = '100%';
+            sessionStorage.setItem('leadModalShown', 'true');
+        });
+
+        // Close on backdrop click
+        document.getElementById('leadModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLeadModal();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLeadModal();
+            }
+        });
+    </script>
 
     <!-- n8n Chatbot -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
