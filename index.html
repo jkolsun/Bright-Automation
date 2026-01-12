@@ -723,26 +723,27 @@
             e.preventDefault();
 
             const formData = new FormData(this);
-            const data = {
-                service: formData.get('service'),
-                timeline: formData.get('timeline'),
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone') || 'Not provided'
-            };
 
-            // Send to your backend/webhook (you can customize this URL)
-            fetch('https://jkolsun.app.n8n.cloud/webhook/bright-auto-lead-form', {
+            // Send to Formspree
+            fetch('https://formspree.io/f/mnneglkj', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            }).catch(err => console.log('Form submitted'));
-
-            // Show success
-            document.querySelector('.form-step[data-step="3"]').classList.remove('active');
-            document.querySelector('.form-step[data-step="4"]').classList.add('active');
-            document.getElementById('progressBar').style.width = '100%';
-            sessionStorage.setItem('leadModalShown', 'true');
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    // Show success
+                    document.querySelector('.form-step[data-step="3"]').classList.remove('active');
+                    document.querySelector('.form-step[data-step="4"]').classList.add('active');
+                    document.getElementById('progressBar').style.width = '100%';
+                    sessionStorage.setItem('leadModalShown', 'true');
+                }
+            }).catch(err => {
+                // Show success anyway for better UX
+                document.querySelector('.form-step[data-step="3"]').classList.remove('active');
+                document.querySelector('.form-step[data-step="4"]').classList.add('active');
+                document.getElementById('progressBar').style.width = '100%';
+                sessionStorage.setItem('leadModalShown', 'true');
+            });
         });
 
         // Close on backdrop click
