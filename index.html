@@ -254,6 +254,36 @@
             width: 33%;
             transition: width 0.3s ease;
         }
+        /* Dropdown styles for form options */
+        .form-dropdown {
+            display: none;
+            grid-column: 1 / -1;
+            margin-top: -0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .form-dropdown.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        .form-dropdown select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #2E7D8A;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            color: #374151;
+            background: rgba(46, 125, 138, 0.05);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232E7D8A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+        .form-dropdown select:focus {
+            outline: none;
+            border-color: #2E7D8A;
+            box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
+        }
         @media (max-width: 480px) {
             .lead-modal-content {
                 padding: 1.75rem;
@@ -285,16 +315,44 @@
                             <input type="radio" name="service" value="Website Design" required>
                             <span><i class="fas fa-palette"></i> Website Design</span>
                         </label>
-                        <label class="form-option">
-                            <input type="radio" name="service" value="AI Automation">
-                            <span><i class="fas fa-robot"></i> AI Automation</span>
+                        <label class="form-option has-dropdown">
+                            <input type="radio" name="service" value="Automations" data-has-dropdown="automations-dropdown">
+                            <span><i class="fas fa-robot"></i> Automations</span>
                         </label>
-                        <label class="form-option">
-                            <input type="radio" name="service" value="Email Marketing">
-                            <span><i class="fas fa-envelope"></i> Email Marketing</span>
+                        <div class="form-dropdown" id="automations-dropdown">
+                            <select name="automation_type">
+                                <option value="">Select an automation...</option>
+                                <option value="Website Chatbot">Website Chatbot</option>
+                                <option value="Smart Lead Follow-Up">Smart Lead Follow-Up</option>
+                                <option value="Mass Email Marketing">Mass Email Marketing</option>
+                                <option value="Appointment Scheduling">Appointment Scheduling</option>
+                                <option value="Invoice & Billing">Invoice & Billing</option>
+                                <option value="Abandoned Cart Saver">Abandoned Cart Saver</option>
+                                <option value="Customer Segmentation">Customer Segmentation</option>
+                                <option value="Data Enrichment">Data Enrichment</option>
+                                <option value="Customer Reactivation">Customer Reactivation</option>
+                                <option value="Content Summarizer">Content Summarizer</option>
+                                <option value="Voicemail Transcription">Voicemail Transcription</option>
+                            </select>
+                        </div>
+                        <label class="form-option has-dropdown">
+                            <input type="radio" name="service" value="Automation Systems" data-has-dropdown="systems-dropdown">
+                            <span><i class="fas fa-cogs"></i> Automation Systems</span>
                         </label>
+                        <div class="form-dropdown" id="systems-dropdown">
+                            <select name="system_type">
+                                <option value="">Select a system...</option>
+                                <option value="Lead Capture and Intake System">Lead Capture and Intake System</option>
+                                <option value="Sales and Follow up System">Sales and Follow up System</option>
+                                <option value="Customer Communication System">Customer Communication System</option>
+                                <option value="Scheduling and Booking System">Scheduling and Booking System</option>
+                                <option value="Operations and Internal Workflow System">Operations and Internal Workflow System</option>
+                                <option value="CRM and Data Management System">CRM and Data Management System</option>
+                                <option value="Billing and Admin System">Billing and Admin System</option>
+                            </select>
+                        </div>
                         <label class="form-option">
-                            <input type="radio" name="service" value="Not Sure">
+                            <input type="radio" name="service" value="Not Sure Yet">
                             <span><i class="fas fa-question"></i> Not Sure Yet</span>
                         </label>
                     </div>
@@ -683,6 +741,23 @@
             document.body.style.overflow = '';
             sessionStorage.setItem('leadModalShown', 'true');
         }
+
+        // Handle dropdown display for service options
+        document.querySelectorAll('input[name="service"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Hide all dropdowns
+                document.querySelectorAll('.form-dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.querySelector('select').value = '';
+                });
+
+                // Show dropdown if selected option has one
+                const dropdownId = this.getAttribute('data-has-dropdown');
+                if (dropdownId) {
+                    document.getElementById(dropdownId).classList.add('active');
+                }
+            });
+        });
 
         function nextStep(current) {
             const currentStep = document.querySelector(`.form-step[data-step="${current}"]`);
