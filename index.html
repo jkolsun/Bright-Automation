@@ -222,6 +222,14 @@
         .lead-form .btn-primary {
             width: 100%;
         }
+        .lead-form .btn,
+        .lead-form button {
+            cursor: pointer !important;
+        }
+        .lead-form .btn:active,
+        .lead-form button:active {
+            cursor: pointer !important;
+        }
         .form-success {
             text-align: center;
             padding: 1rem 0;
@@ -396,7 +404,7 @@
                     </div>
                     <div class="form-nav">
                         <button type="button" class="btn btn-secondary form-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="submit" class="btn btn-primary">Get My Free Quote <i class="fas fa-check"></i></button>
+                        <button type="submit" class="btn btn-primary">Submit <i class="fas fa-check"></i></button>
                     </div>
                 </div>
 
@@ -404,7 +412,7 @@
                 <div class="form-step form-success" data-step="4">
                     <div class="success-icon"><i class="fas fa-check-circle"></i></div>
                     <h3>Thank You!</h3>
-                    <p>We'll be in touch within 24 hours.</p>
+                    <p>We'll be in touch ASAP.</p>
                     <button type="button" class="btn btn-primary" onclick="closeLeadModal()">Explore Our Site</button>
                 </div>
             </form>
