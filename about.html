@@ -257,39 +257,5 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
 
-    <!-- n8n Chatbot -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <style>
-        .n8n-chat .chat-toggle { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; border: 2px solid #00e5ff !important; box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3) !important; }
-        .n8n-chat .chat-toggle:hover { transform: scale(1.1) !important; }
-        .n8n-chat .chat-toggle svg { fill: #00e5ff !important; }
-        .n8n-chat .chat-window { border-radius: 16px !important; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4) !important; border: 1px solid rgba(0, 229, 255, 0.2) !important; }
-        .n8n-chat .chat-header { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; border-bottom: 1px solid rgba(0, 229, 255, 0.2) !important; }
-        .n8n-chat .chat-header h1, .n8n-chat .chat-header .chat-title { color: #ffffff !important; font-family: 'Space Grotesk', sans-serif !important; }
-        .n8n-chat .chat-header .chat-subtitle { color: rgba(255, 255, 255, 0.6) !important; }
-        .n8n-chat .chat-messages-container, .n8n-chat .chat-body { background: #0e1e32 !important; }
-        .n8n-chat .chat-message-bot .chat-message-content, .n8n-chat .chat-message.bot .chat-message-content { background: #1a2744 !important; color: #ffffff !important; border: 1px solid rgba(0, 229, 255, 0.15) !important; }
-        .n8n-chat .chat-message-user .chat-message-content, .n8n-chat .chat-message.user .chat-message-content { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; color: #0e1e32 !important; }
-        .n8n-chat .chat-input-container, .n8n-chat .chat-footer { background: #0e1e32 !important; border-top: 1px solid rgba(0, 229, 255, 0.2) !important; }
-        .n8n-chat .chat-input, .n8n-chat textarea { background: #1a2744 !important; border: 2px solid rgba(0, 229, 255, 0.2) !important; border-radius: 12px !important; color: #ffffff !important; }
-        .n8n-chat .chat-input:focus, .n8n-chat textarea:focus { border-color: #00e5ff !important; }
-        .n8n-chat .chat-send-button, .n8n-chat button[type="submit"] { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; color: #0e1e32 !important; border: none !important; }
-        .n8n-chat .chat-welcome-screen { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; }
-        .n8n-chat .chat-welcome-screen h1, .n8n-chat .chat-welcome-screen .welcome-title { color: #ffffff !important; }
-        .n8n-chat .chat-welcome-screen p, .n8n-chat .chat-welcome-screen .welcome-subtitle { color: rgba(255, 255, 255, 0.6) !important; }
-        .n8n-chat .chat-welcome-screen button, .n8n-chat .chat-start-button { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; color: #0e1e32 !important; border: none !important; border-radius: 12px !important; }
-        .n8n-chat .chat-close-button { color: rgba(255, 255, 255, 0.6) !important; }
-        .n8n-chat .typing-indicator span { background: #00e5ff !important; }
-    </style>
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        createChat({
-            webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/bright-auto-lead-chatbot/chat',
-            mode: 'window',
-            showWelcomeScreen: true,
-            initialMessages: ['Hi there! 👋', 'I\'m the Bright Automations assistant. How can I help you today?'],
-            i18n: { en: { title: 'Bright Automations', subtitle: 'Chat with us anytime', getStarted: 'Start Chat', inputPlaceholder: 'Type your message...' } }
-        });
-    </script>
 </body>
 </html>

@@ -612,36 +612,5 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
 
-    <!-- n8n Chatbot -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <style>
-        .n8n-chat .chat-toggle { background: #2E7D8A !important; border: none !important; box-shadow: 0 4px 15px rgba(46, 125, 138, 0.4) !important; }
-        .n8n-chat .chat-toggle:hover { transform: scale(1.1) !important; }
-        .n8n-chat .chat-toggle svg { fill: #ffffff !important; }
-        .n8n-chat .chat-window { border-radius: 1rem !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important; }
-        .n8n-chat .chat-header { background: #2E7D8A !important; }
-        .n8n-chat .chat-header h1, .n8n-chat .chat-header .chat-title { color: #ffffff !important; }
-        .n8n-chat .chat-header .chat-subtitle { color: rgba(255, 255, 255, 0.8) !important; }
-        .n8n-chat .chat-messages-container, .n8n-chat .chat-body { background: #f8fafc !important; }
-        .n8n-chat .chat-message-bot .chat-message-content { background: #ffffff !important; color: #1e293b !important; border: 1px solid #e2e8f0 !important; }
-        .n8n-chat .chat-message-user .chat-message-content { background: #2E7D8A !important; color: #ffffff !important; }
-        .n8n-chat .chat-input-container, .n8n-chat .chat-footer { background: #ffffff !important; border-top: 1px solid #e2e8f0 !important; }
-        .n8n-chat .chat-input, .n8n-chat textarea { background: #f8fafc !important; border: 1px solid #e2e8f0 !important; color: #1e293b !important; }
-        .n8n-chat .chat-send-button { background: #2E7D8A !important; color: #ffffff !important; }
-        .n8n-chat .chat-welcome-screen { background: #2E7D8A !important; }
-        .n8n-chat .chat-welcome-screen h1 { color: #ffffff !important; }
-        .n8n-chat .chat-welcome-screen p { color: rgba(255, 255, 255, 0.8) !important; }
-        .n8n-chat .chat-welcome-screen button { background: #ffffff !important; color: #2E7D8A !important; }
-    </style>
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        createChat({
-            webhookUrl: 'https://jkolsun.app.n8n.cloud/webhook/bright-auto-lead-chatbot/chat',
-            mode: 'window',
-            showWelcomeScreen: true,
-            initialMessages: ['Hi there!', 'How can I help you today?'],
-            i18n: { en: { title: 'Bright Automations', subtitle: 'Chat with us', getStarted: 'Start Chat', inputPlaceholder: 'Type a message...' } }
-        });
-    </script>
 </body>
 </html>
