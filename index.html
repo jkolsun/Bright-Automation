@@ -167,7 +167,7 @@
             margin: 0 auto;
         }
 
-        /* Features - clean cards */
+        /* Features - premium cards with gradient accent */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -176,58 +176,109 @@
         .feature-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2E7D8A, #3da5b4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .feature-card:hover {
             border-color: #2E7D8A;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 40px rgba(46, 125, 138, 0.12);
+            transform: translateY(-4px);
+        }
+        .feature-card:hover::before {
+            opacity: 1;
         }
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: #f0fdfa;
-            border-radius: 10px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #f0fdfa 0%, #e6f7f9 100%);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             color: #2E7D8A;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(46, 125, 138, 0.1);
         }
         .feature-card h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: #0f172a;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
         }
         .feature-card p {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             color: #64748b;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+        .feature-badge {
+            display: inline-block;
+            background: #f0fdf4;
+            color: #166534;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        /* Integrations - simple row */
+        /* Integrations - grid layout */
         .integrations-row {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         .integration-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            padding: 1rem 0.5rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .integration-item:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
         }
         .integration-item i {
             font-size: 2rem;
         }
         .integration-item span {
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: #64748b;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .integrations-row {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .integrations-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         /* Industries - simple pills */
@@ -414,41 +465,45 @@
     <section class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2>Everything You Need</h2>
-                <p>One system that handles calls, chat, follow-ups, and CRM—all on autopilot.</p>
+                <h2>Everything You Need to Capture More Leads</h2>
+                <p>One integrated system that handles calls, chat, follow-ups, and CRM—all on autopilot.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
+                    <span class="feature-badge">24/7 Available</span>
                     <div class="feature-icon">
                         <i class="fas fa-phone-volume"></i>
                     </div>
                     <h3>AI Voice Agent</h3>
-                    <p>Answers calls 24/7, qualifies leads, and books appointments automatically.</p>
+                    <p>Human-like AI powered by ElevenLabs that answers every call, qualifies leads with smart questions, and books appointments directly into your calendar—even at 2am.</p>
                 </div>
 
                 <div class="feature-card">
+                    <span class="feature-badge">Instant Response</span>
                     <div class="feature-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3>Website Chatbot</h3>
-                    <p>Engages visitors instantly, answers questions, and captures contact info.</p>
+                    <p>Engages visitors the moment they land on your site, answers FAQs intelligently, and captures contact info before they leave. No more missed opportunities.</p>
                 </div>
 
                 <div class="feature-card">
+                    <span class="feature-badge">Automated</span>
                     <div class="feature-icon">
                         <i class="fas fa-paper-plane"></i>
                     </div>
-                    <h3>Automated Follow-Up</h3>
-                    <p>SMS and email sequences that nurture leads until they're ready to buy.</p>
+                    <h3>Smart Follow-Up</h3>
+                    <p>Multi-channel sequences via SMS, email, and WhatsApp that nurture leads with personalized messages until they're ready to book or buy.</p>
                 </div>
 
                 <div class="feature-card">
+                    <span class="feature-badge">Seamless</span>
                     <div class="feature-icon">
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>CRM Integration</h3>
-                    <p>Every lead flows directly into your CRM. Works with tools you already use.</p>
+                    <p>Every lead automatically syncs to your CRM with full conversation history. Works with HubSpot, Salesforce, GoHighLevel, and 50+ other platforms.</p>
                 </div>
             </div>
         </div>
@@ -476,16 +531,36 @@
                     <span>GoHighLevel</span>
                 </div>
                 <div class="integration-item">
+                    <i class="fas fa-microphone-alt" style="color: #000000;"></i>
+                    <span>ElevenLabs</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-utensils" style="color: #ff6b35;"></i>
+                    <span>Toast POS</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-phone-alt" style="color: #f22f46;"></i>
+                    <span>Twilio</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-bolt" style="color: #ff4a00;"></i>
+                    <span>Zapier</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-cogs" style="color: #9461fb;"></i>
+                    <span>Make</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-project-diagram" style="color: #ea4b71;"></i>
+                    <span>n8n</span>
+                </div>
+                <div class="integration-item">
                     <i class="fab fa-google" style="color: #4285f4;"></i>
                     <span>Google Calendar</span>
                 </div>
                 <div class="integration-item">
                     <i class="fas fa-calendar-check" style="color: #006bff;"></i>
                     <span>Calendly</span>
-                </div>
-                <div class="integration-item">
-                    <i class="fas fa-bolt" style="color: #ff4a00;"></i>
-                    <span>Zapier</span>
                 </div>
                 <div class="integration-item">
                     <i class="fab fa-slack" style="color: #4a154b;"></i>
@@ -502,6 +577,10 @@
                 <div class="integration-item">
                     <i class="fas fa-database" style="color: #47a248;"></i>
                     <span>MongoDB</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-sms" style="color: #25d366;"></i>
+                    <span>WhatsApp</span>
                 </div>
             </div>
         </div>
