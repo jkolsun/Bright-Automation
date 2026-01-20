@@ -195,6 +195,60 @@
             color: #1e293b;
         }
 
+        /* Integrations section */
+        .integrations-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        .integrations-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .integrations-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .integrations-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .integrations-header p {
+            font-size: 1.125rem;
+            color: #64748b;
+        }
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .integrations-section .integration-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .integrations-section .integration-item:hover {
+            border-color: #2E7D8A;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .integrations-section .integration-item i {
+            font-size: 2rem;
+            color: #2E7D8A;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .integrations-section .integration-item span {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
         /* CTA section */
         .cta-clean {
             padding: 80px 0;
@@ -262,6 +316,9 @@
             }
             .industries-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            .integrations-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -438,6 +495,51 @@
                 <div class="industry-item">
                     <i class="fas fa-ellipsis-h"></i>
                     <span>And More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section">
+        <div class="container">
+            <div class="integrations-header">
+                <h2>Works With Your Existing Tools</h2>
+                <p>Our system connects to the CRMs, calendars, and tools you already use.</p>
+            </div>
+
+            <div class="integrations-grid">
+                <div class="integration-item">
+                    <i class="fab fa-hubspot"></i>
+                    <span>HubSpot</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fab fa-salesforce"></i>
+                    <span>Salesforce</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>GoHighLevel</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fab fa-google"></i>
+                    <span>Google Calendar</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Calendly</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Mailchimp</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Zapier</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Custom API</span>
                 </div>
             </div>
         </div>
