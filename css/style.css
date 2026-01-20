@@ -882,7 +882,7 @@ body {
     text-decoration: none;
     transition: all var(--transition-base);
     border: none;
-    cursor: none;
+    cursor: pointer;
     font-size: 1rem;
     text-align: center;
     position: relative;
