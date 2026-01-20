@@ -25,10 +25,14 @@
         /* Minimalist hero - with video as full background */
         .hero-minimal {
             background: #ffffff;
-            padding: 120px 0 60px;
+            padding: 160px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         /* Video as full background, cropped to remove black bars */
         .hero-video-bg {
@@ -47,7 +51,7 @@
             object-fit: cover;
             object-position: center center;
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -315,7 +319,8 @@
         /* Mobile */
         @media (max-width: 768px) {
             .hero-minimal {
-                padding: 100px 0 50px;
+                padding: 120px 0 60px;
+                min-height: 60vh;
             }
             .hero-minimal h1 {
                 font-size: 2.25rem;
@@ -362,11 +367,7 @@
     <nav class="navbar" style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="images/logo.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="logo-fallback" style="display: none;">
-                    <div class="logo-icon">B</div>
-                    <span>Bright Automations</span>
-                </div>
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
             </a>
 
             <ul class="nav-menu">
@@ -454,7 +455,7 @@
     </section>
 
     <!-- Integrations Section -->
-    <section class="section">
+    <section class="section" id="integrations">
         <div class="container">
             <div class="section-header">
                 <h2>Works With Your Tools</h2>
@@ -471,8 +472,16 @@
                     <span>Salesforce</span>
                 </div>
                 <div class="integration-item">
+                    <i class="fas fa-chart-line" style="color: #10b981;"></i>
+                    <span>GoHighLevel</span>
+                </div>
+                <div class="integration-item">
                     <i class="fab fa-google" style="color: #4285f4;"></i>
-                    <span>Google</span>
+                    <span>Google Calendar</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-calendar-check" style="color: #006bff;"></i>
+                    <span>Calendly</span>
                 </div>
                 <div class="integration-item">
                     <i class="fas fa-bolt" style="color: #ff4a00;"></i>
@@ -481,6 +490,18 @@
                 <div class="integration-item">
                     <i class="fab fa-slack" style="color: #4a154b;"></i>
                     <span>Slack</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fab fa-mailchimp" style="color: #ffe01b;"></i>
+                    <span>Mailchimp</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fab fa-stripe" style="color: #635bff;"></i>
+                    <span>Stripe</span>
+                </div>
+                <div class="integration-item">
+                    <i class="fas fa-database" style="color: #47a248;"></i>
+                    <span>MongoDB</span>
                 </div>
             </div>
         </div>
@@ -554,11 +575,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <a href="/" class="logo footer-logo">
-                        <img src="images/logo-light.png" alt="Bright Automations" class="logo-img-large" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="logo-fallback" style="display: none;">
-                            <div class="logo-icon" style="background: var(--primary);">B</div>
-                            <span style="color: var(--white);">Bright Automations</span>
-                        </div>
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
                     </a>
                     <p>AI-powered lead capture for service businesses.</p>
                     <div class="footer-social">
