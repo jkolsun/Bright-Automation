@@ -356,15 +356,24 @@
         .nav-social {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.25rem;
         }
         .nav-social a {
             color: #64748b;
-            font-size: 1rem;
-            transition: color 0.2s ease;
+            font-size: 1.375rem;
+            transition: all 0.2s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(46, 125, 138, 0.08);
         }
         .nav-social a:hover {
             color: #2E7D8A;
+            background: rgba(46, 125, 138, 0.15);
+            transform: translateY(-2px);
         }
 
         /* Mobile */
@@ -446,9 +455,49 @@
                 display: none;
             }
         }
+
+        /* FAQ Floating Button */
+        .faq-float-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 100px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #2E7D8A;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            z-index: 999;
+        }
+        .faq-float-btn:hover {
+            background: #2E7D8A;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 138, 0.3);
+        }
+        @media (max-width: 768px) {
+            .faq-float-btn {
+                top: auto;
+                bottom: 20px;
+                left: 20px;
+                padding: 0.625rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- FAQ Floating Button -->
+    <a href="contact.html#faq" class="faq-float-btn">
+        <i class="fas fa-circle-question"></i>
+        FAQ
+    </a>
     <!-- Navigation -->
     <nav class="navbar" style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
         <div class="nav-container">
