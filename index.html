@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bright Automations - AI-Powered Web Development and Business Automation Solutions for Modern Businesses">
-    <meta name="keywords" content="web development, AI automation, business automation, website design, chatbots">
-    <title>Bright Automations - AI-Powered Web Development & Automation</title>
+    <meta name="description" content="AI Lead Capture System for Service Businesses - Never miss a lead again with 24/7 AI voice agents, chatbots, and automated follow-ups">
+    <meta name="keywords" content="AI lead capture, voice agent, chatbot, automated follow-up, service business automation, CRM integration">
+    <title>Bright Automations - AI Lead Capture System for Service Businesses</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
@@ -21,7 +21,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Mobile Overrides -->
+    <!-- Page Specific Styles -->
     <style>
         /* Nav social icons */
         .nav-social {
@@ -39,7 +39,191 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile: Hide video, show text only */
+        /* Hero specific */
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: 0.25rem;
+        }
+
+        /* Feature cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .feature-card {
+            background: rgba(14, 30, 50, 0.8);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: rgba(0, 229, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.1);
+        }
+        .feature-card-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(0, 229, 255, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        /* Industries */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+        .industry-item {
+            background: rgba(14, 30, 50, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .industry-item:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            background: rgba(14, 30, 50, 0.8);
+        }
+        .industry-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .industry-item span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* Why us section */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .why-us-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+        .why-us-card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(46, 125, 138, 0.1);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+        }
+        .why-us-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        .why-us-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* Problem/Solution */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .problem-list, .solution-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .problem-list li, .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .problem-list li:last-child, .solution-list li:last-child {
+            border-bottom: none;
+        }
+        .problem-list li i {
+            color: #ef4444;
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+        .solution-list li i {
+            color: #10b981;
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+        .problem-list li span, .solution-list li span {
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .industry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-visual {
                 display: none !important;
@@ -55,373 +239,22 @@
                 justify-content: center;
                 flex-wrap: wrap;
             }
-
-            /* Services grid: 2 columns on mobile */
-            .services-compact-grid-wrapper {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.75rem !important;
+            .hero-stats {
+                justify-content: center;
             }
-
-            /* Hide nav social on mobile */
-            .nav-social {
-                display: none;
-            }
-        }
-
-        /* Tablet: 3 columns for services */
-        @media (max-width: 992px) and (min-width: 769px) {
-            .services-compact-grid-wrapper {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
-        }
-
-        /* Lead Modal Styles */
-        .lead-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-        .lead-modal.active {
-            display: flex;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .lead-modal-content {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            max-width: 480px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.4s ease;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .lead-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.75rem;
-            color: #9CA3AF;
-            cursor: pointer;
-            transition: color 0.2s;
-            line-height: 1;
-        }
-        .lead-modal-close:hover {
-            color: #374151;
-        }
-        .lead-modal-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .lead-modal-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
-            color: #1F2937;
-            margin-bottom: 0.5rem;
-        }
-        .lead-modal-header p {
-            color: #6B7280;
-            font-size: 0.95rem;
-        }
-        .form-step {
-            display: none;
-        }
-        .form-step.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        .form-question {
-            display: block;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 1.25rem;
-            text-align: center;
-        }
-        .form-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        .form-option {
-            cursor: pointer;
-        }
-        .form-option input {
-            display: none;
-        }
-        .form-option span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            border: 2px solid #E5E7EB;
-            border-radius: 0.75rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #374151;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .form-option span i {
-            color: #2E7D8A;
-        }
-        .form-option input:checked + span {
-            border-color: #2E7D8A;
-            background: rgba(46, 125, 138, 0.1);
-            color: #2E7D8A;
-        }
-        .form-option:hover span {
-            border-color: #2E7D8A;
-        }
-        .form-inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .lead-form .form-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            border: 2px solid #E5E7EB;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-        .lead-form .form-input:focus {
-            outline: none;
-            border-color: #2E7D8A;
-        }
-        .form-nav {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-        .form-nav .btn {
-            flex: 1;
-            max-width: 160px;
-        }
-        .lead-form .btn-primary {
-            width: 100%;
-        }
-        .lead-form .btn,
-        .lead-form button {
-            cursor: pointer !important;
-        }
-        .lead-form .btn:active,
-        .lead-form button:active {
-            cursor: pointer !important;
-        }
-        .form-success {
-            text-align: center;
-            padding: 1rem 0;
-        }
-        .success-icon {
-            font-size: 4rem;
-            color: #10B981;
-            margin-bottom: 1rem;
-        }
-        .form-success h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            color: #1F2937;
-            margin-bottom: 0.5rem;
-        }
-        .form-success p {
-            color: #6B7280;
-            margin-bottom: 1.5rem;
-        }
-        .lead-modal-progress {
-            margin-top: 2rem;
-            height: 4px;
-            background: #E5E7EB;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #2E7D8A, #4AABB8);
-            width: 33%;
-            transition: width 0.3s ease;
-        }
-        /* Dropdown styles for form options */
-        .form-dropdown {
-            display: none;
-            grid-column: 1 / -1;
-            margin-top: -0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .form-dropdown.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        .form-dropdown select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #2E7D8A;
-            border-radius: 0.75rem;
-            font-size: 0.9rem;
-            color: #374151;
-            background: rgba(46, 125, 138, 0.05);
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232E7D8A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-        }
-        .form-dropdown select:focus {
-            outline: none;
-            border-color: #2E7D8A;
-            box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
-        }
-        @media (max-width: 480px) {
-            .lead-modal-content {
-                padding: 1.75rem;
-            }
-            .form-options {
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
-            .lead-modal-header h2 {
-                font-size: 1.5rem;
+            .industry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-social {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Quick Lead Questionnaire Modal -->
-    <div id="leadModal" class="lead-modal">
-        <div class="lead-modal-content">
-            <button class="lead-modal-close" onclick="closeLeadModal()">&times;</button>
-            <div class="lead-modal-header">
-                <h2>Let's Get Started!</h2>
-                <p>Answer 3 quick questions so we can help you better</p>
-            </div>
-            <form id="leadForm" class="lead-form">
-                <!-- Step 1 -->
-                <div class="form-step active" data-step="1">
-                    <label class="form-question">What service are you interested in?</label>
-                    <div class="form-options">
-                        <label class="form-option">
-                            <input type="radio" name="service" value="Website Design" required>
-                            <span><i class="fas fa-palette"></i> Website Design</span>
-                        </label>
-                        <label class="form-option has-dropdown">
-                            <input type="radio" name="service" value="Automations" data-has-dropdown="automations-dropdown">
-                            <span><i class="fas fa-robot"></i> Automations</span>
-                        </label>
-                        <div class="form-dropdown" id="automations-dropdown">
-                            <select name="automation_type">
-                                <option value="">Select an automation...</option>
-                                <option value="Website Chatbot">Website Chatbot</option>
-                                <option value="Smart Lead Follow-Up">Smart Lead Follow-Up</option>
-                                <option value="Mass Email Marketing">Mass Email Marketing</option>
-                                <option value="Appointment Scheduling">Appointment Scheduling</option>
-                                <option value="Invoice & Billing">Invoice & Billing</option>
-                                <option value="Abandoned Cart Saver">Abandoned Cart Saver</option>
-                                <option value="Customer Segmentation">Customer Segmentation</option>
-                                <option value="Data Enrichment">Data Enrichment</option>
-                                <option value="Customer Reactivation">Customer Reactivation</option>
-                                <option value="Content Summarizer">Content Summarizer</option>
-                                <option value="Voicemail Transcription">Voicemail Transcription</option>
-                            </select>
-                        </div>
-                        <label class="form-option has-dropdown">
-                            <input type="radio" name="service" value="Automation Systems" data-has-dropdown="systems-dropdown">
-                            <span><i class="fas fa-cogs"></i> Automation Systems</span>
-                        </label>
-                        <div class="form-dropdown" id="systems-dropdown">
-                            <select name="system_type">
-                                <option value="">Select a system...</option>
-                                <option value="Lead Capture and Intake System">Lead Capture and Intake System</option>
-                                <option value="Sales and Follow up System">Sales and Follow up System</option>
-                                <option value="Customer Communication System">Customer Communication System</option>
-                                <option value="Scheduling and Booking System">Scheduling and Booking System</option>
-                                <option value="Operations and Internal Workflow System">Operations and Internal Workflow System</option>
-                                <option value="CRM and Data Management System">CRM and Data Management System</option>
-                                <option value="Billing and Admin System">Billing and Admin System</option>
-                            </select>
-                        </div>
-                        <label class="form-option">
-                            <input type="radio" name="service" value="Not Sure Yet">
-                            <span><i class="fas fa-question"></i> Not Sure Yet</span>
-                        </label>
-                    </div>
-                    <button type="button" class="btn btn-primary form-next" onclick="nextStep(1)">Next <i class="fas fa-arrow-right"></i></button>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="form-step" data-step="2">
-                    <label class="form-question">What's your timeline?</label>
-                    <div class="form-options">
-                        <label class="form-option">
-                            <input type="radio" name="timeline" value="ASAP" required>
-                            <span><i class="fas fa-bolt"></i> ASAP</span>
-                        </label>
-                        <label class="form-option">
-                            <input type="radio" name="timeline" value="1-2 Weeks">
-                            <span><i class="fas fa-calendar-week"></i> 1-2 Weeks</span>
-                        </label>
-                        <label class="form-option">
-                            <input type="radio" name="timeline" value="1 Month+">
-                            <span><i class="fas fa-calendar"></i> 1 Month+</span>
-                        </label>
-                        <label class="form-option">
-                            <input type="radio" name="timeline" value="Just Browsing">
-                            <span><i class="fas fa-eye"></i> Just Browsing</span>
-                        </label>
-                    </div>
-                    <div class="form-nav">
-                        <button type="button" class="btn btn-secondary form-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="button" class="btn btn-primary form-next" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="form-step" data-step="3">
-                    <label class="form-question">How can we reach you?</label>
-                    <div class="form-inputs">
-                        <input type="text" name="name" placeholder="Your Name" class="form-input" required>
-                        <input type="email" name="email" placeholder="Your Email" class="form-input" required>
-                        <input type="tel" name="phone" placeholder="Phone (optional)" class="form-input">
-                    </div>
-                    <div class="form-nav">
-                        <button type="button" class="btn btn-secondary form-back" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="submit" class="btn btn-primary">Submit <i class="fas fa-check"></i></button>
-                    </div>
-                </div>
-
-                <!-- Success -->
-                <div class="form-step form-success" data-step="4">
-                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Thank You!</h3>
-                    <p>We'll be in touch ASAP.</p>
-                    <button type="button" class="btn btn-primary" onclick="closeLeadModal()">Explore Our Site</button>
-                </div>
-            </form>
-            <div class="lead-modal-progress">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -436,10 +269,9 @@
             <ul class="nav-menu">
                 <li><a href="/" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="client-portal.html" class="nav-cta">Client Portal</a></li>
+                <li><a href="demo.html" class="nav-cta">Book a Demo</a></li>
             </ul>
 
             <div class="nav-social">
@@ -459,213 +291,255 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text animate-on-scroll">
-                <span class="hero-label"><i class="fas fa-sparkles"></i> AI-Powered Solutions</span>
-                <h1>Transform Your Business with <span class="text-highlight">Intelligent Automation</span></h1>
-                <p>Modern websites and AI-powered solutions for retail, contracting, and professional businesses. We help you save time, increase efficiency, and grow your business.</p>
+                <span class="hero-label"><i class="fas fa-bolt"></i> AI-Powered Lead Capture</span>
+                <h1>Never Miss Another Lead.<br><span class="text-highlight">Even at 2 AM.</span></h1>
+                <p>Our AI Lead Capture System answers calls, qualifies leads, and follows up automatically - 24/7. Built for service businesses that can't afford to lose customers to voicemail.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-arrow-right"></i>
-                        Start Your Project
+                    <a href="demo.html" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book a Free Demo
                     </a>
                     <a href="services.html" class="btn btn-secondary">
-                        Explore Services
+                        See How It Works
                     </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">24/7</div>
+                        <div class="hero-stat-label">Always On</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">&lt;30s</div>
+                        <div class="hero-stat-label">Response Time</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Calls Answered</div>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual animate-on-scroll">
                 <div class="hero-video-container">
                     <video class="hero-video" autoplay muted loop playsinline>
                         <source src="videos/brightautohome.mp4" type="video/mp4">
-                        <!-- Fallback image if video doesn't load -->
-                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Services Preview -->
-    <section class="section bg-light" style="padding: 3rem 0;">
-        <div class="section-header" style="margin-bottom: 2rem;">
-            <span class="section-label"><i class="fas fa-cube"></i> Our Services</span>
-            <h2 class="section-title">Solutions That Drive Results</h2>
-        </div>
 
-        <div class="services-compact-grid-wrapper" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-            <a href="services.html#web-design" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-palette"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Web Design</span>
-            </a>
-            <a href="services.html#ai-automation" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-robot"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">AI Automation</span>
-            </a>
-            <a href="services.html#optimization" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-gauge-high"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Optimization</span>
-            </a>
-            <a href="services.html#email-marketing" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-envelope"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Email Marketing</span>
-            </a>
-            <a href="services.html#chatbot" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-comments"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Live Chat</span>
-            </a>
-            <a href="services.html#analytics" class="animate-on-scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 0.75rem; background: rgba(14, 30, 50, 0.8); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; text-decoration: none; text-align: center;">
-                <div style="width: 48px; height: 48px; background: rgba(0, 229, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 0.75rem; color: #00E5FF;"><i class="fas fa-chart-line"></i></div>
-                <span style="font-size: 0.875rem; font-weight: 600; color: white;">Analytics</span>
-            </a>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="services.html" class="btn btn-primary">View All Services</a>
-        </div>
-    </section>
-
-    <!-- About Preview with Image -->
+    <!-- Problem/Solution Section -->
     <section class="section">
-        <div class="image-text-section">
-            <div class="animate-on-scroll" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(14, 30, 50, 0.9) 100%); border-radius: 1rem; padding: 2.5rem; height: 100%; min-height: 500px; border: 1px solid rgba(0, 229, 255, 0.2);">
-                <blockquote style="text-align: center; margin: 0; max-width: 100%;">
-                    <p style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.75rem; font-weight: 400; font-style: italic; color: var(--white); line-height: 1.4; margin-bottom: 2rem;">"We don't just build websites and automations—we build partnerships that empower businesses to thrive in the digital age."</p>
-                    <footer style="color: var(--accent); font-size: 1.25rem; font-weight: 500; font-style: normal;">— Bright Automations</footer>
-                </blockquote>
+        <div class="section-header">
+            <span class="section-label"><i class="fas fa-lightbulb"></i> The Problem We Solve</span>
+            <h2 class="section-title">Every Missed Call Is a Missed Customer</h2>
+            <p class="section-subtitle">Service businesses lose thousands in revenue to voicemail and slow follow-ups</p>
+        </div>
+
+        <div class="problem-solution">
+            <div>
+                <h3 style="color: #ef4444; font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-times-circle"></i> Without Bright Automations
+                </h3>
+                <ul class="problem-list">
+                    <li>
+                        <i class="fas fa-phone-slash"></i>
+                        <span>After-hours calls go to voicemail - 80% never call back</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Leads wait hours or days for a response</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-xmark"></i>
+                        <span>Hot leads go cold while you're on another job</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Lead info gets lost on sticky notes and texts</span>
+                    </li>
+                </ul>
             </div>
-            <div class="animate-on-scroll">
-                <span class="section-label"><i class="fas fa-info-circle"></i> About Us</span>
-                <h2 class="section-title">Why Choose Bright Automations?</h2>
-                <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">We combine cutting-edge technology with personalized service to deliver exceptional results for your business.</p>
-
-                <div class="mini-features">
-                    <div class="mini-feature">
-                        <i class="fas fa-award"></i>
-                        <h4>Expert Team</h4>
-                        <p>Years of experience in web development and AI automation</p>
-                    </div>
-                    <div class="mini-feature">
-                        <i class="fas fa-handshake"></i>
-                        <h4>24/7 Support</h4>
-                        <p>Personal attention and ongoing assistance for your success</p>
-                    </div>
-                    <div class="mini-feature">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Custom Builds</h4>
-                        <p>Tailored strategies that fit your unique business needs</p>
-                    </div>
-                    <div class="mini-feature">
-                        <i class="fas fa-rocket"></i>
-                        <h4>Personalized Experience</h4>
-                        <p>Measurable outcomes that drive your business forward</p>
-                    </div>
-                </div>
-
-                <a href="about.html" class="btn btn-primary" style="margin-top: 2rem;">Learn More About Us</a>
+            <div>
+                <h3 style="color: #10b981; font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-check-circle"></i> With Bright Automations
+                </h3>
+                <ul class="solution-list">
+                    <li>
+                        <i class="fas fa-phone-volume"></i>
+                        <span>AI voice agent answers every call, 24/7/365</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant response via SMS, email, or chat</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-robot"></i>
+                        <span>Leads are qualified and scored automatically</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-database"></i>
+                        <span>Every lead logged to your CRM instantly</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- Core Features Section -->
     <section class="section-full bg-light">
         <div class="container">
             <div class="section-header">
-                <span class="section-label"><i class="fas fa-route"></i> Our Process</span>
-                <h2 class="section-title">How We Work</h2>
-                <p class="section-subtitle">A proven process that delivers exceptional results every time</p>
+                <span class="section-label"><i class="fas fa-cube"></i> The Complete System</span>
+                <h2 class="section-title">Everything You Need to Capture More Leads</h2>
+                <p class="section-subtitle">One integrated system that handles calls, chat, follow-ups, and CRM - all on autopilot</p>
             </div>
 
-            <div class="process-grid">
-                <div class="process-item animate-on-scroll">
-                    <div class="process-number">1</div>
-                    <h3>Discover</h3>
-                    <p>We learn about your business, goals, and target audience</p>
+            <div class="feature-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3>AI Voice Agent</h3>
+                    <p>Answers calls like a real receptionist. Qualifies leads, books appointments, and captures info - even at 2 AM.</p>
                 </div>
 
-                <div class="process-item animate-on-scroll">
-                    <div class="process-number">2</div>
-                    <h3>Design</h3>
-                    <p>Create stunning designs tailored to your brand</p>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Website Chatbot</h3>
+                    <p>Engages visitors the moment they land on your site. Answers FAQs and captures contact info 24/7.</p>
                 </div>
 
-                <div class="process-item animate-on-scroll">
-                    <div class="process-number">3</div>
-                    <h3>Develop</h3>
-                    <p>Build with cutting-edge technology and best practices</p>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Automated Follow-Up</h3>
+                    <p>SMS and email sequences that nurture leads automatically. No lead goes cold on your watch.</p>
                 </div>
 
-                <div class="process-item animate-on-scroll">
-                    <div class="process-number">4</div>
-                    <h3>Deploy</h3>
-                    <p>Launch and provide ongoing support and optimization</p>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>CRM Integration</h3>
+                    <p>Every lead flows directly into your CRM. Works with HubSpot, Salesforce, GoHighLevel, and more.</p>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="services.html" class="btn btn-primary">Explore All Features</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Preview -->
+    <!-- Who It's For Section -->
     <section class="section">
         <div class="section-header">
-            <span class="section-label"><i class="fas fa-briefcase"></i> Our Work</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">See how we've helped businesses like yours succeed with our solutions</p>
+            <span class="section-label"><i class="fas fa-users"></i> Built For</span>
+            <h2 class="section-title">Perfect for Service Businesses</h2>
+            <p class="section-subtitle">If you rely on leads and appointments, this system is built for you</p>
         </div>
 
-        <div class="grid grid-3">
-            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
-                <div class="section-image" style="border-radius: 0;">
-                    <img src="images/ecommerce3.PNG" alt="Project 1" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
-                        <i class="fas fa-image"></i>
-                        <span>Project Image</span>
-                    </div>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin-bottom: 0.5rem;">E-Commerce Platform</h3>
-                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Full website redesign with AI chatbot integration</p>
-                </div>
+        <div class="industry-grid">
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-hammer"></i>
+                <span>Contractors</span>
             </div>
-
-            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
-                <div class="section-image" style="border-radius: 0;">
-                    <img src="images/Servicebiz.PNG" alt="Project 2" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
-                        <i class="fas fa-image"></i>
-                        <span>Project Image</span>
-                    </div>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin-bottom: 0.5rem;">Service Business</h3>
-                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Automated booking and lead management system</p>
-                </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-wrench"></i>
+                <span>HVAC</span>
             </div>
-
-            <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
-                <div class="section-image" style="border-radius: 0;">
-                    <img src="images/professionalservices.PNG" alt="Project 3" style="aspect-ratio: 16/10;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none; aspect-ratio: 16/10;">
-                        <i class="fas fa-image"></i>
-                        <span>Project Image</span>
-                    </div>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin-bottom: 0.5rem;">Professional Services</h3>
-                    <p style="color: var(--gray-500); font-size: 0.9375rem;">Custom CRM and email automation workflow</p>
-                </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-bolt"></i>
+                <span>Electricians</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-faucet-drip"></i>
+                <span>Plumbers</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-broom"></i>
+                <span>Cleaning</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-leaf"></i>
+                <span>Landscaping</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-car"></i>
+                <span>Auto Services</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-tooth"></i>
+                <span>Dental</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-spa"></i>
+                <span>Med Spas</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-balance-scale"></i>
+                <span>Law Firms</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-home"></i>
+                <span>Real Estate</span>
+            </div>
+            <div class="industry-item animate-on-scroll">
+                <i class="fas fa-plus-circle"></i>
+                <span>And More...</span>
             </div>
         </div>
+    </section>
 
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
+    <!-- Why Us Section -->
+    <section class="section-full bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-star"></i> Why Choose Us</span>
+                <h2 class="section-title">Not Just Another Chatbot</h2>
+                <p class="section-subtitle">We build complete lead capture systems, not just individual tools</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-us-card animate-on-scroll">
+                    <div class="why-us-card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Fully Integrated</h3>
+                    <p>Voice, chat, SMS, email, and CRM all working together as one system. No juggling multiple tools.</p>
+                </div>
+
+                <div class="why-us-card animate-on-scroll">
+                    <div class="why-us-card-icon">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3>Custom to Your Business</h3>
+                    <p>We train the AI on your services, pricing, and processes. It sounds like your best employee.</p>
+                </div>
+
+                <div class="why-us-card animate-on-scroll">
+                    <div class="why-us-card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>White-Glove Setup</h3>
+                    <p>We handle everything - setup, integration, training. You just watch the leads roll in.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Let's create something amazing together. Get a free consultation and discover how we can help you grow.</p>
+            <h2>Ready to Stop Losing Leads?</h2>
+            <p>Book a free demo and see how our AI Lead Capture System can work for your business.</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-white">Get Started Today</a>
-                <a href="portfolio.html" class="btn btn-ghost">View Our Work</a>
+                <a href="demo.html" class="btn btn-white">Book a Free Demo</a>
+                <a href="contact.html" class="btn btn-ghost">Talk to an Expert</a>
             </div>
         </div>
     </section>
@@ -682,7 +556,7 @@
                             <span style="color: var(--white);">Bright Automations</span>
                         </div>
                     </a>
-                    <p>Empowering businesses with modern web solutions and intelligent automation.</p>
+                    <p>AI-powered lead capture systems for service businesses. Never miss another lead.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -694,19 +568,19 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3>System Features</h3>
                     <ul>
-                        <li><a href="services.html#web-design">Web Design</a></li>
-                        <li><a href="services.html#ai-automation">AI Automation</a></li>
-                        <li><a href="services.html#email-marketing">Email Marketing</a></li>
-                        <li><a href="services.html#chatbot">Chatbots</a></li>
+                        <li><a href="services.html#voice-agent">AI Voice Agent</a></li>
+                        <li><a href="services.html#chatbot">Website Chatbot</a></li>
+                        <li><a href="services.html#follow-up">Automated Follow-Up</a></li>
+                        <li><a href="services.html#integrations">CRM Integrations</a></li>
                     </ul>
                 </div>
 
@@ -715,7 +589,6 @@
                     <ul>
                         <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
                         <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
-                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -731,118 +604,6 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-
-    <!-- Lead Modal Script -->
-    <script>
-        // Show modal after short delay (only if not seen before in this session)
-        document.addEventListener('DOMContentLoaded', function() {
-            if (!sessionStorage.getItem('leadModalShown')) {
-                setTimeout(function() {
-                    document.getElementById('leadModal').classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }, 2000); // 2 second delay
-            }
-        });
-
-        function closeLeadModal() {
-            document.getElementById('leadModal').classList.remove('active');
-            document.body.style.overflow = '';
-            sessionStorage.setItem('leadModalShown', 'true');
-        }
-
-        // Handle dropdown display for service options
-        document.querySelectorAll('input[name="service"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                // Hide all dropdowns
-                document.querySelectorAll('.form-dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                    dropdown.querySelector('select').value = '';
-                });
-
-                // Show dropdown if selected option has one
-                const dropdownId = this.getAttribute('data-has-dropdown');
-                if (dropdownId) {
-                    document.getElementById(dropdownId).classList.add('active');
-                }
-            });
-        });
-
-        function nextStep(current) {
-            const currentStep = document.querySelector(`.form-step[data-step="${current}"]`);
-            const nextStepEl = document.querySelector(`.form-step[data-step="${current + 1}"]`);
-
-            // Validate current step
-            const radioGroup = currentStep.querySelector('input[type="radio"]');
-            if (radioGroup) {
-                const name = radioGroup.getAttribute('name');
-                const checked = currentStep.querySelector(`input[name="${name}"]:checked`);
-                if (!checked) {
-                    alert('Please select an option');
-                    return;
-                }
-            }
-
-            currentStep.classList.remove('active');
-            nextStepEl.classList.add('active');
-            updateProgress(current + 1);
-        }
-
-        function prevStep(current) {
-            const currentStep = document.querySelector(`.form-step[data-step="${current}"]`);
-            const prevStepEl = document.querySelector(`.form-step[data-step="${current - 1}"]`);
-            currentStep.classList.remove('active');
-            prevStepEl.classList.add('active');
-            updateProgress(current - 1);
-        }
-
-        function updateProgress(step) {
-            const progressBar = document.getElementById('progressBar');
-            const percent = (step / 3) * 100;
-            progressBar.style.width = percent + '%';
-        }
-
-        // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            // Send to Formspree
-            fetch('https://formspree.io/f/mnneglkj', {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // Show success
-                    document.querySelector('.form-step[data-step="3"]').classList.remove('active');
-                    document.querySelector('.form-step[data-step="4"]').classList.add('active');
-                    document.getElementById('progressBar').style.width = '100%';
-                    sessionStorage.setItem('leadModalShown', 'true');
-                }
-            }).catch(err => {
-                // Show success anyway for better UX
-                document.querySelector('.form-step[data-step="3"]').classList.remove('active');
-                document.querySelector('.form-step[data-step="4"]').classList.add('active');
-                document.getElementById('progressBar').style.width = '100%';
-                sessionStorage.setItem('leadModalShown', 'true');
-            });
-        });
-
-        // Close on backdrop click
-        document.getElementById('leadModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLeadModal();
-            }
-        });
-
-        // Close on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLeadModal();
-            }
-        });
-    </script>
 
     <!-- n8n Chatbot -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
@@ -867,161 +628,30 @@
             --chat--header-height: auto;
             --chat--textarea-height: 50px;
         }
-
-        /* Toggle button */
-        .n8n-chat .chat-toggle {
-            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
-            border: 2px solid #00e5ff !important;
-            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3) !important;
-        }
-
-        .n8n-chat .chat-toggle:hover {
-            transform: scale(1.1) !important;
-            box-shadow: 0 6px 30px rgba(0, 229, 255, 0.5) !important;
-        }
-
-        .n8n-chat .chat-toggle svg {
-            fill: #00e5ff !important;
-        }
-
-        /* Chat window */
-        .n8n-chat .chat-window {
-            border-radius: 16px !important;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4) !important;
-            border: 1px solid rgba(0, 229, 255, 0.2) !important;
-            overflow: hidden !important;
-        }
-
-        /* Header */
-        .n8n-chat .chat-header {
-            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2) !important;
-            padding: 1rem !important;
-        }
-
-        .n8n-chat .chat-header h1,
-        .n8n-chat .chat-header .chat-title {
-            color: #ffffff !important;
-            font-family: 'Space Grotesk', sans-serif !important;
-            font-weight: 700 !important;
-        }
-
-        .n8n-chat .chat-header .chat-subtitle {
-            color: rgba(255, 255, 255, 0.6) !important;
-        }
-
-        /* Messages area */
-        .n8n-chat .chat-messages-container,
-        .n8n-chat .chat-body {
-            background: #0e1e32 !important;
-        }
-
-        /* Bot messages */
-        .n8n-chat .chat-message-bot .chat-message-content,
-        .n8n-chat .chat-message.bot .chat-message-content {
-            background: #1a2744 !important;
-            color: #ffffff !important;
-            border: 1px solid rgba(0, 229, 255, 0.15) !important;
-            border-radius: 12px 12px 12px 4px !important;
-        }
-
-        /* User messages */
-        .n8n-chat .chat-message-user .chat-message-content,
-        .n8n-chat .chat-message.user .chat-message-content {
-            background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important;
-            color: #0e1e32 !important;
-            border-radius: 12px 12px 4px 12px !important;
-        }
-
-        /* Input area */
-        .n8n-chat .chat-input-container,
-        .n8n-chat .chat-footer {
-            background: #0e1e32 !important;
-            border-top: 1px solid rgba(0, 229, 255, 0.2) !important;
-            padding: 0.75rem !important;
-        }
-
-        .n8n-chat .chat-input,
-        .n8n-chat textarea {
-            background: #1a2744 !important;
-            border: 2px solid rgba(0, 229, 255, 0.2) !important;
-            border-radius: 12px !important;
-            color: #ffffff !important;
-            padding: 0.75rem 1rem !important;
-        }
-
-        .n8n-chat .chat-input:focus,
-        .n8n-chat textarea:focus {
-            border-color: #00e5ff !important;
-            outline: none !important;
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1) !important;
-        }
-
-        .n8n-chat .chat-input::placeholder,
-        .n8n-chat textarea::placeholder {
-            color: #6b7280 !important;
-        }
-
-        /* Send button */
-        .n8n-chat .chat-send-button,
-        .n8n-chat button[type="submit"] {
-            background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important;
-            border: none !important;
-            border-radius: 10px !important;
-            color: #0e1e32 !important;
-        }
-
-        .n8n-chat .chat-send-button:hover,
-        .n8n-chat button[type="submit"]:hover {
-            transform: scale(1.05) !important;
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4) !important;
-        }
-
-        /* Welcome screen */
-        .n8n-chat .chat-welcome-screen {
-            background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important;
-        }
-
-        .n8n-chat .chat-welcome-screen h1,
-        .n8n-chat .chat-welcome-screen .welcome-title {
-            color: #ffffff !important;
-            font-family: 'Space Grotesk', sans-serif !important;
-        }
-
-        .n8n-chat .chat-welcome-screen p,
-        .n8n-chat .chat-welcome-screen .welcome-subtitle {
-            color: rgba(255, 255, 255, 0.6) !important;
-        }
-
-        .n8n-chat .chat-welcome-screen button,
-        .n8n-chat .chat-start-button {
-            background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important;
-            color: #0e1e32 !important;
-            border: none !important;
-            border-radius: 12px !important;
-            font-weight: 700 !important;
-            padding: 1rem 2rem !important;
-        }
-
-        .n8n-chat .chat-welcome-screen button:hover,
-        .n8n-chat .chat-start-button:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4) !important;
-        }
-
-        /* Close button */
-        .n8n-chat .chat-close-button {
-            color: rgba(255, 255, 255, 0.6) !important;
-        }
-
-        .n8n-chat .chat-close-button:hover {
-            color: #ffffff !important;
-        }
-
-        /* Typing indicator */
-        .n8n-chat .typing-indicator span {
-            background: #00e5ff !important;
-        }
+        .n8n-chat .chat-toggle { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; border: 2px solid #00e5ff !important; box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3) !important; }
+        .n8n-chat .chat-toggle:hover { transform: scale(1.1) !important; box-shadow: 0 6px 30px rgba(0, 229, 255, 0.5) !important; }
+        .n8n-chat .chat-toggle svg { fill: #00e5ff !important; }
+        .n8n-chat .chat-window { border-radius: 16px !important; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4) !important; border: 1px solid rgba(0, 229, 255, 0.2) !important; overflow: hidden !important; }
+        .n8n-chat .chat-header { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; border-bottom: 1px solid rgba(0, 229, 255, 0.2) !important; padding: 1rem !important; }
+        .n8n-chat .chat-header h1, .n8n-chat .chat-header .chat-title { color: #ffffff !important; font-family: 'Space Grotesk', sans-serif !important; font-weight: 700 !important; }
+        .n8n-chat .chat-header .chat-subtitle { color: rgba(255, 255, 255, 0.6) !important; }
+        .n8n-chat .chat-messages-container, .n8n-chat .chat-body { background: #0e1e32 !important; }
+        .n8n-chat .chat-message-bot .chat-message-content, .n8n-chat .chat-message.bot .chat-message-content { background: #1a2744 !important; color: #ffffff !important; border: 1px solid rgba(0, 229, 255, 0.15) !important; border-radius: 12px 12px 12px 4px !important; }
+        .n8n-chat .chat-message-user .chat-message-content, .n8n-chat .chat-message.user .chat-message-content { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; color: #0e1e32 !important; border-radius: 12px 12px 4px 12px !important; }
+        .n8n-chat .chat-input-container, .n8n-chat .chat-footer { background: #0e1e32 !important; border-top: 1px solid rgba(0, 229, 255, 0.2) !important; padding: 0.75rem !important; }
+        .n8n-chat .chat-input, .n8n-chat textarea { background: #1a2744 !important; border: 2px solid rgba(0, 229, 255, 0.2) !important; border-radius: 12px !important; color: #ffffff !important; padding: 0.75rem 1rem !important; }
+        .n8n-chat .chat-input:focus, .n8n-chat textarea:focus { border-color: #00e5ff !important; outline: none !important; box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1) !important; }
+        .n8n-chat .chat-input::placeholder, .n8n-chat textarea::placeholder { color: #6b7280 !important; }
+        .n8n-chat .chat-send-button, .n8n-chat button[type="submit"] { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; border: none !important; border-radius: 10px !important; color: #0e1e32 !important; }
+        .n8n-chat .chat-send-button:hover, .n8n-chat button[type="submit"]:hover { transform: scale(1.05) !important; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4) !important; }
+        .n8n-chat .chat-welcome-screen { background: linear-gradient(135deg, #0e1e32 0%, #1a2744 100%) !important; }
+        .n8n-chat .chat-welcome-screen h1, .n8n-chat .chat-welcome-screen .welcome-title { color: #ffffff !important; font-family: 'Space Grotesk', sans-serif !important; }
+        .n8n-chat .chat-welcome-screen p, .n8n-chat .chat-welcome-screen .welcome-subtitle { color: rgba(255, 255, 255, 0.6) !important; }
+        .n8n-chat .chat-welcome-screen button, .n8n-chat .chat-start-button { background: linear-gradient(135deg, #00e5ff 0%, #00b8cc 100%) !important; color: #0e1e32 !important; border: none !important; border-radius: 12px !important; font-weight: 700 !important; padding: 1rem 2rem !important; }
+        .n8n-chat .chat-welcome-screen button:hover, .n8n-chat .chat-start-button:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4) !important; }
+        .n8n-chat .chat-close-button { color: rgba(255, 255, 255, 0.6) !important; }
+        .n8n-chat .chat-close-button:hover { color: #ffffff !important; }
+        .n8n-chat .typing-indicator span { background: #00e5ff !important; }
     </style>
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
@@ -1030,8 +660,8 @@
             mode: 'window',
             showWelcomeScreen: true,
             initialMessages: [
-                'Hi there! 👋',
-                'I\'m the Bright Automations assistant. How can I help you today?'
+                'Hi there!',
+                'I\'m the Bright Automations assistant. Want to see how our AI Lead Capture System can work for your business?'
             ],
             i18n: {
                 en: {
