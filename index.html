@@ -22,16 +22,36 @@
 
     <!-- Page Specific Styles -->
     <style>
-        /* Minimalist hero - centered, clean */
+        /* Minimalist hero - with video positioned subtly */
         .hero-minimal {
             background: #ffffff;
-            padding: 140px 0 100px;
+            padding: 120px 0 60px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Video background - subtle, top-right */
+        .hero-video-bg {
+            position: absolute;
+            top: 80px;
+            right: -50px;
+            width: 280px;
+            opacity: 0.15;
+            z-index: 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .hero-video-bg video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         .hero-minimal .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
         .hero-badge {
             display: inline-block;
@@ -41,7 +61,7 @@
             font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 100px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border: 1px solid #bbf7d0;
         }
         .hero-minimal h1 {
@@ -50,7 +70,7 @@
             font-weight: 700;
             color: #0f172a;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             letter-spacing: -0.02em;
         }
         .hero-minimal h1 span {
@@ -60,7 +80,7 @@
             font-size: 1.25rem;
             color: #64748b;
             line-height: 1.7;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
@@ -107,20 +127,9 @@
             background: #f8fafc;
         }
 
-        /* Video showcase */
-        .video-showcase {
-            max-width: 800px;
-            margin: 4rem auto 0;
-        }
-        .video-showcase video {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Section styling */
+        /* Section styling - tighter spacing */
         .section {
-            padding: 100px 0;
+            padding: 60px 0;
         }
         .section-alt {
             background: #fafafa;
@@ -132,20 +141,20 @@
         }
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
         }
         .section-header h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
         .section-header p {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: #64748b;
-            max-width: 550px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
@@ -243,7 +252,7 @@
 
         /* CTA - simple and clean */
         .cta-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: #0f172a;
             text-align: center;
         }
@@ -254,16 +263,16 @@
         }
         .cta-section h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
         .cta-section p {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: #94a3b8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .cta-section .btn-cta {
             background: #ffffff;
@@ -301,7 +310,7 @@
         /* Mobile */
         @media (max-width: 768px) {
             .hero-minimal {
-                padding: 100px 0 60px;
+                padding: 100px 0 50px;
             }
             .hero-minimal h1 {
                 font-size: 2.25rem;
@@ -309,20 +318,23 @@
             .hero-minimal .hero-sub {
                 font-size: 1.125rem;
             }
-            .video-showcase {
+            .hero-video-bg {
                 display: none;
             }
             .section {
-                padding: 60px 0;
+                padding: 40px 0;
+            }
+            .section-header {
+                margin-bottom: 2rem;
             }
             .section-header h2 {
-                font-size: 1.875rem;
+                font-size: 1.5rem;
             }
             .features-grid {
                 grid-template-columns: 1fr;
             }
             .integrations-row {
-                gap: 2rem;
+                gap: 1.5rem;
             }
             .industries-row {
                 gap: 0.5rem;
@@ -330,6 +342,9 @@
             .industry-pill {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
+            }
+            .cta-section {
+                padding: 50px 0;
             }
             .nav-social {
                 display: none;
@@ -372,6 +387,12 @@
 
     <!-- Hero Section -->
     <section class="hero-minimal">
+        <!-- Video as subtle background element -->
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="videos/brightautohome.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="container">
             <div class="hero-badge">AI-Powered Lead Capture</div>
             <h1>Capture Every Lead.<br><span>Automatically.</span></h1>
@@ -379,11 +400,6 @@
             <div class="hero-buttons">
                 <a href="demo.html" class="btn-primary-lg">Book a Free Demo <i class="fas fa-arrow-right"></i></a>
                 <a href="services.html" class="btn-secondary-lg">Learn More</a>
-            </div>
-            <div class="video-showcase">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/brightautohome.mp4" type="video/mp4">
-                </video>
             </div>
         </div>
     </section>
