@@ -22,7 +22,7 @@
 
     <!-- Page Specific Styles -->
     <style>
-        /* Minimalist hero - with video positioned subtly */
+        /* Minimalist hero - with video as full background */
         .hero-minimal {
             background: #ffffff;
             padding: 120px 0 60px;
@@ -30,21 +30,22 @@
             position: relative;
             overflow: hidden;
         }
-        /* Video in top-left corner, cropped to remove black bars */
+        /* Video as full background, cropped to remove black bars */
         .hero-video-bg {
             position: absolute;
-            top: 70px;
-            left: 20px;
-            width: 200px;
-            height: 200px;
-            opacity: 0.2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
             z-index: 0;
-            border-radius: 12px;
             overflow: hidden;
         }
         .hero-video-bg video {
-            width: 300%;
-            height: auto;
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            object-position: center center;
             position: absolute;
             top: 50%;
             left: 50%;
