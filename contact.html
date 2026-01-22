@@ -14,8 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons (for brand logos only) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,7 +29,7 @@
 <body>
     <!-- FAQ Floating Button -->
     <a href="#faq" class="faq-float-btn">
-        <i class="fas fa-circle-question"></i>
+        <i class="ph ph-question"></i>
         FAQ
     </a>
     <!-- Navigation -->
@@ -64,7 +70,7 @@
     <section class="section">
         <div class="contact-grid">
             <!-- Contact Form -->
-            <div class="animate-on-scroll">
+            <div data-aos="fade-right">
                 <div class="contact-form-wrapper">
                     <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Send Us a Message</h2>
 
@@ -125,13 +131,13 @@
             </div>
 
             <!-- Contact Info -->
-            <div class="animate-on-scroll">
+            <div data-aos="fade-left">
                 <div style="position: sticky; top: 100px;">
                     <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">Get in Touch</h2>
 
                     <div class="contact-info-card">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="ph ph-envelope"></i>
                         </div>
                         <div class="contact-info">
                             <h4>Email Us</h4>
@@ -142,7 +148,7 @@
 
                     <div class="contact-info-card">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="ph ph-phone"></i>
                         </div>
                         <div class="contact-info">
                             <h4>Call Us</h4>
@@ -153,7 +159,7 @@
 
                     <div class="contact-info-card">
                         <div class="contact-icon">
-                            <i class="fas fa-user-circle"></i>
+                            <i class="ph ph-user-circle"></i>
                         </div>
                         <div class="contact-info">
                             <h4>Client Portal</h4>
@@ -166,7 +172,7 @@
                         <h4>Response Time</h4>
                         <p>We typically respond to all inquiries within 24 hours during business days.</p>
                         <div class="response-highlight">
-                            <i class="fas fa-bolt"></i>
+                            <i class="ph ph-lightning"></i>
                             <div class="response-highlight-text">
                                 <strong>Fast Response</strong>
                                 <span>Usually within 4 hours</span>
@@ -180,34 +186,34 @@
 
     <!-- FAQ Section -->
     <section class="section bg-light" id="faq">
-        <div class="section-header">
-            <span class="section-label"><i class="fas fa-circle-question"></i> FAQ</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label"><i class="ph ph-question"></i> FAQ</span>
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Quick answers to common questions</p>
         </div>
 
         <div style="max-width: 900px; margin: 0 auto;">
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
                 <h4>How long does a typical project take?</h4>
                 <p>We move fast. A standard website typically takes less than 1 week, while automation projects take 1-2 weeks depending on complexity. We'll provide a detailed timeline during our initial consultation.</p>
             </div>
 
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                 <h4>What's included in your pricing?</h4>
                 <p>Our packages include design, development, testing, deployment, and initial support. We provide transparent pricing with no hidden fees. Ongoing maintenance and support plans are available separately.</p>
             </div>
 
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                 <h4>Do you offer ongoing support?</h4>
                 <p>Yes! We offer various support and maintenance plans to keep your website and automations running smoothly. This includes updates, security patches, content updates, and technical support.</p>
             </div>
 
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                 <h4>Can you integrate with my existing systems?</h4>
                 <p>Absolutely! We specialize in integrations with popular platforms like CRMs, email marketing tools, payment processors, and more. We'll work with your existing tech stack to create seamless workflows.</p>
             </div>
 
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                 <h4>What if I need changes after launch?</h4>
                 <p>Changes are easy! Existing clients can use our Client Portal to submit change requests. We prioritize client requests and typically implement minor changes within 24-48 hours.</p>
             </div>
@@ -216,7 +222,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
+        <div class="cta-content" data-aos="fade-up">
             <h2>Still Have Questions?</h2>
             <p>We're here to help! Reach out and we'll get back to you as soon as possible.</p>
             <div class="cta-buttons">
@@ -265,9 +271,9 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
-                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="client-portal.html"><i class="ph ph-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -283,6 +289,17 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 
 </body>
 </html>

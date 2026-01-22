@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book a free demo of the AI Lead Capture System - See how Bright Automations can help your service business capture more leads">
+    <meta name="description" content="Book a free demo of our full business automation system - See how Bright Automations can help your service business run on autopilot">
     <title>Book a Free Demo - Bright Automations</title>
 
     <!-- Favicon -->
@@ -14,8 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons (for brand logos only) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -248,7 +254,7 @@
 <body>
     <!-- FAQ Floating Button -->
     <a href="contact.html#faq" class="faq-float-btn">
-        <i class="fas fa-circle-question"></i>
+        <i class="ph ph-question"></i>
         FAQ
     </a>
     <!-- Navigation -->
@@ -283,35 +289,35 @@
     <section class="section" style="padding-top: 120px;">
         <div class="demo-section">
             <!-- Left: Info -->
-            <div class="demo-info animate-on-scroll">
-                <span class="hero-label"><i class="fas fa-calendar-check"></i> Free Demo</span>
-                <h1>See the AI Lead Capture System in Action</h1>
-                <p>Book a personalized demo with one of our automation experts. We'll show you exactly how our system can work for your specific business.</p>
+            <div class="demo-info" data-aos="fade-right">
+                <span class="hero-label"><i class="ph ph-calendar-check"></i> Free Demo</span>
+                <h1>See the Full Automation System in Action</h1>
+                <p>Book a personalized demo with one of our automation experts. We'll show you exactly how our system can run your business on autopilot.</p>
 
                 <ul class="demo-benefits">
                     <li>
-                        <i class="fas fa-check-circle"></i>
+                        <i class="ph ph-check-circle"></i>
                         <div>
                             <strong>Live AI Voice Demo</strong>
                             <span>Hear our AI answer a call for your type of business</span>
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-check-circle"></i>
+                        <i class="ph ph-check-circle"></i>
                         <div>
                             <strong>Chatbot Walkthrough</strong>
                             <span>See how leads are captured and qualified on your website</span>
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-check-circle"></i>
+                        <i class="ph ph-check-circle"></i>
                         <div>
-                            <strong>Follow-Up Automation</strong>
-                            <span>Preview the SMS and email sequences that nurture leads</span>
+                            <strong>Booking & Invoicing</strong>
+                            <span>See automated scheduling and payment collection in action</span>
                         </div>
                     </li>
                     <li>
-                        <i class="fas fa-check-circle"></i>
+                        <i class="ph ph-check-circle"></i>
                         <div>
                             <strong>Custom Pricing</strong>
                             <span>Get a quote tailored to your business needs</span>
@@ -332,7 +338,7 @@
             </div>
 
             <!-- Right: Form -->
-            <div class="demo-form-container animate-on-scroll">
+            <div class="demo-form-container" data-aos="fade-left">
                 <div class="demo-form-header">
                     <h2>Book Your Free Demo</h2>
                     <p>Fill out the form and we'll reach out to schedule</p>
@@ -394,17 +400,17 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Book My Free Demo
+                        <i class="ph ph-calendar-check"></i> Book My Free Demo
                     </button>
 
                     <p class="form-note">
-                        <i class="fas fa-lock"></i> Your info is secure and never shared.
+                        <i class="ph ph-lock"></i> Your info is secure and never shared.
                     </p>
                 </form>
 
                 <!-- Success Message (hidden by default) -->
                 <div id="formSuccess" class="form-success" style="display: none;">
-                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="success-icon"><i class="ph ph-check-circle"></i></div>
                     <h3>Demo Request Received!</h3>
                     <p>We'll reach out within 24 hours to schedule your personalized demo.</p>
                     <a href="/" class="btn btn-primary">Back to Home</a>
@@ -452,8 +458,8 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
                     </ul>
                 </div>
             </div>
@@ -469,6 +475,17 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 
     <!-- Form handling -->
     <script>

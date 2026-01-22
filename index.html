@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Lead Capture System for Service Businesses - Capture more leads with AI voice agents, chatbots, and automated follow-ups">
-    <title>Bright Automations - AI Lead Capture for Service Businesses</title>
+    <meta name="description" content="Full business automation for service businesses - AI voice agents, chatbots, automated follow-ups, booking, and invoicing. Run your business on autopilot 24/7.">
+    <title>Bright Automations - Full Business Automation for Service Businesses</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
@@ -14,8 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons (for brand logos only) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -389,7 +395,13 @@
                 font-size: 1.125rem;
             }
             .hero-video-bg {
-                display: none;
+                opacity: 0.06;
+            }
+            .hero-video-bg video {
+                width: 300%;
+                height: 100%;
+                top: 50%;
+                object-position: center center;
             }
             .section {
                 padding: 40px 0;
@@ -495,7 +507,7 @@
 <body>
     <!-- FAQ Floating Button -->
     <a href="contact.html#faq" class="faq-float-btn">
-        <i class="fas fa-circle-question"></i>
+        <i class="ph ph-question"></i>
         FAQ
     </a>
     <!-- Navigation -->
@@ -535,11 +547,11 @@
             </video>
         </div>
         <div class="container">
-            <div class="hero-badge">AI-Powered Lead Capture</div>
-            <h1>Capture Every Lead.<br><span>Automatically.</span></h1>
-            <p class="hero-sub">AI voice agents and chatbots that answer calls, engage visitors, and book appointments 24/7. Built for service businesses.</p>
-            <div class="hero-buttons">
-                <a href="demo.html" class="btn-primary-lg">Book a Free Demo <i class="fas fa-arrow-right"></i></a>
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">Full Business Automation</div>
+            <h1 data-aos="fade-up" data-aos-delay="200">Run Your Business<br><span>on Autopilot.</span></h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-delay="300">AI voice agents, chatbots, automated follow-ups, booking, and invoicing—all working together 24/7. Everything a service business needs to grow without the extra headcount.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="demo.html" class="btn-primary-lg">Book a Free Demo <i class="ph ph-arrow-right"></i></a>
                 <a href="services.html" class="btn-secondary-lg">Learn More</a>
             </div>
         </div>
@@ -548,46 +560,64 @@
     <!-- Features Section -->
     <section class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need to Capture More Leads</h2>
-                <p>One integrated system that handles calls, chat, follow-ups, and CRM—all on autopilot.</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2>Never Miss a Lead Again</h2>
+                <p>One integrated system that handles calls, chat, follow-ups, booking, and invoicing—all on autopilot.</p>
             </div>
 
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="feature-badge">24/7 Available</span>
                     <div class="feature-icon">
-                        <i class="fas fa-phone-volume"></i>
+                        <i class="ph ph-phone-call"></i>
                     </div>
                     <h3>AI Voice Agent</h3>
                     <p>Human-like AI powered by ElevenLabs that answers every call, qualifies leads with smart questions, and books appointments directly into your calendar—even at 2am.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <span class="feature-badge">Instant Response</span>
                     <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="ph ph-chats-circle"></i>
                     </div>
                     <h3>Website Chatbot</h3>
                     <p>Engages visitors the moment they land on your site, answers FAQs intelligently, and captures contact info before they leave. No more missed opportunities.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <span class="feature-badge">Automated</span>
                     <div class="feature-icon">
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="ph ph-paper-plane-tilt"></i>
                     </div>
                     <h3>Smart Follow-Up</h3>
                     <p>Multi-channel sequences via SMS, email, and WhatsApp that nurture leads with personalized messages until they're ready to book or buy.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <span class="feature-badge">Seamless</span>
                     <div class="feature-icon">
-                        <i class="fas fa-plug"></i>
+                        <i class="ph ph-plugs-connected"></i>
                     </div>
                     <h3>CRM Integration</h3>
                     <p>Every lead automatically syncs to your CRM with full conversation history. Works with HubSpot, Salesforce, GoHighLevel, and 50+ other platforms.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <span class="feature-badge">Effortless</span>
+                    <div class="feature-icon">
+                        <i class="ph ph-calendar-check"></i>
+                    </div>
+                    <h3>Smart Booking</h3>
+                    <p>Customers book directly into your calendar without the back-and-forth. Automated confirmations, reminders, and rescheduling keep your schedule full and no-shows low.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <span class="feature-badge">Get Paid</span>
+                    <div class="feature-icon">
+                        <i class="ph ph-receipt"></i>
+                    </div>
+                    <h3>Automated Invoicing</h3>
+                    <p>Generate and send invoices automatically after jobs are completed. Accept payments online and send reminders for overdue invoices—no chasing customers.</p>
                 </div>
             </div>
         </div>
@@ -596,12 +626,12 @@
     <!-- Integrations Section -->
     <section class="section" id="integrations">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Works With Your Tools</h2>
                 <p>Connects to the CRMs and platforms you already use.</p>
             </div>
 
-            <div class="integrations-row">
+            <div class="integrations-row" data-aos="fade-up" data-aos-delay="100">
                 <div class="integration-item">
                     <i class="fab fa-hubspot" style="color: #ff7a59;"></i>
                     <span>HubSpot</span>
@@ -611,31 +641,31 @@
                     <span>Salesforce</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-chart-line" style="color: #10b981;"></i>
+                    <i class="ph ph-chart-line-up" style="color: #10b981;"></i>
                     <span>GoHighLevel</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-microphone-alt" style="color: #000000;"></i>
+                    <i class="ph ph-microphone" style="color: #000000;"></i>
                     <span>ElevenLabs</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-utensils" style="color: #ff6b35;"></i>
+                    <i class="ph ph-fork-knife" style="color: #ff6b35;"></i>
                     <span>Toast POS</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-phone-alt" style="color: #f22f46;"></i>
+                    <i class="ph ph-phone" style="color: #f22f46;"></i>
                     <span>Twilio</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-bolt" style="color: #ff4a00;"></i>
+                    <i class="ph ph-lightning" style="color: #ff4a00;"></i>
                     <span>Zapier</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-cogs" style="color: #9461fb;"></i>
+                    <i class="ph ph-gear-six" style="color: #9461fb;"></i>
                     <span>Make</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-project-diagram" style="color: #ea4b71;"></i>
+                    <i class="ph ph-flow-arrow" style="color: #ea4b71;"></i>
                     <span>n8n</span>
                 </div>
                 <div class="integration-item">
@@ -643,7 +673,7 @@
                     <span>Google Calendar</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-calendar-check" style="color: #006bff;"></i>
+                    <i class="ph ph-calendar-check" style="color: #006bff;"></i>
                     <span>Calendly</span>
                 </div>
                 <div class="integration-item">
@@ -659,11 +689,11 @@
                     <span>Stripe</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-database" style="color: #47a248;"></i>
+                    <i class="ph ph-database" style="color: #47a248;"></i>
                     <span>MongoDB</span>
                 </div>
                 <div class="integration-item">
-                    <i class="fas fa-sms" style="color: #25d366;"></i>
+                    <i class="ph ph-whatsapp-logo" style="color: #25d366;"></i>
                     <span>WhatsApp</span>
                 </div>
             </div>
@@ -673,130 +703,130 @@
     <!-- Industries Section -->
     <section class="section section-alt">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Built for Service Businesses</h2>
                 <p>If you rely on leads and appointments, this is for you.</p>
             </div>
 
-            <div class="industries-row">
+            <div class="industries-row" data-aos="fade-up" data-aos-delay="100">
                 <div class="industry-pill">
-                    <i class="fas fa-hammer"></i>
+                    <i class="ph ph-hammer"></i>
                     Contractors
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-wrench"></i>
+                    <i class="ph ph-wrench"></i>
                     HVAC
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-bolt"></i>
+                    <i class="ph ph-lightning"></i>
                     Electricians
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-faucet-drip"></i>
+                    <i class="ph ph-drop"></i>
                     Plumbers
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-broom"></i>
+                    <i class="ph ph-broom"></i>
                     Cleaning
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-leaf"></i>
+                    <i class="ph ph-leaf"></i>
                     Landscaping
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-tooth"></i>
+                    <i class="ph ph-tooth"></i>
                     Dental
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-spa"></i>
+                    <i class="ph ph-flower-lotus"></i>
                     Med Spas
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-car"></i>
+                    <i class="ph ph-car"></i>
                     Auto Repair
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-dog"></i>
+                    <i class="ph ph-dog"></i>
                     Pet Services
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-dumbbell"></i>
+                    <i class="ph ph-barbell"></i>
                     Fitness Studios
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-cut"></i>
+                    <i class="ph ph-scissors"></i>
                     Salons & Barbers
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-camera"></i>
+                    <i class="ph ph-camera"></i>
                     Photography
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-truck-moving"></i>
+                    <i class="ph ph-truck"></i>
                     Moving Companies
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-paint-roller"></i>
+                    <i class="ph ph-paint-roller"></i>
                     Painters
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-hard-hat"></i>
+                    <i class="ph ph-hard-hat"></i>
                     Roofing
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-balance-scale"></i>
+                    <i class="ph ph-scales"></i>
                     Law Firms
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-home"></i>
+                    <i class="ph ph-house"></i>
                     Real Estate
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-calculator"></i>
+                    <i class="ph ph-calculator"></i>
                     Accountants
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="ph ph-shield"></i>
                     Insurance
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-user-md"></i>
+                    <i class="ph ph-first-aid-kit"></i>
                     Chiropractors
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-hands"></i>
+                    <i class="ph ph-hand-heart"></i>
                     Massage Therapy
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-eye"></i>
+                    <i class="ph ph-eye"></i>
                     Optometrists
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-paw"></i>
+                    <i class="ph ph-paw-print"></i>
                     Veterinarians
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-couch"></i>
+                    <i class="ph ph-couch"></i>
                     Interior Design
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-tshirt"></i>
+                    <i class="ph ph-t-shirt"></i>
                     Dry Cleaning
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-swimmer"></i>
+                    <i class="ph ph-swimming-pool"></i>
                     Pool Services
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-bug"></i>
+                    <i class="ph ph-bug"></i>
                     Pest Control
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-lock"></i>
+                    <i class="ph ph-key"></i>
                     Locksmiths
                 </div>
                 <div class="industry-pill">
-                    <i class="fas fa-snowflake"></i>
+                    <i class="ph ph-wrench"></i>
                     Appliance Repair
                 </div>
             </div>
@@ -805,10 +835,10 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Capture More Leads?</h2>
-            <p>See how our AI system can work for your business.</p>
-            <a href="demo.html" class="btn-cta">Book a Free Demo <i class="fas fa-arrow-right"></i></a>
+        <div class="container" data-aos="fade-up">
+            <h2>Ready to Put Your Business on Autopilot?</h2>
+            <p>See how our AI automation system can work for you.</p>
+            <a href="demo.html" class="btn-cta">Book a Free Demo <i class="ph ph-arrow-right"></i></a>
         </div>
     </section>
 
@@ -851,8 +881,8 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
                     </ul>
                 </div>
             </div>
@@ -865,6 +895,17 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 
 </body>
 </html>

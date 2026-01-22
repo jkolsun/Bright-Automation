@@ -14,8 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons (for brand logos only) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,7 +29,7 @@
 <body>
     <!-- FAQ Floating Button -->
     <a href="contact.html#faq" class="faq-float-btn">
-        <i class="fas fa-circle-question"></i>
+        <i class="ph ph-question"></i>
         FAQ
     </a>
     <!-- Navigation -->
@@ -62,14 +68,14 @@
 
     <!-- Team Section -->
     <section class="section">
-        <div class="section-header">
-            <span class="section-label"><i class="fas fa-users"></i> Our Team</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label"><i class="ph ph-users"></i> Our Team</span>
             <h2 class="section-title">Meet the Founders</h2>
             <p class="section-subtitle">The minds behind Bright Automations</p>
         </div>
 
         <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
-            <div class="card animate-on-scroll team-card team-card-featured">
+            <div class="card team-card team-card-featured" data-aos="fade-up" data-aos-delay="100">
                 <div class="team-headshot">
                     <img src="images/jared-headshot.PNG" alt="Jared Kolsun" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="team-avatar-fallback" style="display: none;">JK</div>
@@ -82,7 +88,7 @@
                 </div>
             </div>
 
-            <div class="card animate-on-scroll team-card team-card-featured">
+            <div class="card team-card team-card-featured" data-aos="fade-up" data-aos-delay="200">
                 <div class="team-headshot">
                     <img src="images/andrew-headshot.PNG" alt="Andrew Tesauro" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="team-avatar-fallback" style="display: none;">AT</div>
@@ -100,19 +106,19 @@
     <!-- Story Section -->
     <section class="section bg-light">
         <div class="image-text-section">
-            <div class="animate-on-scroll">
-                <span class="section-label"><i class="fas fa-book-open"></i> Our Story</span>
+            <div data-aos="fade-right">
+                <span class="section-label"><i class="ph ph-book-open"></i> Our Story</span>
                 <h2 class="section-title" style="text-align: left;">How It All Started</h2>
                 <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 1.5rem;">Bright Automations was born from a friendship forged at Pennsylvania State University. As students pursuing our passions in technology and business, we recognized a shared vision: to make powerful digital solutions accessible to businesses of all sizes.</p>
                 <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 1.5rem;">We saw too many businesses struggling with outdated websites, manual processes, and missed opportunities. Combining our expertise in development, AI, and operations, we set out to bridge the gap between cutting-edge technology and everyday business needs.</p>
                 <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 1.5rem;">Today, we're proud to bring that same collaborative spirit and innovative mindset to every project we undertake. From small retail shops to professional service firms, we're committed to being the technology partner that helps our clients thrive.</p>
                 <a href="contact.html" class="btn btn-primary">Get in Touch</a>
             </div>
-            <div class="animate-on-scroll">
+            <div data-aos="fade-left">
                 <div class="section-image">
                     <img src="images/pennstate.png" alt="Our journey" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="image-placeholder" style="display: none;">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="ph ph-lightbulb"></i>
                         <span>Our Story</span>
                     </div>
                 </div>
@@ -122,40 +128,40 @@
 
     <!-- Values Section -->
     <section class="section bg-light">
-        <div class="section-header">
-            <span class="section-label"><i class="fas fa-heart"></i> Our Values</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label"><i class="ph ph-heart"></i> Our Values</span>
             <h2 class="section-title">The Principles That Guide Us</h2>
             <p class="section-subtitle">What we believe in shapes everything we do</p>
         </div>
 
         <div class="grid grid-2">
-            <div class="card animate-on-scroll">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <div class="value-icon">
-                    <i class="fas fa-rocket"></i>
+                    <i class="ph ph-rocket"></i>
                 </div>
                 <h3>Customer Success First</h3>
                 <p>Your success is our priority. We measure our success by the results we deliver for you, not just the projects we complete.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <div class="value-icon">
-                    <i class="fas fa-gem"></i>
+                    <i class="ph ph-diamond"></i>
                 </div>
                 <h3>Quality Over Quantity</h3>
                 <p>We'd rather do fewer projects exceptionally well than rush through many. Every detail matters to us.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
                 <div class="value-icon">
-                    <i class="fas fa-shield-halved"></i>
+                    <i class="ph ph-shield-check"></i>
                 </div>
                 <h3>Security & Privacy</h3>
                 <p>We take data security seriously. Your information and your customers' data are protected with industry-leading practices.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
                 <div class="value-icon">
-                    <i class="fas fa-seedling"></i>
+                    <i class="ph ph-plant"></i>
                 </div>
                 <h3>Continuous Improvement</h3>
                 <p>Technology evolves, and so do we. We're always learning, adapting, and finding better ways to serve you.</p>
@@ -167,19 +173,19 @@
     <section class="cta-section">
         <div class="container">
             <div class="stats-grid" style="color: var(--white);">
-                <div class="stat-item animate-on-scroll">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-number" style="color: var(--white);">3+</div>
                     <div class="stat-label" style="color: rgba(255,255,255,0.8);">Years in Business</div>
                 </div>
-                <div class="stat-item animate-on-scroll">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-number" style="color: var(--white);">50+</div>
                     <div class="stat-label" style="color: rgba(255,255,255,0.8);">Happy Clients</div>
                 </div>
-                <div class="stat-item animate-on-scroll">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-number" style="color: var(--white);">70+</div>
                     <div class="stat-label" style="color: rgba(255,255,255,0.8);">Projects Completed</div>
                 </div>
-                <div class="stat-item animate-on-scroll">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="stat-number" style="color: var(--white);">99%</div>
                     <div class="stat-label" style="color: rgba(255,255,255,0.8);">Client Satisfaction</div>
                 </div>
@@ -189,7 +195,7 @@
 
     <!-- CTA Section -->
     <section class="section">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-aos="fade-up">
             <h2 class="section-title">Ready to Work Together?</h2>
             <p class="section-subtitle" style="margin-bottom: 2rem;">Let's discuss how we can help transform your business with modern technology.</p>
             <a href="contact.html" class="btn btn-primary">Get in Touch</a>
@@ -235,9 +241,9 @@
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
-                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="client-portal.html"><i class="ph ph-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
                     </ul>
                 </div>
             </div>
@@ -253,6 +259,17 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 
 </body>
 </html>
