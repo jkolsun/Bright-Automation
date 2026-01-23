@@ -510,10 +510,17 @@
         .service-features li {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.25rem;
             padding: 0.375rem 0;
             font-size: 0.875rem;
             color: var(--gray-600);
+        }
+
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .service-features li i {
@@ -669,12 +676,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 3rem;
-            padding: 2rem;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
             background: var(--white);
             border-radius: 1rem;
             border: 1px solid var(--gray-200);
-            margin-top: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .platform-logo {
@@ -691,6 +698,10 @@
 
         .platform-logo.meta i { color: #0668E1; }
         .platform-logo.google i { color: #EA4335; }
+        .platform-logo.tiktok i { color: #000000; }
+        .platform-logo.linkedin i { color: #0077B5; }
+        .platform-logo.youtube i { color: #FF0000; }
+        .platform-logo.bing i { color: #008373; }
 
         /* Mobile Responsive */
         @media (max-width: 1024px) {
@@ -728,6 +739,9 @@
             }
             .service-illustration {
                 height: 180px;
+            }
+            .timeline-section {
+                display: none;
             }
         }
     </style>
@@ -773,7 +787,7 @@
     </section>
 
     <!-- How It Works - Compact Timeline -->
-    <section class="section">
+    <section class="section timeline-section">
         <div class="section-header" data-aos="fade-up">
             <span class="section-label"><i class="ph ph-flow-arrow"></i> How It Works</span>
             <h2 class="section-title">From First Contact to Final Invoice</h2>
@@ -825,6 +839,35 @@
             <span class="section-label"><i class="ph ph-lightning"></i> Our Services</span>
             <h2 class="section-title">Everything Your Business Needs</h2>
             <p class="section-subtitle">Six powerful tools working together as one system</p>
+        </div>
+
+        <!-- Ad Platforms Banner -->
+        <div class="platforms-banner" data-aos="fade-up" data-aos-delay="100">
+            <span style="color: var(--gray-500); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Integrates with</span>
+            <div class="platform-logo meta">
+                <i class="fab fa-meta"></i>
+                <span>Meta Ads</span>
+            </div>
+            <div class="platform-logo google">
+                <i class="fab fa-google"></i>
+                <span>Google Ads</span>
+            </div>
+            <div class="platform-logo tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok Ads</span>
+            </div>
+            <div class="platform-logo linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn Ads</span>
+            </div>
+            <div class="platform-logo youtube">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube Ads</span>
+            </div>
+            <div class="platform-logo bing">
+                <i class="fab fa-microsoft"></i>
+                <span>Bing Ads</span>
+            </div>
         </div>
 
         <div class="services-grid">
@@ -1048,20 +1091,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <!-- Ad Platforms Banner -->
-        <div class="platforms-banner" data-aos="fade-up" data-aos-delay="400">
-            <span style="color: var(--gray-500); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Integrates with</span>
-            <div class="platform-logo meta">
-                <i class="fab fa-meta"></i>
-                <span>Meta Ads</span>
-            </div>
-            <div class="platform-logo google">
-                <i class="fab fa-google"></i>
-                <span>Google Ads</span>
-            </div>
-            <span style="color: var(--gray-400);">+ 50 more integrations</span>
         </div>
     </section>
 
