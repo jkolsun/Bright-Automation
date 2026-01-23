@@ -502,6 +502,107 @@
                 padding: 0.625rem 1rem;
             }
         }
+
+        /* Ad Platforms Marquee */
+        .ad-marquee-section {
+            padding: 3rem 0;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+        .ad-marquee-section .section-label {
+            text-align: center;
+            display: block;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .marquee-container::before,
+        .marquee-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-container::before {
+            left: 0;
+            background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+        }
+        .marquee-container::after {
+            right: 0;
+            background: linear-gradient(90deg, transparent 0%, #f8fafc 100%);
+        }
+        .marquee-track {
+            display: flex;
+            animation: marquee 40s linear infinite;
+            width: max-content;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 2rem;
+            margin: 0 1rem;
+            background: white;
+            border-radius: 100px;
+            border: 1px solid #e2e8f0;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .marquee-item:hover {
+            border-color: #2E7D8A;
+            box-shadow: 0 4px 12px rgba(46, 125, 138, 0.15);
+        }
+        .marquee-item i {
+            font-size: 1.5rem;
+        }
+        .marquee-item span {
+            font-weight: 600;
+            color: #334155;
+            font-size: 0.9375rem;
+        }
+        .marquee-item.meta i { color: #0668E1; }
+        .marquee-item.google i { color: #EA4335; }
+        .marquee-item.tiktok i { color: #000000; }
+        .marquee-item.linkedin i { color: #0077B5; }
+        .marquee-item.youtube i { color: #FF0000; }
+        .marquee-item.bing i { color: #008373; }
+        .marquee-item.twitter i { color: #1DA1F2; }
+        .marquee-item.snapchat i { color: #FFFC00; }
+        .marquee-item.pinterest i { color: #E60023; }
+        .marquee-item.reddit i { color: #FF4500; }
+        @media (max-width: 768px) {
+            .ad-marquee-section {
+                padding: 2rem 0;
+            }
+            .marquee-item {
+                padding: 0.5rem 1.25rem;
+                margin: 0 0.5rem;
+            }
+            .marquee-item i {
+                font-size: 1.25rem;
+            }
+            .marquee-item span {
+                font-size: 0.8125rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -552,7 +653,7 @@
             <p class="hero-sub" data-aos="fade-up" data-aos-delay="300">AI voice agents, chatbots, automated follow-ups, booking, and invoicing—all working together 24/7. Everything a service business needs to grow without the extra headcount.</p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
                 <a href="demo.html" class="btn-primary-lg">Book a Free Demo <i class="ph ph-arrow-right"></i></a>
-                <a href="services.html" class="btn-secondary-lg">Learn More</a>
+                <a href="services.html" class="btn-secondary-lg">See How It Works</a>
             </div>
         </div>
     </section>
@@ -618,6 +719,97 @@
                     </div>
                     <h3>Automated Invoicing</h3>
                     <p>Generate and send invoices automatically after jobs are completed. Accept payments online and send reminders for overdue invoices—no chasing customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Platforms Marquee -->
+    <section class="ad-marquee-section">
+        <span class="section-label">Capture Leads From All Major Ad Platforms</span>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- First set -->
+                <div class="marquee-item meta">
+                    <i class="fab fa-meta"></i>
+                    <span>Meta Ads</span>
+                </div>
+                <div class="marquee-item google">
+                    <i class="fab fa-google"></i>
+                    <span>Google Ads</span>
+                </div>
+                <div class="marquee-item tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok Ads</span>
+                </div>
+                <div class="marquee-item linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn Ads</span>
+                </div>
+                <div class="marquee-item youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube Ads</span>
+                </div>
+                <div class="marquee-item bing">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Bing Ads</span>
+                </div>
+                <div class="marquee-item twitter">
+                    <i class="fab fa-x-twitter"></i>
+                    <span>X Ads</span>
+                </div>
+                <div class="marquee-item snapchat">
+                    <i class="fab fa-snapchat"></i>
+                    <span>Snapchat Ads</span>
+                </div>
+                <div class="marquee-item pinterest">
+                    <i class="fab fa-pinterest"></i>
+                    <span>Pinterest Ads</span>
+                </div>
+                <div class="marquee-item reddit">
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit Ads</span>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="marquee-item meta">
+                    <i class="fab fa-meta"></i>
+                    <span>Meta Ads</span>
+                </div>
+                <div class="marquee-item google">
+                    <i class="fab fa-google"></i>
+                    <span>Google Ads</span>
+                </div>
+                <div class="marquee-item tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok Ads</span>
+                </div>
+                <div class="marquee-item linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn Ads</span>
+                </div>
+                <div class="marquee-item youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube Ads</span>
+                </div>
+                <div class="marquee-item bing">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Bing Ads</span>
+                </div>
+                <div class="marquee-item twitter">
+                    <i class="fab fa-x-twitter"></i>
+                    <span>X Ads</span>
+                </div>
+                <div class="marquee-item snapchat">
+                    <i class="fab fa-snapchat"></i>
+                    <span>Snapchat Ads</span>
+                </div>
+                <div class="marquee-item pinterest">
+                    <i class="fab fa-pinterest"></i>
+                    <span>Pinterest Ads</span>
+                </div>
+                <div class="marquee-item reddit">
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit Ads</span>
                 </div>
             </div>
         </div>
