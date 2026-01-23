@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Full Business Automation - AI voice agents, chatbots, automated follow-ups, booking, and invoicing for service businesses">
+    <meta name="description" content="Full Business Automation - AI voice agents, chatbots, automated follow-ups, booking, invoicing, and ad lead capture for service businesses">
     <title>Full Business Automation - Bright Automations</title>
 
     <!-- Favicon -->
@@ -28,312 +28,684 @@
 
     <!-- Page Specific Styles -->
     <style>
-        /* Nav social icons */
-        .nav-social {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .nav-social a {
-            color: var(--gray-400);
-            font-size: 1rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .nav-social a:hover {
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        /* System overview */
-        .system-overview {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .system-visual {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 1.5rem;
-            padding: 3rem;
-            text-align: center;
-        }
-        .system-diagram {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .system-flow-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.5rem;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-        }
-        .system-flow-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-            width: 40px;
-        }
-        .system-flow-item span {
-            color: #1e293b;
-            font-weight: 500;
-        }
-        .flow-arrow {
-            text-align: center;
-            color: var(--primary);
-            font-size: 1.25rem;
-        }
-
-        /* Feature sections */
-        .feature-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 4rem 0;
-        }
-        .feature-section.reverse {
-            direction: rtl;
-        }
-        .feature-section.reverse > * {
-            direction: ltr;
-        }
-        .feature-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1e293b;
-        }
-        .feature-content p {
-            font-size: 1.125rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            color: #64748b;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 2rem 0;
-        }
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        .feature-list li i {
-            color: #10b981;
-            margin-top: 0.25rem;
-        }
-        .feature-list li span {
-            color: #374151;
-        }
-        .feature-visual {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 1.5rem;
-            padding: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 350px;
-        }
-        .feature-icon-large {
-            font-size: 8rem;
-            color: var(--primary);
-            opacity: 0.3;
-        }
-
-        /* Light section feature */
-        .feature-section-light .feature-content h2 {
-            color: #1e293b;
-        }
-        .feature-section-light .feature-content p {
-            color: #64748b;
-        }
-        .feature-section-light .feature-list li {
-            border-bottom-color: #e2e8f0;
-        }
-        .feature-section-light .feature-list li span {
-            color: #374151;
-        }
-        .feature-section-light .feature-visual {
-            background: #ffffff;
-            border-color: #e2e8f0;
-        }
-        .feature-section-light .feature-icon-large {
-            color: var(--primary);
-        }
-
-        /* Integration logos */
-        .integration-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-        .integration-item {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .integration-item:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .integration-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .integration-item h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 0.25rem;
-        }
-        .integration-item p {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-        }
-
-        /* Pricing */
-        .pricing-grid {
+        /* Services Grid */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-        .pricing-card {
+
+        .service-card {
             background: var(--white);
-            border: 2px solid var(--gray-200);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
         }
-        .pricing-card.featured {
+
+        .service-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(46, 125, 138, 0.15);
-            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(46, 125, 138, 0.15);
+            transform: translateY(-8px);
         }
-        .pricing-card-badge {
-            background: var(--primary);
+
+        /* Service Illustration Area */
+        .service-illustration {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Voice Agent Illustration */
+        .illust-voice {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+        }
+        .illust-voice .phone-mockup {
+            width: 80px;
+            height: 160px;
+            background: #1e293b;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+        }
+        .illust-voice .phone-screen {
+            width: 100%;
+            flex: 1;
+            background: linear-gradient(180deg, #2e7d8a 0%, #1a5f6a 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .illust-voice .caller-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .illust-voice .caller-avatar i {
             color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            display: inline-block;
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .illust-voice .call-status {
+            color: white;
+            font-size: 0.625rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        .pricing-card h3 {
+        .illust-voice .sound-waves {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+        }
+        .illust-voice .wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(46, 125, 138, 0.3);
+            border-radius: 50%;
+            animation: pulse-wave 2s ease-out infinite;
+        }
+        .illust-voice .wave:nth-child(1) { width: 100px; height: 100px; animation-delay: 0s; }
+        .illust-voice .wave:nth-child(2) { width: 140px; height: 140px; animation-delay: 0.5s; }
+        .illust-voice .wave:nth-child(3) { width: 180px; height: 180px; animation-delay: 1s; }
+
+        @keyframes pulse-wave {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        /* Chatbot Illustration */
+        .illust-chatbot {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+        .illust-chatbot .chat-window {
+            width: 160px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        .illust-chatbot .chat-header {
+            background: linear-gradient(90deg, #2e7d8a, #3d9ca8);
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .illust-chatbot .chat-header .bot-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .illust-chatbot .chat-header .bot-icon i {
+            color: white;
+            font-size: 0.75rem;
+        }
+        .illust-chatbot .chat-header span {
+            color: white;
+            font-size: 0.6875rem;
+            font-weight: 600;
+        }
+        .illust-chatbot .chat-body {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .illust-chatbot .chat-bubble {
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 0.5625rem;
+            max-width: 85%;
+            line-height: 1.4;
+        }
+        .illust-chatbot .chat-bubble.bot {
+            background: #f1f5f9;
+            color: #334155;
+            align-self: flex-start;
+        }
+        .illust-chatbot .chat-bubble.user {
+            background: #2e7d8a;
+            color: white;
+            align-self: flex-end;
+        }
+        .illust-chatbot .typing-indicator {
+            display: flex;
+            gap: 3px;
+            padding: 8px 10px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            width: fit-content;
+        }
+        .illust-chatbot .typing-indicator span {
+            width: 5px;
+            height: 5px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .illust-chatbot .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .illust-chatbot .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+
+        /* Ad Lead Capture Illustration */
+        .illust-ads {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+        .illust-ads .ads-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .illust-ads .ad-card {
+            width: 70px;
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .illust-ads .ad-card i {
             font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+        .illust-ads .ad-card.meta i { color: #0668E1; }
+        .illust-ads .ad-card.google i { color: #EA4335; }
+        .illust-ads .ad-card span {
+            display: block;
+            font-size: 0.5rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .illust-ads .arrow-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .illust-ads .arrow-flow i {
+            color: #2e7d8a;
+            font-size: 1.25rem;
+        }
+        .illust-ads .lead-card {
+            width: 80px;
+            background: linear-gradient(135deg, #2e7d8a, #3d9ca8);
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(46, 125, 138, 0.3);
+        }
+        .illust-ads .lead-card i {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+        .illust-ads .lead-card span {
+            display: block;
+            font-size: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Follow-Up Illustration */
+        .illust-followup {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+        }
+        .illust-followup .messages-stack {
+            position: relative;
+            width: 150px;
+            height: 140px;
+        }
+        .illust-followup .message-item {
+            position: absolute;
+            width: 130px;
+            background: white;
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .illust-followup .message-item:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+        .illust-followup .message-item:nth-child(2) {
+            top: 40px;
+            left: 10px;
+            z-index: 2;
+            opacity: 0.85;
+        }
+        .illust-followup .message-item:nth-child(3) {
+            top: 80px;
+            left: 20px;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        .illust-followup .msg-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .illust-followup .msg-icon.sms { background: #dcfce7; color: #22c55e; }
+        .illust-followup .msg-icon.email { background: #dbeafe; color: #3b82f6; }
+        .illust-followup .msg-icon.whatsapp { background: #dcfce7; color: #25d366; }
+        .illust-followup .msg-icon i { font-size: 0.875rem; }
+        .illust-followup .msg-text {
+            flex: 1;
+        }
+        .illust-followup .msg-text strong {
+            display: block;
+            font-size: 0.5625rem;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+        .illust-followup .msg-text span {
+            font-size: 0.5rem;
+            color: #64748b;
+        }
+
+        /* Booking Illustration */
+        .illust-booking {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+        .illust-booking .calendar-widget {
+            width: 150px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+        .illust-booking .cal-header {
+            background: linear-gradient(90deg, #2e7d8a, #3d9ca8);
+            padding: 10px;
+            text-align: center;
+        }
+        .illust-booking .cal-header span {
+            color: white;
+            font-size: 0.6875rem;
+            font-weight: 600;
+        }
+        .illust-booking .cal-grid {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+        .illust-booking .cal-day {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            color: #64748b;
+        }
+        .illust-booking .cal-day.header {
+            font-weight: 600;
+            color: #94a3b8;
+            font-size: 0.4375rem;
+        }
+        .illust-booking .cal-day.selected {
+            background: #2e7d8a;
+            color: white;
+            font-weight: 600;
+        }
+        .illust-booking .cal-day.available {
+            background: #e0f2f1;
+            color: #2e7d8a;
+        }
+        .illust-booking .time-slots {
+            padding: 0 10px 10px;
+            display: flex;
+            gap: 4px;
+        }
+        .illust-booking .time-slot {
+            flex: 1;
+            padding: 6px;
+            background: #f1f5f9;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.5rem;
+            color: #64748b;
+        }
+        .illust-booking .time-slot.active {
+            background: #2e7d8a;
+            color: white;
+        }
+
+        /* Invoice Illustration */
+        .illust-invoice {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+        .illust-invoice .invoice-doc {
+            width: 130px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            padding: 14px;
+        }
+        .illust-invoice .inv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .illust-invoice .inv-header strong {
+            font-size: 0.625rem;
+            color: #1e293b;
+        }
+        .illust-invoice .inv-header .status {
+            font-size: 0.4375rem;
+            padding: 2px 6px;
+            background: #dcfce7;
+            color: #22c55e;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .illust-invoice .inv-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .illust-invoice .inv-line span {
+            font-size: 0.5rem;
+            color: #64748b;
+        }
+        .illust-invoice .inv-line strong {
+            font-size: 0.5rem;
+            color: #1e293b;
+        }
+        .illust-invoice .inv-total {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .illust-invoice .inv-total span {
+            font-size: 0.5625rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .illust-invoice .inv-total strong {
+            font-size: 0.75rem;
+            color: #2e7d8a;
+        }
+        .illust-invoice .pay-btn {
+            margin-top: 10px;
+            width: 100%;
+            padding: 6px;
+            background: linear-gradient(90deg, #2e7d8a, #3d9ca8);
+            border-radius: 6px;
+            text-align: center;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Service Card Content */
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 0.5rem;
         }
-        .pricing-card .price {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
+
+        .service-card > .service-content > p {
+            color: var(--gray-500);
+            font-size: 0.9375rem;
+            line-height: 1.6;
             margin-bottom: 1rem;
         }
-        .pricing-card .description {
-            color: var(--gray-500);
-            margin-bottom: 2rem;
-            font-size: 0.9375rem;
-        }
-        .pricing-features {
+
+        .service-features {
             list-style: none;
             padding: 0;
-            margin: 0 0 2rem 0;
-            text-align: left;
-        }
-        .pricing-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--gray-100);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9375rem;
-            color: var(--gray-700);
-        }
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-        .pricing-features li i {
-            color: #10b981;
+            margin: 0;
         }
 
-        /* Add-ons */
-        .addon-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        .addon-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 1rem;
-            padding: 1.5rem;
+        .service-features li {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 0.5rem;
+            padding: 0.375rem 0;
+            font-size: 0.875rem;
+            color: var(--gray-600);
         }
-        .addon-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(46, 125, 138, 0.1);
-            border-radius: 0.75rem;
+
+        .service-features li i {
+            color: #10b981;
+            font-size: 0.875rem;
+        }
+
+        /* How It Works - Compact Timeline */
+        .timeline-compact {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-compact::before {
+            content: '';
+            position: absolute;
+            top: calc(2rem + 30px);
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .timeline-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            font-size: 1.25rem;
-            flex-shrink: 0;
+            margin-bottom: 1rem;
         }
-        .addon-content h4 {
+
+        .timeline-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .timeline-step h4 {
+            font-family: var(--font-display);
             font-size: 1rem;
             font-weight: 600;
             color: var(--gray-900);
             margin-bottom: 0.25rem;
         }
-        .addon-content p {
-            font-size: 0.875rem;
+
+        .timeline-step p {
+            font-size: 0.8125rem;
             color: var(--gray-500);
+            max-width: 140px;
         }
+
+        /* Pricing - More Compact */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(46, 125, 138, 0.15);
+            transform: scale(1.03);
+        }
+
+        .pricing-card-badge {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.375rem 1rem;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-card .price {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-card .description {
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li i {
+            color: #10b981;
+            font-size: 0.875rem;
+        }
+
+        /* Ad Platforms Banner */
+        .platforms-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            border: 1px solid var(--gray-200);
+            margin-top: 2rem;
+        }
+
+        .platform-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        .platform-logo i {
+            font-size: 2rem;
+        }
+
+        .platform-logo.meta i { color: #0668E1; }
+        .platform-logo.google i { color: #EA4335; }
 
         /* Mobile Responsive */
         @media (max-width: 1024px) {
-            .system-overview {
-                grid-template-columns: 1fr;
-            }
-            .system-visual {
-                display: none;
-            }
-            .feature-section {
-                grid-template-columns: 1fr;
-            }
-            .feature-section.reverse {
-                direction: ltr;
-            }
-            .feature-visual {
-                display: none;
-            }
-            .integration-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .timeline-compact {
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+            .timeline-compact::before {
+                display: none;
+            }
+            .timeline-step {
+                flex: 0 0 calc(50% - 1rem);
             }
             .pricing-grid {
                 grid-template-columns: 1fr;
@@ -341,14 +713,21 @@
             .pricing-card.featured {
                 transform: none;
             }
-            .addon-grid {
-                grid-template-columns: 1fr;
+            .platforms-banner {
+                flex-wrap: wrap;
+                gap: 2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-social {
-                display: none;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-step {
+                flex: 0 0 100%;
+            }
+            .service-illustration {
+                height: 180px;
             }
         }
     </style>
@@ -390,154 +769,299 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>Full Business Automation</h1>
-        <p>Everything you need to run your service business on autopilot—from the first call to the final invoice</p>
+        <p>Everything you need to capture leads, close deals, and get paid—all on autopilot</p>
     </section>
 
-    <!-- System Overview -->
+    <!-- How It Works - Compact Timeline -->
     <section class="section">
-        <div class="system-overview">
-            <div data-aos="fade-right">
-                <span class="section-label"><i class="ph ph-flow-arrow"></i> How It Works</span>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">One System. Complete Automation.</h2>
-                <p style="font-size: 1.125rem; color: var(--gray-400); margin-bottom: 2rem; line-height: 1.7;">Our full automation system combines voice, chat, SMS, email, booking, and invoicing into one seamless workflow. Every touchpoint is covered, every lead is tracked, and every task is automated.</p>
-                <a href="demo.html" class="btn btn-primary">See It In Action</a>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label"><i class="ph ph-flow-arrow"></i> How It Works</span>
+            <h2 class="section-title">From First Contact to Final Invoice</h2>
+            <p class="section-subtitle">One seamless system handling every step</p>
+        </div>
+
+        <div class="timeline-compact" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-step">
+                <div class="timeline-icon">
+                    <i class="ph ph-megaphone"></i>
+                </div>
+                <h4>Lead Captured</h4>
+                <p>From ads, calls, or your website</p>
             </div>
-            <div class="system-visual" data-aos="fade-left">
-                <div class="system-diagram">
-                    <div class="system-flow-item">
-                        <i class="ph ph-phone-incoming"></i>
-                        <span>Inbound Call</span>
+            <div class="timeline-step">
+                <div class="timeline-icon">
+                    <i class="ph ph-robot"></i>
+                </div>
+                <h4>AI Responds</h4>
+                <p>Voice agent or chatbot engages instantly</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-icon">
+                    <i class="ph ph-calendar-check"></i>
+                </div>
+                <h4>Booking Made</h4>
+                <p>Appointment scheduled automatically</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-icon">
+                    <i class="ph ph-paper-plane-tilt"></i>
+                </div>
+                <h4>Follow-Up</h4>
+                <p>Reminders & nurture sequences sent</p>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-icon">
+                    <i class="ph ph-receipt"></i>
+                </div>
+                <h4>Invoice Sent</h4>
+                <p>Get paid fast with auto-invoicing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section bg-light">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-label"><i class="ph ph-lightning"></i> Our Services</span>
+            <h2 class="section-title">Everything Your Business Needs</h2>
+            <p class="section-subtitle">Six powerful tools working together as one system</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- AI Voice Agent -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-illustration illust-voice">
+                    <div class="sound-waves">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
                     </div>
-                    <div class="flow-arrow"><i class="ph ph-arrow-down"></i></div>
-                    <div class="system-flow-item">
-                        <i class="ph ph-robot"></i>
-                        <span>AI Voice Agent Answers</span>
-                    </div>
-                    <div class="flow-arrow"><i class="ph ph-arrow-down"></i></div>
-                    <div class="system-flow-item">
-                        <i class="ph ph-clipboard-text"></i>
-                        <span>Lead Qualified & Booked</span>
-                    </div>
-                    <div class="flow-arrow"><i class="ph ph-arrow-down"></i></div>
-                    <div class="system-flow-item">
-                        <i class="ph ph-receipt"></i>
-                        <span>Job Complete → Invoice Sent</span>
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="caller-avatar">
+                                <i class="ph ph-robot"></i>
+                            </div>
+                            <div class="call-status">AI Answering...</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature 1: AI Voice Agent -->
-    <section class="section" id="voice-agent">
-        <div class="feature-section" data-aos="fade-up">
-            <div class="feature-content">
-                <span class="hero-label"><i class="ph ph-phone-call"></i> Core Feature</span>
-                <h2>AI Voice Agent</h2>
-                <p>Your 24/7 AI receptionist that answers calls, qualifies leads, books appointments, and captures key information - just like your best employee, but always available.</p>
-                <ul class="feature-list">
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Answers calls instantly, any time of day or night</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Trained on your business, services, and pricing</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Books appointments directly into your calendar</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Transfers hot leads to your cell when needed</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Handles unlimited concurrent calls</span>
-                    </li>
-                </ul>
-                <a href="demo.html" class="btn btn-primary">Hear a Demo Call</a>
-            </div>
-            <div class="feature-visual">
-                <i class="ph ph-phone-call feature-icon-large"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature 2: Website Chatbot -->
-    <section class="section-full bg-light" id="chatbot">
-        <div class="container">
-            <div class="feature-section feature-section-light reverse" data-aos="fade-up">
-                <div class="feature-content">
-                    <span class="service-badge"><i class="ph ph-chats-circle"></i> Core Feature</span>
-                    <h2>Website Chatbot</h2>
-                    <p>Engage every website visitor the moment they land on your site. Answer questions, capture contact info, and book appointments while they're interested.</p>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="ph ph-check"></i>
-                            <span>Greets visitors and answers FAQs instantly</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check"></i>
-                            <span>Captures name, email, phone, and project details</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check"></i>
-                            <span>Qualifies leads based on your criteria</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check"></i>
-                            <span>Schedules appointments automatically</span>
-                        </li>
-                        <li>
-                            <i class="ph ph-check"></i>
-                            <span>Seamlessly hands off to live chat when needed</span>
-                        </li>
+                <div class="service-content">
+                    <h3>AI Voice Agent</h3>
+                    <p>Your 24/7 AI receptionist that answers calls, qualifies leads, and books appointments.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Answers calls instantly, any time</li>
+                        <li><i class="ph ph-check"></i> Trained on your business</li>
+                        <li><i class="ph ph-check"></i> Books directly to your calendar</li>
+                        <li><i class="ph ph-check"></i> Transfers hot leads to you</li>
                     </ul>
-                    <a href="demo.html" class="btn btn-primary">Try the Chatbot</a>
                 </div>
-                <div class="feature-visual">
-                    <i class="ph ph-chats-circle feature-icon-large"></i>
+            </div>
+
+            <!-- Website Chatbot -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-illustration illust-chatbot">
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <div class="bot-icon"><i class="ph ph-robot"></i></div>
+                            <span>Bright Assistant</span>
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-bubble bot">Hi! How can I help you today?</div>
+                            <div class="chat-bubble user">I need a quote for HVAC service</div>
+                            <div class="chat-bubble bot">I'd be happy to help! What's your name?</div>
+                            <div class="typing-indicator">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Website Chatbot</h3>
+                    <p>Engage every visitor the moment they land on your site and capture their info.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Greets visitors & answers FAQs</li>
+                        <li><i class="ph ph-check"></i> Captures contact details</li>
+                        <li><i class="ph ph-check"></i> Qualifies leads automatically</li>
+                        <li><i class="ph ph-check"></i> Schedules appointments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ad Lead Capture -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-illustration illust-ads">
+                    <div class="ads-container">
+                        <div class="ad-card meta">
+                            <i class="fab fa-meta"></i>
+                            <span>Meta Ads</span>
+                        </div>
+                        <div class="ad-card google">
+                            <i class="fab fa-google"></i>
+                            <span>Google Ads</span>
+                        </div>
+                        <div class="arrow-flow">
+                            <i class="ph ph-arrow-right"></i>
+                        </div>
+                        <div class="lead-card">
+                            <i class="ph ph-user-plus"></i>
+                            <span>Lead Captured!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Ad Lead Capture</h3>
+                    <p>Capture and instantly engage leads from your Meta and Google ad campaigns.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Meta & Google Ads integration</li>
+                        <li><i class="ph ph-check"></i> Instant lead response</li>
+                        <li><i class="ph ph-check"></i> Auto-sync to your CRM</li>
+                        <li><i class="ph ph-check"></i> Track ROI per campaign</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Automated Follow-Up -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="service-illustration illust-followup">
+                    <div class="messages-stack">
+                        <div class="message-item">
+                            <div class="msg-icon sms"><i class="ph ph-chat-text"></i></div>
+                            <div class="msg-text">
+                                <strong>SMS Sent</strong>
+                                <span>Appointment reminder</span>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="msg-icon email"><i class="ph ph-envelope"></i></div>
+                            <div class="msg-text">
+                                <strong>Email Sent</strong>
+                                <span>Follow-up sequence</span>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="msg-icon whatsapp"><i class="ph ph-whatsapp-logo"></i></div>
+                            <div class="msg-text">
+                                <strong>WhatsApp</strong>
+                                <span>Thank you message</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Automated Follow-Up</h3>
+                    <p>Never let a lead go cold. Automated SMS and email sequences nurture every contact.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Instant confirmations</li>
+                        <li><i class="ph ph-check"></i> Multi-touch nurture sequences</li>
+                        <li><i class="ph ph-check"></i> Appointment reminders</li>
+                        <li><i class="ph ph-check"></i> Post-job review requests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Smart Booking -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-illustration illust-booking">
+                    <div class="calendar-widget">
+                        <div class="cal-header">
+                            <span>January 2025</span>
+                        </div>
+                        <div class="cal-grid">
+                            <div class="cal-day header">S</div>
+                            <div class="cal-day header">M</div>
+                            <div class="cal-day header">T</div>
+                            <div class="cal-day header">W</div>
+                            <div class="cal-day header">T</div>
+                            <div class="cal-day header">F</div>
+                            <div class="cal-day header">S</div>
+                            <div class="cal-day"></div>
+                            <div class="cal-day"></div>
+                            <div class="cal-day"></div>
+                            <div class="cal-day">1</div>
+                            <div class="cal-day">2</div>
+                            <div class="cal-day available">3</div>
+                            <div class="cal-day">4</div>
+                            <div class="cal-day">5</div>
+                            <div class="cal-day available">6</div>
+                            <div class="cal-day available">7</div>
+                            <div class="cal-day selected">8</div>
+                            <div class="cal-day available">9</div>
+                            <div class="cal-day available">10</div>
+                            <div class="cal-day">11</div>
+                        </div>
+                        <div class="time-slots">
+                            <div class="time-slot">9am</div>
+                            <div class="time-slot active">2pm</div>
+                            <div class="time-slot">4pm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Smart Booking</h3>
+                    <p>Let customers book themselves with an intelligent scheduling system.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Online booking portal</li>
+                        <li><i class="ph ph-check"></i> Calendar sync (Google, Outlook)</li>
+                        <li><i class="ph ph-check"></i> Automated reminders</li>
+                        <li><i class="ph ph-check"></i> Reschedule & cancellation handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Invoice Automation -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-illustration illust-invoice">
+                    <div class="invoice-doc">
+                        <div class="inv-header">
+                            <strong>Invoice #1042</strong>
+                            <span class="status">PAID</span>
+                        </div>
+                        <div class="inv-line">
+                            <span>HVAC Service</span>
+                            <strong>$250.00</strong>
+                        </div>
+                        <div class="inv-line">
+                            <span>Parts & Labor</span>
+                            <strong>$125.00</strong>
+                        </div>
+                        <div class="inv-line">
+                            <span>Tax</span>
+                            <strong>$30.00</strong>
+                        </div>
+                        <div class="inv-total">
+                            <span>Total</span>
+                            <strong>$405.00</strong>
+                        </div>
+                        <div class="pay-btn">Payment Received</div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Invoice Automation</h3>
+                    <p>From quote to payment—automate your entire billing workflow and get paid faster.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check"></i> Auto-generate invoices</li>
+                        <li><i class="ph ph-check"></i> Send payment reminders</li>
+                        <li><i class="ph ph-check"></i> Accept online payments</li>
+                        <li><i class="ph ph-check"></i> Track & manage receivables</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Feature 3: Automated Follow-Up -->
-    <section class="section" id="follow-up">
-        <div class="feature-section" data-aos="fade-up">
-            <div class="feature-content">
-                <span class="hero-label"><i class="ph ph-paper-plane-tilt"></i> Core Feature</span>
-                <h2>Automated Follow-Up</h2>
-                <p>Never let a lead go cold again. Our system automatically sends personalized SMS and email sequences to nurture leads until they're ready to buy.</p>
-                <ul class="feature-list">
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Instant confirmation texts and emails after contact</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Multi-touch nurture sequences over days/weeks</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Personalized messages based on lead interests</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Appointment reminders to reduce no-shows</span>
-                    </li>
-                    <li>
-                        <i class="ph ph-check"></i>
-                        <span>Review requests after job completion</span>
-                    </li>
-                </ul>
-                <a href="demo.html" class="btn btn-primary">See Follow-Up Sequences</a>
+        <!-- Ad Platforms Banner -->
+        <div class="platforms-banner" data-aos="fade-up" data-aos-delay="400">
+            <span style="color: var(--gray-500); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Integrates with</span>
+            <div class="platform-logo meta">
+                <i class="fab fa-meta"></i>
+                <span>Meta Ads</span>
             </div>
-            <div class="feature-visual">
-                <i class="ph ph-paper-plane-tilt feature-icon-large"></i>
+            <div class="platform-logo google">
+                <i class="fab fa-google"></i>
+                <span>Google Ads</span>
             </div>
+            <span style="color: var(--gray-400);">+ 50 more integrations</span>
         </div>
     </section>
 
@@ -546,14 +1070,14 @@
         <div class="section-header" data-aos="fade-up">
             <span class="section-label"><i class="ph ph-tag"></i> Pricing</span>
             <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <p class="section-subtitle">Choose the package that fits your business. All plans include setup and training.</p>
+            <p class="section-subtitle">All plans include setup, training, and ongoing support</p>
         </div>
 
         <div class="pricing-grid">
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Starter</h3>
                 <div class="price">Contact for Pricing</div>
-                <p class="description">Perfect for businesses just getting started with automation</p>
+                <p class="description">For businesses starting with automation</p>
                 <ul class="pricing-features">
                     <li><i class="ph ph-check"></i> Website Chatbot</li>
                     <li><i class="ph ph-check"></i> Lead Capture Forms</li>
@@ -568,13 +1092,14 @@
                 <span class="pricing-card-badge">Most Popular</span>
                 <h3>Professional</h3>
                 <div class="price">Contact for Pricing</div>
-                <p class="description">The complete automation system for growing businesses</p>
+                <p class="description">Complete automation for growing businesses</p>
                 <ul class="pricing-features">
-                    <li><i class="ph ph-check"></i> <strong>Everything in Starter, plus:</strong></li>
+                    <li><i class="ph ph-check"></i> <strong>Everything in Starter</strong></li>
                     <li><i class="ph ph-check"></i> AI Voice Agent (24/7)</li>
                     <li><i class="ph ph-check"></i> SMS Follow-Up Sequences</li>
                     <li><i class="ph ph-check"></i> Smart Booking System</li>
-                    <li><i class="ph ph-check"></i> Automated Invoicing</li>
+                    <li><i class="ph ph-check"></i> Invoice Automation</li>
+                    <li><i class="ph ph-check"></i> Ad Lead Capture</li>
                     <li><i class="ph ph-check"></i> Priority Support</li>
                 </ul>
                 <a href="demo.html" class="btn btn-primary" style="width: 100%;">Book a Demo</a>
@@ -583,9 +1108,9 @@
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Enterprise</h3>
                 <div class="price">Custom Pricing</div>
-                <p class="description">Custom solutions for multi-location or high-volume businesses</p>
+                <p class="description">For multi-location or high-volume businesses</p>
                 <ul class="pricing-features">
-                    <li><i class="ph ph-check"></i> <strong>Everything in Professional, plus:</strong></li>
+                    <li><i class="ph ph-check"></i> <strong>Everything in Professional</strong></li>
                     <li><i class="ph ph-check"></i> Multiple Voice Agent Lines</li>
                     <li><i class="ph ph-check"></i> Advanced Integrations</li>
                     <li><i class="ph ph-check"></i> Custom Workflows</li>
@@ -593,46 +1118,6 @@
                     <li><i class="ph ph-check"></i> SLA & Uptime Guarantees</li>
                 </ul>
                 <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
-            </div>
-        </div>
-
-        <!-- Add-ons -->
-        <div class="addon-grid">
-            <div class="addon-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="addon-icon">
-                    <i class="ph ph-palette"></i>
-                </div>
-                <div class="addon-content">
-                    <h4>Website Design</h4>
-                    <p>Need a new website? We build conversion-optimized sites for service businesses.</p>
-                </div>
-            </div>
-            <div class="addon-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="addon-icon">
-                    <i class="ph ph-star"></i>
-                </div>
-                <div class="addon-content">
-                    <h4>Review Management</h4>
-                    <p>Automated review requests and reputation monitoring for Google & Facebook.</p>
-                </div>
-            </div>
-            <div class="addon-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="addon-icon">
-                    <i class="ph ph-receipt"></i>
-                </div>
-                <div class="addon-content">
-                    <h4>Quote & Invoice Automation</h4>
-                    <p>From estimate to payment - automate your entire billing workflow.</p>
-                </div>
-            </div>
-            <div class="addon-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="addon-icon">
-                    <i class="ph ph-chart-pie"></i>
-                </div>
-                <div class="addon-content">
-                    <h4>Analytics Dashboard</h4>
-                    <p>Real-time reporting on leads, conversions, and ROI from your AI system.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -657,7 +1142,7 @@
                     <a href="/" class="logo footer-logo">
                         <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
                     </a>
-                    <p>AI-powered lead capture systems for service businesses. Never miss another lead.</p>
+                    <p>Full business automation for service businesses. Never miss another lead.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -676,12 +1161,13 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3>System Features</h3>
+                    <h3>Our Services</h3>
                     <ul>
-                        <li><a href="services.html#voice-agent">AI Voice Agent</a></li>
-                        <li><a href="services.html#chatbot">Website Chatbot</a></li>
-                        <li><a href="services.html#follow-up">Automated Follow-Up</a></li>
-                        <li><a href="/#integrations">CRM Integrations</a></li>
+                        <li><a href="services.html">AI Voice Agent</a></li>
+                        <li><a href="services.html">Website Chatbot</a></li>
+                        <li><a href="services.html">Ad Lead Capture</a></li>
+                        <li><a href="services.html">Automated Follow-Up</a></li>
+                        <li><a href="services.html">Invoice Automation</a></li>
                     </ul>
                 </div>
 
