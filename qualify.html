@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your request - Bright Automations">
+    <title>Complete Your Request - Bright Automations</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .qualify-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .qualify-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .qualify-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .qualify-header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .qualify-header p {
+            color: var(--text-muted);
+        }
+
+        .qualify-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .qualify-form .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9375rem;
+        }
+
+        .qualify-form .form-select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: var(--font-sans);
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+        }
+
+        .qualify-form .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(46, 125, 138, 0.1);
+        }
+
+        .qualify-form .btn-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .qualify-form .btn-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .qualify-form .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .thank-you-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .thank-you-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .thank-you h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .thank-you p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--gray-100);
+            color: var(--text);
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .thank-you .btn-home:hover {
+            background: var(--gray-200);
+        }
+
+        @media (max-width: 640px) {
+            .qualify-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="demo.html" class="nav-cta">Book a Demo</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Qualification Form Section -->
+    <section class="qualify-section">
+        <div class="qualify-card" data-aos="fade-up">
+            <div id="formContainer">
+                <div class="qualify-header">
+                    <h1>Complete Your Request</h1>
+                    <p>Tell us a bit more so we can help you better.</p>
+                </div>
+
+                <form id="qualificationForm" class="qualify-form">
+                    <input type="hidden" id="leadId" name="lead_id">
+
+                    <div class="form-group">
+                        <label for="service" class="form-label">What service are you interested in?</label>
+                        <select id="service" name="rental_type" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="automation">Business Automation</option>
+                            <option value="ai">AI Integration</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline" class="form-label">When do you need this?</label>
+                        <select id="timeline" name="timeline" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-2 weeks">1-2 weeks</option>
+                            <option value="1 month">Within a month</option>
+                            <option value="just exploring">Just exploring</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget" class="form-label">What's your budget?</label>
+                        <select id="budget" name="budget" class="form-select" required>
+                            <option value="">Select...</option>
+                            <option value="<1000">Under $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000+">$10,000+</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit</button>
+                </form>
+            </div>
+
+            <div id="thankYou" class="thank-you" style="display: none;">
+                <div class="thank-you-icon">
+                    <i class="ph ph-check"></i>
+                </div>
+                <h2>Thank You!</h2>
+                <p>We've received your information and will be in touch soon.</p>
+                <a href="/" class="btn-home">
+                    <i class="ph ph-house"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                    </a>
+                    <p>AI-powered lead capture for service businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="services.html">AI Voice Agent</a></li>
+                        <li><a href="services.html">Website Chatbot</a></li>
+                        <li><a href="services.html">Ad Lead Capture</a></li>
+                        <li><a href="services.html">Automated Follow-Up</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+
+    <!-- Qualification Form Script -->
+    <script>
+    (function() {
+        // Get lead ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const leadId = params.get('lid');
+
+        if (leadId) {
+            document.getElementById('leadId').value = leadId;
+        }
+
+        document.getElementById('qualificationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const data = {
+                lead_id: document.getElementById('leadId').value,
+                rental_type: form.rental_type.value,
+                timeline: form.timeline.value,
+                budget: form.budget.value
+            };
+
+            try {
+                const response = await fetch('https://web-production-49ac3.up.railway.app/api/webhooks/qualification-complete', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': 'bright-automations-key'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('formContainer').style.display = 'none';
+                    document.getElementById('thankYou').style.display = 'block';
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+            }
+        });
+    })();
+    </script>
+
+</body>
+</html>
