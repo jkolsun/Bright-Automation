@@ -1076,7 +1076,7 @@
                             <div class="form-step" data-step="4" style="display: none;">
                                 <div class="step-label">
                                     <span class="step-number">4</span>
-                                    Where should we send your quote?
+                                    Our team will respond as soon as possible.
                                 </div>
                                 <input type="text" class="form-input" id="heroName" placeholder="Your name" required>
                                 <input type="email" class="form-input" id="heroEmail" placeholder="Email address" required>
@@ -1631,7 +1631,7 @@
             // Only show submit button on last step
             if (step === totalSteps) {
                 nextBtn.style.display = 'flex';
-                nextBtn.innerHTML = 'Get My Quote <i class="ph ph-paper-plane-tilt"></i>';
+                nextBtn.innerHTML = 'Submit';
                 nextBtn.disabled = false;
             } else {
                 nextBtn.style.display = 'none';
@@ -1687,7 +1687,7 @@
                 } catch (error) {
                     alert('Something went wrong. Please try again.');
                     nextBtn.disabled = false;
-                    nextBtn.innerHTML = 'Get My Quote <i class="ph ph-paper-plane-tilt"></i>';
+                    nextBtn.innerHTML = 'Submit';
                 }
             }
         });
