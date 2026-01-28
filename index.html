@@ -604,73 +604,148 @@
             }
         }
 
-        /* ===== LOADING ANIMATION ===== */
+        /* ===== EPIC LOADING ANIMATION ===== */
         .page-loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #ffffff;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            overflow: hidden;
+        }
+        .page-loader::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(46, 125, 138, 0.15) 0%, transparent 50%);
+            animation: rotate-bg 8s linear infinite;
+        }
+        @keyframes rotate-bg {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         .page-loader.loaded {
-            opacity: 0;
-            visibility: hidden;
+            animation: loader-exit 0.8s ease-in-out forwards;
+        }
+        @keyframes loader-exit {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; }
         }
         .loader-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
         }
+        .loader-logo-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+        }
         .loader-logo {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1.5rem;
-            animation: pulse-grow 1.5s ease-in-out infinite;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            animation: logo-pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(46, 125, 138, 0.5));
         }
-        .loader-dots {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        .loader-dots span {
-            width: 12px;
-            height: 12px;
-            background: #2E7D8A;
+        .loader-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 220px;
+            border: 3px solid transparent;
+            border-top-color: #2E7D8A;
             border-radius: 50%;
-            animation: bounce-dot 1.4s ease-in-out infinite;
+            animation: spin-ring 1s linear infinite;
         }
-        .loader-dots span:nth-child(1) { animation-delay: 0s; }
-        .loader-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .loader-dots span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes pulse-grow {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        .loader-ring::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 3px solid transparent;
+            border-bottom-color: rgba(46, 125, 138, 0.3);
+            border-radius: 50%;
         }
-        @keyframes bounce-dot {
-            0%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-12px); }
+        @keyframes logo-pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(46, 125, 138, 0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 50px rgba(46, 125, 138, 0.8)); }
+        }
+        @keyframes spin-ring {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .loader-progress {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .loader-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2E7D8A, #4fd1c5, #2E7D8A);
+            background-size: 200% 100%;
+            border-radius: 100px;
+            animation: progress-fill 1.2s ease-out forwards, shimmer 1.5s linear infinite;
+        }
+        @keyframes progress-fill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .loader-text {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .page-loader.loaded .loader-logo {
+            animation: logo-exit 0.6s ease-in-out forwards;
+        }
+        @keyframes logo-exit {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
         }
 
-        /* ===== POPUP FORM MODAL ===== */
+        /* ===== PROFESSIONAL POPUP FORM ===== */
         .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 8888;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 1rem;
         }
         .popup-overlay.active {
@@ -678,18 +753,43 @@
             visibility: visible;
         }
         .popup-modal {
-            background: white;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
             border-radius: 1.5rem;
-            padding: 2.5rem;
-            max-width: 420px;
+            max-width: 440px;
             width: 100%;
             position: relative;
-            transform: translateY(20px) scale(0.95);
-            transition: all 0.3s ease;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(30px) scale(0.9);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
         }
         .popup-overlay.active .popup-modal {
             transform: translateY(0) scale(1);
+        }
+        .popup-header-bg {
+            background: linear-gradient(135deg, #2E7D8A 0%, #1e5a63 100%);
+            padding: 2rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .popup-header-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+        .popup-header-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1.5rem 1.5rem 0 0;
         }
         .popup-close {
             position: absolute;
@@ -698,7 +798,7 @@
             width: 36px;
             height: 36px;
             border: none;
-            background: #f1f5f9;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -706,71 +806,121 @@
             justify-content: center;
             transition: all 0.2s ease;
             font-size: 1.25rem;
-            color: #64748b;
+            color: white;
+            z-index: 10;
         }
         .popup-close:hover {
-            background: #e2e8f0;
-            color: #0f172a;
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg);
         }
         .popup-header {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .popup-header-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            backdrop-filter: blur(10px);
+        }
+        .popup-header-icon i {
+            font-size: 1.75rem;
+            color: white;
         }
         .popup-header h2 {
             font-size: 1.5rem;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            margin-bottom: 0.375rem;
+            color: white;
         }
         .popup-header p {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.9375rem;
         }
+        .popup-body {
+            padding: 1.5rem 2rem 2rem;
+        }
         .popup-form .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
         .popup-form .form-label {
-            display: block;
-            margin-bottom: 0.375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #374151;
+            color: #1e293b;
             font-size: 0.875rem;
+        }
+        .popup-form .form-label i {
+            color: #2E7D8A;
+            font-size: 1rem;
         }
         .popup-form .form-select {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 1rem 1.25rem;
             border: 2px solid #e2e8f0;
-            border-radius: 0.625rem;
-            font-size: 0.9375rem;
-            transition: all 0.2s ease;
+            border-radius: 0.875rem;
+            font-size: 1rem;
+            transition: all 0.25s ease;
             background: white;
             color: #374151;
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%232E7D8A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 0.875rem center;
+            background-position: right 1rem center;
+        }
+        .popup-form .form-select:hover {
+            border-color: #cbd5e1;
         }
         .popup-form .form-select:focus {
             outline: none;
             border-color: #2E7D8A;
-            box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
+            box-shadow: 0 0 0 4px rgba(46, 125, 138, 0.1);
         }
         .popup-form .btn-submit {
             width: 100%;
-            padding: 0.9375rem 1.5rem;
-            background: linear-gradient(135deg, #2E7D8A 0%, #236670 100%);
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #1e5a63 100%);
             color: white;
             border: none;
-            border-radius: 0.625rem;
+            border-radius: 0.875rem;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .popup-form .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .popup-form .btn-submit:hover::before {
+            left: 100%;
         }
         .popup-form .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(46, 125, 138, 0.3);
+            box-shadow: 0 12px 24px rgba(46, 125, 138, 0.35);
         }
         .popup-form .btn-submit:disabled {
             opacity: 0.7;
@@ -778,36 +928,62 @@
             transform: none;
             box-shadow: none;
         }
+        .popup-form .btn-submit i {
+            font-size: 1.125rem;
+        }
+        .popup-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.8125rem;
+        }
+        .popup-trust i {
+            color: #2E7D8A;
+        }
         .popup-thank-you {
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem;
         }
         .popup-thank-you-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #2E7D8A 0%, #236670 100%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2E7D8A 0%, #1e5a63 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.25rem;
+            animation: success-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes success-pop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
         .popup-thank-you-icon i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: white;
         }
         .popup-thank-you h2 {
-            font-size: 1.5rem;
+            font-size: 1.625rem;
             color: #0f172a;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
         .popup-thank-you p {
             color: #64748b;
+            font-size: 1rem;
         }
         @media (max-width: 480px) {
-            .popup-modal {
-                padding: 2rem 1.5rem;
-            }
+            .popup-header-bg { padding: 1.5rem 1.5rem 2.5rem; }
+            .popup-body { padding: 1.25rem 1.5rem 1.5rem; }
+            .loader-logo-container { width: 140px; height: 140px; }
+            .loader-ring { width: 180px; height: 180px; }
         }
     </style>
 </head>
@@ -815,74 +991,99 @@
     <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-content">
-            <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="loader-logo">
-            <div class="loader-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="loader-logo-container">
+                <div class="loader-ring"></div>
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="loader-logo">
             </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <p class="loader-text">Loading Experience</p>
         </div>
     </div>
 
     <!-- Popup Qualification Form -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-modal">
-            <button class="popup-close" id="popupClose">
-                <i class="ph ph-x"></i>
-            </button>
+            <div class="popup-header-bg">
+                <button class="popup-close" id="popupClose">
+                    <i class="ph ph-x"></i>
+                </button>
+                <div class="popup-header">
+                    <div class="popup-header-icon">
+                        <i class="ph ph-lightning"></i>
+                    </div>
+                    <h2>Let's Get Started</h2>
+                    <p>Quick questions to serve you better</p>
+                </div>
+            </div>
 
             <div id="popupFormContainer">
-                <div class="popup-header">
-                    <h2>Quick Question</h2>
-                    <p>Help us understand your needs better</p>
+                <div class="popup-body">
+                    <form id="popupQualificationForm" class="popup-form">
+                        <input type="hidden" id="popupLeadId" name="lead_id">
+
+                        <div class="form-group">
+                            <label for="popupService" class="form-label">
+                                <i class="ph ph-gear"></i>
+                                What are you interested in?
+                            </label>
+                            <select id="popupService" name="rental_type" class="form-select" required>
+                                <option value="">Select a service...</option>
+                                <option value="automation">Business Automation</option>
+                                <option value="ai">AI Integration</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupTimeline" class="form-label">
+                                <i class="ph ph-calendar"></i>
+                                When do you need this?
+                            </label>
+                            <select id="popupTimeline" name="timeline" class="form-select" required>
+                                <option value="">Select timeline...</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-2 weeks">1-2 weeks</option>
+                                <option value="1 month">Within a month</option>
+                                <option value="just exploring">Just exploring</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupBudget" class="form-label">
+                                <i class="ph ph-wallet"></i>
+                                What's your budget?
+                            </label>
+                            <select id="popupBudget" name="budget" class="form-select" required>
+                                <option value="">Select budget...</option>
+                                <option value="<1000">Under $1,000</option>
+                                <option value="1000-5000">$1,000 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="10000+">$10,000+</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            Get My Free Quote
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="popup-trust">
+                        <i class="ph ph-shield-check"></i>
+                        No spam, ever. We respect your privacy.
+                    </div>
                 </div>
-
-                <form id="popupQualificationForm" class="popup-form">
-                    <input type="hidden" id="popupLeadId" name="lead_id">
-
-                    <div class="form-group">
-                        <label for="popupService" class="form-label">What are you interested in?</label>
-                        <select id="popupService" name="rental_type" class="form-select" required>
-                            <option value="">Select...</option>
-                            <option value="automation">Business Automation</option>
-                            <option value="ai">AI Integration</option>
-                            <option value="consulting">Consulting</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="popupTimeline" class="form-label">When do you need this?</label>
-                        <select id="popupTimeline" name="timeline" class="form-select" required>
-                            <option value="">Select...</option>
-                            <option value="immediately">Immediately</option>
-                            <option value="1-2 weeks">1-2 weeks</option>
-                            <option value="1 month">Within a month</option>
-                            <option value="just exploring">Just exploring</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="popupBudget" class="form-label">What's your budget?</label>
-                        <select id="popupBudget" name="budget" class="form-select" required>
-                            <option value="">Select...</option>
-                            <option value="<1000">Under $1,000</option>
-                            <option value="1000-5000">$1,000 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000+">$10,000+</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Get Started</button>
-                </form>
             </div>
 
             <div id="popupThankYou" class="popup-thank-you" style="display: none;">
                 <div class="popup-thank-you-icon">
                     <i class="ph ph-check"></i>
                 </div>
-                <h2>Thank You!</h2>
-                <p>We'll be in touch soon.</p>
+                <h2>You're All Set!</h2>
+                <p>We'll reach out within 24 hours.</p>
             </div>
         </div>
     </div>
@@ -1390,9 +1591,10 @@
         const pageLoader = document.getElementById('pageLoader');
 
         window.addEventListener('load', function() {
+            // Wait for progress bar animation to complete (1.2s) + small buffer
             setTimeout(function() {
                 pageLoader.classList.add('loaded');
-            }, 800);
+            }, 1400);
         });
 
         // ===== POPUP FORM =====
@@ -1401,6 +1603,7 @@
         const popupForm = document.getElementById('popupQualificationForm');
         const popupFormContainer = document.getElementById('popupFormContainer');
         const popupThankYou = document.getElementById('popupThankYou');
+        const popupHeaderBg = document.querySelector('.popup-header-bg');
 
         // Check if popup was already shown this session
         const popupShown = sessionStorage.getItem('popupShown');
@@ -1413,12 +1616,12 @@
             document.getElementById('popupLeadId').value = leadId;
         }
 
-        // Show popup after 4 seconds (only if not shown this session)
+        // Show popup after 5 seconds (only if not shown this session)
         if (!popupShown) {
             setTimeout(function() {
                 popupOverlay.classList.add('active');
                 sessionStorage.setItem('popupShown', 'true');
-            }, 4000);
+            }, 5000);
         }
 
         // Close popup
@@ -1446,7 +1649,7 @@
 
             const submitBtn = popupForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.innerHTML = '<i class="ph ph-spinner" style="animation: spin 1s linear infinite;"></i> Submitting...';
 
             const data = {
                 lead_id: document.getElementById('popupLeadId').value || 'website-visitor-' + Date.now(),
@@ -1466,6 +1669,7 @@
                 });
 
                 if (response.ok) {
+                    popupHeaderBg.style.display = 'none';
                     popupFormContainer.style.display = 'none';
                     popupThankYou.style.display = 'block';
 
@@ -1476,16 +1680,23 @@
                 } else {
                     alert('Something went wrong. Please try again.');
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Get Started';
+                    submitBtn.innerHTML = 'Get My Free Quote <i class="ph ph-arrow-right"></i>';
                 }
             } catch (error) {
                 alert('Something went wrong. Please try again.');
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Get Started';
+                submitBtn.innerHTML = 'Get My Free Quote <i class="ph ph-arrow-right"></i>';
             }
         });
     })();
     </script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
 
 </body>
 </html>
