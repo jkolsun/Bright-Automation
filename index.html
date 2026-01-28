@@ -30,13 +30,43 @@
     <style>
         /* ===== HERO WITH CENTERED FORM + VIDEO ===== */
         .hero-form-section {
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 120px 2rem 80px;
+            padding: 120px 2rem 60px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .scroll-indicator:hover {
+            color: white;
+        }
+        .scroll-indicator i {
+            font-size: 1.5rem;
+            animation: bounce-scroll 2s ease-in-out infinite;
+        }
+        @keyframes bounce-scroll {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
         }
         .hero-video-bg {
             position: absolute;
@@ -1073,6 +1103,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" onclick="document.querySelector('.ad-marquee-section').scrollIntoView({behavior: 'smooth'})">
+            <span>Scroll</span>
+            <i class="ph ph-caret-down"></i>
         </div>
     </section>
 
