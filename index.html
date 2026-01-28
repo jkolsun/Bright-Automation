@@ -1550,7 +1550,7 @@
         const backBtn = document.getElementById('formBack');
         const optionBtns = document.querySelectorAll('.option-btn');
 
-        // Handle option button clicks
+        // Handle option button clicks - auto advance
         optionBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const step = this.closest('.form-step');
@@ -1562,7 +1562,13 @@
                 if (currentStep === 2) formData.timeline = this.dataset.value;
                 if (currentStep === 3) formData.budget = this.dataset.value;
 
-                nextBtn.disabled = false;
+                // Auto advance to next step after short delay
+                setTimeout(() => {
+                    if (currentStep < totalSteps) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                }, 250);
             });
         });
 
@@ -1583,16 +1589,16 @@
             steps.forEach(s => s.style.display = 'none');
             document.querySelector(`.form-step[data-step="${step}"]`).style.display = 'block';
 
-            backBtn.style.visibility = step === 1 ? 'hidden' : 'visible';
+            // Show back button except on step 1
+            backBtn.style.display = step === 1 ? 'none' : 'flex';
 
+            // Only show submit button on last step
             if (step === totalSteps) {
+                nextBtn.style.display = 'flex';
                 nextBtn.innerHTML = 'Get My Quote <i class="ph ph-paper-plane-tilt"></i>';
                 nextBtn.disabled = false;
             } else {
-                nextBtn.innerHTML = 'Next <i class="ph ph-arrow-right"></i>';
-                const currentStepEl = document.querySelector(`.form-step[data-step="${step}"]`);
-                const selected = currentStepEl.querySelector('.option-btn.selected');
-                nextBtn.disabled = !selected;
+                nextBtn.style.display = 'none';
             }
 
             updateProgress();
