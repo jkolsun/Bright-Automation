@@ -1084,11 +1084,11 @@
                             </div>
 
                             <div class="form-nav">
-                                <button type="button" class="btn-back" id="formBack" style="visibility: hidden;">
+                                <button type="button" class="btn-back" id="formBack" style="display: none;">
                                     <i class="ph ph-arrow-left"></i> Back
                                 </button>
-                                <button type="button" class="btn-next" id="formNext" disabled>
-                                    Next <i class="ph ph-arrow-right"></i>
+                                <button type="button" class="btn-next" id="formNext" style="display: none;">
+                                    Submit
                                 </button>
                             </div>
                         </div>
@@ -1625,8 +1625,12 @@
             steps.forEach(s => s.style.display = 'none');
             document.querySelector(`.form-step[data-step="${step}"]`).style.display = 'block';
 
-            // Show back button except on step 1
-            backBtn.style.display = step === 1 ? 'none' : 'flex';
+            // Show back button on steps 2, 3, 4
+            if (step > 1) {
+                backBtn.style.display = 'flex';
+            } else {
+                backBtn.style.display = 'none';
+            }
 
             // Only show submit button on last step
             if (step === totalSteps) {
