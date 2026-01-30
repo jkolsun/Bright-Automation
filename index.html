@@ -955,6 +955,24 @@
         .mobile-menu-toggle span {
             background: white !important;
         }
+
+        /* Mobile menu dropdown needs black text on white background */
+        @media (max-width: 768px) {
+            .nav-menu {
+                background: #ffffff !important;
+            }
+            .nav-menu a {
+                color: #000000 !important;
+            }
+            .nav-menu a:hover, .nav-menu a.active {
+                color: #2E7D8A !important;
+            }
+            .nav-menu .nav-cta {
+                background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%) !important;
+                color: #ffffff !important;
+                border: none !important;
+            }
+        }
     </style>
 </head>
 <body>
