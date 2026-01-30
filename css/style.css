@@ -1947,6 +1947,7 @@ body {
         box-shadow: var(--shadow-lg);
         gap: 1.5rem;
         border-top: 1px solid var(--gray-200);
+        z-index: 10000;
     }
 
     .nav-menu.active {
