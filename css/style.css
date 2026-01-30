@@ -1954,6 +1954,24 @@ body {
         display: flex;
     }
 
+    .nav-menu li {
+        list-style: none;
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.75rem 0;
+        font-size: 1.1rem;
+        color: var(--gray-700) !important;
+    }
+
+    .nav-menu .nav-cta {
+        text-align: center;
+        margin-top: 0.5rem;
+        color: white !important;
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
