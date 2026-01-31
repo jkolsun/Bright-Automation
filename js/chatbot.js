@@ -438,7 +438,7 @@
             // Send welcome message if first time
             if (messages.length === 0) {
                 setTimeout(() => {
-                    addMessage("Hi there! 👋 I'm the Bright Automations assistant. I can help you learn about our AI-powered automation solutions for your business.\n\nWhat would you like to know?", false, true);
+                    addMessage("I'm the Bright Automations assistant. How can I help?", false, true);
                 }, 500);
             }
         } else {
