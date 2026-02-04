@@ -1433,10 +1433,12 @@ body {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: var(--gray-500);
     font-size: 0.875rem;
+    gap: 0.5rem;
 }
 
 .footer-bottom a {
@@ -1446,6 +1448,16 @@ body {
 
 .footer-bottom a:hover {
     color: var(--white);
+}
+
+.sms-consent {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
 }
 
 /* ===========================
