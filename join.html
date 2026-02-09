@@ -143,14 +143,106 @@
             resize: vertical;
         }
 
-        .form-group select[multiple] {
-            min-height: 150px;
-        }
-
         .form-group .helper-text {
             font-size: 0.8rem;
             color: #64748b;
             margin-top: 0.5rem;
+        }
+
+        /* Programming Languages Checkbox Grid */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+        }
+
+        .language-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            color: #334155;
+        }
+
+        .language-checkbox:hover {
+            border-color: #2E7D8A;
+            background: #f0fdfa;
+        }
+
+        .language-checkbox.selected {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .language-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .language-checkbox .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .language-checkbox.selected .checkmark {
+            background: #2E7D8A;
+            border-color: #2E7D8A;
+        }
+
+        .language-checkbox .checkmark i {
+            color: white;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .language-checkbox.selected .checkmark i {
+            opacity: 1;
+        }
+
+        .selected-languages-preview {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .selected-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            .languages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .submit-btn {
@@ -286,35 +378,116 @@
                     <!-- Developer-specific Fields -->
                     <div id="developerFields">
                         <div class="form-group">
-                            <label for="languages">Programming Languages *</label>
-                            <select id="languages" name="programming_languages" multiple>
-                                <option value="JavaScript">JavaScript</option>
-                                <option value="TypeScript">TypeScript</option>
-                                <option value="Python">Python</option>
-                                <option value="Java">Java</option>
-                                <option value="C#">C#</option>
-                                <option value="C++">C++</option>
-                                <option value="C">C</option>
-                                <option value="Go">Go</option>
-                                <option value="Rust">Rust</option>
-                                <option value="Ruby">Ruby</option>
-                                <option value="PHP">PHP</option>
-                                <option value="Swift">Swift</option>
-                                <option value="Kotlin">Kotlin</option>
-                                <option value="Scala">Scala</option>
-                                <option value="R">R</option>
-                                <option value="SQL">SQL</option>
-                                <option value="HTML/CSS">HTML/CSS</option>
-                                <option value="React">React</option>
-                                <option value="Node.js">Node.js</option>
-                                <option value="Vue.js">Vue.js</option>
-                                <option value="Angular">Angular</option>
-                                <option value="Django">Django</option>
-                                <option value="Flask">Flask</option>
-                                <option value="Spring">Spring</option>
-                                <option value=".NET">.NET</option>
-                            </select>
-                            <p class="helper-text">Hold Ctrl (Cmd on Mac) to select multiple languages</p>
+                            <label>Programming Languages *</label>
+                            <div class="languages-grid" id="languagesGrid">
+                                <label class="language-checkbox" data-value="JavaScript">
+                                    <input type="checkbox" name="lang" value="JavaScript">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    JavaScript
+                                </label>
+                                <label class="language-checkbox" data-value="TypeScript">
+                                    <input type="checkbox" name="lang" value="TypeScript">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    TypeScript
+                                </label>
+                                <label class="language-checkbox" data-value="Python">
+                                    <input type="checkbox" name="lang" value="Python">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Python
+                                </label>
+                                <label class="language-checkbox" data-value="Java">
+                                    <input type="checkbox" name="lang" value="Java">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Java
+                                </label>
+                                <label class="language-checkbox" data-value="C#">
+                                    <input type="checkbox" name="lang" value="C#">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    C#
+                                </label>
+                                <label class="language-checkbox" data-value="C++">
+                                    <input type="checkbox" name="lang" value="C++">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    C++
+                                </label>
+                                <label class="language-checkbox" data-value="Go">
+                                    <input type="checkbox" name="lang" value="Go">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Go
+                                </label>
+                                <label class="language-checkbox" data-value="Rust">
+                                    <input type="checkbox" name="lang" value="Rust">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Rust
+                                </label>
+                                <label class="language-checkbox" data-value="Ruby">
+                                    <input type="checkbox" name="lang" value="Ruby">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Ruby
+                                </label>
+                                <label class="language-checkbox" data-value="PHP">
+                                    <input type="checkbox" name="lang" value="PHP">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    PHP
+                                </label>
+                                <label class="language-checkbox" data-value="Swift">
+                                    <input type="checkbox" name="lang" value="Swift">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Swift
+                                </label>
+                                <label class="language-checkbox" data-value="Kotlin">
+                                    <input type="checkbox" name="lang" value="Kotlin">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Kotlin
+                                </label>
+                                <label class="language-checkbox" data-value="SQL">
+                                    <input type="checkbox" name="lang" value="SQL">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    SQL
+                                </label>
+                                <label class="language-checkbox" data-value="HTML/CSS">
+                                    <input type="checkbox" name="lang" value="HTML/CSS">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    HTML/CSS
+                                </label>
+                                <label class="language-checkbox" data-value="React">
+                                    <input type="checkbox" name="lang" value="React">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    React
+                                </label>
+                                <label class="language-checkbox" data-value="Node.js">
+                                    <input type="checkbox" name="lang" value="Node.js">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Node.js
+                                </label>
+                                <label class="language-checkbox" data-value="Vue.js">
+                                    <input type="checkbox" name="lang" value="Vue.js">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Vue.js
+                                </label>
+                                <label class="language-checkbox" data-value="Angular">
+                                    <input type="checkbox" name="lang" value="Angular">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Angular
+                                </label>
+                                <label class="language-checkbox" data-value=".NET">
+                                    <input type="checkbox" name="lang" value=".NET">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    .NET
+                                </label>
+                                <label class="language-checkbox" data-value="Django">
+                                    <input type="checkbox" name="lang" value="Django">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Django
+                                </label>
+                                <label class="language-checkbox" data-value="Flask">
+                                    <input type="checkbox" name="lang" value="Flask">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Flask
+                                </label>
+                            </div>
+                            <div class="selected-languages-preview" id="selectedPreview"></div>
+                            <p class="helper-text">Click to select your programming languages</p>
                         </div>
                     </div>
 
@@ -405,11 +578,9 @@
 
             const developerFields = document.getElementById('developerFields');
             const experienceSelect = document.getElementById('experience');
-            const languagesSelect = document.getElementById('languages');
 
             if (position === 'Developer') {
                 developerFields.style.display = 'block';
-                languagesSelect.required = true;
                 // Update experience options for Developer
                 experienceSelect.innerHTML = `
                     <option value="">Select your experience level...</option>
@@ -419,7 +590,12 @@
                 `;
             } else {
                 developerFields.style.display = 'none';
-                languagesSelect.required = false;
+                // Clear language selections when switching to Sales
+                document.querySelectorAll('.language-checkbox').forEach(label => {
+                    label.classList.remove('selected');
+                    label.querySelector('input').checked = false;
+                });
+                document.getElementById('selectedPreview').innerHTML = '';
                 // Update experience options for Sales
                 experienceSelect.innerHTML = `
                     <option value="">Select your experience level...</option>
@@ -430,17 +606,46 @@
             }
         }
 
+        // Language checkbox handling
+        document.querySelectorAll('.language-checkbox').forEach(label => {
+            label.addEventListener('click', function(e) {
+                e.preventDefault();
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+                updateSelectedPreview();
+            });
+        });
+
+        function updateSelectedPreview() {
+            const preview = document.getElementById('selectedPreview');
+            const selected = Array.from(document.querySelectorAll('.language-checkbox.selected'))
+                .map(label => label.dataset.value);
+
+            if (selected.length > 0) {
+                preview.innerHTML = selected.map(lang =>
+                    `<span class="selected-tag">${lang}</span>`
+                ).join('');
+            } else {
+                preview.innerHTML = '';
+            }
+        }
+
         document.getElementById('joinForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const formData = new FormData(this);
 
-            // Get selected languages as comma-separated string
-            const languagesSelect = document.getElementById('languages');
-            const selectedLanguages = Array.from(languagesSelect.selectedOptions).map(opt => opt.value).join(', ');
+            // Get selected languages from checkboxes
+            const selectedLanguages = Array.from(document.querySelectorAll('.language-checkbox.selected'))
+                .map(label => label.dataset.value).join(', ');
+
             if (selectedLanguages) {
                 formData.set('programming_languages', selectedLanguages);
             }
+
+            // Remove individual checkbox values
+            formData.delete('lang');
 
             fetch('https://formspree.io/f/mnneglkj', {
                 method: 'POST',
