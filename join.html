@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Bright Automations team - Apply for Sales Representative or Developer positions">
+    <title>Join Our Team - Bright Automations</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <style>
+        .join-section {
+            min-height: calc(100vh - 80px);
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .join-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .join-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .join-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .join-header p {
+            font-size: 1.125rem;
+            color: #64748b;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .join-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .position-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .position-btn {
+            flex: 1;
+            padding: 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .position-btn:hover {
+            border-color: #2E7D8A;
+        }
+
+        .position-btn.active {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+        }
+
+        .position-btn i {
+            font-size: 2rem;
+            color: #2E7D8A;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .position-btn span {
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2E7D8A;
+            box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group select[multiple] {
+            min-height: 150px;
+        }
+
+        .form-group .helper-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(46, 125, 138, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        #developerFields {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .join-section {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .join-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .join-card {
+                padding: 1.5rem;
+            }
+
+            .position-selector {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="demo.html" class="nav-cta">Book a Demo</a></li>
+                <li><a href="join.html" class="nav-cta nav-join active">Join Our Team</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Join Section -->
+    <section class="join-section">
+        <div class="join-container">
+            <div class="join-header" data-aos="fade-up">
+                <h1>Join Our Team</h1>
+                <p>Be part of the future of business automation. We're looking for talented individuals to help us grow.</p>
+            </div>
+
+            <div class="join-card" data-aos="fade-up" data-aos-delay="100">
+                <form id="joinForm" action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="form_type" value="Job Application">
+                    <input type="hidden" name="position" id="positionInput" value="Sales Representative">
+
+                    <!-- Position Selector -->
+                    <div class="position-selector">
+                        <button type="button" class="position-btn active" data-position="Sales Representative" onclick="selectPosition(this)">
+                            <i class="ph ph-chart-line-up"></i>
+                            <span>Sales Representative</span>
+                        </button>
+                        <button type="button" class="position-btn" data-position="Developer" onclick="selectPosition(this)">
+                            <i class="ph ph-code"></i>
+                            <span>Developer</span>
+                        </button>
+                    </div>
+
+                    <!-- Common Fields -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience Level *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select your experience level...</option>
+                            <option value="Beginner Sales">Beginner Sales</option>
+                            <option value="Intermediate Sales">Intermediate Sales</option>
+                            <option value="Expert Sales">Expert Sales</option>
+                        </select>
+                    </div>
+
+                    <!-- Developer-specific Fields -->
+                    <div id="developerFields">
+                        <div class="form-group">
+                            <label for="languages">Programming Languages *</label>
+                            <select id="languages" name="programming_languages" multiple>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="TypeScript">TypeScript</option>
+                                <option value="Python">Python</option>
+                                <option value="Java">Java</option>
+                                <option value="C#">C#</option>
+                                <option value="C++">C++</option>
+                                <option value="C">C</option>
+                                <option value="Go">Go</option>
+                                <option value="Rust">Rust</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Swift">Swift</option>
+                                <option value="Kotlin">Kotlin</option>
+                                <option value="Scala">Scala</option>
+                                <option value="R">R</option>
+                                <option value="SQL">SQL</option>
+                                <option value="HTML/CSS">HTML/CSS</option>
+                                <option value="React">React</option>
+                                <option value="Node.js">Node.js</option>
+                                <option value="Vue.js">Vue.js</option>
+                                <option value="Angular">Angular</option>
+                                <option value="Django">Django</option>
+                                <option value="Flask">Flask</option>
+                                <option value="Spring">Spring</option>
+                                <option value=".NET">.NET</option>
+                            </select>
+                            <p class="helper-text">Hold Ctrl (Cmd on Mac) to select multiple languages</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="other">Additional Information (Optional)</label>
+                        <textarea id="other" name="additional_info" placeholder="Tell us about yourself, your experience, why you want to join, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="ph ph-paper-plane-tilt"></i>
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                    </a>
+                    <p>AI-powered automation for service businesses. Run your business on autopilot 24/7.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+6102569844"><i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="client-portal.html"><i class="fas fa-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+
+    <!-- Form handling -->
+    <script>
+        function selectPosition(btn) {
+            // Remove active from all buttons
+            document.querySelectorAll('.position-btn').forEach(b => b.classList.remove('active'));
+            // Add active to clicked button
+            btn.classList.add('active');
+
+            const position = btn.getAttribute('data-position');
+            document.getElementById('positionInput').value = position;
+
+            const developerFields = document.getElementById('developerFields');
+            const experienceSelect = document.getElementById('experience');
+            const languagesSelect = document.getElementById('languages');
+
+            if (position === 'Developer') {
+                developerFields.style.display = 'block';
+                languagesSelect.required = true;
+                // Update experience options for Developer
+                experienceSelect.innerHTML = `
+                    <option value="">Select your experience level...</option>
+                    <option value="Beginner Development">Beginner Development</option>
+                    <option value="Intermediate Development">Intermediate Development</option>
+                    <option value="Expert Development">Expert Development</option>
+                `;
+            } else {
+                developerFields.style.display = 'none';
+                languagesSelect.required = false;
+                // Update experience options for Sales
+                experienceSelect.innerHTML = `
+                    <option value="">Select your experience level...</option>
+                    <option value="Beginner Sales">Beginner Sales</option>
+                    <option value="Intermediate Sales">Intermediate Sales</option>
+                    <option value="Expert Sales">Expert Sales</option>
+                `;
+            }
+        }
+
+        document.getElementById('joinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            // Get selected languages as comma-separated string
+            const languagesSelect = document.getElementById('languages');
+            const selectedLanguages = Array.from(languagesSelect.selectedOptions).map(opt => opt.value).join(', ');
+            if (selectedLanguages) {
+                formData.set('programming_languages', selectedLanguages);
+            }
+
+            fetch('https://formspree.io/f/mnneglkj', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                alert('Application submitted successfully! We will review your application and get back to you soon.');
+                window.location.href = 'about.html';
+            }).catch(err => {
+                alert('Application submitted successfully! We will review your application and get back to you soon.');
+                window.location.href = 'about.html';
+            });
+        });
+    </script>
+
+    <!-- Chatbot -->
+    <script src="js/chatbot.js"></script>
+
+</body>
+</html>

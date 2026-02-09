@@ -341,6 +341,28 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.nav-join {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    margin-left: 0.5rem;
+}
+
+.nav-join:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+}
+
+/* Mobile Join Button - positioned left of hamburger */
+.mobile-join-btn {
+    display: none;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
@@ -1984,6 +2006,19 @@ body {
         text-align: center;
         margin-top: 0.5rem;
         color: white !important;
+    }
+
+    .nav-menu .nav-join {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+        margin-left: 0;
+    }
+
+    .mobile-join-btn {
+        display: block;
+    }
+
+    .nav-social {
+        display: none;
     }
 
     .mobile-menu-toggle {
