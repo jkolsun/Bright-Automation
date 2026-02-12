@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Bright Automations for your web development and automation needs">
+    <meta name="description" content="Get in touch with Bright Automations. Professional websites for home service businesses — $149, live in 48 hours.">
     <title>Contact Us - Bright Automations</title>
 
     <!-- Favicon -->
@@ -14,25 +14,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons (for brand logos only) -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- AOS (Animate on Scroll) -->
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
-    <!-- FAQ Floating Button -->
-    <a href="#faq" class="faq-float-btn">
-        <i class="ph ph-question"></i>
-        FAQ
-    </a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -42,10 +36,8 @@
 
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="demo.html" class="nav-cta">Book a Demo</a></li>
                 <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
             </ul>
 
@@ -67,7 +59,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>Let's Talk</h1>
-        <p>Ready to transform your business? Get in touch and let's create something amazing together.</p>
+        <p>Want to see what your new website could look like? Get in touch — we'll build you a free preview.</p>
     </section>
 
     <!-- Contact Section -->
@@ -76,61 +68,39 @@
             <!-- Contact Form -->
             <div data-aos="fade-right">
                 <div class="contact-form-wrapper">
-                    <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Send Us a Message</h2>
+                    <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Get Your Free Preview</h2>
 
-                    <form action="https://formspree.io/f/mnneglkj" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/mnneglkj" method="POST">
+                        <input type="hidden" name="form_type" value="Free Preview Request">
+
                         <div class="form-group">
                             <label class="form-label">Your Name *</label>
                             <input type="text" name="name" class="form-input" placeholder="John Doe" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Email Address *</label>
-                            <input type="email" name="email" class="form-input" placeholder="john@example.com" required>
+                            <label class="form-label">Business Name *</label>
+                            <input type="text" name="company" class="form-input" placeholder="Your Business Name" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Phone Number</label>
-                            <input type="tel" name="phone" class="form-input" placeholder="(123) 456-7890">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" name="phone" class="form-input" placeholder="(123) 456-7890" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Company Name</label>
-                            <input type="text" name="company" class="form-input" placeholder="Your Company">
+                            <label class="form-label">What do you need?</label>
+                            <textarea name="message" class="form-textarea" rows="5" placeholder="Tell us about your business — what services you offer, your service area, etc."></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Service Interested In</label>
-                            <select name="service" class="form-select">
-                                <option value="">Select a service...</option>
-                                <option value="web-design">Web Design</option>
-                                <option value="ai-automation">AI Automation</option>
-                                <option value="email-marketing">Email Marketing</option>
-                                <option value="chatbot">Chatbot Integration</option>
-                                <option value="full-package">Complete Package</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Project Budget</label>
-                            <select name="budget" class="form-select">
-                                <option value="">Select budget range...</option>
-                                <option value="under-1k">Under $1,000</option>
-                                <option value="1k-3k">$1,000 - $3,000</option>
-                                <option value="3k-5k">$3,000 - $5,000</option>
-                                <option value="5k-10k">$5,000 - $10,000</option>
-                                <option value="over-10k">Over $10,000</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Tell Us About Your Project *</label>
-                            <textarea name="message" class="form-textarea" rows="5" placeholder="Describe your project, goals, and any specific requirements..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Get My Free Preview</button>
                     </form>
+
+                    <div id="form-success" style="display: none; text-align: center; padding: 3rem 1.5rem;">
+                        <i class="ph ph-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem; display: block;"></i>
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">We got your request!</h3>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">We'll be in touch shortly to get started on your free preview.</p>
+                    </div>
                 </div>
             </div>
 
@@ -141,97 +111,37 @@
 
                     <div class="contact-info-card">
                         <div class="contact-icon">
+                            <i class="ph ph-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Call or Text Us</h4>
+                            <a href="tel:+16102569844">(610) 256-9844</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
                             <i class="ph ph-envelope"></i>
                         </div>
                         <div class="contact-info">
                             <h4>Email Us</h4>
-                            <p>For general inquiries</p>
                             <a href="mailto:admin@brightautomations.net">admin@brightautomations.net</a>
                         </div>
                     </div>
 
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="ph ph-phone"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4>Call Us</h4>
-                            <p>Mon-Fri 9am-6pm EST</p>
-                            <a href="tel:+6102569844">(610) 256-9844</a>
-                        </div>
-                    </div>
+                    <a href="sms:+16102569844" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 1.1rem; padding: 1rem 2rem; margin-top: 1.5rem;">
+                        <i class="ph ph-chat-text" style="margin-right: 0.5rem;"></i> Text Us
+                    </a>
 
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="ph ph-user-circle"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4>Client Portal</h4>
-                            <p>Existing clients login</p>
-                            <a href="client-portal.html">Access Portal</a>
-                        </div>
-                    </div>
-
-                    <div class="response-card">
-                        <h4>Response Time</h4>
-                        <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                    <div class="response-card" style="margin-top: 1.5rem;">
                         <div class="response-highlight">
                             <i class="ph ph-lightning"></i>
                             <div class="response-highlight-text">
-                                <strong>Fast Response</strong>
-                                <span>Usually within 4 hours</span>
+                                <strong>We typically respond within 4 hours</strong>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section bg-light" id="faq">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label"><i class="ph ph-question"></i> FAQ</span>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Quick answers to common questions</p>
-        </div>
-
-        <div style="max-width: 900px; margin: 0 auto;">
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-                <h4>How long does a typical project take?</h4>
-                <p>We move fast. A standard website typically takes less than 1 week, while automation projects take 1-2 weeks depending on complexity. We'll provide a detailed timeline during our initial consultation.</p>
-            </div>
-
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                <h4>What's included in your pricing?</h4>
-                <p>Our packages include design, development, testing, deployment, and initial support. We provide transparent pricing with no hidden fees. Ongoing maintenance and support plans are available separately.</p>
-            </div>
-
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                <h4>Do you offer ongoing support?</h4>
-                <p>Yes! We offer various support and maintenance plans to keep your website and automations running smoothly. This includes updates, security patches, content updates, and technical support.</p>
-            </div>
-
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-                <h4>Can you integrate with my existing systems?</h4>
-                <p>Absolutely! We specialize in integrations with popular platforms like CRMs, email marketing tools, payment processors, and more. We'll work with your existing tech stack to create seamless workflows.</p>
-            </div>
-
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                <h4>What if I need changes after launch?</h4>
-                <p>Changes are easy! Existing clients can use our Client Portal to submit change requests. We prioritize client requests and typically implement minor changes within 24-48 hours.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content" data-aos="fade-up">
-            <h2>Still Have Questions?</h2>
-            <p>We're here to help! Reach out and we'll get back to you as soon as possible.</p>
-            <div class="cta-buttons">
-                <a href="tel:+6102569844" class="btn btn-white">Call Us Now</a>
-                <a href="mailto:admin@brightautomations.net" class="btn btn-ghost">Send Email</a>
             </div>
         </div>
     </section>
@@ -244,7 +154,7 @@
                     <a href="/" class="logo footer-logo">
                         <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
                     </a>
-                    <p>Empowering businesses with modern web solutions and intelligent automation.</p>
+                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -255,20 +165,17 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="demo.html">Book a Demo</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="services.html#web-design">Web Design</a></li>
-                        <li><a href="services.html#ai-automation">AI Automation</a></li>
-                        <li><a href="services.html#email-marketing">Email Marketing</a></li>
-                        <li><a href="services.html#chatbot">Chatbots</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
 
@@ -276,15 +183,14 @@
                     <h3>Contact</h3>
                     <ul>
                         <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
-                        <li><a href="client-portal.html"><i class="ph ph-user" style="margin-right: 0.5rem; color: var(--primary);"></i>Client Portal</a></li>
+                        <li><a href="tel:+16102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
-                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <p>&copy; 2025 Bright Automations. All rights reserved.</p>
                 <div>
                     <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
                 </div>
@@ -306,8 +212,38 @@
         });
     </script>
 
-    <!-- Chatbot -->
-    <script src="js/chatbot.js"></script>
+    <!-- Form Submission -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
 
+            var form = this;
+            var formData = new FormData(form);
+            var data = {};
+            formData.forEach(function(value, key) {
+                data[key] = value;
+            });
+
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                } else {
+                    alert('Something went wrong. Please try again or contact us directly.');
+                }
+            })
+            .catch(function() {
+                alert('Something went wrong. Please try again or contact us directly.');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Full business automation for service businesses - AI voice agents, chatbots, automated follow-ups, booking, and invoicing. Run your business on autopilot 24/7.">
-    <title>Bright Automations - Full Business Automation for Service Businesses</title>
+    <meta name="description" content="Professional websites for home service businesses. $149 one-time. Live in 48 hours. We handle everything — design, hosting, domain.">
+    <title>Bright Automations - Professional Websites for Home Service Businesses</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
@@ -14,597 +14,461 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons (for brand logos only) -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- AOS (Animate on Scroll) -->
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/chatbot.css">
 
-    <!-- Page Specific Styles -->
     <style>
-        /* ===== HERO WITH CENTERED FORM + VIDEO ===== */
-        .hero-form-section {
-            min-height: 92vh;
+        /* ===== HERO ===== */
+        .hero-section {
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
             padding: 120px 2rem 60px;
+            text-align: center;
         }
-
-        /* Scroll indicator */
+        .hero-video-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+        }
+        .hero-video-bg img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .hero-video-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(46, 125, 138, 0.7) 100%);
+        }
+        .hero-content-text {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .hero-content-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.03em;
+        }
+        .hero-content-text .hero-sub {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ffffff;
+            color: #0f172a;
+            padding: 1rem 2.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
         .scroll-indicator {
             position: absolute;
-            bottom: 0.75rem;
+            bottom: 1.5rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.7);
+            gap: 0.25rem;
+            color: rgba(255,255,255,0.5);
             font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
             cursor: pointer;
-            transition: color 0.2s ease;
+            animation: bounce 2s infinite;
         }
-        .scroll-indicator:hover {
-            color: white;
-        }
-        .scroll-indicator i {
-            font-size: 1.5rem;
-            animation: bounce-scroll 2s ease-in-out infinite;
-        }
-        @keyframes bounce-scroll {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(8px); }
-        }
-        .hero-video-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        .hero-video-bg video,
-        .hero-video-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-        }
-        .hero-video-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 58, 95, 0.25) 100%);
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
         }
 
-        /* Centered Form Card */
-        .hero-form-card {
-            position: relative;
-            z-index: 1;
-            background: white;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            max-width: 440px;
-        }
-        .form-card-header {
-            background: linear-gradient(135deg, #2E7D8A 0%, #1e5a63 100%);
-            padding: 1.75rem 1.5rem 1.5rem;
-            text-align: center;
-        }
-        .form-card-header h2 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.375rem;
-        }
-        .form-card-header p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.9375rem;
-        }
-        .form-card-body {
-            padding: 1.75rem;
-        }
-        .inline-form .form-step {
-            margin-bottom: 1.5rem;
-        }
-        .inline-form .step-label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-            color: #374151;
-            font-size: 0.9375rem;
-        }
-        .inline-form .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: #2E7D8A;
-            color: white;
-            border-radius: 50%;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        .inline-form .options-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .inline-form .option-btn {
-            display: block;
-            width: 100%;
-            padding: 0.875rem 1rem;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.625rem;
-            text-align: left;
-            font-size: 0.9375rem;
-            color: #374151;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .inline-form .option-btn:hover {
-            border-color: #2E7D8A;
-            background: #f0fdfa;
-        }
-        .inline-form .option-btn.selected {
-            border-color: #2E7D8A;
-            background: #f0fdfa;
-            color: #0f172a;
-            font-weight: 500;
-        }
-        .inline-form .option-btn.selected::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #2E7D8A;
-            border-radius: 50%;
-            margin-right: 0.75rem;
-        }
-        .inline-form .form-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        .inline-form .btn-back {
-            padding: 0.75rem 1.25rem;
-            background: transparent;
-            border: none;
-            color: #64748b;
-            font-size: 0.9375rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            transition: color 0.2s ease;
-        }
-        .inline-form .btn-back:hover {
-            color: #0f172a;
-        }
-        .inline-form .btn-next {
-            padding: 0.875rem 1.5rem;
-            background: #2E7D8A;
-            color: white;
-            border: none;
-            border-radius: 0.625rem;
-            font-size: 0.9375rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            transition: all 0.2s ease;
-        }
-        .inline-form .btn-next:hover {
-            background: #236b75;
-            transform: translateY(-1px);
-        }
-        .inline-form .btn-next:disabled {
-            background: #cbd5e1;
-            cursor: not-allowed;
-            transform: none;
-        }
-        .inline-form .progress-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .inline-form .progress-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #e2e8f0;
-            transition: all 0.2s ease;
-        }
-        .inline-form .progress-dot.active {
-            background: #2E7D8A;
-            width: 24px;
-            border-radius: 4px;
-        }
-        .inline-form .progress-dot.completed {
-            background: #2E7D8A;
-        }
-        .form-success {
-            text-align: center;
-            padding: 2rem 0;
-        }
-        .form-success-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
-        }
-        .form-success-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-        .form-success h3 {
-            font-size: 1.375rem;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
-        }
-        .form-success p {
-            color: #64748b;
-            font-size: 0.9375rem;
-        }
-
-        /* Contact Info Step */
-        .inline-form .form-input {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.625rem;
-            font-size: 0.9375rem;
-            transition: all 0.2s ease;
-            margin-bottom: 0.75rem;
-        }
-        .inline-form .form-input:focus {
-            outline: none;
-            border-color: #2E7D8A;
-            box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
-        }
-        .inline-form .form-input::placeholder {
-            color: #9ca3af;
-        }
-
-        @media (max-width: 900px) {
-            .hero-form-container {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                text-align: center;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .hero-content .hero-sub {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-features {
-                align-items: center;
-            }
-            .hero-form-card {
-                max-width: 420px;
-                margin: 0 auto;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero-form-section {
-                padding: 100px 0 60px;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .form-card-body {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Section styling - tighter spacing */
-        .section {
-            padding: 60px 0;
-        }
-        .section-alt {
-            background: #fafafa;
-        }
-        .section .container {
+        /* ===== CONTAINER ===== */
+        .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
         }
+        .section {
+            padding: 80px 0;
+        }
+        .section-alt {
+            background: #f8fafc;
+        }
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
         .section-header h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.25rem;
+            font-weight: 800;
             color: #0f172a;
-            margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
         }
         .section-header p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #64748b;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Features - premium cards with gradient accent */
+        /* ===== STEPS ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .step-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #2E7D8A;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #2E7D8A, #4AABB8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin: 0 auto 1.25rem;
+        }
+        .step-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .step-card p {
+            color: #64748b;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        /* ===== FEATURES ===== */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
         .feature-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2E7D8A, #3da5b4);
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
         .feature-card:hover {
-            border-color: #2E7D8A;
-            box-shadow: 0 12px 40px rgba(46, 125, 138, 0.12);
             transform: translateY(-4px);
-        }
-        .feature-card:hover::before {
-            opacity: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #2E7D8A;
         }
         .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #f0fdfa 0%, #e6f7f9 100%);
-            border-radius: 14px;
+            width: 48px;
+            height: 48px;
+            background: rgba(46, 125, 138, 0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            font-size: 1.375rem;
             color: #2E7D8A;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 12px rgba(46, 125, 138, 0.1);
+            margin-bottom: 1.25rem;
+        }
+        .feature-card:hover .feature-icon {
+            background: linear-gradient(135deg, #2E7D8A, #4AABB8);
+            color: white;
         }
         .feature-card h3 {
-            font-size: 1.25rem;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
+            font-size: 1rem;
             color: #0f172a;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
         }
         .feature-card p {
-            font-size: 1rem;
             color: #64748b;
-            line-height: 1.7;
-        }
-        .feature-badge {
-            display: inline-block;
-            background: #f0fdf4;
-            color: #166534;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+            line-height: 1.6;
         }
 
-        /* Integrations - grid layout */
-        .integrations-row {
+        /* ===== STATS ===== */
+        .stats-section {
+            padding: 60px 0;
+            background: #0f172a;
+        }
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .integration-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 0.5rem;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-        .integration-item:hover {
-            background: #f8fafc;
-            transform: translateY(-2px);
-        }
-        .integration-item i {
-            font-size: 2rem;
-        }
-        .integration-item span {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #64748b;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             text-align: center;
         }
-        @media (max-width: 900px) {
-            .integrations-row {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1rem;
-            }
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
         }
-        @media (max-width: 500px) {
-            .integrations-row {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .stat-label {
+            font-size: 0.9375rem;
+            color: #94a3b8;
+            line-height: 1.4;
         }
 
-        /* Industries - simple pills */
+        /* ===== INDUSTRIES ===== */
         .industries-row {
             display: flex;
-            justify-content: center;
-            gap: 0.75rem;
             flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .industry-pill {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 100px;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9375rem;
-            font-weight: 500;
-            color: #374151;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 9999px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #334155;
             transition: all 0.2s ease;
         }
         .industry-pill:hover {
             border-color: #2E7D8A;
             color: #2E7D8A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 138, 0.15);
         }
         .industry-pill i {
+            font-size: 1.125rem;
             color: #2E7D8A;
-            font-size: 1rem;
         }
 
-        /* CTA - simple and clean */
-        .cta-section {
+        /* ===== PRICING ===== */
+        .pricing-card-main {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e2e8f0;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pricing-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .pricing-item {
+            text-align: center;
+        }
+        .price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2E7D8A;
+            line-height: 1;
+        }
+        .price-alt {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #10B981;
+            line-height: 1;
+        }
+        .price-label {
+            font-size: 0.9375rem;
+            color: #64748b;
+            margin-top: 0.375rem;
+        }
+        .pricing-divider {
+            width: 2px;
+            height: 60px;
+            background: #e2e8f0;
+        }
+        .pricing-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #10B981;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-upsells {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .pricing-upsells h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+        .pricing-upsells ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pricing-upsells li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: #64748b;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .pricing-upsells li:last-child {
+            border-bottom: none;
+        }
+        .pricing-upsells li span {
+            font-weight: 600;
+            color: #2E7D8A;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #2E7D8A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+        .faq-item p {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 0.9375rem;
+        }
+
+        /* ===== FOOTER CTA ===== */
+        .footer-cta-section {
             padding: 60px 0;
             background: #0f172a;
             text-align: center;
         }
-        .cta-section .container {
+        .footer-cta-section .container {
             max-width: 700px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        .cta-section h2 {
+        .footer-cta-section h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
-        .cta-section p {
+        .footer-cta-section p {
             font-size: 1rem;
             color: #94a3b8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
-        .cta-section .btn-cta {
-            background: #ffffff;
-            color: #0f172a;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
+        .footer-cta-section .btn-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            background: #ffffff;
+            color: #0f172a;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
             transition: all 0.2s ease;
         }
-        .cta-section .btn-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Nav social */
-        .nav-social {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-        .nav-social a {
-            color: #64748b;
-            font-size: 1.375rem;
-            transition: all 0.2s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(46, 125, 138, 0.08);
-        }
-        .nav-social a:hover {
-            color: #2E7D8A;
-            background: rgba(46, 125, 138, 0.15);
+        .footer-cta-section .btn-cta:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
         }
 
-        /* Mobile */
+        /* ===== MOBILE ===== */
         @media (max-width: 768px) {
-            .hero-minimal {
-                padding: 120px 0 60px;
-                min-height: 60vh;
+            .hero-section {
+                min-height: 85vh;
+                padding: 100px 1.5rem 60px;
             }
-            .hero-minimal h1 {
-                font-size: 2.25rem;
+            .hero-content-text h1 {
+                font-size: 2rem;
             }
-            .hero-minimal .hero-sub {
-                font-size: 1.125rem;
+            .hero-content-text .hero-sub {
+                font-size: 1rem;
             }
-            .hero-video-bg {
-                opacity: 1;
-            }
-            .hero-video-bg video,
-            .hero-video-bg img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center center;
-            }
-            .section {
-                padding: 40px 0;
-            }
-            .section-header {
-                margin-bottom: 1.5rem;
-            }
-            .section-header h2 {
-                font-size: 1.5rem;
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
             .features-grid {
                 grid-template-columns: 1fr;
@@ -612,11 +476,6 @@
             }
             .feature-card {
                 padding: 1.25rem;
-            }
-            .feature-badge {
-                font-size: 0.65rem;
-                padding: 0.2rem 0.5rem;
-                margin-bottom: 0.75rem;
             }
             .feature-icon {
                 width: 40px;
@@ -626,23 +485,18 @@
             }
             .feature-card h3 {
                 font-size: 1rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.375rem;
             }
             .feature-card p {
                 font-size: 0.875rem;
                 line-height: 1.5;
             }
-            .integrations-row {
-                gap: 0.75rem;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
-            .integration-item {
-                padding: 0.5rem 0.25rem;
-            }
-            .integration-item i {
-                font-size: 1.5rem;
-            }
-            .integration-item span {
-                font-size: 0.65rem;
+            .stat-number {
+                font-size: 2rem;
             }
             .industries-row {
                 gap: 0.4rem;
@@ -654,354 +508,48 @@
             .industry-pill i {
                 font-size: 0.75rem;
             }
-            .cta-section {
-                padding: 50px 0;
+            .section {
+                padding: 40px 0;
             }
-            .nav-social {
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            .section-header {
+                margin-bottom: 1.5rem;
+            }
+            .pricing-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .pricing-divider {
+                width: 100%;
+                height: 2px;
+            }
+            .pricing-card-main {
+                padding: 2rem 1.5rem;
+            }
+            .scroll-indicator {
                 display: none;
             }
-        }
-
-        /* FAQ Floating Button */
-        .faq-float-btn {
-            position: fixed;
-            top: 100px;
-            left: 20px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 100px;
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #2E7D8A;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.2s ease;
-            z-index: 999;
-        }
-        .faq-float-btn:hover {
-            background: #2E7D8A;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(46, 125, 138, 0.3);
-        }
-        @media (max-width: 768px) {
-            .faq-float-btn {
-                top: auto;
-                bottom: 20px;
-                left: 20px;
-                padding: 0.625rem 1rem;
+            .footer-cta-section {
+                padding: 50px 0;
             }
-        }
-
-        /* Ad Platforms Marquee */
-        .ad-marquee-section {
-            padding: 3rem 0;
-            background: #f8fafc;
-            overflow: hidden;
-        }
-        .ad-marquee-section .section-label {
-            text-align: center;
-            display: block;
-            color: #64748b;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-        }
-        .marquee-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        .marquee-container::before,
-        .marquee-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .marquee-container::before {
-            left: 0;
-            background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
-        }
-        .marquee-container::after {
-            right: 0;
-            background: linear-gradient(90deg, transparent 0%, #f8fafc 100%);
-        }
-        .marquee-track {
-            display: flex;
-            animation: marquee 40s linear infinite;
-            width: max-content;
-        }
-        .marquee-track:hover {
-            animation-play-state: paused;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .marquee-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 2rem;
-            margin: 0 1rem;
-            background: white;
-            border-radius: 100px;
-            border: 1px solid #e2e8f0;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-        }
-        .marquee-item:hover {
-            border-color: #2E7D8A;
-            box-shadow: 0 4px 12px rgba(46, 125, 138, 0.15);
-        }
-        .marquee-item i {
-            font-size: 1.5rem;
-        }
-        .marquee-item span {
-            font-weight: 600;
-            color: #334155;
-            font-size: 0.9375rem;
-        }
-        .marquee-item.meta i { color: #0668E1; }
-        .marquee-item.google i { color: #EA4335; }
-        .marquee-item.tiktok i { color: #000000; }
-        .marquee-item.linkedin i { color: #0077B5; }
-        .marquee-item.youtube i { color: #FF0000; }
-        .marquee-item.bing i { color: #008373; }
-        .marquee-item.twitter i { color: #1DA1F2; }
-        .marquee-item.snapchat i { color: #FFFC00; }
-        .marquee-item.pinterest i { color: #E60023; }
-        .marquee-item.reddit i { color: #FF4500; }
-        @media (max-width: 768px) {
-            .ad-marquee-section {
-                padding: 2rem 0;
-            }
-            .marquee-item {
-                padding: 0.5rem 1.25rem;
-                margin: 0 0.5rem;
-            }
-            .marquee-item i {
-                font-size: 1.25rem;
-            }
-            .marquee-item span {
-                font-size: 0.8125rem;
-            }
-        }
-
-        /* ===== EPIC LOADING ANIMATION ===== */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            overflow: hidden;
-        }
-        .page-loader::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(46, 125, 138, 0.15) 0%, transparent 50%);
-            animation: rotate-bg 8s linear infinite;
-        }
-        @keyframes rotate-bg {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .page-loader.loaded {
-            animation: loader-exit 0.8s ease-in-out forwards;
-        }
-        @keyframes loader-exit {
-            0% { opacity: 1; }
-            50% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; pointer-events: none; }
-        }
-        .loader-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        .loader-logo-container {
-            position: relative;
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 2rem;
-        }
-        .loader-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            position: relative;
-            z-index: 2;
-            animation: logo-pulse 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 30px rgba(46, 125, 138, 0.5));
-        }
-        .loader-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 220px;
-            height: 220px;
-            border: 3px solid transparent;
-            border-top-color: #2E7D8A;
-            border-radius: 50%;
-            animation: spin-ring 1s linear infinite;
-        }
-        .loader-ring::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border: 3px solid transparent;
-            border-bottom-color: rgba(46, 125, 138, 0.3);
-            border-radius: 50%;
-        }
-        @keyframes logo-pulse {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(46, 125, 138, 0.5)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 0 50px rgba(46, 125, 138, 0.8)); }
-        }
-        @keyframes spin-ring {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        .loader-progress {
-            width: 200px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 100px;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-        .loader-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #2E7D8A, #4fd1c5, #2E7D8A);
-            background-size: 200% 100%;
-            border-radius: 100px;
-            animation: progress-fill 1.2s ease-out forwards, shimmer 1.5s linear infinite;
-        }
-        @keyframes progress-fill {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        .loader-text {
-            margin-top: 1.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-        .page-loader.loaded .loader-logo {
-            animation: logo-exit 0.6s ease-in-out forwards;
-        }
-        @keyframes logo-exit {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0; }
         }
 
         @media (max-width: 480px) {
-            .loader-logo-container { width: 140px; height: 140px; }
-            .loader-ring { width: 180px; height: 180px; }
-        }
-
-        /* Homepage navbar styling */
-        .navbar {
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.8) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-        }
-        .nav-menu a {
-            color: rgba(255, 255, 255, 0.85) !important;
-        }
-        .nav-menu a:hover, .nav-menu a.active {
-            color: #ffffff !important;
-        }
-        .nav-cta {
-            background: rgba(255, 255, 255, 0.15) !important;
-            border: 1px solid rgba(255, 255, 255, 0.25) !important;
-        }
-        .nav-cta:hover {
-            background: rgba(255, 255, 255, 0.25) !important;
-        }
-        .nav-social a {
-            color: rgba(255, 255, 255, 0.7) !important;
-        }
-        .nav-social a:hover {
-            color: #ffffff !important;
-        }
-        .mobile-menu-toggle span {
-            background: white !important;
-        }
-
-        /* Mobile menu dropdown needs black text on white background */
-        @media (max-width: 768px) {
-            .nav-menu {
-                background: #ffffff !important;
+            .hero-section {
+                padding: 90px 1rem 50px;
             }
-            .nav-menu a {
-                color: #000000 !important;
+            .hero-content-text h1 {
+                font-size: 1.75rem;
             }
-            .nav-menu a:hover, .nav-menu a.active {
-                color: #2E7D8A !important;
-            }
-            .nav-menu .nav-cta {
-                background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%) !important;
-                color: #ffffff !important;
-                border: none !important;
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <div class="loader-logo-container">
-                <div class="loader-ring"></div>
-                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="loader-logo">
-            </div>
-            <div class="loader-progress">
-                <div class="loader-progress-bar"></div>
-            </div>
-            <p class="loader-text">Loading Experience</p>
-        </div>
-    </div>
-
-    <!-- FAQ Floating Button -->
-    <a href="contact.html#faq" class="faq-float-btn">
-        <i class="ph ph-question"></i>
-        FAQ
-    </a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -1011,10 +559,8 @@
 
             <ul class="nav-menu">
                 <li><a href="/" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="demo.html" class="nav-cta">Book a Demo</a></li>
                 <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
             </ul>
 
@@ -1033,485 +579,278 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Centered Form + Video -->
-    <section class="hero-form-section">
-        <!-- Background Image -->
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="hero-video-bg">
             <img src="images/BrightAutomations_Backround.png" alt="Background">
         </div>
 
-        <!-- Centered Form Card -->
-        <div class="hero-form-card" data-aos="fade-up">
-            <div class="form-card-header">
-                <h2>Get Your Free Quote</h2>
-                <p>Tell us about your automation needs</p>
-            </div>
-            <div class="form-card-body">
-                <div id="heroFormContainer">
-
-                        <div class="inline-form">
-                            <div class="progress-dots">
-                                <span class="progress-dot active" data-step="1"></span>
-                                <span class="progress-dot" data-step="2"></span>
-                                <span class="progress-dot" data-step="3"></span>
-                                <span class="progress-dot" data-step="4"></span>
-                            </div>
-
-                            <!-- Step 1: Service -->
-                            <div class="form-step" data-step="1">
-                                <div class="step-label">
-                                    <span class="step-number">1</span>
-                                    What service are you interested in?
-                                </div>
-                                <div class="options-grid">
-                                    <button type="button" class="option-btn" data-value="automation">Business Automation</button>
-                                    <button type="button" class="option-btn" data-value="ai">AI Voice & Chat Agents</button>
-                                    <button type="button" class="option-btn" data-value="lead-capture">Lead Capture System</button>
-                                    <button type="button" class="option-btn" data-value="other">Something Else</button>
-                                </div>
-                            </div>
-
-                            <!-- Step 2: Timeline -->
-                            <div class="form-step" data-step="2" style="display: none;">
-                                <div class="step-label">
-                                    <span class="step-number">2</span>
-                                    When do you need this?
-                                </div>
-                                <div class="options-grid">
-                                    <button type="button" class="option-btn" data-value="immediately">Immediately</button>
-                                    <button type="button" class="option-btn" data-value="1-2 weeks">1-2 Weeks</button>
-                                    <button type="button" class="option-btn" data-value="1 month">Within a Month</button>
-                                    <button type="button" class="option-btn" data-value="just exploring">Just Exploring</button>
-                                </div>
-                            </div>
-
-                            <!-- Step 3: Budget -->
-                            <div class="form-step" data-step="3" style="display: none;">
-                                <div class="step-label">
-                                    <span class="step-number">3</span>
-                                    What's your budget range?
-                                </div>
-                                <div class="options-grid">
-                                    <button type="button" class="option-btn" data-value="<1000">Under $1,000</button>
-                                    <button type="button" class="option-btn" data-value="1000-5000">$1,000 - $5,000</button>
-                                    <button type="button" class="option-btn" data-value="5000-10000">$5,000 - $10,000</button>
-                                    <button type="button" class="option-btn" data-value="10000+">$10,000+</button>
-                                </div>
-                            </div>
-
-                            <!-- Step 4: Contact -->
-                            <div class="form-step" data-step="4" style="display: none;">
-                                <div class="step-label">
-                                    <span class="step-number">4</span>
-                                    Our team will respond as soon as possible.
-                                </div>
-                                <input type="text" class="form-input" id="heroName" placeholder="Your name" required>
-                                <input type="email" class="form-input" id="heroEmail" placeholder="Email address" required>
-                                <input type="tel" class="form-input" id="heroPhone" placeholder="Phone number (optional)">
-                            </div>
-
-                            <div class="form-nav">
-                                <button type="button" class="btn-back" id="formBack" style="display: none;">
-                                    <i class="ph ph-arrow-left"></i> Back
-                                </button>
-                                <button type="button" class="btn-next" id="formNext" style="display: none;">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="heroFormSuccess" class="form-success" style="display: none;">
-                        <div class="form-success-icon">
-                            <i class="ph ph-check"></i>
-                        </div>
-                        <h3>You're All Set!</h3>
-                        <p>We'll send your custom quote within 24 hours.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-content-text" data-aos="fade-up">
+            <h1>Your competitors are getting the calls that should be yours.</h1>
+            <p class="hero-sub">Professional websites for home service businesses. $149. Live in 48 hours. We handle everything.</p>
+            <a href="contact.html" class="hero-cta">See a Preview of Your Site <i class="ph ph-arrow-right"></i></a>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" onclick="document.querySelector('.ad-marquee-section').scrollIntoView({behavior: 'smooth'})">
+        <div class="scroll-indicator" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">
             <span>Scroll</span>
             <i class="ph ph-caret-down"></i>
         </div>
     </section>
 
-    <!-- Ad Platforms Marquee -->
-    <section class="ad-marquee-section">
-        <span class="section-label">Capture Leads From All Major Ad Platforms</span>
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <!-- First set -->
-                <div class="marquee-item meta">
-                    <i class="fab fa-meta"></i>
-                    <span>Meta Ads</span>
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>How It Works</h2>
+                <p>Three steps. No headaches. No tech skills required.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <h3>Free Preview</h3>
+                    <p>We build a preview of your new website — free, no commitment. Just tell us your business name.</p>
                 </div>
-                <div class="marquee-item google">
-                    <i class="fab fa-google"></i>
-                    <span>Google Ads</span>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <h3>You Review It</h3>
+                    <p>You review it. If you love it, it's $149 to go live. If not, no hard feelings.</p>
                 </div>
-                <div class="marquee-item tiktok">
-                    <i class="fab fa-tiktok"></i>
-                    <span>TikTok Ads</span>
-                </div>
-                <div class="marquee-item linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                    <span>LinkedIn Ads</span>
-                </div>
-                <div class="marquee-item youtube">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube Ads</span>
-                </div>
-                <div class="marquee-item bing">
-                    <i class="fab fa-microsoft"></i>
-                    <span>Bing Ads</span>
-                </div>
-                <div class="marquee-item twitter">
-                    <i class="fab fa-x-twitter"></i>
-                    <span>X Ads</span>
-                </div>
-                <div class="marquee-item snapchat">
-                    <i class="fab fa-snapchat"></i>
-                    <span>Snapchat Ads</span>
-                </div>
-                <div class="marquee-item pinterest">
-                    <i class="fab fa-pinterest"></i>
-                    <span>Pinterest Ads</span>
-                </div>
-                <div class="marquee-item reddit">
-                    <i class="fab fa-reddit"></i>
-                    <span>Reddit Ads</span>
-                </div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="marquee-item meta">
-                    <i class="fab fa-meta"></i>
-                    <span>Meta Ads</span>
-                </div>
-                <div class="marquee-item google">
-                    <i class="fab fa-google"></i>
-                    <span>Google Ads</span>
-                </div>
-                <div class="marquee-item tiktok">
-                    <i class="fab fa-tiktok"></i>
-                    <span>TikTok Ads</span>
-                </div>
-                <div class="marquee-item linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                    <span>LinkedIn Ads</span>
-                </div>
-                <div class="marquee-item youtube">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube Ads</span>
-                </div>
-                <div class="marquee-item bing">
-                    <i class="fab fa-microsoft"></i>
-                    <span>Bing Ads</span>
-                </div>
-                <div class="marquee-item twitter">
-                    <i class="fab fa-x-twitter"></i>
-                    <span>X Ads</span>
-                </div>
-                <div class="marquee-item snapchat">
-                    <i class="fab fa-snapchat"></i>
-                    <span>Snapchat Ads</span>
-                </div>
-                <div class="marquee-item pinterest">
-                    <i class="fab fa-pinterest"></i>
-                    <span>Pinterest Ads</span>
-                </div>
-                <div class="marquee-item reddit">
-                    <i class="fab fa-reddit"></i>
-                    <span>Reddit Ads</span>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <h3>Live in 48 Hours</h3>
+                    <p>Your site is live in 48 hours. We handle design, hosting, domain, everything.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- What You Get -->
     <section class="section section-alt">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Never Miss a Lead Again</h2>
-                <p>One integrated system that handles calls, chat, follow-ups, booking, and invoicing—all on autopilot.</p>
+                <h2>What You Get</h2>
+                <p>Everything your business needs to look professional and get more calls.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <span class="feature-badge">24/7 Available</span>
                     <div class="feature-icon">
-                        <i class="ph ph-phone-call"></i>
+                        <i class="ph ph-paint-brush"></i>
                     </div>
-                    <h3>AI Voice Agent</h3>
-                    <p>Human-like AI powered by ElevenLabs that answers every call, qualifies leads with smart questions, and books appointments directly into your calendar—even at 2am.</p>
+                    <h3>Professional Design</h3>
+                    <p>Clean, modern layouts designed specifically for home service businesses.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon">
+                        <i class="ph ph-device-mobile"></i>
+                    </div>
+                    <h3>Mobile-Friendly</h3>
+                    <p>70% of customers search on their phone. Your site will look perfect on every device.</p>
                 </div>
 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <span class="feature-badge">Instant Response</span>
                     <div class="feature-icon">
-                        <i class="ph ph-chats-circle"></i>
+                        <i class="ph ph-phone-call"></i>
                     </div>
-                    <h3>Website Chatbot</h3>
-                    <p>Engages visitors the moment they land on your site, answers FAQs intelligently, and captures contact info before they leave. No more missed opportunities.</p>
+                    <h3>Click-to-Call</h3>
+                    <p>One tap and customers are calling you. No searching for your number.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-icon">
+                        <i class="ph ph-map-pin"></i>
+                    </div>
+                    <h3>Google Maps</h3>
+                    <p>Show customers exactly where you are and the areas you serve.</p>
                 </div>
 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <span class="feature-badge">Automated</span>
                     <div class="feature-icon">
-                        <i class="ph ph-paper-plane-tilt"></i>
+                        <i class="ph ph-star"></i>
                     </div>
-                    <h3>Smart Follow-Up</h3>
-                    <p>Multi-channel sequences via SMS, email, and WhatsApp that nurture leads with personalized messages until they're ready to book or buy.</p>
+                    <h3>Your Real Reviews</h3>
+                    <p>We pull your best Google reviews and showcase them front and center.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-icon">
+                        <i class="ph ph-list-checks"></i>
+                    </div>
+                    <h3>Service Pages</h3>
+                    <p>Dedicated pages for each of your services so customers find exactly what they need.</p>
                 </div>
 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <span class="feature-badge">Seamless</span>
                     <div class="feature-icon">
-                        <i class="ph ph-plugs-connected"></i>
+                        <i class="ph ph-envelope-simple"></i>
                     </div>
-                    <h3>CRM Integration</h3>
-                    <p>Every lead automatically syncs to your CRM with full conversation history. Works with HubSpot, Salesforce, GoHighLevel, and 50+ other platforms.</p>
+                    <h3>Contact Form</h3>
+                    <p>A simple form that sends leads straight to your inbox. Never miss an opportunity.</p>
                 </div>
 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <span class="feature-badge">Effortless</span>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="450">
                     <div class="feature-icon">
-                        <i class="ph ph-calendar-check"></i>
+                        <i class="ph ph-shield-check"></i>
                     </div>
-                    <h3>Smart Booking</h3>
-                    <p>Customers book directly into your calendar without the back-and-forth. Automated confirmations, reminders, and rescheduling keep your schedule full and no-shows low.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
-                    <span class="feature-badge">Get Paid</span>
-                    <div class="feature-icon">
-                        <i class="ph ph-receipt"></i>
-                    </div>
-                    <h3>Automated Invoicing</h3>
-                    <p>Generate and send invoices automatically after jobs are completed. Accept payments online and send reminders for overdue invoices—no chasing customers.</p>
+                    <h3>Hosting + SSL</h3>
+                    <p>Fast, secure hosting with SSL certificate included. Your site is always up and protected.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="section" id="integrations">
+    <!-- Social Proof / Stats -->
+    <section class="stats-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Works With Your Tools</h2>
-                <p>Connects to the CRMs and platforms you already use.</p>
+                <h2 style="color: #ffffff;">The Numbers Don't Lie</h2>
+                <p style="color: #94a3b8;">If you're not online, you're invisible.</p>
             </div>
 
-            <div class="integrations-row" data-aos="fade-up" data-aos-delay="100">
-                <div class="integration-item">
-                    <i class="fab fa-hubspot" style="color: #ff7a59;"></i>
-                    <span>HubSpot</span>
+            <div class="stats-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <div class="stat-number">97%</div>
+                    <div class="stat-label">of customers Google a business before calling</div>
                 </div>
-                <div class="integration-item">
-                    <i class="fab fa-salesforce" style="color: #00a1e0;"></i>
-                    <span>Salesforce</span>
+                <div class="stat-item">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">of searches happen on mobile</div>
                 </div>
-                <div class="integration-item">
-                    <i class="ph ph-chart-line-up" style="color: #10b981;"></i>
-                    <span>GoHighLevel</span>
+                <div class="stat-item">
+                    <div class="stat-number">2-3x</div>
+                    <div class="stat-label">more leads with a professional website</div>
                 </div>
-                <div class="integration-item">
-                    <i class="ph ph-microphone" style="color: #000000;"></i>
-                    <span>ElevenLabs</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-fork-knife" style="color: #ff6b35;"></i>
-                    <span>Toast POS</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-phone" style="color: #f22f46;"></i>
-                    <span>Twilio</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-lightning" style="color: #ff4a00;"></i>
-                    <span>Zapier</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-gear-six" style="color: #9461fb;"></i>
-                    <span>Make</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-flow-arrow" style="color: #ea4b71;"></i>
-                    <span>n8n</span>
-                </div>
-                <div class="integration-item">
-                    <i class="fab fa-google" style="color: #4285f4;"></i>
-                    <span>Google Calendar</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-calendar-check" style="color: #006bff;"></i>
-                    <span>Calendly</span>
-                </div>
-                <div class="integration-item">
-                    <i class="fab fa-slack" style="color: #4a154b;"></i>
-                    <span>Slack</span>
-                </div>
-                <div class="integration-item">
-                    <i class="fab fa-mailchimp" style="color: #ffe01b;"></i>
-                    <span>Mailchimp</span>
-                </div>
-                <div class="integration-item">
-                    <i class="fab fa-stripe" style="color: #635bff;"></i>
-                    <span>Stripe</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-database" style="color: #47a248;"></i>
-                    <span>MongoDB</span>
-                </div>
-                <div class="integration-item">
-                    <i class="ph ph-whatsapp-logo" style="color: #25d366;"></i>
-                    <span>WhatsApp</span>
+                <div class="stat-item">
+                    <div class="stat-number">48hr</div>
+                    <div class="stat-label">turnaround from approval to live</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section class="section section-alt">
+    <!-- Industries We Serve -->
+    <section class="section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Built for Service Businesses</h2>
-                <p>If you rely on leads and appointments, this is for you.</p>
+                <h2>Industries We Serve</h2>
+                <p>We know home services. We've built sites for all of these.</p>
             </div>
 
             <div class="industries-row" data-aos="fade-up" data-aos-delay="100">
-                <div class="industry-pill">
-                    <i class="ph ph-hammer"></i>
-                    Contractors
+                <div class="industry-pill"><i class="ph ph-house"></i> Restoration</div>
+                <div class="industry-pill"><i class="ph ph-hard-hat"></i> Roofing</div>
+                <div class="industry-pill"><i class="ph ph-drop"></i> Plumbing</div>
+                <div class="industry-pill"><i class="ph ph-wrench"></i> HVAC</div>
+                <div class="industry-pill"><i class="ph ph-paint-roller"></i> Painting</div>
+                <div class="industry-pill"><i class="ph ph-leaf"></i> Landscaping</div>
+                <div class="industry-pill"><i class="ph ph-lightning"></i> Electrical</div>
+                <div class="industry-pill"><i class="ph ph-bug"></i> Pest Control</div>
+                <div class="industry-pill"><i class="ph ph-broom"></i> Cleaning</div>
+                <div class="industry-pill"><i class="ph ph-hammer"></i> Handyman</div>
+                <div class="industry-pill"><i class="ph ph-ruler"></i> Remodeling</div>
+                <div class="industry-pill"><i class="ph ph-square-half"></i> Flooring</div>
+                <div class="industry-pill"><i class="ph ph-fence"></i> Fencing</div>
+                <div class="industry-pill"><i class="ph ph-tree"></i> Tree Service</div>
+                <div class="industry-pill"><i class="ph ph-garage"></i> Garage Door</div>
+                <div class="industry-pill"><i class="ph ph-cube"></i> Concrete</div>
+                <div class="industry-pill"><i class="ph ph-swimming-pool"></i> Pool Service</div>
+                <div class="industry-pill"><i class="ph ph-drop-half-bottom"></i> Pressure Washing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section-alt" id="pricing">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>No hidden fees. No contracts. Cancel anytime.</p>
+            </div>
+
+            <div class="pricing-card-main" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-row">
+                    <div class="pricing-item">
+                        <div class="price">$149</div>
+                        <div class="price-label">One-time site build</div>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <div class="pricing-item">
+                        <div class="price">$39</div>
+                        <div class="price-label">/month hosting + maintenance</div>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <div class="pricing-item">
+                        <div class="price-alt">$399/yr</div>
+                        <div class="price-label">Annual hosting (save $69)</div>
+                    </div>
                 </div>
-                <div class="industry-pill">
-                    <i class="ph ph-wrench"></i>
-                    HVAC
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-lightning"></i>
-                    Electricians
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-drop"></i>
-                    Plumbers
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-broom"></i>
-                    Cleaning
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-leaf"></i>
-                    Landscaping
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-tooth"></i>
-                    Dental
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-flower-lotus"></i>
-                    Med Spas
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-car"></i>
-                    Auto Repair
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-dog"></i>
-                    Pet Services
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-barbell"></i>
-                    Fitness Studios
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-scissors"></i>
-                    Salons & Barbers
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-camera"></i>
-                    Photography
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-truck"></i>
-                    Moving Companies
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-paint-roller"></i>
-                    Painters
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-hard-hat"></i>
-                    Roofing
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-scales"></i>
-                    Law Firms
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-house"></i>
-                    Real Estate
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-calculator"></i>
-                    Accountants
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-shield"></i>
-                    Insurance
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-first-aid-kit"></i>
-                    Chiropractors
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-hand-heart"></i>
-                    Massage Therapy
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-eye"></i>
-                    Optometrists
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-paw-print"></i>
-                    Veterinarians
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-couch"></i>
-                    Interior Design
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-t-shirt"></i>
-                    Dry Cleaning
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-swimming-pool"></i>
-                    Pool Services
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-bug"></i>
-                    Pest Control
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-key"></i>
-                    Locksmiths
-                </div>
-                <div class="industry-pill">
-                    <i class="ph ph-wrench"></i>
-                    Appliance Repair
+
+                <p class="pricing-note"><i class="ph ph-check-circle"></i> No contracts. Cancel anytime.</p>
+
+                <a href="contact.html" class="hero-cta" style="font-size: 1rem; padding: 0.875rem 2rem;">Get My Free Preview <i class="ph ph-arrow-right"></i></a>
+
+                <div class="pricing-upsells">
+                    <h4>Optional Add-Ons</h4>
+                    <ul>
+                        <li>Google Business Profile optimization <span>$49</span></li>
+                        <li>Review generation widget <span>$29/mo</span></li>
+                        <li>Monthly SEO updates <span>$59/mo</span></li>
+                        <li>Social media landing page <span>$99</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <h4>How is this so cheap?</h4>
+                    <p>Templates + smart tools. We've built hundreds of sites for your industry. We know what works, and we've streamlined the process to pass the savings to you.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <h4>What if I already have a website?</h4>
+                    <p>If it's not getting you leads, it's costing you money. We'll show you what a better one looks like — free.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <h4>Do I need to provide content?</h4>
+                    <p>Nope. We pull your business info, reviews, and photos from Google. You just approve it.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <h4>What about my domain?</h4>
+                    <p>We handle it. New domain or transfer your existing one. Either way, we take care of it.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <h4>Can I make changes after it's live?</h4>
+                    <p>Yes. Revisions included. Just text us what you want changed.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <h4>What if I don't like it?</h4>
+                    <p>Don't pay. The preview is free. If you don't love it, no hard feelings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta-section">
         <div class="container" data-aos="fade-up">
-            <h2>Ready to Put Your Business on Autopilot?</h2>
-            <p>See how our AI automation system can work for you.</p>
-            <a href="demo.html" class="btn-cta">Book a Free Demo <i class="ph ph-arrow-right"></i></a>
+            <h2>Still on the fence?</h2>
+            <p>We'll build you a free preview. No credit card. No commitment. Just see what your site could look like.</p>
+            <a href="contact.html" class="btn-cta">Get My Free Preview <i class="ph ph-arrow-right"></i></a>
         </div>
     </section>
 
@@ -1523,7 +862,7 @@
                     <a href="/" class="logo footer-logo">
                         <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
                     </a>
-                    <p>AI-powered lead capture for service businesses.</p>
+                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1534,20 +873,17 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="demo.html">Book a Demo</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Features</h3>
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="services.html#voice-agent">AI Voice Agent</a></li>
-                        <li><a href="services.html#chatbot">Website Chatbot</a></li>
-                        <li><a href="services.html#follow-up">Automated Follow-Up</a></li>
-                        <li><a href="services.html#integrations">CRM Integrations</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
 
@@ -1562,7 +898,7 @@
 
             <div class="footer-bottom">
                 <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
-                <p>&copy; 2024 Bright Automations. All rights reserved.</p>
+                <p>&copy; 2025 Bright Automations. All rights reserved.</p>
                 <div>
                     <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
                 </div>
@@ -1583,169 +919,5 @@
             offset: 50
         });
     </script>
-
-    <!-- Loading Animation & Multi-Step Form -->
-    <script>
-    (function() {
-        // ===== PAGE LOADER =====
-        const pageLoader = document.getElementById('pageLoader');
-
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                pageLoader.classList.add('loaded');
-            }, 1400);
-        });
-
-        // ===== MULTI-STEP FORM =====
-        let currentStep = 1;
-        const totalSteps = 4;
-        const formData = {
-            service: '',
-            timeline: '',
-            budget: '',
-            name: '',
-            email: '',
-            phone: ''
-        };
-
-        const steps = document.querySelectorAll('.form-step');
-        const progressDots = document.querySelectorAll('.progress-dot');
-        const nextBtn = document.getElementById('formNext');
-        const backBtn = document.getElementById('formBack');
-        const optionBtns = document.querySelectorAll('.option-btn');
-
-        // Handle option button clicks - auto advance
-        optionBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const step = this.closest('.form-step');
-                step.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-                this.classList.add('selected');
-
-                // Store value
-                if (currentStep === 1) formData.service = this.dataset.value;
-                if (currentStep === 2) formData.timeline = this.dataset.value;
-                if (currentStep === 3) formData.budget = this.dataset.value;
-
-                // Auto advance to next step after short delay
-                setTimeout(() => {
-                    if (currentStep < totalSteps) {
-                        currentStep++;
-                        showStep(currentStep);
-                    }
-                }, 250);
-            });
-        });
-
-        // Update progress dots
-        function updateProgress() {
-            progressDots.forEach((dot, index) => {
-                dot.classList.remove('active', 'completed');
-                if (index + 1 === currentStep) {
-                    dot.classList.add('active');
-                } else if (index + 1 < currentStep) {
-                    dot.classList.add('completed');
-                }
-            });
-        }
-
-        // Show step
-        function showStep(step) {
-            steps.forEach(s => s.style.display = 'none');
-            document.querySelector(`.form-step[data-step="${step}"]`).style.display = 'block';
-
-            // Show back button on steps 2, 3, 4
-            if (step > 1) {
-                backBtn.style.display = 'flex';
-            } else {
-                backBtn.style.display = 'none';
-            }
-
-            // Only show submit button on last step
-            if (step === totalSteps) {
-                nextBtn.style.display = 'flex';
-                nextBtn.innerHTML = 'Submit';
-                nextBtn.disabled = false;
-            } else {
-                nextBtn.style.display = 'none';
-            }
-
-            updateProgress();
-        }
-
-        // Next button
-        nextBtn.addEventListener('click', async function() {
-            if (currentStep < totalSteps) {
-                currentStep++;
-                showStep(currentStep);
-            } else {
-                // Submit form
-                formData.name = document.getElementById('heroName').value;
-                formData.email = document.getElementById('heroEmail').value;
-                formData.phone = document.getElementById('heroPhone').value;
-
-                if (!formData.name || !formData.email) {
-                    alert('Please enter your name and email.');
-                    return;
-                }
-
-                nextBtn.disabled = true;
-                nextBtn.innerHTML = '<i class="ph ph-spinner" style="animation: spin 1s linear infinite;"></i> Sending...';
-
-                try {
-                    // Send to Formspree (replace YOUR_FORM_ID with actual ID)
-                    const response = await fetch('https://formspree.io/f/xeooqgkw', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            name: formData.name,
-                            email: formData.email,
-                            phone: formData.phone,
-                            service: formData.service,
-                            timeline: formData.timeline,
-                            budget: formData.budget,
-                            source: 'Homepage Form'
-                        })
-                    });
-
-                    if (response.ok) {
-                        document.getElementById('heroFormContainer').style.display = 'none';
-                        document.getElementById('heroFormSuccess').style.display = 'block';
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    alert('Something went wrong. Please try again.');
-                    nextBtn.disabled = false;
-                    nextBtn.innerHTML = 'Submit';
-                }
-            }
-        });
-
-        // Back button
-        backBtn.addEventListener('click', function() {
-            if (currentStep > 1) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
-
-        // Initialize
-        showStep(1);
-    })();
-    </script>
-
-    <style>
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
-
-    <!-- Chatbot -->
-    <script src="js/chatbot.js"></script>
-
 </body>
 </html>
