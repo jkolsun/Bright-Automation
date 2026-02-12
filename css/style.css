@@ -998,7 +998,7 @@ body {
    =========================== */
 
 .section {
-    padding: var(--space-3xl) 2rem;
+    padding: var(--space-2xl) 2rem;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -1006,7 +1006,7 @@ body {
 }
 
 .section-full {
-    padding: var(--space-3xl) 2rem;
+    padding: var(--space-2xl) 2rem;
     max-width: none;
     position: relative;
     z-index: 1;
@@ -1304,7 +1304,7 @@ body {
 
 .cta-section {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    padding: var(--space-3xl) 2rem;
+    padding: var(--space-2xl) 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1372,7 +1372,7 @@ body {
 .footer {
     background: var(--gray-800);
     color: var(--gray-300);
-    padding: var(--space-3xl) 2rem var(--space-lg);
+    padding: var(--space-2xl) 2rem var(--space-lg);
     position: relative;
     border-top: none;
 }
@@ -1589,7 +1589,7 @@ body {
    =========================== */
 
 .page-header {
-    padding: 7rem 2rem 2.5rem;
+    padding: 6.5rem 2rem 2rem;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     text-align: center;
     position: relative;
