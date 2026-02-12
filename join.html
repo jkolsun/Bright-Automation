@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Bright Automations sales team. Make $75+ per close, commission only, work from anywhere. Cold call home service businesses and earn $4,000-8,000/month.">
+    <meta name="description" content="Join the Bright Automations team - Apply for Sales Representative or Developer positions">
     <title>Join Our Team - Bright Automations</title>
 
     <!-- Favicon -->
@@ -27,321 +27,269 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* ===== WHAT THE JOB IS ===== */
-        .job-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
+        .join-section {
+            min-height: calc(100vh - 80px);
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .join-container {
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        .job-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            transition: all var(--transition-base);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .job-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            opacity: 0;
-            transition: opacity var(--transition-base);
-        }
-
-        .job-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .job-card:hover::before {
-            opacity: 1;
-        }
-
-        .job-card-icon {
-            width: 52px;
-            height: 52px;
-            background: rgba(46, 125, 138, 0.1);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.375rem;
-            color: var(--primary);
-            margin-bottom: 1.25rem;
-            transition: all var(--transition-base);
-        }
-
-        .job-card:hover .job-card-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        .job-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--gray-800);
-            margin-bottom: 0.625rem;
-        }
-
-        .job-card p {
-            color: var(--gray-600);
-            font-size: 0.9375rem;
-            line-height: 1.6;
-        }
-
-        .job-card.highlight {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(46, 125, 138, 0.03) 0%, rgba(74, 171, 184, 0.03) 100%);
-        }
-
-        .job-card.highlight::before {
-            opacity: 1;
-        }
-
-        .commission-amount {
-            font-family: var(--font-display);
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 0.25rem;
-        }
-
-        .commission-detail {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            margin-bottom: 0.75rem;
-        }
-
-        .earnings-range {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(16, 185, 129, 0.1);
-            color: #059669;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            font-size: 0.875rem;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        /* ===== WHAT WE PROVIDE ===== */
-        .provide-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .provide-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-xl);
-            padding: 1.75rem;
+        .join-header {
             text-align: center;
-            transition: all var(--transition-base);
+            margin-bottom: 3rem;
         }
 
-        .provide-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
+        .join-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
         }
 
-        .provide-card-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(46, 125, 138, 0.1);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 0 auto 1.25rem;
-            transition: all var(--transition-base);
-        }
-
-        .provide-card:hover .provide-card-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        .provide-card h3 {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--gray-800);
-            margin-bottom: 0.5rem;
-        }
-
-        .provide-card p {
-            color: var(--gray-600);
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-
-        /* ===== WHAT YOU NEED ===== */
-        .need-list {
-            max-width: 600px;
-            margin: 0 auto;
-            list-style: none;
-            padding: 0;
-        }
-
-        .need-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            margin-bottom: 0.75rem;
-            transition: all var(--transition-base);
-            font-size: 1.0625rem;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-
-        .need-list li:hover {
-            border-color: var(--primary);
-            transform: translateX(4px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .need-list li i {
-            width: 40px;
-            height: 40px;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #10B981;
+        .join-header p {
             font-size: 1.125rem;
-            flex-shrink: 0;
-        }
-
-        /* ===== APPLICATION FORM ===== */
-        .apply-section {
-            background: var(--gray-50);
-        }
-
-        .apply-card {
-            background: var(--white);
-            border-radius: var(--radius-2xl);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--gray-200);
-            max-width: 640px;
+            color: #64748b;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .apply-card .form-group {
+        .join-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .position-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .position-btn {
+            flex: 1;
+            padding: 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .position-btn:hover {
+            border-color: #2E7D8A;
+        }
+
+        .position-btn.active {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+        }
+
+        .position-btn i {
+            font-size: 2rem;
+            color: #2E7D8A;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .position-btn span {
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+        }
+
+        .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .apply-card .form-group label {
+        .form-group label {
             display: block;
             font-weight: 600;
-            color: var(--gray-800);
+            color: #1e293b;
             margin-bottom: 0.5rem;
-            font-size: 0.9375rem;
+            font-size: 0.95rem;
         }
 
-        .apply-card .form-group input,
-        .apply-card .form-group select {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.875rem 1rem;
-            border: 2px solid var(--gray-200);
-            border-radius: var(--radius-md);
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
             font-size: 1rem;
-            font-family: var(--font-sans);
-            transition: all var(--transition-base);
-            background: var(--gray-50);
-            color: var(--gray-800);
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f8fafc;
         }
 
-        .apply-card .form-group input:focus,
-        .apply-card .form-group select:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #2E7D8A;
             box-shadow: 0 0 0 3px rgba(46, 125, 138, 0.1);
-            background: var(--white);
+            background: white;
         }
 
-        .apply-card .form-group input::placeholder {
-            color: var(--gray-400);
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
         }
 
-        .apply-submit-btn {
-            width: 100%;
+        .form-group .helper-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        /* Programming Languages Checkbox Grid */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            max-height: 280px;
+            overflow-y: auto;
             padding: 1rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            border: none;
-            border-radius: var(--radius-md);
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: var(--font-sans);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+        }
+
+        .language-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
             cursor: pointer;
-            transition: all var(--transition-base);
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            color: #334155;
+        }
+
+        .language-checkbox:hover {
+            border-color: #2E7D8A;
+            background: #f0fdfa;
+        }
+
+        .language-checkbox.selected {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .language-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .language-checkbox .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .language-checkbox.selected .checkmark {
+            background: #2E7D8A;
+            border-color: #2E7D8A;
+        }
+
+        .language-checkbox .checkmark i {
+            color: white;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .language-checkbox.selected .checkmark i {
+            opacity: 1;
+        }
+
+        .selected-languages-preview {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
             gap: 0.5rem;
         }
 
-        .apply-submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(46, 125, 138, 0.3);
+        .selected-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
-        .apply-submit-btn:active {
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .job-cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .provide-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .apply-card {
-                padding: 1.75rem;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .provide-grid {
+        @media (max-width: 640px) {
+            .languages-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(46, 125, 138, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        #developerFields {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .join-section {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .join-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .join-card {
+                padding: 1.5rem;
+            }
+
+            .position-selector {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -375,199 +323,183 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1 data-aos="fade-up">Make $75+ per close. Commission only. Work from anywhere.</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Join our team of sales reps and help home service businesses get online.</p>
-    </section>
-
-    <!-- What the Job Is -->
-    <section class="section">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label"><i class="ph ph-briefcase"></i> What the Job Is</span>
-            <h2 class="section-title">Sell Websites to Local Businesses</h2>
-            <p class="section-subtitle">We handle the tech. You handle the conversations.</p>
-        </div>
-
-        <div class="job-cards-grid">
-            <div class="job-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="job-card-icon">
-                    <i class="ph ph-phone-outgoing"></i>
-                </div>
-                <h3>Cold Call Home Service Businesses</h3>
-                <p>Reach out to plumbers, roofers, landscapers, and other local businesses that need a professional website.</p>
+    <!-- Join Section -->
+    <section class="join-section">
+        <div class="join-container">
+            <div class="join-header" data-aos="fade-up">
+                <h1>Join Our Team</h1>
+                <p>Be part of the future of business automation. We're looking for talented individuals to help us grow.</p>
             </div>
 
-            <div class="job-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="job-card-icon">
-                    <i class="ph ph-package"></i>
-                </div>
-                <h3>Everything Is Provided</h3>
-                <p>We give you the leads, the script, the preview links, and the dialer. Just show up ready to talk.</p>
-            </div>
+            <div class="join-card" data-aos="fade-up" data-aos-delay="100">
+                <form id="joinForm" action="https://formspree.io/f/mnneglkj" method="POST">
+                    <input type="hidden" name="form_type" value="Job Application">
+                    <input type="hidden" name="position" id="positionInput" value="Sales Representative">
 
-            <div class="job-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="job-card-icon">
-                    <i class="ph ph-device-mobile"></i>
-                </div>
-                <h3>Show Them Their New Site</h3>
-                <p>You talk to business owners and show them a preview of their new website in real time during the call.</p>
-            </div>
+                    <!-- Position Selector -->
+                    <div class="position-selector">
+                        <button type="button" class="position-btn active" data-position="Sales Representative" onclick="selectPosition(this)">
+                            <i class="ph ph-chart-line-up"></i>
+                            <span>Sales Representative</span>
+                        </button>
+                        <button type="button" class="position-btn" data-position="Developer" onclick="selectPosition(this)">
+                            <i class="ph ph-code"></i>
+                            <span>Developer</span>
+                        </button>
+                    </div>
 
-            <div class="job-card highlight" data-aos="fade-up" data-aos-delay="400">
-                <div class="commission-amount">$75</div>
-                <div class="commission-detail">per close (50% of $149 site build)</div>
-                <p style="margin-bottom: 1rem; color: var(--gray-600); font-size: 0.9375rem;">Every closed deal puts $75 in your pocket. No cap on earnings.</p>
-                <div class="earnings-range">
-                    <i class="ph ph-trend-up"></i>
-                    Top reps make $4,000 - $8,000/month
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- Common Fields -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
 
-    <!-- What We Provide -->
-    <section class="section bg-light">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label"><i class="ph ph-toolbox"></i> What We Provide</span>
-            <h2 class="section-title">We Set You Up to Win</h2>
-            <p class="section-subtitle">Everything you need to start closing deals on day one.</p>
-        </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                    </div>
 
-        <div class="provide-grid">
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="provide-card-icon">
-                    <i class="ph ph-address-book"></i>
-                </div>
-                <h3>Pre-Qualified Leads</h3>
-                <p>Fresh leads loaded into your dialer every morning so you always have businesses to call.</p>
-            </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
 
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="provide-card-icon">
-                    <i class="ph ph-brain"></i>
-                </div>
-                <h3>AI Company Briefs</h3>
-                <p>AI-generated briefs so you know everything about the business before you ever pick up the phone.</p>
-            </div>
+                    <div class="form-group">
+                        <label for="experience">Experience Level *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select your experience level...</option>
+                            <option value="Beginner Sales">Beginner Sales</option>
+                            <option value="Intermediate Sales">Intermediate Sales</option>
+                            <option value="Expert Sales">Expert Sales</option>
+                        </select>
+                    </div>
 
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="provide-card-icon">
-                    <i class="ph ph-scroll"></i>
-                </div>
-                <h3>Custom Call Scripts</h3>
-                <p>Tailored scripts for each lead that guide you through the conversation from open to close.</p>
-            </div>
+                    <!-- Developer-specific Fields -->
+                    <div id="developerFields">
+                        <div class="form-group">
+                            <label>Programming Languages *</label>
+                            <div class="languages-grid" id="languagesGrid">
+                                <label class="language-checkbox" data-value="JavaScript">
+                                    <input type="checkbox" name="lang" value="JavaScript">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    JavaScript
+                                </label>
+                                <label class="language-checkbox" data-value="TypeScript">
+                                    <input type="checkbox" name="lang" value="TypeScript">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    TypeScript
+                                </label>
+                                <label class="language-checkbox" data-value="Python">
+                                    <input type="checkbox" name="lang" value="Python">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Python
+                                </label>
+                                <label class="language-checkbox" data-value="Java">
+                                    <input type="checkbox" name="lang" value="Java">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Java
+                                </label>
+                                <label class="language-checkbox" data-value="C#">
+                                    <input type="checkbox" name="lang" value="C#">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    C#
+                                </label>
+                                <label class="language-checkbox" data-value="C++">
+                                    <input type="checkbox" name="lang" value="C++">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    C++
+                                </label>
+                                <label class="language-checkbox" data-value="Go">
+                                    <input type="checkbox" name="lang" value="Go">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Go
+                                </label>
+                                <label class="language-checkbox" data-value="Rust">
+                                    <input type="checkbox" name="lang" value="Rust">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Rust
+                                </label>
+                                <label class="language-checkbox" data-value="Ruby">
+                                    <input type="checkbox" name="lang" value="Ruby">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Ruby
+                                </label>
+                                <label class="language-checkbox" data-value="PHP">
+                                    <input type="checkbox" name="lang" value="PHP">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    PHP
+                                </label>
+                                <label class="language-checkbox" data-value="Swift">
+                                    <input type="checkbox" name="lang" value="Swift">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Swift
+                                </label>
+                                <label class="language-checkbox" data-value="Kotlin">
+                                    <input type="checkbox" name="lang" value="Kotlin">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Kotlin
+                                </label>
+                                <label class="language-checkbox" data-value="SQL">
+                                    <input type="checkbox" name="lang" value="SQL">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    SQL
+                                </label>
+                                <label class="language-checkbox" data-value="HTML/CSS">
+                                    <input type="checkbox" name="lang" value="HTML/CSS">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    HTML/CSS
+                                </label>
+                                <label class="language-checkbox" data-value="React">
+                                    <input type="checkbox" name="lang" value="React">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    React
+                                </label>
+                                <label class="language-checkbox" data-value="Node.js">
+                                    <input type="checkbox" name="lang" value="Node.js">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Node.js
+                                </label>
+                                <label class="language-checkbox" data-value="Vue.js">
+                                    <input type="checkbox" name="lang" value="Vue.js">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Vue.js
+                                </label>
+                                <label class="language-checkbox" data-value="Angular">
+                                    <input type="checkbox" name="lang" value="Angular">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Angular
+                                </label>
+                                <label class="language-checkbox" data-value=".NET">
+                                    <input type="checkbox" name="lang" value=".NET">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    .NET
+                                </label>
+                                <label class="language-checkbox" data-value="Django">
+                                    <input type="checkbox" name="lang" value="Django">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Django
+                                </label>
+                                <label class="language-checkbox" data-value="Flask">
+                                    <input type="checkbox" name="lang" value="Flask">
+                                    <span class="checkmark"><i class="ph ph-check"></i></span>
+                                    Flask
+                                </label>
+                            </div>
+                            <div class="selected-languages-preview" id="selectedPreview"></div>
+                            <p class="helper-text">Click to select your programming languages</p>
+                        </div>
+                    </div>
 
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="provide-card-icon">
-                    <i class="ph ph-link"></i>
-                </div>
-                <h3>Preview Links</h3>
-                <p>Text a preview link during the call and the business owner sees their new site in real time.</p>
-            </div>
+                    <div class="form-group">
+                        <label for="other">Additional Information (Optional)</label>
+                        <textarea id="other" name="additional_info" placeholder="Tell us about yourself, your experience, why you want to join, etc."></textarea>
+                    </div>
 
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="provide-card-icon">
-                    <i class="ph ph-phone-call"></i>
-                </div>
-                <h3>Built-In Dialer</h3>
-                <p>Call from your browser — no phone needed. Just plug in a headset and start dialing.</p>
-            </div>
-
-            <div class="provide-card" data-aos="fade-up" data-aos-delay="350">
-                <div class="provide-card-icon">
-                    <i class="ph ph-chart-line-up"></i>
-                </div>
-                <h3>Leaderboard & Earnings</h3>
-                <p>Real-time leaderboard and earnings tracker so you always know where you stand.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- What You Need -->
-    <section class="section">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label"><i class="ph ph-check-circle"></i> What You Need</span>
-            <h2 class="section-title">Requirements</h2>
-            <p class="section-subtitle">Keep it simple. Here's what we're looking for.</p>
-        </div>
-
-        <ul class="need-list">
-            <li data-aos="fade-up" data-aos-delay="100">
-                <i class="ph ph-headset"></i>
-                Phone or computer with a headset
-            </li>
-            <li data-aos="fade-up" data-aos-delay="200">
-                <i class="ph ph-chart-bar"></i>
-                Sales experience (cold calling preferred)
-            </li>
-            <li data-aos="fade-up" data-aos-delay="300">
-                <i class="ph ph-lightning"></i>
-                Hustle
-            </li>
-        </ul>
-    </section>
-
-    <!-- Application Form -->
-    <section class="section apply-section" id="apply">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label"><i class="ph ph-paper-plane-tilt"></i> Apply Now</span>
-            <h2 class="section-title">Ready to Start Earning?</h2>
-            <p class="section-subtitle">Fill out the form below and we'll be in touch within 24 hours.</p>
-        </div>
-
-        <div class="apply-card" data-aos="fade-up" data-aos-delay="100">
-            <form id="applyForm" action="https://formspree.io/f/mnneglkj" method="POST">
-                <input type="hidden" name="form_type" value="Sales Rep Application">
-
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Smith">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="experience">Sales Experience *</label>
-                    <select id="experience" name="sales_experience" required>
-                        <option value="">Select your experience level...</option>
-                        <option value="No experience">No experience</option>
-                        <option value="6 months - 1 year">6 months - 1 year</option>
-                        <option value="1-3 years">1-3 years</option>
-                        <option value="3+ years">3+ years</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="dials">How many dials per day can you do? *</label>
-                    <select id="dials" name="dials_per_day" required>
-                        <option value="">Select a range...</option>
-                        <option value="50-100">50-100</option>
-                        <option value="100-200">100-200</option>
-                        <option value="200-300">200-300</option>
-                        <option value="300+">300+</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="apply-submit-btn">
-                    <i class="ph ph-paper-plane-tilt"></i>
-                    Submit Application
-                </button>
-            </form>
-
-            <div id="applySuccess" style="display: none; text-align: center; padding: 3rem 1.5rem;">
-                <i class="ph ph-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem; display: block;"></i>
-                <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">Application Received!</h3>
-                <p style="color: var(--text-secondary); font-size: 1rem;">We'll be in touch within 24 hours.</p>
+                    <button type="submit" class="submit-btn">
+                        <i class="ph ph-paper-plane-tilt"></i>
+                        Submit Application
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -609,7 +541,7 @@
                     <h3>Contact</h3>
                     <ul>
                         <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
-                        <li><a href="tel:+6102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                        <li><a href="tel:+16102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
                     </ul>
                 </div>
             </div>
@@ -638,38 +570,101 @@
         });
     </script>
 
-    <!-- Form Handling -->
+    <!-- Form handling -->
     <script>
-        document.getElementById('applyForm').addEventListener('submit', function(e) {
+        function selectPosition(btn) {
+            // Remove active from all buttons
+            document.querySelectorAll('.position-btn').forEach(b => b.classList.remove('active'));
+            // Add active to clicked button
+            btn.classList.add('active');
+
+            const position = btn.getAttribute('data-position');
+            document.getElementById('positionInput').value = position;
+
+            const developerFields = document.getElementById('developerFields');
+            const experienceSelect = document.getElementById('experience');
+
+            if (position === 'Developer') {
+                developerFields.style.display = 'block';
+                // Update experience options for Developer
+                experienceSelect.innerHTML = `
+                    <option value="">Select your experience level...</option>
+                    <option value="Beginner Development">Beginner Development</option>
+                    <option value="Intermediate Development">Intermediate Development</option>
+                    <option value="Expert Development">Expert Development</option>
+                `;
+            } else {
+                developerFields.style.display = 'none';
+                // Clear language selections when switching to Sales
+                document.querySelectorAll('.language-checkbox').forEach(label => {
+                    label.classList.remove('selected');
+                    label.querySelector('input').checked = false;
+                });
+                document.getElementById('selectedPreview').innerHTML = '';
+                // Update experience options for Sales
+                experienceSelect.innerHTML = `
+                    <option value="">Select your experience level...</option>
+                    <option value="Beginner Sales">Beginner Sales</option>
+                    <option value="Intermediate Sales">Intermediate Sales</option>
+                    <option value="Expert Sales">Expert Sales</option>
+                `;
+            }
+        }
+
+        // Language checkbox handling
+        document.querySelectorAll('.language-checkbox').forEach(label => {
+            label.addEventListener('click', function(e) {
+                e.preventDefault();
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+                updateSelectedPreview();
+            });
+        });
+
+        function updateSelectedPreview() {
+            const preview = document.getElementById('selectedPreview');
+            const selected = Array.from(document.querySelectorAll('.language-checkbox.selected'))
+                .map(label => label.dataset.value);
+
+            if (selected.length > 0) {
+                preview.innerHTML = selected.map(lang =>
+                    `<span class="selected-tag">${lang}</span>`
+                ).join('');
+            } else {
+                preview.innerHTML = '';
+            }
+        }
+
+        document.getElementById('joinForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            var form = this;
-            var submitBtn = form.querySelector('.apply-submit-btn');
-            var formData = new FormData(form);
-            var data = {};
+            const formData = new FormData(this);
 
-            formData.forEach(function(value, key) {
-                data[key] = value;
-            });
+            // Get selected languages from checkboxes
+            const selectedLanguages = Array.from(document.querySelectorAll('.language-checkbox.selected'))
+                .map(label => label.dataset.value).join(', ');
 
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="ph ph-spinner" style="animation: spin 1s linear infinite;"></i> Submitting...';
+            if (selectedLanguages) {
+                formData.set('programming_languages', selectedLanguages);
+            }
 
-            fetch(form.action, {
+            // Remove individual checkbox values
+            formData.delete('lang');
+
+            fetch('https://formspree.io/f/mnneglkj', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then(function(response) {
-                form.style.display = 'none';
-                document.getElementById('applySuccess').style.display = 'block';
-            }).catch(function(err) {
-                form.style.display = 'none';
-                document.getElementById('applySuccess').style.display = 'block';
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                alert('Application submitted successfully! We will review your application and get back to you soon.');
+                window.location.href = 'about.html';
+            }).catch(err => {
+                alert('Application submitted successfully! We will review your application and get back to you soon.');
+                window.location.href = 'about.html';
             });
         });
     </script>
+
 </body>
 </html>

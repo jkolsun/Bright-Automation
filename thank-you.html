@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your purchase - Bright Automations">
+    <title>You're All Set - Bright Automations</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .thankyou-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .thankyou-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2.5rem;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .thankyou-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .thankyou-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        .thankyou-card h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .thankyou-card .subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+        }
+        .next-steps {
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+        .next-steps h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.25rem;
+        }
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+            color: #2E7D8A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+        .step-text {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+            padding-top: 0.25rem;
+        }
+        .thankyou-contact {
+            padding: 1.25rem;
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .thankyou-contact p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        .thankyou-contact a {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2E7D8A;
+            text-decoration: none;
+        }
+        .thankyou-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: #f1f5f9;
+            color: #475569;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .thankyou-home:hover {
+            background: #e2e8f0;
+        }
+
+        @media (max-width: 640px) {
+            .thankyou-section {
+                padding: 6rem 1rem 3rem;
+            }
+            .thankyou-card {
+                padding: 2rem 1.5rem;
+            }
+            .thankyou-card h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <a href="join.html" class="mobile-join-btn">Join Our Team</a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Thank You -->
+    <section class="thankyou-section">
+        <div class="thankyou-card">
+            <div class="thankyou-icon">
+                <i class="ph ph-check"></i>
+            </div>
+
+            <h1>You're All Set</h1>
+            <p class="subtitle">Thanks for choosing Bright Automations.</p>
+
+            <div class="next-steps">
+                <h2>Here's what happens next:</h2>
+
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-text">You'll get a text from us in the next few minutes asking for your business info (logo, hours, photos).</div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-text">We build your site within 48 hours.</div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-text">You review it and we make any changes you want (2 rounds of revisions included).</div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Your site goes live.</div>
+                </div>
+            </div>
+
+            <div class="thankyou-contact">
+                <p>Questions? Text us anytime:</p>
+                <a href="sms:+17322283794">(732) 228-3794</a>
+            </div>
+
+            <a href="/" class="thankyou-home">
+                <i class="ph ph-house"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                    </a>
+                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+16102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                <p>&copy; 2025 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

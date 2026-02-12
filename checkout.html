@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get your professional website - Bright Automations. $149 one-time. Live in 48 hours.">
+    <title>Get Your Website - Bright Automations</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .checkout-section {
+            min-height: calc(100vh - 80px);
+            padding: 7rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .checkout-container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .checkout-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+        .checkout-header p {
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+        .checkout-card {
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .checkout-step {
+            padding: 1.75rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .checkout-step:last-child {
+            border-bottom: none;
+        }
+        .step-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #2E7D8A;
+            margin-bottom: 1rem;
+        }
+
+        /* Website build (always included) */
+        .build-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.06) 0%, rgba(74, 171, 184, 0.06) 100%);
+            border: 2px solid #2E7D8A;
+            border-radius: 0.75rem;
+        }
+        .build-check {
+            width: 24px;
+            height: 24px;
+            background: #2E7D8A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .build-check i {
+            color: white;
+            font-size: 0.75rem;
+        }
+        .build-details h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+        .build-price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2E7D8A;
+            margin-bottom: 0.5rem;
+        }
+        .build-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .build-features li {
+            font-size: 0.875rem;
+            color: #64748b;
+            padding: 0.15rem 0;
+        }
+        .build-features li::before {
+            content: '•';
+            margin-right: 0.5rem;
+            color: #2E7D8A;
+        }
+
+        /* Radio options for hosting */
+        .hosting-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 0.75rem;
+        }
+        .hosting-option:hover {
+            border-color: #2E7D8A;
+        }
+        .hosting-option.selected {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.06) 0%, rgba(74, 171, 184, 0.06) 100%);
+        }
+        .hosting-option input[type="radio"] {
+            display: none;
+        }
+        .radio-dot {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+        .hosting-option.selected .radio-dot {
+            border-color: #2E7D8A;
+        }
+        .radio-dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #2E7D8A;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .hosting-option.selected .radio-dot::after {
+            opacity: 1;
+        }
+        .hosting-text {
+            flex: 1;
+        }
+        .hosting-text span {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .hosting-text .hosting-price {
+            color: #64748b;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+        .best-value {
+            background: #2E7D8A;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Addon checkboxes */
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 0.75rem;
+        }
+        .addon-item:hover {
+            border-color: #2E7D8A;
+        }
+        .addon-item.selected {
+            border-color: #2E7D8A;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.06) 0%, rgba(74, 171, 184, 0.06) 100%);
+        }
+        .addon-item input[type="checkbox"] {
+            display: none;
+        }
+        .addon-check {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+        .addon-item.selected .addon-check {
+            background: #2E7D8A;
+            border-color: #2E7D8A;
+        }
+        .addon-check i {
+            color: white;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .addon-item.selected .addon-check i {
+            opacity: 1;
+        }
+        .addon-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+        .addon-price {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Order summary */
+        .order-summary {
+            padding: 1.75rem 2rem;
+            background: #f8fafc;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        .summary-divider {
+            border-top: 1px solid #e2e8f0;
+            margin: 0.75rem 0;
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+            padding-top: 0.5rem;
+        }
+        .summary-recurring {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        /* Terms + Pay button */
+        .checkout-actions {
+            padding: 1.75rem 2rem;
+        }
+        .terms-agree {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            cursor: pointer;
+        }
+        .terms-agree input[type="checkbox"] {
+            display: none;
+        }
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            transition: all 0.2s ease;
+        }
+        .terms-agree.checked .terms-checkbox {
+            background: #2E7D8A;
+            border-color: #2E7D8A;
+        }
+        .terms-checkbox i {
+            color: white;
+            font-size: 0.7rem;
+            opacity: 0;
+        }
+        .terms-agree.checked .terms-checkbox i {
+            opacity: 1;
+        }
+        .terms-text {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .terms-text a {
+            color: #2E7D8A;
+            text-decoration: underline;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .pay-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(46, 125, 138, 0.3);
+        }
+        .pay-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .checkout-footer-text {
+            text-align: center;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .checkout-footer-text i {
+            margin-right: 0.25rem;
+        }
+        .checkout-footer-text a {
+            color: #2E7D8A;
+        }
+
+        @media (max-width: 640px) {
+            .checkout-section {
+                padding: 6rem 1rem 3rem;
+            }
+            .checkout-header h1 {
+                font-size: 1.75rem;
+            }
+            .checkout-step {
+                padding: 1.5rem 1.25rem;
+            }
+            .order-summary, .checkout-actions {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <a href="join.html" class="mobile-join-btn">Join Our Team</a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Checkout -->
+    <section class="checkout-section">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1>Get Your Website</h1>
+                <p>Professional website for your business. Live in 48 hours. We handle everything.</p>
+            </div>
+
+            <div class="checkout-card">
+                <!-- Step 1: Website Build -->
+                <div class="checkout-step">
+                    <div class="step-label">Step 1: Your Website</div>
+                    <div class="build-item">
+                        <div class="build-check"><i class="ph ph-check"></i></div>
+                        <div class="build-details">
+                            <h3>Website Build</h3>
+                            <div class="build-price">$149 one-time</div>
+                            <ul class="build-features">
+                                <li>Up to 5 pages</li>
+                                <li>Mobile-friendly</li>
+                                <li>2 revision rounds</li>
+                                <li>Live in 48 hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Hosting -->
+                <div class="checkout-step">
+                    <div class="step-label">Step 2: Choose Your Hosting</div>
+
+                    <label class="hosting-option selected" data-hosting="monthly" data-price="39" data-label="Monthly Hosting" data-recurring="$39/mo">
+                        <input type="radio" name="hosting" value="monthly" checked>
+                        <div class="radio-dot"></div>
+                        <div class="hosting-text">
+                            <span>Monthly</span> <span class="hosting-price">— $39/month</span>
+                        </div>
+                    </label>
+
+                    <label class="hosting-option" data-hosting="annual" data-price="399" data-label="Annual Hosting" data-recurring="$399/yr">
+                        <input type="radio" name="hosting" value="annual">
+                        <div class="radio-dot"></div>
+                        <div class="hosting-text">
+                            <span>Annual</span> <span class="hosting-price">— $399/year (save $69)</span>
+                        </div>
+                        <span class="best-value">Best Value</span>
+                    </label>
+                </div>
+
+                <!-- Step 3: Add-ons -->
+                <div class="checkout-step">
+                    <div class="step-label">Step 3: Add-ons (optional)</div>
+
+                    <label class="addon-item" data-addon="gbp" data-price="49" data-label="GBP Optimization" data-type="one-time">
+                        <input type="checkbox">
+                        <div class="addon-check"><i class="ph ph-check"></i></div>
+                        <span class="addon-text">Google Business Profile Optimization</span>
+                        <span class="addon-price">$49</span>
+                    </label>
+
+                    <label class="addon-item" data-addon="reviews" data-price="29" data-label="Review Widget" data-type="monthly">
+                        <input type="checkbox">
+                        <div class="addon-check"><i class="ph ph-check"></i></div>
+                        <span class="addon-text">Review Generation Widget</span>
+                        <span class="addon-price">$29/mo</span>
+                    </label>
+
+                    <label class="addon-item" data-addon="seo" data-price="59" data-label="Monthly SEO" data-type="monthly">
+                        <input type="checkbox">
+                        <div class="addon-check"><i class="ph ph-check"></i></div>
+                        <span class="addon-text">Monthly SEO Updates</span>
+                        <span class="addon-price">$59/mo</span>
+                    </label>
+
+                    <label class="addon-item" data-addon="social" data-price="99" data-label="Social Landing Page" data-type="one-time">
+                        <input type="checkbox">
+                        <div class="addon-check"><i class="ph ph-check"></i></div>
+                        <span class="addon-text">Social Media Landing Page</span>
+                        <span class="addon-price">$99</span>
+                    </label>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary" id="orderSummary">
+                    <div class="step-label">Order Summary</div>
+                    <div id="summaryLines"></div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-total">
+                        <span>Today's total:</span>
+                        <span id="totalPrice">$188</span>
+                    </div>
+                    <div class="summary-recurring" id="recurringText">Then $39/month starting next month</div>
+                </div>
+
+                <!-- Terms + Pay -->
+                <div class="checkout-actions">
+                    <label class="terms-agree" id="termsLabel">
+                        <input type="checkbox" id="termsCheckbox">
+                        <div class="terms-checkbox"><i class="ph ph-check"></i></div>
+                        <span class="terms-text">I agree to the <a href="terms.html" target="_blank">Terms of Service</a></span>
+                    </label>
+
+                    <button class="pay-btn" id="payBtn" disabled>
+                        Pay Now <i class="ph ph-arrow-right"></i>
+                    </button>
+
+                    <div class="checkout-footer-text">
+                        <p><i class="ph ph-lock-simple"></i> Secure payment via Stripe</p>
+                        <p>Questions? Text us: <a href="sms:+17322283794">(732) 228-3794</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                    </a>
+                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+16102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                <p>&copy; 2025 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <script>
+    (function() {
+        // ===== STRIPE PAYMENT LINK =====
+        // Option A: Simple redirect to $149 site build link.
+        // Replace this URL with the actual Stripe Payment Link from Andrew.
+        var STRIPE_LINK = 'https://buy.stripe.com/REPLACE_WITH_ACTUAL_LINK';
+
+        // ===== HOSTING SELECTION =====
+        var hostingOptions = document.querySelectorAll('.hosting-option');
+        hostingOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                hostingOptions.forEach(function(o) { o.classList.remove('selected'); });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+                updateSummary();
+            });
+        });
+
+        // ===== ADDON SELECTION =====
+        var addonItems = document.querySelectorAll('.addon-item');
+        addonItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var checkbox = this.querySelector('input');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+                updateSummary();
+            });
+        });
+
+        // ===== TERMS CHECKBOX =====
+        var termsLabel = document.getElementById('termsLabel');
+        var termsCheckbox = document.getElementById('termsCheckbox');
+        var payBtn = document.getElementById('payBtn');
+
+        termsLabel.addEventListener('click', function(e) {
+            e.preventDefault();
+            termsCheckbox.checked = !termsCheckbox.checked;
+            termsLabel.classList.toggle('checked', termsCheckbox.checked);
+            payBtn.disabled = !termsCheckbox.checked;
+        });
+
+        // ===== UPDATE ORDER SUMMARY =====
+        function updateSummary() {
+            var lines = document.getElementById('summaryLines');
+            var totalEl = document.getElementById('totalPrice');
+            var recurringEl = document.getElementById('recurringText');
+
+            var total = 149; // site build always included
+            var monthlyRecurring = 0;
+            var html = '<div class="summary-row"><span>Website Build</span><span>$149</span></div>';
+
+            // Hosting
+            var selectedHosting = document.querySelector('.hosting-option.selected');
+            var hostingPrice = parseInt(selectedHosting.dataset.price);
+            var hostingLabel = selectedHosting.dataset.label;
+            var isAnnual = selectedHosting.dataset.hosting === 'annual';
+
+            total += hostingPrice;
+            if (isAnnual) {
+                html += '<div class="summary-row"><span>' + hostingLabel + '</span><span>$' + hostingPrice + '</span></div>';
+            } else {
+                html += '<div class="summary-row"><span>' + hostingLabel + '</span><span>$' + hostingPrice + '/mo</span></div>';
+                monthlyRecurring += hostingPrice;
+            }
+
+            // Add-ons
+            addonItems.forEach(function(item) {
+                if (item.querySelector('input').checked) {
+                    var price = parseInt(item.dataset.price);
+                    var label = item.dataset.label;
+                    var type = item.dataset.type;
+
+                    if (type === 'one-time') {
+                        total += price;
+                        html += '<div class="summary-row"><span>' + label + '</span><span>$' + price + '</span></div>';
+                    } else {
+                        total += price;
+                        monthlyRecurring += price;
+                        html += '<div class="summary-row"><span>' + label + '</span><span>$' + price + '/mo</span></div>';
+                    }
+                }
+            });
+
+            lines.innerHTML = html;
+
+            // For monthly hosting, today's total = site build + one-time addons + first month of all recurring
+            totalEl.textContent = '$' + total;
+
+            // Recurring text
+            if (monthlyRecurring > 0) {
+                recurringEl.textContent = 'Then $' + monthlyRecurring + '/month starting next month';
+                recurringEl.style.display = 'block';
+            } else if (isAnnual) {
+                recurringEl.textContent = 'Hosting renews at $399/year';
+                recurringEl.style.display = 'block';
+            } else {
+                recurringEl.style.display = 'none';
+            }
+        }
+
+        // ===== PAY BUTTON =====
+        payBtn.addEventListener('click', function() {
+            if (!termsCheckbox.checked) return;
+            window.location.href = STRIPE_LINK;
+        });
+
+        // Initial render
+        updateSummary();
+    })();
+    </script>
+
+</body>
+</html>
