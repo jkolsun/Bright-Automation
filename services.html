@@ -2,10 +2,374 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/">
-    <title>Redirecting - Bright Automations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grow your business with Bright Automations - Google optimization, reviews, SEO, and social media landing pages for home service businesses.">
+    <title>Services - Bright Automations</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .service-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            border-color: #2E7D8A;
+            box-shadow: 0 12px 40px rgba(46, 125, 138, 0.12);
+            transform: translateY(-4px);
+        }
+        .service-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.3rem 0.7rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.1) 0%, rgba(74, 171, 184, 0.1) 100%);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        .service-icon i {
+            font-size: 1.4rem;
+            color: #2E7D8A;
+        }
+        .service-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .service-oneliner {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            flex: 1;
+        }
+        .service-features li {
+            font-size: 0.875rem;
+            color: #475569;
+            padding: 0.3rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .service-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 6px;
+            height: 6px;
+            background: #2E7D8A;
+            border-radius: 50%;
+        }
+        .service-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        .service-price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        .service-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 138, 0.3);
+        }
+
+        .services-footer-text {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .trust-line {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .bundle-nudge {
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.06) 0%, rgba(74, 171, 184, 0.06) 100%);
+            border: 1px solid rgba(46, 125, 138, 0.15);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            font-size: 0.9rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="/">homepage</a>...</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
+            </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <a href="join.html" class="mobile-join-btn">Join Our Team</a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Your Website Is Just the Start</h1>
+        <p>Most businesses launch a site and stop there. The ones that grow invest in being found, getting reviews, and staying visible. We handle all of it.</p>
+    </section>
+
+    <!-- Service Cards -->
+    <section class="section">
+        <div class="services-grid">
+
+            <!-- Card 1: GBP -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <span class="service-badge">Most Popular</span>
+                <div class="service-icon"><i class="ph ph-map-pin"></i></div>
+                <h3>Get Found on Google Maps</h3>
+                <p class="service-oneliner">You're invisible if your Google listing isn't optimized. We fix that.</p>
+                <ul class="service-features">
+                    <li>Optimized business categories and description</li>
+                    <li>Updated hours, service areas, and attributes</li>
+                    <li>Professional photos added to your listing</li>
+                    <li>Keyword-rich description that ranks</li>
+                    <li>Show up higher when customers search your area</li>
+                </ul>
+                <div class="service-price">$49 <span>one-time</span></div>
+                <a href="https://buy.stripe.com/fZu3coeX8ax2fROfbe7wA09" class="service-cta">Add to My Site <i class="ph ph-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 2: Reviews -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="ph ph-star"></i></div>
+                <h3>Get More 5-Star Reviews — Automatically</h3>
+                <p class="service-oneliner">Your competitors have more reviews. This closes the gap while you sleep.</p>
+                <ul class="service-features">
+                    <li>Review request button built into your website</li>
+                    <li>Automatically texts customers a Google review link</li>
+                    <li>More reviews = higher ranking = more calls</li>
+                    <li>Dashboard to track reviews you're generating</li>
+                </ul>
+                <div class="service-price">$29<span>/month</span></div>
+                <a href="https://buy.stripe.com/fZu00c02e34AgVS3sw7wA0a" class="service-cta">Start Getting Reviews <i class="ph ph-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 3: SEO -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="ph ph-chart-line-up"></i></div>
+                <h3>Stay on Page One</h3>
+                <p class="service-oneliner">Google changes every month. Your site should too.</p>
+                <ul class="service-features">
+                    <li>Monthly updates to titles, descriptions, and keywords</li>
+                    <li>Fresh content to keep Google crawling your site</li>
+                    <li>Performance report showing how your site ranks</li>
+                    <li>We monitor competitors and adjust strategy</li>
+                    <li>You don't touch anything — we handle it all</li>
+                </ul>
+                <div class="service-price">$59<span>/month</span></div>
+                <a href="https://buy.stripe.com/14A9AM5my7kQ20Yd367wA0b" class="service-cta">Keep Me Ranking <i class="ph ph-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 4: Social -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="ph ph-link"></i></div>
+                <h3>Turn Followers Into Customers</h3>
+                <p class="service-oneliner">Your Instagram bio link should be making you money, not sending people nowhere.</p>
+                <ul class="service-features">
+                    <li>Professional single-page site for your social bio link</li>
+                    <li>Click-to-call, service list, reviews, and contact form</li>
+                    <li>Mobile-first design (100% of social traffic is phones)</li>
+                    <li>Matches your main website branding</li>
+                    <li>Live in 48 hours</li>
+                </ul>
+                <div class="service-price">$99 <span>one-time</span></div>
+                <a href="https://buy.stripe.com/fZueV6aGS20w8pm4wA7wA0c" class="service-cta">Build My Landing Page <i class="ph ph-arrow-right"></i></a>
+            </div>
+
+        </div>
+
+        <div class="services-footer-text" data-aos="fade-up">
+            <p class="trust-line">No contracts on anything. Cancel subscriptions anytime. Every service includes free setup — we handle everything.</p>
+            <div class="bundle-nudge">
+                Most business owners start with a website + Google optimization. It's the fastest way to start showing up when customers search for what you do.
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to get started?</h2>
+            <p>$149 gets you a professional website. Add services as you grow.</p>
+            <div class="cta-buttons">
+                <a href="checkout.html" class="btn btn-white">Get My Website</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                    </a>
+                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:admin@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>admin@brightautomations.net</a></li>
+                        <li><a href="tel:+16102569844"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(610) 256-9844</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                <p>&copy; 2025 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+
 </body>
 </html>

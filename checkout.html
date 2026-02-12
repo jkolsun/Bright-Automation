@@ -392,6 +392,7 @@
 
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
@@ -546,6 +547,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="join.html">Join Our Team</a></li>
@@ -584,10 +586,30 @@
 
     <script>
     (function() {
-        // ===== STRIPE PAYMENT LINK =====
-        // Option A: Simple redirect to $149 site build link.
-        // Replace this URL with the actual Stripe Payment Link from Andrew.
-        var STRIPE_LINK = 'https://buy.stripe.com/REPLACE_WITH_ACTUAL_LINK';
+        // ===== STRIPE PAYMENT LINKS =====
+        var STRIPE_LINKS = {
+            site_build: 'https://buy.stripe.com/28E28k7uG0Wsaxu7IM7wA06',
+            monthly_hosting: 'https://buy.stripe.com/28E9AM5my48EfRO7IM7wA07',
+            annual_hosting: 'https://buy.stripe.com/3cI5kw3eqfRm7lid367wA08',
+            gbp: 'https://buy.stripe.com/fZu3coeX8ax2fROfbe7wA09',
+            reviews: 'https://buy.stripe.com/fZu00c02e34AgVS3sw7wA0a',
+            seo: 'https://buy.stripe.com/14A9AM5my7kQ20Yd367wA0b',
+            social: 'https://buy.stripe.com/fZueV6aGS20w8pm4wA7wA0c'
+        };
+
+        // ===== PRE-SELECT ADD-ONS FROM URL PARAMS =====
+        var params = new URLSearchParams(window.location.search);
+        var addonParam = params.get('addon');
+        if (addonParam) {
+            var addons = addonParam.split(',');
+            addons.forEach(function(addon) {
+                var item = document.querySelector('.addon-item[data-addon="' + addon.trim() + '"]');
+                if (item) {
+                    item.classList.add('selected');
+                    item.querySelector('input').checked = true;
+                }
+            });
+        }
 
         // ===== HOSTING SELECTION =====
         var hostingOptions = document.querySelectorAll('.hosting-option');
@@ -684,9 +706,11 @@
         }
 
         // ===== PAY BUTTON =====
+        // Option A: Redirects to the $149 site build link.
+        // Hosting and add-on links are sent separately during onboarding.
         payBtn.addEventListener('click', function() {
             if (!termsCheckbox.checked) return;
-            window.location.href = STRIPE_LINK;
+            window.location.href = STRIPE_LINKS.site_build;
         });
 
         // Initial render
