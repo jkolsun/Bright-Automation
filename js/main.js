@@ -922,6 +922,17 @@ function initPageTransitions() {
 
 document.addEventListener('DOMContentLoaded', initPageTransitions);
 
+// Fix back button: restore visibility when page is loaded from bfcache
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        document.body.classList.remove('page-leaving');
+        document.body.classList.add('page-loaded');
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    }
+});
+
 // Add page transition styles
 const transitionStyles = document.createElement('style');
 transitionStyles.textContent = `
