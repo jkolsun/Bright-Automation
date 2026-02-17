@@ -542,6 +542,12 @@
                         <span class="terms-text">I agree to the <a href="terms.html" target="_blank">Terms of Service</a></span>
                     </label>
 
+                    <label class="terms-agree" id="smsLabel">
+                        <input type="checkbox" id="smsCheckbox">
+                        <div class="terms-checkbox"><i class="ph ph-check"></i></div>
+                        <span class="terms-text" style="font-size: 0.75rem; line-height: 1.5;">By providing your phone number, you agree to receive text messages from Bright Automations about your website preview, build updates, and promotional offers. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.</span>
+                    </label>
+
                     <button class="pay-btn" id="payBtn" disabled>
                         Pay Now <i class="ph ph-arrow-right"></i>
                     </button>
@@ -661,16 +667,30 @@
             });
         });
 
-        // ===== TERMS CHECKBOX =====
+        // ===== TERMS & SMS CHECKBOXES =====
         var termsLabel = document.getElementById('termsLabel');
         var termsCheckbox = document.getElementById('termsCheckbox');
+        var smsLabel = document.getElementById('smsLabel');
+        var smsCheckbox = document.getElementById('smsCheckbox');
         var payBtn = document.getElementById('payBtn');
+
+        function updatePayBtn() {
+            payBtn.disabled = !(termsCheckbox.checked && smsCheckbox.checked);
+        }
 
         termsLabel.addEventListener('click', function(e) {
             e.preventDefault();
             termsCheckbox.checked = !termsCheckbox.checked;
             termsLabel.classList.toggle('checked', termsCheckbox.checked);
-            payBtn.disabled = !termsCheckbox.checked;
+            updatePayBtn();
+        });
+
+        smsLabel.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') return;
+            e.preventDefault();
+            smsCheckbox.checked = !smsCheckbox.checked;
+            smsLabel.classList.toggle('checked', smsCheckbox.checked);
+            updatePayBtn();
         });
 
         // ===== UPDATE ORDER SUMMARY =====
@@ -736,7 +756,7 @@
         // Option A: Redirects to the $149 site build link.
         // Hosting and add-on links are sent separately during onboarding.
         payBtn.addEventListener('click', function() {
-            if (!termsCheckbox.checked) return;
+            if (!termsCheckbox.checked || !smsCheckbox.checked) return;
             window.location.href = STRIPE_LINKS.site_build;
         });
 
