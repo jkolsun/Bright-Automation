@@ -20,15 +20,15 @@
     const INTENTS = [
         {
             patterns: [/hello|hi|hey|good (morning|afternoon|evening)|greetings|sup|what'?s up/i],
-            response: () => "Hey! Welcome to Bright Automations. We build professional websites for home service businesses — $149, live in 48 hours. What can I help you with?"
+            response: () => "Hey! Welcome to Bright Automations. We build professional websites for businesses — live in 48 hours. What can I help you with?"
         },
         {
             patterns: [/what (do you|does .* company) do|about (your|the) company|tell me about|who (are|is) bright/i],
-            response: () => "We build professional websites for home service businesses. $149 one-time for the site, $39/month for hosting. Your site is live within 48 hours.\n\nWe handle everything — design, hosting, domain, SSL. You just tell us your business name and we do the rest."
+            response: () => "We build professional websites for businesses. Your site is live within 48 hours.\n\nWe handle everything — design, hosting, domain, SSL. You just tell us your business name and we do the rest.\n\nWant to know about pricing? Just ask!"
         },
         {
             patterns: [/services|what (can you|do you) offer|solutions|what do you (build|make)|add(-| )?on/i],
-            response: () => "Here's what we offer:\n\n• **Website Build** — $149 one-time (up to 5 pages, mobile-friendly, live in 48 hours)\n• **Hosting** — $39/mo or $399/yr (save $69)\n• **Google Business Profile Optimization** — $49\n• **Review Generation Widget** — $29/mo\n• **Monthly SEO Updates** — $59/mo\n• **Social Media Landing Page** — $99\n\nWant details on any of these?"
+            response: () => "Here's what we offer:\n\n• **Website Build** — up to 5 pages, mobile-friendly, live in 48 hours\n• **Hosting** — includes SSL, security, maintenance\n• **Google Business Profile Optimization**\n• **Review Generation Widget**\n• **Monthly SEO Updates**\n• **Social Media Landing Page**\n\nWant details or pricing on any of these?"
         },
         {
             patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
@@ -44,7 +44,7 @@
         },
         {
             patterns: [/what('s| is) included|what do (i|you) get|features|pages/i],
-            response: () => "Every website build ($149) includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• 2 rounds of revisions\n• Live in 48 hours\n\nHosting ($39/mo) includes SSL, uptime monitoring, security updates, and maintenance."
+            response: () => "Every website build includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• 2 rounds of revisions\n• Live in 48 hours\n\nHosting ($39/mo) includes SSL, uptime monitoring, security updates, and maintenance."
         },
         {
             patterns: [/host(ing)?|domain|ssl|maintenance|server/i],
@@ -68,7 +68,7 @@
         },
         {
             patterns: [/industr(y|ies)|business(es)?|who (do you|can you) (help|serve|work)|what (kind|type)/i],
-            response: () => "We specialize in **home service businesses**:\n\n• HVAC, Plumbing, Electrical\n• Roofing, Painting, Remodeling\n• Landscaping, Tree Service, Fencing\n• Cleaning, Pest Control, Pool Service\n• Restoration, Concrete, Flooring\n• Pressure Washing, Garage Door, Handyman\n\nIf you're a service business, we've got you covered."
+            response: () => "We work with all kinds of businesses:\n\n• HVAC, Plumbing, Electrical, Roofing\n• Restoration, Remodeling, Painting\n• Landscaping, Cleaning, Pest Control\n• Law Firms, Charters, Real Estate\n• And many more\n\nIf your business needs a professional website, we've got you covered."
         },
         {
             patterns: [/refund|money back|not happy|cancel|guarantee/i],
@@ -84,11 +84,11 @@
         },
         {
             patterns: [/get started|start|begin|sign up|ready|buy|purchase|order/i],
-            response: () => "Here's how it works:\n\n1. **Pay $149** on our checkout page\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/checkout.html)"
+            response: () => "Here's how it works:\n\n1. **Place your order** on our checkout page\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/checkout.html)"
         },
         {
             patterns: [/how (does|do) (it|this) work|process|step/i],
-            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Pay $149 to go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/contact.html)"
+            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/contact.html)"
         },
         {
             patterns: [/already have a (website|site)|existing (website|site)|replace|redesign/i],
@@ -112,7 +112,7 @@
         },
         {
             patterns: [/cheap|expensive|worth it|competitors|other companies|why you|why bright/i],
-            response: () => "Most web designers charge $2,000-$5,000+ for a website. We charge $149 because we've built hundreds of sites for your industry and streamlined the process.\n\nSame professional result. Fraction of the price. Live in 48 hours instead of weeks.\n\nNo contracts. Full refund if you're not happy within 7 days."
+            response: () => "Most web designers charge $2,000-$5,000+ for a website. We've streamlined the process by building hundreds of sites, so we pass the savings to you.\n\nSame professional result. Fraction of the price. Live in 48 hours instead of weeks.\n\nNo contracts. Full refund if you're not happy within 7 days."
         },
         {
             patterns: [/what happens after|after (i |I )?pay|next steps|what now/i],
@@ -124,7 +124,7 @@
     const DEFAULT_RESPONSES = [
         "Good question! I can help with pricing, what's included, how the process works, or our add-on services. What would you like to know?",
         "I want to make sure I give you the right answer. You can also reach our team directly at admin@brightautomations.net or text us at (732) 228-3794.",
-        "I'm not sure I understood that. Would you like to know about our pricing ($149 websites), how it works, or what's included?"
+        "I'm not sure I understood that. Would you like to know about our pricing, how it works, or what's included?"
     ];
 
     // Quick action buttons
@@ -360,7 +360,7 @@
             // Send welcome message if first time
             if (messages.length === 0) {
                 setTimeout(() => {
-                    addMessage("Hey! I'm the Bright Automations assistant. We build professional websites for home service businesses — $149, live in 48 hours. What can I help you with?", false, true);
+                    addMessage("Hey! I'm the Bright Automations assistant. We build professional websites for businesses — live in 48 hours. What can I help you with?", false, true);
                 }, 500);
             }
         } else {
