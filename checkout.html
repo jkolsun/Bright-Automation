@@ -416,6 +416,7 @@
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="systems.html">Business Systems</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
@@ -457,7 +458,7 @@
                         <div class="build-check"><i class="ph ph-check"></i></div>
                         <div class="build-details">
                             <h3>Website Build</h3>
-                            <div class="build-price">$149 one-time</div>
+                            <div class="build-price">$149 to go live</div>
                             <ul class="build-features">
                                 <li>Up to 5 pages</li>
                                 <li>Mobile-friendly</li>
@@ -530,9 +531,9 @@
                     <div class="summary-divider"></div>
                     <div class="summary-total">
                         <span>Today's total:</span>
-                        <span id="totalPrice">$188</span>
+                        <span id="totalPrice">$149</span>
                     </div>
-                    <div class="summary-recurring" id="recurringText">Then $39/month starting next month</div>
+                    <div class="summary-recurring" id="recurringText">Then $39/month starting in 30 days</div>
                 </div>
 
                 <!-- Terms + Pay -->
@@ -570,7 +571,7 @@
                     <a href="/" class="logo footer-logo">
                         <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
                     </a>
-                    <p>Professional websites for home service businesses. $149. Live in 48 hours.</p>
+                    <p>Professional websites for businesses. $149 to go live. Live in 48 hours.</p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -582,6 +583,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="systems.html">Business Systems</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="join.html">Join Our Team</a></li>
@@ -623,7 +625,6 @@
     (function() {
         // ===== STRIPE PAYMENT LINKS =====
         var STRIPE_LINKS = {
-            site_build: 'https://buy.stripe.com/28E28k7uG0Wsaxu7IM7wA06',
             monthly_hosting: 'https://buy.stripe.com/28E9AM5my48EfRO7IM7wA07',
             annual_hosting: 'https://buy.stripe.com/3cI5kw3eqfRm7lid367wA08',
             gbp: 'https://buy.stripe.com/fZu3coeX8ax2fROfbe7wA09',
@@ -711,10 +712,11 @@
             var hostingLabel = selectedHosting.dataset.label;
             var isAnnual = selectedHosting.dataset.hosting === 'annual';
 
-            total += hostingPrice;
             if (isAnnual) {
+                total += hostingPrice;
                 html += '<div class="summary-row"><span>' + hostingLabel + '</span><span>$' + hostingPrice + '</span></div>';
             } else {
+                // Monthly hosting starts after 30 days — not added to today's total
                 html += '<div class="summary-row"><span>' + hostingLabel + '</span><span>$' + hostingPrice + '/mo</span></div>';
                 monthlyRecurring += hostingPrice;
             }
@@ -730,7 +732,6 @@
                         total += price;
                         html += '<div class="summary-row"><span>' + label + '</span><span>$' + price + '</span></div>';
                     } else {
-                        total += price;
                         monthlyRecurring += price;
                         html += '<div class="summary-row"><span>' + label + '</span><span>$' + price + '/mo</span></div>';
                     }
@@ -738,13 +739,11 @@
             });
 
             lines.innerHTML = html;
-
-            // For monthly hosting, today's total = site build + one-time addons + first month of all recurring
             totalEl.textContent = '$' + total;
 
             // Recurring text
             if (monthlyRecurring > 0) {
-                recurringEl.textContent = 'Then $' + monthlyRecurring + '/month starting next month';
+                recurringEl.textContent = 'Then $' + monthlyRecurring + '/month starting in 30 days';
                 recurringEl.style.display = 'block';
             } else if (isAnnual) {
                 recurringEl.textContent = 'Hosting renews at $399/year';
@@ -755,11 +754,13 @@
         }
 
         // ===== PAY BUTTON =====
-        // Option A: Redirects to the $149 site build link.
-        // Hosting and add-on links are sent separately during onboarding.
+        // Redirects to the bundled hosting link ($149 + hosting subscription).
+        // Add-on links are sent separately during onboarding.
         payBtn.addEventListener('click', function() {
             if (!termsCheckbox.checked || !smsCheckbox.checked) return;
-            window.location.href = STRIPE_LINKS.site_build;
+            var selectedHosting = document.querySelector('.hosting-option.selected');
+            var isAnnual = selectedHosting.dataset.hosting === 'annual';
+            window.location.href = isAnnual ? STRIPE_LINKS.annual_hosting : STRIPE_LINKS.monthly_hosting;
         });
 
         // Initial render
