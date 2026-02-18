@@ -55,13 +55,13 @@
     <style>
         /* ===== SYSTEMS PAGE HERO ===== */
         .systems-hero {
-            min-height: 90vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 120px 2rem 80px;
+            padding: 110px 2rem 50px;
             text-align: center;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e5a63 100%);
         }
@@ -99,15 +99,6 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
-        }
-        .systems-hero-content .hero-sub {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            max-width: 620px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .systems-hero-buttons {
             display: flex;
@@ -159,50 +150,6 @@
             color: rgba(255, 255, 255, 0.5);
             font-weight: 500;
             letter-spacing: 0.02em;
-        }
-
-        /* ===== PROBLEM STATEMENT ===== */
-        .problem-section {
-            padding: 5rem 2rem;
-            background: #ffffff;
-        }
-        .problem-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .problem-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .problem-content p {
-            font-size: 1.05rem;
-            color: #4b5563;
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-        .problem-stat-callout {
-            margin-top: 2.5rem;
-            padding: 1.5rem 2rem;
-            background: rgba(46, 125, 138, 0.06);
-            border: 1px solid rgba(46, 125, 138, 0.15);
-            border-radius: 1rem;
-            display: inline-block;
-        }
-        .problem-stat-callout p {
-            font-size: 1rem;
-            color: #2E7D8A;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-        .problem-stat-callout span {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            font-weight: 400;
         }
 
         /* ===== SYSTEM CARDS ===== */
@@ -1081,8 +1028,7 @@
         }
         @media (max-width: 768px) {
             .systems-hero {
-                min-height: auto;
-                padding: 100px 1.5rem 60px;
+                padding: 90px 1.5rem 40px;
             }
             .systems-grid {
                 grid-template-columns: 1fr;
@@ -1185,7 +1131,6 @@
         <div class="systems-hero-grid"></div>
         <div class="systems-hero-content" data-aos="fade-up">
             <h1>Systems That Run While You Don't</h1>
-            <p class="hero-sub">We build automation systems that plug into your CRM and handle the work your team shouldn't be doing manually — lead response, follow-up, reputation, quoting, and customer communication. All on autopilot.</p>
             <div class="systems-hero-buttons">
                 <a href="#systems" class="sys-hero-cta">See What We Can Automate <i class="ph ph-arrow-down"></i></a>
                 <a href="contact.html" class="sys-hero-cta-alt">Book a Free Systems Audit <i class="ph ph-arrow-right"></i></a>
@@ -1194,21 +1139,7 @@
         </div>
     </section>
 
-    <!-- SECTION 2: PROBLEM STATEMENT -->
-    <section class="problem-section">
-        <div class="problem-content" data-aos="fade-up">
-            <h2>Your Team Is Doing Work That Should Be Automated</h2>
-            <p>Every hour your team spends manually following up on leads, chasing reviews, typing out estimates, or fielding "where's my technician?" calls — that's an hour they're not closing deals or doing billable work.</p>
-            <p>Most companies know they need better systems. They just don't have the time to build them or the in-house team to manage them.</p>
-            <p>We build the systems, connect them to what you already use, and manage them so they keep working. You see the results without touching the backend.</p>
-            <div class="problem-stat-callout" data-aos="fade-up" data-aos-delay="100">
-                <p>Companies that respond to leads within 5 minutes are 21x more likely to close.</p>
-                <span>— Lead Response Management Study, InsideSales.com</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: SYSTEMS / SERVICE CARDS -->
+    <!-- SYSTEMS / SERVICE CARDS -->
     <section class="systems-section" id="systems">
         <div class="systems-container">
             <div class="systems-section-header" data-aos="fade-up">
@@ -1341,7 +1272,64 @@
         </div>
     </section>
 
-    <!-- SECTION 4: PRICING TIERS -->
+    <!-- CRM & TOOL COMPATIBILITY -->
+    <section class="integrations-section">
+        <div class="integrations-container" data-aos="fade-up">
+            <h2>Plugs Into What You Already Use</h2>
+
+            <div class="integrations-grid">
+                <div class="integration-item"><i class="ph ph-chart-line-up"></i> GoHighLevel</div>
+                <div class="integration-item"><i class="fab fa-hubspot"></i> HubSpot</div>
+                <div class="integration-item"><i class="fab fa-salesforce"></i> Salesforce</div>
+                <div class="integration-item"><i class="ph ph-wrench"></i> ServiceTitan</div>
+                <div class="integration-item"><i class="ph ph-clipboard-text"></i> Jobber</div>
+                <div class="integration-item"><i class="ph ph-house-line"></i> Housecall Pro</div>
+                <div class="integration-item"><i class="ph ph-circles-four"></i> Zoho CRM</div>
+                <div class="integration-item"><i class="ph ph-kanban"></i> Monday.com</div>
+                <div class="integration-item"><i class="ph ph-funnel"></i> Pipedrive</div>
+                <div class="integration-item"><i class="fab fa-google"></i> Google Workspace</div>
+                <div class="integration-item"><i class="fab fa-slack"></i> Slack</div>
+                <div class="integration-item"><i class="ph ph-receipt"></i> QuickBooks</div>
+                <div class="integration-item"><i class="ph ph-phone-call"></i> Twilio</div>
+                <div class="integration-item"><i class="ph ph-plugs-connected"></i> Zapier</div>
+                <div class="integration-item"><i class="fab fa-stripe"></i> Stripe</div>
+            </div>
+
+            <p class="integrations-subtext">Don't see yours? We integrate with most major platforms. If there's an API, we can connect it.</p>
+        </div>
+    </section>
+
+    <!-- RESULTS / SOCIAL PROOF -->
+    <section class="results-section">
+        <div class="results-container">
+            <div class="results-section-header" data-aos="fade-up">
+                <h2>What These Systems Deliver</h2>
+            </div>
+
+            <div class="results-stats" data-aos="fade-up" data-aos-delay="100">
+                <div class="results-stat">
+                    <div class="results-stat-number" data-count="10">< 10 sec</div>
+                    <div class="results-stat-label">Average lead response time</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-number">3x</div>
+                    <div class="results-stat-label">More Google reviews per quarter</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-number">60%+</div>
+                    <div class="results-stat-label">Reduction in missed calls</div>
+                </div>
+                <div class="results-stat">
+                    <div class="results-stat-number">40%</div>
+                    <div class="results-stat-label">Faster estimate turnaround</div>
+                </div>
+            </div>
+
+            <p class="results-disclaimer" data-aos="fade-up" data-aos-delay="200">Based on average results across active client systems. Individual results vary by business and implementation.</p>
+        </div>
+    </section>
+
+    <!-- PRICING TIERS -->
     <section class="pricing-section" id="pricing">
         <div class="pricing-container">
             <div class="pricing-section-header" data-aos="fade-up">
@@ -1459,64 +1447,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6: CRM & TOOL COMPATIBILITY -->
-    <section class="integrations-section">
-        <div class="integrations-container" data-aos="fade-up">
-            <h2>Plugs Into What You Already Use</h2>
-
-            <div class="integrations-grid">
-                <div class="integration-item"><i class="ph ph-chart-line-up"></i> GoHighLevel</div>
-                <div class="integration-item"><i class="fab fa-hubspot"></i> HubSpot</div>
-                <div class="integration-item"><i class="fab fa-salesforce"></i> Salesforce</div>
-                <div class="integration-item"><i class="ph ph-wrench"></i> ServiceTitan</div>
-                <div class="integration-item"><i class="ph ph-clipboard-text"></i> Jobber</div>
-                <div class="integration-item"><i class="ph ph-house-line"></i> Housecall Pro</div>
-                <div class="integration-item"><i class="ph ph-circles-four"></i> Zoho CRM</div>
-                <div class="integration-item"><i class="ph ph-kanban"></i> Monday.com</div>
-                <div class="integration-item"><i class="ph ph-funnel"></i> Pipedrive</div>
-                <div class="integration-item"><i class="fab fa-google"></i> Google Workspace</div>
-                <div class="integration-item"><i class="fab fa-slack"></i> Slack</div>
-                <div class="integration-item"><i class="ph ph-receipt"></i> QuickBooks</div>
-                <div class="integration-item"><i class="ph ph-phone-call"></i> Twilio</div>
-                <div class="integration-item"><i class="ph ph-plugs-connected"></i> Zapier</div>
-                <div class="integration-item"><i class="fab fa-stripe"></i> Stripe</div>
-            </div>
-
-            <p class="integrations-subtext">Don't see yours? We integrate with most major platforms. If there's an API, we can connect it.</p>
-        </div>
-    </section>
-
-    <!-- SECTION 7: RESULTS / SOCIAL PROOF -->
-    <section class="results-section">
-        <div class="results-container">
-            <div class="results-section-header" data-aos="fade-up">
-                <h2>What These Systems Deliver</h2>
-            </div>
-
-            <div class="results-stats" data-aos="fade-up" data-aos-delay="100">
-                <div class="results-stat">
-                    <div class="results-stat-number" data-count="10">< 10 sec</div>
-                    <div class="results-stat-label">Average lead response time</div>
-                </div>
-                <div class="results-stat">
-                    <div class="results-stat-number">3x</div>
-                    <div class="results-stat-label">More Google reviews per quarter</div>
-                </div>
-                <div class="results-stat">
-                    <div class="results-stat-number">60%+</div>
-                    <div class="results-stat-label">Reduction in missed calls</div>
-                </div>
-                <div class="results-stat">
-                    <div class="results-stat-number">40%</div>
-                    <div class="results-stat-label">Faster estimate turnaround</div>
-                </div>
-            </div>
-
-            <p class="results-disclaimer" data-aos="fade-up" data-aos-delay="200">Based on average results across active client systems. Individual results vary by business and implementation.</p>
-        </div>
-    </section>
-
-    <!-- SECTION 8: ENTERPRISE / CUSTOM PROJECTS -->
+    <!-- ENTERPRISE / CUSTOM PROJECTS -->
     <section class="enterprise-section">
         <div class="enterprise-container">
             <h2 data-aos="fade-up">Complex Operations. Custom-Built Systems.</h2>
