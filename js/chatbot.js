@@ -10,207 +10,129 @@
     const KNOWLEDGE_BASE = {
         company: {
             name: "Bright Automations",
-            founded: "2020",
-            founders: ["Jared Kolsun (Lead Developer/AI Specialist)", "Andrew Tesauro (COO)"],
             email: "admin@brightautomations.net",
             phone: "(610) 256-9844",
-            responseTime: "Usually within 4 hours, guaranteed within 24 hours",
-            hours: "Mon-Fri 9am-6pm EST",
-            stats: {
-                years: "3+",
-                clients: "50+",
-                projects: "70+",
-                satisfaction: "99%"
-            }
-        },
-        services: {
-            voiceAgent: {
-                name: "AI Voice Agent",
-                description: "24/7 human-like AI phone answering. Qualifies leads, books appointments, and transfers hot leads.",
-                features: ["Answers calls 24/7", "Qualifies leads with smart questions", "Books appointments directly", "Transfers hot leads", "Powered by ElevenLabs"]
-            },
-            chatbot: {
-                name: "Website Chatbot",
-                description: "Engage visitors instantly, answer FAQs, capture leads, and schedule appointments automatically.",
-                features: ["Instant visitor engagement", "Intelligent FAQ answers", "Lead capture", "Auto-qualification", "Direct scheduling"]
-            },
-            adLeadCapture: {
-                name: "Ad Lead Capture",
-                description: "Capture leads instantly from Meta, Google, and other ad platforms with auto-sync to your CRM.",
-                features: ["Meta & Google Ads integration", "Instant lead capture", "Auto CRM sync", "ROI tracking", "All major ad platforms"]
-            },
-            followUp: {
-                name: "Automated Follow-Up",
-                description: "Multi-channel sequences via SMS, Email, and WhatsApp. Never let leads go cold.",
-                features: ["SMS sequences", "Email automation", "WhatsApp messaging", "Appointment reminders", "Review requests"]
-            },
-            booking: {
-                name: "Smart Booking",
-                description: "Online booking portal with calendar sync, confirmations, and no-show reduction.",
-                features: ["Online booking portal", "Google/Outlook sync", "Automated confirmations", "Reschedule handling", "No-show reduction"]
-            },
-            invoicing: {
-                name: "Invoice Automation",
-                description: "Auto-generate invoices, send reminders, accept online payments, and get paid faster.",
-                features: ["Auto-generated invoices", "Payment reminders", "Online payments", "Receivables tracking", "Faster payments"]
-            }
-        },
-        pricing: {
-            starter: {
-                name: "Starter",
-                includes: ["Website Chatbot", "Lead Capture Forms", "Basic Email Follow-Up", "CRM Integration", "Setup & Training"],
-                price: "Contact for pricing"
-            },
-            professional: {
-                name: "Professional",
-                popular: true,
-                includes: ["Everything in Starter", "AI Voice Agent (24/7)", "SMS Follow-Up Sequences", "Smart Booking System", "Invoice Automation", "Ad Lead Capture", "Priority Support"],
-                price: "Contact for pricing"
-            },
-            enterprise: {
-                name: "Enterprise",
-                includes: ["Everything in Professional", "Multiple Voice Agent Lines", "Advanced Integrations", "Custom Workflows", "Dedicated Account Manager", "SLA & Uptime Guarantees"],
-                price: "Custom pricing"
-            }
-        },
-        integrations: [
-            "HubSpot", "Salesforce", "GoHighLevel", "Twilio", "WhatsApp", "Slack",
-            "Google Calendar", "Calendly", "Stripe", "Mailchimp", "Zapier",
-            "ElevenLabs", "Make", "n8n", "Toast POS", "MongoDB"
-        ],
-        industries: [
-            "HVAC", "Plumbing", "Electrical", "General Contracting", "Cleaning Services",
-            "Landscaping", "Auto Services", "Dental", "Medical Spas", "Law Firms",
-            "Real Estate", "Accounting", "Insurance", "Chiropractors", "Massage Therapy",
-            "Optometrists", "Veterinarians", "Interior Design", "Pool Services", "Pest Control",
-            "Locksmiths", "Appliance Repair", "Salon & Barbers", "Photography", "Moving Companies",
-            "Painting", "Roofing", "Fitness Studios", "Pet Services"
-        ],
-        faqs: [
-            {
-                q: "How long does implementation take?",
-                a: "Standard websites take less than 1 week. Automation projects typically take 1-2 weeks depending on complexity. We'll provide a detailed timeline during your consultation."
-            },
-            {
-                q: "What's included in pricing?",
-                a: "All plans include design, development, testing, deployment, setup, training, and initial support. No hidden fees. Ongoing maintenance is available separately."
-            },
-            {
-                q: "Do you offer ongoing support?",
-                a: "Yes! We offer various support and maintenance plans including updates, security patches, content updates, and technical support."
-            },
-            {
-                q: "Can you integrate with my existing systems?",
-                a: "Absolutely! We specialize in integrations with CRMs, email marketing tools, payment processors, and more. We work with your existing tech stack."
-            },
-            {
-                q: "What if I need changes after launch?",
-                a: "Easy! Existing clients use our Client Portal to submit change requests. We prioritize client requests and typically implement minor changes within 24-48 hours."
-            }
-        ]
+            text: "(732) 228-3794"
+        }
     };
 
     // Intent patterns and responses
     const INTENTS = [
         {
-            patterns: [/hello|hi|hey|good (morning|afternoon|evening)|greetings/i],
-            response: () => "Hello! Welcome to Bright Automations. I'm here to help you learn about our AI-powered business automation solutions. How can I assist you today?"
+            patterns: [/hello|hi|hey|good (morning|afternoon|evening)|greetings|sup|what'?s up/i],
+            response: () => "Hey! Welcome to Bright Automations. We build professional websites for home service businesses — $149, live in 48 hours. What can I help you with?"
         },
         {
             patterns: [/what (do you|does .* company) do|about (your|the) company|tell me about|who (are|is) bright/i],
-            response: () => `Bright Automations helps service businesses automate their entire lead-to-invoice workflow. We combine AI voice agents, chatbots, and automation technology to run your business on autopilot 24/7.\n\nFounded in ${KNOWLEDGE_BASE.company.founded}, we've helped ${KNOWLEDGE_BASE.company.stats.clients} clients with a ${KNOWLEDGE_BASE.company.stats.satisfaction} satisfaction rate.`
+            response: () => "We build professional websites for home service businesses. $149 one-time for the site, $39/month for hosting. Your site is live within 48 hours.\n\nWe handle everything — design, hosting, domain, SSL. You just tell us your business name and we do the rest."
         },
         {
-            patterns: [/services|what (can you|do you) offer|solutions|features/i],
-            response: () => `We offer 6 core automation services:\n\n• **AI Voice Agent** - 24/7 call answering & lead qualification\n• **Website Chatbot** - Instant visitor engagement\n• **Ad Lead Capture** - Meta & Google Ads integration\n• **Automated Follow-Up** - SMS, Email & WhatsApp sequences\n• **Smart Booking** - Online scheduling with calendar sync\n• **Invoice Automation** - Get paid faster\n\nWould you like details on any specific service?`
+            patterns: [/services|what (can you|do you) offer|solutions|what do you (build|make)|add(-| )?on/i],
+            response: () => "Here's what we offer:\n\n• **Website Build** — $149 one-time (up to 5 pages, mobile-friendly, live in 48 hours)\n• **Hosting** — $39/mo or $399/yr (save $69)\n• **Google Business Profile Optimization** — $49\n• **Review Generation Widget** — $29/mo\n• **Monthly SEO Updates** — $59/mo\n• **Social Media Landing Page** — $99\n\nWant details on any of these?"
         },
         {
-            patterns: [/voice agent|phone|call(s|ing)?|answer(ing)? (the )?phone/i],
-            response: () => `Our **AI Voice Agent** answers your calls 24/7 with human-like AI:\n\n• Qualifies leads with smart questions\n• Books appointments directly into your calendar\n• Transfers hot leads to your team\n• Never misses a call, even at 2am\n• Powered by ElevenLabs technology\n\nWant to hear it in action? Book a demo!`
+            patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
+            response: () => "Simple, transparent pricing:\n\n• **Website Build:** $149 one-time\n• **Hosting:** $39/month or $399/year (save $69)\n• **No contracts.** Cancel anytime.\n\nOptional add-ons:\n• Google Business Profile — $49\n• Review Widget — $29/mo\n• SEO Updates — $59/mo\n• Social Landing Page — $99\n\n👉 [Get your site now](/checkout.html)"
         },
         {
-            patterns: [/chatbot|chat bot|website chat|live chat/i],
-            response: () => `Our **Website Chatbot** engages visitors instantly:\n\n• Answers FAQs intelligently\n• Captures contact information\n• Qualifies leads automatically\n• Schedules appointments directly\n• Works 24/7 on your website\n\nYou're talking to one right now! Want to see more?`
+            patterns: [/free|preview|try|see (my|a) (site|website)|no commitment/i],
+            response: () => "Yes! We'll build you a free preview of your website — no commitment, no credit card.\n\nJust tell us your business name and we'll put together a preview in 30 seconds.\n\n👉 [Get your free preview](/contact.html)"
         },
         {
-            patterns: [/ad(s)?|lead capture|facebook|meta|google ads|advertising/i],
-            response: () => `Our **Ad Lead Capture** system works with all major platforms:\n\n• Meta Ads, Google Ads, TikTok, LinkedIn, YouTube\n• Captures leads instantly from campaigns\n• Auto-syncs to your CRM\n• Tracks ROI per campaign\n• Never lose a lead from your ad spend\n\nWant to maximize your advertising ROI?`
+            patterns: [/how long|timeline|when.*ready|when.*live|48 hours|turnaround/i],
+            response: () => "Your site is live within **48 hours** of payment and receiving your business info. After you pay, a team member texts you within 15 minutes to get started.\n\nAdd-on services (GBP, social pages) are also live within 48 hours."
         },
         {
-            patterns: [/follow(-| )?up|sms|email|whatsapp|nurture|sequence/i],
-            response: () => `Our **Automated Follow-Up** keeps leads warm:\n\n• Multi-channel sequences (SMS, Email, WhatsApp)\n• Personalized messages\n• Appointment reminders\n• Post-job review requests\n• Never lets leads go cold\n\nAutomated follow-up can increase conversions by 30%+!`
+            patterns: [/what('s| is) included|what do (i|you) get|features|pages/i],
+            response: () => "Every website build ($149) includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• 2 rounds of revisions\n• Live in 48 hours\n\nHosting ($39/mo) includes SSL, uptime monitoring, security updates, and maintenance."
         },
         {
-            patterns: [/book(ing)?|schedul(e|ing)|appointment|calendar/i],
-            response: () => `Our **Smart Booking** system reduces no-shows:\n\n• Online booking portal for clients\n• Syncs with Google Calendar, Outlook, Calendly\n• Automated confirmations & reminders\n• Handles reschedules & cancellations\n• Reduces no-shows significantly\n\nReady to streamline your scheduling?`
+            patterns: [/host(ing)?|domain|ssl|maintenance|server/i],
+            response: () => "Hosting is $39/month or $399/year (save $69).\n\nIncludes:\n• SSL certificate\n• Uptime monitoring\n• Security updates\n• Basic maintenance\n• No contracts — cancel anytime\n\nWe can register a new domain or transfer your existing one. Either way, we handle it."
         },
         {
-            patterns: [/invoice|invoicing|payment|billing|get paid/i],
-            response: () => `Our **Invoice Automation** gets you paid faster:\n\n• Auto-generates invoices after jobs complete\n• Sends payment reminders automatically\n• Accepts online payments (Stripe)\n• Tracks and manages receivables\n• Reduces time to payment\n\nStop chasing payments manually!`
+            patterns: [/google business|gbp|google profile|google listing/i],
+            response: () => "Our **Google Business Profile Optimization** is $49 one-time.\n\nWe update your:\n• Business categories & description\n• Photos & hours\n• Keywords for local search\n• Service areas\n\nLive within 48 hours of payment."
         },
         {
-            patterns: [/pric(e|ing)|cost|how much|package|plan/i],
-            response: () => `We offer 3 pricing tiers:\n\n**Starter** - Website Chatbot, Lead Forms, Basic Follow-Up, CRM Integration\n\n**Professional** (Most Popular) - Everything in Starter PLUS AI Voice Agent, SMS Sequences, Smart Booking, Invoice Automation, Ad Lead Capture\n\n**Enterprise** - Everything plus multiple lines, advanced integrations, dedicated account manager\n\nAll plans include setup, training, and support. Would you like to schedule a consultation for a custom quote?`
+            patterns: [/review|reviews|reputation|testimonial/i],
+            response: () => "Our **Review Generation Widget** is $29/month.\n\nIt automatically asks your customers for Google reviews after their service. More reviews = higher Google ranking = more calls.\n\nUp and running within 48 hours."
         },
         {
-            patterns: [/integration|integrate|connect|crm|hubspot|salesforce|zapier/i],
-            response: () => `We integrate with 16+ popular tools:\n\n**CRMs:** HubSpot, Salesforce, GoHighLevel\n**Communication:** Twilio, WhatsApp, Slack\n**Scheduling:** Google Calendar, Calendly\n**Payment:** Stripe\n**Marketing:** Mailchimp, Zapier\n**Automation:** Make, n8n\n\nWe work with your existing tech stack!`
+            patterns: [/seo|search engine|google rank|ranking|traffic/i],
+            response: () => "Our **Monthly SEO Updates** are $59/month.\n\nEach month we update your:\n• Meta tags & descriptions\n• Content & keywords\n• Local SEO signals\n\nThis helps your site rank higher in Google so more customers find you."
         },
         {
-            patterns: [/industr(y|ies)|business(es)?|who (do you|can you) (help|serve|work with)/i],
-            response: () => `We serve all service-based businesses including:\n\n• HVAC, Plumbing, Electrical, Contracting\n• Cleaning, Landscaping, Pool Services\n• Dental, Medical Spas, Chiropractors\n• Law Firms, Real Estate, Accounting\n• Salons, Fitness Studios, Pet Services\n• And many more!\n\nIf your business relies on leads and appointments, we can help.`
+            patterns: [/social|instagram|facebook|landing page|link in bio/i],
+            response: () => "Our **Social Media Landing Page** is $99 one-time.\n\nA single-page site optimized for your Instagram/Facebook link-in-bio. Sends visitors to your services, reviews, and contact info.\n\nLive within 48 hours."
         },
         {
-            patterns: [/how long|timeline|implementation|setup time/i],
-            response: () => "Standard website implementations take less than 1 week. Full automation projects typically take 1-2 weeks depending on complexity. We'll provide a detailed timeline during your consultation."
+            patterns: [/industr(y|ies)|business(es)?|who (do you|can you) (help|serve|work)|what (kind|type)/i],
+            response: () => "We specialize in **home service businesses**:\n\n• HVAC, Plumbing, Electrical\n• Roofing, Painting, Remodeling\n• Landscaping, Tree Service, Fencing\n• Cleaning, Pest Control, Pool Service\n• Restoration, Concrete, Flooring\n• Pressure Washing, Garage Door, Handyman\n\nIf you're a service business, we've got you covered."
         },
         {
-            patterns: [/support|help|maintenance|after (launch|sale)/i],
-            response: () => "Yes! All plans include setup, training, and ongoing support. We offer various maintenance plans including updates, security patches, and technical support. Existing clients can submit requests through our Client Portal."
+            patterns: [/refund|money back|not happy|cancel|guarantee/i],
+            response: () => "Full refund within 7 days of your site going live if you're not satisfied. No questions asked.\n\nHosting can be canceled anytime — no contracts, no cancellation fees. Annual hosting gets a prorated refund for unused months.\n\nWe want you to love your site."
         },
         {
-            patterns: [/demo|see it|show me|try|test/i],
-            response: () => `I'd love to show you our system in action! During a demo, you'll see:\n\n• Live AI voice agent demonstration\n• Chatbot walkthrough\n• Booking & invoicing features\n• How everything integrates together\n\n👉 [Book your free demo here](/demo.html) or call us at ${KNOWLEDGE_BASE.company.phone}`
+            patterns: [/change|revision|edit|update|modify/i],
+            response: () => "Your website build includes **2 rounds of revisions**. After that, additional revision rounds are $25 each.\n\nOnce your site is live, just text us what you want changed and we'll handle it."
         },
         {
-            patterns: [/contact|reach|talk to (a )?human|speak|call|email/i],
-            response: () => `You can reach our team:\n\n📧 **Email:** ${KNOWLEDGE_BASE.company.email}\n📞 **Phone:** ${KNOWLEDGE_BASE.company.phone}\n🕐 **Hours:** ${KNOWLEDGE_BASE.company.hours}\n\nWe typically respond within 4 hours, guaranteed within 24 hours.\n\n👉 Or [fill out our contact form](/contact.html)`
+            patterns: [/contact|reach|talk to (a )?human|speak|call|email|text|phone/i],
+            response: () => `You can reach us:\n\n• **Email:** ${KNOWLEDGE_BASE.company.email}\n• **Call:** ${KNOWLEDGE_BASE.company.phone}\n• **Text:** ${KNOWLEDGE_BASE.company.text}\n\nWe typically respond within 4 hours.\n\n👉 Or [fill out our contact form](/contact.html)`
         },
         {
-            patterns: [/get started|start|begin|sign up|ready/i],
-            response: () => `Great! Here's how to get started:\n\n1. **Book a Demo** - See our AI in action\n2. **Consultation** - We'll design your custom solution\n3. **Implementation** - We set everything up (1-2 weeks)\n4. **Launch** - Your automation goes live!\n\n👉 [Schedule your free demo](/demo.html) to begin!`
+            patterns: [/get started|start|begin|sign up|ready|buy|purchase|order/i],
+            response: () => "Here's how it works:\n\n1. **Pay $149** on our checkout page\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/checkout.html)"
         },
         {
-            patterns: [/thank|thanks|awesome|great|perfect/i],
-            response: () => "You're welcome! Is there anything else you'd like to know about Bright Automations? I'm happy to help with any other questions."
+            patterns: [/how (does|do) (it|this) work|process|step/i],
+            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Pay $149 to go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/contact.html)"
         },
         {
-            patterns: [/bye|goodbye|see you|talk later/i],
-            response: () => "Thanks for chatting! If you have more questions later, I'm always here. Have a great day! 👋"
+            patterns: [/already have a (website|site)|existing (website|site)|replace|redesign/i],
+            response: () => "If your current website isn't getting you leads, it's costing you money. We'll build you a free preview of what a better site looks like — no commitment.\n\nIf you love it, we handle the transition. If not, no hard feelings.\n\n👉 [See your free preview](/contact.html)"
         },
         {
-            patterns: [/founder|team|who (built|made|created)|jared|andrew/i],
-            response: () => `Bright Automations was founded in ${KNOWLEDGE_BASE.company.founded} by:\n\n• **Jared Kolsun** - Lead Developer & AI Specialist\n• **Andrew Tesauro** - COO\n\nOur team combines technical expertise with business operations knowledge to deliver solutions that actually work for service businesses.`
+            patterns: [/content|copy|photos|logo|provide|need from me/i],
+            response: () => "You don't need to provide anything! We pull your business info, reviews, and photos from Google.\n\nIf you have specific photos or a logo you want used, just send them over. But it's not required — we handle everything."
         },
         {
-            patterns: [/results|roi|success|case stud(y|ies)|testimonial/i],
-            response: () => `Our clients see real results:\n\n• **70% reduction** in admin time\n• **80% fewer** no-shows\n• **150%+ increase** in lead conversion\n• **24/7 availability** without extra staff\n\n👉 [See our case studies](/portfolio.html) for detailed success stories!`
+            patterns: [/own|ownership|my (site|website|domain)|take (it|my site)|portable/i],
+            response: () => "You own your business content (text, photos, logos). We own the website template and code — your license is active as long as hosting is active.\n\nIf we register a domain for you, **you own the domain** regardless of hosting status."
+        },
+        {
+            patterns: [/thank|thanks|awesome|great|perfect|cool|nice/i],
+            response: () => "You're welcome! Anything else you'd like to know? I'm happy to help."
+        },
+        {
+            patterns: [/bye|goodbye|see you|talk later|that'?s (all|it)/i],
+            response: () => "Thanks for chatting! If you have more questions, I'm always here. Have a great day!"
+        },
+        {
+            patterns: [/cheap|expensive|worth it|competitors|other companies|why you|why bright/i],
+            response: () => "Most web designers charge $2,000-$5,000+ for a website. We charge $149 because we've built hundreds of sites for your industry and streamlined the process.\n\nSame professional result. Fraction of the price. Live in 48 hours instead of weeks.\n\nNo contracts. Full refund if you're not happy within 7 days."
+        },
+        {
+            patterns: [/what happens after|after (i |I )?pay|next steps|what now/i],
+            response: () => "After you pay:\n\n1. A team member **texts you within 15 minutes**\n2. We collect your business info (name, services, photos)\n3. We build your site\n4. **Live within 48 hours**\n5. You review it and we make any changes (2 revision rounds included)\n\nSimple as that."
         }
     ];
 
     // Default response when no intent matches
     const DEFAULT_RESPONSES = [
-        "I'd be happy to help with that! Could you tell me more about what you're looking for? I can help with our services, pricing, integrations, or how to get started.",
-        "That's a great question! For the most accurate answer, I'd recommend speaking with our team. You can reach us at admin@brightautomations.net or (610) 256-9844.",
-        "I want to make sure I give you the right information. Could you rephrase that, or would you like to know about our services, pricing, or how we can help automate your business?"
+        "Good question! I can help with pricing, what's included, how the process works, or our add-on services. What would you like to know?",
+        "I want to make sure I give you the right answer. You can also reach our team directly at admin@brightautomations.net or text us at (732) 228-3794.",
+        "I'm not sure I understood that. Would you like to know about our pricing ($149 websites), how it works, or what's included?"
     ];
 
     // Quick action buttons
     const QUICK_ACTIONS = [
-        { label: "Our Services", value: "What services do you offer?" },
-        { label: "Pricing", value: "What are your pricing plans?" },
-        { label: "Book Demo", value: "I'd like to book a demo" },
-        { label: "Contact Us", value: "How can I contact you?" }
+        { label: "Pricing", value: "How much does it cost?" },
+        { label: "How It Works", value: "How does the process work?" },
+        { label: "What's Included", value: "What's included in a website?" },
+        { label: "Get Started", value: "I'm ready to get started" }
     ];
 
     // Chat state
@@ -438,7 +360,7 @@
             // Send welcome message if first time
             if (messages.length === 0) {
                 setTimeout(() => {
-                    addMessage("I'm the Bright Automations assistant. How can I help?", false, true);
+                    addMessage("Hey! I'm the Bright Automations assistant. We build professional websites for home service businesses — $149, live in 48 hours. What can I help you with?", false, true);
                 }, 500);
             }
         } else {
