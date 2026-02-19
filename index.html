@@ -370,9 +370,24 @@
         .marquee-track:hover {
             animation-play-state: paused;
         }
+        .marquee-track-reverse {
+            display: flex;
+            animation: marqueeReverse 40s linear infinite;
+            width: max-content;
+        }
+        .marquee-track-reverse:hover {
+            animation-play-state: paused;
+        }
+        .marquee-container + .marquee-container {
+            margin-top: 0.75rem;
+        }
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
         .marquee-item {
             display: flex;
@@ -1018,6 +1033,31 @@
                 <div class="marquee-item github"><i class="fab fa-github"></i><span>GitHub</span></div>
                 <div class="marquee-item figma"><i class="fab fa-figma"></i><span>Figma</span></div>
                 <div class="marquee-item slack"><i class="fab fa-slack"></i><span>Slack</span></div>
+            </div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-track-reverse">
+                <div class="marquee-item"><i class="fab fa-hubspot" style="color: #FF7A59;"></i><span>HubSpot</span></div>
+                <div class="marquee-item"><i class="fab fa-shopify" style="color: #96BF48;"></i><span>Shopify</span></div>
+                <div class="marquee-item"><i class="fab fa-mailchimp" style="color: #FFE01B;"></i><span>Mailchimp</span></div>
+                <div class="marquee-item"><i class="fab fa-zapier" style="color: #FF4A00;"></i><span>Zapier</span></div>
+                <div class="marquee-item"><i class="fab fa-salesforce" style="color: #00A1E0;"></i><span>Salesforce</span></div>
+                <div class="marquee-item"><i class="fab fa-twilio" style="color: #F22F46;"></i><span>Twilio</span></div>
+                <div class="marquee-item"><i class="fab fa-square" style="color: #3E4348;"></i><span>Square</span></div>
+                <div class="marquee-item"><i class="fab fa-dropbox" style="color: #0061FF;"></i><span>Dropbox</span></div>
+                <div class="marquee-item"><i class="fab fa-google-drive" style="color: #4285F4;"></i><span>Google Drive</span></div>
+                <div class="marquee-item"><i class="fab fa-trello" style="color: #0052CC;"></i><span>Trello</span></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><i class="fab fa-hubspot" style="color: #FF7A59;"></i><span>HubSpot</span></div>
+                <div class="marquee-item"><i class="fab fa-shopify" style="color: #96BF48;"></i><span>Shopify</span></div>
+                <div class="marquee-item"><i class="fab fa-mailchimp" style="color: #FFE01B;"></i><span>Mailchimp</span></div>
+                <div class="marquee-item"><i class="fab fa-zapier" style="color: #FF4A00;"></i><span>Zapier</span></div>
+                <div class="marquee-item"><i class="fab fa-salesforce" style="color: #00A1E0;"></i><span>Salesforce</span></div>
+                <div class="marquee-item"><i class="fab fa-twilio" style="color: #F22F46;"></i><span>Twilio</span></div>
+                <div class="marquee-item"><i class="fab fa-square" style="color: #3E4348;"></i><span>Square</span></div>
+                <div class="marquee-item"><i class="fab fa-dropbox" style="color: #0061FF;"></i><span>Dropbox</span></div>
+                <div class="marquee-item"><i class="fab fa-google-drive" style="color: #4285F4;"></i><span>Google Drive</span></div>
+                <div class="marquee-item"><i class="fab fa-trello" style="color: #0052CC;"></i><span>Trello</span></div>
             </div>
         </div>
     </section>
