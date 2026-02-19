@@ -226,76 +226,53 @@
         .hero-systems-link:hover strong {
             color: #ffffff;
         }
-        /* ===== TESTIMONIALS MARQUEE ===== */
+        /* ===== TESTIMONIALS ===== */
         .testimonials-section {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             background: #ffffff;
             overflow: hidden;
         }
         .testimonials-section .section-header {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
-        .testimonials-marquee {
+        .testimonials-carousel {
             position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        .testimonials-marquee::before,
-        .testimonials-marquee::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 80px;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .testimonials-marquee::before {
-            left: 0;
-            background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
-        }
-        .testimonials-marquee::after {
-            right: 0;
-            background: linear-gradient(90deg, transparent 0%, #ffffff 100%);
-        }
-        .testimonials-track {
-            display: flex;
-            animation: testimonialScroll 55s linear infinite;
-            width: max-content;
-        }
-        .testimonials-track:hover {
-            animation-play-state: paused;
-        }
-        @keyframes testimonialScroll {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+            max-width: 600px;
+            margin: 0 auto;
+            min-height: 140px;
         }
         .testimonial-card {
-            flex-shrink: 0;
-            width: 340px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin: 0 0.75rem;
-            transition: all 0.3s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: center;
+            padding: 0 2rem;
+            pointer-events: none;
         }
-        .testimonial-card:hover {
-            border-color: #2E7D8A;
-            box-shadow: 0 4px 16px rgba(46, 125, 138, 0.12);
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
         .testimonial-stars {
             color: #f59e0b;
-            font-size: 0.85rem;
-            margin-bottom: 0.625rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
             letter-spacing: 0.05em;
         }
         .testimonial-quote {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #334155;
             line-height: 1.6;
             font-style: italic;
             margin-bottom: 0.75rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .testimonial-author {
             font-weight: 700;
@@ -306,6 +283,26 @@
             color: #64748b;
             font-size: 0.75rem;
             margin-top: 0.1rem;
+        }
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .testimonial-dot.active {
+            background: #2E7D8A;
+            transform: scale(1.25);
         }
 
         .pricing-cta {
@@ -822,14 +819,16 @@
                 flex-wrap: wrap;
             }
             .testimonials-section {
-                padding: 1.5rem 0;
+                padding: 1.25rem 0;
+            }
+            .testimonials-carousel {
+                min-height: 160px;
             }
             .testimonial-card {
-                width: 280px;
-                padding: 1.25rem;
+                padding: 0 1rem;
             }
             .testimonial-quote {
-                font-size: 0.85rem;
+                font-size: 0.875rem;
             }
             .hero-systems-link {
                 font-size: 0.85rem;
@@ -1029,10 +1028,8 @@
             <div class="section-header" data-aos="fade-up">
                 <h2>What Our Clients Say</h2>
             </div>
-        </div>
-        <div class="testimonials-marquee">
-            <div class="testimonials-track">
-                <div class="testimonial-card">
+            <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card active">
                     <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="testimonial-quote">"They had our site live in two days. We went from zero online presence to getting calls the same week."</p>
                     <p class="testimonial-author">Mike R.</p>
@@ -1056,31 +1053,12 @@
                     <p class="testimonial-author">David K.</p>
                     <p class="testimonial-role">Owner, Plumbing Company</p>
                 </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="testimonial-card">
-                    <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"They had our site live in two days. We went from zero online presence to getting calls the same week."</p>
-                    <p class="testimonial-author">Mike R.</p>
-                    <p class="testimonial-role">Owner, Restoration Company</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"The automation system texts our leads back instantly. We've closed deals at 11pm that we would have lost."</p>
-                    <p class="testimonial-author">Sarah T.</p>
-                    <p class="testimonial-role">Operations Manager, HVAC Services</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"$149 for a site that looks like it cost thousands. Best investment we've made this year."</p>
-                    <p class="testimonial-author">James L.</p>
-                    <p class="testimonial-role">Owner, Landscaping Business</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"Our Google reviews went from 12 to 85 in three months. The review automation is a game changer."</p>
-                    <p class="testimonial-author">David K.</p>
-                    <p class="testimonial-role">Owner, Plumbing Company</p>
-                </div>
+            </div>
+            <div class="testimonial-dots" data-aos="fade-up" data-aos-delay="150">
+                <button class="testimonial-dot active" data-index="0"></button>
+                <button class="testimonial-dot" data-index="1"></button>
+                <button class="testimonial-dot" data-index="2"></button>
+                <button class="testimonial-dot" data-index="3"></button>
             </div>
         </div>
     </section>
@@ -1375,6 +1353,32 @@
             offset: 50
         });
 
+        // Testimonials carousel
+        (function() {
+            var cards = document.querySelectorAll('.testimonial-card');
+            var dots = document.querySelectorAll('.testimonial-dot');
+            var current = 0;
+            var total = cards.length;
+            if (total === 0) return;
+
+            function showSlide(index) {
+                cards[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = index;
+                cards[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                    showSlide(parseInt(this.dataset.index));
+                });
+            });
+
+            setInterval(function() {
+                showSlide((current + 1) % total);
+            }, 5000);
+        })();
     </script>
 </body>
 </html>

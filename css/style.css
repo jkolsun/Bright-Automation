@@ -263,7 +263,7 @@ body {
 }
 
 .logo-img-large {
-    height: 56px;
+    height: 72px;
     width: auto;
     transition: all var(--transition-base);
 }
