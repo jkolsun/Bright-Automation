@@ -350,8 +350,30 @@ body {
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%) !important;
 }
 
-/* Mobile Join Button - positioned left of hamburger */
-.mobile-join-btn {
+.nav-faq {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+    margin-left: 0.25rem;
+}
+
+.nav-faq:hover {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%) !important;
+}
+
+.nav-faq i {
+    font-size: 1rem;
+    margin-right: 0.15rem;
+}
+
+/* Mobile CTA Buttons - positioned left of hamburger */
+.mobile-cta-group {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.mobile-join-btn,
+.mobile-faq-btn {
     display: none;
     padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
@@ -360,7 +382,6 @@ body {
     border-radius: var(--radius-full);
     font-weight: 600;
     font-size: 0.8rem;
-    margin-right: 1rem;
 }
 
 /* Mobile Menu Toggle */
@@ -2013,7 +2034,14 @@ body {
         margin-left: 0;
     }
 
-    .mobile-join-btn {
+    .nav-menu .nav-faq {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+
+    .mobile-join-btn,
+    .mobile-faq-btn {
         display: block;
     }
 
