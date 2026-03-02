@@ -641,6 +641,131 @@ body::after {
 }
 
 /* ===========================
+   MOBILE OVERLAY — Applied via JS when menu moved to body
+   =========================== */
+.nav-menu.mobile-open {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0f172a;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 9999;
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    animation: overlayFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.nav-menu.mobile-open li {
+    list-style: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: overlayItemIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.nav-menu.mobile-open li:nth-child(1) { animation-delay: 0.06s; }
+.nav-menu.mobile-open li:nth-child(2) { animation-delay: 0.11s; }
+.nav-menu.mobile-open li:nth-child(3) { animation-delay: 0.16s; }
+.nav-menu.mobile-open li:nth-child(4) { animation-delay: 0.21s; }
+.nav-menu.mobile-open li:nth-child(5) { animation-delay: 0.26s; }
+.nav-menu.mobile-open li:nth-child(6) { animation-delay: 0.31s; }
+.nav-menu.mobile-open li:nth-child(7) { animation-delay: 0.36s; }
+
+@keyframes overlayItemIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-menu.mobile-open a {
+    font-family: var(--font-display);
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.6rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
+}
+
+.nav-menu.mobile-open a::after {
+    display: none !important;
+}
+
+.nav-menu.mobile-open a:not(.nav-cta)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 12px rgba(46, 125, 138, 0.5);
+    transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-menu.mobile-open a:not(.nav-cta):hover {
+    color: white;
+    padding-left: 2.5rem;
+}
+
+.nav-menu.mobile-open a:not(.nav-cta):hover::before {
+    height: 60%;
+}
+
+.nav-menu.mobile-open a:not(.nav-cta).active {
+    color: var(--primary-light);
+    font-weight: 700;
+}
+
+.nav-menu.mobile-open a:not(.nav-cta).active::before {
+    height: 60%;
+    background: linear-gradient(to bottom, var(--primary), #10B981);
+}
+
+.nav-menu.mobile-open .nav-cta {
+    font-size: 1rem !important;
+    padding: 0.875rem 2.5rem !important;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.nav-menu.mobile-open .nav-join {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+    color: white !important;
+    box-shadow: 0 4px 20px rgba(46, 125, 138, 0.3);
+    margin-left: 0;
+}
+
+.nav-menu.mobile-open .nav-faq {
+    background: transparent !important;
+    color: var(--primary-light) !important;
+    border: 1.5px solid rgba(74, 171, 184, 0.4) !important;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0.25rem;
+}
+
+/* Bump navbar z-index when menu is open so X button stays clickable */
+.navbar.nav-open {
+    z-index: 10000;
+}
+
+/* ===========================
    MENU TOGGLE — Hidden on desktop, visible on mobile
    =========================== */
 .menu-toggle {
@@ -2300,87 +2425,9 @@ body::after {
         display: flex;
     }
 
-    /* Slide-down panel */
+    /* Hide nav menu on mobile (JS moves it to body as overlay) */
     .nav-menu {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(24px) saturate(180%);
-        -webkit-backdrop-filter: blur(24px) saturate(180%);
-        flex-direction: column;
-        padding: 1.25rem 1.5rem 1.5rem;
-        box-shadow:
-            0 20px 60px rgba(0, 0, 0, 0.1),
-            0 0 40px rgba(46, 125, 138, 0.04);
-        gap: 0.125rem;
-        border-top: 1px solid rgba(46, 125, 138, 0.1);
-        border-bottom: 2px solid rgba(46, 125, 138, 0.12);
-        z-index: 10000;
-    }
-
-    .nav-menu.active {
-        display: flex;
-        animation: mobileMenuSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    @keyframes mobileMenuSlideIn {
-        from { opacity: 0; transform: translateY(-8px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .nav-menu li {
-        width: 100%;
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 0.75rem 1rem;
-        font-family: var(--font-display);
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: var(--gray-700) !important;
-        border-radius: var(--radius-md);
-        transition: all 0.25s ease;
-    }
-
-    .nav-menu a:hover {
-        background: rgba(46, 125, 138, 0.06);
-        color: var(--primary) !important;
-        padding-left: 1.25rem;
-    }
-
-    .nav-menu a:not(.nav-cta).active {
-        color: var(--primary) !important;
-        background: rgba(46, 125, 138, 0.08);
-        font-weight: 600;
-    }
-
-    .nav-menu a:not(.nav-cta)::after {
-        display: none !important;
-    }
-
-    .nav-menu .nav-cta {
-        text-align: center;
-        margin-top: 0.5rem;
-        color: white !important;
-    }
-
-    .nav-menu .nav-join {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%) !important;
-        margin-left: 0;
-    }
-
-    .nav-menu .nav-faq {
-        background: transparent !important;
-        color: var(--primary) !important;
-        border: 1.5px solid rgba(46, 125, 138, 0.3) !important;
-        margin-left: 0;
-        margin-top: 0.25rem;
     }
 
     .nav-social {
