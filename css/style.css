@@ -107,6 +107,10 @@ html {
     font-size: 16px;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-sans);
     line-height: 1.7;
@@ -115,6 +119,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* ===========================
@@ -648,8 +654,10 @@ body::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: #0f172a;
     flex-direction: column;
     align-items: center;
@@ -669,6 +677,7 @@ body::after {
 
 .nav-menu.mobile-open li {
     list-style: none;
+    text-align: center;
     opacity: 0;
     transform: translateY(20px);
     animation: overlayItemIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -690,41 +699,43 @@ body::after {
     font-family: var(--font-display);
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    padding: 0.6rem 2rem;
+    padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
     display: block;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .nav-menu.mobile-open a::after {
     display: none !important;
 }
 
+/* Bottom underline accent instead of left bar — stays centered */
 .nav-menu.mobile-open a:not(.nav-cta)::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 0;
-    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
     border-radius: var(--radius-full);
-    box-shadow: 0 0 12px rgba(46, 125, 138, 0.5);
-    transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 10px rgba(46, 125, 138, 0.4);
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover {
     color: white;
-    padding-left: 2.5rem;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover::before {
-    height: 60%;
+    width: 60%;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active {
@@ -733,15 +744,16 @@ body::after {
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active::before {
-    height: 60%;
-    background: linear-gradient(to bottom, var(--primary), #10B981);
+    width: 60%;
+    background: linear-gradient(90deg, var(--primary), #10B981);
 }
 
 .nav-menu.mobile-open .nav-cta {
-    font-size: 1rem !important;
-    padding: 0.875rem 2.5rem !important;
-    margin-top: 0.75rem;
+    font-size: 0.9rem !important;
+    padding: 0.75rem 2rem !important;
+    margin-top: 0.5rem;
     text-align: center;
+    white-space: nowrap;
 }
 
 .nav-menu.mobile-open .nav-join {
@@ -757,7 +769,7 @@ body::after {
     border: 1.5px solid rgba(74, 171, 184, 0.4) !important;
     box-shadow: none;
     margin-left: 0;
-    margin-top: 0.25rem;
+    margin-top: 0;
 }
 
 /* Bump navbar z-index when menu is open so X button stays clickable */
