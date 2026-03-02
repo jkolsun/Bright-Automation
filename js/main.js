@@ -820,8 +820,7 @@ document.addEventListener('DOMContentLoaded', initParallax);
 
 // Initialize all effects
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize custom cursor
-    new CustomCursor();
+    // Custom cursor disabled — using normal browser cursor
 
     // Initialize particle system
     new ParticleSystem();
@@ -994,42 +993,7 @@ function initGSAPAnimations() {
 
     const isMobile = window.innerWidth <= 768;
 
-    // Stagger reveal for card grids
-    const cardGrids = document.querySelectorAll('.steps-grid, .features-grid, .stats-grid, .industries-row');
-    cardGrids.forEach(grid => {
-        const cards = grid.children;
-        if (cards.length === 0) return;
-
-        gsap.from(cards, {
-            scrollTrigger: {
-                trigger: grid,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: 'power2.out'
-        });
-    });
-
-    // Section headers slide in
-    document.querySelectorAll('.section-header').forEach(header => {
-        gsap.from(header, {
-            scrollTrigger: {
-                trigger: header,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            y: 30,
-            opacity: 0,
-            duration: 0.7,
-            ease: 'power2.out'
-        });
-    });
-
-    // Counter animations for stat numbers
+    // Counter animations for stat numbers (GSAP-only — AOS can't do this)
     document.querySelectorAll('.stat-number').forEach(stat => {
         const text = stat.textContent;
         const match = text.match(/^(\d+)/);
@@ -1042,7 +1006,6 @@ function initGSAPAnimations() {
             trigger: stat,
             start: 'top 85%',
             onEnter: () => {
-                gsap.from(stat, { duration: 0.3, opacity: 0, y: 20, ease: 'power2.out' });
                 let obj = { val: 0 };
                 gsap.to(obj, {
                     val: target,
@@ -1070,23 +1033,6 @@ function initGSAPAnimations() {
                 y: (i + 1) * 80,
                 ease: 'none'
             });
-        });
-    }
-
-    // Pricing card entrance
-    const pricingCard = document.querySelector('.pricing-card-main');
-    if (pricingCard) {
-        gsap.from(pricingCard, {
-            scrollTrigger: {
-                trigger: pricingCard,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            y: 50,
-            opacity: 0,
-            scale: 0.95,
-            duration: 0.8,
-            ease: 'power2.out'
         });
     }
 }
