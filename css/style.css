@@ -667,34 +667,33 @@ body::after {
     list-style: none;
     padding: 2rem;
     margin: 0;
-    animation: overlayFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes overlayFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    opacity: 1 !important;
 }
 
 .nav-menu.mobile-open li {
     list-style: none;
     text-align: center;
-    opacity: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: list-item !important;
 }
 
 .nav-menu.mobile-open a {
-    font-family: var(--font-display);
-    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-display) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
     text-decoration: none;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
-    display: block;
+    display: block !important;
     text-align: center;
     white-space: nowrap;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .nav-menu.mobile-open a::after {
@@ -717,7 +716,7 @@ body::after {
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover {
-    color: white;
+    color: white !important;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover::before {
@@ -725,8 +724,8 @@ body::after {
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active {
-    color: var(--primary-light);
-    font-weight: 700;
+    color: var(--primary-light) !important;
+    font-weight: 700 !important;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active::before {
