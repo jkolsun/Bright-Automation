@@ -678,21 +678,7 @@ body::after {
 .nav-menu.mobile-open li {
     list-style: none;
     text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: overlayItemIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.nav-menu.mobile-open li:nth-child(1) { animation-delay: 0.06s; }
-.nav-menu.mobile-open li:nth-child(2) { animation-delay: 0.11s; }
-.nav-menu.mobile-open li:nth-child(3) { animation-delay: 0.16s; }
-.nav-menu.mobile-open li:nth-child(4) { animation-delay: 0.21s; }
-.nav-menu.mobile-open li:nth-child(5) { animation-delay: 0.26s; }
-.nav-menu.mobile-open li:nth-child(6) { animation-delay: 0.31s; }
-.nav-menu.mobile-open li:nth-child(7) { animation-delay: 0.36s; }
-
-@keyframes overlayItemIn {
-    to { opacity: 1; transform: translateY(0); }
+    opacity: 1;
 }
 
 .nav-menu.mobile-open a {
