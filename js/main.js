@@ -354,7 +354,7 @@ class TypingEffect {
     }
 }
 
-// Full-Screen Menu Toggle
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -363,7 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             if (menuToggle) menuToggle.classList.remove('active');
-            document.body.style.overflow = '';
         }
     }
 
@@ -372,18 +371,15 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
     }
 
-    // Close menu when clicking on overlay background (not on links)
-    if (navMenu) {
-        navMenu.addEventListener('click', function(event) {
-            if (event.target === navMenu) {
-                closeMenu();
-            }
-        });
-    }
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-container') && navMenu && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 
     // Close menu when clicking on a nav link
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -391,13 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             closeMenu();
         });
-    });
-
-    // Close menu on Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeMenu();
-        }
     });
 });
 
