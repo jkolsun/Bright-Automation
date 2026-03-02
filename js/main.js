@@ -178,7 +178,7 @@ class MouseTrail {
                 position: fixed;
                 width: ${3 + (this.trailLength - i) * 0.3}px;
                 height: ${3 + (this.trailLength - i) * 0.3}px;
-                background: rgba(0, 229, 255, ${0.1 + (this.trailLength - i) * 0.03});
+                background: rgba(46, 125, 138, ${0.1 + (this.trailLength - i) * 0.03});
                 border-radius: 50%;
                 pointer-events: none;
                 z-index: 9998;
@@ -217,36 +217,7 @@ class MouseTrail {
     }
 }
 
-// Tilt Effect for Cards
-class TiltEffect {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        const cards = document.querySelectorAll('.card, .feature-card, .pricing-card');
-
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-            });
-        });
-    }
-}
+// Tilt Effect replaced by Vanilla Tilt.js library
 
 // Magnetic Buttons
 class MagneticButtons {
@@ -445,7 +416,7 @@ function setActiveNavLink() {
 
 document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
-// Smooth Scroll for Anchor Links
+// Smooth Scroll for Anchor Links (uses Lenis when available)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -454,11 +425,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             e.preventDefault();
-            const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+            if (window._lenis) {
+                window._lenis.scrollTo(targetElement, { offset: -80 });
+            } else {
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
         }
     });
 });
@@ -555,10 +527,10 @@ function showNotification(message, type = 'info') {
                 background: rgba(14, 30, 50, 0.95);
                 backdrop-filter: blur(20px);
                 border-radius: 12px;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.2);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(46, 125, 138, 0.2);
                 z-index: 10000;
                 animation: slideIn 0.3s ease;
-                border: 1px solid rgba(0, 229, 255, 0.2);
+                border: 1px solid rgba(46, 125, 138, 0.2);
                 color: #fff;
             }
 
@@ -602,12 +574,12 @@ function showNotification(message, type = 'info') {
             }
 
             .notification-info {
-                border-left: 4px solid #00E5FF;
+                border-left: 4px solid #4AABB8;
             }
 
             .notification-info i {
-                color: #00E5FF;
-                text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+                color: #4AABB8;
+                text-shadow: 0 0 10px rgba(74, 171, 184, 0.5);
             }
 
             .notification-close {
@@ -627,7 +599,7 @@ function showNotification(message, type = 'info') {
             }
 
             .notification-close:hover {
-                color: #00E5FF;
+                color: #4AABB8;
             }
 
             @media (max-width: 768px) {
@@ -775,7 +747,7 @@ function createBackToTopButton() {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #2E7D8A 0%, #00E5FF 100%);
+        background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
         color: white;
         border: none;
         font-size: 1.25rem;
@@ -784,7 +756,7 @@ function createBackToTopButton() {
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 20px rgba(0, 229, 255, 0.4);
+        box-shadow: 0 4px 20px rgba(46, 125, 138, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -803,20 +775,21 @@ function createBackToTopButton() {
     });
 
     button.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        if (window._lenis) {
+            window._lenis.scrollTo(0);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
 
     button.addEventListener('mouseenter', () => {
         button.style.transform = 'scale(1.1)';
-        button.style.boxShadow = '0 8px 30px rgba(0, 229, 255, 0.6)';
+        button.style.boxShadow = '0 8px 30px rgba(46, 125, 138, 0.6)';
     });
 
     button.addEventListener('mouseleave', () => {
         button.style.transform = 'scale(1)';
-        button.style.boxShadow = '0 4px 20px rgba(0, 229, 255, 0.4)';
+        button.style.boxShadow = '0 4px 20px rgba(46, 125, 138, 0.4)';
     });
 }
 
@@ -859,9 +832,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize glowing text
     new GlowingText();
 
-    // Initialize tilt effect
-    new TiltEffect();
-
     // Initialize magnetic buttons
     new MagneticButtons();
 
@@ -869,8 +839,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrambleStyle = document.createElement('style');
     scrambleStyle.textContent = `
         .scramble-char {
-            color: #00E5FF;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            color: #4AABB8;
+            text-shadow: 0 0 10px rgba(74, 171, 184, 0.5);
         }
     `;
     document.head.appendChild(scrambleStyle);
@@ -900,7 +870,7 @@ function initRevealSections() {
 
 document.addEventListener('DOMContentLoaded', initRevealSections);
 
-// Smooth page transitions
+// Smooth page transitions (enhanced)
 function initPageTransitions() {
     document.body.classList.add('page-loaded');
 
@@ -914,7 +884,7 @@ function initPageTransitions() {
                 document.body.classList.add('page-leaving');
                 setTimeout(() => {
                     window.location.href = href;
-                }, 300);
+                }, 400);
             }
         });
     });
@@ -933,23 +903,254 @@ window.addEventListener('pageshow', function(event) {
     }
 });
 
-// Add page transition styles
+// Page transition styles
 const transitionStyles = document.createElement('style');
 transitionStyles.textContent = `
     body {
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transform: translateY(8px);
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body.page-loaded {
         opacity: 1;
+        transform: translateY(0);
     }
 
     body.page-leaving {
         opacity: 0;
+        transform: translateY(-8px);
     }
 `;
 document.head.appendChild(transitionStyles);
+
+// ===========================
+// LENIS SMOOTH SCROLLING
+// ===========================
+function initLenis() {
+    if (typeof Lenis === 'undefined') return;
+
+    // Skip Lenis on iOS/touch devices — native scroll is better there
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isIOS || (isTouchDevice && window.innerWidth <= 1024)) return;
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+        smoothTouch: false
+    });
+
+    window._lenis = lenis;
+
+    // Connect Lenis to GSAP ScrollTrigger
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+    } else {
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initLenis);
+
+// ===========================
+// VANILLA TILT.JS INITIALIZATION
+// ===========================
+function initVanillaTilt() {
+    if (typeof VanillaTilt === 'undefined') return;
+    if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
+
+    const tiltElements = document.querySelectorAll('.card, .feature-card, .pricing-card, .pricing-card-main, .step-card, .faq-item, .system-card, .team-card, .portfolio-card');
+
+    VanillaTilt.init(tiltElements, {
+        max: 6,
+        speed: 400,
+        glare: true,
+        'max-glare': 0.12,
+        scale: 1.02
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initVanillaTilt);
+
+// ===========================
+// GSAP SCROLL ANIMATIONS
+// ===========================
+function initGSAPAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const isMobile = window.innerWidth <= 768;
+
+    // Stagger reveal for card grids
+    const cardGrids = document.querySelectorAll('.steps-grid, .features-grid, .stats-grid, .industries-row');
+    cardGrids.forEach(grid => {
+        const cards = grid.children;
+        if (cards.length === 0) return;
+
+        gsap.from(cards, {
+            scrollTrigger: {
+                trigger: grid,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out'
+        });
+    });
+
+    // Section headers slide in
+    document.querySelectorAll('.section-header').forEach(header => {
+        gsap.from(header, {
+            scrollTrigger: {
+                trigger: header,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power2.out'
+        });
+    });
+
+    // Counter animations for stat numbers
+    document.querySelectorAll('.stat-number').forEach(stat => {
+        const text = stat.textContent;
+        const match = text.match(/^(\d+)/);
+        if (!match) return;
+
+        const target = parseInt(match[1]);
+        const suffix = text.replace(match[1], '');
+
+        ScrollTrigger.create({
+            trigger: stat,
+            start: 'top 85%',
+            onEnter: () => {
+                gsap.from(stat, { duration: 0.3, opacity: 0, y: 20, ease: 'power2.out' });
+                let obj = { val: 0 };
+                gsap.to(obj, {
+                    val: target,
+                    duration: 1.8,
+                    ease: 'power2.out',
+                    onUpdate: () => {
+                        stat.textContent = Math.ceil(obj.val) + suffix;
+                    }
+                });
+            },
+            once: true
+        });
+    });
+
+    // Parallax on hero orbs (desktop only — causes jank on mobile)
+    if (!isMobile) {
+        document.querySelectorAll('.hero-orb').forEach((orb, i) => {
+            gsap.to(orb, {
+                scrollTrigger: {
+                    trigger: '.hero-section',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                y: (i + 1) * 80,
+                ease: 'none'
+            });
+        });
+    }
+
+    // Pricing card entrance
+    const pricingCard = document.querySelector('.pricing-card-main');
+    if (pricingCard) {
+        gsap.from(pricingCard, {
+            scrollTrigger: {
+                trigger: pricingCard,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            y: 50,
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initGSAPAnimations);
+
+// ===========================
+// VANTA.JS FOR INNER PAGE HEADERS
+// ===========================
+function initPageHeaderVanta() {
+    if (typeof VANTA === 'undefined' || typeof THREE === 'undefined') return;
+    if (window.innerWidth <= 768) return; // Skip on mobile for performance
+
+    const pageHeader = document.querySelector('.page-header');
+    if (!pageHeader) return;
+    // Don't apply to homepage hero (it has its own Vanta init)
+    if (document.querySelector('#hero-vanta')) return;
+
+    try {
+        VANTA.NET({
+            el: pageHeader,
+            mouseControls: true,
+            touchControls: false,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x4AABB8,
+            backgroundColor: 0x0a1628,
+            points: 8.00,
+            maxDistance: 20.00,
+            spacing: 20.00,
+            showDots: true
+        });
+    } catch(e) {
+        console.log('Page header Vanta fallback to CSS gradient');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initPageHeaderVanta);
+
+// ===========================
+// BUTTON RIPPLE EFFECT
+// ===========================
+function initButtonRipple() {
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .pricing-cta, .btn-cta, .hero-input-btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const circle = document.createElement('span');
+            circle.classList.add('btn-ripple');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            circle.style.width = circle.style.height = size + 'px';
+            circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            this.appendChild(circle);
+            setTimeout(() => circle.remove(), 600);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initButtonRipple);
 
 // Export functions for use in other scripts
 window.BrightAutomations = {
