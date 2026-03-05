@@ -24,15 +24,15 @@
         },
         {
             patterns: [/what (do you|does .* company) do|about (your|the) company|tell me about|who (are|is) bright/i],
-            response: () => "We build professional websites for businesses. Your site is live within 48 hours.\n\nWe handle everything — design, hosting, domain, SSL. You just tell us your business name and we do the rest.\n\nWant to know about pricing? Just ask!"
+            response: () => "We build all-in-one lead capture systems for businesses. Your site and all services are live within 48 hours.\n\nWe handle everything — website, SEO, Google optimization, reviews, hosting, domain, SSL. You just tell us your business name and we do the rest.\n\nWant to know about pricing? Just ask!"
         },
         {
             patterns: [/services|what (can you|do you) offer|solutions|what do you (build|make)|add(-| )?on/i],
-            response: () => "Here's what we offer:\n\n• **Website Build** — up to 5 pages, mobile-friendly, live in 48 hours\n• **Hosting** — includes SSL, security, maintenance\n• **Google Business Profile Optimization**\n• **Review Generation Widget**\n• **Monthly SEO Updates**\n• **Social Media Landing Page**\n\nWant details or pricing on any of these?"
+            response: () => "Everything is included in one plan:\n\n• **Professional Website** — up to 5 pages, mobile-friendly, live in 48 hours\n• **Hosting, SSL & Maintenance**\n• **Google Business Profile Optimization**\n• **Automated Review Generation**\n• **Monthly SEO Updates**\n• **Social Media Landing Page**\n\n$199 setup + $149/month. No contracts. Cancel anytime."
         },
         {
             patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
-            response: () => "Simple, transparent pricing:\n\n• **Website Build:** $149 one-time\n• **Hosting:** $39/month or $399/year (save $69)\n• **No contracts.** Cancel anytime.\n\nOptional add-ons:\n• Google Business Profile — $49\n• Review Widget — $29/mo\n• SEO Updates — $59/mo\n• Social Landing Page — $99\n\n👉 [Get your site now](/checkout.html)"
+            response: () => "Simple, all-inclusive pricing:\n\n• **Setup Fee:** $199 one-time\n• **Monthly Plan:** $149/month (starts month 2)\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Automated review generation\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/checkout.html)"
         },
         {
             patterns: [/free|preview|try|see (my|a) (site|website)|no commitment/i],
@@ -44,27 +44,27 @@
         },
         {
             patterns: [/what('s| is) included|what do (i|you) get|features|pages/i],
-            response: () => "Every website build includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• 2 rounds of revisions\n• Live in 48 hours\n\nHosting ($39/mo) includes SSL, uptime monitoring, security updates, and maintenance."
+            response: () => "Your lead capture system includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• Google Business optimization\n• Automated review generation\n• Monthly SEO updates\n• Social media landing page\n• Hosting, SSL & maintenance\n• 2 rounds of revisions\n• Live in 48 hours\n\nAll of this is included in your $149/month plan — no extra charges."
         },
         {
             patterns: [/host(ing)?|domain|ssl|maintenance|server/i],
-            response: () => "Hosting is $39/month or $399/year (save $69).\n\nIncludes:\n• SSL certificate\n• Uptime monitoring\n• Security updates\n• Basic maintenance\n• No contracts — cancel anytime\n\nWe can register a new domain or transfer your existing one. Either way, we handle it."
+            response: () => "Hosting is included in your $149/month plan.\n\nIncludes:\n• SSL certificate\n• Uptime monitoring\n• Security updates\n• Basic maintenance\n• No contracts — cancel anytime\n\nWe can register a new domain or transfer your existing one. Either way, we handle it."
         },
         {
             patterns: [/google business|gbp|google profile|google listing/i],
-            response: () => "Our **Google Business Profile Optimization** is $49 one-time.\n\nWe update your:\n• Business categories & description\n• Photos & hours\n• Keywords for local search\n• Service areas\n\nLive within 48 hours of payment."
+            response: () => "**Google Business Profile Optimization** is included in your plan.\n\nWe update your:\n• Business categories & description\n• Photos & hours\n• Keywords for local search\n• Service areas\n\nThis is set up during your first 48 hours — no extra charge."
         },
         {
             patterns: [/review|reviews|reputation|testimonial/i],
-            response: () => "Our **Review Generation Widget** is $29/month.\n\nIt automatically asks your customers for Google reviews after their service. More reviews = higher Google ranking = more calls.\n\nUp and running within 48 hours."
+            response: () => "**Automated Review Generation** is included in your plan.\n\nIt automatically asks your customers for Google reviews after their service. More reviews = higher Google ranking = more calls.\n\nUp and running within 48 hours — no extra charge."
         },
         {
             patterns: [/seo|search engine|google rank|ranking|traffic/i],
-            response: () => "Our **Monthly SEO Updates** are $59/month.\n\nEach month we update your:\n• Meta tags & descriptions\n• Content & keywords\n• Local SEO signals\n\nThis helps your site rank higher in Google so more customers find you."
+            response: () => "**Monthly SEO Updates** are included in your plan.\n\nEach month we update your:\n• Meta tags & descriptions\n• Content & keywords\n• Local SEO signals\n\nThis helps your site rank higher in Google so more customers find you. No extra charge."
         },
         {
             patterns: [/social|instagram|facebook|landing page|link in bio/i],
-            response: () => "Our **Social Media Landing Page** is $99 one-time.\n\nA single-page site optimized for your Instagram/Facebook link-in-bio. Sends visitors to your services, reviews, and contact info.\n\nLive within 48 hours."
+            response: () => "**Social Media Landing Page** is included in your plan.\n\nA single-page site optimized for your Instagram/Facebook link-in-bio. Sends visitors to your services, reviews, and contact info.\n\nSet up within 48 hours — no extra charge."
         },
         {
             patterns: [/industr(y|ies)|business(es)?|who (do you|can you) (help|serve|work)|what (kind|type)/i],
@@ -72,7 +72,7 @@
         },
         {
             patterns: [/refund|money back|not happy|cancel|guarantee/i],
-            response: () => "Full refund within 7 days of your site going live if you're not satisfied. No questions asked.\n\nHosting can be canceled anytime — no contracts, no cancellation fees. Annual hosting gets a prorated refund for unused months.\n\nWe want you to love your site."
+            response: () => "Full refund within 7 days of your site going live if you're not satisfied. No questions asked.\n\nYour $149/month plan can be canceled anytime — no contracts, no cancellation fees.\n\nWe want you to love your site."
         },
         {
             patterns: [/change|revision|edit|update|modify/i],
@@ -112,7 +112,7 @@
         },
         {
             patterns: [/cheap|expensive|worth it|competitors|other companies|why you|why bright/i],
-            response: () => "Most web designers charge $2,000-$5,000+ for a website. We've streamlined the process by building hundreds of sites, so we pass the savings to you.\n\nSame professional result. Fraction of the price. Live in 48 hours instead of weeks.\n\nNo contracts. Full refund if you're not happy within 7 days."
+            response: () => "Most agencies charge $300-$500/month for what we include in our $149/month plan. We've streamlined the process by building hundreds of sites, so we pass the savings to you.\n\nProfessional website + SEO + reviews + Google optimization + social landing page. All included. Live in 48 hours.\n\nNo contracts. Full refund if you're not happy within 7 days."
         },
         {
             patterns: [/what happens after|after (i |I )?pay|next steps|what now/i],
@@ -122,7 +122,7 @@
 
     // Default response when no intent matches
     const DEFAULT_RESPONSES = [
-        "Good question! I can help with pricing, what's included, how the process works, or our add-on services. What would you like to know?",
+        "Good question! I can help with pricing, what's included, how the process works, or anything about our lead capture system. What would you like to know?",
         "I want to make sure I give you the right answer. You can also reach our team directly at admin@brightautomations.net or text us at (732) 228-3794.",
         "I'm not sure I understood that. Would you like to know about our pricing, how it works, or what's included?"
     ];
