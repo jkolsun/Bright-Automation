@@ -647,60 +647,86 @@ body::after {
 }
 
 /* ===========================
-   MOBILE OVERLAY — Applied via JS when menu moved to body
+   MOBILE OVERLAY — Navbar goes full-screen when menu opens.
+   Nav-menu stays inside navbar (never moved to body) so it
+   is immune to page-transition opacity on <body>.
    =========================== */
+
+/* Full-screen navbar when menu is open */
+.navbar.nav-open {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background: #0f172a !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.navbar.nav-open .nav-container {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar.nav-open .nav-social {
+    display: none;
+}
+
+.navbar.nav-open .menu-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Show nav-menu as centered overlay inside the full-screen navbar */
 .nav-menu.mobile-open {
     display: flex !important;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
-    background: #0f172a;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    z-index: 9999;
     list-style: none;
     padding: 2rem;
     margin: 0;
-    opacity: 1 !important;
+    background: transparent;
+    z-index: 1;
 }
 
 .nav-menu.mobile-open li {
     list-style: none;
     text-align: center;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: list-item !important;
 }
 
 .nav-menu.mobile-open a {
-    font-family: var(--font-display) !important;
-    color: rgba(255, 255, 255, 0.5) !important;
+    font-family: var(--font-display);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 1.6rem !important;
-    font-weight: 600 !important;
+    font-size: 1.6rem;
+    font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
-    display: block !important;
+    display: block;
     text-align: center;
     white-space: nowrap;
-    opacity: 1 !important;
-    visibility: visible !important;
 }
 
 .nav-menu.mobile-open a::after {
     display: none !important;
 }
 
-/* Bottom underline accent instead of left bar — stays centered */
+/* Bottom underline accent — stays centered */
 .nav-menu.mobile-open a:not(.nav-cta)::before {
     content: '';
     position: absolute;
@@ -716,7 +742,7 @@ body::after {
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover {
-    color: white !important;
+    color: white;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta):hover::before {
@@ -724,8 +750,8 @@ body::after {
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active {
-    color: var(--primary-light) !important;
-    font-weight: 700 !important;
+    color: var(--primary-light);
+    font-weight: 700;
 }
 
 .nav-menu.mobile-open a:not(.nav-cta).active::before {
@@ -734,32 +760,27 @@ body::after {
 }
 
 .nav-menu.mobile-open .nav-cta {
-    font-size: 0.9rem !important;
-    padding: 0.75rem 2rem !important;
+    font-size: 0.9rem;
+    padding: 0.75rem 2rem;
     margin-top: 0.5rem;
     text-align: center;
     white-space: nowrap;
 }
 
 .nav-menu.mobile-open .nav-join {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
-    color: white !important;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
     box-shadow: 0 4px 20px rgba(46, 125, 138, 0.3);
     margin-left: 0;
 }
 
 .nav-menu.mobile-open .nav-faq {
-    background: transparent !important;
-    color: var(--primary-light) !important;
-    border: 1.5px solid rgba(74, 171, 184, 0.4) !important;
+    background: transparent;
+    color: var(--primary-light);
+    border: 1.5px solid rgba(74, 171, 184, 0.4);
     box-shadow: none;
     margin-left: 0;
     margin-top: 0;
-}
-
-/* Bump navbar z-index when menu is open so X button stays clickable */
-.navbar.nav-open {
-    z-index: 10000;
 }
 
 /* ===========================
@@ -2422,7 +2443,7 @@ body::after {
         display: flex;
     }
 
-    /* Hide nav menu on mobile (JS moves it to body as overlay) */
+    /* Hide nav menu on mobile (shown via .mobile-open class when hamburger tapped) */
     .nav-menu {
         display: none;
     }

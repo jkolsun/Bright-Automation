@@ -354,25 +354,21 @@ class TypingEffect {
     }
 }
 
-// Mobile Menu Toggle — moves nav-menu to body for proper z-index stacking
+// Mobile Menu Toggle — navbar goes full-screen when menu opens
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const navContainer = document.querySelector('.nav-container');
     const navbar = document.querySelector('.navbar');
     let isOpen = false;
 
     function openMenu() {
         if (!navMenu || isOpen) return;
         isOpen = true;
-        // Move nav-menu to body so it escapes navbar stacking context
-        document.body.appendChild(navMenu);
+        navbar.classList.add('nav-open');
         navMenu.classList.add('mobile-open');
         menuToggle.classList.add('active');
-        navbar.classList.add('nav-open');
         document.body.style.overflow = 'hidden';
 
-        // Bind link click listeners on the moved element
         navMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', closeMenu, { once: true });
         });
@@ -381,28 +377,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeMenu() {
         if (!navMenu || !isOpen) return;
         isOpen = false;
+        navbar.classList.remove('nav-open');
         navMenu.classList.remove('mobile-open');
         menuToggle.classList.remove('active');
-        navbar.classList.remove('nav-open');
         document.body.style.overflow = '';
-        // Move nav-menu back into nav-container (before the menu-toggle)
-        if (navContainer && menuToggle) {
-            navContainer.insertBefore(navMenu, menuToggle);
-        }
     }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
+            if (isOpen) { closeMenu(); } else { openMenu(); }
         });
     }
 
-    // Close on Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && isOpen) closeMenu();
     });
@@ -944,6 +931,7 @@ transitionStyles.textContent = `
         transform: none !important;
     }
 `;
+document.head.appendChild(transitionStyles);
 
 // Safety fallback: ensure page becomes visible even if DOMContentLoaded handler fails
 setTimeout(function() {
@@ -951,7 +939,6 @@ setTimeout(function() {
         document.body.classList.add('page-loaded');
     }
 }, 800);
-document.head.appendChild(transitionStyles);
 
 // ===========================
 // LENIS SMOOTH SCROLLING
