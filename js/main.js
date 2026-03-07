@@ -937,7 +937,20 @@ transitionStyles.textContent = `
         opacity: 0;
         transform: translateY(-8px);
     }
+
+    /* Navbar must always be visible regardless of page transition state */
+    .navbar {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 `;
+
+// Safety fallback: ensure page becomes visible even if DOMContentLoaded handler fails
+setTimeout(function() {
+    if (!document.body.classList.contains('page-loaded')) {
+        document.body.classList.add('page-loaded');
+    }
+}, 800);
 document.head.appendChild(transitionStyles);
 
 // ===========================
