@@ -32,11 +32,11 @@
         },
         {
             patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
-            response: () => "Simple, all-inclusive pricing:\n\n• **Setup Fee:** $199 one-time\n• **Monthly Plan:** $149/month (starts month 2)\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Automated review generation\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/checkout.html)"
+            response: () => "Simple, all-inclusive pricing:\n\n• **Setup Fee:** $199 one-time\n• **Monthly Plan:** $149/month (starts month 2)\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Automated review generation\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/preview.html)"
         },
         {
             patterns: [/free|preview|try|see (my|a) (site|website)|no commitment/i],
-            response: () => "Yes! We'll build you a free preview of your website — no commitment, no credit card.\n\nJust tell us your business name and we'll put together a preview in 30 seconds.\n\n👉 [Get your free preview](/contact.html)"
+            response: () => "Yes! We'll build you a free preview of your website — no commitment, no credit card.\n\nJust tell us your business name and we'll put together a preview in 30 seconds.\n\n👉 [Get your free preview](/preview.html)"
         },
         {
             patterns: [/how long|timeline|when.*ready|when.*live|48 hours|turnaround/i],
@@ -84,15 +84,15 @@
         },
         {
             patterns: [/get started|start|begin|sign up|ready|buy|purchase|order/i],
-            response: () => "Here's how it works:\n\n1. **Place your order** on our checkout page\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/checkout.html)"
+            response: () => "Here's how it works:\n\n1. **Place your order** on our checkout page\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/preview.html)"
         },
         {
             patterns: [/how (does|do) (it|this) work|process|step/i],
-            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/contact.html)"
+            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/preview.html)"
         },
         {
             patterns: [/already have a (website|site)|existing (website|site)|replace|redesign/i],
-            response: () => "If your current website isn't getting you leads, it's costing you money. We'll build you a free preview of what a better site looks like — no commitment.\n\nIf you love it, we handle the transition. If not, no hard feelings.\n\n👉 [See your free preview](/contact.html)"
+            response: () => "If your current website isn't getting you leads, it's costing you money. We'll build you a free preview of what a better site looks like — no commitment.\n\nIf you love it, we handle the transition. If not, no hard feelings.\n\n👉 [See your free preview](/preview.html)"
         },
         {
             patterns: [/content|copy|photos|logo|provide|need from me/i],
