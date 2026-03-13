@@ -982,6 +982,16 @@
         .portfolio-card.show-after .mockup-before { opacity: 0; }
         .portfolio-card.show-after .mockup-after { opacity: 1; }
 
+        /* ---- Image / Video after states ---- */
+        .mockup-after-img img,
+        .mockup-after-vid video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top left;
+            display: block;
+        }
+
         /* ---- BEFORE mockup styles (ugly/outdated sites) ---- */
         .mock-before-1 {
             background: #e8e8e8;
