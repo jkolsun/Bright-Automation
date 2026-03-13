@@ -1142,25 +1142,27 @@
                 padding: 0 1.25rem 1.25rem;
             }
             .social-proof-toast {
-                bottom: 1rem;
-                left: 1rem;
-                right: 1rem;
-                max-width: none;
-                padding: 0.7rem 1rem;
+                bottom: 0.75rem;
+                left: 0.75rem;
+                right: auto;
+                max-width: 210px;
+                padding: 0.5rem 0.7rem;
+                border-radius: 10px;
+                gap: 0.5rem;
             }
             .social-proof-icon {
-                width: 28px;
-                height: 28px;
-                border-radius: 8px;
+                width: 24px;
+                height: 24px;
+                border-radius: 6px;
             }
             .social-proof-icon i {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
             .social-proof-text {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
             .social-proof-live {
-                font-size: 0.6rem;
+                font-size: 0.5rem;
             }
             .spots-left-banner {
                 font-size: 0.75rem;
