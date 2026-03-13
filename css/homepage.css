@@ -849,12 +849,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(46, 125, 138, 0.05);
             z-index: 9000;
             max-width: 340px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: toastEntrance 0.6s ease 2s forwards;
-        }
-        @keyframes toastEntrance {
-            to { opacity: 1; transform: translateY(0); }
         }
         .social-proof-icon {
             width: 32px;

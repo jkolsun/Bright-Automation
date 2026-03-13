@@ -925,8 +925,9 @@ transitionStyles.textContent = `
         transform: translateY(-8px);
     }
 
-    /* Navbar must always be visible regardless of page transition state */
-    .navbar {
+    /* Navbar and social proof toast must always be visible regardless of page transition state */
+    .navbar,
+    .social-proof-toast {
         opacity: 1 !important;
         transform: none !important;
     }
