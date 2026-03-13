@@ -96,6 +96,18 @@
     --section-navy: #1e293b;
 }
 
+/* Campaign: FREE badge for checkout and shared pages */
+.free-badge-checkout {
+    display: inline-block;
+    background: linear-gradient(135deg, #10B981, #34D399);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+    border-radius: 100px;
+    letter-spacing: 0.06em;
+}
+
 /* Reset & Base Styles */
 *, *::before, *::after {
     margin: 0;
