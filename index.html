@@ -210,6 +210,10 @@
             </div>
 
             <div class="pricing-card-main glass-card card-glow" data-aos="zoom-in" data-aos-delay="100">
+                <div class="spots-left-banner">
+                    <i class="ph ph-lightning"></i>
+                    <span>Only <strong id="spotsCount">8</strong> spots left for <span id="spotsMonth"></span></span>
+                </div>
                 <div class="pricing-row">
                     <div class="pricing-item">
                         <div class="was-price">was $199</div>
@@ -485,8 +489,13 @@
         </svg>
     </div>
 
+    <!-- Social Proof Toast -->
+    <div class="social-proof-toast" id="socialProofToast">
+        <div class="social-proof-dot"></div>
+        <span class="social-proof-text" id="socialProofText"></span>
+    </div>
+
     <!-- Footer CTA -->
-    <section class="footer-cta-section">
         <div class="container" data-aos="fade-up">
             <h2>Still on the fence?</h2>
             <p>We'll build you a free preview. No credit card. No commitment. Just see what your site could look like.</p>
@@ -650,6 +659,43 @@
                         if (firstToggle) firstToggle.click();
                     }
                 }, 500);
+            }
+        })();
+
+        // Social Proof Toast
+        (function() {
+            var toast = document.getElementById('socialProofToast');
+            var textEl = document.getElementById('socialProofText');
+            if (!toast || !textEl) return;
+
+            var messages = [
+                '<strong>47 businesses</strong> launched this month',
+                '<strong>3 new sites</strong> went live today',
+                'A roofing company just signed up',
+                '<strong>12 businesses</strong> joined this week',
+                'An HVAC company just got their free preview'
+            ];
+            var index = 0;
+
+            function showToast() {
+                textEl.innerHTML = messages[index];
+                toast.classList.add('visible');
+                setTimeout(function() {
+                    toast.classList.remove('visible');
+                    index = (index + 1) % messages.length;
+                    setTimeout(showToast, 4000);
+                }, 5000);
+            }
+
+            setTimeout(showToast, 3000);
+        })();
+
+        // Limited Spots — auto-fill current month
+        (function() {
+            var monthEl = document.getElementById('spotsMonth');
+            if (monthEl) {
+                var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                monthEl.textContent = months[new Date().getMonth()];
             }
         })();
 

@@ -834,6 +834,80 @@
             font-size: 0.9375rem;
         }
 
+        /* ===== SOCIAL PROOF TOAST ===== */
+        .social-proof-toast {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            z-index: 9000;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+            max-width: 320px;
+        }
+        .social-proof-toast.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .social-proof-dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+        }
+        .social-proof-text {
+            font-size: 0.8125rem;
+            color: #334155;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .social-proof-text strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        /* ===== LIMITED SPOTS BANNER ===== */
+        .spots-left-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1));
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8125rem;
+            color: #92400e;
+            font-weight: 600;
+            animation: urgencyPulse 3s ease-in-out infinite;
+        }
+        .spots-left-banner i {
+            color: #f59e0b;
+            font-size: 0.95rem;
+        }
+        .spots-left-banner strong {
+            color: #b45309;
+            font-weight: 800;
+        }
+        @keyframes urgencyPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+            50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.15); }
+        }
+
         /* ===== FOOTER CTA ===== */
         .footer-cta-section {
             padding: 40px 0;
@@ -1039,6 +1113,20 @@
             }
             .faq-item.active .faq-answer {
                 padding: 0 1.25rem 1.25rem;
+            }
+            .social-proof-toast {
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                max-width: none;
+                padding: 0.65rem 1rem;
+            }
+            .social-proof-text {
+                font-size: 0.75rem;
+            }
+            .spots-left-banner {
+                font-size: 0.75rem;
+                padding: 0.35rem 0.85rem;
             }
             .scroll-indicator {
                 display: none;
