@@ -666,10 +666,15 @@
             }
         })();
 
-        // Social Proof Toast — always visible, cycles messages
+        // Social Proof Toast — force visible via inline styles, immune to ALL CSS interference
         (function() {
+            var toast = document.getElementById('socialProofToast');
             var textEl = document.getElementById('socialProofText');
-            if (!textEl) return;
+            if (!toast || !textEl) return;
+
+            // Force toast onto body as last child and set inline styles that override everything
+            document.body.appendChild(toast);
+            toast.style.cssText = 'position:fixed; bottom:1.5rem; left:1.5rem; z-index:99999; opacity:1; visibility:visible; display:flex; pointer-events:auto;';
 
             var messages = [
                 '<strong>47 businesses</strong> launched this month',
