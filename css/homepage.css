@@ -982,9 +982,8 @@
         .portfolio-card.show-after .mockup-before { opacity: 0; }
         .portfolio-card.show-after .mockup-after { opacity: 1; }
 
-        /* ---- Image / Video after states ---- */
-        .mockup-after-img img,
-        .mockup-after-vid video {
+        /* ---- Image after states ---- */
+        .mockup-after-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
