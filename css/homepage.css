@@ -839,45 +839,78 @@
             position: fixed;
             bottom: 1.5rem;
             left: 1.5rem;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+            border: 1px solid rgba(46, 125, 138, 0.2);
+            border-radius: 14px;
+            padding: 0.8rem 1.25rem;
             display: flex;
             align-items: center;
-            gap: 0.65rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            gap: 0.75rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(46, 125, 138, 0.05);
             z-index: 9000;
-            transform: translateX(-120%);
+            max-width: 340px;
             opacity: 0;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
-            max-width: 320px;
+            transform: translateY(20px);
+            animation: toastEntrance 0.6s ease 2s forwards;
         }
-        .social-proof-toast.visible {
-            transform: translateX(0);
-            opacity: 1;
+        @keyframes toastEntrance {
+            to { opacity: 1; transform: translateY(0); }
         }
-        .social-proof-dot {
-            width: 8px;
-            height: 8px;
-            background: #10B981;
-            border-radius: 50%;
+        .social-proof-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2E7D8A, #4AABB8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
-            animation: dotPulse 2s ease-in-out infinite;
         }
-        @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-            50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+        .social-proof-icon i {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+        .social-proof-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            min-width: 0;
         }
         .social-proof-text {
             font-size: 0.8125rem;
             color: #334155;
-            font-weight: 500;
-            line-height: 1.4;
+            font-weight: 600;
+            line-height: 1.35;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .social-proof-text.fade-out {
+            opacity: 0;
+            transform: translateY(-6px);
         }
         .social-proof-text strong {
-            color: #0f172a;
-            font-weight: 700;
+            color: #2E7D8A;
+            font-weight: 800;
+        }
+        .social-proof-live {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.65rem;
+            color: #10B981;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .social-proof-live-dot {
+            width: 6px;
+            height: 6px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: liveDotPulse 2s ease-in-out infinite;
+        }
+        @keyframes liveDotPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
         }
 
         /* ===== LIMITED SPOTS BANNER ===== */
@@ -1119,10 +1152,21 @@
                 left: 1rem;
                 right: 1rem;
                 max-width: none;
-                padding: 0.65rem 1rem;
+                padding: 0.7rem 1rem;
+            }
+            .social-proof-icon {
+                width: 28px;
+                height: 28px;
+                border-radius: 8px;
+            }
+            .social-proof-icon i {
+                font-size: 0.8rem;
             }
             .social-proof-text {
                 font-size: 0.75rem;
+            }
+            .social-proof-live {
+                font-size: 0.6rem;
             }
             .spots-left-banner {
                 font-size: 0.75rem;

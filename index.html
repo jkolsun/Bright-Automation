@@ -491,8 +491,11 @@
 
     <!-- Social Proof Toast -->
     <div class="social-proof-toast" id="socialProofToast">
-        <div class="social-proof-dot"></div>
-        <span class="social-proof-text" id="socialProofText"></span>
+        <div class="social-proof-icon"><i class="ph ph-trend-up"></i></div>
+        <div class="social-proof-content">
+            <span class="social-proof-text" id="socialProofText"></span>
+            <span class="social-proof-live"><span class="social-proof-live-dot"></span> Live activity</span>
+        </div>
     </div>
 
     <!-- Footer CTA -->
@@ -662,32 +665,33 @@
             }
         })();
 
-        // Social Proof Toast
+        // Social Proof Toast — always visible, cycles messages
         (function() {
-            var toast = document.getElementById('socialProofToast');
             var textEl = document.getElementById('socialProofText');
-            if (!toast || !textEl) return;
+            if (!textEl) return;
 
             var messages = [
                 '<strong>47 businesses</strong> launched this month',
                 '<strong>3 new sites</strong> went live today',
                 'A roofing company just signed up',
                 '<strong>12 businesses</strong> joined this week',
-                'An HVAC company just got their free preview'
+                'An HVAC company just got their free preview',
+                '<strong>9 previews</strong> requested today'
             ];
             var index = 0;
 
-            function showToast() {
-                textEl.innerHTML = messages[index];
-                toast.classList.add('visible');
-                setTimeout(function() {
-                    toast.classList.remove('visible');
-                    index = (index + 1) % messages.length;
-                    setTimeout(showToast, 4000);
-                }, 5000);
-            }
+            // Show first message immediately
+            textEl.innerHTML = messages[index];
 
-            setTimeout(showToast, 3000);
+            // Cycle through messages with fade transition
+            setInterval(function() {
+                textEl.classList.add('fade-out');
+                setTimeout(function() {
+                    index = (index + 1) % messages.length;
+                    textEl.innerHTML = messages[index];
+                    textEl.classList.remove('fade-out');
+                }, 400);
+            }, 4000);
         })();
 
         // Limited Spots — auto-fill current month
