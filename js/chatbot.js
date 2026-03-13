@@ -28,11 +28,11 @@
         },
         {
             patterns: [/services|what (can you|do you) offer|solutions|what do you (build|make)|add(-| )?on/i],
-            response: () => "Everything is included in one plan:\n\n• **Professional Website** — up to 5 pages, mobile-friendly, live in 48 hours\n• **Hosting, SSL & Maintenance**\n• **Google Business Profile Optimization**\n• **Automated Review Generation**\n• **Monthly SEO Updates**\n• **Social Media Landing Page**\n\nFree setup + $100/month. No contracts. Cancel anytime."
+            response: () => "Everything is included in one plan:\n\n• **Professional Website** — up to 5 pages, mobile-friendly, live in 48 hours\n• **Hosting, SSL & Maintenance**\n• **Google Business Profile Optimization**\n• **Visitor Analytics & Monthly Reporting**\n• **Monthly SEO Updates**\n• **Social Media Landing Page**\n\nFree setup + $100/month. No contracts. Cancel anytime."
         },
         {
             patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
-            response: () => "Simple, all-inclusive pricing:\n\n• **Setup:** FREE — we build your site at no cost\n• **Monthly Plan:** $100/month — starts when your site goes live\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Automated review generation\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/preview.html)"
+            response: () => "Simple, all-inclusive pricing:\n\n• **Setup:** FREE — we build your site at no cost\n• **Monthly Plan:** $100/month — starts when your site goes live\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Visitor analytics & monthly reporting\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/preview.html)"
         },
         {
             patterns: [/free|preview|try|see (my|a) (site|website)|no commitment/i],
@@ -44,7 +44,7 @@
         },
         {
             patterns: [/what('s| is) included|what do (i|you) get|features|pages/i],
-            response: () => "Your lead capture system includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• Google Business optimization\n• Automated review generation\n• Monthly SEO updates\n• Social media landing page\n• Hosting, SSL & maintenance\n• 2 rounds of revisions\n• Live in 48 hours\n\nAll of this is included in your $100/month plan — and setup is free."
+            response: () => "Your lead capture system includes:\n\n• Up to 5 pages\n• Mobile-friendly design\n• Click-to-call button\n• Contact form\n• Google Maps integration\n• Your real reviews displayed\n• Google Business optimization\n• Visitor analytics & monthly reporting\n• Monthly SEO updates\n• Social media landing page\n• Hosting, SSL & maintenance\n• 2 rounds of revisions\n• Live in 48 hours\n\nAll of this is included in your $100/month plan — and setup is free."
         },
         {
             patterns: [/host(ing)?|domain|ssl|maintenance|server/i],
@@ -56,7 +56,7 @@
         },
         {
             patterns: [/review|reviews|reputation|testimonial/i],
-            response: () => "**Automated Review Generation** is included in your plan.\n\nIt automatically asks your customers for Google reviews after their service. More reviews = higher Google ranking = more calls.\n\nUp and running within 48 hours — no extra charge."
+            response: () => "Want to grow your Google reviews on autopilot? Our **Reputation Engine** system automates review requests after every job and drafts responses for you.\n\nIt's available as an add-on through our Business Systems.\n\n👉 [See all systems](/systems.html)\n\nYour base plan already includes your real reviews displayed on your website — that's included at no extra cost."
         },
         {
             patterns: [/seo|search engine|google rank|ranking|traffic/i],
