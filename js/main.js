@@ -906,31 +906,22 @@ window.addEventListener('pageshow', function(event) {
     }
 });
 
-// Page transition styles
+// Page transition styles — only fade page content, never fixed elements (navbar, chatbot, toast)
+// Uses body > *:not() to skip fixed-position overlays
 const transitionStyles = document.createElement('style');
 transitionStyles.textContent = `
-    body {
+    body > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
         opacity: 0;
         transform: translateY(8px);
         transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    body.page-loaded {
+    body.page-loaded > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
         opacity: 1;
         transform: translateY(0);
     }
-
-    body.page-leaving {
+    body.page-leaving > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
         opacity: 0;
         transform: translateY(-8px);
-    }
-
-    /* Navbar and social proof toast must always be visible regardless of page transition state */
-    .navbar,
-    .social-proof-toast,
-    .ba-chatbot {
-        opacity: 1 !important;
-        transform: none !important;
     }
 `;
 document.head.appendChild(transitionStyles);
