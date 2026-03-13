@@ -927,7 +927,8 @@ transitionStyles.textContent = `
 
     /* Navbar and social proof toast must always be visible regardless of page transition state */
     .navbar,
-    .social-proof-toast {
+    .social-proof-toast,
+    .ba-chatbot {
         opacity: 1 !important;
         transform: none !important;
     }
