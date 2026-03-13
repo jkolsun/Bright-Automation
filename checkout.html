@@ -396,6 +396,75 @@
             color: #2E7D8A;
         }
 
+        /* Checkout FAQ */
+        .checkout-faq {
+            margin-top: 2rem;
+        }
+        .checkout-faq h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .checkout-faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .checkout-faq-item:hover {
+            border-color: #2E7D8A;
+        }
+        .checkout-faq-item.active {
+            border-color: rgba(46, 125, 138, 0.3);
+        }
+        .checkout-faq-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            gap: 0.75rem;
+        }
+        .checkout-faq-toggle span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+        .checkout-faq-toggle i {
+            color: #94a3b8;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .checkout-faq-item.active .checkout-faq-toggle i {
+            transform: rotate(180deg);
+            color: #2E7D8A;
+        }
+        .checkout-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.25rem;
+        }
+        .checkout-faq-item.active .checkout-faq-answer {
+            max-height: 150px;
+            padding: 0 1.25rem 1rem;
+        }
+        .checkout-faq-answer p {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
         @media (max-width: 640px) {
             .checkout-section {
                 padding: 6rem 1rem 3rem;
@@ -546,6 +615,61 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Checkout FAQ -->
+            <div class="checkout-faq">
+                <h3>Quick Questions</h3>
+
+                <div class="checkout-faq-item">
+                    <button class="checkout-faq-toggle">
+                        <span>When do I start paying?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="checkout-faq-answer">
+                        <p>$100/month starts only when your site goes live — not before. Setup is completely free.</p>
+                    </div>
+                </div>
+
+                <div class="checkout-faq-item">
+                    <button class="checkout-faq-toggle">
+                        <span>Can I cancel anytime?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="checkout-faq-answer">
+                        <p>Yes. No contracts, no cancellation fees. If you're not happy, you can cancel anytime.</p>
+                    </div>
+                </div>
+
+                <div class="checkout-faq-item">
+                    <button class="checkout-faq-toggle">
+                        <span>What if I don't like the site?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="checkout-faq-answer">
+                        <p>You get a free preview first. If you don't love it, you don't pay. No hard feelings.</p>
+                    </div>
+                </div>
+
+                <div class="checkout-faq-item">
+                    <button class="checkout-faq-toggle">
+                        <span>How long until my site is live?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="checkout-faq-answer">
+                        <p>48 hours from approval. We handle everything — design, hosting, domain, the works.</p>
+                    </div>
+                </div>
+
+                <div class="checkout-faq-item">
+                    <button class="checkout-faq-toggle">
+                        <span>Can I make changes after launch?</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="checkout-faq-answer">
+                        <p>Yes. Revisions are included. Just text us what you want changed.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -656,6 +780,20 @@
         payBtn.addEventListener('click', function() {
             if (!termsCheckbox.checked || !smsCheckbox.checked) return;
             window.location.href = STRIPE_LINK;
+        });
+    })();
+
+    // Checkout FAQ accordion
+    (function() {
+        document.querySelectorAll('.checkout-faq-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                var item = this.closest('.checkout-faq-item');
+                var isActive = item.classList.contains('active');
+                document.querySelectorAll('.checkout-faq-item.active').forEach(function(open) {
+                    open.classList.remove('active');
+                });
+                if (!isActive) item.classList.add('active');
+            });
         });
     })();
     </script>

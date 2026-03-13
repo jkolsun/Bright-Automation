@@ -744,6 +744,10 @@ function createBackToTopButton() {
     button.id = 'back-to-top';
     button.innerHTML = '<i class="fas fa-arrow-up"></i>';
     button.setAttribute('aria-label', 'Back to top');
+    // Hide on mobile — conflicts with chatbot button
+    var isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
+
     button.style.cssText = `
         position: fixed;
         bottom: 30px;
