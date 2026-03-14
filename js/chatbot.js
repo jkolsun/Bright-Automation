@@ -56,7 +56,7 @@
         },
         {
             patterns: [/review|reviews|reputation|testimonial/i],
-            response: () => "Want to grow your Google reviews on autopilot? Our **Reputation Engine** system automates review requests after every job and drafts responses for you.\n\nIt's available as an add-on through our Business Systems.\n\n👉 [See all systems](/systems.html)\n\nYour base plan already includes your real reviews displayed on your website — that's included at no extra cost."
+            response: () => "Want to grow your Google reviews on autopilot? Our **Reputation Engine** system automates review requests after every job and drafts responses for you.\n\nIt's available as an add-on through our Enterprise Systems.\n\n👉 [See all systems](/systems.html)\n\nYour base plan already includes your real reviews displayed on your website — that's included at no extra cost."
         },
         {
             patterns: [/seo|search engine|google rank|ranking|traffic/i],

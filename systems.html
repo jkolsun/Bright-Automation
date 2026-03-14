@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Automate your leads, follow-ups, reviews, and operations with systems that integrate directly into your CRM. Custom-built by Bright Automations.">
-    <title>Business Automation Systems | Bright Automations</title>
+    <meta name="description" content="Enterprise-grade automation systems for large-scale operations. Custom-built data intelligence, revenue operations, workforce orchestration, and AI communication infrastructure by Bright Automations.">
+    <title>Enterprise Systems | Bright Automations</title>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Business Automation Systems | Bright Automations">
-    <meta property="og:description" content="Automate your leads, follow-ups, reviews, and operations with systems that integrate directly into your CRM. Custom-built by Bright Automations.">
+    <meta property="og:title" content="Enterprise Systems | Bright Automations">
+    <meta property="og:description" content="Enterprise-grade automation systems for large-scale operations. Custom-built data intelligence, revenue operations, workforce orchestration, and AI communication infrastructure.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brightautomations.org/systems.html">
     <meta property="og:image" content="https://brightautomations.org/images/Bright_AutoLOGO.png">
@@ -46,7 +46,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Business Automation Systems",
+        "serviceType": "Enterprise Automation Systems",
         "provider": {
             "@type": "LocalBusiness",
             "name": "Bright Automations",
@@ -54,7 +54,7 @@
             "telephone": "+16102569844",
             "email": "admin@brightautomations.net"
         },
-        "description": "Custom automation systems for lead response, follow-up, reputation management, quoting, customer communication, and CRM integration.",
+        "description": "Enterprise-grade automation systems for data intelligence, revenue operations, workforce orchestration, customer lifecycle management, multi-entity operations, and AI-powered communication infrastructure.",
         "areaServed": "US"
     }
     </script>
@@ -106,6 +106,45 @@
             transform: translateY(-3px);
         }
 
+        /* ===== ENTERPRISE TRUST BAR ===== */
+        .trust-bar {
+            padding: 3rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .trust-bar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .trust-bar-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+        .trust-bar-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .trust-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .trust-bar-item i {
+            color: #2E7D8A;
+            font-size: 1.1rem;
+        }
+
         /* ===== SYSTEM CARDS ===== */
         .systems-section {
             padding: 5rem 2rem;
@@ -130,7 +169,7 @@
         .systems-section-header p {
             font-size: 1.05rem;
             color: #64748b;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
         }
@@ -167,6 +206,19 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+        .system-card-complexity {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.3rem 0.7rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
         .system-card-icon {
             width: 52px;
             height: 52px;
@@ -190,10 +242,11 @@
         }
         .system-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 0.75rem;
+            line-height: 1.3;
         }
         .system-card-desc {
             font-size: 0.9rem;
@@ -208,9 +261,9 @@
             margin: 0 0 1.25rem 0;
         }
         .system-card-results li {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #374151;
-            padding: 0.4rem 0;
+            padding: 0.35rem 0;
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
@@ -260,51 +313,44 @@
         .system-card-footer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: auto;
-            padding-top: 1rem;
+            padding-top: 1.25rem;
             border-top: 1px solid #f1f5f9;
-        }
-        .system-card-price {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #1e293b;
-        }
-        .system-card-price span {
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: #94a3b8;
         }
         .system-card-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            color: #2E7D8A;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            color: #ffffff;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-decoration: none;
-            transition: all 0.2s ease;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(46, 125, 138, 0.2);
         }
         .system-card-cta:hover {
-            color: #1e5a63;
-            gap: 0.5rem;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(46, 125, 138, 0.35);
         }
 
-        /* ===== PRICING TIERS ===== */
-        .pricing-section {
+        /* ===== ENTERPRISE ENGAGEMENT SECTION ===== */
+        .engagement-section {
             padding: 5rem 2rem;
             background: #ffffff;
         }
-        .pricing-container {
+        .engagement-container {
             max-width: 1100px;
             margin: 0 auto;
         }
-        .pricing-section-header {
+        .engagement-header {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
         }
-        .pricing-section-header h2 {
+        .engagement-header h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.75rem, 3.5vw, 2.5rem);
             font-weight: 700;
@@ -312,74 +358,20 @@
             margin-bottom: 0.75rem;
             line-height: 1.2;
         }
-        .pricing-section-header p {
+        .engagement-header p {
             font-size: 1.05rem;
             color: #64748b;
             max-width: 650px;
             margin: 0 auto;
             line-height: 1.6;
         }
-        .pricing-toggle-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 3rem;
-        }
-        .pricing-toggle-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #64748b;
-            cursor: pointer;
-        }
-        .pricing-toggle-label.active {
-            color: #1e293b;
-            font-weight: 600;
-        }
-        .pricing-toggle {
-            width: 48px;
-            height: 26px;
-            background: #e2e8f0;
-            border-radius: 13px;
-            position: relative;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border: none;
-        }
-        .pricing-toggle.active {
-            background: #2E7D8A;
-        }
-        .pricing-toggle::after {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 20px;
-            height: 20px;
-            background: #ffffff;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .pricing-toggle.active::after {
-            transform: translateX(22px);
-        }
-        .pricing-save-badge {
-            background: #10b981;
-            color: #ffffff;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.2rem 0.5rem;
-            border-radius: 100px;
-            text-transform: uppercase;
-        }
-        .pricing-tiers {
+        .engagement-tiers {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             align-items: start;
         }
-        .pricing-tier {
+        .engagement-tier {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 1rem;
@@ -387,16 +379,16 @@
             position: relative;
             transition: all 0.3s ease;
         }
-        .pricing-tier:hover {
+        .engagement-tier:hover {
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
-        .pricing-tier.featured {
+        .engagement-tier.featured {
             border-color: #2E7D8A;
             box-shadow: 0 8px 40px rgba(46, 125, 138, 0.15);
             transform: scale(1.03);
             z-index: 1;
         }
-        .pricing-tier.featured::before {
+        .engagement-tier.featured::before {
             content: '';
             position: absolute;
             top: 0;
@@ -406,7 +398,7 @@
             background: linear-gradient(90deg, #2E7D8A, #10b981);
             border-radius: 1rem 1rem 0 0;
         }
-        .pricing-tier-badge {
+        .engagement-tier-badge {
             position: absolute;
             top: -12px;
             left: 50%;
@@ -421,53 +413,38 @@
             letter-spacing: 0.05em;
             white-space: nowrap;
         }
-        .pricing-tier h3 {
+        .engagement-tier h3 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 0.5rem;
         }
-        .pricing-tier-desc {
+        .engagement-tier-desc {
             font-size: 0.85rem;
             color: #64748b;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             line-height: 1.5;
         }
-        .pricing-tier-price {
+        .engagement-tier-label {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: #1e293b;
+            color: #2E7D8A;
             margin-bottom: 0.25rem;
             line-height: 1;
         }
-        .pricing-tier-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #94a3b8;
-        }
-        .pricing-tier-price-annual {
-            font-size: 0.85rem;
-            color: #10b981;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: none;
-        }
-        .pricing-tier-price-annual.show {
-            display: block;
-        }
-        .pricing-tier-period {
-            font-size: 0.85rem;
+        .engagement-tier-sublabel {
+            font-size: 0.8rem;
             color: #94a3b8;
             margin-bottom: 1.5rem;
         }
-        .pricing-tier-features {
+        .engagement-tier-features {
             list-style: none;
             padding: 0;
             margin: 0 0 1.5rem 0;
         }
-        .pricing-tier-features li {
+        .engagement-tier-features li {
             font-size: 0.85rem;
             color: #374151;
             padding: 0.5rem 0;
@@ -476,16 +453,16 @@
             gap: 0.5rem;
             border-bottom: 1px solid #f8fafc;
         }
-        .pricing-tier-features li:last-child {
+        .engagement-tier-features li:last-child {
             border-bottom: none;
         }
-        .pricing-tier-features li i {
+        .engagement-tier-features li i {
             color: #10b981;
             font-size: 0.8rem;
             margin-top: 0.2rem;
             flex-shrink: 0;
         }
-        .pricing-tier-cta {
+        .engagement-tier-cta {
             display: block;
             text-align: center;
             padding: 0.875rem 1.5rem;
@@ -495,29 +472,23 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .pricing-tier-cta.primary {
+        .engagement-tier-cta.primary {
             background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
             color: #ffffff;
             box-shadow: 0 4px 15px rgba(46, 125, 138, 0.3);
         }
-        .pricing-tier-cta.primary:hover {
+        .engagement-tier-cta.primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(46, 125, 138, 0.4);
         }
-        .pricing-tier-cta.outline {
+        .engagement-tier-cta.outline {
             background: transparent;
             color: #2E7D8A;
             border: 2px solid #e2e8f0;
         }
-        .pricing-tier-cta.outline:hover {
+        .engagement-tier-cta.outline:hover {
             border-color: #2E7D8A;
             background: rgba(46, 125, 138, 0.05);
-        }
-        .pricing-guarantee {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: #94a3b8;
         }
 
         /* ===== HOW IT WORKS ===== */
@@ -540,6 +511,13 @@
             color: #1e293b;
             margin-bottom: 0.5rem;
             line-height: 1.2;
+        }
+        .how-section-header p {
+            font-size: 1.05rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         .how-steps {
             position: relative;
@@ -731,104 +709,6 @@
             color: #64748b;
         }
 
-        /* ===== ENTERPRISE SECTION ===== */
-        .enterprise-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, #0f172a 0%, #162033 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .enterprise-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(46, 125, 138, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(46, 125, 138, 0.04) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-        }
-        .enterprise-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .enterprise-container h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .enterprise-container > p {
-            font-size: 1.05rem;
-            color: #94a3b8;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-        .enterprise-services {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-        .enterprise-service-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-        }
-        .enterprise-service-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(46, 125, 138, 0.3);
-        }
-        .enterprise-service-item i {
-            color: #4AABB8;
-            font-size: 1.1rem;
-            margin-top: 0.15rem;
-            flex-shrink: 0;
-        }
-        .enterprise-service-item span {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
-        .enterprise-cta-wrap {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .enterprise-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
-            color: #ffffff;
-            padding: 1rem 2.25rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 125, 138, 0.3);
-        }
-        .enterprise-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(46, 125, 138, 0.4);
-        }
-        .enterprise-price-range {
-            font-size: 0.85rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-
         /* ===== FAQ SECTION ===== */
         .sys-faq-section {
             padding: 5rem 2rem;
@@ -976,9 +856,6 @@
             .systems-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .enterprise-services {
-                grid-template-columns: 1fr;
-            }
         }
         @media (max-width: 768px) {
             .systems-hero {
@@ -987,13 +864,13 @@
             .systems-grid {
                 grid-template-columns: 1fr;
             }
-            .pricing-tiers {
+            .engagement-tiers {
                 grid-template-columns: 1fr;
                 max-width: 420px;
                 margin-left: auto;
                 margin-right: auto;
             }
-            .pricing-tier.featured {
+            .engagement-tier.featured {
                 transform: none;
                 order: -1;
             }
@@ -1015,19 +892,15 @@
             .how-step {
                 gap: 1.25rem;
             }
-            .enterprise-services {
-                grid-template-columns: 1fr;
-            }
-            .enterprise-cta-wrap {
-                flex-direction: column;
-                align-items: flex-start;
-            }
             .integrations-grid {
                 gap: 0.75rem;
             }
             .integration-item {
                 font-size: 0.78rem;
                 padding: 0.5rem 1rem;
+            }
+            .trust-bar-items {
+                gap: 1.25rem;
             }
         }
         @media (max-width: 480px) {
@@ -1040,6 +913,10 @@
             .sys-hero-cta, .sys-hero-cta-alt {
                 width: 100%;
                 justify-content: center;
+            }
+            .trust-bar-items {
+                flex-direction: column;
+                gap: 0.75rem;
             }
         }
     </style>
@@ -1059,7 +936,7 @@
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="services.html">What's Included</a></li>
-                <li><a href="systems.html" class="active">Business Systems</a></li>
+                <li><a href="systems.html" class="active">Enterprise Systems</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="join.html" class="nav-cta nav-join">Join Our Team</a></li>
@@ -1085,11 +962,11 @@
 
     <!-- SECTION 1: HERO -->
     <section class="page-header">
-        <h1>Systems That Run While You Don't</h1>
-        <p>Powering automation for service companies, contractors, and growing operations nationwide</p>
+        <h1>Enterprise-Grade Systems. Built to Scale.</h1>
+        <p>Mission-critical automation infrastructure for organizations that demand precision, compliance, and operational excellence at scale</p>
         <div class="systems-hero-buttons" style="margin-top: 1.5rem;">
-            <a href="#systems" class="sys-hero-cta">See What We Can Automate <i class="ph ph-arrow-down"></i></a>
-            <a href="contact.html" class="sys-hero-cta-alt">Book a Free Systems Audit <i class="ph ph-arrow-right"></i></a>
+            <a href="#systems" class="sys-hero-cta">Explore Our Systems <i class="ph ph-arrow-down"></i></a>
+            <a href="contact.html" class="sys-hero-cta-alt">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
         </div>
     </section>
 
@@ -1099,133 +976,157 @@
         </svg>
     </div>
 
-    <!-- SYSTEMS / SERVICE CARDS -->
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+        <div class="trust-bar-container" data-aos="fade-up">
+            <div class="trust-bar-label">Enterprise Capabilities</div>
+            <div class="trust-bar-items">
+                <div class="trust-bar-item"><i class="ph ph-shield-check"></i> SOC 2 Compliant Infrastructure</div>
+                <div class="trust-bar-item"><i class="ph ph-lock"></i> End-to-End Encryption</div>
+                <div class="trust-bar-item"><i class="ph ph-chart-line-up"></i> 99.9% Uptime SLA</div>
+                <div class="trust-bar-item"><i class="ph ph-users-three"></i> Dedicated Account Team</div>
+                <div class="trust-bar-item"><i class="ph ph-globe"></i> Multi-Region Deployment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTERPRISE SYSTEMS -->
     <section class="systems-section" id="systems">
         <div class="systems-container">
             <div class="systems-section-header" data-aos="fade-up">
-                <h2>Systems That Pay for Themselves</h2>
-                <p>Each system integrates with your existing CRM. No new software to learn. We build it, connect it, and manage it.</p>
+                <h2>Enterprise Automation Infrastructure</h2>
+                <p>Each system is architected for scale, security, and seamless integration with your existing technology stack. Custom-scoped and built by our enterprise engineering team.</p>
             </div>
 
             <div class="systems-grid">
-                <!-- System 1: Instant Lead Responder -->
+                <!-- System 1: Enterprise Data Intelligence Platform -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="50">
-                    <span class="system-card-badge">Most Popular</span>
+                    <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
-                        <i class="ph ph-lightning"></i>
+                        <i class="ph ph-brain"></i>
                     </div>
-                    <h3>Instant Lead Responder</h3>
-                    <p class="system-card-desc">When a lead comes in — from your website, a form, a missed call, or an ad — this system responds within seconds via text. It opens a conversation, asks what service they need, captures the job details, and books a time slot on your calendar. By the time your team checks in, the lead is already qualified and scheduled.</p>
+                    <h3>Enterprise Data Intelligence Platform</h3>
+                    <p class="system-card-desc">Unify data streams from every department into a single source of truth. Real-time predictive analytics, custom KPI dashboards, anomaly detection, and AI-driven forecasting models — all purpose-built around your organization's decision-making framework. Replaces fragmented spreadsheets and siloed reports with a living intelligence layer that surfaces insights before you ask for them.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Respond to every lead in under 10 seconds, 24/7</li>
-                        <li><i class="ph ph-check-circle"></i> Qualify leads automatically — service needed, timeline, location</li>
-                        <li><i class="ph ph-check-circle"></i> Book estimates directly into your team's calendar</li>
+                        <li><i class="ph ph-check-circle"></i> Cross-departmental data unification with automated ETL pipelines</li>
+                        <li><i class="ph ph-check-circle"></i> Predictive analytics with ML-powered anomaly detection</li>
+                        <li><i class="ph ph-check-circle"></i> Custom executive dashboards with real-time KPI tracking</li>
+                        <li><i class="ph ph-check-circle"></i> Automated report generation and stakeholder distribution</li>
+                        <li><i class="ph ph-check-circle"></i> Historical trend analysis with forward-looking projections</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Uses smart conversation logic to engage leads naturally over text. Integrates with your phone system to detect missed calls and trigger instant follow-up. Connects to your calendar for real-time availability.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Built on a modular data lake architecture with connectors for 200+ enterprise platforms. Ingests structured and unstructured data via REST APIs, webhooks, database replication, and file-based imports. ML models are trained on your historical data and continuously refined. Dashboards are role-based with granular access controls. Supports scheduled and on-demand reporting with multi-format export (PDF, CSV, API).</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$149<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">See How It Works <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 2: Reputation Engine -->
+                <!-- System 2: Omnichannel Revenue Operations Engine -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="system-card-badge">High Impact</span>
                     <div class="system-card-icon">
-                        <i class="ph ph-star"></i>
+                        <i class="ph ph-currency-circle-dollar"></i>
                     </div>
-                    <h3>Reputation Engine</h3>
-                    <p class="system-card-desc">After every completed job, this system automatically texts the customer and requests a Google review — timed perfectly when satisfaction is highest. When new reviews come in, it drafts a personalized response for you to approve with one tap. Your Google profile stays active, your rating climbs, and you rank higher in local search.</p>
+                    <h3>Omnichannel Revenue Operations Engine</h3>
+                    <p class="system-card-desc">Orchestrate your entire revenue pipeline from first touch to closed deal across every channel. AI-powered lead scoring with behavioral and firmographic signals, intelligent territory management, real-time pipeline forecasting, and multi-touch attribution modeling. Connects marketing, sales, and customer success into a unified revenue machine.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Automate review requests after every job</li>
-                        <li><i class="ph ph-check-circle"></i> Respond to every review in under 24 hours (one-tap approval)</li>
-                        <li><i class="ph ph-check-circle"></i> Track review velocity, rating trends, and response rate</li>
+                        <li><i class="ph ph-check-circle"></i> AI lead scoring with 40+ behavioral and firmographic signals</li>
+                        <li><i class="ph ph-check-circle"></i> Intelligent territory mapping with dynamic load balancing</li>
+                        <li><i class="ph ph-check-circle"></i> Multi-touch attribution across paid, organic, and outbound</li>
+                        <li><i class="ph ph-check-circle"></i> Real-time pipeline forecasting with confidence intervals</li>
+                        <li><i class="ph ph-check-circle"></i> Automated handoff workflows between sales stages</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Connects to your job management or invoicing system. When a job is marked complete (or payment is received), it triggers a review request sequence. Monitors your Google Business Profile for new reviews and generates custom responses.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Integrates with your CRM, marketing automation, advertising platforms, and website analytics. Lead scoring models are trained on your historical conversion data and refined monthly. Territory logic supports geographic, account-based, and round-robin distribution with capacity awareness. Attribution engine tracks across UTM, referral, direct, and offline touchpoints. Forecasting uses ensemble methods combining pipeline stage velocity, historical close rates, and seasonal patterns.</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$99<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">Start Building Your Reputation <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 3: Smart Follow-Up Sequences -->
+                <!-- System 3: Intelligent Workforce Orchestration System -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="150">
+                    <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
-                        <i class="ph ph-flow-arrow"></i>
+                        <i class="ph ph-users-four"></i>
                     </div>
-                    <h3>Smart Follow-Up Sequences</h3>
-                    <p class="system-card-desc">Leads go cold when follow-up is slow or inconsistent. This system runs multi-step follow-up sequences — via text and email — that adapt based on how the lead responds. If they engage, it moves them forward. If they go quiet, it re-engages with different messaging. Your pipeline stays warm without your team lifting a finger.</p>
+                    <h3>Intelligent Workforce Orchestration System</h3>
+                    <p class="system-card-desc">AI-driven resource allocation and workforce management at scale. Optimizes shift scheduling, capacity planning, skills-based task routing, and real-time field operations coordination across multiple locations. Eliminates scheduling conflicts, reduces idle time, and ensures the right person is assigned to the right job based on certification, proximity, and performance data.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Automated multi-touch follow-up (text + email)</li>
-                        <li><i class="ph ph-check-circle"></i> Sequences adapt based on lead behavior — not just timers</li>
-                        <li><i class="ph ph-check-circle"></i> Re-engages stalled leads that would otherwise be lost</li>
+                        <li><i class="ph ph-check-circle"></i> AI-optimized scheduling with constraint satisfaction</li>
+                        <li><i class="ph ph-check-circle"></i> Skills-based routing with certification and compliance tracking</li>
+                        <li><i class="ph ph-check-circle"></i> Real-time field coordination with GPS-aware dispatch</li>
+                        <li><i class="ph ph-check-circle"></i> Capacity forecasting with demand prediction modeling</li>
+                        <li><i class="ph ph-check-circle"></i> Automated timesheet reconciliation and labor cost analysis</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Connects to your CRM's lead pipeline. When a new lead enters or a deal stalls, the system triggers a follow-up sequence tailored to the lead source, service type, and engagement level. Sequences branch based on responses.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Combines constraint-satisfaction algorithms with ML-based demand forecasting. Integrates with HRIS, payroll, GPS tracking, and dispatch systems. Scheduling engine considers labor laws, union rules, certification expiry, overtime thresholds, and employee preferences. Field operations layer provides real-time visibility with ETA calculations and automatic reassignment on delays or cancellations. Supports multi-location, multi-timezone deployments.</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$99<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">Stop Losing Warm Leads <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 4: Speed-to-Quote -->
+                <!-- System 4: Autonomous Customer Lifecycle Platform -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="system-card-icon">
-                        <i class="ph ph-file-text"></i>
+                        <i class="ph ph-heartbeat"></i>
                     </div>
-                    <h3>Speed-to-Quote</h3>
-                    <p class="system-card-desc">Your field team visits the job site, sends the details via text or voice memo, and the system generates a clean, branded estimate — sent directly to the customer within minutes. No more forgetting to send quotes, no more handwritten napkin math. The first quote in the inbox wins the job.</p>
+                    <h3>Autonomous Customer Lifecycle Platform</h3>
+                    <p class="system-card-desc">End-to-end customer journey automation from onboarding through renewal. Churn prediction with early-warning signals, real-time sentiment analysis across every touchpoint, automated NPS and CSAT workflows, customer health scoring, and hyper-personalized engagement sequences. Turns reactive customer service into proactive relationship management at enterprise scale.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Estimates sent within minutes of the site visit</li>
-                        <li><i class="ph ph-check-circle"></i> Branded, professional PDFs — not generic templates</li>
-                        <li><i class="ph ph-check-circle"></i> Track which estimates are opened, viewed, and accepted</li>
+                        <li><i class="ph ph-check-circle"></i> Customer health scoring with 30+ weighted signals</li>
+                        <li><i class="ph ph-check-circle"></i> Predictive churn modeling with automated intervention triggers</li>
+                        <li><i class="ph ph-check-circle"></i> Real-time sentiment analysis across email, chat, and calls</li>
+                        <li><i class="ph ph-check-circle"></i> Automated onboarding sequences with milestone tracking</li>
+                        <li><i class="ph ph-check-circle"></i> NPS/CSAT automation with closed-loop feedback routing</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Your team sends job details through a simple text or voice input. The system structures the information, applies your pricing and branding, generates a professional PDF estimate, and delivers it to the customer via text or email. Tracks sent, opened, and accepted.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Aggregates customer data from CRM, support tickets, billing, product usage, communication history, and NPS surveys. Health score model weights are calibrated to your specific churn drivers. Sentiment engine uses NLP to analyze tone across all communication channels in real time. Intervention workflows are fully customizable — escalation to CSM, automated outreach, executive touchpoint triggers. Integrates with customer success platforms, helpdesks, and billing systems.</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$199<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">Close Jobs Faster <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 5: Customer Command Center -->
+                <!-- System 5: Multi-Entity Operations Command Center -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="system-card-badge">Multi-Location</span>
                     <div class="system-card-icon">
-                        <i class="ph ph-bell-ringing"></i>
+                        <i class="ph ph-buildings"></i>
                     </div>
-                    <h3>Customer Command Center</h3>
-                    <p class="system-card-desc">Your customers stop wondering where the technician is. This system sends automatic, branded updates at every stage — appointment confirmed, tech en route, job in progress, job complete, invoice sent. It reduces inbound "where are you?" calls and makes your operation look polished and professional.</p>
+                    <h3>Multi-Entity Operations Command Center</h3>
+                    <p class="system-card-desc">Centralized operational control across multiple locations, divisions, franchises, or brands. Standardized playbooks with localized execution, cross-entity performance benchmarking, centralized compliance enforcement, and distributed team coordination. One command center to monitor, manage, and optimize every entity in your portfolio without losing local autonomy.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Automatic updates at every job stage — no manual texting</li>
-                        <li><i class="ph ph-check-circle"></i> Branded messages with your company name and logo</li>
-                        <li><i class="ph ph-check-circle"></i> Dramatically reduces inbound status calls</li>
+                        <li><i class="ph ph-check-circle"></i> Unified dashboard with per-entity drill-down and benchmarking</li>
+                        <li><i class="ph ph-check-circle"></i> Standardized SOPs with localized rule engine overrides</li>
+                        <li><i class="ph ph-check-circle"></i> Centralized compliance monitoring with automated alerts</li>
+                        <li><i class="ph ph-check-circle"></i> Cross-entity resource sharing and load balancing</li>
+                        <li><i class="ph ph-check-circle"></i> Hierarchical permission model with role-based access control</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Connects to your scheduling/dispatch system. When job status changes, automated messages fire to the customer with branded updates. Optional: includes a real-time tracking link for the appointment window.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Multi-tenant architecture with entity isolation and shared governance layers. Each entity operates with its own data partition while rolling up to centralized reporting. Playbook engine supports inheritance-based configuration — corporate sets the standard, entities customize within defined parameters. Compliance layer monitors adherence to SLAs, regulatory requirements, and brand standards with escalation workflows. Supports M&A integration workflows for onboarding new entities.</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$99<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">Upgrade Your Customer Experience <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 6: 24/7 Phone Agent -->
+                <!-- System 6: AI-Powered Communication Infrastructure -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="150">
+                    <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
-                        <i class="ph ph-headset"></i>
+                        <i class="ph ph-broadcast"></i>
                     </div>
-                    <h3>24/7 Phone Agent</h3>
-                    <p class="system-card-desc">A virtual receptionist that answers your business line when your team can't — nights, weekends, lunch breaks, busy days. It handles common questions (hours, services, service area), captures caller details, and books appointments. Callers think they're talking to your front desk.</p>
+                    <h3>AI-Powered Communication Infrastructure</h3>
+                    <p class="system-card-desc">Enterprise-grade conversational AI across voice, SMS, email, and chat — with intelligent routing, multi-language support, compliance-grade recording and archival, sentiment-aware escalation, and a unified inbox that connects every channel into a single operational view. Replaces fragmented communication tools with an intelligent, auditable, always-on infrastructure layer.</p>
                     <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Every call answered — 24/7/365, no voicemail needed</li>
-                        <li><i class="ph ph-check-circle"></i> Handles FAQs, captures details, books appointments</li>
-                        <li><i class="ph ph-check-circle"></i> Live transfer when the caller needs a human</li>
+                        <li><i class="ph ph-check-circle"></i> Natural language voice AI with custom brand personality</li>
+                        <li><i class="ph ph-check-circle"></i> Intelligent routing with skills-based and priority-aware queuing</li>
+                        <li><i class="ph ph-check-circle"></i> Multi-language support with real-time translation</li>
+                        <li><i class="ph ph-check-circle"></i> Compliance recording with automated PII redaction</li>
+                        <li><i class="ph ph-check-circle"></i> Unified inbox across voice, SMS, email, chat, and social</li>
                     </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">How it works <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Routes unanswered calls to an intelligent voice agent trained on your business information — services, hours, service area, pricing ranges, and booking rules. Handles the full conversation naturally. Transfers to a live person when the caller needs one. All call summaries and bookings sync to your CRM.</div>
+                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-how">Voice AI is built on enterprise LLMs fine-tuned to your domain, tone, and compliance requirements. Routing engine considers agent skills, current load, customer history, and sentiment signals. All communications are recorded, transcribed, and indexed for search and compliance review. PII redaction runs automatically on transcripts and recordings. Translation engine supports 30+ languages with domain-specific glossaries. Unified inbox aggregates all channels with full conversation history and CRM context.</div>
                     <div class="system-card-footer">
-                        <div class="system-card-price">$249<span>/mo</span></div>
-                        <a href="contact.html" class="system-card-cta">Never Miss Another Call <i class="ph ph-arrow-right"></i></a>
+                        <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1235,27 +1136,30 @@
     <!-- CRM & TOOL COMPATIBILITY -->
     <section class="integrations-section">
         <div class="integrations-container" data-aos="fade-up">
-            <h2>Plugs Into What You Already Use</h2>
+            <h2>Integrates With Your Existing Technology Stack</h2>
 
             <div class="integrations-grid">
-                <div class="integration-item"><i class="ph ph-chart-line-up"></i> GoHighLevel</div>
-                <div class="integration-item"><i class="fab fa-hubspot"></i> HubSpot</div>
                 <div class="integration-item"><i class="fab fa-salesforce"></i> Salesforce</div>
+                <div class="integration-item"><i class="fab fa-hubspot"></i> HubSpot</div>
+                <div class="integration-item"><i class="fab fa-microsoft"></i> Microsoft 365</div>
+                <div class="integration-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="integration-item"><i class="ph ph-database"></i> Snowflake</div>
                 <div class="integration-item"><i class="ph ph-wrench"></i> ServiceTitan</div>
-                <div class="integration-item"><i class="ph ph-clipboard-text"></i> Jobber</div>
-                <div class="integration-item"><i class="ph ph-house-line"></i> Housecall Pro</div>
-                <div class="integration-item"><i class="ph ph-circles-four"></i> Zoho CRM</div>
-                <div class="integration-item"><i class="ph ph-kanban"></i> Monday.com</div>
-                <div class="integration-item"><i class="ph ph-funnel"></i> Pipedrive</div>
                 <div class="integration-item"><i class="fab fa-google"></i> Google Workspace</div>
+                <div class="integration-item"><i class="ph ph-chart-line-up"></i> GoHighLevel</div>
+                <div class="integration-item"><i class="ph ph-circles-four"></i> Zoho CRM</div>
                 <div class="integration-item"><i class="fab fa-slack"></i> Slack</div>
                 <div class="integration-item"><i class="ph ph-receipt"></i> QuickBooks</div>
                 <div class="integration-item"><i class="ph ph-phone-call"></i> Twilio</div>
                 <div class="integration-item"><i class="ph ph-plugs-connected"></i> Zapier</div>
                 <div class="integration-item"><i class="fab fa-stripe"></i> Stripe</div>
+                <div class="integration-item"><i class="ph ph-kanban"></i> Monday.com</div>
+                <div class="integration-item"><i class="ph ph-clipboard-text"></i> Jira</div>
+                <div class="integration-item"><i class="ph ph-database"></i> PostgreSQL</div>
+                <div class="integration-item"><i class="ph ph-cloud"></i> REST / GraphQL APIs</div>
             </div>
 
-            <p class="integrations-subtext">Don't see yours? We integrate with most major platforms. If there's an API, we can connect it.</p>
+            <p class="integrations-subtext">Our enterprise engineering team builds custom connectors for any platform with an API. If your system exists, we can integrate it.</p>
         </div>
     </section>
 
@@ -1263,272 +1167,215 @@
     <section class="results-section">
         <div class="results-container">
             <div class="results-section-header" data-aos="fade-up">
-                <h2>What These Systems Deliver</h2>
+                <h2>Enterprise Impact at Scale</h2>
             </div>
 
             <div class="results-stats" data-aos="fade-up" data-aos-delay="100">
                 <div class="results-stat">
-                    <div class="results-stat-number" data-count="10">< 10 sec</div>
-                    <div class="results-stat-label">Average lead response time</div>
+                    <div class="results-stat-number">85%</div>
+                    <div class="results-stat-label">Reduction in manual operational overhead</div>
                 </div>
                 <div class="results-stat">
-                    <div class="results-stat-number">3x</div>
-                    <div class="results-stat-label">More Google reviews per quarter</div>
+                    <div class="results-stat-number">3.2x</div>
+                    <div class="results-stat-label">Average ROI within first 6 months</div>
                 </div>
                 <div class="results-stat">
-                    <div class="results-stat-number">60%+</div>
-                    <div class="results-stat-label">Reduction in missed calls</div>
+                    <div class="results-stat-number">99.9%</div>
+                    <div class="results-stat-label">System uptime across all deployments</div>
                 </div>
                 <div class="results-stat">
-                    <div class="results-stat-number">40%</div>
-                    <div class="results-stat-label">Faster estimate turnaround</div>
+                    <div class="results-stat-number">50+</div>
+                    <div class="results-stat-label">Enterprise systems deployed and managed</div>
                 </div>
             </div>
 
-            <p class="results-disclaimer" data-aos="fade-up" data-aos-delay="200">Based on average results across active client systems. Individual results vary by business and implementation.</p>
+            <p class="results-disclaimer" data-aos="fade-up" data-aos-delay="200">Based on aggregate results across enterprise client deployments. Individual results vary by organization and implementation scope.</p>
         </div>
     </section>
 
-    <!-- PRICING TIERS -->
-    <section class="pricing-section" id="pricing">
-        <div class="pricing-container">
-            <div class="pricing-section-header" data-aos="fade-up">
-                <h2>Start With One System or Stack the Whole Operation</h2>
-                <p>Every system works independently. Bundle them and the real leverage kicks in — they share data, trigger each other, and compound your results.</p>
+    <!-- ENTERPRISE ENGAGEMENT TIERS -->
+    <section class="engagement-section" id="engagement">
+        <div class="engagement-container">
+            <div class="engagement-header" data-aos="fade-up">
+                <h2>Enterprise Engagement Models</h2>
+                <p>Every engagement is custom-scoped to your organization. Our enterprise team works with you to define requirements, architecture, and timeline.</p>
             </div>
 
-            <div class="pricing-toggle-wrap" data-aos="fade-up" data-aos-delay="50">
-                <span class="pricing-toggle-label active" id="monthlyLabel">Monthly</span>
-                <button class="pricing-toggle" id="pricingToggle" onclick="togglePricing()" aria-label="Toggle annual pricing"></button>
-                <span class="pricing-toggle-label" id="annualLabel">Annual</span>
-                <span class="pricing-save-badge">Save 20%</span>
-            </div>
-
-            <div class="pricing-tiers" data-aos="fade-up" data-aos-delay="100">
-                <!-- Foundation -->
-                <div class="pricing-tier">
-                    <h3>Foundation</h3>
-                    <p class="pricing-tier-desc">One system, fully integrated — the fastest way to see results</p>
-                    <div class="pricing-tier-price" data-monthly="$149" data-annual="$119">$149<span>/mo</span></div>
-                    <p class="pricing-tier-price-annual">$1,428/yr billed annually</p>
-                    <p class="pricing-tier-period"></p>
-                    <ul class="pricing-tier-features">
-                        <li><i class="ph ph-check-circle"></i> Any 1 system from above</li>
-                        <li><i class="ph ph-check-circle"></i> Full CRM integration and setup</li>
-                        <li><i class="ph ph-check-circle"></i> Monthly performance report</li>
-                        <li><i class="ph ph-check-circle"></i> Email + text support</li>
+            <div class="engagement-tiers" data-aos="fade-up" data-aos-delay="100">
+                <!-- Single System -->
+                <div class="engagement-tier">
+                    <h3>Single System Deployment</h3>
+                    <p class="engagement-tier-desc">One enterprise system, fully architected and integrated into your stack</p>
+                    <div class="engagement-tier-label">Custom Scoped</div>
+                    <p class="engagement-tier-sublabel">Pricing based on complexity and scale</p>
+                    <ul class="engagement-tier-features">
+                        <li><i class="ph ph-check-circle"></i> Any 1 enterprise system from above</li>
+                        <li><i class="ph ph-check-circle"></i> Full requirements discovery and architecture</li>
+                        <li><i class="ph ph-check-circle"></i> Enterprise-grade integration with your stack</li>
+                        <li><i class="ph ph-check-circle"></i> Dedicated project manager</li>
+                        <li><i class="ph ph-check-circle"></i> 90-day post-launch optimization period</li>
                     </ul>
-                    <a href="contact.html" class="pricing-tier-cta outline">Get Started <i class="ph ph-arrow-right"></i></a>
+                    <a href="contact.html" class="engagement-tier-cta outline">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                 </div>
 
-                <!-- Operations (Featured) -->
-                <div class="pricing-tier featured">
-                    <span class="pricing-tier-badge">Most Popular</span>
-                    <h3>Operations</h3>
-                    <p class="pricing-tier-desc">Stack your three biggest gaps — the systems work together</p>
-                    <div class="pricing-tier-price" data-monthly="$349" data-annual="$279">$349<span>/mo</span></div>
-                    <p class="pricing-tier-price-annual">$3,348/yr billed annually</p>
-                    <p class="pricing-tier-period"></p>
-                    <ul class="pricing-tier-features">
-                        <li><i class="ph ph-check-circle"></i> Any 3 systems from above</li>
-                        <li><i class="ph ph-check-circle"></i> Full CRM integration and setup</li>
-                        <li><i class="ph ph-check-circle"></i> Bi-weekly performance reports</li>
-                        <li><i class="ph ph-check-circle"></i> Priority support (direct text line)</li>
-                        <li><i class="ph ph-check-circle"></i> 1 custom workflow build per quarter</li>
-                        <li><i class="ph ph-check-circle"></i> Systems cross-connected into one pipeline</li>
+                <!-- Multi-System (Featured) -->
+                <div class="engagement-tier featured">
+                    <span class="engagement-tier-badge">Recommended</span>
+                    <h3>Integrated Operations Suite</h3>
+                    <p class="engagement-tier-desc">Multiple systems architected to work together as a unified operational layer</p>
+                    <div class="engagement-tier-label">Custom Scoped</div>
+                    <p class="engagement-tier-sublabel">Enterprise pricing with volume advantages</p>
+                    <ul class="engagement-tier-features">
+                        <li><i class="ph ph-check-circle"></i> 2-4 enterprise systems, cross-connected</li>
+                        <li><i class="ph ph-check-circle"></i> Unified data architecture across all systems</li>
+                        <li><i class="ph ph-check-circle"></i> Dedicated enterprise account team</li>
+                        <li><i class="ph ph-check-circle"></i> Bi-weekly strategy and optimization calls</li>
+                        <li><i class="ph ph-check-circle"></i> Priority SLA with 4-hour response time</li>
+                        <li><i class="ph ph-check-circle"></i> Quarterly business reviews with executive reporting</li>
                     </ul>
-                    <a href="contact.html" class="pricing-tier-cta primary">Build Your Operations Stack <i class="ph ph-arrow-right"></i></a>
+                    <a href="contact.html" class="engagement-tier-cta primary">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                 </div>
 
-                <!-- Command Center -->
-                <div class="pricing-tier">
-                    <h3>Command Center</h3>
-                    <p class="pricing-tier-desc">Full operational buildout for companies with complex needs</p>
-                    <div class="pricing-tier-price" data-monthly="Custom" data-annual="Custom">Custom</div>
-                    <p class="pricing-tier-period"></p>
-                    <ul class="pricing-tier-features">
-                        <li><i class="ph ph-check-circle"></i> All 6 systems included</li>
-                        <li><i class="ph ph-check-circle"></i> Complete CRM buildout or migration</li>
-                        <li><i class="ph ph-check-circle"></i> Custom workflows for your process</li>
-                        <li><i class="ph ph-check-circle"></i> Dedicated account manager</li>
-                        <li><i class="ph ph-check-circle"></i> Weekly reporting + strategy calls</li>
-                        <li><i class="ph ph-check-circle"></i> Multi-location support</li>
-                        <li><i class="ph ph-check-circle"></i> API access for internal tools</li>
-                        <li><i class="ph ph-check-circle"></i> Priority SLA on support</li>
+                <!-- Full Platform -->
+                <div class="engagement-tier">
+                    <h3>Full Platform Buildout</h3>
+                    <p class="engagement-tier-desc">Complete operational transformation with all systems and dedicated infrastructure</p>
+                    <div class="engagement-tier-label">Custom Scoped</div>
+                    <p class="engagement-tier-sublabel">White-glove enterprise engagement</p>
+                    <ul class="engagement-tier-features">
+                        <li><i class="ph ph-check-circle"></i> All 6 enterprise systems included</li>
+                        <li><i class="ph ph-check-circle"></i> Custom data warehouse and analytics layer</li>
+                        <li><i class="ph ph-check-circle"></i> Dedicated engineering and success team</li>
+                        <li><i class="ph ph-check-circle"></i> Weekly strategy calls with C-suite reporting</li>
+                        <li><i class="ph ph-check-circle"></i> Multi-location and multi-brand support</li>
+                        <li><i class="ph ph-check-circle"></i> Custom API development and internal tool integration</li>
+                        <li><i class="ph ph-check-circle"></i> 24/7 priority support with 1-hour SLA</li>
+                        <li><i class="ph ph-check-circle"></i> Annual technology roadmap planning</li>
                     </ul>
-                    <a href="contact.html" class="pricing-tier-cta outline">Book a Systems Audit <i class="ph ph-arrow-right"></i></a>
+                    <a href="contact.html" class="engagement-tier-cta outline">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                 </div>
             </div>
-
-            <p class="pricing-guarantee" data-aos="fade-up">All plans include a 14-day money-back guarantee. No long-term contracts. Cancel anytime.</p>
         </div>
     </section>
 
-    <!-- SECTION 5: HOW IT WORKS -->
+    <!-- HOW IT WORKS -->
     <section class="how-section" id="how-it-works">
         <div class="how-container">
             <div class="how-section-header" data-aos="fade-up">
-                <h2>Live in 48 Hours. Optimized Every Month.</h2>
+                <h2>Enterprise Deployment Process</h2>
+                <p>A structured, transparent process designed for organizations that need reliability and accountability at every stage</p>
             </div>
 
             <div class="how-steps">
                 <div class="how-step" data-aos="fade-up" data-aos-delay="50">
                     <div class="how-step-num">1</div>
                     <div class="how-step-content">
-                        <h3>Systems Audit (Free)</h3>
-                        <p>Book a 15-minute call. Walk us through where your team is spending time on manual work, where leads are falling through, and what your current tools look like. We'll map exactly which systems will have the highest impact.</p>
+                        <h3>Discovery & Requirements Engineering</h3>
+                        <p>Our enterprise team conducts a comprehensive audit of your current operations, technology stack, and organizational goals. We map data flows, identify bottlenecks, interview key stakeholders, and deliver a detailed requirements document with architectural recommendations.</p>
                     </div>
                 </div>
 
                 <div class="how-step" data-aos="fade-up" data-aos-delay="100">
                     <div class="how-step-num">2</div>
                     <div class="how-step-content">
-                        <h3>We Build & Integrate</h3>
-                        <p>We build your automation systems and connect them directly into your existing CRM and tools — GoHighLevel, HubSpot, ServiceTitan, Jobber, Housecall Pro, Salesforce, or whatever you run on. No migration headaches, no learning curve for your team.</p>
+                        <h3>Architecture & Solution Design</h3>
+                        <p>We design your system architecture with full technical specifications — data models, integration points, security protocols, failover mechanisms, and scalability considerations. You review and approve the blueprint before any development begins.</p>
                     </div>
                 </div>
 
                 <div class="how-step" data-aos="fade-up" data-aos-delay="150">
                     <div class="how-step-num">3</div>
                     <div class="how-step-content">
-                        <h3>Go Live & Measure</h3>
-                        <p>Your systems go live and start working immediately. You get a dashboard showing exactly what's happening — leads caught, follow-ups sent, reviews earned, estimates delivered, calls handled.</p>
+                        <h3>Build, Test & Staged Deployment</h3>
+                        <p>Development follows an iterative process with milestone demos and sign-offs. Systems are tested in staging environments with your actual data before production deployment. UAT, load testing, and security audits are standard for every enterprise engagement.</p>
                     </div>
                 </div>
 
                 <div class="how-step" data-aos="fade-up" data-aos-delay="200">
                     <div class="how-step-num">4</div>
                     <div class="how-step-content">
-                        <h3>Monthly Optimization</h3>
-                        <p>Every month we review your numbers, identify what's working and what isn't, and tune the systems. Better response messaging, better timing, better sequences. Your operation gets sharper without you doing anything.</p>
+                        <h3>Launch, Monitor & Continuous Optimization</h3>
+                        <p>Post-launch, your dedicated account team monitors system performance, handles escalations, and conducts regular optimization cycles. Quarterly business reviews align system performance with your evolving business objectives.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ENTERPRISE / CUSTOM PROJECTS -->
-    <section class="enterprise-section">
-        <div class="enterprise-container">
-            <h2 data-aos="fade-up">Complex Operations. Custom-Built Systems.</h2>
-            <p data-aos="fade-up" data-aos-delay="50">Running multiple locations? Managing a distributed sales team? Processing hundreds of leads a day? Off-the-shelf tools won't cut it. We design and build end-to-end operational systems tailored to how your business actually runs:</p>
-
-            <div class="enterprise-services" data-aos="fade-up" data-aos-delay="100">
-                <div class="enterprise-service-item">
-                    <i class="ph ph-map-trifold"></i>
-                    <span>Multi-location lead routing and intelligent distribution</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-chart-bar"></i>
-                    <span>Outbound sales systems with real-time performance tracking</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-database"></i>
-                    <span>Full CRM buildouts from scratch — designed around your workflow</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-presentation-chart"></i>
-                    <span>Automated reporting dashboards with the metrics that actually matter</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-phone"></i>
-                    <span>Complete phone system replacement with virtual agents</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-users-three"></i>
-                    <span>Employee onboarding and internal communication automation</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-plugs-connected"></i>
-                    <span>Custom integrations between any platforms via API</span>
-                </div>
-                <div class="enterprise-service-item">
-                    <i class="ph ph-git-merge"></i>
-                    <span>Data pipeline buildouts — connect your tools into a single source of truth</span>
-                </div>
-            </div>
-
-            <div class="enterprise-cta-wrap" data-aos="fade-up" data-aos-delay="150">
-                <a href="contact.html" class="enterprise-cta">Let's Scope Your Project <i class="ph ph-arrow-right"></i></a>
-                <p class="enterprise-price-range">Custom projects typically range from $5,000 – $50,000+ depending on scope and complexity.<br>We'll scope it with you for free — no commitment, no fluff.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 9: FAQ -->
+    <!-- FAQ -->
     <section class="sys-faq-section" id="faq">
         <div class="sys-faq-container">
             <div class="sys-faq-header" data-aos="fade-up">
-                <h2>Common Questions</h2>
+                <h2>Enterprise FAQ</h2>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="50">
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">Do we need to switch our CRM or tools? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">How long does an enterprise deployment typically take? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">No. We build on top of what you already use. If you don't have a CRM yet, we can recommend one and set it up as part of the project.</div>
+                        <div class="sys-faq-answer-inner">Single system deployments typically take 4-8 weeks from discovery to production. Multi-system suites range from 8-16 weeks. Full platform buildouts are phased over 3-6 months with systems going live incrementally. Every engagement includes a detailed project timeline with milestones during the discovery phase.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">How long does setup take? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">What kind of organizations are these systems built for? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">Single system setups are typically live within 48 hours. Bundled systems take 3–5 business days. Custom enterprise projects are scoped individually — most are live within 2–4 weeks.</div>
+                        <div class="sys-faq-answer-inner">Our enterprise systems are designed for organizations with complex operational requirements — multi-location businesses, franchise networks, companies processing high volumes of leads or transactions, and teams that have outgrown off-the-shelf tools. If you have 50+ employees or multiple entities, these systems are built for your scale.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">Is there a long-term contract? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">Do you integrate with our existing technology stack? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">No. All standard plans are month-to-month. Enterprise projects have a one-time build fee plus optional ongoing management — no lock-ins. We keep clients because the systems work, not because of contracts.</div>
+                        <div class="sys-faq-answer-inner">Yes. Our systems are designed to integrate with your existing tools, not replace them. We build custom connectors for any platform with an API — CRMs, ERPs, HRIS, helpdesks, billing systems, data warehouses, and internal tools. During discovery, we map your entire stack and design the integration architecture.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">Our team isn't technical. Is that a problem? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">What does ongoing support look like? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">That's the point. We build it, we integrate it, we manage it. Your team interacts with the same tools they already use — the automation runs behind the scenes. If they can read a text message, they can use our systems.</div>
+                        <div class="sys-faq-answer-inner">Every enterprise engagement includes a dedicated account team, proactive system monitoring, and regular optimization cycles. Support SLAs range from 4-hour to 1-hour response times depending on your engagement tier. Quarterly business reviews ensure your systems continue to align with your evolving business objectives.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">Will our customers know they're interacting with automation? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">How is pricing structured for enterprise engagements? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">The systems are designed to feel natural and conversational. Most customers think they're texting or speaking with your team. For phone agents, the voice is natural and handles real conversations — not a phone tree.</div>
+                        <div class="sys-faq-answer-inner">Enterprise pricing is custom-scoped based on the complexity of your requirements, number of systems, scale of deployment, and level of ongoing support needed. We provide detailed proposals after the discovery phase with transparent pricing breakdowns. Contact our enterprise team to schedule a discovery call.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">What kind of results should we expect? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">What about data security and compliance? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">It depends on your starting point and which systems you implement, but typical results include significantly faster lead response, more consistent follow-up, higher review volume, faster quoting, and fewer dropped leads. We share specific benchmarks during the systems audit.</div>
+                        <div class="sys-faq-answer-inner">Security is foundational to every system we build. Our infrastructure supports SOC 2 compliance, end-to-end encryption, role-based access controls, audit logging, and data residency requirements. For regulated industries, we work with your compliance team to ensure all systems meet your specific regulatory obligations.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">Can we start with one system and add more later? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">Can we start with one system and scale up? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">Absolutely. Most clients start with one or two systems, measure the results, and expand from there. Each system is modular — they work independently but become more powerful when connected.</div>
+                        <div class="sys-faq-answer-inner">Absolutely. Many enterprise clients begin with a single high-impact system, validate the results, and expand from there. Each system is architected with future integration in mind — when you add systems later, they connect seamlessly into your existing infrastructure without re-engineering.</div>
                     </div>
                 </div>
 
                 <div class="sys-faq-item">
-                    <button class="sys-faq-question" onclick="toggleFaq(this)">What CRMs and tools do you work with? <i class="ph ph-caret-down"></i></button>
+                    <button class="sys-faq-question" onclick="toggleFaq(this)">Do you support multi-location and multi-brand deployments? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">GoHighLevel, HubSpot, Salesforce, ServiceTitan, Jobber, Housecall Pro, Zoho, Pipedrive, and most major platforms. If it has an API, we can integrate with it.</div>
+                        <div class="sys-faq-answer-inner">Yes. Our Multi-Entity Operations Command Center is purpose-built for this. But even individual systems can be deployed across multiple locations with centralized management and localized customization. We support franchise models, regional offices, and multi-brand portfolios with hierarchical access controls and cross-entity reporting.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 10: FINAL CTA -->
+    <!-- FINAL CTA -->
     <section class="sys-final-cta">
         <div class="sys-final-cta-content" data-aos="fade-up">
-            <h2>Ready to Build Systems That Actually Work?</h2>
-            <p>Book a free 15-minute systems audit. We'll map your current operation, identify the biggest gaps, and tell you exactly which systems will have the highest ROI — no pressure, no sales deck, just a straight answer.</p>
-            <a href="contact.html" class="sys-final-cta-btn">Book Your Free Systems Audit <i class="ph ph-arrow-right"></i></a>
-            <p class="sys-final-cta-alt">Or text us directly: <a href="tel:+16102569844">(610) 256-9844</a></p>
+            <h2>Ready to Transform Your Operations?</h2>
+            <p>Schedule a discovery call with our enterprise team. We'll assess your current operations, identify the highest-impact opportunities, and deliver a custom proposal — no pressure, no generic sales pitch, just a technical conversation about what's possible.</p>
+            <a href="contact.html" class="sys-final-cta-btn">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
+            <p class="sys-final-cta-alt">Or reach us directly: <a href="tel:+16102569844">(610) 256-9844</a></p>
         </div>
     </section>
 
@@ -1552,7 +1399,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="services.html">What's Included</a></li>
-                        <li><a href="systems.html">Business Systems</a></li>
+                        <li><a href="systems.html">Enterprise Systems</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="join.html">Join Our Team</a></li>
@@ -1638,35 +1485,6 @@
 
             button.classList.toggle('active');
             howText.classList.toggle('show');
-        }
-
-        // Pricing toggle
-        function togglePricing() {
-            const toggle = document.getElementById('pricingToggle');
-            const monthlyLabel = document.getElementById('monthlyLabel');
-            const annualLabel = document.getElementById('annualLabel');
-            const isAnnual = toggle.classList.toggle('active');
-
-            monthlyLabel.classList.toggle('active', !isAnnual);
-            annualLabel.classList.toggle('active', isAnnual);
-
-            document.querySelectorAll('.pricing-tier-price').forEach(function(el) {
-                const monthly = el.getAttribute('data-monthly');
-                const annual = el.getAttribute('data-annual');
-                if (monthly && annual) {
-                    if (isAnnual && annual !== 'Custom') {
-                        el.innerHTML = annual + '<span>/mo</span>';
-                    } else if (!isAnnual && monthly !== 'Custom') {
-                        el.innerHTML = monthly + '<span>/mo</span>';
-                    } else {
-                        el.innerHTML = monthly;
-                    }
-                }
-            });
-
-            document.querySelectorAll('.pricing-tier-price-annual').forEach(function(el) {
-                el.classList.toggle('show', isAnnual);
-            });
         }
 
         // Smooth scroll for anchor links (offset for fixed nav)
