@@ -336,119 +336,51 @@
             box-shadow: 0 4px 16px rgba(46, 125, 138, 0.35);
         }
 
-        /* ===== SYSTEMS DIAGRAM ===== */
-        .diagram-section {
-            padding: 4rem 2rem 1rem;
-            background: #f8fafb;
-        }
-        .diagram-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .diagram-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-        .diagram-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-        }
-        .diagram-header p {
-            font-size: 0.95rem;
-            color: #64748b;
-        }
-        .diagram-wrapper {
-            position: relative;
-            padding: 2rem 0;
-        }
-        .diagram-center {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+        /* ===== CARD WORKFLOW DIAGRAM ===== */
+        .card-workflow {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 8px 30px rgba(46, 125, 138, 0.3);
+            gap: 0;
+            margin: 0.75rem 0 0.5rem;
+            flex-wrap: wrap;
         }
-        .diagram-center-text {
-            text-align: center;
-            color: #ffffff;
+        .card-workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.6rem;
+            background: linear-gradient(135deg, rgba(46,125,138,0.06) 0%, rgba(74,171,184,0.06) 100%);
+            border: 1px solid rgba(46,125,138,0.15);
+            border-radius: 6px;
+            white-space: nowrap;
         }
-        .diagram-center-text i {
-            font-size: 1.75rem;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .diagram-center-text span {
-            font-family: 'Space Grotesk', sans-serif;
+        .card-workflow-step i {
             font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .diagram-ring {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: -2rem;
-            padding-top: 3.5rem;
-        }
-        .diagram-node {
-            text-align: center;
-            padding: 1.25rem 0.75rem;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .diagram-node:hover {
-            border-color: #2E7D8A;
-            box-shadow: 0 4px 16px rgba(46, 125, 138, 0.12);
-            transform: translateY(-3px);
-        }
-        .diagram-node i {
-            font-size: 1.5rem;
             color: #2E7D8A;
-            display: block;
-            margin-bottom: 0.5rem;
         }
-        .diagram-node-label {
+        .card-workflow-step span {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.78rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: #1e293b;
-            line-height: 1.3;
+            letter-spacing: 0.01em;
         }
-        .diagram-connectors {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            margin-top: -0.5rem;
-            margin-bottom: -0.5rem;
-            position: relative;
-            z-index: 1;
+        .card-workflow-arrow {
+            color: #cbd5e1;
+            font-size: 0.7rem;
+            padding: 0 0.2rem;
+            flex-shrink: 0;
         }
-        .diagram-connector-line {
-            width: 2px;
-            height: 24px;
-            background: linear-gradient(180deg, #2E7D8A, #e2e8f0);
-            margin: 0 auto;
-        }
-        @media (max-width: 600px) {
-            .diagram-ring {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 480px) {
+            .card-workflow {
+                gap: 0.25rem;
             }
-            .diagram-center {
-                width: 110px;
-                height: 110px;
+            .card-workflow-step {
+                padding: 0.25rem 0.45rem;
+            }
+            .card-workflow-step span {
+                font-size: 0.6rem;
             }
         }
 
@@ -1105,56 +1037,8 @@
         </div>
     </section>
 
-    <!-- SYSTEMS DIAGRAM -->
-    <section class="diagram-section" id="systems">
-        <div class="diagram-container" data-aos="fade-up">
-            <div class="diagram-header">
-                <h2>The Enterprise Ecosystem</h2>
-                <p>Six integrated systems, one unified platform</p>
-            </div>
-
-            <div class="diagram-wrapper">
-                <div class="diagram-center">
-                    <div class="diagram-center-text">
-                        <i class="ph ph-circles-three-plus"></i>
-                        <span>Your<br>Operations</span>
-                    </div>
-                </div>
-                <div class="diagram-connectors">
-                    <div class="diagram-connector-line"></div>
-                </div>
-                <div class="diagram-ring">
-                    <div class="diagram-node">
-                        <i class="ph ph-brain"></i>
-                        <div class="diagram-node-label">Machine Learning &amp; Data Intelligence</div>
-                    </div>
-                    <div class="diagram-node">
-                        <i class="ph ph-currency-circle-dollar"></i>
-                        <div class="diagram-node-label">Revenue Operations</div>
-                    </div>
-                    <div class="diagram-node">
-                        <i class="ph ph-users-four"></i>
-                        <div class="diagram-node-label">Workforce Management</div>
-                    </div>
-                    <div class="diagram-node">
-                        <i class="ph ph-heartbeat"></i>
-                        <div class="diagram-node-label">Customer Lifecycle</div>
-                    </div>
-                    <div class="diagram-node">
-                        <i class="ph ph-buildings"></i>
-                        <div class="diagram-node-label">Multi-Location Control</div>
-                    </div>
-                    <div class="diagram-node">
-                        <i class="ph ph-broadcast"></i>
-                        <div class="diagram-node-label">AI Communications</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ENTERPRISE SYSTEMS -->
-    <section class="systems-section">
+    <section class="systems-section" id="systems">
         <div class="systems-container">
             <div class="systems-section-header" data-aos="fade-up">
                 <h2>What We Build</h2>
@@ -1173,6 +1057,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-plugs-connected"></i> <span>Connect Sources</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-funnel"></i> <span>ETL Pipeline</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-brain"></i> <span>ML Analysis</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-chart-line-up"></i> <span>Dashboards</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> Automated data pipelines from all your tools</li>
                                 <li><i class="ph ph-check-circle"></i> AI-powered predictions and anomaly alerts</li>
@@ -1197,6 +1090,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-cursor-click"></i> <span>Lead Enters</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-star"></i> <span>AI Scoring</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-map-pin"></i> <span>Route to Rep</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-trophy"></i> <span>Close Deal</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> AI lead scoring across 40+ signals</li>
                                 <li><i class="ph ph-check-circle"></i> Smart territory mapping and rep assignment</li>
@@ -1221,6 +1123,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-calendar"></i> <span>Demand Signal</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-brain"></i> <span>AI Scheduling</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-map-trifold"></i> <span>GPS Dispatch</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-check-square"></i> <span>Job Complete</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> AI-optimized scheduling and shift planning</li>
                                 <li><i class="ph ph-check-circle"></i> Skills-based routing with certification tracking</li>
@@ -1244,6 +1155,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-user-plus"></i> <span>Onboard</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-heartbeat"></i> <span>Health Score</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-warning"></i> <span>Churn Alert</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-arrows-clockwise"></i> <span>Retain</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> Customer health scoring across 30+ signals</li>
                                 <li><i class="ph ph-check-circle"></i> Churn prediction with automatic intervention</li>
@@ -1268,6 +1188,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-buildings"></i> <span>Locations</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-git-merge"></i> <span>Unify Data</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-shield-check"></i> <span>Compliance</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-monitor"></i> <span>Command Center</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> Unified dashboard with per-location drill-down</li>
                                 <li><i class="ph ph-check-circle"></i> Standardized playbooks with local overrides</li>
@@ -1292,6 +1221,15 @@
                     <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
                     <div class="system-card-details">
                         <div class="system-card-details-inner">
+                            <div class="card-workflow">
+                                <div class="card-workflow-step"><i class="ph ph-phone-incoming"></i> <span>Inbound</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-robot"></i> <span>AI Handles</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-translate"></i> <span>Translate</span></div>
+                                <div class="card-workflow-arrow"><i class="ph ph-arrow-right"></i></div>
+                                <div class="card-workflow-step"><i class="ph ph-tray"></i> <span>Unified Inbox</span></div>
+                            </div>
                             <ul class="system-card-results">
                                 <li><i class="ph ph-check-circle"></i> Natural voice AI with your brand personality</li>
                                 <li><i class="ph ph-check-circle"></i> Smart routing based on skills and priority</li>
