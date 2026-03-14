@@ -271,6 +271,38 @@
         .system-card-toggle:hover {
             color: #1e5a63;
         }
+        .system-card-toggle i {
+            transition: transform 0.2s ease;
+            font-size: 0.7rem;
+        }
+        .system-card-toggle.active i {
+            transform: rotate(180deg);
+        }
+        .system-card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .system-card-details ul {
+            list-style: none;
+            padding: 0.75rem 0 0;
+            margin: 0;
+            border-top: 1px solid #f1f5f9;
+        }
+        .system-card-details li {
+            font-size: 0.8rem;
+            color: #374151;
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        .system-card-details li i {
+            color: #10b981;
+            font-size: 0.75rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
         .system-card-footer {
             display: flex;
             align-items: center;
@@ -296,275 +328,6 @@
         .system-card-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 16px rgba(46, 125, 138, 0.35);
-        }
-
-        /* ===== SYSTEM MODAL ===== */
-        .sys-modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-        }
-        .sys-modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        .sys-modal {
-            background: #ffffff;
-            border-radius: 1.25rem;
-            max-width: 720px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
-            transform: translateY(20px) scale(0.97);
-            transition: transform 0.25s ease;
-            position: relative;
-        }
-        .sys-modal-overlay.active .sys-modal {
-            transform: translateY(0) scale(1);
-        }
-        .sys-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid #e2e8f0;
-            background: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #64748b;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            z-index: 2;
-        }
-        .sys-modal-close:hover {
-            background: #f1f5f9;
-            color: #1e293b;
-        }
-        .sys-modal-header {
-            padding: 2rem 2rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .sys-modal-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .sys-modal-icon i {
-            font-size: 1.4rem;
-            color: #ffffff;
-        }
-        .sys-modal-header h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #1e293b;
-            line-height: 1.3;
-        }
-
-        /* n8n-style workflow */
-        .wf-canvas {
-            padding: 1.5rem 2rem;
-            position: relative;
-        }
-        .wf-label {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
-        }
-        .wf-flow {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-        }
-        .wf-node {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            min-width: 80px;
-            flex-shrink: 0;
-        }
-        .wf-node-box {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #e2e8f0;
-            background: #ffffff;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-        .wf-node:first-child .wf-node-box {
-            border-color: #2E7D8A;
-            background: linear-gradient(135deg, rgba(46,125,138,0.08) 0%, rgba(74,171,184,0.08) 100%);
-        }
-        .wf-node:last-child .wf-node-box {
-            border-color: #10b981;
-            background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(16,185,129,0.04) 100%);
-        }
-        .wf-node-box i {
-            font-size: 1.25rem;
-            color: #475569;
-        }
-        .wf-node:first-child .wf-node-box i {
-            color: #2E7D8A;
-        }
-        .wf-node:last-child .wf-node-box i {
-            color: #10b981;
-        }
-        .wf-node-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: #475569;
-            text-align: center;
-            line-height: 1.2;
-            max-width: 85px;
-        }
-        .wf-connector {
-            display: flex;
-            align-items: center;
-            padding: 0 0.15rem;
-            flex-shrink: 0;
-            margin-top: -1.2rem;
-        }
-        .wf-connector-line {
-            width: 28px;
-            height: 2px;
-            background: #e2e8f0;
-            position: relative;
-        }
-        .wf-connector-line::after {
-            content: '';
-            position: absolute;
-            right: -1px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-left: 5px solid #cbd5e1;
-            border-top: 4px solid transparent;
-            border-bottom: 4px solid transparent;
-        }
-
-        /* modal features */
-        .sys-modal-features {
-            padding: 0 2rem 1.5rem;
-        }
-        .sys-modal-features-label {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.5rem;
-        }
-        .sys-modal-features ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.35rem 1.5rem;
-        }
-        .sys-modal-features li {
-            font-size: 0.82rem;
-            color: #374151;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            padding: 0.3rem 0;
-        }
-        .sys-modal-features li i {
-            color: #10b981;
-            font-size: 0.75rem;
-            margin-top: 0.2rem;
-            flex-shrink: 0;
-        }
-        .sys-modal-footer {
-            padding: 1.25rem 2rem;
-            border-top: 1px solid #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .sys-modal-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            padding: 0.85rem 2rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 125, 138, 0.3);
-        }
-        .sys-modal-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(46, 125, 138, 0.4);
-        }
-        @media (max-width: 640px) {
-            .sys-modal {
-                margin: 0;
-                border-radius: 1rem;
-                max-height: 85vh;
-            }
-            .sys-modal-header {
-                padding: 1.5rem 1.5rem 0;
-            }
-            .wf-canvas {
-                padding: 1.25rem 1.5rem;
-            }
-            .sys-modal-features {
-                padding: 0 1.5rem 1.25rem;
-            }
-            .sys-modal-features ul {
-                grid-template-columns: 1fr;
-            }
-            .sys-modal-footer {
-                padding: 1rem 1.5rem;
-            }
-            .wf-node {
-                min-width: 65px;
-            }
-            .wf-node-box {
-                width: 46px;
-                height: 46px;
-            }
-            .wf-connector-line {
-                width: 18px;
-            }
         }
 
         /* ===== ENTERPRISE ENGAGEMENT SECTION ===== */
@@ -1235,7 +998,17 @@
                     <div class="system-card-icon"><i class="ph ph-brain"></i></div>
                     <h3>Machine Learning & Data Intelligence</h3>
                     <p class="system-card-desc">Pull all your data into one place. Get dashboards, predictions, and alerts that tell you what's happening before you have to ask.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('ml')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> Automated data pipelines from all your tools</li>
+                            <li><i class="ph ph-check-circle"></i> AI-powered predictions and anomaly alerts</li>
+                            <li><i class="ph ph-check-circle"></i> Custom executive dashboards with live KPIs</li>
+                            <li><i class="ph ph-check-circle"></i> Automated reports sent to stakeholders</li>
+                            <li><i class="ph ph-check-circle"></i> Historical trend analysis with projections</li>
+                            <li><i class="ph ph-check-circle"></i> Role-based dashboard access controls</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1247,7 +1020,17 @@
                     <div class="system-card-icon"><i class="ph ph-currency-circle-dollar"></i></div>
                     <h3>Revenue Operations</h3>
                     <p class="system-card-desc">Manage your entire sales pipeline from first click to closed deal. AI scores your leads, routes them to the right rep, and forecasts revenue automatically.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('revops')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> AI lead scoring across 40+ behavioral signals</li>
+                            <li><i class="ph ph-check-circle"></i> Smart territory mapping and rep assignment</li>
+                            <li><i class="ph ph-check-circle"></i> Multi-touch attribution (paid, organic, outbound)</li>
+                            <li><i class="ph ph-check-circle"></i> Real-time pipeline forecasting</li>
+                            <li><i class="ph ph-check-circle"></i> Automated handoff workflows between stages</li>
+                            <li><i class="ph ph-check-circle"></i> Revenue reporting with confidence intervals</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1259,7 +1042,17 @@
                     <div class="system-card-icon"><i class="ph ph-users-four"></i></div>
                     <h3>Workforce Management</h3>
                     <p class="system-card-desc">AI handles scheduling, dispatching, and resource planning across all your locations. The right person gets the right job based on skills, location, and availability.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('workforce')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> AI-optimized scheduling and shift planning</li>
+                            <li><i class="ph ph-check-circle"></i> Skills-based routing with certification tracking</li>
+                            <li><i class="ph ph-check-circle"></i> GPS-aware dispatching and live ETAs</li>
+                            <li><i class="ph ph-check-circle"></i> Demand forecasting and capacity planning</li>
+                            <li><i class="ph ph-check-circle"></i> Automated timesheet reconciliation</li>
+                            <li><i class="ph ph-check-circle"></i> Multi-location, multi-timezone support</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1270,7 +1063,17 @@
                     <div class="system-card-icon"><i class="ph ph-heartbeat"></i></div>
                     <h3>Customer Lifecycle</h3>
                     <p class="system-card-desc">Automate the entire customer journey — onboarding, check-ins, renewals. Predict who's about to churn and trigger the right outreach before it happens.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('lifecycle')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> Customer health scoring across 30+ signals</li>
+                            <li><i class="ph ph-check-circle"></i> Churn prediction with automatic intervention</li>
+                            <li><i class="ph ph-check-circle"></i> Sentiment analysis on emails, chat, and calls</li>
+                            <li><i class="ph ph-check-circle"></i> Automated NPS/CSAT surveys and follow-up</li>
+                            <li><i class="ph ph-check-circle"></i> Milestone-based onboarding sequences</li>
+                            <li><i class="ph ph-check-circle"></i> Closed-loop feedback routing to teams</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1282,7 +1085,17 @@
                     <div class="system-card-icon"><i class="ph ph-buildings"></i></div>
                     <h3>Multi-Location Control Center</h3>
                     <p class="system-card-desc">One dashboard to manage every location, franchise, or brand. Standardized processes with local flexibility, cross-location benchmarking, and centralized compliance.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('multiloc')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> Unified dashboard with per-location drill-down</li>
+                            <li><i class="ph ph-check-circle"></i> Standardized playbooks with local overrides</li>
+                            <li><i class="ph ph-check-circle"></i> Centralized compliance monitoring and alerts</li>
+                            <li><i class="ph ph-check-circle"></i> Role-based permissions across your org</li>
+                            <li><i class="ph ph-check-circle"></i> Cross-entity performance benchmarking</li>
+                            <li><i class="ph ph-check-circle"></i> Franchise/multi-brand support</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1294,7 +1107,17 @@
                     <div class="system-card-icon"><i class="ph ph-broadcast"></i></div>
                     <h3>AI Communications</h3>
                     <p class="system-card-desc">Voice AI, smart routing, and a unified inbox across phone, text, email, and chat. Multi-language support and compliance recording built in.</p>
-                    <button class="system-card-toggle" onclick="openSystemModal('comms')">See what's included <i class="ph ph-arrow-right"></i></button>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <ul>
+                            <li><i class="ph ph-check-circle"></i> Natural voice AI with your brand personality</li>
+                            <li><i class="ph ph-check-circle"></i> Smart routing based on skills and priority</li>
+                            <li><i class="ph ph-check-circle"></i> Multi-language with real-time translation</li>
+                            <li><i class="ph ph-check-circle"></i> Compliance recording with auto PII redaction</li>
+                            <li><i class="ph ph-check-circle"></i> Unified inbox across voice, SMS, email, chat</li>
+                            <li><i class="ph ph-check-circle"></i> Sentiment-aware escalation to humans</li>
+                        </ul>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1549,25 +1372,6 @@
         </div>
     </section>
 
-    <!-- SYSTEM MODALS -->
-    <div class="sys-modal-overlay" id="sysModal" onclick="closeSystemModal(event)">
-        <div class="sys-modal" id="sysModalContent">
-            <button class="sys-modal-close" onclick="closeSystemModal()"><i class="ph ph-x"></i></button>
-            <div class="sys-modal-header" id="sysModalHeader"></div>
-            <div class="wf-canvas">
-                <div class="wf-label">System Workflow</div>
-                <div class="wf-flow" id="sysModalFlow"></div>
-            </div>
-            <div class="sys-modal-features">
-                <div class="sys-modal-features-label">Capabilities</div>
-                <ul id="sysModalFeatures"></ul>
-            </div>
-            <div class="sys-modal-footer">
-                <a href="contact.html" class="sys-modal-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -1667,173 +1471,23 @@
             }
         }
 
-        // System modal data
-        var systemData = {
-            ml: {
-                icon: 'ph-brain',
-                title: 'Machine Learning & Data Intelligence',
-                nodes: [
-                    { icon: 'ph-plugs-connected', label: 'Connect\nSources' },
-                    { icon: 'ph-funnel', label: 'ETL\nPipeline' },
-                    { icon: 'ph-database', label: 'Data\nWarehouse' },
-                    { icon: 'ph-brain', label: 'ML\nModels' },
-                    { icon: 'ph-warning-circle', label: 'Anomaly\nDetection' },
-                    { icon: 'ph-chart-line-up', label: 'Live\nDashboards' }
-                ],
-                features: [
-                    'Automated data pipelines from all your tools',
-                    'AI-powered predictions and anomaly alerts',
-                    'Custom executive dashboards with live KPIs',
-                    'Automated reports sent to stakeholders',
-                    'Historical trend analysis with projections',
-                    'Role-based dashboard access controls'
-                ]
-            },
-            revops: {
-                icon: 'ph-currency-circle-dollar',
-                title: 'Revenue Operations',
-                nodes: [
-                    { icon: 'ph-cursor-click', label: 'Lead\nCapture' },
-                    { icon: 'ph-star', label: 'AI\nScoring' },
-                    { icon: 'ph-funnel', label: 'Pipeline\nStage' },
-                    { icon: 'ph-map-pin', label: 'Territory\nRouting' },
-                    { icon: 'ph-chart-bar', label: 'Forecast\nEngine' },
-                    { icon: 'ph-trophy', label: 'Closed\nDeal' }
-                ],
-                features: [
-                    'AI lead scoring across 40+ behavioral signals',
-                    'Smart territory mapping and rep assignment',
-                    'Multi-touch attribution (paid, organic, outbound)',
-                    'Real-time pipeline forecasting',
-                    'Automated handoff workflows between stages',
-                    'Revenue reporting with confidence intervals'
-                ]
-            },
-            workforce: {
-                icon: 'ph-users-four',
-                title: 'Workforce Management',
-                nodes: [
-                    { icon: 'ph-calendar', label: 'Demand\nSignal' },
-                    { icon: 'ph-brain', label: 'AI\nScheduler' },
-                    { icon: 'ph-identification-badge', label: 'Skills\nMatch' },
-                    { icon: 'ph-map-trifold', label: 'GPS\nDispatch' },
-                    { icon: 'ph-clock-countdown', label: 'Live\nTracking' },
-                    { icon: 'ph-check-square', label: 'Job\nComplete' }
-                ],
-                features: [
-                    'AI-optimized scheduling and shift planning',
-                    'Skills-based routing with certification tracking',
-                    'GPS-aware dispatching and live ETAs',
-                    'Demand forecasting and capacity planning',
-                    'Automated timesheet reconciliation',
-                    'Multi-location, multi-timezone support'
-                ]
-            },
-            lifecycle: {
-                icon: 'ph-heartbeat',
-                title: 'Customer Lifecycle',
-                nodes: [
-                    { icon: 'ph-user-plus', label: 'Customer\nOnboard' },
-                    { icon: 'ph-heartbeat', label: 'Health\nScore' },
-                    { icon: 'ph-chat-circle-dots', label: 'Sentiment\nAnalysis' },
-                    { icon: 'ph-warning', label: 'Churn\nAlert' },
-                    { icon: 'ph-paper-plane-tilt', label: 'Auto\nOutreach' },
-                    { icon: 'ph-arrows-clockwise', label: 'Retain &\nRenew' }
-                ],
-                features: [
-                    'Customer health scoring across 30+ signals',
-                    'Churn prediction with automatic intervention',
-                    'Sentiment analysis on emails, chat, and calls',
-                    'Automated NPS/CSAT surveys and follow-up',
-                    'Milestone-based onboarding sequences',
-                    'Closed-loop feedback routing to teams'
-                ]
-            },
-            multiloc: {
-                icon: 'ph-buildings',
-                title: 'Multi-Location Control Center',
-                nodes: [
-                    { icon: 'ph-buildings', label: 'All\nLocations' },
-                    { icon: 'ph-git-merge', label: 'Unify\nData' },
-                    { icon: 'ph-clipboard-text', label: 'Standard\nPlaybooks' },
-                    { icon: 'ph-shield-check', label: 'Compliance\nEngine' },
-                    { icon: 'ph-chart-bar', label: 'Cross-Entity\nBenchmark' },
-                    { icon: 'ph-monitor', label: 'Command\nCenter' }
-                ],
-                features: [
-                    'Unified dashboard with per-location drill-down',
-                    'Standardized playbooks with local overrides',
-                    'Centralized compliance monitoring and alerts',
-                    'Role-based permissions across your org',
-                    'Cross-entity performance benchmarking',
-                    'Franchise/multi-brand support'
-                ]
-            },
-            comms: {
-                icon: 'ph-broadcast',
-                title: 'AI Communications',
-                nodes: [
-                    { icon: 'ph-phone-incoming', label: 'Inbound\nContact' },
-                    { icon: 'ph-robot', label: 'AI Voice\nAgent' },
-                    { icon: 'ph-git-branch', label: 'Smart\nRouting' },
-                    { icon: 'ph-translate', label: 'Real-time\nTranslation' },
-                    { icon: 'ph-record', label: 'Compliance\nRecording' },
-                    { icon: 'ph-tray', label: 'Unified\nInbox' }
-                ],
-                features: [
-                    'Natural voice AI with your brand personality',
-                    'Smart routing based on skills and priority',
-                    'Multi-language with real-time translation',
-                    'Compliance recording with auto PII redaction',
-                    'Unified inbox across voice, SMS, email, chat',
-                    'Sentiment-aware escalation to humans'
-                ]
+        // Toggle system card details dropdown
+        function toggleDetails(button) {
+            var details = button.nextElementSibling;
+            var isActive = button.classList.contains('active');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.system-card-toggle.active').forEach(function(btn) {
+                btn.classList.remove('active');
+                btn.nextElementSibling.style.maxHeight = null;
+            });
+
+            // Open clicked if it was closed
+            if (!isActive) {
+                button.classList.add('active');
+                details.style.maxHeight = details.scrollHeight + 'px';
             }
-        };
-
-        function openSystemModal(key) {
-            var data = systemData[key];
-            if (!data) return;
-
-            // Header
-            document.getElementById('sysModalHeader').innerHTML =
-                '<div class="sys-modal-icon"><i class="ph ' + data.icon + '"></i></div>' +
-                '<h3>' + data.title + '</h3>';
-
-            // Workflow nodes
-            var flowHtml = '';
-            data.nodes.forEach(function(node, i) {
-                if (i > 0) {
-                    flowHtml += '<div class="wf-connector"><div class="wf-connector-line"></div></div>';
-                }
-                flowHtml += '<div class="wf-node">' +
-                    '<div class="wf-node-box"><i class="ph ' + node.icon + '"></i></div>' +
-                    '<div class="wf-node-label">' + node.label.replace('\n', '<br>') + '</div>' +
-                    '</div>';
-            });
-            document.getElementById('sysModalFlow').innerHTML = flowHtml;
-
-            // Features
-            var featHtml = '';
-            data.features.forEach(function(f) {
-                featHtml += '<li><i class="ph ph-check-circle"></i> ' + f + '</li>';
-            });
-            document.getElementById('sysModalFeatures').innerHTML = featHtml;
-
-            // Show
-            document.getElementById('sysModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
         }
-
-        function closeSystemModal(e) {
-            if (e && e.target !== e.currentTarget && !e.target.closest('.sys-modal-close')) return;
-            document.getElementById('sysModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeSystemModal();
-        });
 
         // Smooth scroll for anchor links (offset for fixed nav)
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
