@@ -245,46 +245,45 @@
             font-size: 1.15rem;
             font-weight: 700;
             color: #1e293b;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             line-height: 1.3;
         }
         .system-card-desc {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #64748b;
-            line-height: 1.65;
-            margin-bottom: 1.25rem;
-            flex: 1;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .system-card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        .system-card-details.show {
+            max-height: 600px;
+        }
+        .system-card-details-inner {
+            padding-top: 0.75rem;
+            border-top: 1px solid #f1f5f9;
         }
         .system-card-results {
             list-style: none;
             padding: 0;
-            margin: 0 0 1.25rem 0;
+            margin: 0 0 0.75rem 0;
         }
         .system-card-results li {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #374151;
-            padding: 0.35rem 0;
+            padding: 0.3rem 0;
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
         }
         .system-card-results li i {
             color: #10b981;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-top: 0.2rem;
             flex-shrink: 0;
-        }
-        .system-card-how {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            line-height: 1.6;
-            padding-top: 1rem;
-            border-top: 1px solid #f1f5f9;
-            margin-bottom: 1.25rem;
-            display: none;
-        }
-        .system-card-how.show {
-            display: block;
         }
         .system-card-toggle {
             background: none;
@@ -335,6 +334,122 @@
         .system-card-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 16px rgba(46, 125, 138, 0.35);
+        }
+
+        /* ===== SYSTEMS DIAGRAM ===== */
+        .diagram-section {
+            padding: 4rem 2rem 1rem;
+            background: #f8fafb;
+        }
+        .diagram-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .diagram-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .diagram-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .diagram-header p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+        .diagram-wrapper {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .diagram-center {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2E7D8A 0%, #4AABB8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 30px rgba(46, 125, 138, 0.3);
+        }
+        .diagram-center-text {
+            text-align: center;
+            color: #ffffff;
+        }
+        .diagram-center-text i {
+            font-size: 1.75rem;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .diagram-center-text span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .diagram-ring {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: -2rem;
+            padding-top: 3.5rem;
+        }
+        .diagram-node {
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .diagram-node:hover {
+            border-color: #2E7D8A;
+            box-shadow: 0 4px 16px rgba(46, 125, 138, 0.12);
+            transform: translateY(-3px);
+        }
+        .diagram-node i {
+            font-size: 1.5rem;
+            color: #2E7D8A;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .diagram-node-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.3;
+        }
+        .diagram-connectors {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-top: -0.5rem;
+            margin-bottom: -0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .diagram-connector-line {
+            width: 2px;
+            height: 24px;
+            background: linear-gradient(180deg, #2E7D8A, #e2e8f0);
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .diagram-ring {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .diagram-center {
+                width: 110px;
+                height: 110px;
+            }
         }
 
         /* ===== ENTERPRISE ENGAGEMENT SECTION ===== */
@@ -990,141 +1105,201 @@
         </div>
     </section>
 
+    <!-- SYSTEMS DIAGRAM -->
+    <section class="diagram-section" id="systems">
+        <div class="diagram-container" data-aos="fade-up">
+            <div class="diagram-header">
+                <h2>The Enterprise Ecosystem</h2>
+                <p>Six integrated systems, one unified platform</p>
+            </div>
+
+            <div class="diagram-wrapper">
+                <div class="diagram-center">
+                    <div class="diagram-center-text">
+                        <i class="ph ph-circles-three-plus"></i>
+                        <span>Your<br>Operations</span>
+                    </div>
+                </div>
+                <div class="diagram-connectors">
+                    <div class="diagram-connector-line"></div>
+                </div>
+                <div class="diagram-ring">
+                    <div class="diagram-node">
+                        <i class="ph ph-brain"></i>
+                        <div class="diagram-node-label">Machine Learning &amp; Data Intelligence</div>
+                    </div>
+                    <div class="diagram-node">
+                        <i class="ph ph-currency-circle-dollar"></i>
+                        <div class="diagram-node-label">Revenue Operations</div>
+                    </div>
+                    <div class="diagram-node">
+                        <i class="ph ph-users-four"></i>
+                        <div class="diagram-node-label">Workforce Management</div>
+                    </div>
+                    <div class="diagram-node">
+                        <i class="ph ph-heartbeat"></i>
+                        <div class="diagram-node-label">Customer Lifecycle</div>
+                    </div>
+                    <div class="diagram-node">
+                        <i class="ph ph-buildings"></i>
+                        <div class="diagram-node-label">Multi-Location Control</div>
+                    </div>
+                    <div class="diagram-node">
+                        <i class="ph ph-broadcast"></i>
+                        <div class="diagram-node-label">AI Communications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ENTERPRISE SYSTEMS -->
-    <section class="systems-section" id="systems">
+    <section class="systems-section">
         <div class="systems-container">
             <div class="systems-section-header" data-aos="fade-up">
-                <h2>Enterprise Automation Infrastructure</h2>
-                <p>Each system is architected for scale, security, and seamless integration with your existing technology stack. Custom-scoped and built by our enterprise engineering team.</p>
+                <h2>What We Build</h2>
+                <p>Each system integrates with your existing tools. Custom-scoped and built by our enterprise team.</p>
             </div>
 
             <div class="systems-grid">
-                <!-- System 1: Enterprise Data Intelligence Platform -->
+                <!-- System 1 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="50">
                     <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
                         <i class="ph ph-brain"></i>
                     </div>
-                    <h3>Enterprise Data Intelligence Platform</h3>
-                    <p class="system-card-desc">Unify data streams from every department into a single source of truth. Real-time predictive analytics, custom KPI dashboards, anomaly detection, and AI-driven forecasting models — all purpose-built around your organization's decision-making framework. Replaces fragmented spreadsheets and siloed reports with a living intelligence layer that surfaces insights before you ask for them.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Cross-departmental data unification with automated ETL pipelines</li>
-                        <li><i class="ph ph-check-circle"></i> Predictive analytics with ML-powered anomaly detection</li>
-                        <li><i class="ph ph-check-circle"></i> Custom executive dashboards with real-time KPI tracking</li>
-                        <li><i class="ph ph-check-circle"></i> Automated report generation and stakeholder distribution</li>
-                        <li><i class="ph ph-check-circle"></i> Historical trend analysis with forward-looking projections</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Built on a modular data lake architecture with connectors for 200+ enterprise platforms. Ingests structured and unstructured data via REST APIs, webhooks, database replication, and file-based imports. ML models are trained on your historical data and continuously refined. Dashboards are role-based with granular access controls. Supports scheduled and on-demand reporting with multi-format export (PDF, CSV, API).</div>
+                    <h3>Machine Learning & Data Intelligence</h3>
+                    <p class="system-card-desc">Pull all your data into one place. Get dashboards, predictions, and alerts that tell you what's happening before you have to ask.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> Automated data pipelines from all your tools</li>
+                                <li><i class="ph ph-check-circle"></i> AI-powered predictions and anomaly alerts</li>
+                                <li><i class="ph ph-check-circle"></i> Custom executive dashboards with live KPIs</li>
+                                <li><i class="ph ph-check-circle"></i> Automated reports sent to stakeholders</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 2: Omnichannel Revenue Operations Engine -->
+                <!-- System 2 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="system-card-badge">High Impact</span>
                     <div class="system-card-icon">
                         <i class="ph ph-currency-circle-dollar"></i>
                     </div>
-                    <h3>Omnichannel Revenue Operations Engine</h3>
-                    <p class="system-card-desc">Orchestrate your entire revenue pipeline from first touch to closed deal across every channel. AI-powered lead scoring with behavioral and firmographic signals, intelligent territory management, real-time pipeline forecasting, and multi-touch attribution modeling. Connects marketing, sales, and customer success into a unified revenue machine.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> AI lead scoring with 40+ behavioral and firmographic signals</li>
-                        <li><i class="ph ph-check-circle"></i> Intelligent territory mapping with dynamic load balancing</li>
-                        <li><i class="ph ph-check-circle"></i> Multi-touch attribution across paid, organic, and outbound</li>
-                        <li><i class="ph ph-check-circle"></i> Real-time pipeline forecasting with confidence intervals</li>
-                        <li><i class="ph ph-check-circle"></i> Automated handoff workflows between sales stages</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Integrates with your CRM, marketing automation, advertising platforms, and website analytics. Lead scoring models are trained on your historical conversion data and refined monthly. Territory logic supports geographic, account-based, and round-robin distribution with capacity awareness. Attribution engine tracks across UTM, referral, direct, and offline touchpoints. Forecasting uses ensemble methods combining pipeline stage velocity, historical close rates, and seasonal patterns.</div>
+                    <h3>Revenue Operations</h3>
+                    <p class="system-card-desc">Manage your entire sales pipeline from first click to closed deal. AI scores your leads, routes them to the right rep, and forecasts revenue automatically.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> AI lead scoring across 40+ signals</li>
+                                <li><i class="ph ph-check-circle"></i> Smart territory mapping and rep assignment</li>
+                                <li><i class="ph ph-check-circle"></i> Multi-touch attribution (paid, organic, outbound)</li>
+                                <li><i class="ph ph-check-circle"></i> Real-time pipeline forecasting</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 3: Intelligent Workforce Orchestration System -->
+                <!-- System 3 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="150">
                     <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
                         <i class="ph ph-users-four"></i>
                     </div>
-                    <h3>Intelligent Workforce Orchestration System</h3>
-                    <p class="system-card-desc">AI-driven resource allocation and workforce management at scale. Optimizes shift scheduling, capacity planning, skills-based task routing, and real-time field operations coordination across multiple locations. Eliminates scheduling conflicts, reduces idle time, and ensures the right person is assigned to the right job based on certification, proximity, and performance data.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> AI-optimized scheduling with constraint satisfaction</li>
-                        <li><i class="ph ph-check-circle"></i> Skills-based routing with certification and compliance tracking</li>
-                        <li><i class="ph ph-check-circle"></i> Real-time field coordination with GPS-aware dispatch</li>
-                        <li><i class="ph ph-check-circle"></i> Capacity forecasting with demand prediction modeling</li>
-                        <li><i class="ph ph-check-circle"></i> Automated timesheet reconciliation and labor cost analysis</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Combines constraint-satisfaction algorithms with ML-based demand forecasting. Integrates with HRIS, payroll, GPS tracking, and dispatch systems. Scheduling engine considers labor laws, union rules, certification expiry, overtime thresholds, and employee preferences. Field operations layer provides real-time visibility with ETA calculations and automatic reassignment on delays or cancellations. Supports multi-location, multi-timezone deployments.</div>
+                    <h3>Workforce Management</h3>
+                    <p class="system-card-desc">AI handles scheduling, dispatching, and resource planning across all your locations. The right person gets the right job based on skills, location, and availability.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> AI-optimized scheduling and shift planning</li>
+                                <li><i class="ph ph-check-circle"></i> Skills-based routing with certification tracking</li>
+                                <li><i class="ph ph-check-circle"></i> GPS-aware dispatching and live ETAs</li>
+                                <li><i class="ph ph-check-circle"></i> Demand forecasting and capacity planning</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 4: Autonomous Customer Lifecycle Platform -->
+                <!-- System 4 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="system-card-icon">
                         <i class="ph ph-heartbeat"></i>
                     </div>
-                    <h3>Autonomous Customer Lifecycle Platform</h3>
-                    <p class="system-card-desc">End-to-end customer journey automation from onboarding through renewal. Churn prediction with early-warning signals, real-time sentiment analysis across every touchpoint, automated NPS and CSAT workflows, customer health scoring, and hyper-personalized engagement sequences. Turns reactive customer service into proactive relationship management at enterprise scale.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Customer health scoring with 30+ weighted signals</li>
-                        <li><i class="ph ph-check-circle"></i> Predictive churn modeling with automated intervention triggers</li>
-                        <li><i class="ph ph-check-circle"></i> Real-time sentiment analysis across email, chat, and calls</li>
-                        <li><i class="ph ph-check-circle"></i> Automated onboarding sequences with milestone tracking</li>
-                        <li><i class="ph ph-check-circle"></i> NPS/CSAT automation with closed-loop feedback routing</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Aggregates customer data from CRM, support tickets, billing, product usage, communication history, and NPS surveys. Health score model weights are calibrated to your specific churn drivers. Sentiment engine uses NLP to analyze tone across all communication channels in real time. Intervention workflows are fully customizable — escalation to CSM, automated outreach, executive touchpoint triggers. Integrates with customer success platforms, helpdesks, and billing systems.</div>
+                    <h3>Customer Lifecycle</h3>
+                    <p class="system-card-desc">Automate the entire customer journey — onboarding, check-ins, renewals. Predict who's about to churn and trigger the right outreach before it happens.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> Customer health scoring across 30+ signals</li>
+                                <li><i class="ph ph-check-circle"></i> Churn prediction with automatic intervention</li>
+                                <li><i class="ph ph-check-circle"></i> Sentiment analysis on emails, chat, and calls</li>
+                                <li><i class="ph ph-check-circle"></i> Automated NPS/CSAT surveys and follow-up</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 5: Multi-Entity Operations Command Center -->
+                <!-- System 5 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="system-card-badge">Multi-Location</span>
                     <div class="system-card-icon">
                         <i class="ph ph-buildings"></i>
                     </div>
-                    <h3>Multi-Entity Operations Command Center</h3>
-                    <p class="system-card-desc">Centralized operational control across multiple locations, divisions, franchises, or brands. Standardized playbooks with localized execution, cross-entity performance benchmarking, centralized compliance enforcement, and distributed team coordination. One command center to monitor, manage, and optimize every entity in your portfolio without losing local autonomy.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Unified dashboard with per-entity drill-down and benchmarking</li>
-                        <li><i class="ph ph-check-circle"></i> Standardized SOPs with localized rule engine overrides</li>
-                        <li><i class="ph ph-check-circle"></i> Centralized compliance monitoring with automated alerts</li>
-                        <li><i class="ph ph-check-circle"></i> Cross-entity resource sharing and load balancing</li>
-                        <li><i class="ph ph-check-circle"></i> Hierarchical permission model with role-based access control</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Multi-tenant architecture with entity isolation and shared governance layers. Each entity operates with its own data partition while rolling up to centralized reporting. Playbook engine supports inheritance-based configuration — corporate sets the standard, entities customize within defined parameters. Compliance layer monitors adherence to SLAs, regulatory requirements, and brand standards with escalation workflows. Supports M&A integration workflows for onboarding new entities.</div>
+                    <h3>Multi-Location Control Center</h3>
+                    <p class="system-card-desc">One dashboard to manage every location, franchise, or brand. Standardized processes with local flexibility, cross-location benchmarking, and centralized compliance.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> Unified dashboard with per-location drill-down</li>
+                                <li><i class="ph ph-check-circle"></i> Standardized playbooks with local overrides</li>
+                                <li><i class="ph ph-check-circle"></i> Centralized compliance monitoring and alerts</li>
+                                <li><i class="ph ph-check-circle"></i> Role-based permissions across your org</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- System 6: AI-Powered Communication Infrastructure -->
+                <!-- System 6 -->
                 <div class="system-card glass-card" data-aos="fade-up" data-aos-delay="150">
                     <span class="system-card-complexity">Advanced</span>
                     <div class="system-card-icon">
                         <i class="ph ph-broadcast"></i>
                     </div>
-                    <h3>AI-Powered Communication Infrastructure</h3>
-                    <p class="system-card-desc">Enterprise-grade conversational AI across voice, SMS, email, and chat — with intelligent routing, multi-language support, compliance-grade recording and archival, sentiment-aware escalation, and a unified inbox that connects every channel into a single operational view. Replaces fragmented communication tools with an intelligent, auditable, always-on infrastructure layer.</p>
-                    <ul class="system-card-results">
-                        <li><i class="ph ph-check-circle"></i> Natural language voice AI with custom brand personality</li>
-                        <li><i class="ph ph-check-circle"></i> Intelligent routing with skills-based and priority-aware queuing</li>
-                        <li><i class="ph ph-check-circle"></i> Multi-language support with real-time translation</li>
-                        <li><i class="ph ph-check-circle"></i> Compliance recording with automated PII redaction</li>
-                        <li><i class="ph ph-check-circle"></i> Unified inbox across voice, SMS, email, chat, and social</li>
-                    </ul>
-                    <button class="system-card-toggle" onclick="toggleHow(this)">Technical architecture <i class="ph ph-caret-down"></i></button>
-                    <div class="system-card-how">Voice AI is built on enterprise LLMs fine-tuned to your domain, tone, and compliance requirements. Routing engine considers agent skills, current load, customer history, and sentiment signals. All communications are recorded, transcribed, and indexed for search and compliance review. PII redaction runs automatically on transcripts and recordings. Translation engine supports 30+ languages with domain-specific glossaries. Unified inbox aggregates all channels with full conversation history and CRM context.</div>
+                    <h3>AI Communications</h3>
+                    <p class="system-card-desc">Voice AI, smart routing, and a unified inbox across phone, text, email, and chat. Multi-language support and compliance recording built in.</p>
+                    <button class="system-card-toggle" onclick="toggleDetails(this)">See what's included <i class="ph ph-caret-down"></i></button>
+                    <div class="system-card-details">
+                        <div class="system-card-details-inner">
+                            <ul class="system-card-results">
+                                <li><i class="ph ph-check-circle"></i> Natural voice AI with your brand personality</li>
+                                <li><i class="ph ph-check-circle"></i> Smart routing based on skills and priority</li>
+                                <li><i class="ph ph-check-circle"></i> Multi-language with real-time translation</li>
+                                <li><i class="ph ph-check-circle"></i> Compliance recording with auto PII redaction</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="system-card-footer">
                         <a href="contact.html" class="system-card-cta">Contact Enterprise Team <i class="ph ph-arrow-right"></i></a>
                     </div>
@@ -1478,13 +1653,13 @@
             }
         }
 
-        // How It Works toggle
-        function toggleHow(button) {
-            const howText = button.nextElementSibling;
+        // Card details dropdown
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
             const isActive = button.classList.contains('active');
 
             button.classList.toggle('active');
-            howText.classList.toggle('show');
+            details.classList.toggle('show');
         }
 
         // Smooth scroll for anchor links (offset for fixed nav)
