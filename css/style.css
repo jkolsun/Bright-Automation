@@ -20,6 +20,10 @@
     --bg-card: #FFFFFF;
     --bg-glass: rgba(255, 255, 255, 0.9);
 
+    /* CTA Accent (Orange — for action buttons) */
+    --cta-accent: #F97316;
+    --cta-accent-hover: #EA580C;
+
     /* Supporting Colors */
     --success: #10B981;
     --warning: #F59E0B;
