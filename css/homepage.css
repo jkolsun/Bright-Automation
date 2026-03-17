@@ -907,12 +907,63 @@
             50% { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
         }
 
-        /* ===== PORTFOLIO / BEFORE & AFTER ===== */
-        .portfolio-section {
-            padding: 3.5rem 0;
+        /* ===== VIDEO SHOWCASE ===== */
+        .video-showcase-section {
+            padding: 4rem 0;
             background: linear-gradient(180deg, #f8fafb 0%, #ffffff 100%);
             position: relative;
             overflow: hidden;
+        }
+        .video-showcase-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .video-player {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(46, 125, 138, 0.08);
+        }
+        .showcase-video {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+        }
+        .video-play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(46, 125, 138, 0.9);
+            border: none;
+            color: #fff;
+            font-size: 1.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+        }
+        .video-play-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(46, 125, 138, 1);
+            box-shadow: 0 8px 32px rgba(46, 125, 138, 0.4);
+        }
+        .video-play-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .video-play-overlay {
+                width: 56px;
+                height: 56px;
+                font-size: 1.4rem;
+            }
         }
         .portfolio-eyebrow {
             display: inline-flex;

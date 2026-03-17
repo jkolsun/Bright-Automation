@@ -164,30 +164,30 @@
     <section class="testimonials-section section-mesh">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>What Our Clients Say</h2>
+                <h2>Don't Take Our Word For It</h2>
             </div>
             <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
                 <div class="testimonial-card active">
                     <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"They had our site live in two days. We went from zero online presence to getting calls the same week."</p>
+                    <p class="testimonial-quote">"Two days. That's how fast we went from invisible online to getting calls. These guys move fast and the system just keeps getting better every month."</p>
                     <p class="testimonial-author">Mike R.</p>
                     <p class="testimonial-role">Owner, Restoration Company</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"The automation system texts our leads back instantly. We've closed deals at 11pm that we would have lost."</p>
+                    <p class="testimonial-quote">"We closed a $4,000 job at 11pm because their system texted the lead back before I even saw it. I don't know what AI they're using but it works."</p>
                     <p class="testimonial-author">Sarah T.</p>
                     <p class="testimonial-role">Operations Manager, HVAC Services</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"For what we pay, this looks like it cost thousands. Best investment we've made this year."</p>
+                    <p class="testimonial-quote">"I don't have time to keep up with all this AI stuff — that's their job. They keep adding new features to my system and I just watch the leads come in."</p>
                     <p class="testimonial-author">James L.</p>
                     <p class="testimonial-role">Owner, Landscaping Business</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-quote">"We can actually see where our leads are coming from now. The monthly reports make it easy to know what's working."</p>
+                    <p class="testimonial-quote">"Other companies built us a website and ghosted. These guys call us every month with updates. Last month they added some AI thing that auto-responds to our Google reviews. Who does that?"</p>
                     <p class="testimonial-author">David K.</p>
                     <p class="testimonial-role">Owner, Plumbing Company</p>
                 </div>
@@ -202,7 +202,7 @@
     </section>
 
     <!-- Video Showcase -->
-    <section class="portfolio-section" id="video-showcase">
+    <section class="video-showcase-section" id="video-showcase">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="portfolio-eyebrow"><i class="ph ph-play-circle"></i> See It In Action</span>
@@ -210,9 +210,14 @@
                 <p>Tell us your business name and we'll show you what a revenue-driving system looks like — free, in 30 seconds.</p>
             </div>
             <div class="video-showcase-wrap" data-aos="fade-up">
-                <video class="showcase-video" preload="metadata" playsinline muted loop style="width:100%;max-width:900px;margin:0 auto;display:block;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12);">
-                    <source src="videos/webdesign.mp4" type="video/mp4">
-                </video>
+                <div class="video-player">
+                    <video class="showcase-video" preload="metadata" playsinline muted loop>
+                        <source src="videos/webdesign.mp4" type="video/mp4">
+                    </video>
+                    <button class="video-play-overlay" aria-label="Play video">
+                        <i class="ph ph-play-fill"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -735,18 +740,34 @@
             }
         })();
 
-        // Video Showcase — autoplay on scroll
+        // Video Showcase
         (function() {
             var video = document.querySelector('.showcase-video');
+            var playBtn = document.querySelector('.video-play-overlay');
             if (!video) return;
+
+            function playVideo() {
+                video.play();
+                if (playBtn) playBtn.classList.add('hidden');
+            }
+            function pauseVideo() {
+                video.pause();
+                if (playBtn) playBtn.classList.remove('hidden');
+            }
+
+            if (playBtn) {
+                playBtn.addEventListener('click', playVideo);
+            }
             video.addEventListener('click', function() {
-                if (video.paused) video.play(); else video.pause();
+                if (video.paused) playVideo(); else pauseVideo();
             });
+
+            // Autoplay when scrolled into view
             if ('IntersectionObserver' in window) {
                 var observer = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
-                        if (entry.isIntersecting) video.play();
-                        else video.pause();
+                        if (entry.isIntersecting) playVideo();
+                        else pauseVideo();
                     });
                 }, { threshold: 0.4 });
                 observer.observe(video);
