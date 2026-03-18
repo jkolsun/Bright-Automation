@@ -325,7 +325,7 @@ body::after {
 .nav-cta,
 .pricing-cta,
 .btn-cta,
-.hero-input-btn {
+.hero-cta-btn {
     position: relative;
     overflow: hidden;
 }

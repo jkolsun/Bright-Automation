@@ -1093,7 +1093,7 @@ document.addEventListener('DOMContentLoaded', initPageHeaderVanta);
 // BUTTON RIPPLE EFFECT
 // ===========================
 function initButtonRipple() {
-    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .pricing-cta, .btn-cta, .hero-input-btn');
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .pricing-cta, .btn-cta, .hero-cta-btn');
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function(e) {
