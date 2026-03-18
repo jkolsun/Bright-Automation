@@ -407,12 +407,13 @@ window.addEventListener('scroll', function() {
 
 // Active Navigation Link
 function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const path = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        const linkPath = link.getAttribute('href');
+        if (!linkPath) return;
+        if (linkPath === path || linkPath === path + '/' || (path === '/' && linkPath === '/')) {
             link.classList.add('active');
         }
     });
@@ -886,7 +887,7 @@ function initPageTransitions() {
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href.includes('.html') || !href.includes('.')) {
+            if (href.startsWith('/') || href.includes('.html') || !href.includes('.')) {
                 e.preventDefault();
                 document.body.classList.add('page-leaving');
                 setTimeout(() => {
