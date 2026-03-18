@@ -681,6 +681,11 @@ body::after {
 .navbar.nav-open .nav-container {
     position: relative;
     z-index: 2;
+    height: 100%;
+}
+
+.navbar.nav-open .menu-toggle {
+    z-index: 10;
 }
 
 .navbar.nav-open .nav-social {
