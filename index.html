@@ -66,7 +66,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                <img src="images/Bright_AutoLOGO.png" alt="Bright Automations — AI websites and digital revenue systems for home service businesses" class="logo-img-large">
             </a>
 
             <ul class="nav-menu">
@@ -431,6 +431,9 @@
                 <div class="industry-pill"><i class="ph ph-swimming-pool"></i> Pool Service</div>
                 <div class="industry-pill"><i class="ph ph-drop-half-bottom"></i> Pressure Washing</div>
             </div>
+            <div style="text-align: center; margin-top: 1.5rem;" data-aos="fade-up" data-aos-delay="150">
+                <a href="/industries" style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1rem;">See all 24 industries we serve <i class="ph ph-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
@@ -548,6 +551,7 @@
             <h2>Your Competitors Are Already Online. Are You Keeping Up?</h2>
             <p>15 minutes with our team. We'll show you exactly how your online presence could be driving you more revenue — no cost, no commitment.</p>
             <a href="https://cal.com/atesauro/strategy-call" target="_blank" class="btn-cta">Book Your Free Strategy Call <i class="ph ph-arrow-right"></i></a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;"><a href="/services" style="color: inherit; text-decoration: underline;">See everything that's included</a> &middot; <a href="/about" style="color: inherit; text-decoration: underline;">Meet the team</a></p>
         </div>
     </section>
 
@@ -557,7 +561,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand">
                     <a href="/" class="logo footer-logo">
-                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+                        <img src="images/Bright_AutoLOGO.png" alt="Bright Automations logo — AI and digital revenue consultancy" class="logo-img-large">
                     </a>
                     <p>AI and digital revenue consultancy for home service businesses. We track every technology shift and build what drives revenue into your system — automatically, every month.</p>
                     <div class="footer-social">
@@ -575,6 +579,7 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
+                        <li><a href="/industries">Industries We Serve</a></li>
                     </ul>
                 </div>
 
@@ -951,6 +956,67 @@
                 }
             }
         ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Bright Automations",
+        "url": "https://www.brightautomations.org",
+        "description": "AI and digital revenue consultancy for home service businesses",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Bright Automations",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.brightautomations.org/images/Bright_AutoLOGO.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bright Automations",
+        "url": "https://www.brightautomations.org",
+        "review": [
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Mike Rennard"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Two days. That's how fast we went from invisible online to getting calls. These guys move fast and the system just keeps getting better every month."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Sarah Tillman"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "We closed a $4,000 job at 11pm because their system texted the lead back before I even saw it. I don't know what AI they're using but it works."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "James Loretti"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "I don't have time to keep up with all this AI stuff — that's their job. They keep adding new features to my system and I just watch the leads come in."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "David Kowalski"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Other companies built us a website and ghosted. These guys call us every month with updates. Last month they added some AI thing that auto-responds to our Google reviews. Who does that?"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "4",
+            "bestRating": "5"
+        }
     }
     </script>
 </body>
