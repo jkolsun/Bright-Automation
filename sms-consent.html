@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SMS Consent &amp; Opt-In Policy — Bright Automations. How we collect consent before sending text messages.">
-    <title>SMS Consent &amp; Opt-In — Bright Automations</title>
+    <meta name="description" content="SMS Consent & Opt-In Policy for Bright Automations - How we obtain consent before sending you text messages">
+    <title>SMS Consent & Opt-In Policy - Bright Automations</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/Bright_AutoLOGO.png">
@@ -14,137 +14,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons (for brand logos only) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Splitting.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting-cells.css">
 
     <style>
-        .consent-page {
+        .legal-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 8rem 2rem 4rem;
+            padding: 4rem 2rem;
         }
-        .consent-page h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-        }
-        .consent-page .subtitle {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2.5rem;
-        }
-        .consent-page h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #1e293b;
+        .legal-content h2 {
+            font-size: 1.5rem;
             margin-top: 2.5rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
-        .consent-page p, .consent-page li {
-            font-size: 1rem;
-            line-height: 1.75;
-            color: #475569;
+        .legal-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
         }
-        .consent-page ul {
-            margin: 0.75rem 0;
+        .legal-content ul, .legal-content ol {
+            margin-bottom: 1rem;
             padding-left: 1.5rem;
         }
-        .consent-page li {
-            margin-bottom: 0.4rem;
+        .legal-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            color: var(--text-muted);
         }
-        .consent-screenshot {
-            margin: 2.5rem 0;
-            border: 2px solid #e2e8f0;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        .legal-content .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
         }
-        .consent-screenshot img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        .consent-screenshot figcaption {
-            background: #f8fafc;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.85rem;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-        }
-        .consent-highlight {
-            background: #f0fdf4;
-            border: 1px solid #86efac;
-            border-radius: 0.75rem;
-            padding: 1.25rem 1.5rem;
+        .opt-in-callout {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
             margin: 1.5rem 0;
         }
-        .consent-highlight p {
-            color: #166534;
-            margin: 0;
+        .opt-in-callout ol {
+            margin-bottom: 0.5rem;
         }
-        .consent-checkbox-demo {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .consent-checkbox-demo label {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            cursor: default;
-        }
-        .consent-checkbox-demo .demo-box {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #cbd5e1;
-            border-radius: 5px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .consent-checkbox-demo .demo-text {
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: #475569;
-        }
-        .consent-info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        .consent-info-table td {
-            padding: 0.6rem 1rem;
-            border-bottom: 1px solid #e2e8f0;
-            font-size: 0.95rem;
-            color: #475569;
-            vertical-align: top;
-        }
-        .consent-info-table td:first-child {
-            font-weight: 600;
-            color: #1e293b;
-            white-space: nowrap;
-            width: 180px;
-        }
-        @media (max-width: 640px) {
-            .consent-page {
-                padding: 6rem 1.25rem 3rem;
-            }
-            .consent-page h1 {
-                font-size: 1.75rem;
-            }
-            .consent-info-table td:first-child {
-                width: auto;
-            }
+        .opt-in-callout p:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -171,94 +103,62 @@
                 <a href="https://www.instagram.com/brightautomations/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
 
+
             <button class="menu-toggle" aria-label="Toggle menu">
                 <span class="menu-toggle-label">Menu</span>
                 <div class="menu-toggle-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             </button>
         </div>
     </nav>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>SMS Opt-In Policy</h1>
+        <p>How we obtain consent before sending you text messages</p>
+    </section>
+
+    <div class="page-header-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
     <!-- SMS Consent Content -->
-    <div class="consent-page">
-        <h1>SMS Consent &amp; Opt-In Policy</h1>
-        <p class="subtitle">How Bright Automations collects written consent before sending any text messages.</p>
+    <div class="legal-content" data-aos="fade-up">
+        <p class="last-updated">Last updated: March 2026</p>
 
-        <h2>Overview</h2>
-        <p>Bright Automations uses SMS messaging to communicate with customers about their website builds, service updates, and promotional offers. We collect <strong>explicit, written opt-in consent</strong> from every user before sending any text messages. No messages are ever sent without the customer first checking the consent box on our checkout page.</p>
+        <h2>How You're Added to Our SMS List</h2>
+        <p>Bright Automations only sends text messages to business owners who have explicitly agreed to receive them. Here is how our opt-in process works:</p>
 
-        <h2>How We Collect Consent</h2>
-        <p>During the checkout process at <a href="/checkout">brightautomations.org/checkout.html</a>, customers must check a <strong>required SMS consent checkbox</strong> before they can complete their purchase. The checkbox is unchecked by default and must be actively selected by the customer. The "Pay Now" button remains disabled until both the Terms of Service and SMS consent boxes are checked.</p>
-
-        <div class="consent-checkbox-demo">
-            <p style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #2E7D8A; margin-bottom: 0.75rem;">Exact consent language shown to customers:</p>
-            <label>
-                <div class="demo-box"></div>
-                <span class="demo-text">By providing your phone number, you agree to receive text messages from Bright Automations about your website preview, build updates, and promotional offers. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.</span>
-            </label>
+        <div class="opt-in-callout">
+            <ol>
+                <li>A Bright Automations representative contacts you by phone to discuss a custom website we've built for your business.</li>
+                <li>If you express interest and verbally agree to receive SMS updates about your website and our services, our representative will provide you with our SMS number.</li>
+                <li>To confirm your opt-in, you text <strong>START</strong> to that number.</li>
+                <li>You will immediately receive a confirmation message verifying that you are now opted in.</li>
+            </ol>
+            <p><strong>No text messages are sent to you before you complete step 3.</strong> Your verbal agreement alone does not add you to our messaging list — your <strong>START</strong> text is required to confirm consent.</p>
         </div>
 
-        <div class="consent-highlight">
-            <p><strong>Key:</strong> Consent is not a condition of purchase. The SMS checkbox is separate from the Terms of Service agreement. Customers are clearly informed they can reply STOP at any time to opt out.</p>
-        </div>
-
-        <h2>Screenshot of Checkout Consent</h2>
-        <p>Below is a screenshot of the live checkout page at <a href="/checkout">brightautomations.org/checkout.html</a> showing the SMS consent checkbox, disclosure language, and Bright Automations branding.</p>
-
-        <figure class="consent-screenshot">
-            <img src="images/sms-consent.png" alt="Screenshot of Bright Automations checkout page showing SMS consent checkbox with disclosure language and branding">
-            <figcaption>Live checkout page at brightautomations.org/checkout.html &mdash; SMS consent checkbox with full disclosure text, unchecked by default.</figcaption>
-        </figure>
-
-        <h2>Message Types</h2>
-        <p>Customers who opt in may receive the following types of SMS messages:</p>
+        <h2>What Messages You'll Receive</h2>
+        <p>Once opted in, you may receive:</p>
         <ul>
-            <li><strong>Website preview notifications</strong> &mdash; alerts when their free website preview is ready to view</li>
-            <li><strong>Build updates</strong> &mdash; status updates during the 48-hour website build process</li>
-            <li><strong>Service communications</strong> &mdash; revision confirmations, launch notifications, billing reminders</li>
-            <li><strong>Promotional offers</strong> &mdash; occasional offers for add-on services and upgrades</li>
+            <li>Updates and previews of your custom website build</li>
+            <li>Links to book a strategy call or review your site</li>
+            <li>Follow-up messages related to our services</li>
         </ul>
+        <p>Message frequency varies. You may receive up to 5 messages per month. Message and data rates may apply.</p>
 
-        <h2>Program Details</h2>
-        <table class="consent-info-table">
-            <tr>
-                <td>Program Name</td>
-                <td>Bright Automations SMS Notifications</td>
-            </tr>
-            <tr>
-                <td>Message Frequency</td>
-                <td>Varies. Typically 2-5 messages during the build process, then occasional updates. No more than 4 promotional messages per month.</td>
-            </tr>
-            <tr>
-                <td>Message &amp; Data Rates</td>
-                <td>Standard message and data rates may apply depending on your carrier and plan.</td>
-            </tr>
-            <tr>
-                <td>Opt-Out</td>
-                <td>Reply <strong>STOP</strong> to any message at any time to unsubscribe from all future messages.</td>
-            </tr>
-            <tr>
-                <td>Help</td>
-                <td>Reply <strong>HELP</strong> to any message, or contact us at <a href="mailto:admin@brightautomations.net">admin@brightautomations.net</a> or <a href="tel:+16102569844">(610) 256-9844</a>.</td>
-            </tr>
-            <tr>
-                <td>Consent Requirement</td>
-                <td>Consent is not required as a condition of purchase. The SMS opt-in checkbox is separate and independent from the purchase agreement.</td>
-            </tr>
-        </table>
+        <h2>How to Opt Out</h2>
+        <p>Reply <strong>STOP</strong> at any time to immediately opt out of all future messages. You will receive one confirmation message and no further texts will be sent.</p>
+        <p>For help, reply <strong>HELP</strong> or contact us at <a href="mailto:admin@brightautomations.net">admin@brightautomations.net</a> or <a href="tel:+16102569844">(610) 256-9844</a>.</p>
 
-        <h2>Opt-Out &amp; Support</h2>
-        <p>Customers can opt out of SMS messages at any time by replying <strong>STOP</strong> to any text message. After opting out, they will receive a single confirmation message and no further texts will be sent. Customers can also contact us directly to request removal:</p>
-        <ul>
-            <li>Email: <a href="mailto:admin@brightautomations.net">admin@brightautomations.net</a></li>
-            <li>Phone: <a href="tel:+16102569844">(610) 256-9844</a></li>
-        </ul>
-
-        <h2>Privacy</h2>
-        <p>Phone numbers collected through our opt-in process are used solely for the purposes described above. We do not sell, share, or rent customer phone numbers to third parties. For full details, see our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.</p>
+        <h2>Your Privacy</h2>
+        <p>We will never sell, share, or rent your phone number or opt-in data to third parties for marketing purposes. See our full <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a> for details.</p>
     </div>
 
     <!-- Footer -->
@@ -293,6 +193,7 @@
                     <ul>
                         <li><a href="/privacy">Privacy Policy</a></li>
                         <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/sms-consent">SMS Consent Policy</a></li>
                     </ul>
                 </div>
 
@@ -328,6 +229,18 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- AOS Initialization -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+
 </body>
 </html>
