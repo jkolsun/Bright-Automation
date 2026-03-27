@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /client-login
+Disallow: /client-portal
+Disallow: /thank-you
+Disallow: /demo
+Disallow: /qualify
+
+Sitemap: https://www.brightautomations.org/sitemap.xml
