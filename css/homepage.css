@@ -172,6 +172,117 @@
             letter-spacing: 0.02em;
         }
 
+        /* ===== MISSION CONTROL / POST-LAUNCH ===== */
+        .mission-control-section {
+            background: linear-gradient(180deg, #0f172a 0%, #162032 100%);
+            padding: 4rem 0;
+            overflow-x: hidden;
+        }
+        .launch-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 3rem;
+            max-width: 800px;
+            position: relative;
+        }
+        .launch-timeline-node {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 0.25rem;
+        }
+        .launch-timeline-node::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(46, 125, 138, 0.3);
+            z-index: 0;
+        }
+        .launch-timeline-node:first-child::before {
+            left: 50%;
+        }
+        .launch-timeline-node:last-child::before {
+            right: 50%;
+        }
+        .timeline-day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(46, 125, 138, 0.2);
+            border: 2px solid #2E7D8A;
+            color: #4AABB8;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin: 0 auto 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .timeline-ongoing .timeline-day {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #10b981;
+            font-size: 1rem;
+        }
+        .timeline-label {
+            display: block;
+            font-size: 0.72rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+        .mission-beats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .mission-beat-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+        .mission-beat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(46, 125, 138, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: #4AABB8;
+            margin-bottom: 1rem;
+        }
+        .mission-beat-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .mission-beat-card p {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .mission-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
         /* ===== AI GROWTH ENGINE ===== */
         .growth-timeline {
             max-width: 640px;
@@ -1286,6 +1397,58 @@
             .hero-subline {
                 font-size: 0.8rem;
                 margin-bottom: 0.75rem;
+            }
+            .mission-control-section {
+                padding: 2.5rem 0;
+            }
+            .launch-timeline {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                max-width: 300px;
+                margin: 0 auto 2rem;
+            }
+            .launch-timeline-node {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                text-align: left;
+                padding: 0.5rem 0;
+            }
+            .launch-timeline-node::before {
+                display: none;
+            }
+            .launch-timeline-node::after {
+                content: '';
+                position: absolute;
+                left: 21px;
+                top: 44px;
+                width: 2px;
+                height: calc(100% - 44px);
+                background: rgba(46, 125, 138, 0.3);
+            }
+            .launch-timeline-node:last-child::after {
+                display: none;
+            }
+            .timeline-day {
+                margin: 0;
+                min-width: 44px;
+            }
+            .timeline-label {
+                font-size: 0.8rem;
+            }
+            .mission-beats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .mission-beat-card {
+                padding: 1.25rem;
+            }
+            .mission-beat-card h3 {
+                font-size: 1rem;
+            }
+            .mission-beat-card p {
+                font-size: 0.85rem;
             }
             .growth-step-icon {
                 width: 40px;
