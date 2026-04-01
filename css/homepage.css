@@ -164,6 +164,73 @@
         .hero-systems-link:hover strong {
             color: #ffffff;
         }
+        .hero-subline {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== AI GROWTH ENGINE ===== */
+        .growth-timeline {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .growth-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .growth-step:last-child {
+            padding-bottom: 0;
+        }
+        .growth-step-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(46, 125, 138, 0.15), rgba(74, 171, 184, 0.1));
+            border: 1px solid rgba(46, 125, 138, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #2E7D8A;
+            position: relative;
+            z-index: 2;
+        }
+        .growth-step-connector {
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            width: 2px;
+            height: calc(100% - 48px);
+            background: linear-gradient(180deg, rgba(46, 125, 138, 0.3) 0%, rgba(46, 125, 138, 0.05) 100%);
+        }
+        .growth-step:last-child .growth-step-connector {
+            display: none;
+        }
+        .growth-step-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+        .growth-step-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .growth-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
         /* ===== TESTIMONIALS ===== */
         .testimonials-section {
             padding: 2rem 0;
@@ -431,9 +498,9 @@
         /* ===== STEPS ===== */
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 900px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .step-card {
@@ -1029,6 +1096,9 @@
         @media (max-width: 1024px) {
             .video-player {
                 border-radius: 12px;
+            }
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
