@@ -1283,6 +1283,32 @@
                 font-size: 0.75rem;
                 padding: 0.35rem 0.85rem;
             }
+            .hero-subline {
+                font-size: 0.8rem;
+                margin-bottom: 0.75rem;
+            }
+            .growth-step-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 1.1rem;
+                border-radius: 10px;
+            }
+            .growth-step-connector {
+                left: 19px;
+                top: 40px;
+                height: calc(100% - 40px);
+            }
+            .growth-step {
+                padding-bottom: 1.5rem;
+                gap: 1rem;
+            }
+            .growth-step-content h3 {
+                font-size: 1rem;
+            }
+            .growth-step-content p {
+                font-size: 0.85rem;
+            }
             .scroll-indicator {
                 display: none;
             }
@@ -1358,6 +1384,27 @@
             }
             .video-player {
                 border-radius: 8px;
+            }
+            .hero-subline {
+                font-size: 0.75rem;
+            }
+            .growth-step-icon {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+            .growth-step-connector {
+                left: 17px;
+                top: 36px;
+                height: calc(100% - 36px);
+            }
+            .growth-step-content h3 {
+                font-size: 0.95rem;
+            }
+            .growth-step-content p {
+                font-size: 0.8rem;
             }
             .faq-toggle {
                 padding: 1rem 1rem;
