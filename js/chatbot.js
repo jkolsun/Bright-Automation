@@ -32,11 +32,11 @@
         },
         {
             patterns: [/pric(e|ing)|cost|how much|package|plan|\$|money|budget|afford/i],
-            response: () => "Simple, all-inclusive pricing:\n\n• **Setup:** FREE — we build your site at no cost\n• **Monthly Plan:** $100/month — starts when your site goes live\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Speed & mobile optimization\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/preview.html)"
+            response: () => "Simple, all-inclusive pricing:\n\n• **Setup:** FREE — we build your site at no cost\n• **Monthly Plan:** $100/month — starts when your site goes live\n\nEverything's included:\n✅ Professional website (up to 5 pages)\n✅ Google Business optimization\n✅ Speed & mobile optimization\n✅ Monthly SEO updates\n✅ Social media landing page\n✅ Hosting, SSL & maintenance\n\nNo contracts. Cancel anytime.\n\n👉 [Get started now](/preview)"
         },
         {
             patterns: [/free|preview|try|see (my|a) (site|website)|no commitment/i],
-            response: () => "Yes! We'll build you a free preview of your website — no commitment, no credit card.\n\nJust tell us your business name and we'll put together a preview in 30 seconds.\n\n👉 [Get your free preview](/preview.html)"
+            response: () => "Yes! We'll build you a free preview of your website — no commitment, no credit card.\n\nJust tell us your business name and we'll put together a preview in 30 seconds.\n\n👉 [Get your free preview](/preview)"
         },
         {
             patterns: [/how long|timeline|when.*ready|when.*live|48 hours|turnaround/i],
@@ -56,7 +56,7 @@
         },
         {
             patterns: [/review|reviews|reputation|testimonial/i],
-            response: () => "Want to grow your Google reviews on autopilot? Our **Reputation Engine** system automates review requests after every job and drafts responses for you.\n\nIt's available as an add-on through our Enterprise Systems.\n\n👉 [See all systems](/systems.html)\n\nYour base plan already includes your real reviews displayed on your website — that's included at no extra cost."
+            response: () => "Want to grow your Google reviews on autopilot? Our **Reputation Engine** system automates review requests after every job and drafts responses for you.\n\nIt's available as an add-on through our Enterprise Systems.\n\n👉 [See all systems](/systems)\n\nYour base plan already includes your real reviews displayed on your website — that's included at no extra cost."
         },
         {
             patterns: [/seo|search engine|google rank|ranking|traffic/i],
@@ -80,19 +80,19 @@
         },
         {
             patterns: [/contact|reach|talk to (a )?human|speak|call|email|text|phone/i],
-            response: () => `You can reach us:\n\n• **Email:** ${KNOWLEDGE_BASE.company.email}\n• **Call:** ${KNOWLEDGE_BASE.company.phone}\n• **Text:** ${KNOWLEDGE_BASE.company.text}\n\nWe typically respond within 4 hours.\n\n👉 Or [fill out our contact form](/contact.html)`
+            response: () => `You can reach us:\n\n• **Email:** ${KNOWLEDGE_BASE.company.email}\n• **Call:** ${KNOWLEDGE_BASE.company.phone}\n• **Text:** ${KNOWLEDGE_BASE.company.text}\n\nWe typically respond within 4 hours.\n\n👉 Or [fill out our contact form](/contact)`
         },
         {
             patterns: [/get started|start|begin|sign up|ready|buy|purchase|order/i],
-            response: () => "Here's how it works:\n\n1. **Sign up** — it's free, no payment needed\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/preview.html)"
+            response: () => "Here's how it works:\n\n1. **Sign up** — it's free, no payment needed\n2. **A team member texts you within 15 minutes** to get your business info\n3. **Your site is live in 48 hours**\n\nNo hassle. We handle everything.\n\n👉 [Get your site now](/preview)"
         },
         {
             patterns: [/how (does|do) (it|this) work|process|step/i],
-            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/preview.html)"
+            response: () => "Three simple steps:\n\n1. **Free Preview** — We build a preview of your site. No commitment.\n2. **You Review It** — Love it? Go live. If not, no hard feelings.\n3. **Live in 48 Hours** — We handle design, hosting, domain, everything.\n\n👉 [Get your free preview](/preview)"
         },
         {
             patterns: [/already have a (website|site)|existing (website|site)|replace|redesign/i],
-            response: () => "If your current website isn't getting you leads, it's costing you money. We'll build you a free preview of what a better site looks like — no commitment.\n\nIf you love it, we handle the transition. If not, no hard feelings.\n\n👉 [See your free preview](/preview.html)"
+            response: () => "If your current website isn't getting you leads, it's costing you money. We'll build you a free preview of what a better site looks like — no commitment.\n\nIf you love it, we handle the transition. If not, no hard feelings.\n\n👉 [See your free preview](/preview)"
         },
         {
             patterns: [/content|copy|photos|logo|provide|need from me/i],
