@@ -267,66 +267,87 @@
     <section class="mission-control-section" id="post-launch-growth" aria-labelledby="post-launch-heading">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="portfolio-eyebrow" style="background: rgba(74, 171, 184, 0.15); color: #4AABB8;"><i class="ph ph-binoculars" aria-hidden="true"></i> What Happens After Launch</span>
-                <h2 id="post-launch-heading" style="color: #ffffff;">We Don't Launch and Disappear</h2>
-                <p style="color: #94a3b8;">Most agencies hand you a site and move on. We track your numbers, send you reports, and proactively reach out with recommendations — every single month.</p>
+                <span class="portfolio-eyebrow" style="background: rgba(74, 171, 184, 0.15); color: #4AABB8;"><i class="ph ph-pulse" aria-hidden="true"></i> Your Growth Lifecycle</span>
+                <h2 id="post-launch-heading" style="color: #ffffff; font-size: clamp(1.75rem, 4vw, 2.75rem);">We Don't Launch and Disappear</h2>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0.75rem auto 0; font-size: 1.05rem; line-height: 1.7;">Every client gets an active growth team — tracking your data, sending reports, and reaching out with recommendations. Here's what that looks like.</p>
             </div>
 
-            <!-- Post-Launch Timeline -->
-            <ol class="launch-timeline" data-aos="fade-up" data-aos-delay="100">
-                <li class="launch-timeline-node">
-                    <span class="timeline-day">Day 3</span>
-                    <span class="timeline-label">Google profile check-in</span>
-                </li>
-                <li class="launch-timeline-node">
-                    <span class="timeline-day">Day 7</span>
-                    <span class="timeline-label">First-week performance snapshot</span>
-                </li>
-                <li class="launch-timeline-node">
-                    <span class="timeline-day">Day 14</span>
-                    <span class="timeline-label">Traffic insights &amp; trends</span>
-                </li>
-                <li class="launch-timeline-node">
-                    <span class="timeline-day">Day 21</span>
-                    <span class="timeline-label">Lead response analysis</span>
-                </li>
-                <li class="launch-timeline-node">
-                    <span class="timeline-day">Day 28</span>
-                    <span class="timeline-label">First full monthly report</span>
-                </li>
-                <li class="launch-timeline-node timeline-ongoing">
-                    <span class="timeline-day"><i class="ph ph-infinity" aria-hidden="true"></i></span>
-                    <span class="timeline-label">Monthly reports + recommendations</span>
-                </li>
-            </ol>
+            <!-- Lifecycle Carousel -->
+            <div class="lifecycle-carousel" data-aos="fade-up" data-aos-delay="100">
+                <div class="lifecycle-track" id="lifecycleTrack">
+                    <div class="lifecycle-card">
+                        <div class="lifecycle-badge">Day 3</div>
+                        <div class="lifecycle-icon"><i class="ph ph-magnifying-glass"></i></div>
+                        <h3>Google Profile Check-In</h3>
+                        <p>We verify your Google Business Profile is optimized — categories, hours, description, photos. The foundation of local search visibility.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="lifecycle-badge">Day 7</div>
+                        <div class="lifecycle-icon"><i class="ph ph-chart-bar"></i></div>
+                        <h3>First-Week Snapshot</h3>
+                        <p>Your first performance check. We review initial traffic, page views, and visitor behavior to confirm everything is tracking correctly.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="lifecycle-badge">Day 14</div>
+                        <div class="lifecycle-icon"><i class="ph ph-trend-up"></i></div>
+                        <h3>Traffic Insights</h3>
+                        <p>Real data starts emerging. We analyze where visitors come from, which pages they visit, and how they interact with your site.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="lifecycle-badge">Day 21</div>
+                        <div class="lifecycle-icon"><i class="ph ph-phone-call"></i></div>
+                        <h3>Lead Response Analysis</h3>
+                        <p>We review your contact actions — calls, form submissions, CTA clicks. Are leads converting? If not, we adjust.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="lifecycle-badge">Day 28</div>
+                        <div class="lifecycle-icon"><i class="ph ph-file-chart"></i></div>
+                        <h3>First Monthly Report</h3>
+                        <p>A complete growth report lands in your inbox — visitors, leads, engagement, device breakdown, top pages, and improvement recommendations.</p>
+                    </div>
+                    <div class="lifecycle-card lifecycle-card-ongoing">
+                        <div class="lifecycle-badge lifecycle-badge-ongoing"><i class="ph ph-infinity"></i> Ongoing</div>
+                        <div class="lifecycle-icon"><i class="ph ph-rocket-launch"></i></div>
+                        <h3>Monthly Reports + Proactive Outreach</h3>
+                        <p>Every month, new data. Every month, new recommendations. When the numbers say it's time for an AI system — we tell you before you ask.</p>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="lifecycle-controls">
+                    <button class="lifecycle-btn" id="lifecyclePrev" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
+                    <div class="lifecycle-dots" id="lifecycleDots"></div>
+                    <button class="lifecycle-btn" id="lifecycleNext" aria-label="Next"><i class="ph ph-caret-right"></i></button>
+                </div>
+            </div>
 
             <!-- Four Beats -->
             <div class="mission-beats" data-aos="fade-up" data-aos-delay="150">
                 <article class="mission-beat-card">
                     <div class="mission-beat-icon"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
                     <h3>We Track Everything</h3>
-                    <p>Page views, visitor traffic, form submissions, phone call clicks, where your traffic comes from, how long people stay, mobile vs desktop. Not vanity metrics — the numbers that tell you if your phone is about to ring.</p>
+                    <p>Page views, form submissions, call clicks, traffic sources, scroll depth, mobile vs desktop. The numbers that tell you if your phone is about to ring.</p>
                 </article>
                 <article class="mission-beat-card">
                     <div class="mission-beat-icon"><i class="ph ph-file-chart" aria-hidden="true"></i></div>
                     <h3>Monthly Growth Reports</h3>
-                    <p>Every month, a detailed website performance report lands in your inbox. Month-over-month comparisons, what's working, what's growing, where leads are coming from. You don't have to ask — it just shows up.</p>
+                    <p>Detailed performance reports land in your inbox every month. Month-over-month comparisons, what's working, where leads come from. You don't have to ask.</p>
                 </article>
                 <article class="mission-beat-card">
                     <div class="mission-beat-icon"><i class="ph ph-megaphone" aria-hidden="true"></i></div>
                     <h3>We Proactively Reach Out</h3>
-                    <p>We don't wait for you to notice a problem. If something dips, we catch it. If there's an opportunity, we tell you. You always know exactly how your online presence is performing.</p>
+                    <p>If something dips, we catch it. If there's an opportunity, we tell you. You always know exactly how your online presence is performing.</p>
                 </article>
                 <article class="mission-beat-card">
                     <div class="mission-beat-icon"><i class="ph ph-cpu" aria-hidden="true"></i></div>
                     <h3>AI Systems That Grow With You</h3>
-                    <p>As your business grows, we recommend AI systems tailored to your data. Lead response too slow? We activate it. Missed calls piling up? We turn on automated text-back. We tell you when the numbers say it's time.</p>
+                    <p>As your business scales, we recommend AI systems tailored to your data. We tell you when the numbers say it's time — before you even have to ask.</p>
                 </article>
             </div>
 
             <div class="mission-cta" data-aos="fade-up" data-aos-delay="200">
                 <a href="https://cal.com/atesauro/strategy-call" target="_blank" class="btn btn-primary">Book Your Free Strategy Call <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-                <p class="features-cta-note" style="color: #64748b;">See how website performance tracking and monthly growth reports work for your business.</p>
+                <p class="features-cta-note" style="color: #64748b;">See how our growth lifecycle works for your business.</p>
             </div>
         </div>
     </section>

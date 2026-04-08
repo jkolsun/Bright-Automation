@@ -442,6 +442,75 @@ function setActiveNavLink() {
 
 document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
+// Lifecycle Carousel — auto-advancing with manual controls
+(function() {
+    var track = document.getElementById('lifecycleTrack');
+    var dotsContainer = document.getElementById('lifecycleDots');
+    var prevBtn = document.getElementById('lifecyclePrev');
+    var nextBtn = document.getElementById('lifecycleNext');
+    if (!track || !dotsContainer) return;
+
+    var cards = track.children;
+    var total = cards.length;
+    var current = 0;
+    var autoTimer = null;
+
+    // Create dots
+    for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'lifecycle-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to step ' + (i + 1));
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+            goTo(parseInt(this.dataset.index));
+        });
+        dotsContainer.appendChild(dot);
+    }
+
+    function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        current = index;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        // Update dots
+        var dots = dotsContainer.querySelectorAll('.lifecycle-dot');
+        dots.forEach(function(d, i) {
+            d.className = 'lifecycle-dot' + (i === current ? ' active' : '');
+        });
+        resetAuto();
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(function() { goTo(current + 1); }, 4000);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+    // Touch swipe support
+    var startX = 0;
+    var diffX = 0;
+    track.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        clearInterval(autoTimer);
+    }, { passive: true });
+    track.addEventListener('touchmove', function(e) {
+        diffX = e.touches[0].clientX - startX;
+    }, { passive: true });
+    track.addEventListener('touchend', function() {
+        if (Math.abs(diffX) > 50) {
+            goTo(diffX > 0 ? current - 1 : current + 1);
+        } else {
+            resetAuto();
+        }
+        diffX = 0;
+    });
+
+    // Start auto-advance
+    resetAuto();
+})();
+
 // Smooth Scroll for Anchor Links (uses Lenis when available)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
