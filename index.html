@@ -55,12 +55,12 @@
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/chatbot.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper CSS — not currently used on homepage, loaded only on desktop -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
 
-    <!-- Splitting.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting-cells.css">
+    <!-- Splitting.js CSS — not currently used, disabled to reduce mobile payload -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting-cells.css"> -->
 
 </head>
 <body>
@@ -769,55 +769,79 @@
         </div>
     </div>
 
-    <!-- Libraries -->
+    <!-- Libraries — core (always loaded) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Libraries — desktop only (heavy GPU/memory, skip on mobile to prevent scroll crash) -->
+    <script>
+    (function() {
+        var isMobile = window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024);
+        var desktopLibs = [
+            'https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js',
+            'https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+            'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js'
+        ];
+        if (!isMobile) {
+            desktopLibs.forEach(function(src) {
+                var s = document.createElement('script');
+                s.src = src;
+                document.head.appendChild(s);
+            });
+        }
+    })();
+    </script>
+    <!-- Unused libraries removed: Swiper, Splitting.js, Barba.js (not referenced in code) -->
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/chatbot.js"></script>
     <script>
-        // AOS
+        // AOS — lighter config on mobile to prevent scroll jank
         AOS.init({
-            duration: 800,
+            duration: window.innerWidth <= 768 ? 400 : 800,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 50
+            offset: window.innerWidth <= 768 ? 20 : 50,
+            disable: window.innerWidth <= 480 ? true : false
         });
 
-        // Vanta.js 3D Hero Background
+        // Vanta.js 3D Hero Background — disabled on mobile (GPU crash prevention)
         (function() {
-            if (typeof VANTA !== 'undefined' && typeof THREE !== 'undefined') {
-                try {
-                    VANTA.NET({
-                        el: '#hero-vanta',
-                        mouseControls: true,
-                        touchControls: true,
-                        gyroControls: false,
-                        minHeight: 200.00,
-                        minWidth: 200.00,
-                        scale: 1.00,
-                        scaleMobile: 1.00,
-                        color: 0x4AABB8,
-                        backgroundColor: 0x0a1628,
-                        points: 12.00,
-                        maxDistance: 22.00,
-                        spacing: 18.00,
-                        showDots: true
-                    });
-                } catch(e) {
-                    console.log('Vanta fallback to CSS gradient');
+            var isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024);
+            if (isMobileDevice) return; // Skip Vanta on mobile — causes GPU crash mid-scroll
+
+            function tryInitVanta() {
+                if (typeof VANTA !== 'undefined' && typeof THREE !== 'undefined') {
+                    try {
+                        VANTA.NET({
+                            el: '#hero-vanta',
+                            mouseControls: true,
+                            touchControls: false,
+                            gyroControls: false,
+                            minHeight: 200.00,
+                            minWidth: 200.00,
+                            scale: 1.00,
+                            scaleMobile: 1.00,
+                            color: 0x4AABB8,
+                            backgroundColor: 0x0a1628,
+                            points: 12.00,
+                            maxDistance: 22.00,
+                            spacing: 18.00,
+                            showDots: true
+                        });
+                    } catch(e) {
+                        console.log('Vanta fallback to CSS gradient');
+                    }
+                } else if (--attempts > 0) {
+                    setTimeout(tryInitVanta, 200);
                 }
             }
+            var attempts = 15; // Try for up to 3 seconds
+            tryInitVanta();
         })();
 
         // Typed.js Hero Text

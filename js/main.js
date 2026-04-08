@@ -92,10 +92,16 @@ class ParticleSystem {
     }
 
     init() {
+        // Skip particles on mobile — too many animated DOM elements cause scroll jank
+        if (window.innerWidth <= 768) return;
+
         // Create container
         this.container = document.createElement('div');
         this.container.className = 'particles-bg';
         document.body.prepend(this.container);
+
+        // Reduce count on tablet
+        if (window.innerWidth <= 1024) this.particleCount = 20;
 
         // Create particles
         for (let i = 0; i < this.particleCount; i++) {
@@ -132,6 +138,9 @@ class GridBackground {
     }
 
     init() {
+        // Skip grid background on mobile for performance
+        if (window.innerWidth <= 768) return;
+
         const grid = document.createElement('div');
         grid.className = 'grid-bg';
         document.body.prepend(grid);
@@ -226,6 +235,9 @@ class MagneticButtons {
     }
 
     init() {
+        // Skip magnetic effect on mobile/touch — causes jank
+        if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
+
         const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta');
 
         buttons.forEach(btn => {
@@ -806,6 +818,9 @@ document.addEventListener('DOMContentLoaded', createBackToTopButton);
 
 // Parallax Effect for Hero
 function initParallax() {
+    // Skip parallax on mobile — scroll-linked transforms cause jank
+    if (window.innerWidth <= 768) return;
+
     const hero = document.querySelector('.hero, .hero-video-section');
     if (!hero) return;
 
