@@ -193,7 +193,7 @@
             flex: 1;
             text-align: center;
             position: relative;
-            padding: 0 0.25rem;
+            padding: 0 0.35rem;
         }
         .launch-timeline-node::before {
             content: '';
@@ -974,7 +974,7 @@
             padding: 0 1.75rem;
         }
         .faq-item.active .faq-answer {
-            max-height: 300px;
+            max-height: 500px;
             padding: 0 1.75rem 1.5rem;
         }
         .faq-answer p {
@@ -1216,9 +1216,8 @@
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 100vh;
-                min-height: 100dvh;
-                padding: 100px 1.5rem 60px;
+                min-height: auto;
+                padding: 100px 1.5rem 50px;
             }
             .hero-content-text h1 {
                 font-size: 2.5rem;
@@ -1267,7 +1266,7 @@
                 padding: 1.25rem 0;
             }
             .testimonials-carousel {
-                min-height: 220px;
+                min-height: 240px;
             }
             .testimonial-card {
                 padding: 0 1rem;
@@ -1492,20 +1491,30 @@
             .pricing-cta {
                 padding: 0.875rem 2rem;
                 font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-cta-section .btn-cta {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-cta-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
         @media (max-width: 480px) {
             .hero-section {
-                padding: 90px 1rem 40px;
+                padding: 90px 1.25rem 40px;
             }
             .hero-content-text h1 {
                 font-size: 1.85rem;
                 line-height: 1.15;
             }
             .hero-typed-wrapper {
-                height: 3.5rem;
-                margin-bottom: 1.25rem;
+                height: 3rem;
+                margin-bottom: 1rem;
             }
             #hero-typed {
                 font-size: 0.8rem;
@@ -1514,8 +1523,10 @@
                 font-size: 1rem;
             }
             .hero-cta-btn {
-                padding: 0.85rem 1.75rem;
+                padding: 0.9rem 1.75rem;
                 font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
             }
             .hero-orb-1 {
                 width: 250px;
@@ -1540,7 +1551,7 @@
                 font-size: 1.75rem;
             }
             .testimonials-carousel {
-                min-height: 260px;
+                min-height: 280px;
             }
             .testimonial-quote {
                 font-size: 0.8125rem;
@@ -1569,6 +1580,44 @@
             .growth-step-content p {
                 font-size: 0.8rem;
             }
+            .mission-control-section {
+                padding: 2rem 0;
+            }
+            .launch-timeline {
+                max-width: 260px;
+            }
+            .timeline-day {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+                font-size: 0.6rem;
+            }
+            .launch-timeline-node::after {
+                left: 18px;
+                top: 38px;
+                height: calc(100% - 38px);
+            }
+            .mission-beat-card {
+                padding: 1rem;
+            }
+            .mission-beat-card h3 {
+                font-size: 0.95rem;
+            }
+            .mission-beat-card p {
+                font-size: 0.8rem;
+            }
+            .pricing-cta {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-cta-section .btn-cta {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+            .container {
+                padding: 0 1.25rem;
+            }
             .faq-toggle {
                 padding: 1rem 1rem;
             }
@@ -1577,5 +1626,8 @@
             }
             .section-header h2 {
                 font-size: 1.35rem;
+            }
+            .section-header p {
+                font-size: 0.9rem;
             }
         }
