@@ -930,6 +930,27 @@
             color: #2E7D8A;
         }
 
+        /* Included toggle button — desktop: just a heading, no toggle behavior */
+        .included-toggle {
+            display: block;
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: default;
+            text-align: left;
+        }
+        .included-toggle h4 {
+            display: inline;
+        }
+        .included-chevron {
+            display: none;
+        }
+        .included-list {
+            list-style: none;
+            padding: 0;
+        }
+
         /* ===== FAQ ACCORDION ===== */
         .faq-accordion {
             display: flex;
@@ -1371,6 +1392,46 @@
             .pricing-card-main {
                 padding: 24px 20px;
             }
+
+            /* Included section — collapsible dropdown on mobile */
+            .included-toggle {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0;
+                background: none;
+                border: none;
+            }
+            .included-chevron {
+                display: block !important;
+                font-size: 18px;
+                color: #94a3b8;
+                transition: transform 0.3s ease;
+            }
+            .pricing-upsells.expanded .included-chevron {
+                transform: rotate(180deg);
+            }
+            .included-list {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+            }
+            .pricing-upsells.expanded .included-list {
+                max-height: 600px;
+            }
+            /* Better bullet point padding — centered, not touching edges */
+            .pricing-upsells li {
+                padding: 0.6rem 0.75rem;
+                margin: 0;
+                font-size: 0.82rem;
+                border-radius: 6px;
+            }
+            .pricing-upsells li:nth-child(odd) {
+                background: rgba(46, 125, 138, 0.04);
+            }
+
             .price {
                 font-size: 2.25rem;
             }

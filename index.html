@@ -383,8 +383,11 @@
                 <a href="https://cal.com/atesauro/strategy-call" target="_blank" class="pricing-cta">Book Your Free Strategy Call <i class="ph ph-arrow-right"></i></a>
 
                 <div class="pricing-upsells">
-                    <h4>Everything Included</h4>
-                    <ul>
+                    <button class="included-toggle" onclick="this.closest('.pricing-upsells').classList.toggle('expanded')">
+                        <h4>Everything Included</h4>
+                        <i class="ph ph-caret-down included-chevron"></i>
+                    </button>
+                    <ul class="included-list">
                         <li>AI-powered revenue system <span>Included</span></li>
                         <li>Hosting, SSL &amp; continuous updates <span>Included</span></li>
                         <li>Google Business Profile optimization <span>Included</span></li>
