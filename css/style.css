@@ -2668,19 +2668,19 @@ body.drawer-open .ba-chatbot {
 
     /* Mobile nav overrides */
     .logo-img-large {
-        height: 34px;
+        height: 48px;
     }
 
     .navbar.scrolled .logo-img-large {
-        height: 30px;
+        height: 40px;
     }
 
     .nav-container {
-        padding: 0.6rem 1.25rem;
+        padding: 0.75rem 1.25rem;
     }
 
     .navbar.scrolled .nav-container {
-        padding: 0.5rem 1.25rem;
+        padding: 0.6rem 1.25rem;
     }
 
     /* Show menu toggle on mobile */

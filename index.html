@@ -362,8 +362,9 @@
             </div>
             <div class="video-showcase-wrap" data-aos="fade-up">
                 <div class="video-player">
-                    <video class="showcase-video" preload="metadata" playsinline muted loop>
+                    <video class="showcase-video" preload="auto" playsinline muted loop webkit-playsinline="true" poster="" style="background: #0f172a; min-height: 200px;">
                         <source src="videos/webdesign.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                     <button class="video-play-overlay" aria-label="Play video">
                         <i class="ph ph-play-fill"></i>
@@ -1031,7 +1032,7 @@
                         if (entry.isIntersecting) playVideo();
                         else pauseVideo();
                     });
-                }, { threshold: 0.4 });
+                }, { threshold: 0.15 });
                 observer.observe(video);
             }
         })();

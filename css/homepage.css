@@ -1222,8 +1222,11 @@
         }
         .showcase-video {
             width: 100%;
+            height: auto;
             display: block;
             cursor: pointer;
+            min-height: 200px;
+            background: #0f172a;
         }
         .video-play-overlay {
             position: absolute;
