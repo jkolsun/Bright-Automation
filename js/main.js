@@ -366,31 +366,28 @@ class TypingEffect {
     }
 }
 
-// Mobile Menu Toggle — navbar goes full-screen when menu opens
+// Mobile Side Drawer
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navbar = document.querySelector('.navbar');
-    let isOpen = false;
+    var menuToggle = document.querySelector('.menu-toggle');
+    var drawer = document.getElementById('mobileDrawer');
+    var overlay = document.getElementById('drawerOverlay');
+    var closeBtn = document.getElementById('drawerClose');
+    var isOpen = false;
 
-    function openMenu() {
-        if (!navMenu || isOpen) return;
+    function openDrawer() {
+        if (isOpen) return;
         isOpen = true;
-        navbar.classList.add('nav-open');
-        navMenu.classList.add('mobile-open');
+        drawer.classList.add('open');
+        overlay.classList.add('active');
         menuToggle.classList.add('active');
         document.body.style.overflow = 'hidden';
-
-        navMenu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', closeMenu, { once: true });
-        });
     }
 
-    function closeMenu() {
-        if (!navMenu || !isOpen) return;
+    function closeDrawer() {
+        if (!isOpen) return;
         isOpen = false;
-        navbar.classList.remove('nav-open');
-        navMenu.classList.remove('mobile-open');
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
         menuToggle.classList.remove('active');
         document.body.style.overflow = '';
     }
@@ -398,12 +395,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle) {
         menuToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            if (isOpen) { closeMenu(); } else { openMenu(); }
+            if (isOpen) closeDrawer(); else openDrawer();
+        });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+
+    // Close on link click
+    if (drawer) {
+        drawer.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeDrawer);
         });
     }
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && isOpen) closeMenu();
+        if (e.key === 'Escape' && isOpen) closeDrawer();
     });
 });
 
