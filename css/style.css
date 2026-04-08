@@ -2441,26 +2441,26 @@ body::after {
     }
 
     /* Mobile nav overrides */
-    .logo-img-large {
-        height: 40px;
+    .navbar {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.92);
     }
 
-    .navbar.scrolled .logo-img-large {
+    .logo-img-large {
         height: 36px;
     }
 
+    .navbar.scrolled .logo-img-large {
+        height: 32px;
+    }
+
     .nav-container {
-        padding: 0.875rem 1.5rem;
+        padding: 0.65rem 1.25rem;
     }
 
     .navbar.scrolled .nav-container {
-        padding: 0.625rem 1.5rem;
-    }
-
-    /* Reduce navbar backdrop-filter on mobile for performance */
-    .navbar {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        padding: 0.5rem 1.25rem;
     }
 
     /* Show menu toggle on mobile */
@@ -2475,6 +2475,17 @@ body::after {
 
     .nav-social {
         display: none;
+    }
+
+    /* Smoother mobile overlay menu */
+    .nav-menu.mobile-open a {
+        font-size: 1.35rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-menu.mobile-open .nav-cta {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.75rem;
     }
 
     .hero {
@@ -3390,17 +3401,16 @@ body::after {
     .pricing-cta,
     .hero-cta-btn,
     .faq-toggle,
-    .testimonial-dot,
     .btn-cta {
         min-height: 44px;
     }
 
-    /* Testimonial dots: bigger touch targets */
+    /* Testimonial dots: normal size, touch-friendly spacing */
     .testimonial-dot {
-        width: 12px;
-        height: 12px;
-        padding: 8px;
-        box-sizing: content-box;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        min-height: auto;
     }
 }
 

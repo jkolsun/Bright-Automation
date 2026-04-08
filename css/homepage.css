@@ -1255,9 +1255,10 @@
                 font-size: 0.8rem;
                 flex-wrap: wrap;
             }
-            /* Hero orbs: disable animation on mobile to save GPU */
+            /* Hero orbs: lighter animation on tablet */
             .hero-orb {
-                animation: none !important;
+                animation-duration: 25s !important;
+                opacity: 0.5 !important;
             }
             .hero-systems-link {
                 font-size: 0.85rem;
