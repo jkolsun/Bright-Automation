@@ -380,6 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
         drawer.classList.add('open');
         overlay.classList.add('active');
         menuToggle.classList.add('active');
+        document.body.classList.add('drawer-open');
         document.body.style.overflow = 'hidden';
     }
 
@@ -389,6 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
         drawer.classList.remove('open');
         overlay.classList.remove('active');
         menuToggle.classList.remove('active');
+        document.body.classList.remove('drawer-open');
         document.body.style.overflow = '';
     }
 

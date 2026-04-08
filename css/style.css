@@ -894,16 +894,19 @@ body::after {
     position: fixed;
     top: 0;
     right: -320px;
+    bottom: 0;
     width: 300px;
     max-width: 85vw;
-    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     background: #ffffff;
-    z-index: 9999;
+    z-index: 99999;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mobile-drawer.open {
@@ -1033,6 +1036,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
 }
 
 .drawer-social {
@@ -1070,6 +1074,21 @@ body::after {
     font-weight: 700;
     font-size: 0.9rem;
     text-decoration: none;
+}
+
+/* Hide social proof toast on mobile — !important overrides inline JS styles */
+@media (max-width: 768px) {
+    .social-proof-toast,
+    #socialProofToast {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+/* Hide chatbot when drawer is open */
+body.drawer-open .ba-chatbot {
+    display: none !important;
 }
 
 /* Hide drawer on desktop */
