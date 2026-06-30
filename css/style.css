@@ -117,10 +117,11 @@
 
 html {
     font-size: 16px;
-}
-
-html {
     overflow-x: hidden;
+    /* Stop iOS Safari double-tap-zoom on buttons + smooth tap behavior */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -132,8 +133,26 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
     position: relative;
+    /* prevent horizontal pan/swipe gestures from showing the body bg */
+    overscroll-behavior-x: none;
 }
+
+/* Tap targets: no double-tap zoom, snappy press */
+button, a, [role="button"], .btn, .testimonial-dot, .pl-card, .founder-card {
+    touch-action: manipulation;
+}
+
+/* iOS auto-zooms inputs whose font-size is < 16px. Force 16+. */
+input, select, textarea {
+    font-size: 16px !important;
+    max-width: 100%;
+}
+
+/* Hard cap any element that could accidentally exceed viewport */
+img, svg, video, iframe { max-width: 100%; }
+
 
 /* ===========================
    GRAIN TEXTURE OVERLAY
@@ -3664,4 +3683,233 @@ body.drawer-open .ba-chatbot {
     body::after {
         animation: none !important;
     }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   INTAKE-STYLE CONTACT FORM (matches getsitequote.org/intake style)
+   ═══════════════════════════════════════════════════════════════════ */
+.intake-form { padding: 1.75rem 1.75rem 1.5rem; background: #ffffff; }
+.intake-step-row {
+    display: flex; gap: 6px;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+.intake-pill {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+    padding: 5px 10px;
+    background: rgba(74,171,184,0.10);
+    border: 1px solid rgba(74,171,184,0.28);
+    color: var(--primary);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.intake-pill-done {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+.intake-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.4vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+    color: #0e1729;
+}
+.intake-title-em {
+    color: var(--primary);
+    font-weight: 700;
+}
+.intake-sub {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #475467;
+    margin-bottom: 1.5rem;
+}
+.intake-form .form-group { margin-bottom: 0.85rem; }
+.intake-form .form-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #475467;
+    font-weight: 700;
+    margin-bottom: 7px;
+    font-family: var(--font-sans);
+}
+.form-req { color: var(--primary); }
+.intake-form .form-input {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 13px 14px;
+    font-size: 16px;
+    color: #0e1729;
+    border-radius: 10px;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    font-family: var(--font-sans);
+}
+.intake-form select.form-input { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--primary) 50%), linear-gradient(135deg, var(--primary) 50%, transparent 50%); background-position: calc(100% - 18px) 22px, calc(100% - 12px) 22px; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 34px; }
+.intake-form .form-input:focus {
+    outline: 0;
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74,171,184,0.18);
+}
+.intake-form .form-input::placeholder { color: #94a3b8; }
+.intake-form textarea.form-input,
+.intake-form .services-list-input {
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 130px;
+    font-family: var(--font-sans);
+}
+.intake-consents {
+    margin: 1rem 0 1.25rem;
+    padding: 14px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+.intake-consent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 9px;
+    align-items: flex-start;
+    padding: 7px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #475467;
+    cursor: pointer;
+}
+.intake-consent input[type="checkbox"] {
+    width: 16px; height: 16px;
+    margin-top: 2px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+.intake-consent a { color: var(--primary); text-decoration: underline; }
+.intake-submit {
+    width: 100%;
+    padding: 16px 24px !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.005em;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(74,171,184,0.30);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.intake-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(74,171,184,0.45);
+}
+.intake-meta {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.intake-meta i { color: var(--primary); font-size: 14px; }
+
+/* ── Cloudinary upload UI ──────────────────────────────────────────── */
+.intake-form .form-optional {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0;
+    margin-left: 4px;
+    text-transform: none;
+}
+.intake-form .upload-group { margin-bottom: 1rem; }
+.intake-form .upload-hint {
+    margin: 0 0 8px;
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+.intake-form .upload-btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 12px 18px;
+    background: #f8fafc;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 12px;
+    color: var(--primary);
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    justify-content: center;
+}
+.intake-form .upload-btn:hover {
+    background: rgba(46,125,138,0.05);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+.intake-form .upload-btn i {
+    font-size: 1.15rem;
+    color: var(--primary);
+}
+.intake-form .upload-thumbs {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 10px;
+}
+.intake-form .upload-thumb {
+    position: relative;
+    width: 74px; height: 74px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    box-shadow: 0 2px 6px rgba(15,23,42,0.05);
+}
+.intake-form .upload-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.intake-form .upload-thumb-x {
+    position: absolute;
+    top: 4px; right: 4px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(15,23,42,0.78);
+    color: #ffffff;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 0 1px;
+    transition: background 0.2s;
+}
+.intake-form .upload-thumb-x:hover { background: #EF4444; }
+
+@media (max-width: 768px) {
+    .intake-form { padding: 1.25rem 1.25rem 1.25rem; }
+    .intake-step-row { gap: 4px; margin-bottom: 1rem; }
+    .intake-pill { font-size: 8.5px; letter-spacing: 1.1px; padding: 4px 6px; }
+    .intake-title { font-size: 1.5rem; }
+    .intake-sub { font-size: 0.88rem; margin-bottom: 1.1rem; }
+    .intake-consent { font-size: 0.74rem; }
+    .intake-meta { font-size: 0.72rem; flex-wrap: wrap; }
+    .intake-form .upload-btn { padding: 11px 14px; font-size: 0.88rem; }
+    .intake-form .upload-thumb { width: 64px; height: 64px; }
 }

@@ -975,11 +975,16 @@ document.addEventListener('DOMContentLoaded', initRevealSections);
 function initPageTransitions() {
     document.body.classList.add('page-loaded');
 
-    const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])');
+    const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"]):not([href^="sms"])');
 
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
+            if (!href) return;
+            // Skip same-page hash links and any URL containing a hash fragment
+            if (href.includes('#')) return;
+            // Skip anchor-only or empty links
+            if (href === '' || href === '/' && window.location.pathname === '/') return;
             if (href.startsWith('/') || href.includes('.html') || !href.includes('.')) {
                 e.preventDefault();
                 document.body.classList.add('page-leaving');

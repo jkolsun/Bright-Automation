@@ -1,34 +1,11 @@
 /* ============================================================
-   polish.css — elevation layer over the original homepage.
-   Keeps the existing design; sharpens reviews (real Google
-   branding), adds the Command Center band, refines motion.
-   Loaded AFTER homepage.css. Tokens match: teal #2E7D8A.
+   polish.css — additions over the OG homepage. Loaded LAST.
+   Only two things: the Command Center band, and showing the
+   social buttons in the mobile top navbar. Nothing else, so the
+   OG's own review/founders/hero styling is untouched.
    ============================================================ */
 
-/* ---------- Google-verified review badge ---------- */
-.google-rating-badge{display:inline-flex;align-items:center;gap:.7rem;margin:1rem auto 0;
-  padding:.6rem 1.2rem;border-radius:9999px;background:#fff;border:1px solid #e6edf2;
-  box-shadow:0 6px 22px -10px rgba(15,23,42,.22);text-decoration:none;flex-wrap:wrap;justify-content:center;
-  transition:transform .25s ease,box-shadow .25s ease}
-.google-rating-badge:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px rgba(15,23,42,.3)}
-.google-rating-badge .grb-g{font-size:1.25rem;line-height:1;display:inline-flex}
-/* multi-color Google G via gradient text on the Font Awesome glyph */
-.grb-g .fa-google{background:conic-gradient(from -45deg,#4285F4 0 25%,#34A853 0 50%,#FBBC05 0 75%,#EA4335 0)
-  ;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.google-rating-badge .grb-stars{color:#FBBC05;letter-spacing:1px;font-size:1rem}
-.google-rating-badge b{font-family:var(--font-display,'Space Grotesk',sans-serif);font-size:1.05rem;color:#1F2937}
-.google-rating-badge .grb-sub{color:#475569;font-size:.92rem;font-weight:500}
-.google-rating-badge .grb-link{display:inline-flex;align-items:center;gap:.3rem;color:#2E7D8A;font-weight:600;font-size:.9rem;border-left:1px solid #e6edf2;padding-left:.7rem}
-@media(max-width:520px){.google-rating-badge .grb-link{border-left:0;padding-left:0}}
-
-/* per-card Google attribution row */
-.testimonial-card .tc-top{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.85rem}
-.testimonial-card .tc-g{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:#5f6b7a}
-.testimonial-card .tc-g .fa-google{font-size:1rem;background:conic-gradient(from -45deg,#4285F4 0 25%,#34A853 0 50%,#FBBC05 0 75%,#EA4335 0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.testimonial-card .tc-top .testimonial-stars{margin:0;color:#FBBC05}
-.testimonial-card .testimonial-role{opacity:.85}
-
-/* ---------- Command Center band (weave the $399 product in) ---------- */
+/* ---------- Command Center band (the $399 product weave) ---------- */
 .ccc-band{position:relative;overflow:hidden;padding:clamp(3.5rem,7vw,5.5rem) 0;
   background:linear-gradient(135deg,#0F172A 0%,#123244 55%,#0F172A 100%);color:#fff}
 .ccc-band .cb-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none}
@@ -36,19 +13,18 @@
 .ccc-band .cb-orb.b{width:360px;height:360px;background:rgba(16,185,129,.32);bottom:-170px;left:-70px}
 .ccc-band .container{position:relative;z-index:2}
 .ccc-band-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
-.ccc-band .cb-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display,'Space Grotesk',sans-serif);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#5ec8d6}
-.ccc-band h2{font-family:var(--font-display,'Space Grotesk',sans-serif);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.08;letter-spacing:-.02em;margin:.7rem 0 0;color:#fff;text-wrap:balance}
+.ccc-band .cb-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#5ec8d6}
+.ccc-band h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.08;letter-spacing:-.02em;margin:.7rem 0 0;color:#fff;text-wrap:balance}
 .ccc-band h2 .cb-grad{background:linear-gradient(120deg,#5ec8d6,#34d399);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .ccc-band p.cb-lead{margin:1rem 0 0;color:#b9c6d6;font-size:1.08rem;line-height:1.65;max-width:46ch}
 .ccc-band .cb-feats{margin:1.5rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.4rem;padding:0;list-style:none}
 .ccc-band .cb-feats li{display:flex;align-items:flex-start;gap:.5rem;font-size:.96rem;color:#dbe6f1;line-height:1.4}
 .ccc-band .cb-feats i{color:#34d399;margin-top:.15rem;flex:0 0 auto}
 .ccc-band .cb-cta{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
-.ccc-band .cb-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display,'Space Grotesk',sans-serif);font-weight:600;font-size:1rem;padding:.95rem 1.8rem;border-radius:9999px;text-decoration:none;background:#fff;color:#0f1b2e;transition:transform .25s ease,box-shadow .25s ease}
+.ccc-band .cb-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:.95rem 1.8rem;border-radius:9999px;text-decoration:none;background:#fff;color:#0f1b2e;transition:transform .25s ease,box-shadow .25s ease}
 .ccc-band .cb-btn:hover{transform:translateY(-2px);box-shadow:0 16px 38px -14px rgba(0,0,0,.5)}
 .ccc-band .cb-price{color:#9fb1c4;font-size:.95rem}
-.ccc-band .cb-price b{color:#fff;font-family:var(--font-display,'Space Grotesk',sans-serif);font-size:1.3rem}
-/* mini phone visual */
+.ccc-band .cb-price b{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:1.3rem}
 .ccc-band .cb-visual{position:relative;display:flex;justify-content:center}
 .ccc-band .cb-phone{width:230px;aspect-ratio:9/19.3;border-radius:36px;background:linear-gradient(160deg,#222c3d,#0a0f18);padding:10px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1.5px rgba(255,255,255,.05) inset}
 .ccc-band .cb-screen{width:100%;height:100%;border-radius:27px;overflow:hidden;background:radial-gradient(120% 70% at 50% -10%,rgba(46,125,138,.18),transparent 55%),#0b1322;padding:30px 12px 12px;display:flex;flex-direction:column;gap:8px}
@@ -71,23 +47,13 @@
 }
 @media(max-width:480px){.ccc-band .cb-feats{grid-template-columns:1fr}}
 
-/* ---------- Founders snapshot (homepage team — ported from live) ---------- */
-.founders-snapshot{padding:clamp(3rem,6vw,4.5rem) 0;background:#fff}
-.founders-snapshot .container{max-width:1100px}
-.founders-head{text-align:center;max-width:700px;margin:0 auto}
-.founders-head .founders-eyebrow{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.7rem}
-.founders-head h2{font-family:var(--font-display,'Space Grotesk',sans-serif);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.6rem);color:#1F2937;letter-spacing:-.02em;line-height:1.15}
-.founders-head h2 em{font-style:italic;color:#2E7D8A}
-.founders-head p{color:#475569;font-size:1.05rem;line-height:1.7;margin:.75rem auto 0}
-.founders-row{margin:2.6rem auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,250px));gap:2rem;justify-content:center}
-.founder-card{display:flex;flex-direction:column;align-items:center;text-align:center}
-.founder-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#eef2f6;box-shadow:0 20px 44px -20px rgba(15,23,42,.32);border:1px solid rgba(46,125,138,.1)}
-.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-.founder-meta{margin-top:1rem}
-.founder-name{font-family:var(--font-display,'Space Grotesk',sans-serif);font-weight:700;font-size:1.15rem;color:#1F2937}
-.founder-role{color:#2E7D8A;font-size:.9rem;font-weight:600;margin-top:.2rem}
-.founders-cta{text-align:center;margin-top:2.2rem}
-@media(max-width:520px){.founders-row{grid-template-columns:minmax(0,230px);gap:1.8rem}}
-
-/* ---------- light global polish (sharper, not different) ---------- */
-.testimonials-section .section-header h2{letter-spacing:-.02em}
+/* ---------- Mobile: social buttons in the top navbar (up top) ---------- */
+@media(max-width:768px){
+  .navbar .nav-social{display:flex !important;align-items:center;gap:.4rem;margin-left:auto;margin-right:.6rem;order:0}
+  .navbar .nav-social a{width:36px;height:36px;display:grid;place-items:center;font-size:1rem}
+  .navbar .menu-toggle{margin-left:0}
+}
+@media(max-width:380px){
+  .navbar .nav-social{gap:.25rem;margin-right:.45rem}
+  .navbar .nav-social a{width:32px;height:32px;font-size:.95rem}
+}
