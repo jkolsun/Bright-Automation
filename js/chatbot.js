@@ -11,8 +11,8 @@
         company: {
             name: "Bright Automations",
             email: "admin@brightautomations.net",
-            phone: "(610) 256-9844",
-            text: "(732) 228-3794"
+            phone: "(814) 400-2017",
+            text: "(814) 400-2017"
         }
     };
 
