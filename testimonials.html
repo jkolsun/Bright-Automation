@@ -57,6 +57,13 @@
       .tp-book{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:600;font-size:1rem;padding:1rem 1.9rem;border-radius:9999px;background:linear-gradient(135deg,#2E7D8A,#4AABB8);color:#fff;text-decoration:none;box-shadow:0 12px 30px -12px rgba(46,125,138,.6);transition:transform .3s,box-shadow .3s}
       .tp-book:hover{transform:translateY(-2px);box-shadow:0 18px 42px -14px rgba(46,125,138,.7)}
       @media(max-width:760px){.tp-grid{grid-template-columns:1fr;padding:0 1.25rem;gap:1rem}.tp-hero{padding-top:104px}.tp-wrap{padding:28px 0 52px}}
+      /* light page → nav must be dark/readable (top and scrolled) */
+      .navbar:not(.scrolled){background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(46,125,138,.08)}
+      .navbar.scrolled{background:rgba(255,255,255,.9)!important;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(46,125,138,.12)!important;box-shadow:0 8px 30px -14px rgba(12,19,32,.18)!important}
+      .navbar .nav-menu a{color:#243042!important}
+      .navbar .nav-menu a.active,.navbar .nav-menu a:hover{color:#2E7D8A!important}
+      .navbar .nav-menu a.nav-cta{color:#fff!important}
+      .navbar .menu-toggle span{background:#243042!important}
     </style>
 </head>
 <body>
