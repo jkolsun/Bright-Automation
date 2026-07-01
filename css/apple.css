@@ -150,3 +150,10 @@
   box-shadow:0 16px 34px -14px rgba(12,19,32,.35)!important}
 .founder-photo img{object-position:center 20%!important}
 @media(max-width:768px){.founder-photo{width:118px!important;height:118px!important}}
+
+/* ---- FIX: dark-background sections must have LIGHT headings/copy (an earlier
+   rule wrongly darkened them → invisible text on the dark bands). ---- */
+.footer-cta-section h2,.footer-cta-section .section-header h2,
+.stats-section h2,.stats-section .section-header h2{color:#fff!important}
+.footer-cta-section p{color:rgba(255,255,255,.82)!important}
+.stats-section .section-header p,.stats-section p{color:#94a3b8!important}
