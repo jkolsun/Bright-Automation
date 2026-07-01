@@ -262,3 +262,56 @@ main.ccc{transform:none!important}
   .ccc-price-tag{margin-inline:auto}
   .ccc-stage-r{min-height:520px}
 }
+
+/* ============================================================
+   FIXES (2026-07): nav-on-scroll contrast, mobile phone carousel,
+   tighter mobile rhythm.
+   ============================================================ */
+
+/* The site's .navbar.scrolled turns the bar dark navy (built for the dark
+   homepage hero). This is a LIGHT page, so keep the scrolled nav light too —
+   otherwise the dark-forced link text sits on a dark bar and vanishes. */
+.navbar.scrolled{
+  background:rgba(255,255,255,.9)!important;
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(46,125,138,.12)!important;
+  box-shadow:0 8px 30px -14px rgba(12,19,32,.18)!important;
+}
+.navbar.scrolled .nav-menu a{color:#243042!important}
+.navbar.scrolled .nav-menu a.active,.navbar.scrolled .nav-menu a:hover{color:#2E7D8A!important}
+.navbar.scrolled .nav-menu a.nav-cta{color:#fff!important}
+.navbar.scrolled .menu-toggle span{background:#243042!important}
+.navbar.scrolled .logo-img-large{filter:none!important}
+
+/* Mobile: the 3-phone showcase becomes a swipeable carousel (peek of the next
+   card signals it scrolls) instead of three tall stacked phones. */
+@media(max-width:820px){
+  .ccc-show .row{
+    display:flex;grid-template-columns:none;gap:1.1rem;max-width:none;
+    margin:2.2rem -1.25rem 0;padding:.4rem 1.25rem 1.2rem;
+    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .ccc-show .row::-webkit-scrollbar{display:none}
+  .ccc-shot{flex:0 0 76%;scroll-snap-align:center}
+  .ccc-shot .ccc-phone{max-width:224px}
+  .ccc-show .swipe-hint{display:inline-flex}
+}
+.ccc-show .swipe-hint{display:none;align-items:center;gap:.4rem;margin-top:1.2rem;
+  font-family:var(--font-display);font-weight:600;font-size:.8rem;color:#5ec8d6;
+  letter-spacing:.02em;justify-content:center;width:100%;text-align:center}
+
+/* Tighter vertical rhythm on phones so it's not an endless scroll */
+@media(max-width:768px){
+  .ccc-problem,.ccc-how,.ccc-trades,.ccc-pricewrap,.ccc-faq{padding-top:46px;padding-bottom:46px}
+  .ccc-show{padding-top:52px;padding-bottom:52px}
+  .ccc-final{padding-top:56px;padding-bottom:56px}
+  .ccc-hero{padding-top:90px;padding-bottom:30px}
+  .ccc-stage-r{min-height:430px}
+  .ccc-feat{padding:12px 0}
+  .ccc-fstep{padding:22px 0}
+  .ccc-fstep h3{font-size:1.5rem}
+  .ccc-fstep p{font-size:1rem;margin-top:.6rem}
+  .ccc-problem .ccc-stats{margin-top:2rem;gap:1.6rem 2.4rem}
+  .ccc-how .ccc-track{margin-top:2rem}
+}

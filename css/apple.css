@@ -1,0 +1,115 @@
+/* ============================================================
+   apple.css — Homepage refinement layer (loaded LAST on the homepage).
+   Brings the landing page into the same clean, "Apple-commercial"
+   language as the Command Center: flat light sections, one dark band
+   rhythm, big Manrope headlines, teal gradient accents, pill buttons,
+   generous desktop spacing, tight mobile scroll. Content-preserving.
+   ============================================================ */
+
+:root{ --ba-ink:#0c1320; --ba-slate:#475569; --ba-line:rgba(46,125,138,.14);
+  --ba-grad:linear-gradient(120deg,#2E7D8A 0%,#4AABB8 48%,#10B981 100%); }
+
+/* ---- kill the AI tells: wavy dividers ---- */
+.wave-divider{display:none!important}
+
+/* ---- clean, quiet section backgrounds (no mesh glows) ---- */
+.section-mesh,.section-mesh-alt,.testimonials-section,.partners-section,
+.post-launch-section,.founders-snapshot,.video-showcase-section,.section{
+  background-image:none!important;position:relative}
+.section,.testimonials-section,.post-launch-section,.founders-snapshot,
+.video-showcase-section{background-color:#fff!important}
+.section-mesh-alt,.partners-section{background-color:#F8FAFB!important}
+.section{padding:86px 0!important}
+.testimonials-section,.post-launch-section,.founders-snapshot,
+.video-showcase-section,.partners-section{padding:76px 0!important}
+
+/* ---- typography: big, tight, balanced (Apple headline feel) ---- */
+.section-header{max-width:820px;margin-left:auto;margin-right:auto}
+.section-header h2,.footer-cta-section h2,.stats-section .section-header h2{
+  font-family:var(--font-display)!important;font-weight:800!important;
+  font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:1.04!important;
+  letter-spacing:-.028em!important;text-wrap:balance;color:var(--ba-ink)}
+.section-header p{color:var(--ba-slate)!important;font-size:clamp(1.02rem,1.5vw,1.18rem)!important;
+  line-height:1.65!important;max-width:52ch;margin-left:auto;margin-right:auto}
+.text-gradient{background:var(--ba-grad)!important;-webkit-background-clip:text!important;
+  background-clip:text!important;-webkit-text-fill-color:transparent!important;color:#2E7D8A!important}
+.hero-section h1 em,.section-header h2 em,.founders-head h2 em,.post-launch-head h2 em{font-style:normal;background:var(--ba-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#2E7D8A}
+
+/* ---- eyebrow chips → clean command-center style ---- */
+.portfolio-eyebrow,.founders-eyebrow{display:inline-flex!important;align-items:center;gap:.55rem;
+  font-family:var(--font-display)!important;font-weight:600!important;font-size:.78rem!important;
+  letter-spacing:.16em!important;text-transform:uppercase!important;color:#2E7D8A!important;
+  background:none!important;border:0!important;padding:0!important;border-radius:0!important;margin-bottom:1rem}
+.portfolio-eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--ba-grad);flex:0 0 auto}
+.portfolio-eyebrow i{color:#2E7D8A!important}
+
+/* ---- cards: flat, clean, subtle (was frosted glass + glow) ---- */
+.glass-card{background:#fff!important;border:1px solid var(--ba-line)!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  box-shadow:0 24px 60px -34px rgba(12,19,32,.22)!important;border-radius:22px!important}
+.card-glow{box-shadow:0 34px 80px -34px rgba(12,19,32,.26)!important}
+.pl-card,.step-card,.founder-card,.faq-item{border-radius:20px!important}
+.pl-card{background:#fff!important;border:1px solid var(--ba-line)!important;box-shadow:0 20px 50px -34px rgba(12,19,32,.2)!important}
+
+/* ---- buttons → pills ---- */
+.btn-primary,.pricing-cta,.pl-cta-primary,.btn-cta,.hero-cta-btn,.growth-cta .btn-primary{
+  background:linear-gradient(135deg,#2E7D8A,#4AABB8)!important;color:#fff!important;
+  border-radius:9999px!important;font-family:var(--font-display)!important;font-weight:600!important;
+  box-shadow:0 12px 30px -12px rgba(46,125,138,.6)!important;border:2px solid transparent!important;
+  transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s!important}
+.btn-primary:hover,.pricing-cta:hover,.pl-cta-primary:hover,.btn-cta:hover,.hero-cta-btn:hover{
+  transform:translateY(-2px)!important;box-shadow:0 18px 42px -14px rgba(46,125,138,.7)!important}
+.btn-secondary,.founders-btn,.hero-cta-secondary,.pl-cta-secondary{border-radius:9999px!important;
+  font-family:var(--font-display)!important;font-weight:600!important}
+
+/* ---- partners marquee: quieter ---- */
+.partners-label{font-family:var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:#94a3b8}
+
+/* ---- testimonials: keep the Google-review cards, clean frame ---- */
+.testimonials-google-badge{border-radius:9999px!important;border:1px solid var(--ba-line)!important;background:#fff!important;box-shadow:0 8px 24px -16px rgba(12,19,32,.2)!important}
+.testimonial-card{border-radius:22px!important;border:1px solid var(--ba-line)!important;box-shadow:0 24px 60px -34px rgba(12,19,32,.2)!important}
+
+/* ---- industries pills: clean, calm ---- */
+.industry-pill{border-radius:9999px!important;border:1px solid #e6edf2!important;background:#fff!important;
+  box-shadow:0 2px 10px rgba(12,19,32,.05)!important;font-family:var(--font-display)!important;font-weight:600!important;color:var(--ba-ink)!important}
+.industry-pill i{color:#2E7D8A!important}
+.industry-pill-more{background:rgba(46,125,138,.06)!important;border-color:rgba(46,125,138,.2)!important;color:#2E7D8A!important}
+
+/* ---- pricing card ---- */
+.pricing-card-main{border-radius:26px!important}
+.price{font-family:var(--font-display)!important;letter-spacing:-.03em}
+
+/* ---- FAQ: clean list rows ---- */
+.faq-item{background:#fff!important;border:1px solid #eef2f6!important;box-shadow:none!important;border-radius:16px!important}
+.faq-toggle h4{font-family:var(--font-display)!important;color:var(--ba-ink)!important}
+.faq-icon{color:#2E7D8A!important}
+
+/* ---- dark stats band + final CTA: keep dark (Apple rhythm), clean ---- */
+.stats-section{background:#0F172A!important;padding:76px 0!important}
+.stat-number{font-family:var(--font-display)!important;background:linear-gradient(120deg,#5ec8d6,#34d399)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;letter-spacing:-.03em}
+.footer-cta-section{background:linear-gradient(135deg,#0F172A,#123244 55%,#0F172A)!important;padding:80px 0!important}
+
+/* ---- how-it-works / growth steps: numbers + headings on-brand ---- */
+.step-number,.growth-step-icon{font-family:var(--font-display)!important}
+.step-card h3,.growth-step-content h3,.pl-card h3,.founder-name{font-family:var(--font-display)!important;color:var(--ba-ink)!important;letter-spacing:-.01em}
+
+/* ============================================================
+   MOBILE: shorter, simpler scroll — tighten every band, hide the
+   loudest decorative bits so it isn't an endless page.
+   ============================================================ */
+@media(max-width:768px){
+  .section,.testimonials-section,.post-launch-section,.founders-snapshot,
+  .video-showcase-section,.partners-section{padding:46px 0!important}
+  .stats-section,.footer-cta-section{padding:52px 0!important}
+  .section-header{margin-bottom:1.6rem}
+  .section-header h2{font-size:clamp(1.8rem,7vw,2.3rem)!important}
+  .hero-orb{display:none!important}
+  .founders-snapshot .founders-head p,
+  .post-launch-section .post-launch-head p{font-size:1rem!important}
+  .growth-timeline{gap:.9rem!important}
+  .growth-step{padding:16px 0!important}
+  .industries-row{gap:.5rem!important}
+  /* the second (reverse) partners row is redundant on a small screen */
+  .partners-section .marquee-container:nth-of-type(3){display:none!important}
+}
