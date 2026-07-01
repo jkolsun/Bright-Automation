@@ -3916,3 +3916,53 @@ body.drawer-open .ba-chatbot {
 
 /* Remove the scroll-to-top button — it overlaps the chatbot widget. */
 #back-to-top{display:none!important}
+
+/* ============================================================
+   NAV REFINEMENT (2026-07-01) — clean 3-zone desktop bar:
+   logo (left) · links (centered) · actions: social + CTA pills (right).
+   Fixes the crowded/off-center bar, the wrapping "Join Our Team" pill,
+   the invisible teal-on-teal FAQ pill, and the too-dim social icons.
+   ============================================================ */
+.nav-container { justify-content: space-between; gap: 1.5rem; }
+.logo { flex: 0 0 auto; }
+.nav-menu { flex: 1 1 auto; justify-content: center; gap: 1.75rem; }
+.nav-actions { display: flex; align-items: center; gap: 0.85rem; flex: 0 0 auto; }
+
+/* CTA pills never wrap; kill the old in-list left margins */
+.nav-cta { white-space: nowrap; }
+.nav-join, .nav-faq { margin-left: 0 !important; }
+
+/* Social icons — bolder, clearly white (were 0.5-alpha and near-invisible) */
+.nav-social { gap: 0.55rem; }
+.nav-social a {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    font-size: 1.05rem;
+    width: 36px; height: 36px;
+}
+.nav-social a:hover {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-color: transparent;
+}
+
+/* FAQ pill — was teal text on the teal hero (invisible). White & glassy. */
+.nav-faq {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.10) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.40) !important;
+    box-shadow: none !important;
+}
+.nav-faq i { color: #ffffff !important; }
+.nav-faq:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* The full desktop bar needs room — below 1024px collapse to the hamburger
+   drawer so 7 links + the action cluster never crowd or wrap. */
+@media (max-width: 1024px) {
+    .nav-menu, .nav-actions { display: none !important; }
+    .menu-toggle { display: flex !important; }
+}

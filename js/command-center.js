@@ -48,18 +48,48 @@
     counters.forEach(function (el) { co.observe(el); });
   }
 
-  /* ---- pinned feature stage: swap the phone screen per active step ---- */
+  /* ---- feature stage: desktop = scroll-swap the pinned phone; mobile =
+         self-contained autoplay carousel (the pin can't keep the phone next
+         to its dots on a small screen, so the dots looked "dead" — drive it
+         on a timer instead, with tappable dots). ---- */
   var stage = document.querySelector('.ccc-feat');
   if (stage) {
     var steps = Array.prototype.slice.call(stage.querySelectorAll('.ccc-fstep'));
     var screens = stage.querySelectorAll('.ccc-feat-phone .ccc-screen');
-    var dots = stage.querySelectorAll('.ccc-screendots i');
+    var dots = Array.prototype.slice.call(stage.querySelectorAll('.ccc-screendots i'));
     function activate(name, idx) {
       screens.forEach(function (s) { s.classList.toggle('show', s.getAttribute('data-screen') === name); });
       steps.forEach(function (s, i) { s.classList.toggle('active', i === idx); });
       dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
     }
-    if ('IntersectionObserver' in window) {
+    var featMobile = matchMedia('(max-width: 880px)').matches;
+
+    if (featMobile && steps.length) {
+      var fi = 0, ftimer = null;
+      function fgo(i) { fi = (i + steps.length) % steps.length; activate(steps[fi].getAttribute('data-screen'), fi); }
+      function fstop() { if (ftimer) { clearInterval(ftimer); ftimer = null; } }
+      function fplay() { if (reduce) return; fstop(); ftimer = setInterval(function () { fgo(fi + 1); }, 3000); }
+      // dots become real controls
+      dots.forEach(function (d, i) {
+        d.style.cursor = 'pointer';
+        d.setAttribute('role', 'button');
+        d.addEventListener('click', function () { fstop(); fgo(i); fplay(); });
+      });
+      // pause while a finger is on the phone, resume shortly after
+      var fphone = stage.querySelector('.ccc-feat-phone');
+      if (fphone) {
+        fphone.addEventListener('touchstart', fstop, { passive: true });
+        fphone.addEventListener('touchend', function () { setTimeout(fplay, 1400); }, { passive: true });
+      }
+      // only animate while the section is actually on screen
+      if ('IntersectionObserver' in window) {
+        var fvis = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { fplay(); } else { fstop(); } });
+        }, { threshold: 0.25 });
+        fvis.observe(stage);
+      } else { fplay(); }
+      fgo(0);
+    } else if ('IntersectionObserver' in window) {
       var so = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
           if (e.isIntersecting) {
@@ -69,9 +99,37 @@
         });
       }, { threshold: 0.01, rootMargin: '-45% 0px -45% 0px' });
       steps.forEach(function (s) { so.observe(s); });
+      if (steps[0]) activate(steps[0].getAttribute('data-screen'), 0);
+    } else if (steps[0]) {
+      activate(steps[0].getAttribute('data-screen'), 0);
     }
-    // first screen on
-    if (steps[0]) activate(steps[0].getAttribute('data-screen'), 0);
+  }
+
+  /* ---- "on your home screen" 3-phone showcase: actually MOVE on mobile
+         (was swipe-only). Auto-advances through the snapped phones, pausing
+         while the user swipes. ---- */
+  var showRow = document.querySelector('.ccc-show .row');
+  if (showRow && !reduce) {
+    var shots = showRow.querySelectorAll('.ccc-shot');
+    var showNarrow = matchMedia('(max-width: 820px)').matches;
+    if (showNarrow && shots.length > 1) {
+      var si = 0, stimer = null, spaused = false;
+      function sgo(i) {
+        si = (i + shots.length) % shots.length;
+        var t = shots[si];
+        showRow.scrollTo({ left: t.offsetLeft - (showRow.clientWidth - t.clientWidth) / 2, behavior: 'smooth' });
+      }
+      function splay() { if (stimer) return; stimer = setInterval(function () { if (!spaused) sgo(si + 1); }, 3200); }
+      function sstop() { if (stimer) { clearInterval(stimer); stimer = null; } }
+      showRow.addEventListener('touchstart', function () { spaused = true; }, { passive: true });
+      showRow.addEventListener('touchend', function () { setTimeout(function () { spaused = false; }, 2600); }, { passive: true });
+      if ('IntersectionObserver' in window) {
+        var svis = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { splay(); } else { sstop(); } });
+        }, { threshold: 0.3 });
+        svis.observe(showRow);
+      } else { splay(); }
+    }
   }
 
   /* ---- hero phone: gently rotate a couple of screens ---- */

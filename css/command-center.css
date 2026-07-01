@@ -315,3 +315,27 @@ main.ccc{transform:none!important}
   .ccc-problem .ccc-stats{margin-top:2rem;gap:1.6rem 2.4rem}
   .ccc-how .ccc-track{margin-top:2rem}
 }
+
+/* ============================================================
+   Feature carousel on mobile (2026-07-01) — the pinned phone is
+   driven by an autoplay timer instead of scroll, so the dots
+   actually move + are tappable, and floating "live proof" popups
+   sit over the phone.
+   ============================================================ */
+.ccc-fpop{display:none}
+@keyframes cccFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(max-width:880px){
+  /* un-pin: on mobile it's a self-contained autoplay demo, not a scroll pin */
+  .ccc-feat .sticky{position:relative;overflow:visible;padding:8px 0 40px}
+  .ccc-feat{overflow:hidden}
+  /* dots: bigger, clearly interactive, animate as the phone auto-advances */
+  .ccc-feat .ccc-screendots{bottom:-26px;gap:9px}
+  .ccc-feat .ccc-screendots i{width:9px;height:9px}
+  .ccc-feat .ccc-screendots i.on{width:26px}
+  /* floating proof cards over the phone */
+  .ccc-fpop{display:flex;animation:cccFloat 5s ease-in-out infinite;
+    box-shadow:0 16px 34px -14px rgba(12,19,32,.4)}
+  .ccc-fpop.f1{top:12%;left:8px}
+  .ccc-fpop.f2{bottom:16%;right:8px;animation-delay:2s}
+}
+@media(prefers-reduced-motion:reduce){.ccc-fpop{animation:none}}

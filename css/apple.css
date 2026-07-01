@@ -12,11 +12,15 @@
 /* ---- kill the AI tells: wavy dividers ---- */
 .wave-divider{display:none!important}
 
-/* ---- clean, quiet section backgrounds (no mesh glows) ---- */
+/* ---- clean, quiet section backgrounds (no mesh glows) ----
+   NOTE: .post-launch-section + .founders-snapshot are INTENTIONALLY left on
+   their original dark navy (#0a1628) design — flattening them to white left
+   their white headings + glass cards invisible. Dark bands here also give the
+   page the same light/dark rhythm apple.css uses for stats + footer-cta. */
 .section-mesh,.section-mesh-alt,.testimonials-section,.partners-section,
-.post-launch-section,.founders-snapshot,.video-showcase-section,.section{
+.video-showcase-section,.section{
   background-image:none!important;position:relative}
-.section,.testimonials-section,.post-launch-section,.founders-snapshot,
+.section,.testimonials-section,
 .video-showcase-section{background-color:#fff!important}
 .section-mesh-alt,.partners-section{background-color:#F8FAFB!important}
 .section{padding:86px 0!important}
@@ -49,7 +53,7 @@
   box-shadow:0 24px 60px -34px rgba(12,19,32,.22)!important;border-radius:22px!important}
 .card-glow{box-shadow:0 34px 80px -34px rgba(12,19,32,.26)!important}
 .pl-card,.step-card,.founder-card,.faq-item{border-radius:20px!important}
-.pl-card{background:#fff!important;border:1px solid var(--ba-line)!important;box-shadow:0 20px 50px -34px rgba(12,19,32,.2)!important}
+/* .pl-card stays dark glass (post-launch band is dark) — no white override */
 
 /* ---- buttons → pills ---- */
 .btn-primary,.pricing-cta,.pl-cta-primary,.btn-cta,.hero-cta-btn,.growth-cta .btn-primary{
@@ -92,7 +96,9 @@
 
 /* ---- how-it-works / growth steps: numbers + headings on-brand ---- */
 .step-number,.growth-step-icon{font-family:var(--font-display)!important}
-.step-card h3,.growth-step-content h3,.pl-card h3,.founder-name{font-family:var(--font-display)!important;color:var(--ba-ink)!important;letter-spacing:-.01em}
+.step-card h3,.growth-step-content h3{font-family:var(--font-display)!important;color:var(--ba-ink)!important;letter-spacing:-.01em}
+/* pl-card h3 + founder-name live on DARK cards — display font only, keep white */
+.pl-card h3,.founder-name{font-family:var(--font-display)!important;letter-spacing:-.01em}
 
 /* ============================================================
    MOBILE: shorter, simpler scroll — tighten every band, hide the
