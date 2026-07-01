@@ -136,3 +136,17 @@
   .founders-row{gap:1rem!important}
   .growth-cta{margin-top:1.4rem!important}
 }
+
+/* ---- FIX: hero "Sell" must POP on the dark hero (was recolored to a dark
+   teal gradient that vanished). Bright cyan→emerald, in the display face. ---- */
+.hero-section h1 em,.hero-content-centered h1 em{
+  background:linear-gradient(120deg,#5ec8d6 0%,#7ee0c0 45%,#34d399 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:#5ec8d6!important;
+  font-family:var(--font-display)!important;font-style:normal!important;font-weight:800!important}
+
+/* ---- FIX: founder / team photos were tiny — make them a proper size ---- */
+.founder-photo{width:136px!important;height:136px!important;border:3px solid rgba(74,171,184,.45)!important;
+  box-shadow:0 16px 34px -14px rgba(12,19,32,.35)!important}
+.founder-photo img{object-position:center 20%!important}
+@media(max-width:768px){.founder-photo{width:118px!important;height:118px!important}}
