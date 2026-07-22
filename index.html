@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/polish.css?v=3">
     <link rel="stylesheet" href="css/apple.css?v=1">
+    <link rel="stylesheet" href="css/app-popup.css?v=1">
 
     <!-- Swiper CSS — not currently used on homepage, loaded only on desktop -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
@@ -1008,6 +1009,19 @@
         </div>
     </footer>
 
+    <!-- App Store popup — The Bright Center -->
+    <div class="app-popup" id="appPopup" role="dialog" aria-label="Download The Bright Center on the App Store" hidden>
+        <button class="app-popup-close" id="appPopupClose" aria-label="Dismiss">&times;</button>
+        <img class="app-popup-icon" src="images/apple-touch-icon.png" alt="The Bright Center app icon" width="52" height="52">
+        <div class="app-popup-body">
+            <b>The Bright Center</b>
+            <span>Our official app is on the App&nbsp;Store</span>
+            <a class="app-popup-badge" id="appPopupBadge" href="https://apps.apple.com/us/app/the-bright-center/id6783593321" target="_blank" rel="noopener">
+                <img src="images/app-store-badge.svg" alt="Download on the App Store" height="34">
+            </a>
+        </div>
+    </div>
+
     <!-- Social Proof Toast (fixed to viewport) -->
     <div class="social-proof-toast" id="socialProofToast">
         <div class="social-proof-icon"><i class="ph ph-trend-up"></i></div>
@@ -1047,6 +1061,7 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/chatbot.js"></script>
+    <script src="js/app-popup.js"></script>
     <script>
         // AOS — lighter config on mobile to prevent scroll jank
         AOS.init({
