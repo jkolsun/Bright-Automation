@@ -9,10 +9,19 @@
   bottom:calc(64px + max(20px,env(safe-area-inset-bottom)) + 14px);z-index:9998;
   display:flex;align-items:flex-start;gap:12px;max-width:330px;padding:14px 16px;border-radius:18px;
   background:rgba(15,23,42,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(94,200,214,.25);box-shadow:0 24px 60px -20px rgba(0,0,0,.55);
-  opacity:0;transform:translateY(14px) scale(.97);pointer-events:none;
-  transition:opacity .5s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+  border:1px solid rgba(94,200,214,.28);
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.55),0 0 40px -18px rgba(94,200,214,.35);
+  opacity:0;transform:translateY(22px) scale(.93);pointer-events:none;
+  transition:opacity .55s ease,transform .65s cubic-bezier(.34,1.56,.64,1)}
 .app-popup.show{opacity:1;transform:none;pointer-events:auto}
+/* staggered inner reveal — icon, name, line, badge land one after another */
+.app-popup-icon,.app-popup-body b,.app-popup-body>span,.app-popup-badge{
+  opacity:0;transform:translateY(7px);
+  transition:opacity .45s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+.app-popup.show .app-popup-icon{opacity:1;transform:none;transition-delay:.14s}
+.app-popup.show .app-popup-body b{opacity:1;transform:none;transition-delay:.24s}
+.app-popup.show .app-popup-body>span{opacity:1;transform:none;transition-delay:.32s}
+.app-popup.show .app-popup-badge{opacity:1;transform:none;transition-delay:.42s}
 .app-popup-icon{width:52px;height:52px;border-radius:12px;flex:0 0 auto;
   box-shadow:0 8px 20px -8px rgba(0,0,0,.6)}
 .app-popup-body{display:flex;flex-direction:column;gap:2px;min-width:0;padding-right:10px}
@@ -30,5 +39,6 @@
     max-width:min(330px,calc(100vw - 24px))}
 }
 @media (prefers-reduced-motion: reduce){
-  .app-popup{transition:none}
+  .app-popup,.app-popup-icon,.app-popup-body b,.app-popup-body>span,.app-popup-badge{transition:none}
+  .app-popup-icon,.app-popup-body b,.app-popup-body>span,.app-popup-badge{opacity:1;transform:none}
 }
