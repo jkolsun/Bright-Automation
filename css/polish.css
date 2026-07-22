@@ -70,13 +70,6 @@
 .sb-note i{color:#34d399}
 .seo-band .cb-float i{color:#4285F4}
 
-/* ---------- Mobile: social buttons in the top navbar (up top) ---------- */
-@media(max-width:768px){
-  .navbar .nav-social{display:flex !important;align-items:center;gap:.4rem;margin-left:auto;margin-right:.6rem;order:0}
-  .navbar .nav-social a{width:36px;height:36px;display:grid;place-items:center;font-size:1rem}
-  .navbar .menu-toggle{margin-left:0}
-}
-@media(max-width:380px){
-  .navbar .nav-social{gap:.25rem;margin-right:.45rem}
-  .navbar .nav-social a{width:32px;height:32px;font-size:.95rem}
-}
+/* Mobile navbar socials now live in style.css's ≤1024px block (site-wide) —
+   the old ≤768px attempt here never worked: style.css display:none!important
+   on the PARENT .nav-actions beat any child-level override. */

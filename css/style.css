@@ -3965,9 +3965,19 @@ body.drawer-open .ba-chatbot {
 }
 
 /* The full desktop bar needs room — below 1024px collapse to the hamburger
-   drawer so 7 links + the action cluster never crowd or wrap. */
+   drawer so 7 links + the action cluster never crowd or wrap. The SOCIAL
+   buttons stay in the bar (logo | socials | hamburger) — only the link list
+   and CTA pills move into the drawer. */
 @media (max-width: 1024px) {
     .nav-container { display: flex !important; justify-content: space-between; }
-    .nav-menu, .nav-actions { display: none !important; }
-    .menu-toggle { display: flex !important; }
+    .nav-menu { display: none !important; }
+    .nav-actions { display: flex !important; align-items: center; margin-left: auto; margin-right: .6rem; gap: 0; }
+    .nav-actions .nav-cta { display: none !important; }
+    .nav-social { display: flex !important; align-items: center; gap: .4rem; }
+    .nav-social a { width: 36px; height: 36px; display: grid; place-items: center; font-size: 1rem; }
+    .menu-toggle { display: flex !important; margin-left: 0; }
+}
+@media (max-width: 380px) {
+    .nav-social { gap: .25rem; }
+    .nav-social a { width: 32px; height: 32px; font-size: .95rem; }
 }
