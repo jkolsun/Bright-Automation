@@ -1,4 +1,4 @@
-// ===========================
+﻿// ===========================
 // BRIGHT AUTOMATIONS - FUTURISTIC JAVASCRIPT
 // ===========================
 
@@ -92,7 +92,7 @@ class ParticleSystem {
     }
 
     init() {
-        // Skip particles on mobile — too many animated DOM elements cause scroll jank
+        // Skip particles on mobile â€” too many animated DOM elements cause scroll jank
         if (window.innerWidth <= 768) return;
 
         // Create container
@@ -235,7 +235,7 @@ class MagneticButtons {
     }
 
     init() {
-        // Skip magnetic effect on mobile/touch — causes jank
+        // Skip magnetic effect on mobile/touch â€” causes jank
         if (window.innerWidth <= 768 || 'ontouchstart' in window) return;
 
         const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta');
@@ -260,7 +260,7 @@ class MagneticButtons {
 class TextScramble {
     constructor(el) {
         this.el = el;
-        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.chars = '!<>-_\\/[]{}â€”=+*^?#________';
         this.update = this.update.bind(this);
     }
 
@@ -442,7 +442,7 @@ function setActiveNavLink() {
 
 document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
-// Lifecycle Carousel — auto-advancing with manual controls
+// Lifecycle Carousel â€” auto-advancing with manual controls
 (function() {
     var track = document.getElementById('lifecycleTrack');
     var dotsContainer = document.getElementById('lifecycleDots');
@@ -835,7 +835,7 @@ function createBackToTopButton() {
     button.id = 'back-to-top';
     button.innerHTML = '<i class="fas fa-arrow-up"></i>';
     button.setAttribute('aria-label', 'Back to top');
-    // Hide on mobile — conflicts with chatbot button
+    // Hide on mobile â€” conflicts with chatbot button
     var isMobile = window.innerWidth <= 768;
     if (isMobile) return;
 
@@ -896,7 +896,7 @@ document.addEventListener('DOMContentLoaded', createBackToTopButton);
 
 // Parallax Effect for Hero
 function initParallax() {
-    // Skip parallax on mobile — scroll-linked transforms cause jank
+    // Skip parallax on mobile â€” scroll-linked transforms cause jank
     if (window.innerWidth <= 768) return;
 
     const hero = document.querySelector('.hero, .hero-video-section');
@@ -922,7 +922,7 @@ document.addEventListener('DOMContentLoaded', initParallax);
 
 // Initialize all effects
 document.addEventListener('DOMContentLoaded', function() {
-    // Custom cursor disabled — using normal browser cursor
+    // Custom cursor disabled â€” using normal browser cursor
 
     // Initialize particle system
     new ParticleSystem();
@@ -1009,20 +1009,20 @@ window.addEventListener('pageshow', function(event) {
     }
 });
 
-// Page transition styles — only fade page content, never fixed elements (navbar, chatbot, toast)
+// Page transition styles â€” only fade page content, never fixed elements (navbar, chatbot, toast)
 // Uses body > *:not() to skip fixed-position overlays
 const transitionStyles = document.createElement('style');
 transitionStyles.textContent = `
-    body > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
+    body > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(.app-popup):not(script):not(style):not(link) {
         opacity: 0;
         transform: translateY(8px);
         transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    body.page-loaded > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
+    body.page-loaded > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(.app-popup):not(script):not(style):not(link) {
         opacity: 1;
         transform: translateY(0);
     }
-    body.page-leaving > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(script):not(style):not(link) {
+    body.page-leaving > *:not(.navbar):not(.social-proof-toast):not(.ba-chatbot):not(.app-popup):not(script):not(style):not(link) {
         opacity: 0;
         transform: translateY(-8px);
     }
@@ -1042,7 +1042,7 @@ setTimeout(function() {
 function initLenis() {
     if (typeof Lenis === 'undefined') return;
 
-    // Skip Lenis on iOS/touch devices — native scroll is better there
+    // Skip Lenis on iOS/touch devices â€” native scroll is better there
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isIOS || (isTouchDevice && window.innerWidth <= 1024)) return;
@@ -1106,7 +1106,7 @@ function initGSAPAnimations() {
 
     const isMobile = window.innerWidth <= 768;
 
-    // Counter animations for stat numbers (GSAP-only — AOS can't do this)
+    // Counter animations for stat numbers (GSAP-only â€” AOS can't do this)
     document.querySelectorAll('.stat-number').forEach(stat => {
         const text = stat.textContent;
         const match = text.match(/^(\d+)/);
@@ -1133,7 +1133,7 @@ function initGSAPAnimations() {
         });
     });
 
-    // Parallax on hero orbs (desktop only — causes jank on mobile)
+    // Parallax on hero orbs (desktop only â€” causes jank on mobile)
     if (!isMobile) {
         document.querySelectorAll('.hero-orb').forEach((orb, i) => {
             gsap.to(orb, {

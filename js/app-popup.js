@@ -1,5 +1,5 @@
 /* app-popup.js — "The Bright Center is on the App Store" popup.
-   Appears 6s after load. Close = quiet for 7 days; tapping the
+   Appears right after load. Close = quiet for 7 days; tapping the
    badge = quiet for 30 days (they've seen the store page). */
 (function () {
   var KEY = 'ba_app_popup_dismissed_until';
@@ -21,7 +21,7 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(function () { pop.classList.add('show'); });
     });
-  }, 6000);
+  }, 400);
 
   var close = document.getElementById('appPopupClose');
   var badge = document.getElementById('appPopupBadge');

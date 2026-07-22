@@ -47,6 +47,29 @@
 }
 @media(max-width:480px){.ccc-band .cb-feats{grid-template-columns:1fr}}
 
+/* ---------- SEO Premier band (the $45.95 add-on weave) ----------
+   Same concept as the Command Center band directly below it: dark band,
+   copy + phone mock. Google-blue accents because the product IS your
+   Google presence. Visual sits left on desktop (alternating rhythm). */
+.seo-band{background:linear-gradient(135deg,#0E1A2E 0%,#102A40 55%,#0E1A2E 100%)}
+.seo-band .cb-orb.a{background:rgba(66,133,244,.4)}
+.seo-band .cb-orb.b{background:rgba(16,185,129,.28)}
+.seo-band .cb-eyebrow{color:#7cb3f9}
+.seo-band h2 .cb-grad{background:linear-gradient(120deg,#7cb3f9,#34d399);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@media(min-width:861px){.seo-band .cb-visual{order:-1}}
+.sb-search{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:9999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:.66rem;color:#dbe6f1}
+.sb-search i{color:#8092a8}
+.seo-band .cb-srow.you{background:rgba(66,133,244,.16);border-color:rgba(66,133,244,.45)}
+.seo-band .cb-srow.you .av{background:linear-gradient(135deg,#4285F4,#34A853)}
+.sb-rank{width:16px;height:16px;border-radius:50%;background:#4285F4;color:#fff;
+  font-size:.54rem;font-weight:800;display:grid;place-items:center;flex:0 0 auto}
+.sb-rank.g{background:rgba(255,255,255,.14);color:#cbd5e1}
+.seo-band .cb-srow .up{color:#34d399;font-size:.85rem;flex:0 0 auto}
+.sb-note{display:flex;align-items:center;gap:6px;font-size:.6rem;color:#8092a8;padding:2px 2px 0}
+.sb-note i{color:#34d399}
+.seo-band .cb-float i{color:#4285F4}
+
 /* ---------- Mobile: social buttons in the top navbar (up top) ---------- */
 @media(max-width:768px){
   .navbar .nav-social{display:flex !important;align-items:center;gap:.4rem;margin-left:auto;margin-right:.6rem;order:0}
