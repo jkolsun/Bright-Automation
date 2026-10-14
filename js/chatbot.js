@@ -303,7 +303,7 @@
                     <div class="ba-chat-header">
                         <div class="ba-header-info">
                             <div class="ba-avatar">
-                                <img src="images/logo-final.png" alt="Bright Automations" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <img src="/images/logo-final.png" alt="Bright Automations" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <span class="ba-avatar-fallback" style="display: none;">BA</span>
                             </div>
                             <div class="ba-header-text">

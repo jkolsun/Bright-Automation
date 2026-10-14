@@ -3981,3 +3981,22 @@ body.drawer-open .ba-chatbot {
     .nav-social { gap: .25rem; }
     .nav-social a { width: 32px; height: 32px; font-size: .95rem; }
 }
+
+/* Footer founders line (entity link to /founders/*), added 2026-10-14 */
+.footer-brand p.footer-founders {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+}
+
+.footer-brand p.footer-founders a {
+    color: var(--gray-300);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    text-underline-offset: 3px;
+    transition: color var(--transition-base);
+}
+
+.footer-brand p.footer-founders a:hover {
+    color: var(--white);
+}

@@ -6,4 +6,24 @@ Disallow: /thank-you
 Disallow: /demo
 Disallow: /qualify
 
+# AI search and answer engines: welcome. Company facts for them live at /llms.txt and /about.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+Allow: /
+Disallow: /client-login
+Disallow: /client-portal
+Disallow: /thank-you
+Disallow: /demo
+Disallow: /qualify
+
 Sitemap: https://www.brightautomations.org/sitemap.xml
