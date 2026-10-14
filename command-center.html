@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A branded app that answers every lead in seconds, texts back missed calls and books jobs. AI lead response, CRM and reviews. $399/mo, no setup fee.">
+    <meta name="description" content="A branded app that answers every lead in seconds, texts back missed calls and books jobs. Google Local Services Ads managed, AI lead response, CRM and reviews. $399/mo plus ad spend, no setup fee.">
     <meta name="keywords" content="local services ads app, missed call text back, AI lead response, lead management app for contractors, lead management app for plumbers HVAC roofing, customer CRM home services, automated review requests, Client Command Center, Bright Automations">
-    <title>Client Command Center App | Bright Automations</title>
+    <title>Client Command Center | Google LSA + The Bright Center App</title>
     <link rel="canonical" href="https://www.brightautomations.org/command-center">
     <meta name="theme-color" content="#2E7D8A">
 
-    <meta property="og:title" content="Client Command Center App | Bright Automations">
-    <meta property="og:description" content="A branded app that answers every lead in seconds, texts back missed calls and books jobs. AI lead response, CRM and reviews. $399/mo, no setup fee.">
+    <meta property="og:title" content="Client Command Center | Google LSA + The Bright Center App">
+    <meta property="og:description" content="A branded app that answers every lead in seconds, texts back missed calls and books jobs. Google Local Services Ads managed, AI lead response, CRM and reviews. $399/mo plus ad spend, no setup fee.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.brightautomations.org/command-center">
     <meta property="og:image" content="https://www.brightautomations.org/images/og-image.jpg">
@@ -33,7 +53,7 @@
     <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/command-center.css">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.brightautomations.org/command-center#webpage","url":"https://www.brightautomations.org/command-center","name":"Client Command Center App | Bright Automations","description":"A branded app that answers every lead in seconds, texts back missed calls and books jobs. AI lead response, CRM and reviews. $399/mo, no setup fee.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"publisher":{"@id":"https://www.brightautomations.org/#organization"},"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.brightautomations.org/command-center#webpage","url":"https://www.brightautomations.org/command-center","name":"Client Command Center | Google LSA + The Bright Center App","description":"A branded app that answers every lead in seconds, texts back missed calls and books jobs. Google Local Services Ads managed, AI lead response, CRM and reviews. $399/mo plus ad spend, no setup fee.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"publisher":{"@id":"https://www.brightautomations.org/#organization"},"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"}]}
     </script>
 </head>
 <body>
@@ -108,7 +128,7 @@
               <span class="eyebrow rise">Introducing the Client Command Center</span>
               <h1 class="rise" style="transition-delay:.06s">Your website gets you found.<br>This gets you <span class="grad">paid.</span></h1>
               <p class="lead rise" style="transition-delay:.12s">A branded app that lives on your home screen and turns every lead into a booked job — answered in seconds, every missed call caught, every customer in one place. The complete growth engine in your pocket.</p>
-              <div class="ccc-price-tag rise" style="transition-delay:.16s"><b>$399</b><span>/month</span><span class="free">All-in · No setup fee</span></div>
+              <div class="ccc-price-tag rise" style="transition-delay:.16s"><b>$399</b><span>/month</span><span class="free">Plus ad spend · No setup fee</span></div>
               <div class="cta-row rise" style="transition-delay:.2s">
                 <a href="/contact" class="pill pill-primary">Get Your Free Build Plan <i class="ph ph-arrow-right"></i></a>
                 <a href="#how" class="pill pill-ghost">See how it works</a>
@@ -262,7 +282,7 @@
             </div>
 
             <div class="steps">
-              <div class="ccc-fstep active" data-screen="leads"><span class="ix">01 — Local Services Ads</span><h3>Every Google LSA lead, the second it lands.</h3><p>See every Google Local Services Ads lead the moment it comes in, right in the app. Just the leads — clean, simple, and impossible to miss.</p><span class="chip"><i class="ph ph-google-logo"></i> Straight from Google LSA</span></div>
+              <div class="ccc-fstep active" data-screen="leads"><span class="ix">01 — Local Services Ads</span><h3>Every Google LSA lead, the second it lands.</h3><p>See every Google Local Services Ads lead the moment it comes in, right in the app. We set up and manage your Local Services Ads, including the Google Verified badge, and every lead lands in the app the second it comes in.</p><span class="chip"><i class="ph ph-google-logo"></i> Straight from Google LSA</span></div>
               <div class="ccc-fstep" data-screen="response"><span class="ix">02 — Instant Lead Response</span><h3>Answered in seconds. Booked while it's hot.</h3><p>Every new lead gets an instant, on-brand text in seconds — so you're first, and first wins the job. The AI keeps it sounding exactly like you.</p><span class="chip"><i class="ph ph-lightning"></i> Replies in ~4 seconds, 24/7</span></div>
               <div class="ccc-fstep" data-screen="missed"><span class="ix">03 — Missed-Call Text-Back</span><h3>No call ever goes to voicemail and vanishes.</h3><p>Miss a call and the caller instantly gets a text. The conversation starts itself — and the lead you already paid for stays yours.</p><span class="chip"><i class="ph ph-phone-call"></i> Fires the moment you can't pick up</span></div>
               <div class="ccc-fstep" data-screen="inbox"><span class="ix">04 — Two-Way Inbox + AI</span><h3>One number. One inbox. Every customer.</h3><p>Text every customer from one dedicated business number, with every conversation in a single clean inbox. AI drafts smart, on-brand replies that keep leads warm without you typing.</p><span class="chip"><i class="ph ph-chats-circle"></i> Your number, never your personal cell</span></div>
@@ -278,12 +298,12 @@
       <section class="ccc-how" id="how">
         <div class="wrap">
           <div class="head" style="text-align:center;max-width:680px;margin:0 auto">
-            <span class="eyebrow rise">Live in days, not weeks</span>
+            <span class="eyebrow rise">Simple to start</span>
             <h2 class="big rise" style="transition-delay:.05s">Four steps to a phone that <span class="grad">never stops.</span></h2>
           </div>
           <div class="ccc-track">
-            <div class="ccc-howstep rise"><div class="n">1</div><h4>Book a call</h4><p>A quick strategy call. We learn your trade, your area, and how you want it to sound.</p></div>
-            <div class="ccc-howstep rise" style="transition-delay:.08s"><div class="n">2</div><h4>We set it up</h4><p>We handle the technical parts — your dedicated number, LSA connection, and integrations.</p></div>
+            <div class="ccc-howstep rise"><div class="n">1</div><h4>Fill out the form</h4><p>Tell us your trade and your area. Everything after that happens by text, with no calls or meetings needed.</p></div>
+            <div class="ccc-howstep rise" style="transition-delay:.08s"><div class="n">2</div><h4>We set it up</h4><p>You add us to your Google Business Profile and upload your insurance and any license your state requires. We handle the rest: your Local Services Ads, your dedicated number and the app.</p></div>
             <div class="ccc-howstep rise" style="transition-delay:.16s"><div class="n">3</div><h4>You go live</h4><p>A guided wizard installs the app to your home screen, branded to your business.</p></div>
             <div class="ccc-howstep rise" style="transition-delay:.24s"><div class="n">4</div><h4>Leads land in your pocket</h4><p>Every lead answered, every call caught, every customer tracked — automatically.</p></div>
           </div>
@@ -363,8 +383,10 @@
           <div class="ccc-card rise" style="transition-delay:.1s">
             <span class="flag"><i class="ph ph-rocket-launch"></i> Client Command Center</span>
             <div class="price"><b>$399</b><span>/ month</span></div>
-            <p class="terms"><b>No setup fee.</b> All-in. Cancel anytime.</p>
+            <p class="terms"><b>No setup fee.</b> Plus your ad spend, paid directly to Google. Cancel anytime.</p>
             <ul>
+              <li><i class="ph ph-check-fat"></i> Google Local Services Ads set up and managed</li>
+              <li><i class="ph ph-check-fat"></i> SEO Premier included</li>
               <li><i class="ph ph-check-fat"></i> Google LSA leads in the app</li>
               <li><i class="ph ph-check-fat"></i> Instant AI lead response</li>
               <li><i class="ph ph-check-fat"></i> Missed-call text-back</li>
@@ -390,11 +412,11 @@
             <h2 class="big rise" style="transition-delay:.05s">The stuff owners actually ask.</h2>
           </div>
           <div class="list">
-            <div class="ccc-q"><button>What are LSA leads? <i class="ph ph-plus"></i></button><div class="a"><p>LSA stands for Google Local Services Ads — the "Google Guaranteed" ads at the very top of search with the green checkmark. When someone clicks one and contacts you, that's an LSA lead. The Command Center pulls every one of them straight into the app the second it arrives, so nothing sits unseen.</p></div></div>
+            <div class="ccc-q"><button>What are LSA leads? <i class="ph ph-plus"></i></button><div class="a"><p>LSA stands for Google Local Services Ads — the "Google Verified" ads (formerly "Google Guaranteed") at the very top of search with the green checkmark. When someone clicks one and contacts you, that's an LSA lead. The Command Center pulls every one of them straight into the app the second it arrives, so nothing sits unseen.</p></div></div>
             <div class="ccc-q"><button>Is the phone number mine? <i class="ph ph-plus"></i></button><div class="a"><p>Yes. You get a dedicated business number that's yours — every text and missed-call-text-back runs through it, kept separate from your personal cell. All conversations land in one clean inbox in the app.</p></div></div>
-            <div class="ccc-q"><button>How long until I'm live? <i class="ph ph-plus"></i></button><div class="a"><p>Days, not weeks. After a quick strategy call we handle the technical setup — your number, LSA connection, and integrations — then a guided wizard installs the app to your home screen, branded to your business.</p></div></div>
-            <div class="ccc-q"><button>Can I cancel anytime? <i class="ph ph-plus"></i></button><div class="a"><p>Anytime. It's $399/month, all-in, no setup fee and no contract. If it's not making you money, you're free to walk — but most owners feel the difference in the first week of saved leads.</p></div></div>
-            <div class="ccc-q"><button>Do I need the website too? <i class="ph ph-plus"></i></button><div class="a"><p>No — the Command Center works on its own. But they're a perfect pair: the $99.95/mo website gets you found, and the Command Center makes sure every lead it generates actually turns into a booked job. Your website gets you found; the Command Center gets you paid.</p></div></div>
+            <div class="ccc-q"><button>How long until I'm live? <i class="ph ph-plus"></i></button><div class="a"><p>Our side is quick, and it all happens by text. Google verifies every Local Services Ads business (license, insurance and a background check) on its own timeline, and we walk you through each step. Then a guided wizard installs the app to your home screen, branded to your business.</p></div></div>
+            <div class="ccc-q"><button>Can I cancel anytime? <i class="ph ph-plus"></i></button><div class="a"><p>Anytime. It's $399/month plus your ad spend, which you pay directly to Google. No setup fee and no long-term contract. If it's not making you money, you're free to walk — but most owners feel the difference in the first week of saved leads.</p></div></div>
+            <div class="ccc-q"><button>Do I need the website too? <i class="ph ph-plus"></i></button><div class="a"><p>No — the Command Center works on its own. But they're a perfect pair: the $99.95/mo website gets you found, and the Command Center makes sure every lead it generates actually turns into a booked job. Your website gets you found; the Command Center gets you paid. Website and Command Center together are $498/month.</p></div></div>
           </div>
         </div>
       </section>
@@ -404,7 +426,7 @@
         <div class="orb o1"></div><div class="orb o2"></div>
         <div class="wrap">
           <h2 class="rise">Stop letting leads slip.<br>Put the Command Center in your pocket.</h2>
-          <p class="rise" style="transition-delay:.06s">Book a 15-minute strategy call. We'll show you exactly how many leads you're losing — and how fast we can fix it.</p>
+          <p class="rise" style="transition-delay:.06s">Fill out the form and we'll text you. We'll show you exactly how many leads you're losing, and how we fix it.</p>
           <div class="cta-row rise" style="transition-delay:.12s">
             <a href="/contact" class="pill pill-light">Get Your Free Build Plan <i class="ph ph-arrow-right"></i></a>
             <a href="tel:+18144002017" class="phone"><i class="ph ph-phone"></i> (814) 400-2017</a>
@@ -436,6 +458,7 @@
                         <li><a href="/command-center">Command Center</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>

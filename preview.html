@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="See a free preview of your custom website from Bright Automations. Enter your business info and get a personalized preview. No commitment.">
@@ -472,7 +492,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>See Your Free Preview</h1>
-        <p>Get a personalized website preview for your business in 48 hours.</p>
+        <p>Get a free, personalized website preview for your business.</p>
     </section>
 
     <div class="page-header-wave">
@@ -486,7 +506,7 @@
         <div class="preview-container">
             <div class="preview-header">
                 <h2>See Your Free Preview</h2>
-                <p>Tell us about your business and we'll build a personalized website preview in about 48 hours.</p>
+                <p>Tell us about your business and we'll build a personalized website preview for you.</p>
             </div>
 
             <div class="step-indicators">
@@ -618,7 +638,7 @@
                 <div class="progress-track">
                     <div class="progress-fill" id="progressBar"></div>
                 </div>
-                <p class="loading-note">This usually usually takes 24-48 hours</p>
+                <p class="loading-note">We'll text you the link as soon as it's ready</p>
             </div>
         </div>
 
@@ -657,6 +677,7 @@
                         <li><a href="/services">What's Included</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
                         <li><a href="/industries">Industries We Serve</a></li>

@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0;url=preview.html">
     <title>Redirecting - Bright Automations</title>

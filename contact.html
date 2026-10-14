@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Bright Automations. Book a free 15-minute strategy call. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
-    <meta name="keywords" content="contact Bright Automations, free strategy call, home service business website quote, get started AI website, book consultation home service website, Bright Automations phone number">
+    <meta name="description" content="Contact Bright Automations. Fill out the form and get a free website preview by text. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
+    <meta name="keywords" content="contact Bright Automations, free website preview, home service business website quote, get started AI website, book consultation home service website, Bright Automations phone number">
     <title>Contact Us | Get Your AI Revenue System | Bright Automations</title>
 
     <link rel="canonical" href="https://www.brightautomations.org/contact">
@@ -12,7 +32,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Contact Us | Get Your AI Revenue System | Bright Automations">
-    <meta property="og:description" content="Contact Bright Automations. Book a free 15-minute strategy call. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
+    <meta property="og:description" content="Contact Bright Automations. Fill out the form and get a free website preview by text. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.brightautomations.org/contact">
     <meta property="og:image" content="https://www.brightautomations.org/images/og-image.jpg">
@@ -24,7 +44,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Us | Get Your AI Revenue System | Bright Automations">
-    <meta name="twitter:description" content="Contact Bright Automations. Book a free 15-minute strategy call. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
+    <meta name="twitter:description" content="Contact Bright Automations. Fill out the form and get a free website preview by text. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.">
     <meta name="twitter:image" content="https://www.brightautomations.org/images/og-image.jpg">
 
     <!-- Favicon -->
@@ -59,7 +79,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting-cells.css">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.brightautomations.org/contact#webpage","url":"https://www.brightautomations.org/contact","name":"Contact Us | Get Your AI Revenue System | Bright Automations","description":"Contact Bright Automations. Book a free 15-minute strategy call. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"publisher":{"@id":"https://www.brightautomations.org/#organization"},"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.brightautomations.org/contact#webpage","url":"https://www.brightautomations.org/contact","name":"Contact Us | Get Your AI Revenue System | Bright Automations","description":"Contact Bright Automations. Fill out the form and get a free website preview by text. $0 setup, $99.95/mo. Call (814) 400-2017 or email admin@brightautomations.net.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"publisher":{"@id":"https://www.brightautomations.org/#organization"},"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"}]}
     </script>
 </head>
 <body>
@@ -145,7 +165,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <h1>3 Quick Answers.<br><em>Free Preview.</em></h1>
-        <p>Tell us about your business. We'll build a custom preview site and text you the link — usually inside 48 hours, always free.</p>
+        <p>Tell us about your business. We'll build a custom preview site and text you the link — always free.</p>
     </section>
 
     <div class="page-header-wave">
@@ -245,14 +265,14 @@
 
                         <p class="intake-meta">
                             <i class="ph ph-shield-check" aria-hidden="true"></i>
-                            $0 to start · Most previews delivered in 48 hours · Cancel anytime
+                            $0 to start · See your site before you pay · Cancel anytime
                         </p>
                     </form>
 
                     <div id="form-success" style="display: none; text-align: center; padding: 3rem 1.5rem;">
                         <i class="ph ph-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem; display: block;"></i>
                         <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">Got it!</h3>
-                        <p style="color: var(--text-secondary); font-size: 1rem;">Preview build is on the way. We'll text you the link as soon as it's ready — usually within 48 hours.</p>
+                        <p style="color: var(--text-secondary); font-size: 1rem;">Preview build is on the way. We'll text you the link as soon as it's ready.</p>
                     </div>
                 </div>
             </div>
@@ -323,6 +343,7 @@
                         <li><a href="/services">What's Included</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
                         <li><a href="/industries">Industries We Serve</a></li>
@@ -525,6 +546,7 @@
             })
             .then(function(response) {
                 if (response.ok) {
+                    if (window.gtag) gtag('event', 'generate_lead', { form_name: 'contact' });
                     form.style.display = 'none';
                     document.getElementById('form-success').style.display = 'block';
                 } else {

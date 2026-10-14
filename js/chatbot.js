@@ -16,7 +16,7 @@
         founders: ["Jared", "Andrew"],
         priceSetup: "$0",
         priceMonthly: "$99.95",
-        launchTime: "48 hours",
+        launchTime: "fast",
         deliverables: [
             "Custom website (designed for your trade, not a template)",
             "Hosting, SSL, and CDN",
@@ -35,7 +35,7 @@
         // ── Greetings ─────────────────────────────────────────────────
         {
             patterns: [/^(hi|hey|hello|yo|sup|hola|good (morning|afternoon|evening))[\s!.?]*$/i],
-            response: () => "Hey — welcome to Bright Automations. We build AI-powered revenue systems for businesses, free to start, $99.95/mo, live in 48 hours.\n\nWhat can I help with? Pricing, what's included, how it works, or something specific?"
+            response: () => "Hey — welcome to Bright Automations. We build AI-powered revenue systems for businesses, free to start, $99.95/mo, and you see your site before you pay.\n\nWhat can I help with? Pricing, what's included, how it works, or something specific?"
         },
 
         // ── Pricing ───────────────────────────────────────────────────
@@ -45,31 +45,31 @@
         },
         {
             patterns: [/(vs|versus|compared|other (agencies|companies)|why (you|bright))/i],
-            response: () => "Most agencies invoice each line separately:\n\n• Custom website + hosting: $3.5k–8k build + $50–200/mo\n• Google Business Profile: $300–600/mo\n• Local SEO + content: $800–2,000/mo\n• AI review responses: $150–400/mo\n• Lead tracking + analytics: $100–300/mo\n• Performance reporting: $200–500/mo\n\n**Total at an agency: $1,600–3,800/mo.**\n**With us: $99.95/mo. Everything bundled. Free to start.**\n\n👉 [See the full breakdown](/services)"
+            response: () => "Most agencies invoice each line separately:\n\n• Custom website + hosting: $3.5k–8k build + $50–200/mo\n• Local SEO + content: $800–2,000/mo\n• Lead tracking + analytics: $100–300/mo\n• Performance reporting: $200–500/mo\n\n**Total at an agency: $1,150–3,000/mo.**\n**With us: $99.95/mo. Everything bundled. Free to start.** Want your Google Business Profile fully managed too? SEO Premier adds it for $45.95/mo.\n\n👉 [See the full breakdown](/services)"
         },
 
         // ── What's included / deliverables ────────────────────────────
         {
             patterns: [/what('s| is| does it)? include|what do (i|you) get|features|deliverable|in the plan|breakdown/i],
-            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — fully optimized\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **AI review responses** — every Google review answered fast\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
+            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — connected to your site once it's live (full management is SEO Premier, $45.95/mo)\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
         },
 
         // ── Services / The Stack (4 layers) ───────────────────────────
         {
             patterns: [/the stack|four layers|layers|foundation|visibility (engine|layer)|ai layer|growth ops|growth operations/i],
-            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile, local SEO, monthly content, Core Web Vitals\n**03 — AI Intelligence:** review responses, lead capture, smart forms, auto follow-up\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
+            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile connection, local SEO, monthly content, Core Web Vitals\n**03 — AI Intelligence:** review responses, lead capture, smart forms, auto follow-up\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
         },
 
         // ── Free preview ──────────────────────────────────────────────
         {
             patterns: [/free|preview|try|see (my|a) (site|website)|no commitment|demo|sample/i],
-            response: () => "Yes — free preview, no payment, no contract.\n\n**Here's how it works:**\n1. Fill out 3 quick questions (name, services, style)\n2. Optionally upload your logo + photos\n3. We build a full preview site in **48 hours**\n4. We text you the link — you see it, then decide\n\nIf you love it, you go live for $99.95/mo. If not, no hard feelings.\n\n👉 [Start the build form](/contact)"
+            response: () => "Yes — free preview, no payment, no contract.\n\n**Here's how it works:**\n1. Fill out 3 quick questions (name, services, style)\n2. Optionally upload your logo + photos\n3. We build a full preview site\n4. We text you the link — you see it, then decide\n\nIf you love it, you go live for $99.95/mo. If not, no hard feelings.\n\n👉 [Start the build form](/contact)"
         },
 
         // ── Timeline ──────────────────────────────────────────────────
         {
             patterns: [/how long|timeline|when.*(ready|live|done)|48 hours|turnaround|first 90 days|day 1|day 7|day 30/i],
-            response: () => "**Your first 90 days:**\n\n• **Day 0** — You fill out the 3-question intake form\n• **Day 2** — Free preview lands in your inbox (real site, not a mockup)\n• **Day 7** — Site live, GBP optimized, lead tracking on, AI review responses already firing\n• **Day 14** — First optimization pass based on real data\n• **Day 30** — First performance report (traffic, leads, what's converting)\n• **Day 60+** — Proactive mode: we watch the market and call you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
+            response: () => "**How it goes:**\n\n• **Step 1** — You fill out the form\n• **Step 2** — We build your free preview and text you the link (a real site, not a mockup)\n• **Step 3** — Site live, connected to your Google Business Profile, lead tracking on\n• **Step 4** — First optimization pass based on real data\n• **Every month** — Performance report (traffic, leads, what's converting)\n• **Ongoing** — We watch the market and text you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
         },
 
         // ── Industries / who we serve ─────────────────────────────────
@@ -172,13 +172,13 @@
         // ── Get started / next steps ──────────────────────────────────
         {
             patterns: [/get started|start|begin|sign up|ready|how do i|next step|onboard/i],
-            response: () => "Fastest path:\n\n1. **Fill out the 3-question build form** (name, services, style)\n2. Optionally upload logo + photos\n3. **We build a free preview in 48 hours**\n4. We text you the link\n5. Love it? Go live for $99.95/mo. Don't love it? No hard feelings, no charge.\n\n👉 [Start the build form](/contact)"
+            response: () => "Fastest path:\n\n1. **Fill out the 3-question build form** (name, services, style)\n2. Optionally upload logo + photos\n3. **We build a free preview**\n4. We text you the link\n5. Love it? Go live for $99.95/mo. Don't love it? No hard feelings, no charge.\n\n👉 [Start the build form](/contact)"
         },
 
         // ── How it works (process) ────────────────────────────────────
         {
             patterns: [/how (does|do) (it|this) work|process|step|workflow|onboarding/i],
-            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup) in 48 hours.\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting, GBP, SEO, AI reviews, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
+            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup).\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting and SEO, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
         },
 
         // ── Existing website / replace / redesign ─────────────────────
@@ -214,7 +214,7 @@
         // ── Social proof / case studies ───────────────────────────────
         {
             patterns: [/proof|case stud|example|portfolio|client|customer|see (your|some) work|results|success/i],
-            response: () => "Yep — **5.0 stars on Google** from real customers. You can see live-style review cards on the homepage (David Kowalski, Sarah Tillman, James Loretti, Mike Rennard, more).\n\nFor industry-specific examples or to see a preview of your business, the fastest way is to fill out the build form — you'll see what your site would look like, customized to your trade, in 48 hours.\n\n👉 [See the reviews →](/#testimonials)"
+            response: () => "Yep — **5.0 stars on Google** from real customers. You can see live-style review cards on the homepage (David Kowalski, Sarah Tillman, James Loretti, Mike Rennard, more).\n\nFor industry-specific examples or to see a preview of your business, the fastest way is to fill out the build form — you'll see what your site would look like, customized to your trade.\n\n👉 [See the reviews →](/#testimonials)"
         },
 
         // ── SMS / texting ─────────────────────────────────────────────
@@ -238,7 +238,7 @@
         // ── Setup process / what happens after intake ─────────────────
         {
             patterns: [/after (i|sign up|submit|fill)|next|what happens|once i'?ve|then what/i],
-            response: () => "After you submit the build form:\n\n1. **Within 15 minutes** — Jared or Andrew texts you to confirm we got it\n2. **Within 24 hours** — we send any clarifying questions (rare)\n3. **Within 48 hours** — your free preview site is live, you get the link\n4. **You decide** — go live for $99.95/mo, or walk away for $0\n\nNo strings, no high-pressure call."
+            response: () => "After you submit the build form:\n\n1. **Within 15 minutes** — Jared or Andrew texts you to confirm we got it\n2. **Within 24 hours** — we send any clarifying questions (rare)\n3. **Next** — your free preview site is ready and we text you the link\n4. **You decide** — go live for $99.95/mo, or walk away for $0\n\nNo strings, no high-pressure call."
         },
 
         // ── Confirmations & courtesy ──────────────────────────────────
@@ -262,7 +262,7 @@
 
     // Default fallback responses (random)
     const DEFAULT_RESPONSES = [
-        `Good question — I want to give you the right answer. Some things I can dig into:\n\n• Pricing & what's included\n• How the 48-hour build works\n• Logo & photo uploads\n• Industries we work with\n• Reports, SEO, AI reviews\n\nOr reach the team: ${KB.phone} · ${KB.email}`,
+        `Good question — I want to give you the right answer. Some things I can dig into:\n\n• Pricing & what's included\n• How the build works\n• Logo & photo uploads\n• Industries we work with\n• Reports, SEO, AI reviews\n\nOr reach the team: ${KB.phone} · ${KB.email}`,
         `Hmm, let me try a different angle. Can you rephrase, or pick one of these?\n\n• What's it cost?\n• How fast can it go live?\n• What's included?\n• Who's behind it?\n\nOr text us directly at ${KB.phone}.`,
         `That one might be better answered by a real human. Try ${KB.email} or ${KB.phone} — usually under 4-hour response.\n\nIn the meantime, want me to walk you through pricing, the 4-layer stack, or the first 90 days?`
     ];
@@ -440,7 +440,7 @@
             // First-time welcome
             if (messages.length === 0) {
                 setTimeout(() => {
-                    addMessage("Hey! I'm the Bright Automations assistant. We build AI-powered revenue systems for any business — free to start, $99.95/mo, live in 48 hours.\n\nWhat can I help with?", false, true);
+                    addMessage("Hey! I'm the Bright Automations assistant. We build AI-powered revenue systems for any business — free to start, $99.95/mo, and you see your site before you pay.\n\nWhat can I help with?", false, true);
                 }, 380);
             }
         } else {

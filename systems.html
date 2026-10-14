@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Enterprise automation systems by Bright Automations: custom data intelligence, revenue operations, workforce orchestration and AI communication.">
@@ -1040,7 +1060,7 @@
         <div class="trust-bar-container" data-aos="fade-up">
             <div class="trust-bar-label">Enterprise Capabilities</div>
             <div class="trust-bar-items">
-                <div class="trust-bar-item"><i class="ph ph-shield-check"></i> SOC 2 Compliant Infrastructure</div>
+                <div class="trust-bar-item"><i class="ph ph-shield-check"></i> Encrypted, Secure Infrastructure</div>
                 <div class="trust-bar-item"><i class="ph ph-lock"></i> End-to-End Encryption</div>
                 <div class="trust-bar-item"><i class="ph ph-chart-line-up"></i> 99.9% Uptime SLA</div>
                 <div class="trust-bar-item"><i class="ph ph-users-three"></i> Dedicated Account Team</div>
@@ -1407,7 +1427,7 @@
                 <div class="sys-faq-item">
                     <button class="sys-faq-question" onclick="toggleFaq(this)">What about data security and compliance? <i class="ph ph-caret-down"></i></button>
                     <div class="sys-faq-answer">
-                        <div class="sys-faq-answer-inner">Security is foundational to every system we build. Our infrastructure supports SOC 2 compliance, end-to-end encryption, role-based access controls, audit logging, and data residency requirements. For regulated industries, we work with your compliance team to ensure all systems meet your specific regulatory obligations.</div>
+                        <div class="sys-faq-answer-inner">Security is foundational to every system we build. Our infrastructure supports end-to-end encryption, role-based access controls, audit logging, and data residency requirements. For regulated industries, we work with your compliance team to ensure all systems meet your specific regulatory obligations.</div>
                     </div>
                 </div>
 
@@ -1462,6 +1482,7 @@
                         <li><a href="/services">What's Included</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
                         <li><a href="/industries">Industries We Serve</a></li>

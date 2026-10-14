@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terms of Service for Bright Automations - Review our terms and conditions for purchasing websites and services">
@@ -201,7 +221,7 @@
 
     <!-- Terms Content -->
     <div class="legal-content" data-aos="fade-up">
-        <p class="last-updated">Last updated: March 2026</p>
+        <p class="last-updated">Last updated: October 2026</p>
 
         <p><strong>Bright Automations LLC, also doing business as BASITES.</strong></p>
 
@@ -215,12 +235,11 @@
             <li>Mobile-responsive design</li>
             <li>Click-to-call button, contact form, Google Maps integration</li>
             <li>Your real business info, reviews, and services displayed</li>
-            <li>Google Business Profile optimization</li>
+            <li>Connecting your website to your Google Business Profile once it is live</li>
             <li>Speed and mobile optimization</li>
             <li>Monthly SEO configuration</li>
             <li>Social media landing page</li>
             <li>2 rounds of revisions included</li>
-            <li>Site and all services live within 48 business hours of receiving your business info</li>
         </ul>
 
         <p><strong>NOT included</strong> in the revenue system:</p>
@@ -236,9 +255,9 @@
 
         <h2>2. Monthly Service Plan ($99.95/month)</h2>
         <ul>
-            <li>Begins when your website goes live (typically within 48 hours of signup)</li>
+            <li>Begins when your website goes live</li>
             <li>Includes website hosting, SSL, uptime monitoring, security updates, and maintenance</li>
-            <li>Includes ongoing Google Business Profile optimization</li>
+            <li>Ongoing Google Business Profile management is not included; it is available with the SEO Premier add-on ($45.95/month)</li>
             <li>Includes speed and mobile optimization</li>
             <li>Includes monthly SEO updates</li>
             <li>Includes social media landing page hosting</li>
@@ -349,6 +368,7 @@
                         <li><a href="/services">What's Included</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
                         <li><a href="/industries">Industries We Serve</a></li>

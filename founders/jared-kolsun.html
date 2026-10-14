@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Jared Kolsun | Co-Founder of Bright Automations</title>
-    <meta name="description" content="Jared Kolsun, Co-Founder and Lead Developer of Bright Automations, builds every site from the ground up and leads the technology behind 1,000+ launches.">
+    <meta name="description" content="Jared Kolsun, Co-Founder and CTO of Bright Automations, builds every site from the ground up and leads the technology behind 2,000+ launches.">
     <link rel="canonical" href="https://www.brightautomations.org/founders/jared-kolsun">
     <meta name="theme-color" content="#2E7D8A">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Jared Kolsun | Co-Founder of Bright Automations">
-    <meta property="og:description" content="Jared Kolsun, Co-Founder and Lead Developer of Bright Automations, builds every site from the ground up and leads the technology behind 1,000+ launches.">
+    <meta property="og:description" content="Jared Kolsun, Co-Founder and CTO of Bright Automations, builds every site from the ground up and leads the technology behind 2,000+ launches.">
     <meta property="og:type" content="profile">
     <meta property="profile:first_name" content="Jared">
     <meta property="profile:last_name" content="Kolsun">
@@ -24,7 +44,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jared Kolsun | Co-Founder of Bright Automations">
-    <meta name="twitter:description" content="Jared Kolsun, Co-Founder and Lead Developer of Bright Automations, builds every site from the ground up and leads the technology behind 1,000+ launches.">
+    <meta name="twitter:description" content="Jared Kolsun, Co-Founder and CTO of Bright Automations, builds every site from the ground up and leads the technology behind 2,000+ launches.">
     <meta name="twitter:image" content="https://www.brightautomations.org/images/og-image.jpg">
 
     <!-- Favicon -->
@@ -52,7 +72,7 @@
     <script>document.documentElement.classList.add('ab-js');</script>
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://www.brightautomations.org/founders/jared-kolsun#webpage","url":"https://www.brightautomations.org/founders/jared-kolsun","name":"Jared Kolsun | Co-Founder of Bright Automations","description":"Jared Kolsun, Co-Founder and Lead Developer of Bright Automations, builds every site from the ground up and leads the technology behind 1,000+ launches.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"about":{"@id":"https://www.brightautomations.org/#jared-kolsun"},"mainEntity":{"@id":"https://www.brightautomations.org/#jared-kolsun"},"breadcrumb":{"@id":"https://www.brightautomations.org/founders/jared-kolsun#breadcrumb"},"inLanguage":"en-US","dateModified":"2026-10-14"},{"@type":"Person","@id":"https://www.brightautomations.org/#jared-kolsun","name":"Jared Kolsun","givenName":"Jared","familyName":"Kolsun","jobTitle":"Co-Founder & Lead Developer","description":"Jared Kolsun is the Co-Founder and Lead Developer of Bright Automations. He builds every site from the ground up and leads the technology behind the company. He co-founded Bright Automations with Andrew Tesauro at Penn State.","worksFor":{"@id":"https://www.brightautomations.org/#organization"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Pennsylvania State University","alternateName":"Penn State","sameAs":"https://www.psu.edu/"},"url":"https://www.brightautomations.org/founders/jared-kolsun","image":"https://www.brightautomations.org/images/jared-headshot.PNG","sameAs":["https://www.linkedin.com/in/jared-kolsun-4801ab293/"],"knowsAbout":["Website development","Web design","Conversion-focused design","Website hosting and performance","SEO"],"colleague":{"@id":"https://www.brightautomations.org/#andrew-tesauro"}},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"},{"@id":"https://www.brightautomations.org/founders/jared-kolsun#breadcrumb","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.brightautomations.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.brightautomations.org/about"},{"@type":"ListItem","position":3,"name":"Jared Kolsun","item":"https://www.brightautomations.org/founders/jared-kolsun"}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://www.brightautomations.org/founders/jared-kolsun#webpage","url":"https://www.brightautomations.org/founders/jared-kolsun","name":"Jared Kolsun | Co-Founder of Bright Automations","description":"Jared Kolsun, Co-Founder and CTO of Bright Automations, builds every site from the ground up and leads the technology behind 2,000+ launches.","isPartOf":{"@id":"https://www.brightautomations.org/#website"},"about":{"@id":"https://www.brightautomations.org/#jared-kolsun"},"mainEntity":{"@id":"https://www.brightautomations.org/#jared-kolsun"},"breadcrumb":{"@id":"https://www.brightautomations.org/founders/jared-kolsun#breadcrumb"},"inLanguage":"en-US","dateModified":"2026-10-14"},{"@type":"Person","@id":"https://www.brightautomations.org/#jared-kolsun","name":"Jared Kolsun","givenName":"Jared","familyName":"Kolsun","jobTitle":"Co-Founder & CTO","description":"Jared Kolsun is the Co-Founder and CTO of Bright Automations. From Conshohocken, Pennsylvania, he studies cybersecurity and enterprise technology at Penn State with a focus on artificial intelligence, and interned at a software engineering firm before co-founding the company with Andrew Tesauro in September 2025. He builds every site from the ground up and leads the technology behind the company, including The Bright Center app.","worksFor":{"@id":"https://www.brightautomations.org/#organization"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Pennsylvania State University","alternateName":"Penn State","sameAs":"https://www.psu.edu/"},"url":"https://www.brightautomations.org/founders/jared-kolsun","image":"https://www.brightautomations.org/images/jared-headshot.PNG","sameAs":["https://www.linkedin.com/in/jared-kolsun-4801ab293/","https://www.instagram.com/jared.kolsun/","https://github.com/jkolsun"],"knowsAbout":["Website development","Web design","Conversion-focused design","Website hosting and performance","SEO"],"colleague":{"@id":"https://www.brightautomations.org/#andrew-tesauro"}},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"},{"@id":"https://www.brightautomations.org/founders/jared-kolsun#breadcrumb","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.brightautomations.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.brightautomations.org/about"},{"@type":"ListItem","position":3,"name":"Jared Kolsun","item":"https://www.brightautomations.org/founders/jared-kolsun"}]}]}
     </script>
 </head>
 <body class="ab-page">
@@ -142,23 +162,24 @@
             <div class="ab-wrap fp-grid">
                 <!-- HEADSHOT SLOT: real headshot in use (/images/jared-headshot.PNG, 400x557). To upgrade, replace with a larger 4:5 photo (1200x1500 recommended) and update src/width/height here, on /about, and the Person "image" in the JSON-LD. -->
                 <div class="ab-photo">
-                    <img src="/images/jared-headshot.PNG" alt="Jared Kolsun, Co-Founder and Lead Developer of Bright Automations" width="400" height="557" fetchpriority="high" onerror="this.parentNode.classList.add('is-empty')">
+                    <img src="/images/jared-headshot.PNG" alt="Jared Kolsun, Co-Founder and CTO of Bright Automations" width="400" height="557" fetchpriority="high" onerror="this.parentNode.classList.add('is-empty')">
                     <span class="ab-mono" aria-hidden="true">JK</span>
                 </div>
                 <div>
                     <nav class="fp-crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/about">About</a> / <span aria-current="page">Jared Kolsun</span></nav>
                     <p class="ab-eyebrow">Founder profile</p>
                     <h1 id="fp-h1">Jared Kolsun</h1>
-                    <p class="fp-role">Co-Founder &amp; Lead Developer, Bright Automations</p>
-                    <p class="ab-lede">Jared Kolsun is the Co-Founder and Lead Developer of <a class="ab-link" href="/about">Bright Automations</a>, the company behind 1,000+ local business websites. He builds every site from the ground up and leads the technology that designs, launches and runs them.</p>
-                    <!-- OPERATOR TODO (not visible): add verified bio details for Jared Kolsun here, e.g. Penn State degree/major and graduation year, hometown, prior experience, press mentions. Only facts Jared confirms. Mirror any additions in the Person JSON-LD (description, alumniOf, award, etc.). -->
+                    <p class="fp-role">Co-Founder &amp; CTO, Bright Automations</p>
+                    <p class="ab-lede">Jared Kolsun is the Co-Founder and CTO of <a class="ab-link" href="/about">Bright Automations</a>, the company behind 2,000+ local business websites. He builds every site from the ground up and leads the technology that designs, launches and runs them. From Conshohocken, Pennsylvania, he studies cybersecurity and enterprise technology at Penn State with a focus on artificial intelligence.</p>
                     <dl class="fp-facts">
                         <div><dt>Company</dt><dd><a href="/about">Bright Automations</a></dd></div>
-                        <div><dt>Role</dt><dd>Co-Founder &amp; Lead Developer</dd></div>
-                        <div><dt>Education</dt><dd>Pennsylvania State University (Penn State)</dd></div>
+                        <div><dt>Role</dt><dd>Co-Founder &amp; CTO</dd></div>
+                        <div><dt>Education</dt><dd>Penn State: cybersecurity and enterprise technology, focus in artificial intelligence</dd></div>
+                        <div><dt>Hometown</dt><dd>Conshohocken, Pennsylvania</dd></div>
+                        <div><dt>Before</dt><dd>Intern at a software engineering firm</dd></div>
                         <div><dt>Co-founder</dt><dd><a href="/founders/andrew-tesauro">Andrew Tesauro</a></dd></div>
                         <div><dt>Focus</dt><dd>Website design, development and performance</dd></div>
-                        <div><dt>Profiles</dt><dd><a href="https://www.linkedin.com/in/jared-kolsun-4801ab293/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a><!-- OPERATOR TODO: add other verified personal profiles (X, GitHub, Crunchbase, press) here AND to the Person "sameAs" array in the JSON-LD. --></dd></div>
+                        <div><dt>Profiles</dt><dd><a href="https://www.linkedin.com/in/jared-kolsun-4801ab293/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://www.instagram.com/jared.kolsun/" target="_blank" rel="noopener">Instagram<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://github.com/jkolsun" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a></dd></div>
                     </dl>
                 </div>
             </div>
@@ -170,7 +191,7 @@
                 <div>
                     <p class="ab-eyebrow">At Bright Automations</p>
                     <h2 class="ab-h2" id="fp-owns">What Jared owns.</h2>
-                    <p class="ab-sub">Jared co-founded Bright Automations with Andrew Tesauro as friends at Penn State. The company now runs websites for 190+ local businesses and has launched 1,000+ sites.</p>
+                    <p class="ab-sub">Jared met Andrew Tesauro as neighbors during Penn State's summer session before their freshman year. They later joined the same fraternity and started Bright Automations in September 2025, going into their junior year. The company has built more than 2,000 custom websites for local businesses.</p>
                 </div>
                 <ol class="fp-list">
                     <li class="ab-rv"><div><h3>The build</h3><p>Every Bright Automations site is designed and built under Jared's lead, from the free preview to launch day. His standard: clean design that actually converts visitors into calls.</p></div></li>
@@ -207,7 +228,7 @@
                 <h2 class="ab-h2" id="fp-peer" style="margin-bottom:2rem">Built together since Penn State.</h2>
                 <a class="fp-peer" href="/founders/andrew-tesauro">
                     <div class="ab-photo"><img src="/images/andrew-headshot.PNG" alt="" width="400" height="553" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('is-empty')"><span class="ab-mono" aria-hidden="true">AT</span></div>
-                    <div><b>Andrew Tesauro</b><span>Co-Founder &amp; Head of Sales, Bright Automations</span></div>
+                    <div><b>Andrew Tesauro</b><span>Co-Founder &amp; CEO, Bright Automations</span></div>
                     <i class="ph ph-arrow-right" aria-hidden="true"></i>
                 </a>
                 <p class="ab-sub" style="margin-top:2rem"><a class="ab-link" href="/about">Read the full Bright Automations story</a></p>
@@ -251,6 +272,7 @@
                         <li><a href="/services">What's Included</a></li>
                         <li><a href="/systems">Enterprise Systems</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/join">Join Our Team</a></li>
                         <li><a href="/industries">Industries We Serve</a></li>
