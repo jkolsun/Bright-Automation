@@ -6,7 +6,7 @@
 
 - Name: Bright Automations (Bright Automations LLC, also doing business as BASITES)
 - Founders: Jared Kolsun (Co-Founder & CTO) and Andrew Tesauro (Co-Founder & CEO)
-- Origin: the founders met as neighbors during Penn State's summer session in 2023 and started the company in September 2025
+- Origin: the founders met as neighbors during Penn State's summer session in 2023, right before their freshman year, later joined the same fraternity, and started the company in September 2025 going into their junior year
 - Website previews generated: 1,000,000+ custom website previews for local businesses
 - Custom websites built: 2,000+
 - Founded: September 2025
@@ -21,6 +21,7 @@
 
 Website plan ($99.95 per month, $0 setup):
 - Custom website built for each business, previewed free before paying
+- The site connected to the business's Google Business Profile once it's live (full profile management is SEO Premier)
 - Hosting and SSL
 - Speed and mobile optimization
 - SEO and monthly AI and SEO updates
@@ -51,7 +52,7 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 
 ## Founders
 
-- [Jared Kolsun](https://www.brightautomations.org/founders/jared-kolsun): Co-Founder & CTO. Builds every site from the ground up and leads the technology behind Bright Automations. LinkedIn: https://www.linkedin.com/in/jared-kolsun-4801ab293/
+- [Jared Kolsun](https://www.brightautomations.org/founders/jared-kolsun): Co-Founder & CTO. From Conshohocken, Pennsylvania; studies cybersecurity and enterprise technology at Penn State with a focus on artificial intelligence. Builds every site from the ground up and leads the technology behind Bright Automations, including The Bright Center app. LinkedIn: https://www.linkedin.com/in/jared-kolsun-4801ab293/
 - [Andrew Tesauro](https://www.brightautomations.org/founders/andrew-tesauro): Co-Founder & CEO. Leads growth and client relationships. LinkedIn: https://www.linkedin.com/in/andrew-tesauro-041ab8292/
 
 ## Key pages

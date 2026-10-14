@@ -51,13 +51,13 @@
         // ── What's included / deliverables ────────────────────────────
         {
             patterns: [/what('s| is| does it)? include|what do (i|you) get|features|deliverable|in the plan|breakdown/i],
-            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — fully optimized\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **AI review responses** — every Google review answered fast\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
+            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — connected to your site once it's live (full management is SEO Premier, $45.95/mo)\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **AI review responses** — every Google review answered fast\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
         },
 
         // ── Services / The Stack (4 layers) ───────────────────────────
         {
             patterns: [/the stack|four layers|layers|foundation|visibility (engine|layer)|ai layer|growth ops|growth operations/i],
-            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile, local SEO, monthly content, Core Web Vitals\n**03 — AI Intelligence:** review responses, lead capture, smart forms, auto follow-up\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
+            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile connection, local SEO, monthly content, Core Web Vitals\n**03 — AI Intelligence:** review responses, lead capture, smart forms, auto follow-up\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
         },
 
         // ── Free preview ──────────────────────────────────────────────
@@ -69,7 +69,7 @@
         // ── Timeline ──────────────────────────────────────────────────
         {
             patterns: [/how long|timeline|when.*(ready|live|done)|48 hours|turnaround|first 90 days|day 1|day 7|day 30/i],
-            response: () => "**Your first 90 days:**\n\n• **Day 0** — You fill out the 3-question intake form\n• **Day 2** — Free preview lands in your inbox (real site, not a mockup)\n• **Day 7** — Site live, GBP optimized, lead tracking on, AI review responses already firing\n• **Day 14** — First optimization pass based on real data\n• **Day 30** — First performance report (traffic, leads, what's converting)\n• **Day 60+** — Proactive mode: we watch the market and call you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
+            response: () => "**Your first 90 days:**\n\n• **Day 0** — You fill out the 3-question intake form\n• **Day 2** — Free preview lands in your inbox (real site, not a mockup)\n• **Day 7** — Site live, Google Business Profile connected, lead tracking on, AI review responses already firing\n• **Day 14** — First optimization pass based on real data\n• **Day 30** — First performance report (traffic, leads, what's converting)\n• **Day 60+** — Proactive mode: we watch the market and call you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
         },
 
         // ── Industries / who we serve ─────────────────────────────────
@@ -178,7 +178,7 @@
         // ── How it works (process) ────────────────────────────────────
         {
             patterns: [/how (does|do) (it|this) work|process|step|workflow|onboarding/i],
-            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup).\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting, GBP, SEO, AI reviews, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
+            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup).\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting, SEO, AI reviews, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
         },
 
         // ── Existing website / replace / redesign ─────────────────────
