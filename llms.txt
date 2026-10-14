@@ -6,10 +6,10 @@
 
 - Name: Bright Automations (Bright Automations LLC, also doing business as BASITES)
 - Founders: Jared Kolsun (Co-Founder & CTO) and Andrew Tesauro (Co-Founder & CEO)
-- Origin: started as a friendship between the founders as students at Pennsylvania State University (Penn State)
+- Origin: the founders met as neighbors during Penn State's summer session in 2023 and started the company in September 2025
 - Website previews generated: 1,000,000+ custom website previews for local businesses
-- Websites launched: 2,000+
-- Businesses running on Bright Automations today: 300+
+- Custom websites built: 2,000+
+- Founded: September 2025
 - Reach: website previews built for local businesses in all 50 US states
 - Industries: 30+, including general contracting, cleaning, landscaping, plumbing, painting, auto detailing and auto services, roofing, HVAC, concrete, tree service, gutters, pest control, garage doors, moving, excavation, asphalt paving, junk removal, locksmith, fencing, insurance, and health and medical
 - Google rating: 5.0 stars from 70+ reviews on Google (https://www.google.com/maps?cid=13080019490965018146)
@@ -19,23 +19,34 @@
 
 ## What Bright Automations does
 
+Website plan ($99.95 per month, $0 setup):
 - Custom website built for each business, previewed free before paying
-- Hosting, SSL and continuous updates
-- Google Business Profile optimization
+- Hosting and SSL
 - Speed and mobile optimization
-- Monthly AI and SEO updates
-- Monthly performance reports (traffic and leads) with proactive growth recommendations
-- Social media landing page
-- Optional AI growth systems: instant AI lead response, 24/7 AI phone agent, automated review requests, missed-call text-back, estimate follow-up and reactivation campaigns
-- Client Command Center: a branded app with instant AI lead response, missed-call text-back, two-way texting, customer CRM, automated review requests and a real-time impact dashboard
-- Enterprise automation systems for larger operations
+- SEO and monthly AI and SEO updates
+- Unlimited changes
+- Monthly performance reports (traffic and leads) with recommendations
+
+SEO Premier ($45.95 per month add-on):
+- Google Business Profile management: profile optimization, a weekly Google post, and replies to new reviews within about a minute
+- Results shown in The Bright Center app
+
+Client Command Center ($399 per month, plus Google ad spend paid directly to Google):
+- Google Local Services Ads set up and managed, including the Google Verified badge
+- SEO Premier included
+- The Bright Center app with instant lead response by text, missed-call text-back, two-way texting and automated review requests
+- Website + Client Command Center together: $498 per month
+
+The Bright Center is the company's client app (web, iPhone App Store, and installable on Android).
+
+How clients work with Bright Automations: fill out the form on the site, get a free preview by text, and everything after that happens by text, with no calls or meetings needed.
 
 ## Pricing (as stated on the website)
 
 - Website plan: $99.95 per month, $0 setup
 - Free custom website preview before paying anything
-- SEO Premier (full Google Business Profile management): $45.95 per month add-on
-- Client Command Center: $399 per month, no setup fee
+- SEO Premier: $45.95 per month add-on
+- Client Command Center (Google Local Services Ads package): $399 per month plus ad spend
 - No long-term contract; per the Terms of Service, cancel anytime with 30 days written notice (text or email)
 
 ## Founders
@@ -47,7 +58,7 @@
 
 - [About Bright Automations](https://www.brightautomations.org/about): company story, founders, numbers and FAQ
 - [What's included](https://www.brightautomations.org/services): everything in the monthly plan
-- [Client Command Center](https://www.brightautomations.org/command-center): the AI lead response app
+- [Client Command Center](https://www.brightautomations.org/command-center): the Google Local Services Ads package, with The Bright Center app
 - [Client reviews](https://www.brightautomations.org/testimonials): reviews from clients
 - [Industries we serve](https://www.brightautomations.org/industries)
 - [AI-powered websites](https://www.brightautomations.org/ai-website)
