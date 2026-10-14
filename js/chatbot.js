@@ -45,13 +45,13 @@
         },
         {
             patterns: [/(vs|versus|compared|other (agencies|companies)|why (you|bright))/i],
-            response: () => "Most agencies invoice each line separately:\n\n• Custom website + hosting: $3.5k–8k build + $50–200/mo\n• Google Business Profile: $300–600/mo\n• Local SEO + content: $800–2,000/mo\n• AI review responses: $150–400/mo\n• Lead tracking + analytics: $100–300/mo\n• Performance reporting: $200–500/mo\n\n**Total at an agency: $1,600–3,800/mo.**\n**With us: $99.95/mo. Everything bundled. Free to start.**\n\n👉 [See the full breakdown](/services)"
+            response: () => "Most agencies invoice each line separately:\n\n• Custom website + hosting: $3.5k–8k build + $50–200/mo\n• Local SEO + content: $800–2,000/mo\n• Lead tracking + analytics: $100–300/mo\n• Performance reporting: $200–500/mo\n\n**Total at an agency: $1,150–3,000/mo.**\n**With us: $99.95/mo. Everything bundled. Free to start.** Want your Google Business Profile fully managed too? SEO Premier adds it for $45.95/mo.\n\n👉 [See the full breakdown](/services)"
         },
 
         // ── What's included / deliverables ────────────────────────────
         {
             patterns: [/what('s| is| does it)? include|what do (i|you) get|features|deliverable|in the plan|breakdown/i],
-            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — connected to your site once it's live (full management is SEO Premier, $45.95/mo)\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **AI review responses** — every Google review answered fast\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
+            response: () => "Every plan includes:\n\n• **Custom website** — designed for your business\n• **Hosting, SSL & CDN** — fast, secure infrastructure\n• **Google Business Profile** — connected to your site once it's live (full management is SEO Premier, $45.95/mo)\n• **Monthly SEO updates** — Google rewards activity\n• **Speed & mobile optimization** — Core Web Vitals tuned\n• **Social media landing page** — bio-link page for Instagram/Facebook\n• **Real-time lead tracking** — every call & form, attributed\n• **Monthly performance report** — plain-English email\n\nAll for $99.95/mo. Setup is free.\n\n👉 [Full list with details](/services)"
         },
 
         // ── Services / The Stack (4 layers) ───────────────────────────
@@ -69,7 +69,7 @@
         // ── Timeline ──────────────────────────────────────────────────
         {
             patterns: [/how long|timeline|when.*(ready|live|done)|48 hours|turnaround|first 90 days|day 1|day 7|day 30/i],
-            response: () => "**Your first 90 days:**\n\n• **Day 0** — You fill out the 3-question intake form\n• **Day 2** — Free preview lands in your inbox (real site, not a mockup)\n• **Day 7** — Site live, Google Business Profile connected, lead tracking on, AI review responses already firing\n• **Day 14** — First optimization pass based on real data\n• **Day 30** — First performance report (traffic, leads, what's converting)\n• **Day 60+** — Proactive mode: we watch the market and call you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
+            response: () => "**How it goes:**\n\n• **Step 1** — You fill out the form\n• **Step 2** — We build your free preview and text you the link (a real site, not a mockup)\n• **Step 3** — Site live, connected to your Google Business Profile, lead tracking on\n• **Step 4** — First optimization pass based on real data\n• **Every month** — Performance report (traffic, leads, what's converting)\n• **Ongoing** — We watch the market and text you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
         },
 
         // ── Industries / who we serve ─────────────────────────────────
@@ -178,7 +178,7 @@
         // ── How it works (process) ────────────────────────────────────
         {
             patterns: [/how (does|do) (it|this) work|process|step|workflow|onboarding/i],
-            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup).\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting, SEO, AI reviews, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
+            response: () => "Three steps:\n\n**1. Free preview.** You fill out the form, we build a real preview site (not a mockup).\n**2. You review it.** Love it → go live. Don't → no charge.\n**3. Live + improving.** Once live, we run hosting and SEO, and send you a real monthly report.\n\nNo deck, no proposal call, no quote process. We just build it.\n\n👉 [See the timeline](/services#timeline)"
         },
 
         // ── Existing website / replace / redesign ─────────────────────
