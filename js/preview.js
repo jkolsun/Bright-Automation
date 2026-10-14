@@ -167,6 +167,7 @@
       return res.json();
     })
     .then(function(data) {
+      if (window.gtag) gtag('event', 'generate_lead', { form_name: 'preview' });
       if (!data.lead || !data.lead.previewId) {
         // Lead exists from another channel without a preview
         showFallback("We already have your info! We'll text your preview link shortly.");
