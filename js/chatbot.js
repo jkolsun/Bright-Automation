@@ -202,7 +202,7 @@
         // ── Contact info ──────────────────────────────────────────────
         {
             patterns: [/contact|reach|talk to (a )?human|speak|call|email|phone|number|how can i contact/i],
-            response: () => `Three ways to reach us:\n\n• **Phone:** ${KB.phone}\n• **Email:** ${KB.email}\n• **Strategy call:** [Book a 15-min call](${KB.smsCal})\n\nResponse time usually under 4 hours.\n\n👉 [Or use the contact form](/contact)`
+            response: () => `Three ways to reach us:\n\n• **Phone:** ${KB.phone}\n• **Email:** ${KB.email}\n\nResponse time usually under 4 hours.\n\n👉 [Or use the contact form](/contact)`
         },
 
         // ── Locations / service area ──────────────────────────────────
@@ -252,7 +252,7 @@
         },
         {
             patterns: [/^(yes|yeah|yep|sure|ok|okay|sounds good)[\s!.?]*$/i],
-            response: () => "Great. Do you want to (a) start the free build form, (b) hop on a 15-min strategy call, or (c) ask me a specific question first?"
+            response: () => "Great. Do you want to (a) start the free build form, or (b) ask me a specific question first? Everything happens by text, no calls needed."
         },
         {
             patterns: [/^no$|^nope$|^not (yet|interested|now)/i],
