@@ -52,7 +52,7 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 
 ## Founders
 
-- [Jared Kolsun](https://www.brightautomations.org/founders/jared-kolsun): Co-Founder & CTO. From Conshohocken, Pennsylvania; double major in Cybersecurity Analytics and Operations and Enterprise Technology Integration at Penn State, with a focus on artificial intelligence. Builds every site from the ground up and leads the technology behind Bright Automations, including The Bright Center app. LinkedIn: https://www.linkedin.com/in/jared-kolsun-4801ab293/
+- [Jared Kolsun](https://www.brightautomations.org/founders/jared-kolsun): Co-Founder & CTO. From Conshohocken, Pennsylvania; double major in Cybersecurity Analytics and Operations and Enterprise Technology Integration at Penn State, with a focus on artificial intelligence. Builds every site from the ground up and leads the technology behind Bright Automations, including The Bright Center app. LinkedIn: https://www.linkedin.com/in/jared-kolsun-4801ab293/ · X: https://x.com/JaredKolsun
 - [Andrew Tesauro](https://www.brightautomations.org/founders/andrew-tesauro): Co-Founder & CEO. Leads growth and client relationships. LinkedIn: https://www.linkedin.com/in/andrew-tesauro-041ab8292/
 
 ## Key pages
@@ -75,3 +75,5 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 - Google Business Profile: https://www.google.com/maps?cid=13080019490965018146
 - LinkedIn: https://www.linkedin.com/company/bright-automations/
 - Instagram: https://www.instagram.com/brightautomations/
+- X: https://x.com/BrightAutoHQ
+- YouTube: https://www.youtube.com/@brightautomations
