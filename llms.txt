@@ -35,7 +35,7 @@ SEO Premier ($45.95 per month add-on):
 Client Command Center ($399 per month, plus Google ad spend paid directly to Google):
 - Google Local Services Ads set up and managed, including the Google Verified badge
 - SEO Premier included
-- The Bright Center app with instant lead response by text, missed-call text-back, two-way texting and automated review requests
+- The Bright Center app with missed-call text-back, review requests and a customer list
 - Website + Client Command Center together: $498 per month
 
 The Bright Center is the company's client app (web, iPhone App Store, and installable on Android).
@@ -66,6 +66,8 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 - [Enterprise systems](https://www.brightautomations.org/systems)
 - [Free website preview](https://www.brightautomations.org/preview)
 - [Press kit](https://www.brightautomations.org/press): company facts, founder bios, interview topics, logos and headshots
+- [Blog](https://www.brightautomations.org/blog): notes from the founders
+- [How we build a local business website before the owner pays a dime](https://www.brightautomations.org/blog/website-before-you-pay): by Jared Kolsun, Co-Founder & CTO. The six steps every site goes through: free preview, short intake, first build, automated quality check, unlimited edits, then the owner pays only when they want it live
 - [Contact](https://www.brightautomations.org/contact)
 - [Terms of Service](https://www.brightautomations.org/terms)
 - [Privacy Policy](https://www.brightautomations.org/privacy)
@@ -75,5 +77,7 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 - Google Business Profile: https://www.google.com/maps?cid=13080019490965018146
 - LinkedIn: https://www.linkedin.com/company/bright-automations/
 - Instagram: https://www.instagram.com/brightautomations/
+- Facebook: https://www.facebook.com/61587202978280
 - X: https://x.com/BrightAutoHQ
 - YouTube: https://www.youtube.com/@brightautomations
+- Crunchbase: https://www.crunchbase.com/organization/bright-automations
