@@ -205,6 +205,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-label">City &amp; state you're based in <span class="form-req">*</span></label>
+                            <input type="text" name="city" class="form-input" placeholder="Woodstock, IL" autocomplete="address-level2" required>
+                        </div>
+
+                        <!-- Not for people: bots fill every field, people never see this one. -->
+                        <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                            <label>Company website <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">Mobile phone <span class="form-req">*</span></label>
                             <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567" autocomplete="tel" inputmode="tel" required>
                         </div>
@@ -453,7 +463,9 @@
             maxFiles: 1,
             maxFileSize: 10000000,
             clientAllowedFormats: ['png', 'jpg', 'jpeg', 'webp', 'svg', 'heic'],
-            sources: ['local', 'camera', 'url'],
+            // Files only: a pasted link (BK Detailing pasted Instagram) saved the web page, not a logo.
+            sources: ['local', 'camera'],
+            resourceType: 'image',
             theme: 'minimal',
             styles: {
                 palette: {
@@ -493,7 +505,9 @@
             maxFiles: 10,
             maxFileSize: 15000000,
             clientAllowedFormats: ['png', 'jpg', 'jpeg', 'webp', 'heic'],
-            sources: ['local', 'camera', 'url'],
+            // Files only: a pasted link (BK Detailing pasted Instagram) saved the web page, not a logo.
+            sources: ['local', 'camera'],
+            resourceType: 'image',
             theme: 'minimal',
             styles: {
                 palette: {
@@ -530,37 +544,75 @@
 
     <!-- Form Submission -->
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Every request goes straight into the Bright pipeline (lead + intake + auto
+    // build). Formspree keeps a copy as the backup net, and takes over if the
+    // pipeline cannot be reached, so a request is never lost.
+    (function () {
+        var INTAKE_URL = 'https://app.brightautomations.org/api/public/website-intake';
+        var FORMSPREE_URL = 'https://formspree.io/f/mnneglkj';
+        var idemKey = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2));
+        var form = document.getElementById('contact-form');
+        var btn = form.querySelector('.intake-submit');
+        var btnHtml = btn ? btn.innerHTML : '';
+        var sending = false;
 
-            var form = this;
-            var formData = new FormData(form);
-            var data = {};
-            formData.forEach(function(value, key) {
-                data[key] = value;
-            });
-
-            fetch(form.action, {
+        function post(url, data, ms) {
+            var ctrl = ('AbortController' in window) ? new AbortController() : null;
+            var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, ms) : null;
+            return fetch(url, {
                 method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(function(response) {
-                if (response.ok) {
-                    if (window.gtag) gtag('event', 'generate_lead', { form_name: 'contact' });
-                    form.style.display = 'none';
-                    document.getElementById('form-success').style.display = 'block';
-                } else {
-                    alert('Something went wrong. Please try again or contact us directly.');
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+                signal: ctrl ? ctrl.signal : undefined
+            }).then(function (r) {
+                if (timer) clearTimeout(timer);
+                return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, body: j }; });
+            }).catch(function () {
+                if (timer) clearTimeout(timer);
+                return { ok: false, status: 0, body: {} };
+            });
+        }
+        function done() {
+            if (window.gtag) gtag('event', 'generate_lead', { form_name: 'contact' });
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+        function reset(message) {
+            sending = false;
+            if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }
+            alert(message);
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (sending) return;
+            sending = true;
+            if (btn) { btn.disabled = true; btn.innerHTML = 'Sending&hellip;'; }
+
+            var data = {};
+            new FormData(form).forEach(function (value, key) { data[key] = value; });
+            data._idempotencyKey = idemKey;
+            var isBot = !!(data.company_website && String(data.company_website).trim());
+            var backup = {};
+            Object.keys(data).forEach(function (k) { if (k !== 'company_website' && k !== '_idempotencyKey') backup[k] = data[k]; });
+
+            post(INTAKE_URL, data, 15000).then(function (r) {
+                if (r.ok) {
+                    if (!isBot) post(FORMSPREE_URL, backup, 10000);
+                    done();
+                    return;
                 }
-            })
-            .catch(function() {
-                alert('Something went wrong. Please try again or contact us directly.');
+                if (r.status === 400 || r.status === 429) {
+                    reset((r.body && r.body.error) || 'Please check the form and try again.');
+                    return;
+                }
+                post(FORMSPREE_URL, backup, 15000).then(function (f) {
+                    if (f.ok) done();
+                    else reset('Something went wrong. Please try again or contact us directly.');
+                });
             });
         });
+    })();
     </script>
 
     <script type="application/ld+json">
