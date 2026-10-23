@@ -206,7 +206,7 @@
 
                         <div class="form-group">
                             <label class="form-label">City &amp; state you're based in <span class="form-req">*</span></label>
-                            <input type="text" name="city" class="form-input" placeholder="Woodstock, IL" autocomplete="address-level2" required>
+                            <input type="text" name="city" class="form-input" placeholder="Woodstock, IL" autocomplete="address-level2" required pattern="\s*\S.*[\s,]+[A-Za-z]{2,}[A-Za-z .]*(\s+\d{5}(-\d{4})?)?\s*" title="City and state, like Woodstock, IL">
                         </div>
 
                         <!-- Not for people: bots fill every field, people never see this one. -->
