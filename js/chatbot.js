@@ -12,18 +12,15 @@
         email: "admin@brightautomations.net",
         phone: "(814) 400-2017",
         phoneTel: "+18144002017",
-        smsCal: "https://cal.com/atesauro/strategy-call",
         founders: ["Jared", "Andrew"],
         priceSetup: "$0",
         priceMonthly: "$99.95",
-        launchTime: "fast",
         deliverables: [
             "Custom website (designed for your trade, not a template)",
             "Hosting, SSL, and CDN",
-            "Google Business Profile optimization",
+            "Connection to your Google Business Profile once your site is live",
             "Monthly SEO updates",
             "Speed & mobile optimization (Core Web Vitals tuned)",
-            "AI review responses on Google",
             "Social media landing page (Instagram / Facebook bio link)",
             "Real-time lead tracking",
             "Monthly performance report — every 1st of the month"
@@ -41,7 +38,7 @@
         // ── Pricing ───────────────────────────────────────────────────
         {
             patterns: [/pric(e|ing)|\bcost\b|how much|monthly|fee|charge|expensive|cheap|afford/i],
-            response: () => `Simple, all-in pricing:\n\n• **Setup:** ${KB.priceSetup} — we build it, you pay nothing upfront\n• **Monthly:** ${KB.priceMonthly}/mo — starts the day your site goes live\n\nNo contract. Cancel anytime. No hidden fees, no add-on tiers.\n\nFor context, most agencies charge $1,600–3,800/mo for what we bundle into one $99.95/mo plan.\n\n👉 [Get your free preview](/contact)`
+            response: () => `Simple pricing:\n\n• **Setup:** ${KB.priceSetup} — we build it, you pay nothing upfront\n• **Monthly:** ${KB.priceMonthly}/mo — starts the day your site goes live\n\nNo contract. Cancel anytime. No hidden fees. Optional add-ons: SEO Premier ($45.95/mo) and the Client Command Center ($399/mo plus ad spend paid to Google).\n\nFor context, most agencies charge $1,600–3,800/mo for what we bundle into one $99.95/mo plan.\n\n👉 [Get your free preview](/contact)`
         },
         {
             patterns: [/(vs|versus|compared|other (agencies|companies)|why (you|bright))/i],
@@ -57,7 +54,7 @@
         // ── Services / The Stack (4 layers) ───────────────────────────
         {
             patterns: [/the stack|four layers|layers|foundation|visibility (engine|layer)|ai layer|growth ops|growth operations/i],
-            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile connection, local SEO, monthly content, Core Web Vitals\n**03 — AI Intelligence:** review responses, lead capture, smart forms, auto follow-up\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
+            response: () => "Our system has 4 layers — all included:\n\n**01 — Foundation:** custom site, hosting, SSL, branded forms\n**02 — Visibility Engine:** Google Business Profile connection, local SEO, monthly content, Core Web Vitals\n**03 — Lead Capture:** smart forms, tap-to-call, lead tracking\n**04 — Growth Operations:** monthly reports, lead tracking, competitor scans, proactive recommendations\n\nEach layer compounds the one below it.\n\n👉 [See it laid out](/services)"
         },
 
         // ── Free preview ──────────────────────────────────────────────
@@ -82,7 +79,7 @@
                 /(my|our|the) (business|company|shop|store|practice|firm|studio) (is|isn'?t|will|works|does)/i,
                 /(home service|service business|local business|small business)/i
             ],
-            response: () => "We build for **any business** — not just home services.\n\nReal customers we've shipped sites for:\n• Plumbing, HVAC, Roofing, Electrical, Landscaping, Cleaning, Painting\n• Real Estate, Law Firms, Dental & Medical\n• Gyms, Salons, Restaurants, Photographers\n• Auto detailing, Pet services, Local retail, Coaches\n• Event planners, and more\n\nIf your business serves customers, we can build for you. Same plan, same price, same 48-hour turnaround.\n\n👉 [See the full list](/industries)"
+            response: () => "We build for **any business** — not just home services.\n\nReal customers we've shipped sites for:\n• Plumbing, HVAC, Roofing, Electrical, Landscaping, Cleaning, Painting\n• Real Estate, Law Firms, Dental & Medical\n• Gyms, Salons, Restaurants, Photographers\n• Auto detailing, Pet services, Local retail, Coaches\n• Event planners, and more\n\nIf your business serves customers, we can build for you. Same plan, same price.\n\n👉 [See the full list](/industries)"
         },
 
         // ── Hosting / domain / SSL ────────────────────────────────────
@@ -94,13 +91,13 @@
         // ── Google Business Profile (GBP) ─────────────────────────────
         {
             patterns: [/google business|gbp|google profile|google listing|google maps|map pack|local pack/i],
-            response: () => "**Google Business Profile** optimization is included from day one. We handle:\n\n• Categories, descriptions, attributes\n• Hours, service areas, Q&A\n• Photo uploads + ongoing additions\n• Keyword-rich descriptions\n• Local SEO so you rank in the map pack\n• Updates every month based on Google's changes\n\nThis is what gets you found when people search 'plumber near me' (or whatever you do, near them)."
+            response: () => "Every website plan **connects your site to your Google Business Profile** once it's live.\n\n**Full Google Business Profile management** is **SEO Premier** ($45.95/mo):\n\n• Setup sweep: categories, services, hours, service areas\n• Fresh photos\n• A weekly Google post\n• Every review replied to in your approved voice\n• Watching for info changes on your profile\n\n👉 [See SEO Premier](/#seo-premier)"
         },
 
         // ── Reviews & reputation ──────────────────────────────────────
         {
             patterns: [/review|reputation|testimonial|rating|stars|respond|reply/i],
-            response: () => "**AI Review Responses** are included. Every Google review you get is answered fast, in your voice, automatically.\n\nWhy that matters:\n• Google ranks active businesses higher\n• Prospects see an engaged, professional brand\n• You don't have to remember to respond at 9pm\n\nWe also display your real Google reviews on your site as live-style review cards (avatar, stars, date, the works)."
+            response: () => "Every website shows your real Google reviews on your site.\n\n**AI review replies** come with **SEO Premier** ($45.95/mo): every Google review gets a reply in your approved voice, so prospects see an engaged, professional business.\n\nThe **Client Command Center** adds automatic review requests after every job.\n\n👉 [See SEO Premier](/#seo-premier)"
         },
 
         // ── SEO ───────────────────────────────────────────────────────
@@ -118,7 +115,7 @@
         // ── Social media landing page ─────────────────────────────────
         {
             patterns: [/social|instagram|facebook|tiktok|linkedin|landing page|link in bio|bio link/i],
-            response: () => "**Social media landing page** is included. A single mobile-first page that lives at your Instagram/Facebook bio link. It includes:\n\n• Click-to-call button\n• Service list\n• Reviews\n• Quote / contact form\n• Photos\n\nMatches your main site branding. Live within 48 hours of your build going up."
+            response: () => "**Social media landing page** is included. A single mobile-first page that lives at your Instagram/Facebook bio link. It includes:\n\n• Click-to-call button\n• Service list\n• Reviews\n• Quote / contact form\n• Photos\n\nMatches your main site branding."
         },
 
         // ── Reports & lead tracking ───────────────────────────────────
@@ -130,13 +127,13 @@
         // ── Proactive growth recommendations ──────────────────────────
         {
             patterns: [/proactive|recommend|new ai|ai (system|tool|update)|new feature|stay ahead|first.mover/i],
-            response: () => "We watch your data and your local market for you. If a category opens up in your area, a lead pattern shifts, or a new AI tool is ready to plug in, **we call you first**.\n\nYou don't have to ask, research, or chase tech updates. That's our job.\n\n👉 [More about post-launch growth](/#post-launch-growth)"
+            response: () => "We watch your data and your local market for you. If a category opens up in your area, a lead pattern shifts, or a new AI tool is ready to plug in, **we text you first**.\n\nYou don't have to ask, research, or chase tech updates. That's our job.\n\n👉 [More about post-launch growth](/#post-launch-growth)"
         },
 
         // ── Founders / team ───────────────────────────────────────────
         {
             patterns: [/founders?|who (made|built|runs?|owns?)|team|jared|andrew|about (you|us|the team)|who are you/i],
-            response: () => `Bright Automations is run by two people: **Jared** (Co-Founder · Build & Strategy) and **Andrew** (Co-Founder · Growth & AI).\n\nYou're not buying from a faceless agency — the same two people answer your calls, write your reports, and ship your AI updates.\n\n👉 [Meet the team](/about)`
+            response: () => `Bright Automations is run by its two founders: **Jared Kolsun** (Co-Founder & CTO) and **Andrew Tesauro** (Co-Founder & CEO).\n\nYou're not buying from a faceless agency. The same two people answer your texts, write your reports, and ship your updates.\n\n👉 [Meet the founders](/about)`
         },
 
         // ── Contracts / cancel / guarantee ────────────────────────────
@@ -148,7 +145,7 @@
         // ── Revisions / changes ───────────────────────────────────────
         {
             patterns: [/revision|edit|change|update (my|the) (site|page|copy)|tweak|modif/i],
-            response: () => "Once your site is live, **just text us what you want changed** — copy edits, new photos, new pages, color tweaks — and we'll handle it. No tickets, no project managers.\n\nMost edits ship the same day."
+            response: () => "Once your site is live, **just text us what you want changed** — copy edits, new photos, new pages, color tweaks — and we'll handle it. No tickets, no project managers. Changes are unlimited."
         },
 
         // ── Content / what they need to provide ───────────────────────
@@ -190,25 +187,25 @@
         // ── AI growth systems / Enterprise Systems ────────────────────
         {
             patterns: [/enterprise|growth system|ai system|automation|chatbot|reputation engine|advanced|scale up/i],
-            response: () => "Beyond the base $99.95/mo plan, we have **Enterprise AI Systems** — bigger, deeper automations for businesses ready to scale:\n\n• Reputation Engine (review automation)\n• Lead Capture Engine\n• AI Chatbots\n• Custom integrations\n\nThese stack on top of your base plan when you're ready.\n\n👉 [See Enterprise Systems](/systems)"
+            response: () => "Beyond the base $99.95/mo plan, we have **Enterprise AI Systems** — bigger, deeper automations for businesses ready to scale:\n\n• Reputation Engine (review requests)\n• Lead Capture Engine\n• AI Chatbots\n• Custom integrations\n\nThese stack on top of your base plan when you're ready.\n\n👉 [See Enterprise Systems](/systems)"
         },
 
         // ── Forms / Formspree / how submissions reach us ──────────────
         {
             patterns: [/form|submission|where do (forms|leads) go|email me|get notified|contact form/i],
-            response: () => "Form submissions on the build page go directly to **admin@brightautomations.net** — Jared sees every one. Logo and photo uploads come through with clickable links to our secure media library.\n\nResponse time is usually under 4 hours, often within minutes during business hours."
+            response: () => "Form submissions on the build page go directly to **admin@brightautomations.net** — Jared sees every one. Logo and photo uploads come through with clickable links to our secure media library.\n\nThen we text you to keep things moving."
         },
 
         // ── Contact info ──────────────────────────────────────────────
         {
             patterns: [/contact|reach|talk to (a )?human|speak|call|email|phone|number|how can i contact/i],
-            response: () => `Three ways to reach us:\n\n• **Phone:** ${KB.phone}\n• **Email:** ${KB.email}\n\nResponse time usually under 4 hours.\n\n👉 [Or use the contact form](/contact)`
+            response: () => `Ways to reach us:\n\n• **Text:** ${KB.phone}\n• **Email:** ${KB.email}\n\nEverything happens by text, with no calls or meetings needed.\n\n👉 [Or use the contact form](/contact)`
         },
 
         // ── Locations / service area ──────────────────────────────────
         {
             patterns: [/location|where (are|is) (you|bright)|service area|local|country|state|remote/i],
-            response: () => "We're a remote team. We build websites for businesses **anywhere in the US** — your customers find you locally, but our team operates online.\n\nThe Google Business Profile + local SEO work we do is geo-targeted to wherever your customers actually live."
+            response: () => "We serve local service businesses **across the United States**. Your customers find you locally, and we work with you online, by text.\n\nThe Google Business Profile + local SEO work we do is geo-targeted to wherever your customers actually live."
         },
 
         // ── Social proof / case studies ───────────────────────────────
@@ -220,7 +217,7 @@
         // ── SMS / texting ─────────────────────────────────────────────
         {
             patterns: [/text|sms|texting|message me|message you/i],
-            response: () => `You can text us at ${KB.phone}. We use text for fast post-launch updates and quick changes — most edits get handled the same day.\n\nWhen you sign up, the form has SMS consent so we can text you the preview link the moment it's ready.`
+            response: () => `You can text us at ${KB.phone}. Fill out the form on the site and we build a free preview and text you the link. After that, everything happens by text, with no calls or meetings needed.`
         },
 
         // ── Tech stack / how the site is built ────────────────────────
@@ -232,13 +229,13 @@
         // ── Compliance / privacy ──────────────────────────────────────
         {
             patterns: [/privacy|gdpr|ccpa|compliance|data|tcpa|consent/i],
-            response: () => "We're TCPA-compliant on SMS, GDPR-aware on data, and we never sell your customer data — ever.\n\n👉 [Privacy policy](/privacy) · [Terms](/terms) · [SMS consent](/sms-consent)"
+            response: () => "We never sell your customer data. Ever.\n\n👉 [Privacy policy](/privacy) · [Terms](/terms) · [SMS consent](/sms-consent)"
         },
 
         // ── Setup process / what happens after intake ─────────────────
         {
             patterns: [/after (i|sign up|submit|fill)|next|what happens|once i'?ve|then what/i],
-            response: () => "After you submit the build form:\n\n1. **Within 15 minutes** — Jared or Andrew texts you to confirm we got it\n2. **Within 24 hours** — we send any clarifying questions (rare)\n3. **Next** — your free preview site is ready and we text you the link\n4. **You decide** — go live for $99.95/mo, or walk away for $0\n\nNo strings, no high-pressure call."
+            response: () => "After you submit the build form:\n\n1. **We text you** to confirm we got it, plus any quick questions\n2. **We build your free preview** and text you the link\n3. **You decide**: go live for $99.95/mo, or walk away for $0\n\nNo strings, and no calls or meetings needed."
         },
 
         // ── Confirmations & courtesy ──────────────────────────────────
@@ -256,15 +253,15 @@
         },
         {
             patterns: [/^no$|^nope$|^not (yet|interested|now)/i],
-            response: () => "All good. If anything comes up later, I'm here. You can also reach the team directly at " + KB.phone + " or " + KB.email + "."
+            response: () => "All good. If anything comes up later, I'm here. You can also reach us directly at " + KB.phone + " or " + KB.email + "."
         }
     ];
 
     // Default fallback responses (random)
     const DEFAULT_RESPONSES = [
-        `Good question — I want to give you the right answer. Some things I can dig into:\n\n• Pricing & what's included\n• How the build works\n• Logo & photo uploads\n• Industries we work with\n• Reports, SEO, AI reviews\n\nOr reach the team: ${KB.phone} · ${KB.email}`,
-        `Hmm, let me try a different angle. Can you rephrase, or pick one of these?\n\n• What's it cost?\n• How fast can it go live?\n• What's included?\n• Who's behind it?\n\nOr text us directly at ${KB.phone}.`,
-        `That one might be better answered by a real human. Try ${KB.email} or ${KB.phone} — usually under 4-hour response.\n\nIn the meantime, want me to walk you through pricing, the 4-layer stack, or the first 90 days?`
+        `Good question — I want to give you the right answer. Some things I can dig into:\n\n• Pricing & what's included\n• How the build works\n• Logo & photo uploads\n• Industries we work with\n• Reports, SEO, SEO Premier\n\nOr reach us: ${KB.phone} · ${KB.email}`,
+        `Hmm, let me try a different angle. Can you rephrase, or pick one of these?\n\n• What's it cost?\n• How does the build work?\n• What's included?\n• Who's behind it?\n\nOr text us directly at ${KB.phone}.`,
+        `That one might be better answered by a real human. Try ${KB.email} or text ${KB.phone}.\n\nIn the meantime, want me to walk you through pricing, the 4-layer stack, or how the build works?`
     ];
 
     // Quick-action chips (shown above the input the first time chat opens)

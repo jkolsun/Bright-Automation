@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRGTD7HB01"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JRGTD7HB01');
+      (function(){
+        try {
+          var ref = document.referrer ? new URL(document.referrer).hostname : '';
+          var utm = new URLSearchParams(location.search).get('utm_source') || '';
+          var ai = (ref + ' ' + utm).match(/chatgpt\.com|openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|meta\.ai|grok\.com|deepseek\.com|you\.com/);
+          if (ai) gtag('event', 'ai_referral', { ai_source: ai[0] });
+        } catch (e) {}
+        document.addEventListener('click', function(e){
+          var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+          if (a) gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'phone_click' : 'text_click');
+        });
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Blog | Bright Automations</title>
+    <meta name="description" content="Notes from Bright Automations founders Jared Kolsun and Andrew Tesauro on websites and Google for local service businesses.">
+    <link rel="canonical" href="https://www.brightautomations.org/blog">
+    <meta name="theme-color" content="#2E7D8A">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | Bright Automations">
+    <meta property="og:description" content="Notes from Bright Automations founders Jared Kolsun and Andrew Tesauro on websites and Google for local service businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.brightautomations.org/blog">
+    <meta property="og:image" content="https://www.brightautomations.org/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Bright Automations">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Bright Automations">
+    <meta name="twitter:description" content="Notes from Bright Automations founders Jared Kolsun and Andrew Tesauro on websites and Google for local service businesses.">
+    <meta name="twitter:image" content="https://www.brightautomations.org/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <link rel="stylesheet" href="/css/apple.css?v=3">
+    <link rel="stylesheet" href="/css/about.css?v=1">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Blog","@id":"https://www.brightautomations.org/blog#blog","url":"https://www.brightautomations.org/blog","name":"Bright Automations Blog","description":"Notes from the founders of Bright Automations on websites and Google for local service businesses.","publisher":{"@id":"https://www.brightautomations.org/#organization"},"inLanguage":"en-US","blogPost":[{"@type":"BlogPosting","@id":"https://www.brightautomations.org/blog/what-175-sites-taught-us#article","headline":"What 175 client sites taught us about getting found on Google","url":"https://www.brightautomations.org/blog/what-175-sites-taught-us","datePublished":"2026-11-04","author":{"@id":"https://www.brightautomations.org/#jared-kolsun"}},{"@type":"BlogPosting","@id":"https://www.brightautomations.org/blog/website-before-you-pay#article","headline":"How we build a local business website before the owner pays a dime","url":"https://www.brightautomations.org/blog/website-before-you-pay","datePublished":"2026-10-21","author":{"@id":"https://www.brightautomations.org/#jared-kolsun"}}]},{"@type":"Organization","@id":"https://www.brightautomations.org/#organization","name":"Bright Automations","url":"https://www.brightautomations.org/"},{"@type":"Person","@id":"https://www.brightautomations.org/#jared-kolsun","name":"Jared Kolsun","url":"https://www.brightautomations.org/founders/jared-kolsun"},{"@type":"BreadcrumbList","@id":"https://www.brightautomations.org/blog#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.brightautomations.org/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.brightautomations.org/blog"}]}]}
+    </script>
+    <style>
+    .bl-wrap{max-width:760px;margin:0 auto;padding:0 2rem}
+    .bl-meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;color:var(--ab-slate);font-size:.98rem;margin-top:1.25rem}
+    .bl-meta a{color:var(--ab-teal);font-weight:600;text-decoration:none}
+    .bl-meta a:hover{text-decoration:underline}
+    .bl-wrap .ab-lede a{color:var(--ab-teal);font-weight:600}
+    .bl-body{font-size:1.08rem;line-height:1.75;color:#243042}
+    .bl-body h2{font-size:clamp(1.3rem,2.6vw,1.6rem);line-height:1.25;color:var(--ab-ink);margin:2.4rem 0 .8rem}
+    .bl-body p{margin:0 0 1.1rem}
+    .bl-body a{color:var(--ab-teal);font-weight:600}
+    .bl-author{display:grid;grid-template-columns:72px 1fr;gap:1rem;align-items:center;margin-top:2.5rem;padding:1.25rem 1.5rem;background:#fff;border:1px solid rgba(12,19,32,.08);border-radius:16px}
+    .bl-author img{width:72px;height:72px;border-radius:50%;object-fit:cover}
+    .bl-author p{margin:0;line-height:1.55;font-size:.98rem}
+    .bl-author a{color:var(--ab-teal);font-weight:600}
+    .bl-list{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.25rem}
+    .bl-card{display:block;background:#fff;border:1px solid rgba(12,19,32,.08);border-radius:16px;padding:1.5rem 1.75rem;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s}
+    .bl-card:hover{border-color:rgba(46,125,138,.4);box-shadow:0 10px 30px -18px rgba(12,19,32,.3)}
+    .bl-card time{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ab-teal)}
+    .bl-card h2{font-size:1.3rem;margin:.4rem 0 .5rem;color:var(--ab-ink)}
+    .bl-card p{margin:0;color:var(--ab-slate);line-height:1.6}
+    @media(max-width:600px){.bl-wrap{padding:0 1.25rem}.bl-body{font-size:1.02rem}}
+    </style>
+</head>
+<body class="ab-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/images/Bright_AutoLOGO.png" alt="Bright Automations" class="logo-img-large">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">What's Included</a></li>
+                <li><a href="/command-center">Command Center</a></li>
+                <li><a href="/testimonials">Reviews</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/systems">Enterprise Systems</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/brightautomations/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/61587202978280" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <a href="/join" class="nav-cta nav-join">Join Our Team</a>
+                <a href="/#faq" class="nav-cta nav-faq"><i class="ph ph-question"></i> FAQs</a>
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <div class="menu-toggle-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Drawer -->
+    <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <a href="/" class="drawer-logo">
+                <img src="/images/Bright_AutoLOGO.png" alt="Bright Automations" style="height: 40px; width: auto;">
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="ph ph-x" style="font-size: 22px;"></i>
+            </button>
+        </div>
+
+        <div class="drawer-links">
+            <a href="/" class="drawer-link">Home</a>
+            <a href="/services" class="drawer-link">What's Included</a>
+            <a href="/command-center" class="drawer-link">Command Center</a>
+            <a href="/testimonials" class="drawer-link">Reviews</a>
+            <a href="/about" class="drawer-link">About</a>
+            <a href="/contact" class="drawer-link">Contact</a>
+            <a href="/systems" class="drawer-link">Enterprise Systems</a>
+            <a href="/#faq" class="drawer-link">FAQs</a>
+        </div>
+
+        <div class="drawer-divider"></div>
+
+        <div class="drawer-actions">
+            <a href="/join" class="drawer-btn-primary">Join Our Team</a>
+            <a href="/contact" class="drawer-btn-outline">Get Your Free Build Plan</a>
+        </div>
+
+        <div class="drawer-bottom">
+            <div class="drawer-social">
+                <a href="https://www.instagram.com/brightautomations/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/61587202978280" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/BrightAutoHQ" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@brightautomations" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="tel:+18144002017" class="drawer-phone">
+                <i class="ph ph-phone"></i> (814) 400-2017
+            </a>
+        </div>
+    </aside>
+
+    <main id="main">
+
+        <section class="ab-sec" aria-labelledby="bl-h1" style="padding-top:clamp(7.5rem,14vw,10rem)">
+            <div class="bl-wrap">
+                <nav class="fp-crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Blog</span></nav>
+                <p class="ab-eyebrow">Blog</p>
+                <h1 id="bl-h1" class="ab-h2">Notes from the founders.</h1>
+                <p class="ab-lede">How <a href="/founders/jared-kolsun">Jared Kolsun</a> and <a href="/founders/andrew-tesauro">Andrew Tesauro</a> build websites for local service businesses, and what they learn doing it. See <a href="/services">what the Website plan includes</a>.</p>
+                <ul class="bl-list">
+                    <li><a class="bl-card" href="/blog/what-175-sites-taught-us"><time datetime="2026-11-04">November 4, 2026</time><h2>What 175 client sites taught us about getting found on Google</h2><p>We crawled 175 of our client sites. Sites with 10 or more pages got about twice the Google visitors. Why that happens, and which pages actually count. By Jared Kolsun.</p></a></li>
+                    <li><a class="bl-card" href="/blog/website-before-you-pay"><time datetime="2026-10-21">October 21, 2026</time><h2>How we build a local business website before the owner pays a dime</h2><p>The six steps every Bright Automations site goes through, from a free preview built from your Google listing to the day you decide to go live. By Jared Kolsun.</p></a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo footer-logo">
+                        <img src="/images/Bright_AutoLOGO.png" alt="Bright Automations logo" class="logo-img-large">
+                    </a>
+                    <p>AI-powered marketing and growth systems for businesses.</p>
+                    <p class="footer-founders">Founded by <a href="/founders/jared-kolsun">Jared Kolsun</a> and <a href="/founders/andrew-tesauro">Andrew Tesauro</a>.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/brightautomations/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/61587202978280" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/bright-automations/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/BrightAutoHQ" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/@brightautomations" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">What's Included</a></li>
+                        <li><a href="/systems">Enterprise Systems</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/join">Join Our Team</a></li>
+                        <li><a href="/industries">Industries We Serve</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:andrew@brightautomations.net"><i class="ph ph-envelope" style="margin-right: 0.5rem; color: var(--primary);"></i>andrew@brightautomations.net</a></li>
+                        <li><a href="tel:+18144002017"><i class="ph ph-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>(814) 400-2017</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="sms-consent">By submitting your information, you consent to receive SMS messages from Bright Automations regarding your inquiry. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                <p>&copy; 2026 Bright Automations. All rights reserved.</p>
+                <div>
+                    <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chatbot.js"></script>
+    <script>
+    (function () {
+        var els = document.querySelectorAll('.ab-rv');
+        if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            els.forEach(function (el) { el.classList.add('in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
+</body>
+</html>
+
