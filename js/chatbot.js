@@ -133,7 +133,7 @@
         // ── Founders / team ───────────────────────────────────────────
         {
             patterns: [/founders?|who (made|built|runs?|owns?)|team|jared|andrew|about (you|us|the team)|who are you/i],
-            response: () => `Bright Automations is run by its two founders: **Jared Kolsun** (Co-Founder & CTO) and **Andrew Tesauro** (Co-Founder & CEO).\n\nYou're not buying from a faceless agency. The same two people answer your texts, write your reports, and ship your updates.\n\n👉 [Meet the team](/about)`
+            response: () => `Bright Automations is run by its two founders: **Jared Kolsun** (Co-Founder & CTO) and **Andrew Tesauro** (Co-Founder & CEO).\n\nYou're not buying from a faceless agency. The same two people answer your texts, write your reports, and ship your updates.\n\n👉 [Meet the founders](/about)`
         },
 
         // ── Contracts / cancel / guarantee ────────────────────────────
