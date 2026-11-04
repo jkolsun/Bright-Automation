@@ -66,7 +66,7 @@
         // ── Timeline ──────────────────────────────────────────────────
         {
             patterns: [/how long|timeline|when.*(ready|live|done)|48 hours|turnaround|first 90 days|day 1|day 7|day 30/i],
-            response: () => "**How it goes:**\n\n• **Step 1** — You fill out the form\n• **Step 2** — We build your free preview and text you the link (a real site, not a mockup)\n• **Step 3** — Site live, connected to your Google Business Profile, lead tracking on\n• **Step 4** — First optimization pass based on real data\n• **Every month** — Performance report (traffic, leads, what's converting)\n• **Ongoing** — We watch the market and text you when something opens up\n\n👉 [See the full timeline](/services#timeline)"
+            response: () => "**How it goes:**\n\n• **Step 1** — You fill out the form\n• **Step 2** — We build your free preview and text you the link (a real site, not a mockup)\n• **Step 3** — Site live, connected to your Google Business Profile, lead tracking on\n• **Every month** — A report on calls, traffic and next steps, with 1 to 3 recommended changes you can approve with one tap\n• **Anytime** — Unlimited changes: text us and we make them\n\n👉 [See the full timeline](/services#timeline)"
         },
 
         // ── Industries / who we serve ─────────────────────────────────

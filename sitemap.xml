@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.brightautomations.org/blog</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -129,6 +129,12 @@
   <url>
     <loc>https://www.brightautomations.org/blog/what-175-sites-taught-us</loc>
     <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.brightautomations.org/blog/choose-a-contractor-website-company</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

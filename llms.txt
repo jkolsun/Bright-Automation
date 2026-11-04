@@ -67,6 +67,7 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 - [Free website preview](https://www.brightautomations.org/preview)
 - [Press kit](https://www.brightautomations.org/press): company facts, founder bios, interview topics, logos and headshots
 - [Blog](https://www.brightautomations.org/blog): notes from the founders
+- [How to choose a website company for your HVAC, plumbing or roofing business (2026)](https://www.brightautomations.org/blog/choose-a-contractor-website-company): by Jared Kolsun, Co-Founder & CTO. A guide comparing DIY website builders, freelancers, web design agencies and done-for-you monthly plans (Bright Automations included, with that disclosed), plus eight questions to ask any website company
 - [What 175 client sites taught us about getting found on Google](https://www.brightautomations.org/blog/what-175-sites-taught-us): by Jared Kolsun, Co-Founder & CTO. A crawl of 175 client sites found sites with 10 or more pages got about 2x the Google visitors; why a page for each service and each town matters, and which pages count
 - [How we build a local business website before the owner pays a dime](https://www.brightautomations.org/blog/website-before-you-pay): by Jared Kolsun, Co-Founder & CTO. The six steps every site goes through: free preview, short intake, first build, automated quality check, unlimited edits, then the owner pays only when they want it live
 - [Contact](https://www.brightautomations.org/contact)
