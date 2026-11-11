@@ -7,11 +7,9 @@
 - Name: Bright Automations (Bright Automations LLC, also doing business as BASITES)
 - Founders: Jared Kolsun (Co-Founder & CTO) and Andrew Tesauro (Co-Founder & CEO)
 - Origin: the founders met as neighbors during Penn State's summer session in 2023, right before their freshman year, later joined the same fraternity, and started the company in September 2025 going into their junior year
-- Website previews generated: 1,000,000+ custom website previews for local businesses
 - Custom websites built: 2,000+
 - Founded: September 2025
-- Reach: website previews built for local businesses in all 50 US states
-- Industries: 30+, including general contracting, cleaning, landscaping, plumbing, painting, auto detailing and auto services, roofing, HVAC, concrete, tree service, gutters, pest control, garage doors, moving, excavation, asphalt paving, junk removal, locksmith, fencing, insurance, and health and medical
+- Industries: local service businesses, including general contracting, cleaning, landscaping, plumbing, painting, auto detailing and auto services, roofing, HVAC, concrete, tree service, gutters, pest control, garage doors, moving, excavation, asphalt paving, junk removal, locksmith, fencing, insurance, and health and medical
 - Google rating: 5.0 stars from 70+ reviews on Google (https://www.google.com/maps?cid=13080019490965018146)
 - Area served: United States
 - Phone: (814) 400-2017
@@ -67,6 +65,8 @@ How clients work with Bright Automations: fill out the form on the site, get a f
 - [Free website preview](https://www.brightautomations.org/preview)
 - [Press kit](https://www.brightautomations.org/press): company facts, founder bios, interview topics, logos and headshots
 - [Blog](https://www.brightautomations.org/blog): notes from the founders
+- [Bright Automations vs a typical marketing agency](https://www.brightautomations.org/compare/agency): by Andrew Tesauro, Co-Founder & CEO. Three tables comparing Bright Automations with a typical marketing agency (monthly price, contract and setup, what's included), with published agency price ranges from WebFX, Ahrefs and Clicks Geek linked as sources
+- [Your Google profile isn't getting calls? Check these 6 things first](https://www.brightautomations.org/blog/google-profile-not-getting-calls): by Jared Kolsun, Co-Founder & CTO. Six free checks for a Google Business Profile that isn't bringing in calls: primary category, services, service area, reviews from every customer, real photos, and matching name, phone and website everywhere
 - [How to choose a website company for your HVAC, plumbing or roofing business (2026)](https://www.brightautomations.org/blog/choose-a-contractor-website-company): by Jared Kolsun, Co-Founder & CTO. A guide comparing DIY website builders, freelancers, web design agencies and done-for-you monthly plans (Bright Automations included, with that disclosed), plus eight questions to ask any website company
 - [What 175 client sites taught us about getting found on Google](https://www.brightautomations.org/blog/what-175-sites-taught-us): by Jared Kolsun, Co-Founder & CTO. A crawl of 175 client sites found sites with 10 or more pages got about 2x the Google visitors; why a page for each service and each town matters, and which pages count
 - [How we build a local business website before the owner pays a dime](https://www.brightautomations.org/blog/website-before-you-pay): by Jared Kolsun, Co-Founder & CTO. The six steps every site goes through: free preview, short intake, first build, automated quality check, unlimited edits, then the owner pays only when they want it live
