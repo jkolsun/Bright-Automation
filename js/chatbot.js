@@ -42,7 +42,7 @@
         },
         {
             patterns: [/(vs|versus|compared|other (agencies|companies)|why (you|bright))/i],
-            response: () => "Most agencies invoice each line separately:\n\n• Custom website + hosting: $3.5k–8k build + $50–200/mo\n• Local SEO + content: $800–2,000/mo\n• Lead tracking + analytics: $100–300/mo\n• Performance reporting: $200–500/mo\n\n**Total at an agency: $1,150–3,000/mo.**\n**With us: $99.95/mo. Everything bundled. Free to start.** Want your Google Business Profile fully managed too? SEO Premier adds it for $45.95/mo.\n\n👉 [See the full breakdown](/services)"
+            response: () => "Published agency prices for comparison:\n\n• Local SEO retainer: $500 to $3,000/mo (WebFX)\n• Most common SEO agency retainer: $500 to $1,000/mo (Ahrefs)\n\n**With us: $99.95/mo for the website, $0 setup. Free to start.** Want your Google Business Profile fully managed too? SEO Premier adds it for $45.95/mo.\n\n👉 [See us vs a typical agency, with sources](/compare/agency)"
         },
 
         // ── What's included / deliverables ────────────────────────────
@@ -121,7 +121,7 @@
         // ── Reports & lead tracking ───────────────────────────────────
         {
             patterns: [/report|monthly report|analytics|tracking|lead tracking|stats|metrics|performance|dashboard/i],
-            response: () => "**Real-time lead tracking + monthly reports** — both included.\n\n• See every call, form, and lead the moment it comes in\n• Source attribution (which page/campaign drove it)\n• A plain-English performance report on the 1st of every month: traffic, leads, what's converting, what's not, and what we'll change next\n\nNo logins to hunt through. We email it to you."
+            response: () => "**Real-time lead tracking + monthly reports** — both included.\n\n• See every call, form, and lead the moment it comes in\n• Source attribution (which page/campaign drove it)\n• A plain-English performance report every month, on your own 30-day cycle: traffic, leads, what's converting, what's not, and what we'll change next\n\nNo logins to hunt through. We email it to you."
         },
 
         // ── Proactive growth recommendations ──────────────────────────
